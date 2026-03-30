@@ -2,7 +2,7 @@
 
 ## Current Phase
 - Phase 4 reporting build completed on 2026-03-30, including live report rendering, PDF export, and shareable report snapshots.
-- Recommendation engine QA fixes were completed alongside the report work to improve alternative coverage and tool-name overlap detection.
+- Phase 4 QA fixes completed on 2026-03-30 for conservative savings math, richer recommendation coverage, and Confluence-specific alternative lookup.
 
 ## Architecture Decisions
 - Data intake is implemented inside `app/upload/page.tsx` as a tabbed single-screen flow for CSV upload, manual entry, and email-forwarding setup to keep onboarding friction low.
@@ -14,6 +14,7 @@
 - Reporting view models and shareable snapshots are handled in `lib/report.ts`, with snapshots stored under `data/reports/*.json`.
 - PDF export uses `html2canvas` + `jspdf` client-side to keep implementation lightweight and avoid server-side PDF infrastructure.
 - Recommendations are now driven by tool-specific alternative records in `lib/recommendations-db.ts`, with alias-aware tool matching for overlap detection and switch recommendations.
+- Savings projections are intentionally conservative: overlapping recommendations are deduped at the stack level, individual recommendation savings are capped relative to current spend, and total projected savings cannot exceed 70% of monthly spend.
 
 ## Patterns / Notes
 - All intake sources save through the same `/api/tools` endpoint.

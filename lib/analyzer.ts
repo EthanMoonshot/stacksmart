@@ -11,6 +11,7 @@ import {
 import {
   alternativeBundles,
   getBestAlternative,
+  getFallbackSuggestion,
   lookupTool,
   normalizeToolName,
 } from "@/lib/recommendations-db";
@@ -38,6 +39,33 @@ function getEffortLevel(type: Recommendation["type"], toolCount: number): Recomm
   if (type === "review") return "Low";
   if (type === "consolidate") return toolCount >= 3 ? "High" : "Medium";
   return "Medium";
+}
+
+function capRecommendationSavings(monthlySavings: number, currentMonthlyCost?: number) {
+  if (!currentMonthlyCost || currentMonthlyCost <= 0) return roundCurrency(Math.max(0, monthlySavings));
+  return roundCurrency(Math.min(Math.max(0, monthlySavings), currentMonthlyCost * 0.7));
+}
+
+function calculateConservativeProjectedSavings(recommendations: Recommendation[], monthlySpend: number) {
+  const maxTotalSavings = roundCurrency(monthlySpend * 0.7);
+  const selected = new Set<string>();
+  let total = 0;
+
+  const prioritized = [...recommendations].sort((a, b) => b.monthlySavings - a.monthlySavings);
+
+  for (const recommendation of prioritized) {
+    const normalizedAffectedTools = recommendation.affectedTools.map((tool) => normalizeToolName(tool));
+    if (normalizedAffectedTools.some((tool) => selected.has(tool))) continue;
+
+    const remainingCapacity = maxTotalSavings - total;
+    if (remainingCapacity <= 0) break;
+
+    total += Math.min(recommendation.monthlySavings, remainingCapacity);
+    normalizedAffectedTools.forEach((tool) => selected.add(tool));
+  }
+
+  if (total > monthlySpend) return maxTotalSavings;
+  return roundCurrency(Math.min(total, maxTotalSavings));
 }
 
 function buildOverlapGroups(analyzedTools: AnalyzedTool[]) {
@@ -195,7 +223,10 @@ export function analyzeStack(stack: ToolStack): AnalysisResult {
       .filter((tool) => affectedTools.some((name) => normalizeToolName(name) === normalizeToolName(tool.toolName)))
       .reduce((sum, tool) => sum + tool.monthlyCost, 0);
 
-    const monthlySavings = roundCurrency(Math.max(0, currentMonthlySpend - bundle.monthlyCost));
+    const monthlySavings = capRecommendationSavings(
+      roundCurrency(Math.max(0, currentMonthlySpend - bundle.monthlyCost)),
+      currentMonthlySpend
+    );
     if (monthlySavings <= 0) continue;
 
     const key = `bundle:${bundle.name}:${affectedTools.sort().join(",")}`;
@@ -223,7 +254,7 @@ export function analyzeStack(stack: ToolStack): AnalysisResult {
   for (const tool of analyzedTools) {
     const bestAlternative = getBestAlternative(tool.toolName);
     if (bestAlternative && bestAlternative.monthlyCost < tool.monthlyCost) {
-      const monthlySavings = roundCurrency(tool.monthlyCost - bestAlternative.monthlyCost);
+      const monthlySavings = capRecommendationSavings(tool.monthlyCost - bestAlternative.monthlyCost, tool.monthlyCost);
       const key = `switch:${tool.toolName}:${bestAlternative.name}`;
       if (!seenRecommendationKeys.has(key)) {
         seenRecommendationKeys.add(key);
@@ -250,21 +281,31 @@ export function analyzeStack(stack: ToolStack): AnalysisResult {
     if ((tool.status === "redundant" || tool.status === "underused") && tool.overlapsWith.length > 0) {
       const key = `review:${tool.toolName}`;
       if (!seenRecommendationKeys.has(key)) {
-        const monthlySavings = roundCurrency(tool.monthlyCost * 0.5);
+        const specificAlternative = getBestAlternative(tool.toolName);
+        const fallback = getFallbackSuggestion(tool.toolName, tool.category, tool.monthlyCost * 0.7);
+        const monthlySavings = capRecommendationSavings(tool.monthlyCost * 0.35, tool.monthlyCost);
         seenRecommendationKeys.add(key);
         recommendations.push({
           id: key,
           type: "review",
-          title: `Review ${tool.toolName}`,
-          description: `${tool.toolName} overlaps with ${tool.overlapsWith.join(", ")}. Confirm adoption before renewal.`,
+          title: specificAlternative
+            ? `Review ${tool.toolName} vs ${specificAlternative.name}`
+            : `${fallback.action} for ${tool.toolName}`,
+          description: specificAlternative
+            ? `${tool.toolName} overlaps with ${tool.overlapsWith.join(", ")}. ${specificAlternative.name} is the most credible lower-cost option to validate before renewal.`
+            : `${tool.toolName} overlaps with ${tool.overlapsWith.join(", ")}. ${fallback.description}`,
           monthlySavings,
           annualSavings: roundCurrency(monthlySavings * 12),
           affectedTools: [tool.toolName],
+          alternative: specificAlternative?.name,
           currentTool: tool.toolName,
           currentMonthlyCost: tool.monthlyCost,
+          alternativeMonthlyCost: specificAlternative?.monthlyCost,
           effortLevel: "Low",
-          migrationNotes: `Validate actual usage, owner, and renewal date. If overlap is confirmed, retire ${tool.toolName} or reduce seat count.`,
-          whyBetterForSmbs: "Eliminates duplicate spend without forcing a full platform migration.",
+          migrationNotes: specificAlternative
+            ? specificAlternative.migrationNotes
+            : `Validate actual usage, owner, and renewal date, then benchmark credible SMB-friendly replacements before renewing ${tool.toolName}.`,
+          whyBetterForSmbs: specificAlternative?.whyBetterForSmbs || "Keeps recommendations specific and actionable instead of defaulting to a generic review note.",
           priority: getPriority(monthlySavings),
         });
       }
@@ -274,7 +315,7 @@ export function analyzeStack(stack: ToolStack): AnalysisResult {
   recommendations.sort((a, b) => b.monthlySavings - a.monthlySavings);
 
   const monthlySpend = roundCurrency(analyzedTools.reduce((sum, tool) => sum + tool.monthlyCost, 0));
-  const potentialMonthlySavings = roundCurrency(recommendations.reduce((sum, rec) => sum + rec.monthlySavings, 0));
+  const potentialMonthlySavings = calculateConservativeProjectedSavings(recommendations, monthlySpend);
 
   return {
     id: `analysis_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`,

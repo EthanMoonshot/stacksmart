@@ -27,13 +27,20 @@ function roundCurrency(value: number) {
   return Math.round(value * 100) / 100;
 }
 
+function capProjectedSavings(projectedSavings: number, monthlySpend: number) {
+  if (monthlySpend <= 0) return 0;
+  const realisticCeiling = roundCurrency(monthlySpend * 0.7);
+  if (projectedSavings > monthlySpend) return realisticCeiling;
+  return roundCurrency(Math.min(projectedSavings, realisticCeiling));
+}
+
 export function buildReportViewModel(analysis: AnalysisResult): ReportViewModel {
   const prioritizedRecommendations = [...analysis.recommendations].sort((a, b) => b.monthlySavings - a.monthlySavings);
   const quickWins = prioritizedRecommendations
     .filter((item) => item.effortLevel === "Low" || item.priority === "high")
     .slice(0, 4);
   const highestSavings = prioritizedRecommendations.slice(0, 3);
-  const monthlyProjection = analysis.potentialMonthlySavings;
+  const monthlyProjection = capProjectedSavings(analysis.potentialMonthlySavings, analysis.monthlySpend);
   const annualProjection = roundCurrency(monthlyProjection * 12);
   const threeYearProjection = roundCurrency(annualProjection * 3);
   const roiPercentage = analysis.monthlySpend > 0 ? roundCurrency((monthlyProjection / analysis.monthlySpend) * 100) : 0;
