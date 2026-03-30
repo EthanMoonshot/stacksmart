@@ -44,9 +44,9 @@ export default function DashboardPage() {
           <Link href="/upload" className="btn-primary">
             Upload Billing Data
           </Link>
-          <button className="btn-secondary text-sm">
+          <Link href="/report" className="btn-secondary text-sm">
             See a sample report
-          </button>
+          </Link>
         </div>
       </div>
 

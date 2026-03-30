@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="border-t border-dark-800 py-12">
@@ -13,8 +15,8 @@ export default function Footer() {
 
           {/* Links */}
           <div className="flex items-center gap-6 text-dark-500 text-sm">
-            <a href="#" className="hover:text-dark-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-dark-300 transition-colors">Terms of Service</a>
+            <Link href="/privacy" className="hover:text-dark-300 transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-dark-300 transition-colors">Terms of Service</Link>
             <a href="mailto:hello@stacksmart.io" className="hover:text-dark-300 transition-colors">Contact</a>
           </div>
 

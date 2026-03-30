@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import AppHeader from "@/components/dashboard/AppHeader";
 
@@ -91,17 +94,40 @@ const priorityColors: Record<string, string> = {
 const totalMonthlySavings = recommendations.reduce((s, r) => s + r.monthlySavings, 0);
 
 export default function ReportPage() {
+  const [toast, setToast] = useState<string | null>(null);
+
+  const showToast = (message: string) => {
+    setToast(message);
+    setTimeout(() => setToast(null), 3000);
+  };
+
   return (
     <div>
+      {/* Toast */}
+      {toast && (
+        <div className="fixed top-6 right-6 z-50 bg-dark-800 border border-dark-700 text-white px-5 py-3 rounded-lg shadow-xl text-sm flex items-center gap-2 animate-fade-in">
+          <svg className="w-4 h-4 text-brand-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          {toast}
+        </div>
+      )}
+
       <AppHeader
         title="Savings Report"
         subtitle="Generated: March 30, 2026 · Based on 14 tools, $1,962/mo spend"
         action={
           <div className="flex items-center gap-2">
-            <button className="btn-secondary text-sm py-2 px-4">
+            <button
+              onClick={() => showToast("Download PDF — coming soon!")}
+              className="btn-secondary text-sm py-2 px-4"
+            >
               Download PDF
             </button>
-            <button className="btn-primary text-sm py-2 px-4">
+            <button
+              onClick={() => showToast("Share Report — coming soon!")}
+              className="btn-primary text-sm py-2 px-4"
+            >
               Share Report
             </button>
           </div>
@@ -191,8 +217,8 @@ export default function ReportPage() {
       <div className="mt-8 p-4 rounded-lg bg-dark-900 border border-dark-800 text-center">
         <p className="text-dark-400 text-sm">
           Need help implementing these changes?{" "}
-          <a href="#" className="text-brand-400 hover:text-brand-300">
-            Book a 30-min implementation call →
+          <a href="mailto:hello@stacksmart.io" className="text-brand-400 hover:text-brand-300">
+            Contact us →
           </a>
         </p>
       </div>
