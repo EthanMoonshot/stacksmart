@@ -1,8 +1,8 @@
 # StackSmart Memory
 
 ## Current Phase
-- Phase 2 data intake implementation started on 2026-03-30.
-- Phase 1 QA fixes completed first and committed separately.
+- Phase 4 reporting build completed on 2026-03-30, including live report rendering, PDF export, and shareable report snapshots.
+- Recommendation engine QA fixes were completed alongside the report work to improve alternative coverage and tool-name overlap detection.
 
 ## Architecture Decisions
 - Data intake is implemented inside `app/upload/page.tsx` as a tabbed single-screen flow for CSV upload, manual entry, and email-forwarding setup to keep onboarding friction low.
@@ -11,12 +11,16 @@
 - Supabase was not configured in the repo, so local JSON fallback was used as the working default for this phase.
 - Shared SaaS tool types and enumerations live in `lib/types.ts`.
 - Sample data is centralized in `lib/sample-data.ts` so the demo path and future seeded experiences can reuse one source of truth.
+- Reporting view models and shareable snapshots are handled in `lib/report.ts`, with snapshots stored under `data/reports/*.json`.
+- PDF export uses `html2canvas` + `jspdf` client-side to keep implementation lightweight and avoid server-side PDF infrastructure.
+- Recommendations are now driven by tool-specific alternative records in `lib/recommendations-db.ts`, with alias-aware tool matching for overlap detection and switch recommendations.
 
 ## Patterns / Notes
 - All intake sources save through the same `/api/tools` endpoint.
 - CSV flow validates required columns (`tool name`, `cost`, `billing frequency`, `category`) and surfaces row-level errors before save.
 - Manual entry uses the same `SaaSTool` shape as CSV and sample imports.
-- Report page uses lightweight client-side toast state for "coming soon" actions.
+- Report UI is rendered from `data/analysis.json` via `readLatestAnalysis()` and `buildReportViewModel()` rather than static demo content.
+- Shared report URLs are immutable snapshots so follow-up analyses do not mutate already-shared reports.
 
 ## Known Follow-ups
 - If Supabase is added later, swap the API route persistence layer behind the same route contract rather than changing the upload UI.

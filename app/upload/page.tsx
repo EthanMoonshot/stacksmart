@@ -69,7 +69,13 @@ export default function UploadPage() {
   const handleFileSelect = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const file = e.target.files?.[0];
-      if (file) processCSV(file);
+      if (!file) return;
+      if (!file.name.endsWith(".csv")) {
+        showToast("Please upload a .csv file.", "error");
+        e.target.value = "";
+        return;
+      }
+      processCSV(file);
     },
     [processCSV]
   );
@@ -88,9 +94,21 @@ export default function UploadPage() {
         showToast(data.message || "Failed to save.", "error");
         return;
       }
+      const analyzeRes = await fetch("/api/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ stackId: data.stack.id }),
+      });
+
+      if (!analyzeRes.ok) {
+        const analyzeData = await analyzeRes.json().catch(() => ({}));
+        showToast(analyzeData.message || "Saved tools, but analysis failed.", "error");
+        return;
+      }
+
       showToast(`Saved ${tools.length} tools successfully!`);
-      // Navigate to dashboard after brief delay so toast is visible
-      setTimeout(() => router.push("/dashboard"), 1200);
+      // Navigate to analysis after brief delay so toast is visible
+      setTimeout(() => router.push(`/analysis?stack=${data.stack.id}`), 1200);
     } catch {
       showToast("Network error. Please try again.", "error");
     } finally {

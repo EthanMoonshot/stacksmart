@@ -1,0 +1,86 @@
+[
+  {
+    "id": "stack_1774865006640_ewdcaar3p",
+    "tools": [
+      {
+        "id": "qa1",
+        "toolName": "Slack",
+        "cost": 87.5,
+        "billingFrequency": "monthly",
+        "category": "Communication"
+      }
+    ],
+    "createdAt": "2026-03-30T10:03:26.640Z",
+    "source": "csv"
+  },
+  {
+    "id": "stack_1774866090104_9tuedz5al",
+    "tools": [
+      {
+        "id": "t1",
+        "toolName": "Slack",
+        "cost": 120,
+        "billingFrequency": "monthly",
+        "category": "Communication"
+      },
+      {
+        "id": "t2",
+        "toolName": "Microsoft Teams",
+        "cost": 72,
+        "billingFrequency": "annually",
+        "category": "Communication"
+      },
+      {
+        "id": "t3",
+        "toolName": "Zoom",
+        "cost": 300,
+        "billingFrequency": "quarterly",
+        "category": "Communication"
+      },
+      {
+        "id": "t4",
+        "toolName": "Asana",
+        "cost": 132,
+        "billingFrequency": "annually",
+        "category": "Project Management"
+      },
+      {
+        "id": "t5",
+        "toolName": "Jira",
+        "cost": 77.5,
+        "billingFrequency": "monthly",
+        "category": "Project Management"
+      },
+      {
+        "id": "t6",
+        "toolName": "Notion",
+        "cost": 96,
+        "billingFrequency": "annually",
+        "category": "Documentation"
+      },
+      {
+        "id": "t7",
+        "toolName": "Confluence",
+        "cost": 69,
+        "billingFrequency": "annually",
+        "category": "Documentation"
+      },
+      {
+        "id": "t8",
+        "toolName": "Intercom",
+        "cost": 74,
+        "billingFrequency": "monthly",
+        "category": "Customer Support"
+      },
+      {
+        "id": "t9",
+        "toolName": "1Password",
+        "cost": 95.88,
+        "billingFrequency": "annually",
+        "category": "Security"
+      }
+    ],
+    "createdAt": "2026-03-30T10:21:30.104Z",
+    "source": "manual"
+  }
+]
