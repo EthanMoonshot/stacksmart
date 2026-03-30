@@ -65,12 +65,15 @@ export default function WaitlistForm() {
         </p>
 
         {status === "success" ? (
-          <div className="card border-green-500/30 bg-green-500/5 text-center py-10">
-            <div className="text-5xl mb-4">🎉</div>
-            <h3 className="text-xl font-bold text-white mb-2">You're on the list!</h3>
+          <div className="card border-green-500/30 bg-green-500/5 py-10 text-center">
+            <div className="mb-4 text-5xl">🎉</div>
+            <h3 className="mb-2 text-xl font-bold text-white">You're on the list!</h3>
             <p className="text-dark-400">
-              We'll reach out as soon as early access opens. Keep an eye on your inbox.
+              We&apos;ve sent a welcome email. You can also jump straight into the onboarding flow now.
             </p>
+            <a href="/welcome" className="btn-primary mt-6 inline-block text-sm">
+              Continue to welcome page
+            </a>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="card space-y-4 text-left">

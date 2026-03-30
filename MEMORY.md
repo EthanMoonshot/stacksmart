@@ -3,9 +3,14 @@
 ## Current Phase
 - Phase 4 reporting build completed on 2026-03-30, including live report rendering, PDF export, and shareable report snapshots.
 - Phase 4 QA fixes completed on 2026-03-30 for conservative savings math, richer recommendation coverage, and Confluence-specific alternative lookup.
+- Phase 5 MVP build completed on 2026-03-30 with Stripe test-mode checkout/webhook routes, local subscription tracking, a dedicated pricing page, onboarding flow, Resend email hooks, and UI polish/loading-state upgrades.
 
 ## Architecture Decisions
 - Data intake is implemented inside `app/upload/page.tsx` as a tabbed single-screen flow for CSV upload, manual entry, and email-forwarding setup to keep onboarding friction low.
+- Payments use Stripe Checkout in test mode with local JSON persistence (`data/subscriptions.json`) instead of a database so pricing and plan-state flows can be validated before introducing auth/account storage.
+- Subscription state is read server-side via `lib/subscriptions.ts`, allowing dashboard/navigation/pricing surfaces to show a current plan without adding client-side billing state management.
+- Transactional email is abstracted behind `lib/email.ts` so welcome and report-ready notifications can use Resend when configured and fail safely when API keys are absent.
+- Onboarding is implemented as a lightweight client component (`components/onboarding/OnboardingFlow.tsx`) instead of a full workflow engine to keep MVP scope tight while still giving new users a guided setup path.
 - CSV parsing is handled client-side via `lib/csv-parser.ts` using a lightweight custom parser and header normalization instead of adding a CSV dependency.
 - Persistence is handled through `app/api/tools/route.ts` with a local JSON store at `data/tools.json`.
 - Supabase was not configured in the repo, so local JSON fallback was used as the working default for this phase.
@@ -25,4 +30,5 @@
 
 ## Known Follow-ups
 - If Supabase is added later, swap the API route persistence layer behind the same route contract rather than changing the upload UI.
-- Dashboard and analysis pages still use mostly static/sample presentation data; next step is wiring saved intake data into downstream analysis/reporting.
+- Billing is still single-workspace/demo-user scoped; real account-level subscriptions will need auth-aware customer IDs and webhook reconciliation.
+- Stripe checkout is ready for test mode, but live deployment still requires valid Stripe/Resend credentials and an externally reachable webhook endpoint.
