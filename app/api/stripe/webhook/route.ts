@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { SubscriptionRecord, upsertSubscription } from "@/lib/subscriptions";
 
+// TODO: Protect webhook route with Stripe signature checks + upstream rate limiting at the edge.
+const noStoreHeaders = { "Cache-Control": "no-store, max-age=0" };
+
 function getStripe() {
   const secretKey = process.env.STRIPE_SECRET_KEY;
   if (!secretKey) {
@@ -18,7 +21,7 @@ export async function POST(req: NextRequest) {
     const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
     if (!signature || !webhookSecret) {
-      return NextResponse.json({ message: "Missing Stripe webhook configuration." }, { status: 400 });
+      return NextResponse.json({ message: "Missing Stripe webhook configuration." }, { status: 400, headers: noStoreHeaders });
     }
 
     const body = await req.text();
@@ -75,9 +78,9 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    return NextResponse.json({ received: true });
+    return NextResponse.json({ received: true }, { headers: noStoreHeaders });
   } catch (error) {
     console.error("[Stripe Webhook]", error);
-    return NextResponse.json({ message: "Webhook handling failed." }, { status: 400 });
+    return NextResponse.json({ message: "Webhook handling failed." }, { status: 400, headers: noStoreHeaders });
   }
 }

@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import AppHeader from "@/components/dashboard/AppHeader";
 import ReportActions from "@/components/report/ReportActions";
 import ReportView from "@/components/report/ReportView";
 import { readLatestAnalysis } from "@/lib/analyzer";
 import { buildReportViewModel } from "@/lib/report";
 import Link from "next/link";
+import { buildMetadata } from "@/lib/site";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Savings Report",
+  description: "Review StackSmart savings recommendations, export a PDF, and share your report.",
+  path: "/report",
+});
 
 export default async function ReportPage({
   searchParams,

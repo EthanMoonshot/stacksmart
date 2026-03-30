@@ -1,0 +1,22 @@
+# StackSmart Launch Checklist
+
+- [ ] Domain purchased
+- [ ] DNS configured for Vercel
+- [ ] Production Vercel project connected
+- [ ] `NEXT_PUBLIC_APP_URL` configured
+- [ ] Stripe live keys configured
+- [ ] Stripe webhook endpoint configured
+- [ ] Resend API key configured
+- [ ] Email sending domain verified
+- [ ] Plausible domain created and verified
+- [ ] Sentry DSN configured
+- [ ] Custom domain configured
+- [ ] Security headers verified in production
+- [ ] Analytics verified
+- [ ] Error monitoring verified
+- [ ] Waitlist signup tested in production
+- [ ] Upload → analysis → report flow tested
+- [ ] Checkout flow tested with live products
+- [ ] Beta testing completed
+- [ ] Final QA passed
+- [ ] Launch announcement assets prepared

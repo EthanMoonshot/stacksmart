@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import AppHeader from "@/components/dashboard/AppHeader";
 import { readLatestAnalysis } from "@/lib/analyzer";
 import { AnalysisResult } from "@/lib/types";
+import { buildMetadata } from "@/lib/site";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Analysis Results",
+  description: "Explore SaaS stack health, overlap, category spend, and cost-saving opportunities.",
+  path: "/analysis",
+});
 
 const statusColors: Record<string, string> = {
   active: "text-green-400 bg-green-500/10 border-green-500/20",

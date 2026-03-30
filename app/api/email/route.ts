@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendProductEmail } from "@/lib/email";
 
+// TODO: Add durable rate limiting before launch (e.g. Upstash Redis / Vercel KV).
+const noStoreHeaders = { "Cache-Control": "no-store, max-age=0" };
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -8,7 +11,7 @@ export async function POST(req: NextRequest) {
     const email = body?.email as string | undefined;
 
     if (!type || !email) {
-      return NextResponse.json({ message: "type and email are required." }, { status: 400 });
+      return NextResponse.json({ message: "type and email are required." }, { status: 400, headers: noStoreHeaders });
     }
 
     if (type === "welcome") {
@@ -21,7 +24,7 @@ export async function POST(req: NextRequest) {
         ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/welcome`,
       });
 
-      return NextResponse.json({ sent: true, result });
+      return NextResponse.json({ sent: true, result }, { headers: noStoreHeaders });
     }
 
     const result = await sendProductEmail({
@@ -33,9 +36,9 @@ export async function POST(req: NextRequest) {
       ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/report`,
     });
 
-    return NextResponse.json({ sent: true, result });
+    return NextResponse.json({ sent: true, result }, { headers: noStoreHeaders });
   } catch (error) {
     console.error("[Email API]", error);
-    return NextResponse.json({ message: "Failed to send email." }, { status: 500 });
+    return NextResponse.json({ message: "Failed to send email." }, { status: 500, headers: noStoreHeaders });
   }
 }

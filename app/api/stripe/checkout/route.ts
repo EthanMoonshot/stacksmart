@@ -3,6 +3,9 @@ import Stripe from "stripe";
 import { getPlanById } from "@/lib/pricing";
 import { DEFAULT_CUSTOMER_ID, upsertSubscription } from "@/lib/subscriptions";
 
+// TODO: Add durable rate limiting before launch (e.g. Upstash Redis / Vercel KV).
+const noStoreHeaders = { "Cache-Control": "no-store, max-age=0" };
+
 function getStripe() {
   const secretKey = process.env.STRIPE_SECRET_KEY;
   if (!secretKey) {
@@ -19,12 +22,12 @@ export async function POST(req: NextRequest) {
     const customerEmail = (body?.email as string | undefined) || "demo@stacksmart.io";
 
     if (!planId) {
-      return NextResponse.json({ message: "planId is required." }, { status: 400 });
+      return NextResponse.json({ message: "planId is required." }, { status: 400, headers: noStoreHeaders });
     }
 
     const plan = getPlanById(planId);
     if (!plan) {
-      return NextResponse.json({ message: "Unknown pricing plan." }, { status: 404 });
+      return NextResponse.json({ message: "Unknown pricing plan." }, { status: 404, headers: noStoreHeaders });
     }
 
     const stripe = getStripe();
@@ -73,12 +76,12 @@ export async function POST(req: NextRequest) {
       updatedAt: new Date().toISOString(),
     });
 
-    return NextResponse.json({ url: session.url, sessionId: session.id });
+    return NextResponse.json({ url: session.url, sessionId: session.id }, { headers: noStoreHeaders });
   } catch (error) {
     console.error("[Stripe Checkout]", error);
     return NextResponse.json(
       { message: error instanceof Error ? error.message : "Unable to create checkout session." },
-      { status: 500 }
+      { status: 500, headers: noStoreHeaders }
     );
   }
 }

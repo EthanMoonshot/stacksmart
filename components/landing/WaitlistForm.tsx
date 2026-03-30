@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 const companySizes = [
   "1-10 employees",
@@ -36,6 +37,7 @@ export default function WaitlistForm() {
         throw new Error(data.message || "Something went wrong");
       }
 
+      trackEvent("waitlist_signup", { companySize, hasCompanyName: Boolean(companyName) });
       setStatus("success");
       setEmail("");
       setCompanySize("");

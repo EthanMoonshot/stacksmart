@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { buildMetadata } from "@/lib/site";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Checkout Cancelled",
+  description: "Your StackSmart checkout was cancelled and no payment was taken.",
+  path: "/cancel",
+});
 
 export default async function CancelPage({
   searchParams,

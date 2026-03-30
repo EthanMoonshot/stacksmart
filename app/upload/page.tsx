@@ -7,6 +7,7 @@ import AppHeader from "@/components/dashboard/AppHeader";
 import { SaaSTool, CATEGORIES, BILLING_FREQUENCIES } from "@/lib/types";
 import { parseCSV, ParseError } from "@/lib/csv-parser";
 import { sampleTools } from "@/lib/sample-data";
+import { trackEvent } from "@/lib/analytics";
 
 type Tab = "csv" | "manual" | "email";
 
@@ -106,6 +107,7 @@ export default function UploadPage() {
         return;
       }
 
+      trackEvent("report_generated", { source, toolCount: tools.length });
       showToast(`Saved ${tools.length} tools successfully!`);
       // Navigate to analysis after brief delay so toast is visible
       setTimeout(() => router.push(`/analysis?stack=${data.stack.id}`), 1200);

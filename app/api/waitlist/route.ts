@@ -3,6 +3,10 @@ import { promises as fs } from "fs";
 import path from "path";
 import { sendProductEmail } from "@/lib/email";
 
+// TODO: Add durable rate limiting before launch (e.g. Upstash Redis / Vercel KV).
+const noStoreHeaders = { "Cache-Control": "no-store, max-age=0" };
+const shortCacheHeaders = { "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600" };
+
 interface WaitlistEntry {
   id: string;
   email: string;
@@ -34,19 +38,19 @@ export async function POST(req: NextRequest) {
     const { email, companySize, companyName } = body;
 
     if (!email || !companySize) {
-      return NextResponse.json({ message: "Email and company size are required" }, { status: 400 });
+      return NextResponse.json({ message: "Email and company size are required" }, { status: 400, headers: noStoreHeaders });
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.json({ message: "Please enter a valid email address" }, { status: 400 });
+      return NextResponse.json({ message: "Please enter a valid email address" }, { status: 400, headers: noStoreHeaders });
     }
 
     const waitlist = await readWaitlist();
     const existing = waitlist.find((entry) => entry.email.toLowerCase() === email.toLowerCase());
 
     if (existing) {
-      return NextResponse.json({ message: "You're already on the waitlist!", alreadyExists: true }, { status: 200 });
+      return NextResponse.json({ message: "You're already on the waitlist!", alreadyExists: true }, { status: 200, headers: noStoreHeaders });
     }
 
     const newEntry: WaitlistEntry = {
@@ -70,18 +74,18 @@ export async function POST(req: NextRequest) {
       ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/welcome`,
     });
 
-    return NextResponse.json({ message: "Successfully joined the waitlist!", position: waitlist.length }, { status: 201 });
+    return NextResponse.json({ message: "Successfully joined the waitlist!", position: waitlist.length }, { status: 201, headers: noStoreHeaders });
   } catch (error) {
     console.error("[Waitlist] Error:", error);
-    return NextResponse.json({ message: "An unexpected error occurred. Please try again." }, { status: 500 });
+    return NextResponse.json({ message: "An unexpected error occurred. Please try again." }, { status: 500, headers: noStoreHeaders });
   }
 }
 
 export async function GET() {
   try {
     const waitlist = await readWaitlist();
-    return NextResponse.json({ count: waitlist.length });
+    return NextResponse.json({ count: waitlist.length }, { headers: shortCacheHeaders });
   } catch {
-    return NextResponse.json({ count: 0 });
+    return NextResponse.json({ count: 0 }, { headers: shortCacheHeaders });
   }
 }

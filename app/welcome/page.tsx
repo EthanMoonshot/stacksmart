@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import OnboardingFlow from "@/components/onboarding/OnboardingFlow";
+import { buildMetadata } from "@/lib/site";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Welcome",
+  description: "Get started with StackSmart onboarding and upload your SaaS billing data in minutes.",
+  path: "/welcome",
+});
 
 export default function WelcomePage() {
   return (

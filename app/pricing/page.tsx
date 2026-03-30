@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import PricingCards from "@/components/pricing/PricingCards";
 import { getCurrentSubscription } from "@/lib/subscriptions";
+import { buildMetadata } from "@/lib/site";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Pricing",
+  description: "Review StackSmart plans and start a secure Stripe checkout for SaaS spend optimization.",
+  path: "/pricing",
+});
 
 export default async function PricingPage() {
   const subscription = await getCurrentSubscription();

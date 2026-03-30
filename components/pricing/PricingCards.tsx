@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { getPlanGroup } from "@/lib/pricing";
+import { trackEvent } from "@/lib/analytics";
 
 const planFamilies = [
   {
@@ -73,6 +74,7 @@ export default function PricingCards({ currentPlanId }: { currentPlanId?: string
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Unable to start checkout.");
+      trackEvent("checkout_started", { planId, billingCycle: annual ? "annual" : "monthly" });
       window.location.href = data.url;
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unable to start checkout.");

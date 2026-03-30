@@ -14,7 +14,9 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          <div className="flex items-center gap-6 text-dark-500 text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-dark-500 text-sm">
+            <Link href="/pricing" className="hover:text-dark-300 transition-colors">Pricing</Link>
+            <Link href="/welcome" className="hover:text-dark-300 transition-colors">Get Started</Link>
             <Link href="/privacy" className="hover:text-dark-300 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-dark-300 transition-colors">Terms of Service</Link>
             <a href="mailto:hello@stacksmart.io" className="hover:text-dark-300 transition-colors">Contact</a>

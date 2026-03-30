@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import AppHeader from "@/components/dashboard/AppHeader";
 import { readLatestAnalysis } from "@/lib/analyzer";
 import { getCurrentSubscription } from "@/lib/subscriptions";
+import { buildMetadata } from "@/lib/site";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Dashboard",
+  description: "Track your current SaaS spend, recommendations, and StackSmart plan status.",
+  path: "/dashboard",
+});
 
 function formatCurrency(value: number) {
   return `$${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;

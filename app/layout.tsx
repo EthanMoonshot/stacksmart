@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import PlausibleProvider from "@/components/analytics/PlausibleProvider";
+import AppProviders from "@/components/analytics/AppProviders";
+import { buildMetadata, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "StackSmart — AI-Powered SaaS Stack Optimizer",
-  description: "StackSmart analyzes your SaaS spending and tells you exactly what to cut, consolidate, or renegotiate — saving the average SMB $8,000/year.",
+  ...buildMetadata(),
   keywords: ["SaaS optimization", "software spending", "SaaS audit", "reduce software costs", "SMB SaaS"],
-  openGraph: {
-    title: "StackSmart — AI-Powered SaaS Stack Optimizer",
-    description: "Your SaaS stack is bleeding money. We'll find it.",
-    type: "website",
-  },
+  applicationName: siteConfig.name,
+  category: "business",
 };
 
 export default function RootLayout({
@@ -20,7 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="min-h-screen bg-dark-950 text-dark-50 antialiased">
-        {children}
+        <PlausibleProvider />
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );

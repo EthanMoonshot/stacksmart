@@ -4,6 +4,7 @@
 - Phase 4 reporting build completed on 2026-03-30, including live report rendering, PDF export, and shareable report snapshots.
 - Phase 4 QA fixes completed on 2026-03-30 for conservative savings math, richer recommendation coverage, and Confluence-specific alternative lookup.
 - Phase 5 MVP build completed on 2026-03-30 with Stripe test-mode checkout/webhook routes, local subscription tracking, a dedicated pricing page, onboarding flow, Resend email hooks, and UI polish/loading-state upgrades.
+- Phase 6 launch prep completed on 2026-03-30 with SEO metadata, sitemap/robots, JSON-LD, Plausible tracking hooks, Sentry-style placeholder monitoring, global error handling, security headers, launch docs, icons, and legal-page upgrades.
 
 ## Architecture Decisions
 - Data intake is implemented inside `app/upload/page.tsx` as a tabbed single-screen flow for CSV upload, manual entry, and email-forwarding setup to keep onboarding friction low.
@@ -20,6 +21,8 @@
 - PDF export uses `html2canvas` + `jspdf` client-side to keep implementation lightweight and avoid server-side PDF infrastructure.
 - Recommendations are now driven by tool-specific alternative records in `lib/recommendations-db.ts`, with alias-aware tool matching for overlap detection and switch recommendations.
 - Savings projections are intentionally conservative: overlapping recommendations are deduped at the stack level, individual recommendation savings are capped relative to current spend, and total projected savings cannot exceed 70% of monthly spend.
+- Site-wide metadata now flows through `lib/site.ts` so SEO, Open Graph, Twitter cards, sitemap, and robots rules stay consistent across launch surfaces.
+- Analytics and monitoring are intentionally lightweight placeholders (`lib/analytics.ts`, `lib/sentry.ts`) so production keys and vendor packages can be swapped in later without rewriting page components.
 
 ## Patterns / Notes
 - All intake sources save through the same `/api/tools` endpoint.
