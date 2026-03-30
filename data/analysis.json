@@ -340,7 +340,7 @@
     {
       "id": "review:Slack",
       "type": "review",
-      "title": "Review Slack vs Google Chat",
+      "title": "Replace Slack with Google Chat",
       "description": "Slack overlaps with Microsoft Teams. Google Chat is the most credible lower-cost option to validate before renewal.",
       "monthlySavings": 42,
       "annualSavings": 504,
@@ -359,7 +359,7 @@
     {
       "id": "review:Zoom",
       "type": "review",
-      "title": "Review Zoom vs Google Meet",
+      "title": "Replace Zoom with Google Meet",
       "description": "Zoom overlaps with Microsoft Teams. Google Meet is the most credible lower-cost option to validate before renewal.",
       "monthlySavings": 35,
       "annualSavings": 420,
@@ -378,7 +378,7 @@
     {
       "id": "review:Jira",
       "type": "review",
-      "title": "Review Jira vs ClickUp",
+      "title": "Replace Jira with ClickUp",
       "description": "Jira overlaps with Asana. ClickUp is the most credible lower-cost option to validate before renewal.",
       "monthlySavings": 27.13,
       "annualSavings": 325.56,
@@ -473,7 +473,7 @@
     {
       "id": "review:Asana",
       "type": "review",
-      "title": "Review Asana vs ClickUp",
+      "title": "Replace Asana with ClickUp",
       "description": "Asana overlaps with Jira. ClickUp is the most credible lower-cost option to validate before renewal.",
       "monthlySavings": 3.85,
       "annualSavings": 46.2,
@@ -492,7 +492,7 @@
     {
       "id": "review:Notion",
       "type": "review",
-      "title": "Review Notion vs Google Docs",
+      "title": "Replace Notion with Google Docs",
       "description": "Notion overlaps with Confluence, Asana. Google Docs is the most credible lower-cost option to validate before renewal.",
       "monthlySavings": 2.8,
       "annualSavings": 33.6,
@@ -511,7 +511,7 @@
     {
       "id": "review:Microsoft Teams",
       "type": "review",
-      "title": "Review Microsoft Teams vs Slack (free tier)",
+      "title": "Replace Microsoft Teams with Slack (free tier)",
       "description": "Microsoft Teams overlaps with Slack, Zoom. Slack (free tier) is the most credible lower-cost option to validate before renewal.",
       "monthlySavings": 2.1,
       "annualSavings": 25.2,
@@ -530,7 +530,7 @@
     {
       "id": "review:Confluence",
       "type": "review",
-      "title": "Review Confluence vs Notion",
+      "title": "Replace Confluence with Notion",
       "description": "Confluence overlaps with Notion. Notion is the most credible lower-cost option to validate before renewal.",
       "monthlySavings": 2.01,
       "annualSavings": 24.12,

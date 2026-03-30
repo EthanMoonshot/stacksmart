@@ -289,7 +289,7 @@ export function analyzeStack(stack: ToolStack): AnalysisResult {
           id: key,
           type: "review",
           title: specificAlternative
-            ? `Review ${tool.toolName} vs ${specificAlternative.name}`
+            ? `Replace ${tool.toolName} with ${specificAlternative.name}`
             : `${fallback.action} for ${tool.toolName}`,
           description: specificAlternative
             ? `${tool.toolName} overlaps with ${tool.overlapsWith.join(", ")}. ${specificAlternative.name} is the most credible lower-cost option to validate before renewal.`
