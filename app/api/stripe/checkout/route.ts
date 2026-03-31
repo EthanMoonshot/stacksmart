@@ -19,10 +19,14 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const planId = body?.planId as string | undefined;
-    const customerEmail = (body?.email as string | undefined) || "demo@stacksmart.io";
+    const customerEmail = typeof body?.email === "string" ? body.email.trim() : "";
 
     if (!planId) {
       return NextResponse.json({ message: "planId is required." }, { status: 400, headers: noStoreHeaders });
+    }
+
+    if (!customerEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail)) {
+      return NextResponse.json({ message: "A valid work email is required to continue to checkout." }, { status: 400, headers: noStoreHeaders });
     }
 
     const plan = getPlanById(planId);
@@ -47,7 +51,7 @@ export async function POST(req: NextRequest) {
             unit_amount: plan.price * 100,
             recurring: plan.mode === "subscription" ? { interval: plan.interval === "year" ? "year" : "month" } : undefined,
             product_data: {
-              name: `StackSmart ${plan.name}`,
+              name: `Distill ${plan.name}`,
               description: plan.description,
             },
           },
@@ -55,6 +59,7 @@ export async function POST(req: NextRequest) {
       ],
       metadata: {
         customerId: DEFAULT_CUSTOMER_ID,
+        customerEmail,
         planId: plan.id,
         planName: plan.name,
         billingInterval: plan.interval,

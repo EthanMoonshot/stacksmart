@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Checkout Success",
-  description: "Your StackSmart checkout completed successfully.",
+  description: "Your Distill checkout completed successfully.",
   path: "/success",
 });
 
@@ -19,7 +19,7 @@ export default function SuccessPage() {
         </div>
         <h1 className="text-3xl font-bold text-white">Payment successful</h1>
         <p className="mt-4 text-dark-400">
-          Your Stripe test checkout completed successfully. You can head back to the dashboard to see your updated plan and continue onboarding.
+          Your Distill checkout completed successfully. Head back to the dashboard to see your updated plan and continue onboarding.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link href="/dashboard" className="btn-primary text-sm">Go to dashboard</Link>

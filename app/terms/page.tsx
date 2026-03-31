@@ -4,13 +4,13 @@ import { buildMetadata } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Terms of Service",
-  description: "Review the terms, acceptable use, billing rules, and liability limits for StackSmart.",
+  description: "Review the terms, acceptable use, billing rules, and liability limits for Distill.",
   path: "/terms",
 });
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-dark-950">
+    <div className="min-h-screen bg-dark-950 font-sans">
       <div className="mx-auto max-w-3xl px-6 py-16">
         <Link href="/" className="mb-8 inline-block text-sm text-dark-500 hover:text-dark-300">
           ← Back to Home
@@ -19,11 +19,11 @@ export default function TermsPage() {
         <div className="space-y-4 text-sm leading-relaxed text-dark-300">
           <p><strong className="text-white">Last updated:</strong> March 30, 2026</p>
           <p>
-            These Terms of Service govern your access to and use of StackSmart. By using the service, you agree to these terms on behalf of yourself or the entity you represent.
+            These Terms of Service govern your access to and use of Distill. By using the service, you agree to these terms on behalf of yourself or the entity you represent.
           </p>
           <h2 className="pt-4 text-lg font-semibold text-white">Use of the service</h2>
           <p>
-            You may use StackSmart only for lawful business purposes. You are responsible for ensuring that uploaded data is accurate, that you have the right to provide it,
+            You may use Distill only for lawful business purposes. You are responsible for ensuring that uploaded data is accurate, that you have the right to provide it,
             and that your use of the platform complies with applicable laws and contracts.
           </p>
           <h2 className="pt-4 text-lg font-semibold text-white">Accounts, billing, and trials</h2>
@@ -33,7 +33,7 @@ export default function TermsPage() {
           </p>
           <h2 className="pt-4 text-lg font-semibold text-white">Customer data</h2>
           <p>
-            You retain ownership of the data you submit. You grant StackSmart the limited rights needed to host, process, analyze, and display that data in order to provide the service.
+            You retain ownership of the data you submit. You grant Distill the limited rights needed to host, process, analyze, and display that data in order to provide the service.
           </p>
           <h2 className="pt-4 text-lg font-semibold text-white">Acceptable use</h2>
           <p>
@@ -41,7 +41,7 @@ export default function TermsPage() {
           </p>
           <h2 className="pt-4 text-lg font-semibold text-white">No guarantee of savings</h2>
           <p>
-            StackSmart provides recommendations and estimates, not financial, legal, or procurement advice. Savings figures are directional projections and are not guaranteed outcomes.
+            Distill provides recommendations and estimates, not financial, legal, or procurement advice. Savings figures are directional projections and are not guaranteed outcomes.
           </p>
           <h2 className="pt-4 text-lg font-semibold text-white">Limitation of liability</h2>
           <p>

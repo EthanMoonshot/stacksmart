@@ -1,120 +1,101 @@
-const problems = [
+const actionTypes = [
   {
-    icon: "💸",
-    title: "Tool sprawl is expensive",
-    description: "The average SMB pays for 12+ SaaS tools they barely use. Zombie subscriptions and forgotten trials drain $400-800/month silently.",
+    action: "Cut",
+    color: "text-red-400",
+    bgGradient: "from-red-500/15 to-red-500/5",
+    borderColor: "border-red-500/25",
+    glowColor: "bg-red-500/15",
+    description: "Cancel unused or duplicate subscriptions",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+      </svg>
+    ),
   },
   {
-    icon: "🔀",
-    title: "Duplicate tools everywhere",
-    description: "Teams adopt tools independently. You end up with 3 project management apps, 2 video tools, and 4 communication platforms doing the same thing.",
+    action: "Consolidate",
+    color: "text-amber-400",
+    bgGradient: "from-amber-500/15 to-amber-500/5",
+    borderColor: "border-amber-500/25",
+    glowColor: "bg-amber-500/15",
+    description: "Merge overlapping tools into one",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+      </svg>
+    ),
   },
   {
-    icon: "📊",
-    title: "No visibility, no control",
-    description: "Finance sees the bill. Ops doesn't know what's running. IT doesn't exist. Nobody has a complete picture of your software stack.",
+    action: "Renegotiate",
+    color: "text-brand-400",
+    bgGradient: "from-brand-500/15 to-brand-500/5",
+    borderColor: "border-brand-500/25",
+    glowColor: "bg-brand-500/15",
+    description: "Get better pricing from vendors",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>
+    ),
   },
-  {
-    icon: "🏢",
-    title: "Enterprise tools don't fit",
-    description: "Zylo, Vendr, and similar tools cost $10K-50K/year and require dedicated IT teams. Completely overkill for a 20-person company.",
-  },
+];
+
+const stats = [
+  { value: "47", label: "Subscriptions per audit" },
+  { value: "14%", label: "Average spend reduction" },
+  { value: "3", label: "Minutes to first report" },
+  { value: "0", label: "Bank connections required" },
 ];
 
 export default function ProblemSolution() {
   return (
-    <section className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Problem */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-medium mb-6">
-            THE PROBLEM
+    <section id="value" className="relative py-20 md:py-24 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-success-500/5 blur-[120px]" />
+      </div>
+
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        {/* Hero stat */}
+        <div className="text-center mb-14 reveal">
+          <p className="text-xs uppercase tracking-[0.2em] text-dark-400 mb-3">Average Result</p>
+          <div className="font-display text-5xl sm:text-6xl font-bold text-white mb-3">
+            <span className="text-success-500 savings-number">$4,200</span>
+            <span className="text-dark-400 text-2xl sm:text-3xl">/year</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            SaaS spending is out of control — and nobody is watching
-          </h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
-            Tech-enabled SMBs are losing thousands each month to redundant tools, unused subscriptions, and overpriced plans. But the tools built to fix this are designed for enterprises.
-          </p>
+          <p className="text-dark-400">in savings found for the average SMB audit</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
-          {problems.map((problem) => (
-            <div key={problem.title} className="card group hover:border-dark-700 transition-colors">
-              <div className="text-3xl mb-3">{problem.icon}</div>
-              <h3 className="text-lg font-semibold text-white mb-2">{problem.title}</h3>
-              <p className="text-dark-400 text-sm leading-relaxed">{problem.description}</p>
+        {/* Action types - compact cards */}
+        <div className="grid gap-4 md:grid-cols-3 mb-12">
+          {actionTypes.map((type) => (
+            <div 
+              key={type.action}
+              className="reveal"
+            >
+              <div className={`relative rounded-xl border ${type.borderColor} bg-gradient-to-b ${type.bgGradient} p-5 h-full transition-all duration-200 hover:-translate-y-0.5`}>
+                <div className="flex items-start gap-3">
+                  <div className={`flex-shrink-0 w-9 h-9 rounded-lg ${type.borderColor} bg-dark-900/60 flex items-center justify-center ${type.color}`}>
+                    {type.icon}
+                  </div>
+                  <div>
+                    <h3 className={`text-lg font-bold ${type.color} mb-1`}>{type.action}</h3>
+                    <p className="text-dark-300 text-sm">{type.description}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Solution */}
-        <div className="relative rounded-2xl overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-900/50 via-dark-900 to-dark-900" />
-          <div className="absolute inset-0 border border-brand-500/20 rounded-2xl" />
-          
-          <div className="relative p-8 md:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-              {/* Left: Copy */}
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-medium mb-6">
-                  THE SOLUTION
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  The $500/hr consultant,{" "}
-                  <span className="gradient-text">for $149/month</span>
-                </h2>
-                <p className="text-dark-300 text-lg mb-8">
-                  StackSmart uses AI to analyze your entire software stack, identify waste and overlap, and generate specific, actionable recommendations. The kind of audit a consultant would charge $5,000 for — automated and available 24/7.
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Upload your billing data in seconds",
-                    "AI identifies every tool, duplicate, and zombie subscription",
-                    "Get specific alternatives with projected savings",
-                    "Monthly monitoring keeps you optimized",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-dark-200">
-                      <svg className="w-5 h-5 text-brand-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Right: Mock analysis result */}
-              <div className="bg-dark-950 rounded-xl border border-dark-700 p-6 font-mono text-sm">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-3 h-3 rounded-full bg-red-500" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                  <div className="w-3 h-3 rounded-full bg-green-500" />
-                  <span className="ml-2 text-dark-500 text-xs">stack-analysis-result.json</span>
-                </div>
-                
-                <div className="space-y-2 text-dark-300">
-                  <p><span className="text-brand-400">tools_detected</span>: <span className="text-white">24</span></p>
-                  <p><span className="text-brand-400">monthly_spend</span>: <span className="text-white">$4,820</span></p>
-                  <p><span className="text-red-400">duplicates_found</span>: <span className="text-white">6</span></p>
-                  <p><span className="text-yellow-400">unused_likely</span>: <span className="text-white">4</span></p>
-                  <div className="border-t border-dark-800 my-3" />
-                  <p className="text-green-400">recommendations: [</p>
-                  <div className="pl-4 space-y-1">
-                    <p><span className="text-white">"Replace Notion + Confluence with Linear"</span></p>
-                    <p className="text-dark-500 text-xs pl-2">→ Save <span className="text-green-400">$280/mo</span></p>
-                    <p><span className="text-white">"Cancel Zoom (Teams included in M365)"</span></p>
-                    <p className="text-dark-500 text-xs pl-2">→ Save <span className="text-green-400">$120/mo</span></p>
-                    <p><span className="text-white">"Downgrade HubSpot tier"</span></p>
-                    <p className="text-dark-500 text-xs pl-2">→ Save <span className="text-green-400">$350/mo</span></p>
-                  </div>
-                  <p className="text-green-400">]</p>
-                  <div className="border-t border-dark-800 my-3" />
-                  <p><span className="text-green-400">total_savings</span>: <span className="text-green-300 font-bold">$9,000/yr</span></p>
-                </div>
-              </div>
+        {/* Stats row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 reveal">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center p-4 rounded-xl bg-dark-900/40 border border-dark-800/50">
+              <p className="font-display text-2xl font-bold text-white mb-0.5">{stat.value}</p>
+              <p className="text-xs text-dark-500">{stat.label}</p>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

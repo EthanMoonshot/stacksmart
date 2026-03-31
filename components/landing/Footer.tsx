@@ -2,29 +2,33 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-dark-800 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="border-t border-dark-800/50 py-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-cyan-500 flex items-center justify-center text-white font-bold text-xs">
-              S
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500/30 to-teal-500/20 border border-brand-500/30">
+              <span className="text-xs font-bold text-white">S</span>
             </div>
-            <span className="text-white font-bold">StackSmart</span>
+            <span className="text-white font-semibold">StackSmart</span>
           </div>
 
           {/* Links */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-dark-500 text-sm">
-            <Link href="/pricing" className="hover:text-dark-300 transition-colors">Pricing</Link>
-            <Link href="/welcome" className="hover:text-dark-300 transition-colors">Get Started</Link>
-            <Link href="/privacy" className="hover:text-dark-300 transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-dark-300 transition-colors">Terms of Service</Link>
-            <a href="mailto:hello@stacksmart.io" className="hover:text-dark-300 transition-colors">Contact</a>
+          <div className="flex items-center gap-8 text-sm">
+            <Link href="/pricing" className="text-dark-400 hover:text-white transition-colors">
+              Pricing
+            </Link>
+            <Link href="/privacy" className="text-dark-400 hover:text-white transition-colors">
+              Privacy
+            </Link>
+            <Link href="/terms" className="text-dark-400 hover:text-white transition-colors">
+              Terms
+            </Link>
           </div>
 
           {/* Copyright */}
-          <p className="text-dark-600 text-sm">
-            © {new Date().getFullYear()} StackSmart. All rights reserved.
+          <p className="text-dark-500 text-sm">
+            © {new Date().getFullYear()} Moonshot Inc
           </p>
         </div>
       </div>

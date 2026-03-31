@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Checkout Cancelled",
-  description: "Your StackSmart checkout was cancelled and no payment was taken.",
+  description: "Your Distill checkout was cancelled and no payment was taken.",
   path: "/cancel",
 });
 

@@ -6,10 +6,11 @@ interface AppHeaderProps {
 
 export default function AppHeader({ title, subtitle, action }: AppHeaderProps) {
   return (
-    <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+    <div className="mb-8 flex flex-col gap-4 border-b border-dark-700/80 pb-6 sm:flex-row sm:items-start sm:justify-between">
       <div>
-        <h1 className="text-2xl font-bold text-white sm:text-3xl">{title}</h1>
-        {subtitle && <p className="mt-1 max-w-2xl text-sm text-dark-400">{subtitle}</p>}
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-dark-400">Distill workspace</p>
+        <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">{title}</h1>
+        {subtitle && <p className="mt-2 max-w-2xl text-sm leading-6 text-dark-300">{subtitle}</p>}
       </div>
       {action && <div className="sm:flex-shrink-0">{action}</div>}
     </div>

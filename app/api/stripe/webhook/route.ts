@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
         const session = event.data.object as Stripe.Checkout.Session;
         record = {
           customerId: String(session.metadata?.customerId || "demo-user"),
-          email: session.customer_details?.email || session.customer_email || "demo@stacksmart.io",
+          email: session.customer_details?.email || session.customer_email || "unknown@customer.local",
           status: session.mode === "payment" ? "active" : "pending",
           planId: String(session.metadata?.planId || "audit"),
           planName: String(session.metadata?.planName || "One-Time Audit"),
@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
         const subscription = event.data.object as Stripe.Subscription;
         record = {
           customerId: String(subscription.metadata?.customerId || "demo-user"),
-          email: "demo@stacksmart.io",
+          email: subscription.metadata?.customerEmail || "unknown@customer.local",
           status: subscription.status === "active" ? "active" : subscription.status === "past_due" ? "past_due" : subscription.status === "canceled" ? "canceled" : "pending",
           planId: String(subscription.metadata?.planId || "starter-monthly"),
           planName: String(subscription.metadata?.planName || "Starter"),

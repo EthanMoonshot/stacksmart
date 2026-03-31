@@ -3,6 +3,10 @@ import "./globals.css";
 import PlausibleProvider from "@/components/analytics/PlausibleProvider";
 import AppProviders from "@/components/analytics/AppProviders";
 import { buildMetadata, siteConfig } from "@/lib/site";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   ...buildMetadata(),
@@ -17,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={cn("scroll-smooth", "font-sans", geist.variable)}>
       <body className="min-h-screen bg-dark-950 text-dark-50 antialiased">
         <PlausibleProvider />
         <AppProviders>{children}</AppProviders>

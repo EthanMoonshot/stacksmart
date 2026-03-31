@@ -12,7 +12,7 @@ export default function DashboardLayout({
       <main className="flex-1 overflow-auto">
         <div className="border-b border-dark-800 bg-dark-900/70 px-4 py-4 lg:hidden">
           <div className="flex items-center justify-between gap-3">
-            <Link href="/" className="text-lg font-bold text-white">StackSmart</Link>
+            <Link href="/" className="text-lg font-bold text-white">Distill</Link>
             <div className="flex gap-2 text-xs">
               <Link href="/dashboard" className="rounded-full border border-dark-700 px-3 py-1.5 text-dark-300">Dashboard</Link>
               <Link href="/pricing" className="rounded-full border border-dark-700 px-3 py-1.5 text-dark-300">Pricing</Link>

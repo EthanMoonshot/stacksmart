@@ -37,8 +37,8 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { email, companySize, companyName } = body;
 
-    if (!email || !companySize) {
-      return NextResponse.json({ message: "Email and company size are required" }, { status: 400, headers: noStoreHeaders });
+    if (!email) {
+      return NextResponse.json({ message: "Email is required" }, { status: 400, headers: noStoreHeaders });
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -65,14 +65,19 @@ export async function POST(req: NextRequest) {
     waitlist.push(newEntry);
     await writeWaitlist(waitlist);
 
-    await sendProductEmail({
-      to: newEntry.email,
-      subject: "Welcome to StackSmart",
-      heading: "Welcome to StackSmart",
-      body: "Thanks for signing up. Your next step is simple: upload your billing data, review the analysis, and turn the findings into a savings report.",
-      ctaLabel: "Open welcome page",
-      ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/welcome`,
-    });
+    try {
+      await sendProductEmail({
+        to: newEntry.email,
+        subject: "Welcome to StackSmart",
+        heading: "Welcome to StackSmart",
+        body: "Thanks for signing up. Your next step is simple: upload your billing data, review the analysis, and turn the findings into a savings report.",
+        ctaLabel: "Open welcome page",
+        ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/welcome`,
+      });
+    } catch (emailError) {
+      // Email sending is non-blocking — signup still succeeds without it
+      console.warn("[Waitlist] Email send failed (non-fatal):", emailError);
+    }
 
     return NextResponse.json({ message: "Successfully joined the waitlist!", position: waitlist.length }, { status: 201, headers: noStoreHeaders });
   } catch (error) {

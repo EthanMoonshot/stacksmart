@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Savings Report",
-  description: "Review StackSmart savings recommendations, export a PDF, and share your report.",
+  description: "Review Distill savings recommendations, export a PDF, and share your report.",
   path: "/report",
 });
 
@@ -28,7 +28,7 @@ export default async function ReportPage({
         <div className="card text-center py-16 border-dashed border-dark-700">
           <h2 className="text-xl font-bold text-white mb-2">No report available yet</h2>
           <p className="text-dark-400 text-sm max-w-md mx-auto mb-6">
-            Run an analysis first, then StackSmart will generate a savings report from your uploaded tool data.
+            Run an analysis first, then Distill will generate a savings report from your uploaded billing data.
           </p>
           <Link href="/upload" className="btn-primary">
             Upload Billing Data
@@ -45,7 +45,7 @@ export default async function ReportPage({
       <AppHeader
         title="Savings Report"
         subtitle={`Generated ${new Date(analysis.analyzedAt).toLocaleString()} · Based on ${analysis.toolCount} tools and ${model.recommendationCount} recommendations`}
-        action={<ReportActions reportTitle="StackSmart Savings Report" shareId={params.shareId} />}
+        action={<ReportActions reportTitle="Distill Savings Report" shareId={params.shareId} />}
       />
 
       <ReportView model={model} />

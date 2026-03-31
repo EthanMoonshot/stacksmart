@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
-import ProblemSolution from "@/components/landing/ProblemSolution";
+import SocialProof from "@/components/landing/SocialProof";
 import HowItWorks from "@/components/landing/HowItWorks";
+import ProblemSolution from "@/components/landing/ProblemSolution";
+import TrustSection from "@/components/landing/TrustSection";
 import Pricing from "@/components/landing/Pricing";
 import WaitlistForm from "@/components/landing/WaitlistForm";
 import Footer from "@/components/landing/Footer";
@@ -10,7 +12,7 @@ import { absoluteUrl, buildMetadata, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   description:
-    "Cut wasted SaaS spend fast. StackSmart audits your software stack, finds overlaps, and surfaces savings opportunities in minutes.",
+    "Find the money hiding in your SaaS stack. Upload a billing CSV, get a savings report in minutes. Cut, consolidate, and renegotiate with confidence.",
   path: "/",
 });
 
@@ -28,7 +30,7 @@ export default function Home() {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
-      description: "Join the waitlist for early access.",
+      description: "Free audit to find SaaS savings.",
     },
   };
 
@@ -37,8 +39,10 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <Navbar />
       <Hero />
-      <ProblemSolution />
+      <SocialProof />
       <HowItWorks />
+      <ProblemSolution />
+      <TrustSection />
       <Pricing />
       <WaitlistForm />
       <Footer />

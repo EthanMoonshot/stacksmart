@@ -1,94 +1,90 @@
 const steps = [
   {
-    number: "01",
+    number: "1",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
       </svg>
     ),
-    title: "Upload your billing data",
-    description:
-      "Export a CSV from your credit card, expense tool (Expensify, Ramp, Brex), or forward invoice emails. Takes under 2 minutes.",
-    detail: "Supports CSV exports from all major banks and expense tools. Bank-level encryption. We never store raw financial data.",
+    title: "Upload CSV",
+    description: "Export from your card or finance tool",
+    gradient: "from-brand-500/20 to-brand-600/10",
+    iconColor: "text-brand-400",
   },
   {
-    number: "02",
+    number: "2",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
-    title: "AI analyzes your stack",
-    description:
-      "Claude AI categorizes every tool, maps duplicates and overlaps, identifies unused subscriptions, and benchmarks your pricing against similar companies.",
-    detail: "Identifies 200+ common SaaS tools. Detects functional overlaps across 15 categories. Analysis takes under 60 seconds.",
+    title: "AI Analysis",
+    description: "We map your stack and find waste",
+    gradient: "from-teal-500/20 to-teal-600/10",
+    iconColor: "text-teal-400",
   },
   {
-    number: "03",
+    number: "3",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: "Get your savings report",
-    description:
-      "Receive a prioritized action plan with specific tool alternatives, estimated savings per recommendation, and a step-by-step implementation guide.",
-    detail: "PDF + interactive web report. Sorted by ROI. Includes negotiation tips for tools you should keep but renegotiate.",
+    title: "Get Report",
+    description: "Clear actions: cut, consolidate, renegotiate",
+    gradient: "from-success-500/20 to-success-500/10",
+    iconColor: "text-success-500",
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 relative">
-      {/* Background */}
+    <section id="how-it-works" className="relative py-20 md:py-24">
+      {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-brand-600/5 blur-[100px] -translate-y-1/2" />
+        <div className="absolute top-1/2 left-1/4 w-[350px] h-[350px] rounded-full bg-brand-500/5 blur-[100px] -translate-y-1/2" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-medium mb-6">
-            HOW IT WORKS
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            From upload to savings in under 10 minutes
+      <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-white">
+            Upload to savings in under 3 minutes
           </h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto">
-            No complex integrations. No IT team required. Just upload your billing data and let AI do the work.
-          </p>
         </div>
 
-        {/* Steps */}
+        {/* Steps - horizontal layout */}
         <div className="relative">
-          {/* Connector line */}
-          <div className="hidden lg:block absolute top-16 left-1/2 -translate-x-1/2 w-[calc(66%-80px)] h-0.5 bg-gradient-to-r from-transparent via-brand-500/30 to-transparent" />
+          {/* Connector line - desktop only */}
+          <div className="hidden md:block absolute top-10 left-[calc(16.666%+32px)] right-[calc(16.666%+32px)] h-0.5">
+            <div className="w-full h-full bg-gradient-to-r from-brand-500/60 via-teal-500/60 to-success-500/60 rounded-full" />
+            {/* Animated pulse on the line */}
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-500 via-teal-500 to-success-500 rounded-full animate-pulse opacity-40" />
+          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
             {steps.map((step, index) => (
-              <div key={step.number} className="relative group">
-                <div className="card group-hover:border-brand-500/30 transition-all duration-300 group-hover:-translate-y-1">
-                  {/* Step number + icon */}
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500/20 to-cyan-500/20 border border-brand-500/30 flex items-center justify-center text-brand-400">
-                      {step.icon}
-                    </div>
-                    <div className="text-4xl font-bold text-dark-800 group-hover:text-dark-700 transition-colors">
-                      {step.number}
-                    </div>
+              <div 
+                key={step.number} 
+                className="relative text-center group"
+              >
+                {/* Icon circle */}
+                <div className="relative inline-flex mb-5">
+                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${step.gradient} border border-dark-700/50 flex items-center justify-center ${step.iconColor} shadow-xl group-hover:scale-105 transition-transform duration-300`}>
+                    {step.icon}
                   </div>
-
-                  <h3 className="text-lg font-semibold text-white mb-3">{step.title}</h3>
-                  <p className="text-dark-400 text-sm leading-relaxed mb-4">{step.description}</p>
-
-                  <div className="pt-4 border-t border-dark-800">
-                    <p className="text-dark-500 text-xs leading-relaxed">{step.detail}</p>
+                  {/* Step number badge */}
+                  <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-dark-900 border-2 border-dark-700 flex items-center justify-center text-xs font-bold text-white shadow-md">
+                    {step.number}
                   </div>
                 </div>
 
-                {/* Arrow between steps */}
+                <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
+                <p className="text-dark-400 text-sm max-w-[200px] mx-auto">{step.description}</p>
+                
+                {/* Mobile arrow */}
                 {index < steps.length - 1 && (
-                  <div className="lg:hidden flex justify-center my-4">
-                    <svg className="w-6 h-6 text-dark-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="md:hidden flex justify-center my-4">
+                    <svg className="w-5 h-5 text-dark-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </div>
@@ -96,17 +92,6 @@ export default function HowItWorks() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <p className="text-dark-400 mb-6">
-            Average customer identifies{" "}
-            <span className="text-brand-400 font-semibold">$680/month</span> in potential savings in their first analysis.
-          </p>
-          <a href="#waitlist" className="btn-primary inline-block">
-            Start Saving Today →
-          </a>
         </div>
       </div>
     </section>

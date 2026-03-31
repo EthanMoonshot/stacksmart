@@ -17,8 +17,11 @@ export default async function AppNav() {
     <aside className="hidden min-h-screen w-64 flex-shrink-0 border-r border-dark-800 bg-dark-900 lg:flex lg:flex-col">
       <div className="border-b border-dark-800 px-6 py-5">
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-cyan-500 text-sm font-bold text-white">S</div>
-          <span className="text-lg font-bold text-white">StackSmart</span>
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-brand-500/30 bg-gradient-to-br from-brand-500/30 to-teal-500/20 text-sm font-bold text-white">D</div>
+          <div>
+            <span className="block text-lg font-bold text-white">Distill</span>
+            <span className="block text-[11px] text-dark-400">AI SaaS spend audit</span>
+          </div>
         </Link>
       </div>
 

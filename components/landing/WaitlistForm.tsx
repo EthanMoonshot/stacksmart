@@ -20,7 +20,7 @@ export default function WaitlistForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !companySize) return;
+    if (!email) return;
 
     setStatus("loading");
     setErrorMsg("");
@@ -49,111 +49,76 @@ export default function WaitlistForm() {
   };
 
   return (
-    <section id="waitlist" className="py-24 relative">
+    <section id="waitlist" className="relative py-20 md:py-28">
+      {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-brand-500/8 blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-500/10 blur-[150px]" />
       </div>
 
-      <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-medium mb-6">
-          EARLY ACCESS
-        </div>
-
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Join the waitlist
-        </h2>
-        <p className="text-dark-400 text-lg mb-10">
-          Be first in line. Early access members get <span className="text-brand-400 font-semibold">3 months free</span> and a founding member badge. No spam, ever.
-        </p>
-
+      <div className="relative mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
         {status === "success" ? (
-          <div className="card border-green-500/30 bg-green-500/5 py-10 text-center">
-            <div className="mb-4 text-5xl">🎉</div>
-            <h3 className="mb-2 text-xl font-bold text-white">You're on the list!</h3>
-            <p className="text-dark-400">
-              We&apos;ve sent a welcome email. You can also jump straight into the onboarding flow now.
+          <div className="rounded-2xl border border-success-500/30 bg-success-500/5 p-10">
+            <div className="text-5xl mb-4">🎉</div>
+            <h3 className="font-display text-2xl font-bold text-white mb-2">You're on the list!</h3>
+            <p className="text-dark-400 mb-6">
+              We'll reach out when your spot is ready.
             </p>
-            <a href="/welcome" className="btn-primary mt-6 inline-block text-sm">
+            <a href="/welcome" className="inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-brand-600">
               Continue to welcome page
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </a>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="card space-y-4 text-left">
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-dark-200 mb-2">
-                Work email <span className="text-red-400">*</span>
-              </label>
-              <input
-                id="email"
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@company.com"
-                className="w-full bg-dark-800 border border-dark-700 rounded-lg px-4 py-3 text-white placeholder:text-dark-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="company" className="block text-sm font-medium text-dark-200 mb-2">
-                Company name
-              </label>
-              <input
-                id="company"
-                type="text"
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
-                placeholder="Acme Corp"
-                className="w-full bg-dark-800 border border-dark-700 rounded-lg px-4 py-3 text-white placeholder:text-dark-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="size" className="block text-sm font-medium text-dark-200 mb-2">
-                Company size <span className="text-red-400">*</span>
-              </label>
-              <select
-                id="size"
-                required
-                value={companySize}
-                onChange={(e) => setCompanySize(e.target.value)}
-                className="w-full bg-dark-800 border border-dark-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors appearance-none cursor-pointer"
-              >
-                <option value="" className="text-dark-500">Select company size...</option>
-                {companySizes.map((size) => (
-                  <option key={size} value={size}>{size}</option>
-                ))}
-              </select>
-            </div>
-
-            {status === "error" && (
-              <div className="bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-3 text-red-400 text-sm">
-                {errorMsg}
-              </div>
-            )}
-
-            <button
-              type="submit"
-              disabled={status === "loading" || !email || !companySize}
-              className="w-full btn-primary py-4 text-base disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-            >
-              {status === "loading" ? (
-                <span className="flex items-center justify-center gap-2">
-                  <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                  </svg>
-                  Joining waitlist...
-                </span>
-              ) : (
-                "Join the Waitlist — Free"
-              )}
-            </button>
-
-            <p className="text-dark-500 text-xs text-center">
-              No credit card. No spam. Unsubscribe anytime.
+          <>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+              Ready to find your savings?
+            </h2>
+            <p className="text-dark-400 text-lg mb-8">
+              Free audit • Results in 24 hours • No credit card required
             </p>
-          </form>
+
+            <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@company.com"
+                  className="flex-1 rounded-xl border border-dark-700 bg-dark-800 px-5 py-4 text-white placeholder:text-dark-500 transition-colors focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                />
+                <button
+                  type="submit"
+                  disabled={status === "loading" || !email}
+                  className="rounded-xl bg-brand-500 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-[0_0_30px_rgba(59,130,246,0.35)] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                >
+                  {status === "loading" ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      </svg>
+                      Joining...
+                    </span>
+                  ) : (
+                    "Audit My Stack"
+                  )}
+                </button>
+              </div>
+
+              {status === "error" && (
+                <div className="mt-4 rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+                  {errorMsg}
+                </div>
+              )}
+            </form>
+
+            <p className="mt-5 text-sm text-dark-500">
+              CSV upload only • No bank access • Data deleted after analysis
+            </p>
+          </>
         )}
       </div>
     </section>
