@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
         heading: "Welcome to StackSmart",
         body: "You’re in. Upload your billing data, run your first analysis, and we’ll surface where your SaaS stack is leaking money.",
         ctaLabel: "Start onboarding",
-        ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/welcome`,
+        ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "https://stacksmart.app"}/welcome`,
       });
 
       return NextResponse.json({ sent: true, result }, { headers: noStoreHeaders });
@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
       heading: "Your savings report is ready",
       body: "Your latest StackSmart analysis has finished processing. Open your dashboard to review overlaps, savings recommendations, and your downloadable report.",
       ctaLabel: "View report",
-      ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/report`,
+      ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "https://stacksmart.app"}/report`,
     });
 
     return NextResponse.json({ sent: true, result }, { headers: noStoreHeaders });

@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Dashboard",
-  description: "Track current SaaS spend, recommendations, and Distill plan status.",
+  description: "Track current SaaS spend, recommendations, and StackSmart plan status.",
   path: "/dashboard",
 });
 
@@ -47,7 +47,7 @@ export default async function DashboardPage() {
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
               {analysis
-                ? `Distill sees ${analysis.toolCount} tools with ${analysis.overlaps.length} overlap groups. The current sample report suggests ${formatCurrency(analysis.potentialMonthlySavings)}/month in likely savings if you act on the strongest recommendations first.`
+                ? `StackSmart sees ${analysis.toolCount} tools with ${analysis.overlaps.length} overlap groups. The current sample report suggests ${formatCurrency(analysis.potentialMonthlySavings)}/month in likely savings if you act on the strongest recommendations first.`
                 : "Upload billing data to generate the first report. The product is strongest when it can turn real billing rows into a cut / consolidate / renegotiate decision list."}
             </p>
 
@@ -142,7 +142,7 @@ export default async function DashboardPage() {
         </div>
 
         <div className="card">
-          <h2 className="text-lg font-semibold text-white">How Distill works best</h2>
+          <h2 className="text-lg font-semibold text-white">How StackSmart works best</h2>
           <div className="mt-5 space-y-3 text-sm text-dark-300">
             {[
               "Upload billing exports or invoice data",

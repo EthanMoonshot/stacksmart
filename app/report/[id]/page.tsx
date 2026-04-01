@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Shared Savings Report",
-  description: "Open a shared Distill savings report snapshot.",
+  description: "Open a shared StackSmart savings report snapshot.",
   path: "/report",
 });
 

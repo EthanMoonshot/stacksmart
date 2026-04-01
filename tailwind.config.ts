@@ -35,22 +35,49 @@ const config: Config = {
           950: "#0A0F1E",
         },
         success: {
+          300: "#86EFAC",
+          400: "#4ADE80",
           500: "#22C55E",
+          600: "#16A34A",
           900: "#14532D",
         },
         warning: {
+          400: "#FBB040",
           500: "#F59E0B",
           900: "#451A03",
         },
         teal: {
+          400: "#2DD4BF",
           500: "#14B8A6",
           900: "#0D4F4A",
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Space Grotesk", "Inter", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "Fira Code", "monospace"],
+        // Body fonts
+        sans: ["General Sans", "system-ui", "sans-serif"],
+        // Display/heading fonts
+        display: ["Satoshi", "system-ui", "sans-serif"],
+
+        // === PREMIUM FONT OPTIONS ===
+
+        // Vercel/Linear style (installed via npm)
+        geist: ["var(--font-geist-sans)", "Geist", "system-ui", "sans-serif"],
+        "geist-mono": ["var(--font-geist-mono)", "Geist Mono", "monospace"],
+
+        // Google Fonts premium alternatives
+        outfit: ["Outfit", "system-ui", "sans-serif"],
+        jakarta: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+
+        // Fontshare premium
+        satoshi: ["Satoshi", "system-ui", "sans-serif"],
+        "general-sans": ["General Sans", "system-ui", "sans-serif"],
+        cabinet: ["Cabinet Grotesk", "system-ui", "sans-serif"],
+
+        // Impact headlines
+        clash: ["Clash Display", "system-ui", "sans-serif"],
+
+        // Code
+        mono: ["var(--font-jetbrains-mono)", "JetBrains Mono", "monospace"],
       },
     },
   },

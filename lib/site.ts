@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
 export const siteConfig = {
-  name: "Distill",
-  shortName: "Distill",
-  title: "Distill — AI-powered SaaS spend optimisation for growing teams",
+  name: "StackSmart",
+  shortName: "StackSmart",
+  title: "StackSmart — AI-powered SaaS spend optimisation for growing teams",
   description:
-    "Distill finds wasted SaaS spend, overlap, and renewal risk so SMBs can cut costs, consolidate tools, and renegotiate from a position of clarity.",
-  url: process.env.NEXT_PUBLIC_APP_URL || "https://stacksmart.io",
-  domain: process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN || "stacksmart.io",
+    "StackSmart finds wasted SaaS spend, overlap, and renewal risk so SMBs can cut costs, consolidate tools, and renegotiate from a position of clarity.",
+  url: process.env.NEXT_PUBLIC_APP_URL || "https://stacksmart.app",
+  domain: process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN || "stacksmart.app",
   ogImage: "/opengraph-image",
-  contactEmail: "hello@stacksmart.io",
+  contactEmail: "hello@stacksmart.app",
   twitterHandle: "@stacksmart",
 };
 

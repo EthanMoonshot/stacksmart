@@ -82,5 +82,124 @@
     ],
     "createdAt": "2026-03-30T10:21:30.104Z",
     "source": "manual"
+  },
+  {
+    "id": "stack_1775014893152_sw026c2oy",
+    "tools": [
+      {
+        "id": "test1",
+        "toolName": "Slack",
+        "cost": 12.5,
+        "billingFrequency": "monthly",
+        "category": "Communication"
+      }
+    ],
+    "createdAt": "2026-04-01T03:41:33.152Z",
+    "source": "sample"
+  },
+  {
+    "id": "stack_1775029985372_jf7kk7c62",
+    "tools": [
+      {
+        "id": "demo1",
+        "toolName": "Slack",
+        "cost": 12.5,
+        "billingFrequency": "monthly",
+        "category": "Communication"
+      }
+    ],
+    "createdAt": "2026-04-01T07:53:05.372Z",
+    "source": "demo"
+  },
+  {
+    "id": "stack_1775030034116_lt8r5dfvv",
+    "tools": [
+      {
+        "id": "demo1",
+        "toolName": "Slack",
+        "cost": 12.5,
+        "billingFrequency": "monthly",
+        "category": "Communication"
+      }
+    ],
+    "createdAt": "2026-04-01T07:53:54.116Z",
+    "source": "demo"
+  },
+  {
+    "id": "stack_1775030237190_u7b0u50jx",
+    "tools": [
+      {
+        "id": "s1",
+        "toolName": "Slack",
+        "cost": 87.5,
+        "billingFrequency": "monthly",
+        "category": "Communication"
+      },
+      {
+        "id": "s2",
+        "toolName": "Zoom",
+        "cost": 149.9,
+        "billingFrequency": "monthly",
+        "category": "Communication"
+      },
+      {
+        "id": "s3",
+        "toolName": "Microsoft 365",
+        "cost": 264,
+        "billingFrequency": "monthly",
+        "category": "Communication"
+      },
+      {
+        "id": "s4",
+        "toolName": "Jira",
+        "cost": 79,
+        "billingFrequency": "monthly",
+        "category": "Project Management"
+      },
+      {
+        "id": "s5",
+        "toolName": "Asana",
+        "cost": 119.99,
+        "billingFrequency": "monthly",
+        "category": "Project Management"
+      },
+      {
+        "id": "s6",
+        "toolName": "Notion",
+        "cost": 96,
+        "billingFrequency": "monthly",
+        "category": "Documentation"
+      },
+      {
+        "id": "s7",
+        "toolName": "Figma",
+        "cost": 75,
+        "billingFrequency": "monthly",
+        "category": "Design"
+      },
+      {
+        "id": "s8",
+        "toolName": "GitHub",
+        "cost": 84,
+        "billingFrequency": "monthly",
+        "category": "Development"
+      },
+      {
+        "id": "s9",
+        "toolName": "HubSpot",
+        "cost": 200,
+        "billingFrequency": "monthly",
+        "category": "Marketing"
+      },
+      {
+        "id": "s10",
+        "toolName": "Intercom",
+        "cost": 399,
+        "billingFrequency": "monthly",
+        "category": "Customer Support"
+      }
+    ],
+    "createdAt": "2026-04-01T07:57:17.190Z",
+    "source": "demo"
   }
 ]

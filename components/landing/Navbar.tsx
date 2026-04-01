@@ -23,6 +23,7 @@ export default function Navbar() {
             <a href="#how-it-works" className="nav-link">How it works</a>
             <a href="#value" className="nav-link">Benefits</a>
             <a href="#pricing" className="nav-link">Pricing</a>
+            <Link href="/about" className="nav-link">About</Link>
           </div>
 
           {/* Desktop CTA */}
@@ -62,6 +63,7 @@ export default function Navbar() {
             <a href="#how-it-works" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={() => setMobileOpen(false)}>How it works</a>
             <a href="#value" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={() => setMobileOpen(false)}>Benefits</a>
             <a href="#pricing" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={() => setMobileOpen(false)}>Pricing</a>
+            <Link href="/about" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={() => setMobileOpen(false)}>About</Link>
             <Link href="/dashboard" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={() => setMobileOpen(false)}>Dashboard</Link>
             <div className="pt-2">
               <a href="#waitlist" className="block w-full rounded-lg bg-brand-500 py-3 text-center text-sm font-semibold text-white" onClick={() => setMobileOpen(false)}>

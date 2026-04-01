@@ -52,7 +52,7 @@ export default async function AnalysisPage({
         <div className="card text-center py-16 border-dashed border-dark-700">
           <h2 className="text-xl font-bold text-white mb-2">Nothing to show yet</h2>
           <p className="text-dark-400 text-sm max-w-md mx-auto mb-6">
-            Upload your billing data first, then Distill will generate an analysis with overlaps, spend, and savings recommendations.
+            Upload your billing data first, then StackSmart will generate an analysis with overlaps, spend, and savings recommendations.
           </p>
           <Link href="/upload" className="btn-primary">
             Upload Billing Data

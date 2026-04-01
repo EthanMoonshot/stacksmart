@@ -19,7 +19,7 @@ export default async function AppNav() {
         <Link href="/" className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-brand-500/30 bg-gradient-to-br from-brand-500/30 to-teal-500/20 text-sm font-bold text-white">D</div>
           <div>
-            <span className="block text-lg font-bold text-white">Distill</span>
+            <span className="block text-lg font-bold text-white">StackSmart</span>
             <span className="block text-[11px] text-dark-400">AI SaaS spend audit</span>
           </div>
         </Link>

@@ -35,7 +35,8 @@ export async function POST(req: NextRequest) {
     }
 
     const stripe = getStripe();
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://stacksmart.app";
+    const auditPriceId = process.env.STRIPE_PRICE_AUDIT;
 
     const session = await stripe.checkout.sessions.create({
       mode: plan.mode,
@@ -44,18 +45,22 @@ export async function POST(req: NextRequest) {
       success_url: `${appUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${appUrl}/cancel?plan=${plan.id}`,
       line_items: [
-        {
-          quantity: 1,
-          price_data: {
-            currency: "usd",
-            unit_amount: plan.price * 100,
-            recurring: plan.mode === "subscription" ? { interval: plan.interval === "year" ? "year" : "month" } : undefined,
-            product_data: {
-              name: `Distill ${plan.name}`,
-              description: plan.description,
+        auditPriceId
+          ? {
+              quantity: 1,
+              price: auditPriceId,
+            }
+          : {
+              quantity: 1,
+              price_data: {
+                currency: "usd",
+                unit_amount: plan.price * 100,
+                product_data: {
+                  name: `StackSmart ${plan.name}`,
+                  description: plan.description,
+                },
+              },
             },
-          },
-        },
       ],
       metadata: {
         customerId: DEFAULT_CUSTOMER_ID,
@@ -63,6 +68,7 @@ export async function POST(req: NextRequest) {
         planId: plan.id,
         planName: plan.name,
         billingInterval: plan.interval,
+        stripePriceKey: auditPriceId ? "STRIPE_PRICE_AUDIT" : "inline_price_data",
       },
       allow_promotion_codes: true,
     });

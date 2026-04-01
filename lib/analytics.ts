@@ -1,4 +1,4 @@
-export type AnalyticsEventName = "waitlist_signup" | "checkout_started" | "report_generated";
+export type AnalyticsEventName = "waitlist_signup" | "checkout_started" | "report_generated" | "demo_loaded";
 
 declare global {
   interface Window {

@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
           ? `We’ve finished analysing your stack. ${analysis.recommendations.length} recommendations are ready for review, with up to $${analysis.potentialAnnualSavings.toLocaleString()} in annual savings identified.`
           : `We’ve finished analysing your stack. ${analysis.recommendations.length} recommendations are ready for review. Open your report to see the full breakdown.`,
         ctaLabel: "Open your report",
-        ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/report`,
+        ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "https://stacksmart.app"}/report`,
       });
     }
 

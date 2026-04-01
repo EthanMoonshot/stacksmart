@@ -12,7 +12,7 @@ const steps = [
   },
   {
     title: "See your analysis",
-    description: "Distill detects overlaps, categories, and where the fastest savings live.",
+    description: "StackSmart detects overlaps, categories, and where the fastest savings live.",
     ctaHref: "/analysis",
     ctaLabel: "Open analysis",
   },

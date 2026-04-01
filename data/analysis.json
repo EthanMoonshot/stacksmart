@@ -1,81 +1,60 @@
 {
-  "id": "analysis_1774867688116_3ttdc31n",
-  "stackId": "stack_1774866090104_9tuedz5al",
-  "analyzedAt": "2026-03-30T10:48:08.116Z",
-  "source": "manual",
-  "toolCount": 9,
+  "id": "analysis_1775030250155_w7zjo1bf",
+  "stackId": "stack_1775030237190_u7b0u50jx",
+  "analyzedAt": "2026-04-01T07:57:30.155Z",
+  "source": "demo",
+  "toolCount": 10,
   "tools": [
     {
-      "id": "t1",
+      "id": "s1",
       "toolName": "Slack",
       "category": "Communication",
-      "monthlyCost": 120,
-      "annualCost": 1440,
+      "monthlyCost": 87.5,
+      "annualCost": 1050,
       "billingFrequency": "monthly",
-      "status": "redundant",
-      "overlapsWith": [
-        "Microsoft Teams"
-      ],
+      "status": "underused",
+      "overlapsWith": [],
       "notes": [
-        "Overlaps with Microsoft Teams",
         "Possible cheaper alternative: Google Chat (~$0.00/mo)"
       ]
     },
     {
-      "id": "t2",
-      "toolName": "Microsoft Teams",
-      "category": "Communication",
-      "monthlyCost": 6,
-      "annualCost": 72,
-      "billingFrequency": "annually",
-      "status": "underused",
-      "overlapsWith": [
-        "Slack",
-        "Zoom"
-      ],
-      "notes": [
-        "Overlaps with Slack, Zoom",
-        "Possible cheaper alternative: Slack (free tier) (~$0.00/mo)"
-      ]
-    },
-    {
-      "id": "t3",
+      "id": "s2",
       "toolName": "Zoom",
       "category": "Communication",
-      "monthlyCost": 100,
-      "annualCost": 1200,
-      "billingFrequency": "quarterly",
-      "status": "redundant",
-      "overlapsWith": [
-        "Microsoft Teams"
-      ],
+      "monthlyCost": 149.9,
+      "annualCost": 1798.8,
+      "billingFrequency": "monthly",
+      "status": "underused",
+      "overlapsWith": [],
       "notes": [
-        "Overlaps with Microsoft Teams",
         "Possible cheaper alternative: Google Meet (~$0.00/mo)"
       ]
     },
     {
-      "id": "t4",
-      "toolName": "Asana",
-      "category": "Project Management",
-      "monthlyCost": 11,
-      "annualCost": 132,
-      "billingFrequency": "annually",
-      "status": "redundant",
+      "id": "s3",
+      "toolName": "Microsoft 365",
+      "category": "Communication",
+      "monthlyCost": 264,
+      "annualCost": 3168,
+      "billingFrequency": "monthly",
+      "status": "underused",
       "overlapsWith": [
-        "Jira"
+        "Slack",
+        "Zoom",
+        "Notion"
       ],
       "notes": [
-        "Overlaps with Jira",
-        "Possible cheaper alternative: ClickUp (~$7.00/mo)"
+        "Overlaps with Slack, Zoom, Notion",
+        "Possible cheaper alternative: Google Workspace (~$7.20/mo)"
       ]
     },
     {
-      "id": "t5",
+      "id": "s4",
       "toolName": "Jira",
       "category": "Project Management",
-      "monthlyCost": 77.5,
-      "annualCost": 930,
+      "monthlyCost": 79,
+      "annualCost": 948,
       "billingFrequency": "monthly",
       "status": "redundant",
       "overlapsWith": [
@@ -87,115 +66,146 @@
       ]
     },
     {
-      "id": "t6",
+      "id": "s5",
+      "toolName": "Asana",
+      "category": "Project Management",
+      "monthlyCost": 119.99,
+      "annualCost": 1439.88,
+      "billingFrequency": "monthly",
+      "status": "redundant",
+      "overlapsWith": [
+        "Jira"
+      ],
+      "notes": [
+        "Overlaps with Jira",
+        "Possible cheaper alternative: ClickUp (~$7.00/mo)"
+      ]
+    },
+    {
+      "id": "s6",
       "toolName": "Notion",
       "category": "Documentation",
-      "monthlyCost": 8,
-      "annualCost": 96,
-      "billingFrequency": "annually",
-      "status": "underused",
+      "monthlyCost": 96,
+      "annualCost": 1152,
+      "billingFrequency": "monthly",
+      "status": "redundant",
       "overlapsWith": [
-        "Confluence",
         "Asana"
       ],
       "notes": [
-        "Overlaps with Confluence, Asana",
+        "Overlaps with Asana",
         "Possible cheaper alternative: Google Docs (~$0.00/mo)"
       ]
     },
     {
-      "id": "t7",
-      "toolName": "Confluence",
-      "category": "Documentation",
-      "monthlyCost": 5.75,
-      "annualCost": 69,
-      "billingFrequency": "annually",
-      "status": "redundant",
-      "overlapsWith": [
-        "Notion"
-      ],
+      "id": "s7",
+      "toolName": "Figma",
+      "category": "Design",
+      "monthlyCost": 75,
+      "annualCost": 900,
+      "billingFrequency": "monthly",
+      "status": "underused",
+      "overlapsWith": [],
       "notes": [
-        "Overlaps with Notion",
-        "Possible cheaper alternative: Notion (~$4.00/mo)"
+        "Possible cheaper alternative: Miro (~$8.00/mo)"
       ]
     },
     {
-      "id": "t8",
+      "id": "s8",
+      "toolName": "GitHub",
+      "category": "Development",
+      "monthlyCost": 84,
+      "annualCost": 1008,
+      "billingFrequency": "monthly",
+      "status": "underused",
+      "overlapsWith": [],
+      "notes": [
+        "Possible cheaper alternative: Bitbucket (~$3.00/mo)"
+      ]
+    },
+    {
+      "id": "s9",
+      "toolName": "HubSpot",
+      "category": "Marketing",
+      "monthlyCost": 200,
+      "annualCost": 2400,
+      "billingFrequency": "monthly",
+      "status": "underused",
+      "overlapsWith": [],
+      "notes": [
+        "Possible cheaper alternative: HubSpot CRM (free) (~$0.00/mo)"
+      ]
+    },
+    {
+      "id": "s10",
       "toolName": "Intercom",
       "category": "Customer Support",
-      "monthlyCost": 74,
-      "annualCost": 888,
+      "monthlyCost": 399,
+      "annualCost": 4788,
       "billingFrequency": "monthly",
       "status": "underused",
       "overlapsWith": [],
       "notes": [
         "Possible cheaper alternative: Freshdesk (~$15.00/mo)"
       ]
-    },
-    {
-      "id": "t9",
-      "toolName": "1Password",
-      "category": "Security",
-      "monthlyCost": 7.99,
-      "annualCost": 95.88,
-      "billingFrequency": "annually",
-      "status": "underused",
-      "overlapsWith": [],
-      "notes": [
-        "Possible cheaper alternative: Bitwarden (~$3.00/mo)"
-      ]
     }
   ],
   "categories": [
     {
       "category": "Communication",
-      "monthlyCost": 226,
-      "annualCost": 2712,
+      "monthlyCost": 501.4,
+      "annualCost": 6016.8,
       "toolCount": 3
     },
     {
-      "category": "Project Management",
-      "monthlyCost": 88.5,
-      "annualCost": 1062,
-      "toolCount": 2
+      "category": "Customer Support",
+      "monthlyCost": 399,
+      "annualCost": 4788,
+      "toolCount": 1
     },
     {
-      "category": "Customer Support",
-      "monthlyCost": 74,
-      "annualCost": 888,
+      "category": "Marketing",
+      "monthlyCost": 200,
+      "annualCost": 2400,
       "toolCount": 1
+    },
+    {
+      "category": "Project Management",
+      "monthlyCost": 198.99,
+      "annualCost": 2387.88,
+      "toolCount": 2
     },
     {
       "category": "Documentation",
-      "monthlyCost": 13.75,
-      "annualCost": 165,
-      "toolCount": 2
+      "monthlyCost": 96,
+      "annualCost": 1152,
+      "toolCount": 1
     },
     {
-      "category": "Security",
-      "monthlyCost": 7.99,
-      "annualCost": 95.88,
+      "category": "Development",
+      "monthlyCost": 84,
+      "annualCost": 1008,
+      "toolCount": 1
+    },
+    {
+      "category": "Design",
+      "monthlyCost": 75,
+      "annualCost": 900,
       "toolCount": 1
     }
   ],
-  "monthlySpend": 410.24,
-  "annualSpend": 4922.88,
-  "potentialMonthlySavings": 284.55,
-  "potentialAnnualSavings": 3414.6,
+  "monthlySpend": 1554.39,
+  "annualSpend": 18652.68,
+  "potentialMonthlySavings": 1088.07,
+  "potentialAnnualSavings": 13056.84,
   "overlaps": [
-    {
-      "category": "Project Management",
-      "tools": [
-        "Asana",
-        "Confluence",
-        "Jira",
-        "Notion"
-      ]
-    },
     {
       "category": "Communication",
       "tools": [
-        "Microsoft Teams",
+        "Asana",
+        "Jira",
+        "Microsoft 365",
+        "Notion",
         "Slack",
         "Zoom"
       ]
@@ -203,12 +213,31 @@
   ],
   "recommendations": [
     {
+      "id": "switch:Intercom:Freshdesk",
+      "type": "switch",
+      "title": "Switch Intercom to Freshdesk",
+      "description": "Large potential savings if live chat automation is limited.",
+      "monthlySavings": 279.3,
+      "annualSavings": 3351.6,
+      "affectedTools": [
+        "Intercom"
+      ],
+      "alternative": "Freshdesk",
+      "currentTool": "Intercom",
+      "currentMonthlyCost": 399,
+      "alternativeMonthlyCost": 15,
+      "effortLevel": "Medium",
+      "migrationNotes": "Best when ticketing is the core need and advanced automation is not heavily used.",
+      "whyBetterForSmbs": "Large potential savings if live chat automation is limited.",
+      "priority": "high"
+    },
+    {
       "id": "bundle:Google Workspace:Notion,Slack,Zoom",
       "type": "consolidate",
       "title": "Consolidate with Google Workspace",
       "description": "Useful for teams that can standardise on Meet, Drive, Chat, and Docs.",
-      "monthlySavings": 159.6,
-      "annualSavings": 1915.2,
+      "monthlySavings": 233.38,
+      "annualSavings": 2800.56,
       "affectedTools": [
         "Notion",
         "Slack",
@@ -216,182 +245,143 @@
       ],
       "alternative": "Google Workspace",
       "alternativeMonthlyCost": 7.2,
-      "currentMonthlyCost": 228,
+      "currentMonthlyCost": 333.4,
       "effortLevel": "High",
       "migrationNotes": "Consolidates Notion, Slack, Zoom into Google Workspace. Validate integrations, user permissions, and data retention before cutover.",
       "whyBetterForSmbs": "Reduces vendor sprawl, admin overhead, and overlapping seat spend.",
       "priority": "high"
     },
     {
-      "id": "bundle:Microsoft 365:Microsoft Teams,Slack,Zoom",
+      "id": "switch:Microsoft 365:Google Workspace",
+      "type": "switch",
+      "title": "Switch Microsoft 365 to Google Workspace",
+      "description": "Lower-cost suite for many SMBs with email, docs, storage, chat, and meetings in one place.",
+      "monthlySavings": 184.8,
+      "annualSavings": 2217.6,
+      "affectedTools": [
+        "Microsoft 365"
+      ],
+      "alternative": "Google Workspace",
+      "currentTool": "Microsoft 365",
+      "currentMonthlyCost": 264,
+      "alternativeMonthlyCost": 7.2,
+      "effortLevel": "Medium",
+      "migrationNotes": "Best if your team is comfortable moving from Office-first workflows to Google-native collaboration.",
+      "whyBetterForSmbs": "Lower-cost suite for many SMBs with email, docs, storage, chat, and meetings in one place.",
+      "priority": "high"
+    },
+    {
+      "id": "bundle:Microsoft 365:Slack,Zoom",
       "type": "consolidate",
       "title": "Consolidate with Microsoft 365",
       "description": "Can consolidate chat, meetings, and file collaboration into one bundled suite.",
-      "monthlySavings": 158.2,
-      "annualSavings": 1898.4,
+      "monthlySavings": 166.18,
+      "annualSavings": 1994.16,
       "affectedTools": [
-        "Microsoft Teams",
         "Slack",
         "Zoom"
       ],
       "alternative": "Microsoft 365",
       "alternativeMonthlyCost": 12.5,
-      "currentMonthlyCost": 226,
-      "effortLevel": "High",
-      "migrationNotes": "Consolidates Microsoft Teams, Slack, Zoom into Microsoft 365. Validate integrations, user permissions, and data retention before cutover.",
+      "currentMonthlyCost": 237.4,
+      "effortLevel": "Medium",
+      "migrationNotes": "Consolidates Slack, Zoom into Microsoft 365. Validate integrations, user permissions, and data retention before cutover.",
       "whyBetterForSmbs": "Reduces vendor sprawl, admin overhead, and overlapping seat spend.",
       "priority": "high"
     },
     {
-      "id": "switch:Slack:Google Chat",
+      "id": "switch:HubSpot:HubSpot CRM (free)",
       "type": "switch",
-      "title": "Switch Slack to Google Chat",
-      "description": "Simple internal chat for SMBs already on Google Workspace.",
-      "monthlySavings": 84,
-      "annualSavings": 1008,
+      "title": "Switch HubSpot to HubSpot CRM (free)",
+      "description": "Useful if advanced automation features are not being used.",
+      "monthlySavings": 140,
+      "annualSavings": 1680,
       "affectedTools": [
-        "Slack"
+        "HubSpot"
       ],
-      "alternative": "Google Chat",
-      "currentTool": "Slack",
-      "currentMonthlyCost": 120,
+      "alternative": "HubSpot CRM (free)",
+      "currentTool": "HubSpot",
+      "currentMonthlyCost": 200,
       "alternativeMonthlyCost": 0,
       "effortLevel": "Medium",
-      "migrationNotes": "Low-friction if you can standardise on Google Workspace for docs and meetings.",
-      "whyBetterForSmbs": "Simple internal chat for SMBs already on Google Workspace.",
-      "priority": "medium"
-    },
-    {
-      "id": "switch:Zoom:Google Meet",
-      "type": "switch",
-      "title": "Switch Zoom to Google Meet",
-      "description": "Included in Google Workspace for many SMBs and good enough for standard team/customer calls.",
-      "monthlySavings": 70,
-      "annualSavings": 840,
-      "affectedTools": [
-        "Zoom"
-      ],
-      "alternative": "Google Meet",
-      "currentTool": "Zoom",
-      "currentMonthlyCost": 100,
-      "alternativeMonthlyCost": 0,
-      "effortLevel": "Medium",
-      "migrationNotes": "Straightforward if calendars and email already run on Google.",
-      "whyBetterForSmbs": "Included in Google Workspace for many SMBs and good enough for standard team/customer calls.",
-      "priority": "medium"
+      "migrationNotes": "Good downgrade path when you mainly need pipeline visibility and basic contact management.",
+      "whyBetterForSmbs": "Useful if advanced automation features are not being used.",
+      "priority": "high"
     },
     {
       "id": "bundle:ClickUp:Asana,Jira",
       "type": "consolidate",
       "title": "Consolidate with ClickUp",
       "description": "Single PM platform that can replace multiple workflow tools.",
-      "monthlySavings": 61.95,
-      "annualSavings": 743.4,
+      "monthlySavings": 139.29,
+      "annualSavings": 1671.48,
       "affectedTools": [
         "Asana",
         "Jira"
       ],
       "alternative": "ClickUp",
       "alternativeMonthlyCost": 7,
-      "currentMonthlyCost": 88.5,
+      "currentMonthlyCost": 198.99,
       "effortLevel": "Medium",
       "migrationNotes": "Consolidates Asana, Jira into ClickUp. Validate integrations, user permissions, and data retention before cutover.",
       "whyBetterForSmbs": "Reduces vendor sprawl, admin overhead, and overlapping seat spend.",
-      "priority": "medium"
+      "priority": "high"
     },
     {
-      "id": "switch:Jira:ClickUp",
+      "id": "switch:Zoom:Google Meet",
       "type": "switch",
-      "title": "Switch Jira to ClickUp",
-      "description": "Broad feature coverage at lower cost with docs, tasks, and dashboards in one place.",
-      "monthlySavings": 54.25,
-      "annualSavings": 651,
-      "affectedTools": [
-        "Jira"
-      ],
-      "alternative": "ClickUp",
-      "currentTool": "Jira",
-      "currentMonthlyCost": 77.5,
-      "alternativeMonthlyCost": 7,
-      "effortLevel": "Medium",
-      "migrationNotes": "Helpful when you want to consolidate project tooling into one platform.",
-      "whyBetterForSmbs": "Broad feature coverage at lower cost with docs, tasks, and dashboards in one place.",
-      "priority": "medium"
-    },
-    {
-      "id": "switch:Intercom:Freshdesk",
-      "type": "switch",
-      "title": "Switch Intercom to Freshdesk",
-      "description": "Large potential savings if live chat automation is limited.",
-      "monthlySavings": 51.8,
-      "annualSavings": 621.6,
-      "affectedTools": [
-        "Intercom"
-      ],
-      "alternative": "Freshdesk",
-      "currentTool": "Intercom",
-      "currentMonthlyCost": 74,
-      "alternativeMonthlyCost": 15,
-      "effortLevel": "Medium",
-      "migrationNotes": "Best when ticketing is the core need and advanced automation is not heavily used.",
-      "whyBetterForSmbs": "Large potential savings if live chat automation is limited.",
-      "priority": "medium"
-    },
-    {
-      "id": "review:Slack",
-      "type": "review",
-      "title": "Replace Slack with Google Chat",
-      "description": "Slack overlaps with Microsoft Teams. Google Chat is the most credible lower-cost option to validate before renewal.",
-      "monthlySavings": 42,
-      "annualSavings": 504,
-      "affectedTools": [
-        "Slack"
-      ],
-      "alternative": "Google Chat",
-      "currentTool": "Slack",
-      "currentMonthlyCost": 120,
-      "alternativeMonthlyCost": 0,
-      "effortLevel": "Low",
-      "migrationNotes": "Low-friction if you can standardise on Google Workspace for docs and meetings.",
-      "whyBetterForSmbs": "Simple internal chat for SMBs already on Google Workspace.",
-      "priority": "medium"
-    },
-    {
-      "id": "review:Zoom",
-      "type": "review",
-      "title": "Replace Zoom with Google Meet",
-      "description": "Zoom overlaps with Microsoft Teams. Google Meet is the most credible lower-cost option to validate before renewal.",
-      "monthlySavings": 35,
-      "annualSavings": 420,
+      "title": "Switch Zoom to Google Meet",
+      "description": "Included in Google Workspace for many SMBs and good enough for standard team/customer calls.",
+      "monthlySavings": 104.93,
+      "annualSavings": 1259.16,
       "affectedTools": [
         "Zoom"
       ],
       "alternative": "Google Meet",
       "currentTool": "Zoom",
-      "currentMonthlyCost": 100,
+      "currentMonthlyCost": 149.9,
       "alternativeMonthlyCost": 0,
-      "effortLevel": "Low",
+      "effortLevel": "Medium",
       "migrationNotes": "Straightforward if calendars and email already run on Google.",
       "whyBetterForSmbs": "Included in Google Workspace for many SMBs and good enough for standard team/customer calls.",
+      "priority": "high"
+    },
+    {
+      "id": "review:Microsoft 365",
+      "type": "review",
+      "title": "Replace Microsoft 365 with Google Workspace",
+      "description": "Microsoft 365 overlaps with Slack, Zoom, Notion. Google Workspace is the most credible lower-cost option to validate before renewal.",
+      "monthlySavings": 92.4,
+      "annualSavings": 1108.8,
+      "affectedTools": [
+        "Microsoft 365"
+      ],
+      "alternative": "Google Workspace",
+      "currentTool": "Microsoft 365",
+      "currentMonthlyCost": 264,
+      "alternativeMonthlyCost": 7.2,
+      "effortLevel": "Low",
+      "migrationNotes": "Best if your team is comfortable moving from Office-first workflows to Google-native collaboration.",
+      "whyBetterForSmbs": "Lower-cost suite for many SMBs with email, docs, storage, chat, and meetings in one place.",
       "priority": "medium"
     },
     {
-      "id": "review:Jira",
-      "type": "review",
-      "title": "Replace Jira with ClickUp",
-      "description": "Jira overlaps with Asana. ClickUp is the most credible lower-cost option to validate before renewal.",
-      "monthlySavings": 27.13,
-      "annualSavings": 325.56,
+      "id": "switch:Asana:ClickUp",
+      "type": "switch",
+      "title": "Switch Asana to ClickUp",
+      "description": "Can replace task and project tracking at a lower price.",
+      "monthlySavings": 83.99,
+      "annualSavings": 1007.88,
       "affectedTools": [
-        "Jira"
+        "Asana"
       ],
       "alternative": "ClickUp",
-      "currentTool": "Jira",
-      "currentMonthlyCost": 77.5,
+      "currentTool": "Asana",
+      "currentMonthlyCost": 119.99,
       "alternativeMonthlyCost": 7,
-      "effortLevel": "Low",
-      "migrationNotes": "Helpful when you want to consolidate project tooling into one platform.",
-      "whyBetterForSmbs": "Broad feature coverage at lower cost with docs, tasks, and dashboards in one place.",
+      "effortLevel": "Medium",
+      "migrationNotes": "Strong fit if you want docs, whiteboards, and tasks together.",
+      "whyBetterForSmbs": "Can replace task and project tracking at a lower price.",
       "priority": "medium"
     },
     {
@@ -399,171 +389,152 @@
       "type": "switch",
       "title": "Switch Notion to Google Docs",
       "description": "Good fit if the team only needs lightweight docs and collaboration.",
-      "monthlySavings": 5.6,
-      "annualSavings": 67.2,
+      "monthlySavings": 67.2,
+      "annualSavings": 806.4,
       "affectedTools": [
         "Notion"
       ],
       "alternative": "Google Docs",
       "currentTool": "Notion",
-      "currentMonthlyCost": 8,
+      "currentMonthlyCost": 96,
       "alternativeMonthlyCost": 0,
       "effortLevel": "Medium",
       "migrationNotes": "Best when structured wikis and databases are not essential.",
       "whyBetterForSmbs": "Good fit if the team only needs lightweight docs and collaboration.",
-      "priority": "low"
+      "priority": "medium"
     },
     {
-      "id": "switch:1Password:Bitwarden",
+      "id": "switch:Slack:Google Chat",
       "type": "switch",
-      "title": "Switch 1Password to Bitwarden",
-      "description": "Lower-cost password manager with strong business features.",
-      "monthlySavings": 4.99,
-      "annualSavings": 59.88,
+      "title": "Switch Slack to Google Chat",
+      "description": "Simple internal chat for SMBs already on Google Workspace.",
+      "monthlySavings": 61.25,
+      "annualSavings": 735,
       "affectedTools": [
-        "1Password"
+        "Slack"
       ],
-      "alternative": "Bitwarden",
-      "currentTool": "1Password",
-      "currentMonthlyCost": 7.99,
-      "alternativeMonthlyCost": 3,
-      "effortLevel": "Medium",
-      "migrationNotes": "Low-friction migration for most SMB password vault setups.",
-      "whyBetterForSmbs": "Lower-cost password manager with strong business features.",
-      "priority": "low"
-    },
-    {
-      "id": "switch:Microsoft Teams:Slack (free tier)",
-      "type": "switch",
-      "title": "Switch Microsoft Teams to Slack (free tier)",
-      "description": "Fast onboarding, broad integration ecosystem, and enough chat capability for many smaller teams.",
-      "monthlySavings": 4.2,
-      "annualSavings": 50.4,
-      "affectedTools": [
-        "Microsoft Teams"
-      ],
-      "alternative": "Slack (free tier)",
-      "currentTool": "Microsoft Teams",
-      "currentMonthlyCost": 6,
+      "alternative": "Google Chat",
+      "currentTool": "Slack",
+      "currentMonthlyCost": 87.5,
       "alternativeMonthlyCost": 0,
       "effortLevel": "Medium",
-      "migrationNotes": "Best for teams willing to accept limited message history on the free tier.",
-      "whyBetterForSmbs": "Fast onboarding, broad integration ecosystem, and enough chat capability for many smaller teams.",
-      "priority": "low"
+      "migrationNotes": "Low-friction if you can standardise on Google Workspace for docs and meetings.",
+      "whyBetterForSmbs": "Simple internal chat for SMBs already on Google Workspace.",
+      "priority": "medium"
     },
     {
-      "id": "switch:Asana:ClickUp",
+      "id": "switch:GitHub:Bitbucket",
       "type": "switch",
-      "title": "Switch Asana to ClickUp",
-      "description": "Can replace task and project tracking at a lower price.",
-      "monthlySavings": 4,
-      "annualSavings": 48,
+      "title": "Switch GitHub to Bitbucket",
+      "description": "Lower cost for teams that only need basic repo hosting and CI.",
+      "monthlySavings": 58.8,
+      "annualSavings": 705.6,
       "affectedTools": [
-        "Asana"
+        "GitHub"
+      ],
+      "alternative": "Bitbucket",
+      "currentTool": "GitHub",
+      "currentMonthlyCost": 84,
+      "alternativeMonthlyCost": 3,
+      "effortLevel": "Medium",
+      "migrationNotes": "Works well if you are already committed to the Atlassian ecosystem.",
+      "whyBetterForSmbs": "Lower cost for teams that only need basic repo hosting and CI.",
+      "priority": "medium"
+    },
+    {
+      "id": "switch:Jira:ClickUp",
+      "type": "switch",
+      "title": "Switch Jira to ClickUp",
+      "description": "Broad feature coverage at lower cost with docs, tasks, and dashboards in one place.",
+      "monthlySavings": 55.3,
+      "annualSavings": 663.6,
+      "affectedTools": [
+        "Jira"
       ],
       "alternative": "ClickUp",
-      "currentTool": "Asana",
-      "currentMonthlyCost": 11,
+      "currentTool": "Jira",
+      "currentMonthlyCost": 79,
       "alternativeMonthlyCost": 7,
       "effortLevel": "Medium",
-      "migrationNotes": "Strong fit if you want docs, whiteboards, and tasks together.",
-      "whyBetterForSmbs": "Can replace task and project tracking at a lower price.",
-      "priority": "low"
+      "migrationNotes": "Helpful when you want to consolidate project tooling into one platform.",
+      "whyBetterForSmbs": "Broad feature coverage at lower cost with docs, tasks, and dashboards in one place.",
+      "priority": "medium"
+    },
+    {
+      "id": "switch:Figma:Miro",
+      "type": "switch",
+      "title": "Switch Figma to Miro",
+      "description": "If Figma is mostly used for whiteboards and workshops, Miro can cover collaboration at lower cost.",
+      "monthlySavings": 52.5,
+      "annualSavings": 630,
+      "affectedTools": [
+        "Figma"
+      ],
+      "alternative": "Miro",
+      "currentTool": "Figma",
+      "currentMonthlyCost": 75,
+      "alternativeMonthlyCost": 8,
+      "effortLevel": "Medium",
+      "migrationNotes": "Only switch if design system and prototyping depth are not core needs.",
+      "whyBetterForSmbs": "If Figma is mostly used for whiteboards and workshops, Miro can cover collaboration at lower cost.",
+      "priority": "medium"
     },
     {
       "id": "review:Asana",
       "type": "review",
       "title": "Replace Asana with ClickUp",
       "description": "Asana overlaps with Jira. ClickUp is the most credible lower-cost option to validate before renewal.",
-      "monthlySavings": 3.85,
-      "annualSavings": 46.2,
+      "monthlySavings": 42,
+      "annualSavings": 504,
       "affectedTools": [
         "Asana"
       ],
       "alternative": "ClickUp",
       "currentTool": "Asana",
-      "currentMonthlyCost": 11,
+      "currentMonthlyCost": 119.99,
       "alternativeMonthlyCost": 7,
       "effortLevel": "Low",
       "migrationNotes": "Strong fit if you want docs, whiteboards, and tasks together.",
       "whyBetterForSmbs": "Can replace task and project tracking at a lower price.",
-      "priority": "low"
+      "priority": "medium"
     },
     {
       "id": "review:Notion",
       "type": "review",
       "title": "Replace Notion with Google Docs",
-      "description": "Notion overlaps with Confluence, Asana. Google Docs is the most credible lower-cost option to validate before renewal.",
-      "monthlySavings": 2.8,
-      "annualSavings": 33.6,
+      "description": "Notion overlaps with Asana. Google Docs is the most credible lower-cost option to validate before renewal.",
+      "monthlySavings": 33.6,
+      "annualSavings": 403.2,
       "affectedTools": [
         "Notion"
       ],
       "alternative": "Google Docs",
       "currentTool": "Notion",
-      "currentMonthlyCost": 8,
+      "currentMonthlyCost": 96,
       "alternativeMonthlyCost": 0,
       "effortLevel": "Low",
       "migrationNotes": "Best when structured wikis and databases are not essential.",
       "whyBetterForSmbs": "Good fit if the team only needs lightweight docs and collaboration.",
-      "priority": "low"
+      "priority": "medium"
     },
     {
-      "id": "review:Microsoft Teams",
+      "id": "review:Jira",
       "type": "review",
-      "title": "Replace Microsoft Teams with Slack (free tier)",
-      "description": "Microsoft Teams overlaps with Slack, Zoom. Slack (free tier) is the most credible lower-cost option to validate before renewal.",
-      "monthlySavings": 2.1,
-      "annualSavings": 25.2,
+      "title": "Replace Jira with ClickUp",
+      "description": "Jira overlaps with Asana. ClickUp is the most credible lower-cost option to validate before renewal.",
+      "monthlySavings": 27.65,
+      "annualSavings": 331.8,
       "affectedTools": [
-        "Microsoft Teams"
+        "Jira"
       ],
-      "alternative": "Slack (free tier)",
-      "currentTool": "Microsoft Teams",
-      "currentMonthlyCost": 6,
-      "alternativeMonthlyCost": 0,
+      "alternative": "ClickUp",
+      "currentTool": "Jira",
+      "currentMonthlyCost": 79,
+      "alternativeMonthlyCost": 7,
       "effortLevel": "Low",
-      "migrationNotes": "Best for teams willing to accept limited message history on the free tier.",
-      "whyBetterForSmbs": "Fast onboarding, broad integration ecosystem, and enough chat capability for many smaller teams.",
-      "priority": "low"
-    },
-    {
-      "id": "review:Confluence",
-      "type": "review",
-      "title": "Replace Confluence with Notion",
-      "description": "Confluence overlaps with Notion. Notion is the most credible lower-cost option to validate before renewal.",
-      "monthlySavings": 2.01,
-      "annualSavings": 24.12,
-      "affectedTools": [
-        "Confluence"
-      ],
-      "alternative": "Notion",
-      "currentTool": "Confluence",
-      "currentMonthlyCost": 5.75,
-      "alternativeMonthlyCost": 4,
-      "effortLevel": "Low",
-      "migrationNotes": "Best if your team wants one flexible workspace rather than Atlassian-style admin.",
-      "whyBetterForSmbs": "Combines docs, lightweight projects, and internal wiki workflows in one simpler workspace.",
-      "priority": "low"
-    },
-    {
-      "id": "switch:Confluence:Notion",
-      "type": "switch",
-      "title": "Switch Confluence to Notion",
-      "description": "Combines docs, lightweight projects, and internal wiki workflows in one simpler workspace.",
-      "monthlySavings": 1.75,
-      "annualSavings": 21,
-      "affectedTools": [
-        "Confluence"
-      ],
-      "alternative": "Notion",
-      "currentTool": "Confluence",
-      "currentMonthlyCost": 5.75,
-      "alternativeMonthlyCost": 4,
-      "effortLevel": "Medium",
-      "migrationNotes": "Best if your team wants one flexible workspace rather than Atlassian-style admin.",
-      "whyBetterForSmbs": "Combines docs, lightweight projects, and internal wiki workflows in one simpler workspace.",
-      "priority": "low"
+      "migrationNotes": "Helpful when you want to consolidate project tooling into one platform.",
+      "whyBetterForSmbs": "Broad feature coverage at lower cost with docs, tasks, and dashboards in one place.",
+      "priority": "medium"
     }
   ]
 }

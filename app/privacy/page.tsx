@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Privacy Policy",
-  description: "Learn how Distill collects, uses, secures, and retains customer data.",
+  description: "Learn how StackSmart collects, uses, secures, and retains customer data.",
   path: "/privacy",
 });
 
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
         <div className="space-y-4 text-sm leading-relaxed text-dark-300">
           <p><strong className="text-white">Last updated:</strong> March 30, 2026</p>
           <p>
-            Distill (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) provides SaaS spend analysis, reporting, and optimization tools for business customers.
+            StackSmart (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) provides SaaS spend analysis, reporting, and optimization tools for business customers.
             This Privacy Policy explains what information we collect, how we use it, and the choices available to you.
           </p>
           <h2 className="pt-4 text-lg font-semibold text-white">Information we collect</h2>
@@ -54,7 +54,7 @@ export default function PrivacyPage() {
           </p>
           <h2 className="pt-4 text-lg font-semibold text-white">Contact</h2>
           <p>
-            Questions about this policy? Email <a href="mailto:hello@stacksmart.io" className="text-brand-400 hover:text-brand-300">hello@stacksmart.io</a>.
+            Questions about this policy? Email <a href="mailto:hello@stacksmart.app" className="text-brand-400 hover:text-brand-300">hello@stacksmart.app</a>.
           </p>
         </div>
       </div>

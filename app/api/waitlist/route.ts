@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
         heading: "Welcome to StackSmart",
         body: "Thanks for signing up. Your next step is simple: upload your billing data, review the analysis, and turn the findings into a savings report.",
         ctaLabel: "Open welcome page",
-        ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/welcome`,
+        ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "https://stacksmart.app"}/welcome`,
       });
     } catch (emailError) {
       // Email sending is non-blocking — signup still succeeds without it

@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Pricing",
-  description: "Review Distill plans and start a secure Stripe checkout for SaaS spend optimisation.",
+  description: "Get a StackSmart SaaS audit for a simple one-time price and start a secure Stripe checkout.",
   path: "/pricing",
 });
 
@@ -15,40 +15,39 @@ export default async function PricingPage() {
 
   return (
     <main className="min-h-screen bg-dark-950 px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl space-y-12">
-        <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end">
-          <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-500/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-brand-300">
-              Distill pricing
-            </div>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Simple pricing. Clear payback. Honest plan fit.</h1>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-dark-300">
-              Pick a one-time audit or a monitoring plan based on how much ongoing control you want over your SaaS spend. The decision should feel obvious, not like enterprise procurement theatre.
-            </p>
+      <div className="mx-auto max-w-6xl space-y-12">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-500/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-brand-300">
+            StackSmart pricing
           </div>
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">One audit. One price. Clear savings.</h1>
+          <p className="mt-4 text-lg leading-8 text-dark-300">
+            Start with a focused SaaS audit for $49. You’ll get a clear analysis of your stack, a savings report, and practical recommendations you can act on immediately.
+          </p>
+        </div>
 
-          <div className="grid gap-4 sm:grid-cols-3">
-            {[
-              ["Best entry point", "One-Time Audit at $299"],
-              ["Most common fit", "Growth for recurring monitoring"],
-              ["Annual upside", "Save 20% with annual billing"],
-            ].map(([title, value]) => (
-              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/75 p-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-dark-400">{title}</p>
-                <p className="mt-2 text-sm font-semibold text-white">{value}</p>
-              </div>
-            ))}
-          </div>
+        <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-3">
+          {[
+            ["Launch offer", "$49 one-time"],
+            ["Delivery", "AI-powered savings report"],
+            ["Access", "30 days + PDF export"],
+          ].map(([title, value]) => (
+            <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/75 p-4 text-center">
+              <p className="text-xs uppercase tracking-[0.18em] text-dark-400">{title}</p>
+              <p className="mt-2 text-sm font-semibold text-white">{value}</p>
+            </div>
+          ))}
         </div>
 
         {subscription && (
           <div className="mx-auto max-w-4xl rounded-[26px] border border-dark-700 bg-dark-900/80 p-6">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-dark-400">Current plan</p>
+                <p className="text-sm uppercase tracking-[0.2em] text-dark-400">Current purchase</p>
                 <h2 className="mt-1 text-2xl font-bold text-white">{subscription.planName}</h2>
                 <p className="mt-1 text-sm text-dark-300">
-                  Status: <span className="capitalize text-brand-300">{subscription.status}</span> · Billing: {subscription.billingInterval.replace("_", " ")}
+                  Status: <span className="capitalize text-brand-300">{subscription.status}</span>
+                  {subscription.billingInterval ? <> · Billing: {subscription.billingInterval.replace("_", " ")}</> : null}
                 </p>
               </div>
               <Link href="/dashboard" className="btn-secondary text-sm">
@@ -65,7 +64,7 @@ export default async function PricingPage() {
             <div>
               <h2 className="text-2xl font-semibold text-white">What a buyer should know before paying</h2>
               <p className="mt-3 text-sm leading-7 text-dark-300">
-                Distill is built to reduce wasted SaaS spend from billing exports and invoice data. The product is strongest when you want a fast recommendation layer, not a heavyweight procurement system.
+                StackSmart is built to reduce wasted SaaS spend from billing exports and invoice data. The audit is designed for buyers who want quick clarity and action, not a heavyweight procurement rollout.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -73,7 +72,7 @@ export default async function PricingPage() {
                 "CSV-first workflow",
                 "No banking access required",
                 "Useful for ops, finance, and founders",
-                "Upgrade or downgrade from the same billing flow",
+                "Single audit purchase for launch",
               ].map((item) => (
                 <div key={item} className="rounded-2xl border border-dark-700 bg-dark-950/70 px-4 py-4 text-sm text-dark-200">
                   {item}

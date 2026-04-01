@@ -19,14 +19,14 @@ export default function OpenGraphImage() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ fontSize: 28, opacity: 0.8 }}>Distill</div>
+        <div style={{ fontSize: 28, opacity: 0.8 }}>StackSmart</div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 72, fontWeight: 800, lineHeight: 1.05 }}>Find wasted SaaS spend fast.</div>
           <div style={{ marginTop: 20, fontSize: 30, opacity: 0.82, maxWidth: 900 }}>
             AI-powered analysis for overlap, underused tools, and savings opportunities.
           </div>
         </div>
-        <div style={{ fontSize: 24, opacity: 0.7 }}>stacksmart.io</div>
+        <div style={{ fontSize: 24, opacity: 0.7 }}>stacksmart.app</div>
       </div>
     ),
     size,
