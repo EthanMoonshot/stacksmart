@@ -231,10 +231,16 @@ export async function POST(req: NextRequest) {
 
     /* ---- charge.refunded ---- */
     if (event.type === "charge.refunded") {
-      const charge = event.data.object as Stripe.Charge;
+      const chargePartial = event.data.object as Stripe.Charge;
+      // Fetch the full charge object — Stripe sends a partial diff in this event
+      let charge: Stripe.Charge;
+      try {
+        charge = await stripe.charges.retrieve(chargePartial.id, { expand: ["billing_details"] });
+      } catch {
+        charge = chargePartial;
+      }
       const amount = ((charge.amount_refunded ?? 0) / 100).toFixed(2);
       const currency = charge.currency ?? "aud";
-      // billing_details.email is the most reliable source for guest checkouts
       const email =
         charge.billing_details?.email ??
         charge.receipt_email ??
