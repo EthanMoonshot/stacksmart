@@ -41,7 +41,7 @@ export default function TrustSection() {
   return (
     <section className="relative py-12 md:py-16 border-y border-dark-800/40">
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <p className="text-center font-sans text-xs uppercase tracking-[0.15em] text-dark-500 mb-8">
+        <p className="text-center text-xs uppercase tracking-[0.15em] text-dark-500 mb-8">
           Built for cautious finance teams
         </p>
 
@@ -51,12 +51,12 @@ export default function TrustSection() {
               key={signal.title}
               className="reveal flex items-center gap-3"
             >
-              <div className="w-9 h-9 rounded-xl bg-dark-800 border border-dark-700 flex items-center justify-center text-brand-400">
+              <div className="w-8 h-8 rounded-lg bg-dark-800 border border-dark-700 flex items-center justify-center text-brand-400">
                 {signal.icon}
               </div>
               <div>
-                <p className="font-display text-white text-sm font-semibold">{signal.title}</p>
-                <p className="font-sans text-dark-500 text-xs">{signal.description}</p>
+                <p className="text-white text-sm font-medium">{signal.title}</p>
+                <p className="text-dark-500 text-xs">{signal.description}</p>
               </div>
             </div>
           ))}

@@ -3,7 +3,7 @@ import { Resend } from "resend";
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 function getFromAddress() {
-  return process.env.EMAIL_FROM || "StackSmart <onboarding@resend.dev>";
+  return process.env.EMAIL_FROM || "StackSmart <hello@stacksmart.app>";
 }
 
 export async function sendProductEmail({

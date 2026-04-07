@@ -27,18 +27,20 @@ export async function POST(req: NextRequest) {
 
     if (notifyEmail) {
       const hasSavings = analysis.potentialAnnualSavings >= 1;
-      await sendProductEmail({
-        to: notifyEmail,
-        subject: hasSavings
-          ? "Your StackSmart report is ready"
-          : "Your SaaS audit is complete — review your full stack analysis",
-        heading: "Your report is ready",
-        body: hasSavings
-          ? `We’ve finished analysing your stack. ${analysis.recommendations.length} recommendations are ready for review, with up to $${analysis.potentialAnnualSavings.toLocaleString()} in annual savings identified.`
-          : `We’ve finished analysing your stack. ${analysis.recommendations.length} recommendations are ready for review. Open your report to see the full breakdown.`,
-        ctaLabel: "Open your report",
-        ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "https://stacksmart.app"}/report`,
-      });
+      try {
+        await sendProductEmail({
+          to: notifyEmail,
+          subject: "Your StackSmart report is ready 📊",
+          heading: "Here are your savings opportunities.",
+          body: hasSavings
+            ? `We've finished analysing your stack. ${analysis.recommendations.length} recommendations are ready for review, with up to $${analysis.potentialAnnualSavings.toLocaleString()} in annual savings identified.`
+            : `We've finished analysing your stack. ${analysis.recommendations.length} recommendations are ready for review. Open your report to see the full breakdown.`,
+          ctaLabel: "View My Report",
+          ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "https://www.stacksmart.app"}/report`,
+        });
+      } catch (emailErr) {
+        console.error("[Analyze] Report delivery email failed:", emailErr);
+      }
     }
 
     return NextResponse.json({ analysis }, { status: 201, headers: noStoreHeaders });
