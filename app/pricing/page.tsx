@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Pricing",
-  description: "Get a StackSmart SaaS audit for a simple one-time price and start a secure Stripe checkout.",
+  description: "Choose the right StackSmart plan — one-time audit or ongoing SaaS spend optimisation — and start secure Stripe checkout.",
   path: "/pricing",
 });
 
@@ -20,17 +20,17 @@ export default async function PricingPage() {
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-500/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-brand-300">
             StackSmart pricing
           </div>
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">One audit. One price. Clear savings.</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Pick the StackSmart plan that fits your buying stage.</h1>
           <p className="mt-4 text-lg leading-8 text-dark-300">
-            Start with a focused SaaS audit for $49. You’ll get a clear analysis of your stack, a savings report, and practical recommendations you can act on immediately.
+            Start with a focused $49 audit or move straight into ongoing SaaS optimisation with Starter or Growth.
           </p>
         </div>
 
         <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-3">
           {[
-            ["Launch offer", "$49 one-time"],
-            ["Delivery", "AI-powered savings report"],
-            ["Access", "30 days + PDF export"],
+            ["Audit", "$49 one-time"],
+            ["Starter", "$79/mo"],
+            ["Growth", "$199/mo"],
           ].map(([title, value]) => (
             <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/75 p-4 text-center">
               <p className="text-xs uppercase tracking-[0.18em] text-dark-400">{title}</p>
@@ -72,7 +72,7 @@ export default async function PricingPage() {
                 "CSV-first workflow",
                 "No banking access required",
                 "Useful for ops, finance, and founders",
-                "Single audit purchase for launch",
+                "Audit + recurring plan options", 
               ].map((item) => (
                 <div key={item} className="rounded-2xl border border-dark-700 bg-dark-950/70 px-4 py-4 text-sm text-dark-200">
                   {item}

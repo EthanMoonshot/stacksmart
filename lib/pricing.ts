@@ -16,12 +16,11 @@ export interface PricingPlan {
 export const pricingPlans: PricingPlan[] = [
   {
     id: "audit",
-    name: "SaaS Audit",
-    description: "A fast, focused one-time audit to uncover savings across your SaaS stack before you commit to anything bigger.",
+    name: "Audit",
+    description: "A fast, focused one-time SaaS spend audit for teams that want quick clarity before committing to ongoing optimisation.",
     price: 49,
     interval: "one_time",
     mode: "payment",
-    highlight: true,
     badge: "Launch Offer",
     features: [
       "Full SaaS stack analysis",
@@ -30,7 +29,41 @@ export const pricingPlans: PricingPlan[] = [
       "PDF export",
       "30 days report access",
     ],
-    cta: "Get Your Audit — $49",
+    cta: "Get Audit — $49",
+  },
+  {
+    id: "starter",
+    name: "Starter",
+    description: "For lean teams that want ongoing visibility into waste, renewals, and quick savings wins every month.",
+    price: 79,
+    interval: "month",
+    mode: "subscription",
+    features: [
+      "Everything in Audit",
+      "Monthly spend monitoring",
+      "Renewal risk visibility",
+      "Ongoing savings recommendations",
+      "Priority support",
+    ],
+    cta: "Start Starter",
+  },
+  {
+    id: "growth",
+    name: "Growth",
+    description: "For growing businesses that want StackSmart running as a proactive SaaS optimisation layer, not just a one-off review.",
+    price: 199,
+    interval: "month",
+    mode: "subscription",
+    highlight: true,
+    badge: "Best Value",
+    features: [
+      "Everything in Starter",
+      "Deeper savings analysis",
+      "Higher-volume stack coverage",
+      "Quarterly optimisation reviews",
+      "Fastest support",
+    ],
+    cta: "Start Growth",
   },
 ];
 
