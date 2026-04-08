@@ -20,8 +20,10 @@ export interface SubscriptionRecord {
 
 const SUBSCRIPTIONS_FILE = path.join(process.cwd(), "data", "subscriptions.json");
 const DEFAULT_CUSTOMER_ID = "demo-user";
+const IS_VERCEL = process.env.VERCEL === "1";
 
 async function ensureFile() {
+  if (IS_VERCEL) return;
   await fs.mkdir(path.dirname(SUBSCRIPTIONS_FILE), { recursive: true });
   try {
     await fs.access(SUBSCRIPTIONS_FILE);
@@ -31,6 +33,7 @@ async function ensureFile() {
 }
 
 export async function readSubscriptions(): Promise<SubscriptionRecord[]> {
+  if (IS_VERCEL) return [];
   await ensureFile();
   try {
     const raw = await fs.readFile(SUBSCRIPTIONS_FILE, "utf8");
@@ -41,6 +44,7 @@ export async function readSubscriptions(): Promise<SubscriptionRecord[]> {
 }
 
 export async function writeSubscriptions(records: SubscriptionRecord[]) {
+  if (IS_VERCEL) return;
   await ensureFile();
   await fs.writeFile(SUBSCRIPTIONS_FILE, JSON.stringify(records, null, 2));
 }
