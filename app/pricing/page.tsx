@@ -29,8 +29,8 @@ export default async function PricingPage() {
         <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-3">
           {[
             ["Audit", "$49 one-time"],
-            ["Starter", "$79/mo"],
-            ["Growth", "$199/mo"],
+            ["Starter", "$49/mo"],
+            ["Growth", "$99/mo"],
           ].map(([title, value]) => (
             <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/75 p-4 text-center">
               <p className="text-xs uppercase tracking-[0.18em] text-dark-400">{title}</p>
