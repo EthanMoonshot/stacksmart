@@ -6,18 +6,21 @@ const plans = [
     price: "$49",
     period: "one-time",
     fit: "Best for buyers who want a fast standalone SaaS savings review.",
+    cta: "Buy Audit",
   },
   {
     name: "Starter",
     price: "$29",
     period: "/mo",
     fit: "Best for smaller teams that want ongoing visibility and savings follow-through.",
+    cta: "Start Starter",
   },
   {
     name: "Growth",
     price: "$79",
     period: "/mo",
     fit: "Best for growing businesses that want StackSmart running continuously as an optimisation layer.",
+    cta: "Start Growth",
   },
 ];
 
@@ -55,6 +58,12 @@ export default function Pricing() {
                 </div>
                 <p className="font-sans text-sm leading-relaxed text-dark-200">{plan.fit}</p>
               </div>
+              <Link
+                href="/pricing"
+                className="mt-auto block w-full rounded-xl bg-brand-500 px-6 py-3.5 text-center text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-600 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)]"
+              >
+                {plan.cta}
+              </Link>
             </div>
           ))}
         </div>
