@@ -35,7 +35,7 @@ export const pricingPlans: PricingPlan[] = [
     id: "starter",
     name: "Starter",
     description: "For lean teams that want ongoing visibility into waste, renewals, and quick savings wins every month.",
-    price: 49,
+    price: 29,
     interval: "month",
     mode: "subscription",
     features: [
@@ -51,7 +51,7 @@ export const pricingPlans: PricingPlan[] = [
     id: "growth",
     name: "Growth",
     description: "For growing businesses that want StackSmart running as a proactive SaaS optimisation layer, not just a one-off review.",
-    price: 99,
+    price: 79,
     interval: "month",
     mode: "subscription",
     highlight: true,

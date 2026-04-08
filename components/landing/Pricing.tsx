@@ -9,13 +9,13 @@ const plans = [
   },
   {
     name: "Starter",
-    price: "$49",
+    price: "$29",
     period: "/mo",
     fit: "Best for smaller teams that want ongoing visibility and savings follow-through.",
   },
   {
     name: "Growth",
-    price: "$99",
+    price: "$79",
     period: "/mo",
     fit: "Best for growing businesses that want StackSmart running continuously as an optimisation layer.",
   },
