@@ -119,7 +119,7 @@ function LaneCard({
   const colors = laneColorMap[title] ?? laneColorMap["Keep"];
 
   return (
-    <div className={`rounded-[28px] border ${colors.border} bg-dark-900/80 p-8 shadow-xl ${colors.glow}`}>
+    <div className={`rounded-[28px] border ${colors.border} bg-dark-900/80 p-6 md:p-8 shadow-xl ${colors.glow}`}>
       {/* Header */}
       <div className="flex items-start justify-between gap-4 mb-7">
         <div className="flex items-center gap-3">
@@ -146,9 +146,9 @@ function LaneCard({
           </div>
         ) : (
           items.slice(0, 3).map((item) => (
-            <div key={item.id} className="rounded-2xl border border-dark-700/70 bg-dark-950/70 p-6 shadow-md">
-              <div className="flex items-center justify-between gap-3 mb-3">
-                <p className="font-semibold text-white text-base font-display">{item.title}</p>
+            <div key={item.id} className="rounded-2xl border border-dark-700/70 bg-dark-950/70 p-5 md:p-6 shadow-md">
+              <div className="mb-3 flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
+                <p className="pr-0 text-base font-semibold leading-7 text-white font-display lg:pr-4">{item.title}</p>
                 <p className="font-mono text-2xl font-bold text-success-500 flex-shrink-0">
                   {formatCurrency(item.monthlySavings)}/mo
                 </p>
@@ -173,7 +173,7 @@ export default function ReportView({ model, shared = false }: { model: ReportVie
     <div id="report-content" className="space-y-10">
       {/* Executive Summary — hero section with gradient */}
       <section
-        className="relative overflow-hidden rounded-[28px] border border-dark-700 bg-gradient-to-br from-dark-800 via-dark-900 to-dark-950 p-8 md:p-12 shadow-2xl"
+        className="relative overflow-hidden rounded-[28px] border border-dark-700 bg-gradient-to-br from-dark-800 via-dark-900 to-dark-950 p-6 md:p-10 xl:p-12 shadow-2xl"
         aria-labelledby="exec-summary-heading"
       >
         {/* Subtle radial glow */}
@@ -185,12 +185,12 @@ export default function ReportView({ model, shared = false }: { model: ReportVie
             <p className="text-xs uppercase tracking-[0.25em] text-dark-400 font-sans">Executive summary</p>
             <h2
               id="exec-summary-heading"
-              className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white leading-snug font-display"
+              className="mt-4 max-w-4xl text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl xl:text-[2.8rem]"
             >
               This stack has meaningful savings upside — but most of it comes from a few decisive
               moves.
             </h2>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-dark-300 font-sans">
+            <p className="mt-6 max-w-3xl text-base leading-7 text-dark-300 md:text-lg md:leading-8 font-sans">
               StackSmart analysed {analysis.toolCount} tools with total spend of{" "}
               <span className="font-mono font-bold text-white">{formatCurrency(analysis.monthlySpend)}/month</span>. The current stack shows{" "}
               {analysis.overlaps.length} overlap groups and {model.recommendationCount} actionable
@@ -431,7 +431,7 @@ export default function ReportView({ model, shared = false }: { model: ReportVie
             return (
               <div
                 key={rec.id}
-                className="rounded-[24px] border border-dark-700 bg-dark-950/70 p-6 shadow-md"
+                className="rounded-[24px] border border-dark-700 bg-dark-950/70 p-5 md:p-6 shadow-md"
               >
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                   <div className="flex flex-1 gap-5">
@@ -454,7 +454,7 @@ export default function ReportView({ model, shared = false }: { model: ReportVie
                           {rec.priority}
                         </span>
                       </div>
-                      <p className="mt-3 text-base leading-8 text-dark-300 font-sans">{rec.description}</p>
+                      <p className="mt-3 text-base leading-7 text-dark-300 md:text-[1.05rem] md:leading-8 font-sans">{rec.description}</p>
                       <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
                         <div className="rounded-2xl border border-dark-700 bg-dark-900/60 p-4">
                           <p className="text-xs uppercase tracking-[0.18em] text-dark-400 font-sans">

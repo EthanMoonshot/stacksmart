@@ -6,7 +6,6 @@ import Link from "next/link";
 import AppHeader from "@/components/dashboard/AppHeader";
 import { SaaSTool, CATEGORIES, BILLING_FREQUENCIES } from "@/lib/types";
 import { parseCSV, ParseError } from "@/lib/csv-parser";
-import { sampleTools } from "@/lib/sample-data";
 import { trackEvent } from "@/lib/analytics";
 
 type Tab = "csv" | "manual" | "email";
@@ -82,13 +81,27 @@ export default function UploadPage() {
   );
 
   // --- Save tools ---
-  const saveTools = async (tools: SaaSTool[], source: "csv" | "manual" | "sample") => {
+  const saveTools = async (tools: SaaSTool[], source: "csv" | "manual") => {
+    const cleanedTools = tools
+      .map((tool) => ({
+        ...tool,
+        toolName: tool.toolName.trim(),
+        category: tool.category?.trim() || "Other",
+        cost: Number(tool.cost),
+      }))
+      .filter((tool) => tool.toolName && Number.isFinite(tool.cost) && tool.cost >= 0);
+
+    if (cleanedTools.length === 0) {
+      showToast("Add at least one valid tool before saving.", "error");
+      return;
+    }
+
     setSaving(true);
     try {
       const res = await fetch("/api/tools", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ tools, source }),
+        body: JSON.stringify({ tools: cleanedTools, source }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -107,8 +120,8 @@ export default function UploadPage() {
         return;
       }
 
-      trackEvent("report_generated", { source, toolCount: tools.length });
-      showToast(`Saved ${tools.length} tools successfully!`);
+      trackEvent("report_generated", { source, toolCount: cleanedTools.length });
+      showToast(`Saved ${cleanedTools.length} tools successfully!`);
       // Navigate to analysis after brief delay so toast is visible
       setTimeout(() => router.push(`/analysis?stack=${data.stack.id}`), 1200);
     } catch {
@@ -118,13 +131,10 @@ export default function UploadPage() {
     }
   };
 
-  // --- Load sample data (saves immediately) ---
-  const loadSample = async () => {
-    setPreviewTools(sampleTools);
+  const clearCsvState = () => {
     setCsvFile(null);
+    setPreviewTools([]);
     setParseErrors([]);
-    setTab("csv");
-    await saveTools(sampleTools, "sample");
   };
 
   // --- Manual entry helpers ---
@@ -266,11 +276,7 @@ export default function UploadPage() {
                   {previewTools.length} tools detected
                 </p>
                 <button
-                  onClick={() => {
-                    setCsvFile(null);
-                    setPreviewTools([]);
-                    setParseErrors([]);
-                  }}
+                  onClick={clearCsvState}
                   className="text-dark-500 hover:text-dark-300 text-xs mt-3 underline"
                 >
                   Remove file
@@ -353,7 +359,7 @@ export default function UploadPage() {
                 </table>
               </div>
               <button
-                onClick={() => saveTools(previewTools, csvFile ? "csv" : "sample")}
+                onClick={() => saveTools(previewTools, "csv")}
                 disabled={saving}
                 className="btn-primary w-full text-center"
               >
@@ -362,28 +368,14 @@ export default function UploadPage() {
             </div>
           )}
 
-          {/* Sample data + security */}
           {previewTools.length === 0 && (
             <>
-              <div className="rounded-xl border border-brand-500/25 bg-brand-500/8 p-5">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-                  <div className="flex-1">
-                    <p className="text-white font-semibold text-sm">No CSV? No problem.</p>
-                    <p className="text-dark-400 text-xs mt-1">
-                      Try with sample data to see exactly how it works — no sign-up required.
-                    </p>
-                  </div>
-                  <button
-                    onClick={loadSample}
-                    disabled={saving}
-                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-brand-500/50 bg-brand-500/15 px-5 py-3 text-sm font-semibold text-brand-300 transition-all duration-200 hover:bg-brand-500/25 hover:border-brand-500/70 hover:text-brand-200 whitespace-nowrap disabled:opacity-60"
-                  >
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {saving ? "Loading..." : "Load Sample SaaS Stack"}
-                  </button>
+              <div className="rounded-xl border border-dark-700 bg-dark-900/80 p-5">
+                <div className="flex flex-col gap-2">
+                  <p className="text-white font-semibold text-sm">No uploaded data yet.</p>
+                  <p className="text-dark-400 text-sm">
+                    Upload a billing CSV to generate your first analysis. We no longer preload dummy report data into the workspace.
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-3 p-4 rounded-lg bg-dark-900 border border-dark-800">
@@ -502,11 +494,8 @@ export default function UploadPage() {
             {saving ? "Saving..." : `Save ${validManualTools.length} Tool${validManualTools.length !== 1 ? "s" : ""}`}
           </button>
 
-          <div className="flex items-center gap-3">
-            <button onClick={loadSample} className="btn-secondary text-sm px-4 py-3">
-              Load Sample SaaS Stack
-            </button>
-            <span className="text-dark-600 text-xs">Pre-fill with 14 sample tools</span>
+          <div className="rounded-xl border border-dark-700 bg-dark-900/70 px-4 py-3 text-sm text-dark-400">
+            Manual entry starts empty by default so the first saved report always reflects real uploaded or entered data.
           </div>
         </div>
       )}

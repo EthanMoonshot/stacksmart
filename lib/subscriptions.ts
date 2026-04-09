@@ -51,7 +51,11 @@ export async function writeSubscriptions(records: SubscriptionRecord[]) {
 
 export async function getCurrentSubscription(customerId = DEFAULT_CUSTOMER_ID) {
   const records = await readSubscriptions();
-  return records.find((record) => record.customerId === customerId) ?? null;
+  const matching = records
+    .filter((record) => record.customerId === customerId)
+    .sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+
+  return matching[0] ?? null;
 }
 
 export async function upsertSubscription(nextRecord: SubscriptionRecord) {

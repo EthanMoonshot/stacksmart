@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
-import { SubscriptionRecord, upsertSubscription } from "@/lib/subscriptions";
+import { DEFAULT_CUSTOMER_ID, getCurrentSubscription, SubscriptionRecord, upsertSubscription } from "@/lib/subscriptions";
 import { sendProductEmail } from "@/lib/email";
 
 // Force Node.js runtime so raw body is preserved for Stripe signature verification
@@ -8,6 +8,27 @@ export const runtime = "nodejs";
 
 // TODO: Protect webhook route with Stripe signature checks + upstream rate limiting at the edge.
 const noStoreHeaders = { "Cache-Control": "no-store, max-age=0" };
+
+async function updateStoredSubscription(partial: Partial<SubscriptionRecord> & { email?: string }) {
+  const current = await getCurrentSubscription(DEFAULT_CUSTOMER_ID);
+
+  await upsertSubscription({
+    customerId: DEFAULT_CUSTOMER_ID,
+    email: partial.email || current?.email || "unknown@customer.local",
+    status: partial.status || current?.status || "inactive",
+    planId: partial.planId || current?.planId || "audit",
+    planName: partial.planName || current?.planName || "SaaS Audit",
+    billingInterval: partial.billingInterval || current?.billingInterval || "one_time",
+    mode: partial.mode || current?.mode || "payment",
+    amount: partial.amount ?? current?.amount ?? 0,
+    currency: partial.currency || current?.currency || "usd",
+    stripeSessionId: partial.stripeSessionId || current?.stripeSessionId,
+    stripeCustomerId: partial.stripeCustomerId || current?.stripeCustomerId,
+    stripeSubscriptionId: partial.stripeSubscriptionId || current?.stripeSubscriptionId,
+    activatedAt: partial.activatedAt || current?.activatedAt,
+    updatedAt: new Date().toISOString(),
+  });
+}
 
 function getStripe() {
   const secretKey = process.env.STRIPE_SECRET_KEY;
@@ -197,7 +218,7 @@ export async function POST(req: NextRequest) {
         planId: String(session.metadata?.planId || "audit"),
         planName: String(session.metadata?.planName || "SaaS Audit"),
         billingInterval: (session.metadata?.billingInterval || "one_time") as "month" | "year" | "one_time",
-        mode: "payment",
+        mode: session.mode === "subscription" ? "subscription" : "payment",
         amount: (session.amount_total || 0) / 100,
         currency: session.currency || "usd",
         stripeSessionId: session.id,
@@ -225,6 +246,14 @@ export async function POST(req: NextRequest) {
       const invoice = event.data.object as Stripe.Invoice;
       const email = invoice.customer_email ?? await resolveCustomerEmail(stripe, invoice.customer);
       if (email) {
+        await updateStoredSubscription({
+          email,
+          status: "past_due",
+          amount: (invoice.amount_due || 0) / 100,
+          currency: invoice.currency || "usd",
+          stripeCustomerId: typeof invoice.customer === "string" ? invoice.customer : undefined,
+          mode: "subscription",
+        });
         await sendPaymentFailedEmail(email);
       }
     }
@@ -275,6 +304,16 @@ export async function POST(req: NextRequest) {
       const subscription = event.data.object as Stripe.Subscription;
       const email = await resolveCustomerEmail(stripe, subscription.customer);
       if (email) {
+        await updateStoredSubscription({
+          email,
+          status: subscription.status === "active" ? "active" : subscription.status === "past_due" ? "past_due" : "pending",
+          billingInterval: subscription.items.data[0]?.price.recurring?.interval === "year" ? "year" : "month",
+          mode: "subscription",
+          amount: ((subscription.items.data[0]?.price.unit_amount || 0) / 100) || undefined,
+          currency: subscription.currency || "usd",
+          stripeCustomerId: typeof subscription.customer === "string" ? subscription.customer : undefined,
+          stripeSubscriptionId: subscription.id,
+        });
         await sendSubscriptionUpdatedEmail(email);
       }
     }
@@ -284,6 +323,15 @@ export async function POST(req: NextRequest) {
       const subscription = event.data.object as Stripe.Subscription;
       const email = await resolveCustomerEmail(stripe, subscription.customer);
       if (email) {
+        await updateStoredSubscription({
+          email,
+          status: "canceled",
+          billingInterval: subscription.items.data[0]?.price.recurring?.interval === "year" ? "year" : "month",
+          mode: "subscription",
+          currency: subscription.currency || "usd",
+          stripeCustomerId: typeof subscription.customer === "string" ? subscription.customer : undefined,
+          stripeSubscriptionId: subscription.id,
+        });
         await sendCancellationEmail(email);
       }
     }

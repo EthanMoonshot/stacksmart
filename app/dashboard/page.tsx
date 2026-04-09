@@ -40,14 +40,14 @@ export default async function DashboardPage() {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-dark-400">Workspace overview</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-white">
+            <h2 className="mt-3 max-w-3xl text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl">
               {analysis
-                ? `Your stack is still carrying recoverable spend.`
+                ? "Your stack is still carrying recoverable spend."
                 : "No audit yet — which means no clear savings map yet."}
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
               {analysis
-                ? `StackSmart sees ${analysis.toolCount} tools with ${analysis.overlaps.length} overlap groups. The current sample report suggests ${formatCurrency(analysis.potentialMonthlySavings)}/month in likely savings if you act on the strongest recommendations first.`
+                ? `StackSmart sees ${analysis.toolCount} tools with ${analysis.overlaps.length} overlap groups. The current report suggests ${formatCurrency(analysis.potentialMonthlySavings)}/month in likely savings if you act on the strongest recommendations first.`
                 : "Upload billing data to generate the first report. The product is strongest when it can turn real billing rows into a cut / consolidate / renegotiate decision list."}
             </p>
 

@@ -13,14 +13,20 @@ export interface ParseResult {
 const REQUIRED_HEADERS = ["tool name", "cost", "billing frequency", "category"];
 
 function normalizeHeader(header: string): string {
-  return header.trim().toLowerCase().replace(/[_-]/g, " ");
+  return header.replace(/^\uFEFF/, "").trim().toLowerCase().replace(/[_-]/g, " ");
 }
 
 function matchFrequency(value: string): SaaSTool["billingFrequency"] | null {
   const v = value.trim().toLowerCase();
+  if (!v) return "monthly";
+  if (v.includes("month")) return "monthly";
+  if (v.includes("quarter") || v === "qtr") return "quarterly";
+  if (v.includes("annual") || v.includes("year")) return "annually";
+
   for (const freq of BILLING_FREQUENCIES) {
     if (v === freq || v.startsWith(freq.slice(0, 5))) return freq;
   }
+
   return null;
 }
 
@@ -29,34 +35,46 @@ function matchCategory(value: string): string | null {
   for (const cat of CATEGORIES) {
     if (cat.toLowerCase() === v) return cat;
   }
-  // Partial match fallback
   for (const cat of CATEGORIES) {
     if (cat.toLowerCase().includes(v) || v.includes(cat.toLowerCase())) return cat;
   }
   return null;
 }
 
+function parseCost(rawValue: string | undefined): number | null {
+  if (!rawValue) return null;
+  const trimmed = rawValue.trim();
+  if (!trimmed) return null;
+
+  const isNegativeByParens = /^\(.*\)$/.test(trimmed);
+  const normalized = trimmed.replace(/[,$\s]/g, "").replace(/^\((.*)\)$/, "-$1");
+  const value = Number.parseFloat(normalized);
+
+  if (Number.isNaN(value)) return null;
+  if (isNegativeByParens || value < 0) return null;
+  return value;
+}
+
 export function parseCSV(csvText: string): ParseResult {
   const errors: ParseError[] = [];
   const tools: SaaSTool[] = [];
 
-  const lines = csvText.split(/\r?\n/).filter((line) => line.trim() !== "");
+  const lines = csvText.replace(/^\uFEFF/, "").split(/\r?\n/).filter((line) => line.trim() !== "");
   if (lines.length < 2) {
     errors.push({ row: 0, message: "CSV must have a header row and at least one data row." });
     return { tools, errors };
   }
 
-  // Parse header
-  const headers = lines[0].split(",").map(normalizeHeader);
+  const headers = parseCSVLine(lines[0]).map(normalizeHeader);
   const headerMap: Record<string, number> = {};
+
   for (const required of REQUIRED_HEADERS) {
     const idx = headers.findIndex((h) => h.includes(required.replace("tool ", "")) || h === required);
     if (idx === -1) {
-      // Try more flexible matching
       const flexIdx = headers.findIndex((h) => {
-        if (required === "tool name") return h.includes("tool") || h.includes("name") || h.includes("software") || h.includes("service");
-        if (required === "cost") return h.includes("cost") || h.includes("price") || h.includes("amount") || h.includes("spend");
-        if (required === "billing frequency") return h.includes("billing") || h.includes("frequency") || h.includes("cycle") || h.includes("period");
+        if (required === "tool name") return h.includes("tool") || h.includes("name") || h.includes("software") || h.includes("service") || h.includes("vendor");
+        if (required === "cost") return h.includes("cost") || h.includes("price") || h.includes("amount") || h.includes("spend") || h.includes("total");
+        if (required === "billing frequency") return h.includes("billing") || h.includes("frequency") || h.includes("cycle") || h.includes("period") || h.includes("cadence");
         if (required === "category") return h.includes("category") || h.includes("type") || h.includes("department");
         return false;
       });
@@ -72,7 +90,6 @@ export function parseCSV(csvText: string): ParseResult {
 
   if (errors.length > 0) return { tools, errors };
 
-  // Parse data rows
   for (let i = 1; i < lines.length; i++) {
     const values = parseCSVLine(lines[i]);
     const rowNum = i + 1;
@@ -83,9 +100,8 @@ export function parseCSV(csvText: string): ParseResult {
       continue;
     }
 
-    const costStr = values[headerMap["cost"]]?.trim().replace(/[$,]/g, "");
-    const cost = parseFloat(costStr);
-    if (isNaN(cost) || cost < 0) {
+    const cost = parseCost(values[headerMap["cost"]]);
+    if (cost === null) {
       errors.push({ row: rowNum, message: `Invalid cost "${values[headerMap["cost"]]}" for "${toolName}".` });
       continue;
     }
@@ -112,7 +128,6 @@ export function parseCSV(csvText: string): ParseResult {
   return { tools, errors };
 }
 
-// Handle quoted CSV fields
 function parseCSVLine(line: string): string[] {
   const result: string[] = [];
   let current = "";
@@ -120,8 +135,15 @@ function parseCSVLine(line: string): string[] {
 
   for (let i = 0; i < line.length; i++) {
     const char = line[i];
+    const nextChar = line[i + 1];
+
     if (char === '"') {
-      inQuotes = !inQuotes;
+      if (inQuotes && nextChar === '"') {
+        current += '"';
+        i += 1;
+      } else {
+        inQuotes = !inQuotes;
+      }
     } else if (char === "," && !inQuotes) {
       result.push(current);
       current = "";
@@ -129,6 +151,7 @@ function parseCSVLine(line: string): string[] {
       current += char;
     }
   }
+
   result.push(current);
   return result;
 }
