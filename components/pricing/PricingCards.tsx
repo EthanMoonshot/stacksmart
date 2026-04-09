@@ -4,8 +4,8 @@ import { useMemo, useState } from "react";
 import { pricingPlans } from "@/lib/pricing";
 import { trackEvent } from "@/lib/analytics";
 
-export default function PricingCards({ currentPlanId }: { currentPlanId?: string | null }) {
-  const [billingEmail, setBillingEmail] = useState("");
+export default function PricingCards({ currentPlanId, initialEmail }: { currentPlanId?: string | null; initialEmail?: string | null }) {
+  const [billingEmail, setBillingEmail] = useState(initialEmail || "");
   const [loadingPlanId, setLoadingPlanId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 

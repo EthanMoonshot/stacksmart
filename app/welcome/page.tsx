@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import OnboardingFlow from "@/components/onboarding/OnboardingFlow";
 import { buildMetadata } from "@/lib/site";
+import { getViewerAccess } from "@/lib/auth";
 
 export const metadata: Metadata = buildMetadata({
   title: "Welcome",
@@ -9,7 +10,8 @@ export const metadata: Metadata = buildMetadata({
   path: "/welcome",
 });
 
-export default function WelcomePage() {
+export default async function WelcomePage() {
+  const { isPaid, session } = await getViewerAccess();
   return (
     <main className="min-h-screen bg-dark-950 px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl space-y-10">
@@ -20,7 +22,13 @@ export default function WelcomePage() {
             Start with your billing data, let StackSmart analyse spend and overlap, then turn the findings into an executive-ready report.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/upload" className="btn-primary text-sm">Start with upload</Link>
+            {isPaid ? (
+              <Link href="/upload" className="btn-primary text-sm">Start with upload</Link>
+            ) : session ? (
+              <Link href="/pricing" className="btn-primary text-sm">Activate paid access</Link>
+            ) : (
+              <Link href="/login?next=/welcome" className="btn-primary text-sm">Sign in</Link>
+            )}
             <Link href="/pricing" className="btn-secondary text-sm">See pricing</Link>
           </div>
         </div>

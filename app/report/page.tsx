@@ -6,6 +6,7 @@ import { readLatestAnalysis } from "@/lib/analyzer";
 import { buildReportViewModel } from "@/lib/report";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/site";
+import { requirePaidUser } from "@/lib/auth";
 
 export const metadata: Metadata = buildMetadata({
   title: "Savings Report",
@@ -18,7 +19,8 @@ export default async function ReportPage({
 }: {
   searchParams?: Promise<{ shareId?: string }>;
 }) {
-  const analysis = await readLatestAnalysis();
+  const { session } = await requirePaidUser({ next: "/report" });
+  const analysis = await readLatestAnalysis(session.customerId);
   const params = (await searchParams) || {};
 
   if (!analysis) {

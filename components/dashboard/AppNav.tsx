@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { getCurrentSubscription } from "@/lib/subscriptions";
+import { getViewerAccess } from "@/lib/auth";
+import SignOutButton from "@/components/dashboard/SignOutButton";
 
 const navItems = [
   { href: "/dashboard", label: "Overview" },
@@ -9,7 +10,7 @@ const navItems = [
 ];
 
 export default async function AppNav() {
-  const subscription = await getCurrentSubscription();
+  const { subscription, session, isPaid } = await getViewerAccess();
 
   return (
     <aside className="hidden min-h-screen w-72 flex-shrink-0 border-r border-dark-800 bg-dark-900 lg:flex lg:flex-col">
@@ -37,16 +38,20 @@ export default async function AppNav() {
 
       <div className="space-y-3 border-t border-dark-800 px-4 py-5">
         <div className="rounded-xl border border-dark-700 bg-dark-800 px-4 py-4">
-          <div className="text-xs uppercase tracking-[0.2em] text-dark-500">Current plan</div>
-          <div className="mt-2 text-base font-semibold text-white">{subscription?.planName || "Free workspace"}</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-dark-500">Workspace</div>
+          <div className="mt-2 text-sm font-medium text-white">{session?.email || "Guest"}</div>
+          <div className="mt-3 text-xs uppercase tracking-[0.2em] text-dark-500">Current plan</div>
+          <div className="mt-1 text-base font-semibold text-white">{subscription?.planName || "Free workspace"}</div>
           <div className="mt-1 text-sm capitalize text-dark-400">
             {subscription?.status || "inactive"}
             {subscription?.billingInterval ? ` · ${subscription.billingInterval.replace("_", " ")}` : ""}
           </div>
+          {!isPaid && <div className="mt-3 text-xs text-yellow-300">Upgrade required for upload and report access.</div>}
         </div>
         <Link href="/pricing" className="block rounded-xl border border-brand-500/20 bg-brand-500/10 px-4 py-3 text-center text-base font-medium text-brand-300 hover:bg-brand-500/20">
           Manage plan
         </Link>
+        {session && <SignOutButton />}
       </div>
     </aside>
   );

@@ -8,6 +8,8 @@ export interface SaaSTool {
 
 export interface ToolStack {
   id: string;
+  customerId: string;
+  email?: string;
   tools: SaaSTool[];
   createdAt: string;
   source: "csv" | "manual" | "sample";
@@ -53,6 +55,7 @@ export interface Recommendation {
 export interface AnalysisResult {
   id: string;
   stackId: string;
+  customerId: string;
   analyzedAt: string;
   source: ToolStack["source"];
   toolCount: number;

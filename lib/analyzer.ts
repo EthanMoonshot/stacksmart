@@ -124,27 +124,40 @@ function buildOverlapGroups(analyzedTools: AnalyzedTool[]) {
     .sort((a, b) => b.tools.length - a.tools.length || a.category.localeCompare(b.category));
 }
 
-export async function readStacks(): Promise<ToolStack[]> {
+async function readAnalysisHistory(): Promise<AnalysisResult[]> {
   try {
-    const raw = await fs.readFile(TOOLS_FILE, "utf8");
-    return JSON.parse(raw) as ToolStack[];
+    const raw = await fs.readFile(ANALYSIS_FILE, "utf8");
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? (parsed as AnalysisResult[]) : parsed ? [parsed as AnalysisResult] : [];
   } catch {
     return [];
   }
 }
 
-export async function readLatestAnalysis(): Promise<AnalysisResult | null> {
+export async function readStacks(customerId?: string): Promise<ToolStack[]> {
   try {
-    const raw = await fs.readFile(ANALYSIS_FILE, "utf8");
-    return JSON.parse(raw) as AnalysisResult;
+    const raw = await fs.readFile(TOOLS_FILE, "utf8");
+    const stacks = JSON.parse(raw) as ToolStack[];
+    if (!customerId) return stacks;
+    return stacks.filter((stack) => stack.customerId === customerId);
   } catch {
-    return null;
+    return [];
   }
+}
+
+export async function readLatestAnalysis(customerId?: string): Promise<AnalysisResult | null> {
+  const analyses = await readAnalysisHistory();
+  const filtered = customerId ? analyses.filter((analysis) => analysis.customerId === customerId) : analyses;
+  const sorted = filtered.sort((a, b) => new Date(b.analyzedAt).getTime() - new Date(a.analyzedAt).getTime());
+  return sorted[0] ?? null;
 }
 
 export async function writeAnalysis(result: AnalysisResult): Promise<void> {
   await fs.mkdir(path.dirname(ANALYSIS_FILE), { recursive: true });
-  await fs.writeFile(ANALYSIS_FILE, JSON.stringify(result, null, 2));
+  const existing = await readAnalysisHistory();
+  const remaining = existing.filter((analysis) => analysis.customerId !== result.customerId);
+  remaining.push(result);
+  await fs.writeFile(ANALYSIS_FILE, JSON.stringify(remaining, null, 2));
 }
 
 export function analyzeStack(stack: ToolStack): AnalysisResult {
@@ -320,6 +333,7 @@ export function analyzeStack(stack: ToolStack): AnalysisResult {
   return {
     id: `analysis_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`,
     stackId: stack.id,
+    customerId: stack.customerId,
     analyzedAt: new Date().toISOString(),
     source: stack.source,
     toolCount: analyzedTools.length,

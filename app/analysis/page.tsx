@@ -4,6 +4,7 @@ import AppHeader from "@/components/dashboard/AppHeader";
 import { readLatestAnalysis } from "@/lib/analyzer";
 import { AnalysisResult } from "@/lib/types";
 import { buildMetadata } from "@/lib/site";
+import { requirePaidUser } from "@/lib/auth";
 
 export const metadata: Metadata = buildMetadata({
   title: "Analysis Results",
@@ -43,7 +44,8 @@ export default async function AnalysisPage({
 }) {
   const params = (await searchParams) || {};
   const sortBy = params.sort || "cost";
-  const analysis = await readLatestAnalysis();
+  const { session } = await requirePaidUser({ next: "/analysis" });
+  const analysis = await readLatestAnalysis(session.customerId);
 
   if (!analysis) {
     return (

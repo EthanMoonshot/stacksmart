@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { getPlanById } from "@/lib/pricing";
-import { DEFAULT_CUSTOMER_ID, upsertSubscription } from "@/lib/subscriptions";
+import { upsertSubscription } from "@/lib/subscriptions";
+import { buildCustomerId } from "@/lib/auth";
 
 // TODO: Add durable rate limiting before launch (e.g. Upstash Redis / Vercel KV).
 const noStoreHeaders = { "Cache-Control": "no-store, max-age=0" };
@@ -35,6 +36,7 @@ export async function POST(req: NextRequest) {
     }
 
     const stripe = getStripe();
+    const customerId = buildCustomerId(customerEmail);
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://stacksmart.app";
     const priceEnvMap: Record<string, string | undefined> = {
       audit: process.env.STRIPE_PRICE_AUDIT,
@@ -69,7 +71,7 @@ export async function POST(req: NextRequest) {
             },
       ],
       metadata: {
-        customerId: DEFAULT_CUSTOMER_ID,
+        customerId,
         customerEmail,
         planId: plan.id,
         planName: plan.name,
@@ -80,7 +82,7 @@ export async function POST(req: NextRequest) {
     });
 
     await upsertSubscription({
-      customerId: DEFAULT_CUSTOMER_ID,
+      customerId,
       email: customerEmail,
       status: "pending",
       planId: plan.id,

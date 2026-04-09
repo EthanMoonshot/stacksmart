@@ -1,10 +1,17 @@
 import { NextResponse } from "next/server";
 import { readLatestAnalysis } from "@/lib/analyzer";
 import { createSharedReport } from "@/lib/report";
+import { getCurrentSession } from "@/lib/auth";
+import { getSubscriptionForCustomer } from "@/lib/subscriptions";
 
 export async function POST() {
   try {
-    const analysis = await readLatestAnalysis();
+    const session = await getCurrentSession();
+    const subscription = session ? await getSubscriptionForCustomer(session.customerId) : null;
+    if (!session || subscription?.status !== "active") {
+      return NextResponse.json({ message: "Paid access required." }, { status: 401 });
+    }
+    const analysis = await readLatestAnalysis(session.customerId);
 
     if (!analysis) {
       return NextResponse.json({ message: "No report available to share." }, { status: 404 });

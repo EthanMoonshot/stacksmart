@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PricingCards from "@/components/pricing/PricingCards";
-import { getCurrentSubscription } from "@/lib/subscriptions";
 import { buildMetadata } from "@/lib/site";
+import { getViewerAccess } from "@/lib/auth";
 
 export const metadata: Metadata = buildMetadata({
   title: "Pricing",
@@ -10,13 +10,24 @@ export const metadata: Metadata = buildMetadata({
   path: "/pricing",
 });
 
-export default async function PricingPage() {
-  const subscription = await getCurrentSubscription();
+export default async function PricingPage({
+  searchParams,
+}: {
+  searchParams?: Promise<{ gated?: string }>;
+}) {
+  const { subscription, session } = await getViewerAccess();
+  const params = (await searchParams) || {};
+  const viewerEmail = session?.email || null;
 
   return (
     <main className="min-h-screen bg-dark-950 px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl space-y-12">
         <div className="mx-auto max-w-3xl text-center">
+          {params.gated === "1" && (
+            <div className="mb-6 rounded-2xl border border-yellow-500/25 bg-yellow-500/10 px-4 py-3 text-sm text-yellow-100">
+              Sign in with the purchasing email and activate a paid plan to unlock upload, dashboard, and full report access.
+            </div>
+          )}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-500/10 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-brand-300">
             StackSmart pricing
           </div>
@@ -39,6 +50,14 @@ export default async function PricingPage() {
           ))}
         </div>
 
+        {viewerEmail && !subscription && (
+          <div className="mx-auto max-w-4xl rounded-[26px] border border-dark-700 bg-dark-900/80 p-6 text-left">
+            <p className="text-sm text-dark-300">
+              Signed in as <span className="font-medium text-white">{viewerEmail}</span>. No paid plan is active on this workspace yet.
+            </p>
+          </div>
+        )}
+
         {subscription && (
           <div className="mx-auto max-w-4xl rounded-[26px] border border-dark-700 bg-dark-900/80 p-6">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -57,7 +76,7 @@ export default async function PricingPage() {
           </div>
         )}
 
-        <PricingCards currentPlanId={subscription?.planId ?? null} />
+        <PricingCards currentPlanId={subscription?.planId ?? null} initialEmail={session?.email ?? null} />
 
         <div className="rounded-[26px] border border-dark-700 bg-dark-900/70 p-6 md:p-7">
           <div className="grid gap-6 lg:grid-cols-[1fr_0.95fr] lg:items-center">

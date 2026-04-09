@@ -1,11 +1,13 @@
 import Link from "next/link";
 import AppNav from "@/components/dashboard/AppNav";
+import { requirePaidUser } from "@/lib/auth";
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  await requirePaidUser({ next: "/dashboard" });
   return (
     <div className="min-h-screen bg-dark-950 lg:flex">
       <AppNav />

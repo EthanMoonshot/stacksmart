@@ -2,10 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { promises as fs } from "fs";
 import path from "path";
 import { ToolStack, SaaSTool } from "@/lib/types";
+import { getCurrentSession } from "@/lib/auth";
+import { getSubscriptionForCustomer } from "@/lib/subscriptions";
 
 const TOOLS_FILE = path.join(process.cwd(), "data", "tools.json");
 
-async function readStacks(): Promise<ToolStack[]> {
+async function readAllStacks(): Promise<ToolStack[]> {
   try {
     const data = await fs.readFile(TOOLS_FILE, "utf-8");
     return JSON.parse(data);
@@ -21,6 +23,11 @@ async function writeStacks(stacks: ToolStack[]): Promise<void> {
 
 export async function POST(req: NextRequest) {
   try {
+    const session = await getCurrentSession();
+    const subscription = session ? await getSubscriptionForCustomer(session.customerId) : null;
+    if (!session || subscription?.status !== "active") {
+      return NextResponse.json({ message: "Paid access required." }, { status: 401 });
+    }
     const body = await req.json();
     const { tools, source } = body as { tools: SaaSTool[]; source: ToolStack["source"] };
 
@@ -28,7 +35,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: "At least one tool is required." }, { status: 400 });
     }
 
-    // Validate each tool
     for (const tool of tools) {
       if (!tool.toolName?.trim()) {
         return NextResponse.json({ message: "All tools must have a name." }, { status: 400 });
@@ -38,21 +44,21 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    const stacks = await readStacks();
-
-    const newStack: ToolStack = {
+    const stacks = await readAllStacks();
+    const nextStack: ToolStack = {
       id: `stack_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      customerId: session.customerId,
+      email: session.email,
       tools,
       createdAt: new Date().toISOString(),
       source: source || "manual",
     };
 
-    stacks.push(newStack);
-    await writeStacks(stacks);
+    const remaining = stacks.filter((stack) => stack.customerId !== session.customerId);
+    remaining.push(nextStack);
+    await writeStacks(remaining);
 
-    console.log(`[Tools] Saved stack: ${newStack.id} (${tools.length} tools, source: ${source})`);
-
-    return NextResponse.json({ message: "Stack saved successfully.", stack: newStack }, { status: 201 });
+    return NextResponse.json({ message: "Stack saved successfully.", stack: nextStack }, { status: 201 });
   } catch (error) {
     console.error("[Tools] Error:", error);
     return NextResponse.json({ message: "An unexpected error occurred." }, { status: 500 });
@@ -61,9 +67,14 @@ export async function POST(req: NextRequest) {
 
 export async function GET() {
   try {
-    const stacks = await readStacks();
-    return NextResponse.json({ stacks });
+    const session = await getCurrentSession();
+    const subscription = session ? await getSubscriptionForCustomer(session.customerId) : null;
+    if (!session || subscription?.status !== "active") {
+      return NextResponse.json({ stacks: [] }, { status: 401 });
+    }
+    const stacks = await readAllStacks();
+    return NextResponse.json({ stacks: stacks.filter((stack) => stack.customerId === session.customerId) });
   } catch {
-    return NextResponse.json({ stacks: [] });
+    return NextResponse.json({ stacks: [] }, { status: 401 });
   }
 }

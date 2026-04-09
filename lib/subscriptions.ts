@@ -49,13 +49,23 @@ export async function writeSubscriptions(records: SubscriptionRecord[]) {
   await fs.writeFile(SUBSCRIPTIONS_FILE, JSON.stringify(records, null, 2));
 }
 
-export async function getCurrentSubscription(customerId = DEFAULT_CUSTOMER_ID) {
-  const records = await readSubscriptions();
-  const matching = records
-    .filter((record) => record.customerId === customerId)
-    .sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+function sortByUpdatedAt(records: SubscriptionRecord[]) {
+  return [...records].sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+}
 
+export async function getSubscriptionForCustomer(customerId: string) {
+  const records = await readSubscriptions();
+  const matching = sortByUpdatedAt(records).filter((record) => record.customerId === customerId);
   return matching[0] ?? null;
+}
+
+export async function getSubscriptionBySessionId(stripeSessionId: string) {
+  const records = await readSubscriptions();
+  return sortByUpdatedAt(records).find((record) => record.stripeSessionId === stripeSessionId) ?? null;
+}
+
+export async function getCurrentSubscription(customerId = DEFAULT_CUSTOMER_ID) {
+  return getSubscriptionForCustomer(customerId);
 }
 
 export async function upsertSubscription(nextRecord: SubscriptionRecord) {

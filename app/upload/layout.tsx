@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import AppNav from "@/components/dashboard/AppNav";
 import { buildMetadata } from "@/lib/site";
+import { requirePaidUser } from "@/lib/auth";
 
 export const metadata: Metadata = buildMetadata({
   title: "Upload Billing Data",
@@ -8,7 +9,8 @@ export const metadata: Metadata = buildMetadata({
   path: "/upload",
 });
 
-export default function UploadLayout({ children }: { children: React.ReactNode }) {
+export default async function UploadLayout({ children }: { children: React.ReactNode }) {
+  await requirePaidUser({ next: "/upload" });
   return (
     <div className="flex min-h-screen bg-dark-950">
       <AppNav />

@@ -1,16 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import { analyzeStack, readStacks, writeAnalysis } from "@/lib/analyzer";
 import { sendProductEmail } from "@/lib/email";
+import { getCurrentSession } from "@/lib/auth";
+import { getSubscriptionForCustomer } from "@/lib/subscriptions";
 
-// TODO: Add durable rate limiting before launch (e.g. Upstash Redis / Vercel KV).
 const noStoreHeaders = { "Cache-Control": "no-store, max-age=0" };
 
 export async function POST(req: NextRequest) {
   try {
+    const session = await getCurrentSession();
+    const subscription = session ? await getSubscriptionForCustomer(session.customerId) : null;
+    if (!session || subscription?.status !== "active") {
+      return NextResponse.json({ message: "Paid access required." }, { status: 401, headers: noStoreHeaders });
+    }
     const body = await req.json().catch(() => ({}));
     const requestedStackId = body?.stackId as string | undefined;
     const notifyEmail = body?.notifyEmail as string | undefined;
-    const stacks = await readStacks();
+    const stacks = await readStacks(session.customerId);
 
     if (stacks.length === 0) {
       return NextResponse.json({ message: "No saved tools found to analyze." }, { status: 404, headers: noStoreHeaders });

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AppHeader from "@/components/dashboard/AppHeader";
 import { readLatestAnalysis } from "@/lib/analyzer";
-import { getCurrentSubscription } from "@/lib/subscriptions";
 import { buildMetadata } from "@/lib/site";
+import { requirePaidUser } from "@/lib/auth";
 
 export const metadata: Metadata = buildMetadata({
   title: "Dashboard",
@@ -16,7 +16,8 @@ function formatCurrency(value: number) {
 }
 
 export default async function DashboardPage() {
-  const [analysis, subscription] = await Promise.all([readLatestAnalysis(), getCurrentSubscription()]);
+  const { session, subscription } = await requirePaidUser({ next: "/dashboard" });
+  const analysis = await readLatestAnalysis(session.customerId);
 
   const topRecommendations = analysis?.recommendations.slice(0, 3) || [];
   const savingsShare = analysis && analysis.monthlySpend > 0
