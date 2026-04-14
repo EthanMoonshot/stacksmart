@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { DEFAULT_CUSTOMER_ID, getCurrentSubscription, SubscriptionRecord, upsertSubscription } from "@/lib/subscriptions";
 import { sendProductEmail } from "@/lib/email";
+import { buildCustomerId, normalizeEmail } from "@/lib/auth";
 
 // Force Node.js runtime so raw body is preserved for Stripe signature verification
 export const runtime = "nodejs";
@@ -9,12 +10,14 @@ export const runtime = "nodejs";
 // TODO: Protect webhook route with Stripe signature checks + upstream rate limiting at the edge.
 const noStoreHeaders = { "Cache-Control": "no-store, max-age=0" };
 
-async function updateStoredSubscription(partial: Partial<SubscriptionRecord> & { email?: string }) {
-  const current = await getCurrentSubscription(DEFAULT_CUSTOMER_ID);
+async function updateStoredSubscription(partial: Partial<SubscriptionRecord> & { email?: string; customerId?: string }) {
+  const resolvedCustomerId = partial.customerId || (partial.email ? buildCustomerId(partial.email) : DEFAULT_CUSTOMER_ID);
+  const current = await getCurrentSubscription(resolvedCustomerId);
+  const resolvedEmail = partial.email ? normalizeEmail(partial.email) : current?.email || "unknown@customer.local";
 
   await upsertSubscription({
-    customerId: DEFAULT_CUSTOMER_ID,
-    email: partial.email || current?.email || "unknown@customer.local",
+    customerId: resolvedCustomerId,
+    email: resolvedEmail,
     status: partial.status || current?.status || "inactive",
     planId: partial.planId || current?.planId || "audit",
     planName: partial.planName || current?.planName || "SaaS Audit",
@@ -212,8 +215,8 @@ export async function POST(req: NextRequest) {
     if (event.type === "checkout.session.completed") {
       const session = event.data.object as Stripe.Checkout.Session;
       const record: SubscriptionRecord = {
-        customerId: String(session.metadata?.customerId || "demo-user"),
-        email: session.customer_details?.email || session.customer_email || "unknown@customer.local",
+        customerId: String(session.metadata?.customerId || (session.customer_details?.email || session.customer_email ? buildCustomerId(session.customer_details?.email || session.customer_email || "") : "demo-user")),
+        email: normalizeEmail(session.customer_details?.email || session.customer_email || "unknown@customer.local"),
         status: "active",
         planId: String(session.metadata?.planId || "audit"),
         planName: String(session.metadata?.planName || "SaaS Audit"),

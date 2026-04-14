@@ -1,0 +1,11 @@
+tool name,cost,billing frequency,category
+Slack,120,monthly,Communication
+Zoom,45,monthly,Communication
+Notion,24,monthly,Documentation
+Jira,80,monthly,Project Management
+Asana,62,monthly,Project Management
+Intercom,120,monthly,Customer Support
+Canva,30,monthly,Design
+HubSpot,95,monthly,Sales
+AWS,240,monthly,Cloud Infrastructure
+Figma,36,monthly,Design

@@ -57,7 +57,7 @@ export default function UploadPage() {
       e.preventDefault();
       setIsDragging(false);
       const file = e.dataTransfer.files[0];
-      if (file && file.name.endsWith(".csv")) {
+      if (file && file.name.toLowerCase().endsWith(".csv")) {
         processCSV(file);
       } else {
         showToast("Please upload a .csv file.", "error");
@@ -70,7 +70,7 @@ export default function UploadPage() {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const file = e.target.files?.[0];
       if (!file) return;
-      if (!file.name.endsWith(".csv")) {
+      if (!file.name.toLowerCase().endsWith(".csv")) {
         showToast("Please upload a .csv file.", "error");
         e.target.value = "";
         return;
@@ -123,7 +123,7 @@ export default function UploadPage() {
       trackEvent("report_generated", { source, toolCount: cleanedTools.length });
       showToast(`Saved ${cleanedTools.length} tools successfully!`);
       // Navigate to analysis after brief delay so toast is visible
-      setTimeout(() => router.push(`/analysis?stack=${data.stack.id}`), 1200);
+      setTimeout(() => router.push("/analysis"), 1200);
     } catch {
       showToast("Network error. Please try again.", "error");
     } finally {
@@ -248,6 +248,23 @@ export default function UploadPage() {
       {/* ============= CSV TAB ============= */}
       {tab === "csv" && (
         <div className="space-y-6">
+          <div className="rounded-xl border border-brand-500/20 bg-brand-500/5 p-5">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-white font-semibold text-sm">Want to test the full journey first?</p>
+                <p className="text-dark-400 text-sm mt-1">
+                  Download a sample billing CSV, upload it here, and StackSmart will generate a real analysis and report path without touching live billing systems.
+                </p>
+              </div>
+              <a
+                href="/sample-billing.csv"
+                download
+                className="btn-secondary text-sm px-4 py-2 whitespace-nowrap"
+              >
+                Download sample CSV
+              </a>
+            </div>
+          </div>
           {/* Drop zone */}
           <div
             onDragOver={(e) => {
@@ -331,7 +348,11 @@ export default function UploadPage() {
                 <p className="text-dark-400 text-sm">
                   Total: $
                   {previewTools
-                    .reduce((s, t) => s + t.cost, 0)
+                    .reduce((sum, tool) => {
+                      if (tool.billingFrequency === "quarterly") return sum + tool.cost / 3;
+                      if (tool.billingFrequency === "annually") return sum + tool.cost / 12;
+                      return sum + tool.cost;
+                    }, 0)
                     .toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                   /mo
                 </p>
@@ -596,9 +617,9 @@ export default function UploadPage() {
             </div>
           </div>
 
-          <Link href="/upload" onClick={() => setTab("csv")} className="btn-secondary text-sm inline-block">
+          <button onClick={() => setTab("csv")} className="btn-secondary text-sm inline-block">
             Switch to CSV Upload →
-          </Link>
+          </button>
         </div>
       )}
     </div>

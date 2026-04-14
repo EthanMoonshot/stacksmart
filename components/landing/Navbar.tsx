@@ -1,10 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+
+const closeMenu = (setMobileOpen: (value: boolean) => void) => () => setMobileOpen(false);
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [mobileOpen]);
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-dark-950/80 backdrop-blur-xl">
@@ -23,6 +36,7 @@ export default function Navbar() {
             <a href="#how-it-works" className="nav-link">How it works</a>
             <a href="#value" className="nav-link">Benefits</a>
             <a href="#pricing" className="nav-link">Pricing</a>
+            <Link href="/blog" className="nav-link">Blog</Link>
             <Link href="/about" className="nav-link">About</Link>
           </div>
 
@@ -60,13 +74,14 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="border-t border-white/5 bg-dark-950/95 px-4 py-4 backdrop-blur-xl md:hidden">
           <div className="space-y-1">
-            <a href="#how-it-works" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={() => setMobileOpen(false)}>How it works</a>
-            <a href="#value" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={() => setMobileOpen(false)}>Benefits</a>
-            <a href="#pricing" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={() => setMobileOpen(false)}>Pricing</a>
-            <Link href="/about" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={() => setMobileOpen(false)}>About</Link>
-            <Link href="/dashboard" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={() => setMobileOpen(false)}>Dashboard</Link>
+            <a href="#how-it-works" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={closeMenu(setMobileOpen)}>How it works</a>
+            <a href="#value" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={closeMenu(setMobileOpen)}>Benefits</a>
+            <a href="#pricing" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={closeMenu(setMobileOpen)}>Pricing</a>
+            <Link href="/blog" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={closeMenu(setMobileOpen)}>Blog</Link>
+            <Link href="/about" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={closeMenu(setMobileOpen)}>About</Link>
+            <Link href="/dashboard" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={closeMenu(setMobileOpen)}>Dashboard</Link>
             <div className="pt-2">
-              <a href="#waitlist" className="block w-full rounded-lg bg-brand-500 py-3 text-center text-sm font-semibold text-white" onClick={() => setMobileOpen(false)}>
+              <a href="#waitlist" className="block w-full rounded-lg bg-brand-500 py-3 text-center text-sm font-semibold text-white" onClick={closeMenu(setMobileOpen)}>
                 Audit My Stack
               </a>
             </div>

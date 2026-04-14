@@ -11,17 +11,28 @@ export interface ParseResult {
 }
 
 const REQUIRED_HEADERS = ["tool name", "cost", "billing frequency", "category"];
+const SUPPORTED_DELIMITERS = [",", ";", "\t"] as const;
 
 function normalizeHeader(header: string): string {
   return header.replace(/^\uFEFF/, "").trim().toLowerCase().replace(/[_-]/g, " ");
 }
 
+function normalizeLooseValue(value: string) {
+  return value.trim().toLowerCase().replace(/[_-]/g, " ").replace(/\s+/g, " ");
+}
+
 function matchFrequency(value: string): SaaSTool["billingFrequency"] | null {
-  const v = value.trim().toLowerCase();
+  const v = normalizeLooseValue(value);
   if (!v) return "monthly";
-  if (v.includes("month")) return "monthly";
-  if (v.includes("quarter") || v === "qtr") return "quarterly";
-  if (v.includes("annual") || v.includes("year")) return "annually";
+
+  const monthlyMatchers = ["month", "monthly", "mo", "mth", "per month"];
+  if (monthlyMatchers.some((matcher) => v === matcher || v.includes(matcher))) return "monthly";
+
+  const quarterlyMatchers = ["quarter", "quarterly", "qtr", "q1", "q2", "q3", "q4", "every 3 months"];
+  if (quarterlyMatchers.some((matcher) => v === matcher || v.includes(matcher))) return "quarterly";
+
+  const annualMatchers = ["annual", "annually", "year", "yearly", "yr", "per year", "12 months"];
+  if (annualMatchers.some((matcher) => v === matcher || v.includes(matcher))) return "annually";
 
   for (const freq of BILLING_FREQUENCIES) {
     if (v === freq || v.startsWith(freq.slice(0, 5))) return freq;
@@ -47,7 +58,10 @@ function parseCost(rawValue: string | undefined): number | null {
   if (!trimmed) return null;
 
   const isNegativeByParens = /^\(.*\)$/.test(trimmed);
-  const normalized = trimmed.replace(/[,$\s]/g, "").replace(/^\((.*)\)$/, "-$1");
+  const normalized = trimmed
+    .replace(/^\((.*)\)$/, "-$1")
+    .replace(/\b(?:usd|aud|cad|eur|gbp|nzd)\b/gi, "")
+    .replace(/[^0-9.-]/g, "");
   const value = Number.parseFloat(normalized);
 
   if (Number.isNaN(value)) return null;
@@ -59,13 +73,27 @@ export function parseCSV(csvText: string): ParseResult {
   const errors: ParseError[] = [];
   const tools: SaaSTool[] = [];
 
-  const lines = csvText.replace(/^\uFEFF/, "").split(/\r?\n/).filter((line) => line.trim() !== "");
-  if (lines.length < 2) {
+  const lines = csvText.replace(/^\uFEFF/, "").split(/\r?\n/);
+  if (lines.every((line) => line.trim() === "")) {
+    errors.push({ row: 0, message: "CSV file is empty." });
+    return { tools, errors };
+  }
+
+  const nonEmptyLines = lines.filter((line) => line.trim() !== "");
+  if (nonEmptyLines.length < 2) {
     errors.push({ row: 0, message: "CSV must have a header row and at least one data row." });
     return { tools, errors };
   }
 
-  const headers = parseCSVLine(lines[0]).map(normalizeHeader);
+  const headerLine = nonEmptyLines[0];
+  const delimiter = detectDelimiter(headerLine, nonEmptyLines[1]);
+  const parsedHeader = parseCSVLine(headerLine, delimiter);
+  if (parsedHeader.malformed) {
+    errors.push({ row: 1, message: "Header row contains mismatched quotes." });
+    return { tools, errors };
+  }
+
+  const headers = parsedHeader.values.map(normalizeHeader);
   const headerMap: Record<string, number> = {};
 
   for (const required of REQUIRED_HEADERS) {
@@ -90,9 +118,21 @@ export function parseCSV(csvText: string): ParseResult {
 
   if (errors.length > 0) return { tools, errors };
 
-  for (let i = 1; i < lines.length; i++) {
-    const values = parseCSVLine(lines[i]);
+  for (let i = 1; i < nonEmptyLines.length; i++) {
+    const parsedRow = parseCSVLine(nonEmptyLines[i], delimiter);
     const rowNum = i + 1;
+
+    if (parsedRow.malformed) {
+      errors.push({ row: rowNum, message: "Row contains mismatched quotes." });
+      continue;
+    }
+
+    const values = parsedRow.values;
+    const expectedColumnCount = headers.length;
+    if (values.length !== expectedColumnCount) {
+      errors.push({ row: rowNum, message: `Expected ${expectedColumnCount} columns, found ${values.length}.` });
+      continue;
+    }
 
     const toolName = values[headerMap["tool name"]]?.trim();
     if (!toolName) {
@@ -128,7 +168,44 @@ export function parseCSV(csvText: string): ParseResult {
   return { tools, errors };
 }
 
-function parseCSVLine(line: string): string[] {
+function detectDelimiter(...sampleLines: Array<string | undefined>): string {
+  let bestDelimiter = ",";
+  let bestScore = -1;
+
+  for (const delimiter of SUPPORTED_DELIMITERS) {
+    const score = sampleLines.reduce((sum, line) => sum + countDelimiter(line || "", delimiter), 0);
+    if (score > bestScore) {
+      bestDelimiter = delimiter;
+      bestScore = score;
+    }
+  }
+
+  return bestDelimiter;
+}
+
+function countDelimiter(line: string, delimiter: string) {
+  let count = 0;
+  let inQuotes = false;
+
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    const nextChar = line[i + 1];
+
+    if (char === '"') {
+      if (inQuotes && nextChar === '"') {
+        i += 1;
+      } else {
+        inQuotes = !inQuotes;
+      }
+    } else if (char === delimiter && !inQuotes) {
+      count += 1;
+    }
+  }
+
+  return count;
+}
+
+function parseCSVLine(line: string, delimiter = ","): { values: string[]; malformed: boolean } {
   const result: string[] = [];
   let current = "";
   let inQuotes = false;
@@ -144,7 +221,7 @@ function parseCSVLine(line: string): string[] {
       } else {
         inQuotes = !inQuotes;
       }
-    } else if (char === "," && !inQuotes) {
+    } else if (char === delimiter && !inQuotes) {
       result.push(current);
       current = "";
     } else {
@@ -153,5 +230,5 @@ function parseCSVLine(line: string): string[] {
   }
 
   result.push(current);
-  return result;
+  return { values: result, malformed: inQuotes };
 }

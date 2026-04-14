@@ -1,17 +1,26 @@
 import crypto from "crypto";
-import { promises as fs } from "fs";
-import path from "path";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { sendProductEmail } from "@/lib/email";
+import { query, withTransaction } from "@/lib/db";
 import { getSubscriptionForCustomer } from "@/lib/subscriptions";
 
-const SESSIONS_FILE = path.join(process.cwd(), "data", "sessions.json");
-const CODES_FILE = path.join(process.cwd(), "data", "login-codes.json");
 const SESSION_COOKIE = "stacksmart_session";
 const SESSION_DURATION_MS = 1000 * 60 * 60 * 24 * 30;
 const CODE_DURATION_MS = 1000 * 60 * 15;
 const IS_PROD = process.env.NODE_ENV === "production";
+
+function cleanEnvValue(value?: string) {
+  if (!value) return value;
+  const trimmed = value.trim();
+  if (
+    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+    (trimmed.startsWith("'") && trimmed.endsWith("'"))
+  ) {
+    return trimmed.slice(1, -1).trim();
+  }
+  return trimmed;
+}
 
 type SessionRecord = {
   token: string;
@@ -29,18 +38,40 @@ type LoginCodeRecord = {
   expiresAt: string;
 };
 
-async function readJsonFile<T>(filePath: string, fallback: T): Promise<T> {
-  try {
-    const raw = await fs.readFile(filePath, "utf8");
-    return JSON.parse(raw) as T;
-  } catch {
-    return fallback;
-  }
+type SessionRow = {
+  token: string;
+  customer_id: string;
+  email: string;
+  created_at: Date | string;
+  expires_at: Date | string;
+};
+
+type LoginCodeRow = {
+  email: string;
+  customer_id: string;
+  code_hash: string;
+  created_at: Date | string;
+  expires_at: Date | string;
+};
+
+function mapSession(row: SessionRow): SessionRecord {
+  return {
+    token: row.token,
+    customerId: row.customer_id,
+    email: row.email,
+    createdAt: new Date(row.created_at).toISOString(),
+    expiresAt: new Date(row.expires_at).toISOString(),
+  };
 }
 
-async function writeJsonFile(filePath: string, value: unknown) {
-  await fs.mkdir(path.dirname(filePath), { recursive: true });
-  await fs.writeFile(filePath, JSON.stringify(value, null, 2));
+function mapLoginCode(row: LoginCodeRow): LoginCodeRecord {
+  return {
+    email: row.email,
+    customerId: row.customer_id,
+    codeHash: row.code_hash,
+    createdAt: new Date(row.created_at).toISOString(),
+    expiresAt: new Date(row.expires_at).toISOString(),
+  };
 }
 
 export function normalizeEmail(email: string) {
@@ -64,22 +95,21 @@ export async function createLoginCode(emailInput: string) {
   const customerId = buildCustomerId(email);
   const code = generateNumericCode();
   const now = Date.now();
-  const records = (await readJsonFile<LoginCodeRecord[]>(CODES_FILE, [])).filter(
-    (record) => record.email !== email && new Date(record.expiresAt).getTime() > now,
-  );
+  const createdAt = new Date(now).toISOString();
+  const expiresAt = new Date(now + CODE_DURATION_MS).toISOString();
 
-  const nextRecord: LoginCodeRecord = {
-    email,
-    customerId,
-    codeHash: hashCode(email, code),
-    createdAt: new Date(now).toISOString(),
-    expiresAt: new Date(now + CODE_DURATION_MS).toISOString(),
-  };
+  await withTransaction(async (client) => {
+    await client.query(`DELETE FROM login_codes WHERE email = $1 OR expires_at <= NOW()`, [email]);
+    await client.query(
+      `INSERT INTO login_codes (email, customer_id, code_hash, created_at, expires_at)
+       VALUES ($1, $2, $3, $4, $5)`,
+      [email, customerId, hashCode(email, code), createdAt, expiresAt],
+    );
+  });
 
-  records.push(nextRecord);
-  await writeJsonFile(CODES_FILE, records);
-
-  const loginUrl = `${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/login?email=${encodeURIComponent(email)}&code=${code}`;
+  const appUrl = cleanEnvValue(process.env.NEXT_PUBLIC_APP_URL) || "http://localhost:3000";
+  const loginUrl = `${appUrl}/login?email=${encodeURIComponent(email)}&code=${code}`;
+  const allowDevCodeFallback = process.env.NODE_ENV !== "production" || process.env.STACKSMART_FORCE_DEV_LOGIN === "1";
   const sendResult = await sendProductEmail({
     to: email,
     subject: "Your StackSmart sign-in code",
@@ -87,14 +117,17 @@ export async function createLoginCode(emailInput: string) {
     body: `Your one-time sign-in code is ${code}. It expires in 15 minutes. If you prefer, you can use the secure sign-in link below.`,
     ctaLabel: "Sign in to StackSmart",
     ctaHref: loginUrl,
-  });
+  }).catch((error) => ({ skipped: true, reason: error instanceof Error ? error.message : "email_send_failed" }));
+
+  const emailSkipped = "skipped" in sendResult && sendResult.skipped;
 
   return {
     email,
     customerId,
     code,
-    delivered: !("skipped" in sendResult && sendResult.skipped),
-    deliveryReason: "skipped" in sendResult && sendResult.skipped ? sendResult.reason : null,
+    delivered: !emailSkipped,
+    deliveryReason: emailSkipped ? sendResult.reason : null,
+    exposeDevCode: allowDevCodeFallback,
   };
 }
 
@@ -103,43 +136,45 @@ export async function createSession(emailInput: string) {
   const customerId = buildCustomerId(email);
   const token = crypto.randomBytes(32).toString("hex");
   const now = Date.now();
-  const sessions = (await readJsonFile<SessionRecord[]>(SESSIONS_FILE, [])).filter(
-    (record) => new Date(record.expiresAt).getTime() > now,
+  const createdAt = new Date(now).toISOString();
+  const expiresAt = new Date(now + SESSION_DURATION_MS).toISOString();
+
+  await query(`DELETE FROM auth_sessions WHERE expires_at <= NOW()`);
+  await query(
+    `INSERT INTO auth_sessions (token, customer_id, email, created_at, expires_at)
+     VALUES ($1, $2, $3, $4, $5)`,
+    [token, customerId, email, createdAt, expiresAt],
   );
-
-  sessions.push({
-    token,
-    customerId,
-    email,
-    createdAt: new Date(now).toISOString(),
-    expiresAt: new Date(now + SESSION_DURATION_MS).toISOString(),
-  });
-
-  await writeJsonFile(SESSIONS_FILE, sessions);
 
   return {
     token,
     customerId,
     email,
-    expiresAt: new Date(now + SESSION_DURATION_MS).toISOString(),
+    expiresAt,
   };
 }
 
 export async function consumeLoginCode(emailInput: string, code: string) {
   const email = normalizeEmail(emailInput);
-  const now = Date.now();
-  const records = await readJsonFile<LoginCodeRecord[]>(CODES_FILE, []);
-  const validRecord = records.find(
-    (record) =>
-      record.email === email &&
-      record.codeHash === hashCode(email, code) &&
-      new Date(record.expiresAt).getTime() > now,
-  );
+  const codeHash = hashCode(email, code);
 
-  if (!validRecord) return null;
+  const matchingRecord = await withTransaction(async (client) => {
+    await client.query(`DELETE FROM login_codes WHERE expires_at <= NOW()`);
 
-  const remaining = records.filter((record) => record !== validRecord && new Date(record.expiresAt).getTime() > now);
-  await writeJsonFile(CODES_FILE, remaining);
+    const result = await client.query<LoginCodeRow>(
+      `DELETE FROM login_codes
+       WHERE email = $1
+         AND code_hash = $2
+         AND expires_at > NOW()
+       RETURNING email, customer_id, code_hash, created_at, expires_at`,
+      [email, codeHash],
+    );
+
+    return result.rows[0] ? mapLoginCode(result.rows[0]) : null;
+  });
+
+  if (!matchingRecord) return null;
+
   return createSession(email);
 }
 
@@ -148,16 +183,20 @@ export async function getCurrentSession() {
   const token = cookieStore.get(SESSION_COOKIE)?.value;
   if (!token) return null;
 
-  const now = Date.now();
-  const sessions = await readJsonFile<SessionRecord[]>(SESSIONS_FILE, []);
-  const activeSessions = sessions.filter((record) => new Date(record.expiresAt).getTime() > now);
-  const session = activeSessions.find((record) => record.token === token) || null;
+  const result = await query<SessionRow>(
+    `SELECT token, customer_id, email, created_at, expires_at
+     FROM auth_sessions
+     WHERE token = $1 AND expires_at > NOW()
+     LIMIT 1`,
+    [token],
+  );
 
-  if (activeSessions.length !== sessions.length) {
-    await writeJsonFile(SESSIONS_FILE, activeSessions);
+  if (result.rows.length === 0) {
+    await query(`DELETE FROM auth_sessions WHERE expires_at <= NOW() OR token = $1`, [token]);
+    return null;
   }
 
-  return session;
+  return mapSession(result.rows[0]);
 }
 
 export async function clearCurrentSession() {
@@ -165,11 +204,7 @@ export async function clearCurrentSession() {
   const token = cookieStore.get(SESSION_COOKIE)?.value;
   if (!token) return;
 
-  const sessions = await readJsonFile<SessionRecord[]>(SESSIONS_FILE, []);
-  await writeJsonFile(
-    SESSIONS_FILE,
-    sessions.filter((record) => record.token !== token),
-  );
+  await query(`DELETE FROM auth_sessions WHERE token = $1`, [token]);
   cookieStore.delete(SESSION_COOKIE);
 }
 

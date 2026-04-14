@@ -6,6 +6,18 @@ function getFromAddress() {
   return process.env.EMAIL_FROM || "StackSmart <hello@stacksmart.app>";
 }
 
+function getReplyToAddress() {
+  return process.env.EMAIL_REPLY_TO || undefined;
+}
+
+function stripHtml(html: string) {
+  return html
+    .replace(/<a[^>]+href="([^"]+)"[^>]*>(.*?)<\/a>/gi, "$2: $1")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export async function sendProductEmail({
   to,
   subject,
@@ -25,11 +37,7 @@ export async function sendProductEmail({
     return { skipped: true, reason: "RESEND_API_KEY not configured" };
   }
 
-  return resend.emails.send({
-    from: getFromAddress(),
-    to,
-    subject,
-    html: `
+  const html = `
       <div style="font-family: Inter, Arial, sans-serif; background:#020617; color:#e2e8f0; padding:32px;">
         <div style="max-width:560px; margin:0 auto; background:#0f172a; border:1px solid #1e293b; border-radius:16px; padding:32px;">
           <div style="font-size:12px; letter-spacing:0.08em; color:#38bdf8; text-transform:uppercase; font-weight:700; margin-bottom:16px;">StackSmart</div>
@@ -39,6 +47,14 @@ export async function sendProductEmail({
           <p style="font-size:13px; line-height:1.6; color:#64748b; margin:24px 0 0;">This is an automated message from StackSmart.</p>
         </div>
       </div>
-    `,
+    `;
+
+  return resend.emails.send({
+    from: getFromAddress(),
+    to,
+    subject,
+    html,
+    text: stripHtml(html),
+    replyTo: getReplyToAddress(),
   });
 }

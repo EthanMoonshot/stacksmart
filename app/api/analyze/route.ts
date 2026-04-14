@@ -6,6 +6,18 @@ import { getSubscriptionForCustomer } from "@/lib/subscriptions";
 
 const noStoreHeaders = { "Cache-Control": "no-store, max-age=0" };
 
+function cleanEnvValue(value?: string) {
+  if (!value) return value;
+  const trimmed = value.trim();
+  if (
+    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+    (trimmed.startsWith("'") && trimmed.endsWith("'"))
+  ) {
+    return trimmed.slice(1, -1).trim();
+  }
+  return trimmed;
+}
+
 export async function POST(req: NextRequest) {
   try {
     const session = await getCurrentSession();
@@ -42,7 +54,7 @@ export async function POST(req: NextRequest) {
             ? `We've finished analysing your stack. ${analysis.recommendations.length} recommendations are ready for review, with up to $${analysis.potentialAnnualSavings.toLocaleString()} in annual savings identified.`
             : `We've finished analysing your stack. ${analysis.recommendations.length} recommendations are ready for review. Open your report to see the full breakdown.`,
           ctaLabel: "View My Report",
-          ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "https://www.stacksmart.app"}/report`,
+          ctaHref: `${cleanEnvValue(process.env.NEXT_PUBLIC_APP_URL) || "https://www.stacksmart.app"}/report`,
         });
       } catch (emailErr) {
         console.error("[Analyze] Report delivery email failed:", emailErr);

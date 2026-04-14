@@ -1,5 +1,3 @@
-import { promises as fs } from "fs";
-import path from "path";
 import {
   AnalysisResult,
   AnalyzedTool,
@@ -15,9 +13,7 @@ import {
   lookupTool,
   normalizeToolName,
 } from "@/lib/recommendations-db";
-
-const TOOLS_FILE = path.join(process.cwd(), "data", "tools.json");
-const ANALYSIS_FILE = path.join(process.cwd(), "data", "analysis.json");
+import { query, withTransaction } from "@/lib/db";
 
 function toMonthlyCost(tool: SaaSTool): number {
   if (tool.billingFrequency === "quarterly") return tool.cost / 3;
@@ -124,40 +120,119 @@ function buildOverlapGroups(analyzedTools: AnalyzedTool[]) {
     .sort((a, b) => b.tools.length - a.tools.length || a.category.localeCompare(b.category));
 }
 
-async function readAnalysisHistory(): Promise<AnalysisResult[]> {
-  try {
-    const raw = await fs.readFile(ANALYSIS_FILE, "utf8");
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? (parsed as AnalysisResult[]) : parsed ? [parsed as AnalysisResult] : [];
-  } catch {
-    return [];
-  }
+type StackRow = {
+  id: string;
+  customer_id: string;
+  email: string | null;
+  tools: ToolStack["tools"];
+  created_at: Date | string;
+  source: ToolStack["source"];
+};
+
+type AnalysisRow = {
+  analysis: AnalysisResult;
+};
+
+function mapStack(row: StackRow): ToolStack {
+  return {
+    id: row.id,
+    customerId: row.customer_id,
+    email: row.email ?? undefined,
+    tools: row.tools,
+    createdAt: new Date(row.created_at).toISOString(),
+    source: row.source,
+  };
 }
 
 export async function readStacks(customerId?: string): Promise<ToolStack[]> {
-  try {
-    const raw = await fs.readFile(TOOLS_FILE, "utf8");
-    const stacks = JSON.parse(raw) as ToolStack[];
-    if (!customerId) return stacks;
-    return stacks.filter((stack) => stack.customerId === customerId);
-  } catch {
-    return [];
-  }
+  const result = customerId
+    ? await query<StackRow>(
+        `SELECT id, customer_id, email, tools, created_at, source
+         FROM tool_stacks
+         WHERE customer_id = $1
+         ORDER BY created_at ASC`,
+        [customerId],
+      )
+    : await query<StackRow>(
+        `SELECT id, customer_id, email, tools, created_at, source
+         FROM tool_stacks
+         ORDER BY created_at ASC`,
+      );
+
+  return result.rows.map(mapStack);
+}
+
+export async function saveStack(stack: ToolStack): Promise<void> {
+  await query(
+    `INSERT INTO tool_stacks (id, customer_id, email, tools, created_at, source)
+     VALUES ($1, $2, $3, $4::jsonb, $5, $6)`,
+    [stack.id, stack.customerId, stack.email ?? null, JSON.stringify(stack.tools), stack.createdAt, stack.source],
+  );
+}
+
+export async function replaceCustomerStack(stack: ToolStack): Promise<void> {
+  await withTransaction(async (client) => {
+    await client.query(`DELETE FROM tool_stacks WHERE customer_id = $1`, [stack.customerId]);
+    await client.query(
+      `INSERT INTO tool_stacks (id, customer_id, email, tools, created_at, source)
+       VALUES ($1, $2, $3, $4::jsonb, $5, $6)`,
+      [stack.id, stack.customerId, stack.email ?? null, JSON.stringify(stack.tools), stack.createdAt, stack.source],
+    );
+  });
 }
 
 export async function readLatestAnalysis(customerId?: string): Promise<AnalysisResult | null> {
-  const analyses = await readAnalysisHistory();
-  const filtered = customerId ? analyses.filter((analysis) => analysis.customerId === customerId) : analyses;
-  const sorted = filtered.sort((a, b) => new Date(b.analyzedAt).getTime() - new Date(a.analyzedAt).getTime());
-  return sorted[0] ?? null;
+  const result = customerId
+    ? await query<AnalysisRow>(
+        `SELECT analysis
+         FROM analysis_results
+         WHERE customer_id = $1
+         ORDER BY analyzed_at DESC
+         LIMIT 1`,
+        [customerId],
+      )
+    : await query<AnalysisRow>(
+        `SELECT analysis
+         FROM analysis_results
+         ORDER BY analyzed_at DESC
+         LIMIT 1`,
+      );
+
+  return result.rows[0]?.analysis ?? null;
 }
 
 export async function writeAnalysis(result: AnalysisResult): Promise<void> {
-  await fs.mkdir(path.dirname(ANALYSIS_FILE), { recursive: true });
-  const existing = await readAnalysisHistory();
-  const remaining = existing.filter((analysis) => analysis.customerId !== result.customerId);
-  remaining.push(result);
-  await fs.writeFile(ANALYSIS_FILE, JSON.stringify(remaining, null, 2));
+  await withTransaction(async (client) => {
+    await client.query(`DELETE FROM analysis_results WHERE customer_id = $1`, [result.customerId]);
+    await client.query(
+    `INSERT INTO analysis_results (
+      id,
+      stack_id,
+      customer_id,
+      analyzed_at,
+      source,
+      tool_count,
+      monthly_spend,
+      annual_spend,
+      potential_monthly_savings,
+      potential_annual_savings,
+      analysis
+    ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11::jsonb)`,
+    [
+      result.id,
+      result.stackId,
+      result.customerId,
+      result.analyzedAt,
+      result.source,
+      result.toolCount,
+      result.monthlySpend,
+      result.annualSpend,
+      result.potentialMonthlySavings,
+      result.potentialAnnualSavings,
+      JSON.stringify(result),
+    ],
+    );
+  });
 }
 
 export function analyzeStack(stack: ToolStack): AnalysisResult {

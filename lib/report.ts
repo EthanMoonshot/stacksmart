@@ -1,9 +1,6 @@
-import { promises as fs } from "fs";
-import path from "path";
 import crypto from "crypto";
 import { AnalysisResult, Recommendation } from "@/lib/types";
-
-const SHARED_REPORTS_DIR = path.join(process.cwd(), "data", "reports");
+import { query } from "@/lib/db";
 
 export interface ReportSnapshot {
   id: string;
@@ -23,6 +20,12 @@ export interface ReportViewModel {
   highestSavings: Recommendation[];
 }
 
+type SharedReportRow = {
+  id: string;
+  created_at: Date | string;
+  analysis: AnalysisResult;
+};
+
 function roundCurrency(value: number) {
   return Math.round(value * 100) / 100;
 }
@@ -32,6 +35,14 @@ function capProjectedSavings(projectedSavings: number, monthlySpend: number) {
   const realisticCeiling = roundCurrency(monthlySpend * 0.7);
   if (projectedSavings > monthlySpend) return realisticCeiling;
   return roundCurrency(Math.min(projectedSavings, realisticCeiling));
+}
+
+function mapSharedReport(row: SharedReportRow): ReportSnapshot {
+  return {
+    id: row.id,
+    createdAt: new Date(row.created_at).toISOString(),
+    analysis: row.analysis,
+  };
 }
 
 export function buildReportViewModel(analysis: AnalysisResult): ReportViewModel {
@@ -60,23 +71,29 @@ export function buildReportViewModel(analysis: AnalysisResult): ReportViewModel 
 
 export async function createSharedReport(analysis: AnalysisResult): Promise<ReportSnapshot> {
   const id = crypto.randomUUID().slice(0, 8);
-  const snapshot: ReportSnapshot = {
+  const createdAt = new Date().toISOString();
+
+  await query(
+    `INSERT INTO shared_reports (id, created_at, analysis)
+     VALUES ($1, $2, $3::jsonb)`,
+    [id, createdAt, JSON.stringify(analysis)],
+  );
+
+  return {
     id,
-    createdAt: new Date().toISOString(),
+    createdAt,
     analysis,
   };
-
-  await fs.mkdir(SHARED_REPORTS_DIR, { recursive: true });
-  await fs.writeFile(path.join(SHARED_REPORTS_DIR, `${id}.json`), JSON.stringify(snapshot, null, 2));
-
-  return snapshot;
 }
 
 export async function readSharedReport(id: string): Promise<ReportSnapshot | null> {
-  try {
-    const raw = await fs.readFile(path.join(SHARED_REPORTS_DIR, `${id}.json`), "utf8");
-    return JSON.parse(raw) as ReportSnapshot;
-  } catch {
-    return null;
-  }
+  const result = await query<SharedReportRow>(
+    `SELECT id, created_at, analysis
+     FROM shared_reports
+     WHERE id = $1
+     LIMIT 1`,
+    [id],
+  );
+
+  return result.rows[0] ? mapSharedReport(result.rows[0]) : null;
 }
