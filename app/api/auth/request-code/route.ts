@@ -61,24 +61,7 @@ export async function POST(req: NextRequest) {
       { headers: noStoreHeaders },
     );
   } catch (error) {
-    const errName = error instanceof Error ? error.constructor.name : typeof error;
-    const errMsg = error instanceof Error ? error.message : String(error);
-    const errCode = typeof error === "object" && error !== null && "code" in error ? String((error as { code?: unknown }).code) : "none";
-    console.error(
-      JSON.stringify({
-        route: "request-code",
-        errorName: errName,
-        errorMessage: errMsg,
-        errorCode: errCode,
-        stack: error instanceof Error ? error.stack?.split("\n").slice(0, 3) : undefined,
-      }),
-    );
-    return NextResponse.json(
-      {
-        message: "Unable to send sign-in code.",
-        _diag: { name: errName, code: errCode, msg: errMsg.slice(0, 120) },
-      },
-      { status: 500, headers: noStoreHeaders },
-    );
+    console.error("[Auth Request Code]", error);
+    return NextResponse.json({ message: "Unable to send sign-in code." }, { status: 500, headers: noStoreHeaders });
   }
 }
