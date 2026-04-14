@@ -41,14 +41,18 @@ function createPool() {
     throw new Error("DATABASE_URL is not configured. Set it to your Supabase Postgres connection string.");
   }
 
-  const tlsNoVerify = cleanEnvValue(process.env.PGSSLMODE) === "no-verify";
-  if (tlsNoVerify) {
+  const sslConfig = getSslConfig();
+  const shouldBypassTlsValidation =
+    cleanEnvValue(process.env.PGSSLMODE) === "no-verify" ||
+    (typeof sslConfig === "object" && sslConfig?.rejectUnauthorized === false);
+
+  if (shouldBypassTlsValidation) {
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
   }
 
   return new Pool({
     connectionString: DATABASE_URL,
-    ssl: getSslConfig(),
+    ssl: sslConfig,
   });
 }
 
