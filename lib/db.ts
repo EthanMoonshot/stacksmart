@@ -12,7 +12,7 @@ function cleanEnvValue(value?: string) {
   return normalized;
 }
 
-const DATABASE_URL = cleanEnvValue(process.env.DATABASE_URL);
+const DATABASE_URL = cleanEnvValue(process.env.DATABASE_URL) || cleanEnvValue(process.env.TEST_DATABASE_URL);
 
 declare global {
   // eslint-disable-next-line no-var
