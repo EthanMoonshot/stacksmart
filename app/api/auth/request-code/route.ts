@@ -61,7 +61,14 @@ export async function POST(req: NextRequest) {
       { headers: noStoreHeaders },
     );
   } catch (error) {
+    const message = error instanceof Error ? error.message : "unknown_error";
     console.error("[Auth Request Code]", error);
-    return NextResponse.json({ message: "Unable to send sign-in code." }, { status: 500, headers: noStoreHeaders });
+    return NextResponse.json(
+      {
+        message: "Unable to send sign-in code.",
+        debug: process.env.NODE_ENV !== "production" ? message : undefined,
+      },
+      { status: 500, headers: noStoreHeaders },
+    );
   }
 }
