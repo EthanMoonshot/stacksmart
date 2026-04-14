@@ -2,14 +2,14 @@ import { Resend } from "resend";
 
 function cleanEnvValue(value?: string) {
   if (!value) return value;
-  const trimmed = value.trim();
+  const normalized = value.replace(/\\n/g, "").replace(/\\r/g, "").trim();
   if (
-    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
-    (trimmed.startsWith("'") && trimmed.endsWith("'"))
+    (normalized.startsWith('"') && normalized.endsWith('"')) ||
+    (normalized.startsWith("'") && normalized.endsWith("'"))
   ) {
-    return trimmed.slice(1, -1).trim();
+    return normalized.slice(1, -1).replace(/\\n/g, "").replace(/\\r/g, "").trim();
   }
-  return trimmed;
+  return normalized;
 }
 
 const resendApiKey = cleanEnvValue(process.env.RESEND_API_KEY);
