@@ -1,13 +1,26 @@
 import { Resend } from "resend";
 
-const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
+function cleanEnvValue(value?: string) {
+  if (!value) return value;
+  const trimmed = value.trim();
+  if (
+    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+    (trimmed.startsWith("'") && trimmed.endsWith("'"))
+  ) {
+    return trimmed.slice(1, -1).trim();
+  }
+  return trimmed;
+}
+
+const resendApiKey = cleanEnvValue(process.env.RESEND_API_KEY);
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 function getFromAddress() {
-  return process.env.EMAIL_FROM || "StackSmart <hello@stacksmart.app>";
+  return cleanEnvValue(process.env.EMAIL_FROM) || "StackSmart <hello@stacksmart.app>";
 }
 
 function getReplyToAddress() {
-  return process.env.EMAIL_REPLY_TO || undefined;
+  return cleanEnvValue(process.env.EMAIL_REPLY_TO) || undefined;
 }
 
 function stripHtml(html: string) {
