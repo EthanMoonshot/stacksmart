@@ -41,7 +41,7 @@ const actionTypes = [
 ];
 
 const stats = [
-  { value: "47", label: "Subscriptions per audit" },
+  { value: "47", label: "Subscriptions per report" },
   { value: "14%", label: "Average spend reduction" },
   { value: "3", label: "Minutes to first report" },
   { value: "0", label: "Bank connections required" },
@@ -63,7 +63,7 @@ export default function ProblemSolution() {
             <span className="text-success-500 savings-number">$4,200</span>
             <span className="text-dark-400 text-2xl sm:text-3xl">/year</span>
           </div>
-          <p className="text-dark-400">in savings found for the average SMB audit</p>
+          <p className="text-dark-400">in savings found for the average SMB report</p>
         </div>
 
         {/* Action types - compact cards */}

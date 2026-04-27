@@ -85,3 +85,31 @@ create table if not exists shared_reports (
 );
 
 create index if not exists shared_reports_created_at_idx on shared_reports (created_at desc);
+
+alter table subscriptions enable row level security;
+alter table subscriptions force row level security;
+revoke all privileges on table subscriptions from anon, authenticated;
+
+alter table auth_sessions enable row level security;
+alter table auth_sessions force row level security;
+revoke all privileges on table auth_sessions from anon, authenticated;
+
+alter table login_codes enable row level security;
+alter table login_codes force row level security;
+revoke all privileges on table login_codes from anon, authenticated;
+
+alter table tool_stacks enable row level security;
+alter table tool_stacks force row level security;
+revoke all privileges on table tool_stacks from anon, authenticated;
+
+alter table analysis_results enable row level security;
+alter table analysis_results force row level security;
+revoke all privileges on table analysis_results from anon, authenticated;
+
+alter table waitlist_entries enable row level security;
+alter table waitlist_entries force row level security;
+revoke all privileges on table waitlist_entries from anon, authenticated;
+
+alter table shared_reports enable row level security;
+alter table shared_reports force row level security;
+revoke all privileges on table shared_reports from anon, authenticated;

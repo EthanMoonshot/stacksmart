@@ -19,6 +19,114 @@ export default async function DashboardPage() {
   const { session, subscription } = await requirePaidUser({ next: "/dashboard" });
   const analysis = await readLatestAnalysis(session.customerId);
 
+  if (!analysis) {
+    return (
+      <div className="space-y-8">
+        <AppHeader
+          title="Dashboard"
+          subtitle="No analysis yet. Upload billing data to generate your first savings report, or view a public sample walkthrough first."
+          action={
+            <div className="flex flex-wrap gap-3">
+              <Link href="/demo" className="btn-secondary px-4 py-2 text-sm">View sample report</Link>
+              <Link href="/upload" className="btn-primary px-4 py-2 text-sm">Upload billing data</Link>
+            </div>
+          }
+        />
+
+        <section className="rounded-[28px] border border-dark-700 bg-dark-900/80 p-6 md:p-8">
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-dark-400">Workspace overview</p>
+              <h2 className="mt-3 max-w-3xl text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl">
+                No report yet, which means no clear savings map yet.
+              </h2>
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+                Your workspace is ready, but there is no analysis data yet. Upload billing data to generate a private savings report, or review the public sample walkthrough to see the kind of output StackSmart delivers.
+              </p>
+
+              <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                {[
+                  ["Monthly spend", "—", "No report yet"],
+                  ["Likely savings", "—", "Run a first analysis to calculate"],
+                  ["Action-ready items", "0", "Waiting on your first upload"],
+                ].map(([label, value, note]) => (
+                  <div key={label} className="rounded-2xl border border-dark-700 bg-dark-950/70 p-4">
+                    <p className="text-xs uppercase tracking-[0.18em] text-dark-400">{label}</p>
+                    <p className="mt-2 text-2xl font-bold text-white">{value}</p>
+                    <p className="mt-1 text-xs text-dark-400">{note}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[24px] border border-success-500/20 bg-success-900/20 p-5">
+              <p className="text-xs uppercase tracking-[0.18em] text-success-500">Current operating posture</p>
+              <div className="mt-5 space-y-4">
+                <div className="rounded-2xl border border-dark-700 bg-dark-950/60 p-4">
+                  <p className="text-sm text-dark-300">Plan</p>
+                  <p className="mt-1 text-2xl font-semibold text-white">{subscription?.planName || "Free workspace"}</p>
+                  <p className="mt-1 text-xs capitalize text-dark-400">{subscription?.status || "inactive"} · {subscription?.billingInterval?.replace("_", " ") || "no active billing"}</p>
+                </div>
+                <div className="rounded-2xl border border-dark-700 bg-dark-950/60 p-4">
+                  <p className="text-sm text-dark-300">Best next move</p>
+                  <p className="mt-1 text-lg font-semibold text-white">Upload billing data or review the sample report before your first run.</p>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <Link href="/upload" className="btn-primary text-sm">
+                    Upload billing data
+                  </Link>
+                  <Link href="/demo" className="btn-secondary text-sm">
+                    View sample report
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className="card lg:col-span-2">
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <h2 className="text-lg font-semibold text-white">Priority recommendations</h2>
+                <p className="mt-1 text-sm text-dark-400">No recommendations yet because no private analysis has been run for this workspace.</p>
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-[24px] border border-dashed border-dark-700 py-16 text-center">
+              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-brand-500/20 bg-brand-500/10">
+                <svg className="h-8 w-8 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              </div>
+              <h3 className="text-xl font-bold text-white">No analysis yet</h3>
+              <p className="mx-auto mt-2 max-w-md text-sm text-dark-400">Upload billing data to generate your first report, or review the public sample walkthrough to understand the output before you run it on your own stack.</p>
+              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Link href="/upload" className="btn-primary">Upload billing data</Link>
+                <Link href="/demo" className="btn-secondary text-sm">View sample report</Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="card">
+            <h2 className="text-lg font-semibold text-white">How StackSmart works best</h2>
+            <div className="mt-5 space-y-3 text-sm text-dark-300">
+              {[
+                "Upload billing exports or invoice data",
+                "Review the cut / consolidate / renegotiate lanes",
+                "Act on the biggest savings before chasing minor clean-up",
+                "Repeat monthly if your stack changes often",
+              ].map((item, idx) => (
+                <div key={item} className="flex gap-3 rounded-2xl border border-dark-700 bg-dark-950/70 p-4">
+                  <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-brand-500/15 text-xs font-semibold text-brand-300">{idx + 1}</div>
+                  <p className="leading-6">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const topRecommendations = analysis?.recommendations.slice(0, 3) || [];
   const savingsShare = analysis && analysis.monthlySpend > 0
     ? Math.round((analysis.potentialMonthlySavings / analysis.monthlySpend) * 100)
@@ -32,7 +140,7 @@ export default async function DashboardPage() {
         action={
           <div className="flex flex-wrap gap-3">
             <Link href="/pricing" className="btn-secondary px-4 py-2 text-sm">Manage plan</Link>
-            <Link href="/upload" className="btn-primary px-4 py-2 text-sm">Run new audit</Link>
+            <Link href="/upload" className="btn-primary px-4 py-2 text-sm">Run new analysis</Link>
           </div>
         }
       />
@@ -44,7 +152,7 @@ export default async function DashboardPage() {
             <h2 className="mt-3 max-w-3xl text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl">
               {analysis
                 ? "Your stack is still carrying recoverable spend."
-                : "No audit yet — which means no clear savings map yet."}
+                : "No report yet — which means no clear savings map yet."}
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
               {analysis
@@ -61,7 +169,7 @@ export default async function DashboardPage() {
                   ]
                 : [
                     ["Monthly spend", "—", "No report yet"],
-                    ["Likely savings", "—", "Run a first audit to calculate"],
+                    ["Likely savings", "—", "Run a first analysis to calculate"],
                     ["Action-ready items", "0", "Waiting on your first upload"],
                   ]
               .map(([label, value, note]) => (

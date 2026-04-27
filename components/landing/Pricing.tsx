@@ -1,12 +1,13 @@
 import Link from "next/link";
+import TrackLink from "@/components/analytics/TrackLink";
 
 const plans = [
   {
-    name: "Audit",
+    name: "Snapshot",
     price: "$49",
     period: "one-time",
-    fit: "Best for buyers who want a fast standalone SaaS savings review.",
-    cta: "Buy Audit",
+    fit: "Best for buyers who want a one-time self-serve savings report without committing to a subscription.",
+    cta: "Get Snapshot",
   },
   {
     name: "Starter",
@@ -38,10 +39,10 @@ export default function Pricing() {
             Pricing
           </p>
           <h2 className="font-display text-4xl font-bold tracking-[-0.02em] text-white md:text-5xl">
-            Start small or go straight to ongoing savings
+            Start with one report, or keep savings reviews running
           </h2>
           <p className="mx-auto mt-5 max-w-2xl font-sans text-xl text-dark-300">
-            Choose a one-time audit or a recurring plan depending on how hands-on you want StackSmart to be.
+            Snapshot is the fastest path if you want one real answer from your billing data. Upgrade to recurring only if ongoing optimisation matters.
           </p>
         </div>
 
@@ -58,12 +59,14 @@ export default function Pricing() {
                 </div>
                 <p className="font-sans text-sm leading-relaxed text-dark-200">{plan.fit}</p>
               </div>
-              <Link
+              <TrackLink
                 href="/pricing"
+                event="homepage_cta_clicked"
+                props={{ target: "pricing", location: `landing_pricing_card_${plan.name.toLowerCase()}` }}
                 className="mt-auto block w-full rounded-xl bg-brand-500 px-6 py-3.5 text-center text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-600 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)]"
               >
                 {plan.cta}
-              </Link>
+              </TrackLink>
             </div>
           ))}
         </div>
@@ -79,14 +82,16 @@ export default function Pricing() {
             <svg className="h-4 w-4 text-success-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-3.314 0-6 1.79-6 4s2.686 4 6 4 6-1.79 6-4-2.686-4-6-4zm0 0V4m0 12v4" />
             </svg>
-Audit + subscription options
+One-time + subscription options
           </div>
-          <Link
+          <TrackLink
             href="/pricing"
+            event="homepage_cta_clicked"
+            props={{ target: "pricing", location: "landing_pricing_footer" }}
             className="text-sm font-medium text-brand-400 transition-colors hover:text-brand-300"
           >
-            View full audit details →
-          </Link>
+            View full plan details →
+          </TrackLink>
         </div>
       </div>
     </section>

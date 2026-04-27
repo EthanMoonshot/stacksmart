@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { pricingPlans } from "@/lib/pricing";
 import { trackEvent } from "@/lib/analytics";
 
@@ -10,6 +10,10 @@ export default function PricingCards({ currentPlanId, initialEmail }: { currentP
   const [error, setError] = useState<string | null>(null);
 
   const plans = useMemo(() => pricingPlans, []);
+
+  useEffect(() => {
+    trackEvent("pricing_viewed", { location: "pricing_cards" });
+  }, []);
 
   async function startCheckout(planId: string) {
     if (!billingEmail.trim()) {
@@ -28,7 +32,8 @@ export default function PricingCards({ currentPlanId, initialEmail }: { currentP
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Unable to start checkout.");
-      trackEvent("checkout_started", { planId, billingCycle: "one_time" });
+      const selectedPlan = plans.find((plan) => plan.id === planId);
+      trackEvent("checkout_started", { planId, billingCycle: selectedPlan?.interval || "unknown", source: "pricing_cards" });
       window.location.href = data.url;
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unable to start checkout.");
@@ -108,7 +113,7 @@ export default function PricingCards({ currentPlanId, initialEmail }: { currentP
       <div className="grid gap-4 md:grid-cols-3">
         {[
           ["CSV-first workflow", "Start with billing exports and invoices — no banking access required."],
-          ["Flexible buying path", "Start with a one-time audit or move straight into ongoing optimisation."],
+          ["Flexible buying path", "Start with a one-time savings snapshot or move straight into ongoing optimisation."],
           ["Built for action", "You get clear recommendations and a path to immediate savings."],
         ].map(([title, copy]) => (
           <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/75 p-5">

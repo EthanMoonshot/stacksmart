@@ -1,3 +1,5 @@
+import TrackLink from "@/components/analytics/TrackLink";
+
 const steps = [
   {
     number: "1",
@@ -6,8 +8,8 @@ const steps = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
       </svg>
     ),
-    title: "Upload CSV",
-    description: "Export from your card or finance tool",
+    title: "View sample report",
+    description: "See the real buyer-facing output first",
     gradient: "from-brand-500/20 to-brand-600/10",
     iconColor: "text-brand-400",
   },
@@ -18,8 +20,8 @@ const steps = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
-    title: "AI Analysis",
-    description: "We map your stack and find waste",
+    title: "Upload billing data",
+    description: "Export a CSV and run the same flow on your own stack",
     gradient: "from-teal-500/20 to-teal-600/10",
     iconColor: "text-teal-400",
   },
@@ -30,8 +32,8 @@ const steps = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: "Get Report",
-    description: "Clear actions: cut, consolidate, renegotiate",
+    title: "Get savings actions",
+    description: "Clear next steps: cut, consolidate, renegotiate",
     gradient: "from-success-500/20 to-success-500/10",
     iconColor: "text-success-500",
   },
@@ -48,8 +50,19 @@ export default function HowItWorks() {
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-white">
-            Upload to savings in under 3 minutes
+            See the proof first, then run it on your own stack
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-dark-300">
+            Cold traffic converts better when the output is visible. Start with the public sample report, then buy when you are ready to run the same flow on your own billing data.
+          </p>
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "how_it_works_primary" }} className="btn-primary text-sm sm:text-base">
+              View sample report
+            </TrackLink>
+            <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ target: "pricing", location: "how_it_works_secondary" }} className="btn-secondary text-sm sm:text-base">
+              Unlock my report
+            </TrackLink>
+          </div>
         </div>
 
         {/* Steps - horizontal layout */}

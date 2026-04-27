@@ -3,6 +3,7 @@
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
 export default function LoginForm({
   next,
@@ -37,6 +38,7 @@ export default function LoginForm({
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Unable to send code.");
+      trackEvent("login_code_requested", { next });
       setRequested(true);
       setMessage(data.message || "Check your email for a sign-in code.");
       if (data.devCode) {
@@ -63,6 +65,7 @@ export default function LoginForm({
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.message || "Unable to verify code.");
+      trackEvent("login_verified", { next });
       router.push(next);
       router.refresh();
     } catch (err) {
@@ -79,7 +82,7 @@ export default function LoginForm({
           <p className="text-xs uppercase tracking-[0.25em] text-brand-400">StackSmart access</p>
           <h1 className="mt-3 text-3xl font-bold text-white">Sign in to your workspace</h1>
           <p className="mt-3 text-sm leading-6 text-dark-300">
-            Use the same email you used at checkout. We&apos;ll send a one-time sign-in code — no fake demo auth, no password reset circus.
+            Use the same email you used at checkout. We&apos;ll send a one-time sign-in code.
           </p>
         </div>
 

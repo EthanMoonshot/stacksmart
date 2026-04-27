@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { buildMetadata } from "@/lib/site";
 import Navbar from "@/components/landing/Navbar";
+import TrackLink from "@/components/analytics/TrackLink";
 import { BlogContent } from "./blog-content";
 
 interface Props {
@@ -93,12 +94,14 @@ export default async function BlogPost({ params }: Props) {
             StackSmart automatically discovers every subscription and shows you
             exactly where to cut.
           </p>
-          <a
-            href="/#waitlist"
+          <TrackLink
+            href="/demo"
+            event="homepage_cta_clicked"
+            props={{ target: "demo", location: `blog_${post.slug}_cta_primary` }}
             className="mt-5 inline-block rounded-lg bg-brand-500 px-6 py-2.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
           >
-            Audit My Stack
-          </a>
+            View Sample Report
+          </TrackLink>
         </div>
       </article>
     </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import EventTracker from "@/components/analytics/EventTracker";
 import AppHeader from "@/components/dashboard/AppHeader";
 import { readLatestAnalysis } from "@/lib/analyzer";
 import { AnalysisResult } from "@/lib/types";
@@ -68,6 +69,7 @@ export default async function AnalysisPage({
 
   return (
     <div>
+      <EventTracker event="report_viewed" props={{ location: "analysis_page", source: analysis.source }} />
       <AppHeader
         title="Analysis Results"
         subtitle={`Analysed ${new Date(analysis.analyzedAt).toLocaleString()} · Source: ${analysis.source}`}

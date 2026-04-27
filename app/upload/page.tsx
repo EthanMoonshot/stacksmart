@@ -37,6 +37,7 @@ export default function UploadPage() {
 
   // --- CSV handling ---
   const processCSV = useCallback(async (file: File) => {
+    trackEvent("upload_started", { entry: "csv", fileName: file.name.toLowerCase() });
     setCsvFile(file);
     setParseErrors([]);
     setPreviewTools([]);
@@ -120,6 +121,7 @@ export default function UploadPage() {
         return;
       }
 
+      trackEvent("upload_completed", { source, toolCount: cleanedTools.length });
       trackEvent("report_generated", { source, toolCount: cleanedTools.length });
       showToast(`Saved ${cleanedTools.length} tools successfully!`);
       // Navigate to analysis after brief delay so toast is visible

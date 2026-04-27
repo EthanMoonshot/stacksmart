@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 const steps = [
   {
@@ -27,6 +28,10 @@ const steps = [
 export default function OnboardingFlow() {
   const [step, setStep] = useState(0);
   const progress = useMemo(() => ((step + 1) / steps.length) * 100, [step]);
+
+  useEffect(() => {
+    trackEvent("report_viewed", { location: "welcome_onboarding", step: step + 1 });
+  }, [step]);
 
   return (
     <div className="space-y-8 rounded-2xl border border-dark-800 bg-dark-900 p-6 sm:p-8">
@@ -54,7 +59,10 @@ export default function OnboardingFlow() {
         {steps.map((item, index) => (
           <button
             key={item.title}
-            onClick={() => setStep(index)}
+            onClick={() => {
+              trackEvent("homepage_cta_clicked", { target: `onboarding_step_${index + 1}`, location: "welcome_onboarding_tabs" });
+              setStep(index);
+            }}
             className={`rounded-xl border p-4 text-left transition ${index === step ? "border-brand-500/40 bg-brand-500/10" : "border-dark-800 bg-dark-950 hover:border-dark-700"}`}
           >
             <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full border border-dark-700 text-sm font-semibold text-white">
@@ -70,11 +78,21 @@ export default function OnboardingFlow() {
         <h3 className="text-2xl font-bold text-white">{steps[step].title}</h3>
         <p className="mt-3 max-w-2xl text-dark-400">{steps[step].description}</p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Link href={steps[step].ctaHref} className="btn-primary text-sm">
+          <Link
+            href={steps[step].ctaHref}
+            className="btn-primary text-sm"
+            onClick={() => trackEvent("homepage_cta_clicked", { target: steps[step].ctaHref, location: "welcome_onboarding_primary" })}
+          >
             {steps[step].ctaLabel}
           </Link>
           {step < steps.length - 1 ? (
-            <button onClick={() => setStep((prev) => prev + 1)} className="btn-secondary text-sm">
+            <button
+              onClick={() => {
+                trackEvent("homepage_cta_clicked", { target: `onboarding_next_${step + 2}`, location: "welcome_onboarding_secondary" });
+                setStep((prev) => prev + 1);
+              }}
+              className="btn-secondary text-sm"
+            >
               Next step
             </button>
           ) : (

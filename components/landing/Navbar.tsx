@@ -42,15 +42,15 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden items-center gap-3 md:flex">
-            <Link href="/dashboard" className="nav-link">
-              Dashboard
+            <Link href="/login" className="nav-link">
+              Sign in
             </Link>
-            <a 
-              href="#waitlist" 
+            <Link 
+              href="/demo" 
               className="rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-brand-600 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
             >
-              Audit My Stack
-            </a>
+              Run Free Demo
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -79,11 +79,11 @@ export default function Navbar() {
             <a href="#pricing" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={closeMenu(setMobileOpen)}>Pricing</a>
             <Link href="/blog" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={closeMenu(setMobileOpen)}>Blog</Link>
             <Link href="/about" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={closeMenu(setMobileOpen)}>About</Link>
-            <Link href="/dashboard" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={closeMenu(setMobileOpen)}>Dashboard</Link>
+            <Link href="/login" className="block rounded-lg px-4 py-3 text-sm text-dark-200 hover:bg-dark-800" onClick={closeMenu(setMobileOpen)}>Sign in</Link>
             <div className="pt-2">
-              <a href="#waitlist" className="block w-full rounded-lg bg-brand-500 py-3 text-center text-sm font-semibold text-white" onClick={closeMenu(setMobileOpen)}>
-                Audit My Stack
-              </a>
+              <Link href="/demo" className="block w-full rounded-lg bg-brand-500 py-3 text-center text-sm font-semibold text-white" onClick={closeMenu(setMobileOpen)}>
+                Run Free Demo
+              </Link>
             </div>
           </div>
         </div>

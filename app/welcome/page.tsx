@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import EventTracker from "@/components/analytics/EventTracker";
 import OnboardingFlow from "@/components/onboarding/OnboardingFlow";
 import { buildMetadata } from "@/lib/site";
 import { getViewerAccess } from "@/lib/auth";
@@ -14,6 +15,7 @@ export default async function WelcomePage() {
   const { isPaid, session } = await getViewerAccess();
   return (
     <main className="min-h-screen bg-dark-950 px-4 py-16 sm:px-6 lg:px-8">
+      <EventTracker event="report_viewed" props={{ location: "welcome_page" }} />
       <div className="mx-auto max-w-6xl space-y-10">
         <div className="rounded-3xl border border-brand-500/20 bg-gradient-to-br from-brand-500/10 via-dark-900 to-dark-950 p-8 sm:p-10">
           <p className="text-xs uppercase tracking-[0.3em] text-brand-400">Welcome to StackSmart</p>
@@ -22,6 +24,7 @@ export default async function WelcomePage() {
             Start with your billing data, let StackSmart analyse spend and overlap, then turn the findings into an executive-ready report.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/demo" className="btn-secondary text-sm">View sample report</Link>
             {isPaid ? (
               <Link href="/upload" className="btn-primary text-sm">Start with upload</Link>
             ) : session ? (

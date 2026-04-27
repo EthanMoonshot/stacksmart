@@ -16,8 +16,8 @@ export interface PricingPlan {
 export const pricingPlans: PricingPlan[] = [
   {
     id: "audit",
-    name: "Audit",
-    description: "A fast, focused one-time SaaS spend audit for teams that want quick clarity before committing to ongoing optimisation.",
+    name: "Snapshot",
+    description: "A one-time self-serve savings report for teams that want fast clarity before moving into ongoing optimisation.",
     price: 49,
     interval: "one_time",
     mode: "payment",
@@ -29,7 +29,7 @@ export const pricingPlans: PricingPlan[] = [
       "PDF export",
       "30 days report access",
     ],
-    cta: "Get Audit — $49",
+    cta: "Get Snapshot — $49",
   },
   {
     id: "starter",
@@ -39,7 +39,7 @@ export const pricingPlans: PricingPlan[] = [
     interval: "month",
     mode: "subscription",
     features: [
-      "Everything in Audit",
+      "Everything in Snapshot",
       "Monthly spend monitoring",
       "Renewal risk visibility",
       "Ongoing savings recommendations",

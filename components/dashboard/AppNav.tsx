@@ -4,7 +4,7 @@ import SignOutButton from "@/components/dashboard/SignOutButton";
 
 const navItems = [
   { href: "/dashboard", label: "Overview" },
-  { href: "/upload", label: "Upload & Audit" },
+  { href: "/upload", label: "Upload & Analyze" },
   { href: "/report", label: "Report" },
   { href: "/pricing", label: "Plan & Billing" },
 ];
@@ -19,7 +19,7 @@ export default async function AppNav() {
           <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-brand-500/30 bg-gradient-to-br from-brand-500/30 to-teal-500/20 text-base font-bold text-white">S</div>
           <div>
             <span className="block text-xl font-bold text-white">StackSmart</span>
-            <span className="block text-xs text-dark-400">AI SaaS spend audit</span>
+            <span className="block text-xs text-dark-400">AI SaaS savings reports</span>
           </div>
         </Link>
       </div>

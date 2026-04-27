@@ -6,13 +6,14 @@ import HowItWorks from "@/components/landing/HowItWorks";
 import ProblemSolution from "@/components/landing/ProblemSolution";
 import TrustSection from "@/components/landing/TrustSection";
 import Pricing from "@/components/landing/Pricing";
+import LeadCaptureCard from "@/components/landing/LeadCaptureCard";
 import WaitlistForm from "@/components/landing/WaitlistForm";
 import Footer from "@/components/landing/Footer";
 import { absoluteUrl, buildMetadata, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   description:
-    "Find the money hiding in your SaaS stack. Upload a billing CSV, get a savings report in minutes. Cut, consolidate, and renegotiate with confidence.",
+    "Find the money hiding in your SaaS stack. Upload a billing CSV and get a self-serve savings report in minutes. Cut, consolidate, and renegotiate with confidence.",
   path: "/",
 });
 
@@ -30,7 +31,7 @@ export default function Home() {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
-      description: "Free audit to find SaaS savings.",
+      description: "Self-serve SaaS savings report from your billing data.",
     },
   };
 
@@ -43,6 +44,7 @@ export default function Home() {
       <HowItWorks />
       <ProblemSolution />
       <TrustSection />
+      <LeadCaptureCard />
       <Pricing />
       <WaitlistForm />
       <Footer />

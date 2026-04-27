@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 export const siteConfig = {
   name: "StackSmart",
   shortName: "StackSmart",
-  title: "StackSmart — AI-powered SaaS spend optimisation for growing teams",
+  title: "StackSmart — self-serve SaaS savings reports for growing teams",
   description:
-    "StackSmart finds wasted SaaS spend, overlap, and renewal risk so SMBs can cut costs, consolidate tools, and renegotiate from a position of clarity.",
+    "StackSmart turns billing exports into a self-serve SaaS savings report, showing waste, overlap, and renewal risk so SMBs can cut costs faster.",
   url: process.env.NEXT_PUBLIC_APP_URL || "https://stacksmart.app",
   domain: process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN || "stacksmart.app",
   ogImage: "/opengraph-image",
