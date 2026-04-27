@@ -110,6 +110,11 @@ export default function BestSaaSSpendManagementToolsPage() {
             title: "Spendesk alternative for SMBs",
             description: "See how a report-first workflow compares to Spendesk when your priority is fast savings visibility.",
           },
+          {
+            href: "/saas-spend-management",
+            title: "SaaS spend management guide",
+            description: "Compare three approaches to spend management and find the fastest first step for a small team.",
+          },
         ]}
       />
 

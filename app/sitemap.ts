@@ -29,6 +29,8 @@ const routes = [
   "/sastrify-alternative",
   "/vertice-alternative",
   "/airbase-alternative",
+  "/saas-spend-management",
+  "/saas-management-software",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

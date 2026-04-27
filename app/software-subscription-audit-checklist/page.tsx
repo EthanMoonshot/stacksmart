@@ -105,6 +105,11 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
             title: "SaaS cost optimization software",
             description: "Compare when a lightweight cost review tool fits better than a broad procurement platform.",
           },
+          {
+            href: "/saas-management-software",
+            title: "SaaS management software",
+            description: "See when lightweight SaaS management software is enough for your team size and goals.",
+          },
         ]}
       />
 

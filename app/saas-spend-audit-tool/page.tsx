@@ -154,6 +154,11 @@ export default function SaaSSpendAuditToolPage() {
             title: "SaaS cost optimization software",
             description: "Compare StackSmart with broader cost-optimisation approaches and see where a report-first workflow fits.",
           },
+          {
+            href: "/saas-spend-management",
+            title: "SaaS spend management",
+            description: "Understand the three approaches to spend management and find the right starting point for your team.",
+          },
         ]}
       />
 
