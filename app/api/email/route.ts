@@ -5,6 +5,40 @@ import { captureInboundLead } from "@/lib/flarexGtm";
 // TODO: Add durable rate limiting before launch (e.g. Upstash Redis / Vercel KV).
 const noStoreHeaders = { "Cache-Control": "no-store, max-age=0" };
 
+type ProductEmailResult = Awaited<ReturnType<typeof sendProductEmail>>;
+type SkippedEmailResult = { skipped: boolean; reason: string };
+
+function emailProviderError(result: ProductEmailResult) {
+  return "error" in result ? result.error : null;
+}
+
+function emailWasSkipped(result: ProductEmailResult): result is SkippedEmailResult {
+  return "skipped" in result && result.skipped === true;
+}
+
+function emailFailureMessage(result: ProductEmailResult) {
+  const providerError = emailProviderError(result);
+  if (providerError) {
+    if (typeof providerError === "string") return providerError;
+    if (typeof providerError === "object" && "message" in providerError) return String(providerError.message);
+    return "Email provider rejected the request.";
+  }
+  if (emailWasSkipped(result)) return result.reason || "Email provider is not configured.";
+  return null;
+}
+
+function emailResponse(result: ProductEmailResult, extra: Record<string, unknown> = {}) {
+  const failureMessage = emailFailureMessage(result);
+  if (failureMessage) {
+    return NextResponse.json(
+      { sent: false, message: failureMessage, result, ...extra },
+      { status: 502, headers: noStoreHeaders },
+    );
+  }
+
+  return NextResponse.json({ sent: true, result, ...extra }, { headers: noStoreHeaders });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -37,7 +71,7 @@ export async function POST(req: NextRequest) {
         ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "https://stacksmart.app"}/demo`,
       });
 
-      return NextResponse.json({ sent: true, result, leadCapture }, { headers: noStoreHeaders });
+      return emailResponse(result, { leadCapture });
     }
 
     if (type === "activation-reminder") {
@@ -50,7 +84,7 @@ export async function POST(req: NextRequest) {
         ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "https://stacksmart.app"}/upload`,
       });
 
-      return NextResponse.json({ sent: true, result }, { headers: noStoreHeaders });
+      return emailResponse(result);
     }
 
     const result = await sendProductEmail({
@@ -62,7 +96,7 @@ export async function POST(req: NextRequest) {
       ctaHref: `${process.env.NEXT_PUBLIC_APP_URL || "https://stacksmart.app"}/report`,
     });
 
-    return NextResponse.json({ sent: true, result }, { headers: noStoreHeaders });
+    return emailResponse(result);
   } catch (error) {
     console.error("[Email API]", error);
     return NextResponse.json({ message: "Failed to send email." }, { status: 500, headers: noStoreHeaders });
