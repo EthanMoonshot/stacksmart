@@ -13,18 +13,120 @@ export const metadata: Metadata = buildMetadata({
   path: "/saas-spend-audit-tool",
 });
 
+const sampleFindings = [
+  {
+    label: "Duplicate tools",
+    detail: "Two project management tools active across the same team — one paid annually, one monthly.",
+    color: "text-red-400",
+    tag: "Cut one",
+  },
+  {
+    label: "Unused seats",
+    detail: "14 licensed seats on a collaboration tool, 6 with no login in 90+ days.",
+    color: "text-amber-400",
+    tag: "Right-size",
+  },
+  {
+    label: "Tier mismatch",
+    detail: "Enterprise plan on a design tool used by 3 people. Pro tier covers the same feature set.",
+    color: "text-amber-400",
+    tag: "Downgrade",
+  },
+  {
+    label: "Renewal risk",
+    detail: "Annual contract renews in 31 days — no usage review completed before auto-renewal.",
+    color: "text-orange-400",
+    tag: "Review now",
+  },
+  {
+    label: "Consolidation opportunity",
+    detail: "Three separate file-storage subscriptions. One vendor covers all three use cases.",
+    color: "text-brand-400",
+    tag: "Consolidate",
+  },
+  {
+    label: "Healthy spend",
+    detail: "Core CRM — high adoption, reasonable per-seat cost, strong vendor fit. No action needed.",
+    color: "text-emerald-400",
+    tag: "Keep",
+  },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      name: "SaaS Spend Audit Tool | StackSmart",
+      description:
+        "See how StackSmart turns billing exports into clear cut, consolidate, and renegotiate actions for growing teams.",
+      url: "https://stacksmart.app/saas-spend-audit-tool",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://stacksmart.app" },
+        { "@type": "ListItem", position: 2, name: "SaaS Spend Audit Tool", item: "https://stacksmart.app/saas-spend-audit-tool" },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What does a SaaS spend audit tool do?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A SaaS spend audit tool analyzes your software subscriptions to find waste and savings opportunities. It identifies duplicate tools, unused seats, overpriced tiers, upcoming renewals, and consolidation opportunities — then produces a report with specific actions: what to cut, consolidate, renegotiate, or keep.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How is StackSmart different from enterprise SaaS management platforms?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "StackSmart is built for fast SMB review, not enterprise procurement. You upload a CSV billing export, and within minutes get a savings report with clear next actions. No integrations to configure, no multi-month rollout, no minimum seat counts. The sample report is public so you can judge the output before purchasing.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What data do I need to run a SaaS spend audit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "You need a billing export — typically a CSV from your accounting tool, credit card statement, or expense platform. StackSmart works with line-item transaction data covering your recurring software charges. No bank credentials or live integrations are required for the core audit.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How long does it take to get results?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "After uploading your billing data, StackSmart generates a savings report within minutes. The report groups tools by category, flags waste, surfaces overlaps, and provides clear action paths — ready to share with your team or use as a basis for vendor negotiations.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export default function SaaSSpendAuditToolPage() {
   return (
     <main className="min-h-screen bg-dark-950 text-white">
       <Navbar />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      {/* Hero */}
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Bottom-funnel guide</p>
-            <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Need a SaaS spend audit tool that actually shows what to do next?</h1>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">SaaS spend audit tool</p>
+            <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Turn billing data into clear savings actions</h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Most teams do not need another generic software inventory. They need a fast way to turn billing exports into action: what to cut, what to consolidate, what to renegotiate, and where spend is fine.
+              Upload a billing export. Get a report that tells you what to cut, consolidate, renegotiate, and keep — in minutes, not weeks.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "seo_saas_spend_audit_tool_primary" }} className="btn-primary text-sm sm:text-base">
@@ -38,72 +140,126 @@ export default function SaaSSpendAuditToolPage() {
         </div>
       </section>
 
+      {/* Direct answer block — GEO-friendly */}
       <section className="py-14 sm:py-16">
-        <div className="mx-auto grid max-w-5xl gap-6 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
-          {[
-            ["Upload billing data", "Start with a CSV export or invoice data. No bank access required for the core flow."],
-            ["Get a savings report", "StackSmart groups tools, surfaces overlaps, and shows likely savings opportunities."],
-            ["Take action faster", "Use the report to cut waste, consolidate tools, and renegotiate with more confidence."],
-          ].map(([title, copy]) => (
-            <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
-              <h2 className="text-lg font-semibold text-white">{title}</h2>
-              <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
-            </div>
-          ))}
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-8">
+            <h2 className="text-2xl font-semibold text-white">What does a SaaS spend audit tool do?</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300 max-w-[65ch]">
+              A SaaS spend audit tool analyzes your recurring software subscriptions to surface waste and savings. It identifies duplicate tools across teams, unused or over-provisioned seats, tier mismatches where you are paying for features nobody uses, upcoming renewals at risk of auto-renewing without review, and consolidation opportunities where multiple tools serve the same job. The output is a structured report with four clear action buckets: keep, cut, consolidate, or renegotiate.
+            </p>
+          </div>
         </div>
       </section>
 
+      {/* How it works — 3 steps */}
+      <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">How it works</h2>
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            {[
+              ["Upload billing data", "Start with a CSV export or invoice data. No bank access required for the core flow."],
+              ["Get a savings report", "StackSmart groups tools, surfaces overlaps, and shows likely savings opportunities."],
+              ["Take action faster", "Use the report to cut waste, consolidate tools, and renegotiate with more confidence."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-lg font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sample findings */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-            <div>
-              <h2 className="text-2xl font-semibold text-white">What a strong SaaS spend audit tool should help you answer</h2>
-              <div className="mt-6 space-y-4 text-sm leading-7 text-dark-300">
-                <p>Which subscriptions are duplicated across teams?</p>
-                <p>Which tools look overpriced for their likely level of use?</p>
-                <p>Where is spend concentrated by category, so you know what deserves negotiation attention first?</p>
-                <p>What is worth keeping, so you are not cutting software blindly?</p>
+          <h2 className="text-2xl font-semibold text-white">What the report shows</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            Every audit produces specific, actionable findings. Here are the types of issues StackSmart surfaces from real billing data.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {sampleFindings.map((f) => (
+              <div key={f.label} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className={`text-sm font-semibold ${f.color}`}>{f.label}</h3>
+                  <span className="flex-shrink-0 rounded-full border border-dark-600 bg-dark-800 px-2.5 py-0.5 text-xs text-dark-300">{f.tag}</span>
+                </div>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{f.detail}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Before vs after */}
+      <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">Before vs after the audit</h2>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Before</p>
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li>Scattered charges across credit cards and invoices</li>
+                <li>No visibility into tool overlap or unused seats</li>
+                <li>Renewals auto-process without review</li>
+                <li>Cost conversations based on gut feel</li>
+              </ul>
             </div>
-            <div className="rounded-[24px] border border-brand-500/20 bg-brand-500/5 p-6">
-              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Why StackSmart</p>
+            <div className="rounded-2xl border border-brand-500/20 bg-brand-500/5 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">After</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-200">
-                <li>Built for fast SMB review, not enterprise procurement theatre</li>
-                <li>CSV-first and self-serve</li>
-                <li>Public sample report available before purchase</li>
-                <li>Designed to lead to action, not just a spreadsheet dump</li>
+                <li>Full inventory grouped by category and vendor</li>
+                <li>Specific flags for waste, overlap, and tier mismatch</li>
+                <li>Renewal calendar with risk dates highlighted</li>
+                <li>Clear actions: cut, consolidate, renegotiate, or keep</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <InlineLeadCapture
-            location="seo_saas_spend_audit_tool"
-            heading="Email yourself the sample report"
-            body="A simple way to keep the proof asset handy while you compare options or share it with someone else on the team."
-            successMessage="Sample report sent. You can open it now or return from your inbox later."
-          />
-          <div className="mt-8 text-center">
-            <h2 className="text-3xl font-semibold text-white">See the output before you buy</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-dark-300">
-              The fastest way to judge StackSmart is to open the sample report and see the kind of buyer-facing output it delivers.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "seo_saas_spend_audit_tool_footer" }} className="btn-primary text-sm sm:text-base">
-                Open sample report
-              </TrackLink>
-              <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ target: "pricing", location: "seo_saas_spend_audit_tool_footer" }} className="btn-secondary text-sm sm:text-base">
-                Compare plans
-              </TrackLink>
+      {/* Who this is for / not for */}
+      <section className="border-y border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">Is this the right fit?</h2>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-emerald-400">Good fit</p>
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-200">
+                <li>SMB or startup with 10 to 200 people</li>
+                <li>Recurring software spend you have not reviewed recently</li>
+                <li>Ops or finance lead who wants a structured starting point</li>
+                <li>Teams preparing for budget season or renewal pressure</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Not the best fit</p>
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-400">
+                <li>Enterprise procurement teams needing SSO and approval workflows</li>
+                <li>Organizations requiring live usage telemetry from each tool</li>
+                <li>Teams with fewer than 5 software subscriptions</li>
+                <li>Companies that need contract lifecycle management</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+      {/* Lead capture */}
+      <section className="py-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <InlineLeadCapture
+            location="seo_saas_spend_audit_tool"
+            heading="Email yourself the sample report"
+            body="Keep the proof asset handy while you compare options or share it with someone else on the team."
+            successMessage="Sample report sent. You can open it now or return from your inbox later."
+          />
+        </div>
+      </section>
+
+      {/* Pricing routing */}
+      <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Pick the path that fits your team</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
@@ -130,6 +286,24 @@ export default function SaaSSpendAuditToolPage() {
                 Compare plans
               </TrackLink>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="py-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-semibold text-white">See the output before you buy</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-dark-300">
+            Open the sample report and see the kind of buyer-facing output StackSmart delivers — then decide if it fits your review.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "seo_saas_spend_audit_tool_footer" }} className="btn-primary text-sm sm:text-base">
+              Open sample report
+            </TrackLink>
+            <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ target: "pricing", location: "seo_saas_spend_audit_tool_footer" }} className="btn-secondary text-sm sm:text-base">
+              Compare plans
+            </TrackLink>
           </div>
         </div>
       </section>
