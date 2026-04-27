@@ -285,6 +285,11 @@ export default function SaaSManagementSoftwarePage() {
         description="If you are evaluating SaaS management software, these pages help you compare specific tools, review audit workflows, and see how StackSmart fits different use cases."
         links={[
           {
+            href: "/saas-renewal-management",
+            title: "SaaS renewal management",
+            description: "Stop surprise renewals and reduce recurring waste with a structured approach.",
+          },
+          {
             href: "/saas-subscription-management-software",
             title: "SaaS subscription management software",
             description: "Compare subscription management platforms for small businesses.",
@@ -298,11 +303,6 @@ export default function SaaSManagementSoftwarePage() {
             href: "/how-to-audit-software-subscriptions",
             title: "How to audit software subscriptions",
             description: "A practical guide to running your first SaaS audit from scratch.",
-          },
-          {
-            href: "/reduce-saas-spend-small-business",
-            title: "Reduce SaaS spend for small business",
-            description: "Tactical approaches to cutting software costs without cutting productivity.",
           },
           {
             href: "/software-subscription-audit-checklist",

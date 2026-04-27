@@ -31,6 +31,7 @@ const routes = [
   "/airbase-alternative",
   "/saas-spend-management",
   "/saas-management-software",
+  "/saas-renewal-management",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

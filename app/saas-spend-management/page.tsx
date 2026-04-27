@@ -260,6 +260,11 @@ export default function SaaSSpendManagementPage() {
         description="If you are evaluating SaaS spend management approaches, these pages help you compare tools, review audit workflows, and see how StackSmart compares to specific platforms."
         links={[
           {
+            href: "/saas-renewal-management",
+            title: "SaaS renewal management",
+            description: "Stop surprise renewals and reduce recurring waste with a structured approach.",
+          },
+          {
             href: "/saas-spend-audit-tool",
             title: "SaaS spend audit tool",
             description: "See when a fast savings report replaces a manual audit process.",
@@ -278,11 +283,6 @@ export default function SaaSSpendManagementPage() {
             href: "/software-subscription-audit-checklist",
             title: "Software subscription audit checklist",
             description: "A step-by-step framework for running your first subscription audit.",
-          },
-          {
-            href: "/zylo-alternative",
-            title: "Zylo alternative for growing teams",
-            description: "Compare Zylo with a lighter report-first approach for SMBs.",
           },
           {
             href: "/torii-alternative",
