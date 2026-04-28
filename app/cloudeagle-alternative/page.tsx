@@ -144,9 +144,9 @@ export default function CloudEagleAlternativePage() {
             description: "Compare a lighter report-first path for teams evaluating SaaS procurement and vendor-management platforms.",
           },
           {
-            href: "/sastrify-alternative",
-            title: "Sastrify alternative for lean finance teams",
-            description: "Compare a lighter report-first path for teams evaluating SaaS procurement and vendor-negotiation platforms.",
+            href: "/bettercloud-alternative",
+            title: "BetterCloud alternative for lean finance teams",
+            description: "Compare a lighter report-first path for teams evaluating IT operations and SaaS automation platforms.",
           },
           {
             href: "/saas-cost-optimization-software",

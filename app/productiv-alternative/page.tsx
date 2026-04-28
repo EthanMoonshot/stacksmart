@@ -144,9 +144,9 @@ export default function ProductivAlternativePage() {
             description: "Compare another lighter-weight alternative for teams evaluating procurement-heavy SaaS buying platforms.",
           },
           {
-            href: "/zluri-alternative",
-            title: "Zluri alternative for lean finance teams",
-            description: "Compare another lighter-weight alternative for teams that want savings clarity without a full SaaS management suite.",
+            href: "/bettercloud-alternative",
+            title: "BetterCloud alternative for lean finance teams",
+            description: "Compare a lighter report-first path for teams evaluating IT operations and SaaS automation platforms.",
           },
           {
             href: "/saas-cost-optimization-software",

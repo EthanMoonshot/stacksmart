@@ -32,6 +32,8 @@ const routes = [
   "/saas-spend-management",
   "/saas-management-software",
   "/saas-renewal-management",
+  "/trelica-alternative",
+  "/bettercloud-alternative",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

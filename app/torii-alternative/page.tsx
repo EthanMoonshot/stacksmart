@@ -144,9 +144,9 @@ export default function ToriiAlternativePage() {
             description: "Compare another lighter-weight alternative for teams that want savings clarity without a full SaaS management suite.",
           },
           {
-            href: "/productiv-alternative",
-            title: "Productiv alternative for lean finance teams",
-            description: "Compare another lighter-weight alternative for teams that want savings clarity without a SaaS intelligence rollout.",
+            href: "/trelica-alternative",
+            title: "Trelica alternative for lean finance teams",
+            description: "Compare another lighter-weight alternative for teams evaluating SaaS management platforms with discovery and compliance.",
           },
           {
             href: "/saas-spend-audit-tool",
