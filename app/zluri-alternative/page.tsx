@@ -139,9 +139,9 @@ export default function ZluriAlternativePage() {
         description="If you are weighing StackSmart against Zluri, these related pages help you compare lighter report-first workflows, adjacent competitor alternatives, and audit approaches for leaner teams."
         links={[
           {
-            href: "/torii-alternative",
-            title: "Torii alternative for lean teams",
-            description: "Compare another lighter-weight alternative for teams that want savings clarity without a full SaaS governance rollout.",
+            href: "/josys-alternative",
+            title: "Josys alternative for lean finance teams",
+            description: "Compare a lighter report-first path for teams evaluating SaaS and device governance platforms with identity management.",
           },
           {
             href: "/trelica-alternative",

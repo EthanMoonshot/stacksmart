@@ -139,14 +139,14 @@ export default function BetterCloudAlternativePage() {
         description="If you are weighing StackSmart against BetterCloud, these related pages help you compare lighter report-first workflows, adjacent competitor alternatives, and cost-audit paths for leaner teams."
         links={[
           {
+            href: "/josys-alternative",
+            title: "Josys alternative for lean finance teams",
+            description: "Compare a lighter report-first path for teams evaluating SaaS and device governance platforms with identity management.",
+          },
+          {
             href: "/cloudeagle-alternative",
             title: "CloudEagle alternative for lean finance teams",
             description: "Compare a lighter report-first path for teams evaluating broader SaaS management and procurement platforms.",
-          },
-          {
-            href: "/productiv-alternative",
-            title: "Productiv alternative for lean finance teams",
-            description: "Compare a lighter report-first path for teams evaluating SaaS intelligence platforms with adoption analytics.",
           },
           {
             href: "/saas-cost-optimization-software",
