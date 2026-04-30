@@ -35,6 +35,9 @@ const routes = [
   "/trelica-alternative",
   "/bettercloud-alternative",
   "/josys-alternative",
+  "/small-business-software-audit",
+  "/agency-software-stack-audit",
+  "/clinic-software-subscription-audit",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

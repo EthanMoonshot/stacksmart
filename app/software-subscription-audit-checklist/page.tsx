@@ -299,6 +299,11 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
             description: "Follow a simple audit sequence without turning it into a giant finance project.",
           },
           {
+            href: "/small-business-software-audit",
+            title: "Small business software audit",
+            description: "Owner-led SMB guide to finding and acting on software waste without a dedicated ops team.",
+          },
+          {
             href: "/saas-spend-audit-tool",
             title: "SaaS spend audit tool",
             description: "See how StackSmart turns billing data into keep, cut, consolidate, and renegotiate actions.",
@@ -307,11 +312,6 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
             href: "/saas-cost-optimization-software",
             title: "SaaS cost optimization software",
             description: "Compare when a lightweight cost review tool fits better than a broad procurement platform.",
-          },
-          {
-            href: "/saas-management-software",
-            title: "SaaS management software",
-            description: "See when lightweight SaaS management software is enough for your team size and goals.",
           },
         ]}
       />

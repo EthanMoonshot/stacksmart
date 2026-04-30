@@ -319,6 +319,11 @@ export default function SaaSSpendAuditToolPage() {
             description: "See a simple sequence for turning recurring software spend into concrete action.",
           },
           {
+            href: "/small-business-software-audit",
+            title: "Small business software audit",
+            description: "Owner-led SMB guide to finding and acting on software waste without a dedicated finance team.",
+          },
+          {
             href: "/software-subscription-audit-checklist",
             title: "Software subscription audit checklist",
             description: "Use a practical checklist to structure the review before turning it into a report.",
@@ -327,11 +332,6 @@ export default function SaaSSpendAuditToolPage() {
             href: "/saas-cost-optimization-software",
             title: "SaaS cost optimization software",
             description: "Compare StackSmart with broader cost-optimisation approaches and see where a report-first workflow fits.",
-          },
-          {
-            href: "/saas-spend-management",
-            title: "SaaS spend management",
-            description: "Understand the three approaches to spend management and find the right starting point for your team.",
           },
         ]}
       />
