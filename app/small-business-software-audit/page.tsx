@@ -144,7 +144,7 @@ export default function SmallBusinessSoftwareAuditPage() {
               Find software waste before it renews again
             </h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Most small businesses carry avoidable software spend — duplicate tools, seats nobody uses, trials that converted to paid plans, and annual contracts renewing on autopilot. A software audit finds exactly what to cut, consolidate, and renegotiate.
+              Creeping SaaS spend is one of the most common and least visible costs in a small business. Duplicate tools, seats nobody uses, trials that converted to paid plans, and annual contracts renewing on autopilot all add up quietly. A software audit finds exactly what to cut, consolidate, and renegotiate.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink
@@ -188,7 +188,7 @@ export default function SmallBusinessSoftwareAuditPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Common software waste in small businesses</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            These are the six patterns StackSmart most commonly surfaces from SMB billing exports.
+            Most owner-led businesses have no clear picture of what is being used across their software stack. These are the six patterns StackSmart most commonly surfaces from SMB billing exports — small leaks that become costly habits over time.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {wasteSignals.map((s) => (
@@ -313,6 +313,40 @@ export default function SmallBusinessSoftwareAuditPage() {
                 <li>Repeatable without starting over each time</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vertical routing section */}
+      <section className="border-y border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">Which vertical audit fits your business?</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            The patterns of software waste differ by industry. These vertical guides go deeper on the specific tools, categories, and waste patterns relevant to your type of business.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["/agency-software-stack-audit", "Agency / web studio", "Project delivery, design, client reporting, and dev tools across a creative or digital studio."],
+              ["/clinic-software-subscription-audit", "Allied health clinic", "Booking, billing, patient recalls, telehealth, and admin tools for practice owners."],
+              ["/accounting-firm-software-stack-audit", "Accounting firm", "Practice management, tax, document, e-sign, and client portal tools for small firms."],
+              ["/hospitality-group-software-audit", "Hospitality group", "POS, reservations, rostering, and delivery stack for small venues and multi-site groups."],
+              ["/fitness-studio-software-subscription-audit", "Fitness studio", "Booking, member management, payments, and marketing for gyms and wellness studios."],
+              ["/ndis-provider-software-audit", "NDIS provider", "Rostering, care management, and compliance tools for community care and NDIS providers."],
+              ["/childcare-software-subscription-audit", "Childcare operator", "Enrolment, rostering, payroll, and parent comms tools for childcare and early learning."],
+              ["/real-estate-agency-software-audit", "Real estate agency", "CRM, portal, appraisal, marketing, and e-sign tools for principal-led agencies."],
+              ["/ecommerce-software-subscription-audit", "Ecommerce store", "Shopify apps, email, reviews, loyalty, shipping, and attribution tools for online retailers."],
+              ["/professional-services-software-audit", "Professional services", "Project management, proposals, time tracking, CRM, and AI tools for boutique consultancies."],
+              ["/retail-store-software-subscription-audit", "Retail store", "POS, rostering, inventory, loyalty, and email tools for independent and multi-site retailers."],
+            ].map(([href, title, description]) => (
+              <a
+                key={href}
+                href={href}
+                className="group rounded-2xl border border-dark-700 bg-dark-900/70 p-5 transition-colors hover:border-brand-400/40 hover:bg-dark-900"
+              >
+                <h3 className="text-sm font-semibold text-white group-hover:text-brand-300">{title}</h3>
+                <p className="mt-2 text-xs leading-6 text-dark-400">{description}</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -471,6 +505,26 @@ export default function SmallBusinessSoftwareAuditPage() {
             href: "/fitness-studio-software-subscription-audit",
             title: "Fitness studio software subscription audit",
             description: "Booking, member management, payments, and marketing stack audit guide for fitness and wellness studios.",
+          },
+          {
+            href: "/real-estate-agency-software-audit",
+            title: "Real estate agency software audit",
+            description: "CRM, portal, appraisal, and marketing stack audit guide for principal-led real estate agencies.",
+          },
+          {
+            href: "/ecommerce-software-subscription-audit",
+            title: "Ecommerce software subscription audit",
+            description: "App and subscription audit guide for small Shopify and ecommerce store operators.",
+          },
+          {
+            href: "/professional-services-software-audit",
+            title: "Professional services software audit",
+            description: "Project management, proposals, time tracking, and CRM audit guide for boutique consultancies.",
+          },
+          {
+            href: "/retail-store-software-subscription-audit",
+            title: "Retail store software subscription audit",
+            description: "POS, rostering, inventory, loyalty, and ecommerce stack audit guide for independent and multi-site retailers.",
           },
         ]}
       />

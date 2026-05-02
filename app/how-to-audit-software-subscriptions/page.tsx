@@ -421,6 +421,26 @@ export default function HowToAuditSoftwareSubscriptionsPage() {
             title: "Fitness studio software subscription audit",
             description: "Booking, member management, and marketing stack audit guide for fitness and wellness studios.",
           },
+          {
+            href: "/real-estate-agency-software-audit",
+            title: "Real estate agency software audit",
+            description: "CRM, portal, appraisal, and marketing stack audit guide for principal-led real estate agencies.",
+          },
+          {
+            href: "/ecommerce-software-subscription-audit",
+            title: "Ecommerce software subscription audit",
+            description: "App and subscription audit guide for small Shopify and ecommerce store operators.",
+          },
+          {
+            href: "/professional-services-software-audit",
+            title: "Professional services software audit",
+            description: "Project management, proposals, time tracking, and CRM audit guide for boutique consultancies.",
+          },
+          {
+            href: "/retail-store-software-subscription-audit",
+            title: "Retail store software subscription audit",
+            description: "POS, rostering, inventory, loyalty, and ecommerce stack audit guide for independent retailers.",
+          },
         ]}
       />
 

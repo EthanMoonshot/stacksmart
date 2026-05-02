@@ -43,6 +43,10 @@ const routes = [
   "/accounting-firm-software-stack-audit",
   "/hospitality-group-software-audit",
   "/fitness-studio-software-subscription-audit",
+  "/real-estate-agency-software-audit",
+  "/ecommerce-software-subscription-audit",
+  "/professional-services-software-audit",
+  "/retail-store-software-subscription-audit",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
