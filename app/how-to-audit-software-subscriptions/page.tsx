@@ -401,6 +401,26 @@ export default function HowToAuditSoftwareSubscriptionsPage() {
             title: "Best SaaS spend management tools",
             description: "Compare StackSmart with broader spend-management options for SMBs.",
           },
+          {
+            href: "/ndis-provider-software-audit",
+            title: "NDIS provider software audit",
+            description: "Rostering, care management, and compliance stack audit guide for NDIS and community care providers.",
+          },
+          {
+            href: "/accounting-firm-software-stack-audit",
+            title: "Accounting firm software stack audit",
+            description: "Practice management, tax, document, and e-sign stack audit guide for small accounting firms.",
+          },
+          {
+            href: "/hospitality-group-software-audit",
+            title: "Hospitality group software audit",
+            description: "POS, reservations, rostering, and delivery stack audit for small hospitality groups and venues.",
+          },
+          {
+            href: "/fitness-studio-software-subscription-audit",
+            title: "Fitness studio software subscription audit",
+            description: "Booking, member management, and marketing stack audit guide for fitness and wellness studios.",
+          },
         ]}
       />
 

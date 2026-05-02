@@ -38,6 +38,11 @@ const routes = [
   "/small-business-software-audit",
   "/agency-software-stack-audit",
   "/clinic-software-subscription-audit",
+  "/ndis-provider-software-audit",
+  "/childcare-software-subscription-audit",
+  "/accounting-firm-software-stack-audit",
+  "/hospitality-group-software-audit",
+  "/fitness-studio-software-subscription-audit",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
