@@ -96,6 +96,14 @@ const jsonLd = {
             text: "Start with the highest-cost subscriptions and any renewals coming up in the next 60 days — these have the largest savings potential and the most time pressure. Then review tools where you suspect low adoption or overlap with other tools. Leave well-adopted, reasonably-priced tools for last.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What data do I need before starting a software subscription audit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Before starting, gather: a billing export from your bank, credit card, or accounting tool covering the last 12 months; seat license counts from each tool's admin panel; a rough count of active users per tool; upcoming renewal dates for annual contracts; and current headcount by department. Having these ready prevents the review from stalling midway. The most common audit delay is discovering mid-review that you do not have seat or usage data for a specific tool.",
+          },
+        },
       ],
     },
   ],
@@ -166,6 +174,94 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
         </div>
       </section>
 
+      {/* Owner/Operator Worksheet */}
+      <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Owner worksheet</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">Data to gather before you start</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            Have these six items ready before working through the checklist. Missing data mid-review is the most common reason audits stall.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { label: "Billing export", detail: "CSV or PDF from your bank, card, or accounting tool — 12 months of charges preferred", color: "text-brand-300" },
+              { label: "Seat license counts", detail: "How many seats you are paying for per tool — check admin settings or the most recent invoice", color: "text-brand-300" },
+              { label: "Active user data", detail: "Login or activity data per tool — even a rough count of who logged in during the past 90 days helps", color: "text-brand-300" },
+              { label: "Renewal calendar", detail: "Annual contract dates — search email for subscription confirmed or auto-renewal notice messages", color: "text-amber-400" },
+              { label: "Team headcount", detail: "Current employee count per department — needed to check whether seat counts still match actual team size", color: "text-brand-300" },
+              { label: "Last audit date", detail: "When (if ever) the stack was last reviewed — anything older than 6 months is a probable waste zone", color: "text-orange-400" },
+            ].map((item) => (
+              <div key={item.label} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className={`text-sm font-semibold ${item.color}`}>{item.label}</p>
+                <p className="mt-2 text-sm leading-7 text-dark-400">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Spreadsheet column guide */}
+          <div className="mt-8 rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+            <h3 className="text-lg font-semibold text-white">Worksheet column layout</h3>
+            <p className="mt-2 max-w-2xl text-sm leading-7 text-dark-300">
+              If you are tracking in a spreadsheet, these six columns cover the full review. One row per subscription. Add a row for every charge you find, even ones you do not recognise yet.
+            </p>
+            <div className="mt-6 overflow-x-auto">
+              <table className="w-full min-w-[560px] text-sm">
+                <thead>
+                  <tr className="border-b border-dark-700">
+                    {["Tool name", "Monthly cost", "Seats paid", "Active users", "Category", "Decision"].map((col) => (
+                      <th key={col} className="pb-3 pr-5 text-left text-xs font-medium uppercase tracking-[0.12em] text-dark-400 last:pr-0">{col}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-dark-800/60">
+                  <tr>
+                    <td className="py-3 pr-5 text-xs text-dark-300">Project Mgmt A</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300 tabular-nums">$189 / mo</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300 tabular-nums">15</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300 tabular-nums">14</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300">Project mgmt</td>
+                    <td className="py-3 pr-0 text-xs font-medium text-emerald-400">Keep</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-5 text-xs text-dark-300">Project Mgmt B</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300 tabular-nums">$79 / mo</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300 tabular-nums">10</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300 tabular-nums">2</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300">Project mgmt</td>
+                    <td className="py-3 pr-0 text-xs font-medium text-red-400">Cut</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-5 text-xs text-dark-300">Design tool</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300 tabular-nums">$299 / mo</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300 tabular-nums">5</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300 tabular-nums">3</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300">Design</td>
+                    <td className="py-3 pr-0 text-xs font-medium text-amber-400">Renegotiate</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-5 text-xs text-dark-300">File storage X</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300 tabular-nums">$49 / mo</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300">—</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300">—</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300">Storage</td>
+                    <td className="py-3 pr-0 text-xs font-medium text-brand-400">Consolidate</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 pr-5 text-xs text-dark-300">File storage Y</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300 tabular-nums">$29 / mo</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300">—</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300">—</td>
+                    <td className="py-3 pr-5 text-xs text-dark-300">Storage</td>
+                    <td className="py-3 pr-0 text-xs font-medium text-brand-400">Consolidate</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-xs text-dark-500">Example rows only. Replace with your actual subscriptions. Renewal trigger: flag any annual contract renewing within 60 days — these need a decision before the auto-renewal date.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Output framework — 4 buckets */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -221,6 +317,42 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
                 <li>Formatted output ready to share with your team</li>
                 <li>Scales to any stack size without extra effort</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* After the checklist — completion routing */}
+      <section className="border-y border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">What to do after finishing the checklist</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            A completed checklist is a decision list. These three steps turn it into actual savings.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Step 1</p>
+              <h3 className="mt-3 text-base font-semibold text-white">See the report output</h3>
+              <p className="mt-2 text-sm leading-7 text-dark-300">Open the StackSmart sample report to see how findings look when the data is in the tool rather than a spreadsheet. Judge the output before spending anything.</p>
+              <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "seo_checklist_completion_routing" }} className="btn-secondary mt-5 inline-block text-sm">
+                Open sample report
+              </TrackLink>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Step 2</p>
+              <h3 className="mt-3 text-base font-semibold text-white">Run your billing data</h3>
+              <p className="mt-2 text-sm leading-7 text-dark-300">Upload a billing export and let StackSmart handle the categorisation, overlap detection, and savings report automatically — no spreadsheet required.</p>
+              <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "saas_spend_audit_tool", location: "seo_checklist_completion_routing" }} className="btn-secondary mt-5 inline-block text-sm">
+                About the audit tool
+              </TrackLink>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Step 3</p>
+              <h3 className="mt-3 text-base font-semibold text-white">Pick a plan and start</h3>
+              <p className="mt-2 text-sm leading-7 text-dark-300">Snapshot at $49 for a one-time review. Recurring plans from $29/mo if you want ongoing savings visibility and renewal alerts across future cycles.</p>
+              <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ target: "pricing", location: "seo_checklist_completion_routing" }} className="btn-primary mt-5 inline-block text-sm">
+                View pricing
+              </TrackLink>
             </div>
           </div>
         </div>

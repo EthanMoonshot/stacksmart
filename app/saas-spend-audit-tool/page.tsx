@@ -104,6 +104,14 @@ const jsonLd = {
             text: "After uploading your billing data, StackSmart generates a savings report within minutes. The report groups tools by category, flags waste, surfaces overlaps, and provides clear action paths — ready to share with your team or use as a basis for vendor negotiations.",
           },
         },
+        {
+          "@type": "Question",
+          name: "How much could a SaaS spend audit recover for a small business?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Savings vary widely depending on stack size, how recently the stack was last reviewed, and how many renewals have auto-processed without a decision. In stacks of 10 to 50 people, StackSmart commonly surfaces between $6,000 and $24,000 in possible annual review targets — a combination of cut candidates, over-provisioned seats, tier mismatches, and upcoming renewals worth renegotiating. These are estimates and possible targets, not guarantees. Your actual findings depend on your specific tools and billing history.",
+          },
+        },
       ],
     },
   ],
@@ -188,6 +196,72 @@ export default function SaaSSpendAuditToolPage() {
                 <p className="mt-3 text-sm leading-7 text-dark-300">{f.detail}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Savings estimator — static example */}
+      <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Example estimate</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">What might a 25-person team recover?</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            Illustrative example based on patterns StackSmart commonly surfaces in stacks of 10–50 people. Your actual findings depend on your specific tools, billing history, and how recently the stack was reviewed.
+          </p>
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Example inputs</p>
+              <div className="mt-5 space-y-4">
+                {[
+                  ["Monthly software spend", "$4,200 / mo", "Across ~22 active tools and subscriptions"],
+                  ["Active subscriptions", "22 tools", "Spanning 6 spend categories"],
+                  ["Inactive licensed seats", "~18 seats", "No login recorded in 90+ days"],
+                  ["Upcoming annual renewals", "3 contracts", "Auto-renewing within 60 days"],
+                ].map(([label, value, note]) => (
+                  <div key={label} className="border-b border-dark-800/60 pb-4 last:border-0 last:pb-0">
+                    <div className="flex items-baseline justify-between gap-3">
+                      <span className="text-xs text-dark-400">{label}</span>
+                      <span className="text-sm font-semibold text-white tabular-nums">{value}</span>
+                    </div>
+                    <p className="mt-0.5 text-xs text-dark-500">{note}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-2xl border border-brand-500/20 bg-brand-500/5 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Possible review targets</p>
+              <div className="mt-5 space-y-4">
+                {[
+                  { label: "Estimated annual waste band", value: "$9,000 – $18,000", color: "text-brand-300", note: "Possible range — often found in stacks this size" },
+                  { label: "Cut candidates", value: "3 – 5 tools", color: "text-red-400", note: "Zero or near-zero usage in the past 90 days" },
+                  { label: "Right-sizing opportunities", value: "2 – 4 tools", color: "text-amber-400", note: "Over-provisioned seats or mismatched tier" },
+                  { label: "Renewal risk window", value: "$5,800 – $7,400", color: "text-orange-400", note: "Auto-renewing before a review decision is made" },
+                ].map((row) => (
+                  <div key={row.label} className="border-b border-brand-500/10 pb-4 last:border-0 last:pb-0">
+                    <div className="flex items-baseline justify-between gap-3">
+                      <span className="text-xs text-dark-400">{row.label}</span>
+                      <span className={`text-sm font-semibold tabular-nums ${row.color}`}>{row.value}</span>
+                    </div>
+                    <p className="mt-0.5 text-xs text-dark-500">{row.note}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <p className="max-w-xl text-xs leading-6 text-dark-400">
+                These figures are illustrative estimates based on typical patterns in 10–50 person software stacks. Actual results vary. StackSmart generates your specific findings from your billing data — not benchmarks.
+              </p>
+              <div className="flex flex-shrink-0 flex-col gap-2 sm:flex-row">
+                <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "seo_saas_spend_audit_tool_estimator" }} className="btn-primary text-sm">
+                  See a real report
+                </TrackLink>
+                <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ target: "pricing", location: "seo_saas_spend_audit_tool_estimator" }} className="btn-secondary text-sm">
+                  View pricing
+                </TrackLink>
+              </div>
+            </div>
           </div>
         </div>
       </section>
