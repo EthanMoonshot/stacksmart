@@ -47,6 +47,11 @@ const routes = [
   "/ecommerce-software-subscription-audit",
   "/professional-services-software-audit",
   "/retail-store-software-subscription-audit",
+  "/allied-health-software-subscription-audit",
+  "/dental-practice-software-subscription-audit",
+  "/bookkeeping-firm-software-stack-audit",
+  "/marketing-agency-software-stack-audit",
+  "/multi-site-venue-software-audit",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

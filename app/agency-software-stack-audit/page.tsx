@@ -443,6 +443,11 @@ export default function AgencySoftwareStackAuditPage() {
             title: "SaaS spend audit tool",
             description: "See how StackSmart automates categorisation, duplicate detection, and action planning from billing exports.",
           },
+          {
+            href: "/marketing-agency-software-stack-audit",
+            title: "Marketing agency software stack audit",
+            description: "SEO tools, social scheduling, reporting, and design overlap in small marketing and creative studios.",
+          },
         ]}
       />
 

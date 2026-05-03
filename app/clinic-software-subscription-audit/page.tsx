@@ -443,6 +443,16 @@ export default function ClinicSoftwareSubscriptionAuditPage() {
             title: "SaaS spend audit tool",
             description: "See how StackSmart turns a billing export into categorised findings and clear next actions.",
           },
+          {
+            href: "/allied-health-software-subscription-audit",
+            title: "Allied health software subscription audit",
+            description: "Software audit guide for physiotherapy, podiatry, psychology, OT, and multi-disciplinary allied health practices.",
+          },
+          {
+            href: "/dental-practice-software-subscription-audit",
+            title: "Dental practice software subscription audit",
+            description: "Admin and billing subscription audit for owner-operated dental practices — booking, reminders, payment plans, and reviews.",
+          },
         ]}
       />
 

@@ -337,6 +337,11 @@ export default function SmallBusinessSoftwareAuditPage() {
               ["/ecommerce-software-subscription-audit", "Ecommerce store", "Shopify apps, email, reviews, loyalty, shipping, and attribution tools for online retailers."],
               ["/professional-services-software-audit", "Professional services", "Project management, proposals, time tracking, CRM, and AI tools for boutique consultancies."],
               ["/retail-store-software-subscription-audit", "Retail store", "POS, rostering, inventory, loyalty, and email tools for independent and multi-site retailers."],
+              ["/allied-health-software-subscription-audit", "Allied health practice", "Booking, billing, recalls, telehealth, and admin tools for physiotherapy, podiatry, psychology, and OT practices."],
+              ["/dental-practice-software-subscription-audit", "Dental practice", "Admin and billing subscription audit for owner-operated dental practices — booking, reminders, payment plans, and reviews."],
+              ["/bookkeeping-firm-software-stack-audit", "Bookkeeping firm", "Add-on sprawl, e-sign and receipt duplication, and tier creep in Xero, QBO, and MYOB ecosystem stacks."],
+              ["/marketing-agency-software-stack-audit", "Marketing agency", "SEO tools, social scheduling, reporting, design, and project management overlap in small marketing and creative studios."],
+              ["/multi-site-venue-software-audit", "Multi-site venue group", "Per-site POS add-ons, rostering, reservations, and delivery tools duplicated across hospitality group locations."],
             ].map(([href, title, description]) => (
               <a
                 key={href}

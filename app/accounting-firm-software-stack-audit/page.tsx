@@ -484,6 +484,11 @@ export default function AccountingFirmSoftwareStackAuditPage() {
             title: "SaaS spend audit tool",
             description: "See how StackSmart turns a billing export into a structured savings report.",
           },
+          {
+            href: "/bookkeeping-firm-software-stack-audit",
+            title: "Bookkeeping firm software stack audit",
+            description: "Add-on sprawl, e-sign and receipt duplication, and tier creep in Xero, QBO, and MYOB ecosystem stacks.",
+          },
         ]}
       />
 

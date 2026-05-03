@@ -484,6 +484,11 @@ export default function HospitalityGroupSoftwareAuditPage() {
             title: "SaaS spend audit tool",
             description: "See how StackSmart turns a billing export into a structured savings report.",
           },
+          {
+            href: "/multi-site-venue-software-audit",
+            title: "Multi-site venue software audit",
+            description: "Per-site POS add-ons, rostering, reservations, and delivery tools duplicated across hospitality group locations.",
+          },
         ]}
       />
 
