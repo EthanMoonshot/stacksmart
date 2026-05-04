@@ -52,6 +52,11 @@ const routes = [
   "/bookkeeping-firm-software-stack-audit",
   "/marketing-agency-software-stack-audit",
   "/multi-site-venue-software-audit",
+  "/psychology-practice-software-subscription-audit",
+  "/xero-app-stack-audit",
+  "/law-firm-software-subscription-audit",
+  "/consulting-firm-software-stack-audit",
+  "/shopify-app-stack-audit",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

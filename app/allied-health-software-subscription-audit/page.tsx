@@ -486,6 +486,11 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
             description: "A structured checklist for reviewing every subscription category in your practice stack.",
           },
           {
+            href: "/psychology-practice-software-subscription-audit",
+            title: "Psychology practice software subscription audit",
+            description: "Booking, telehealth, reminders, billing, and marketing stack audit for psychology and counselling practices.",
+          },
+          {
             href: "/saas-spend-audit-tool",
             title: "SaaS spend audit tool",
             description: "See how StackSmart turns a billing export into categorised findings and clear next actions.",

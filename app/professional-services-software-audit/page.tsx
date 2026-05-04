@@ -444,6 +444,16 @@ export default function ProfessionalServicesSoftwareAuditPage() {
             description: "Practice management, tax, document, and e-sign stack audit guide for small accounting and bookkeeping firms.",
           },
           {
+            href: "/law-firm-software-subscription-audit",
+            title: "Law firm software subscription audit",
+            description: "Matter management, dictation, e-sign, and research stack audit for boutique and owner-led law firms.",
+          },
+          {
+            href: "/consulting-firm-software-stack-audit",
+            title: "Consulting firm software stack audit",
+            description: "Project management, CRM, proposals, time tracking, AI tools, and reporting audit for owner-led consultancies.",
+          },
+          {
             href: "/saas-spend-audit-tool",
             title: "SaaS spend audit tool",
             description: "See how StackSmart automates categorisation, duplicate detection, and action planning from billing exports.",

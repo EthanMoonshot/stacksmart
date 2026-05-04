@@ -515,6 +515,11 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
             title: "Professional services software audit",
             description: "Project management, proposals, time tracking, and CRM audit guide for boutique consultancies.",
           },
+          {
+            href: "/xero-app-stack-audit",
+            title: "Xero app stack audit",
+            description: "Audit your Xero add-ons for duplicate payroll, receipt capture, reporting, and practice management tools.",
+          },
         ]}
       />
 

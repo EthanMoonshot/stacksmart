@@ -444,6 +444,11 @@ export default function EcommerceSoftwareSubscriptionAuditPage() {
             description: "A structured checklist for reviewing subscriptions across every category in your stack.",
           },
           {
+            href: "/shopify-app-stack-audit",
+            title: "Shopify app stack audit",
+            description: "Find duplicate review, loyalty, email, upsell, analytics, and helpdesk apps charging your Shopify store.",
+          },
+          {
             href: "/saas-spend-audit-tool",
             title: "SaaS spend audit tool",
             description: "See how StackSmart automates categorisation, duplicate detection, and action planning from billing exports.",

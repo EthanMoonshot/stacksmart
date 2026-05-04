@@ -531,6 +531,31 @@ export default function SmallBusinessSoftwareAuditPage() {
             title: "Retail store software subscription audit",
             description: "POS, rostering, inventory, loyalty, and ecommerce stack audit guide for independent and multi-site retailers.",
           },
+          {
+            href: "/psychology-practice-software-subscription-audit",
+            title: "Psychology practice software subscription audit",
+            description: "Booking, telehealth, reminders, billing, and marketing stack audit for psychology and counselling practices.",
+          },
+          {
+            href: "/shopify-app-stack-audit",
+            title: "Shopify app stack audit",
+            description: "Find duplicate review, loyalty, email, upsell, analytics, and helpdesk apps charging your Shopify store.",
+          },
+          {
+            href: "/law-firm-software-subscription-audit",
+            title: "Law firm software subscription audit",
+            description: "Matter management, dictation, e-sign, and research stack audit for boutique and owner-led law firms.",
+          },
+          {
+            href: "/consulting-firm-software-stack-audit",
+            title: "Consulting firm software stack audit",
+            description: "Project management, CRM, proposals, time tracking, AI tools, and reporting audit for owner-led consultancies.",
+          },
+          {
+            href: "/xero-app-stack-audit",
+            title: "Xero app stack audit",
+            description: "Audit your Xero add-ons for duplicate payroll, receipt capture, reporting, and practice management tools.",
+          },
         ]}
       />
 
