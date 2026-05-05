@@ -342,6 +342,11 @@ export default function SmallBusinessSoftwareAuditPage() {
               ["/bookkeeping-firm-software-stack-audit", "Bookkeeping firm", "Add-on sprawl, e-sign and receipt duplication, and tier creep in Xero, QBO, and MYOB ecosystem stacks."],
               ["/marketing-agency-software-stack-audit", "Marketing agency", "SEO tools, social scheduling, reporting, design, and project management overlap in small marketing and creative studios."],
               ["/multi-site-venue-software-audit", "Multi-site venue group", "Per-site POS add-ons, rostering, reservations, and delivery tools duplicated across hospitality group locations."],
+              ["/medical-practice-software-subscription-audit", "Medical practice", "Booking, recalls, telehealth, billing, forms, and rostering subscriptions for GP and specialist clinics."],
+              ["/veterinary-clinic-software-subscription-audit", "Veterinary clinic", "Practice management, reminders, inventory, payments, payroll, and marketing stack audit for vet clinics."],
+              ["/optometry-practice-software-subscription-audit", "Optometry practice", "Booking, recalls, POS, inventory, lens-ordering, marketing, and accounting subscriptions for optometry owners."],
+              ["/architecture-firm-software-stack-audit", "Architecture firm", "CAD/BIM seats, rendering tools, project delivery, proposals, file storage, and admin subscriptions for design studios."],
+              ["/property-management-software-subscription-audit", "Property management office", "Inspection apps, maintenance portals, CRM, e-signature, forms, payments, and accounting subscriptions."],
             ].map(([href, title, description]) => (
               <a
                 key={href}
@@ -555,6 +560,31 @@ export default function SmallBusinessSoftwareAuditPage() {
             href: "/xero-app-stack-audit",
             title: "Xero app stack audit",
             description: "Audit your Xero add-ons for duplicate payroll, receipt capture, reporting, and practice management tools.",
+          },
+          {
+            href: "/medical-practice-software-subscription-audit",
+            title: "Medical practice software subscription audit",
+            description: "Booking, recalls, telehealth, billing, forms, patient comms, and rostering stack audit for GP and specialist clinics.",
+          },
+          {
+            href: "/veterinary-clinic-software-subscription-audit",
+            title: "Veterinary clinic software subscription audit",
+            description: "Practice management, reminders, inventory, payments, payroll, and marketing audit guide for veterinary clinics.",
+          },
+          {
+            href: "/optometry-practice-software-subscription-audit",
+            title: "Optometry practice software subscription audit",
+            description: "Booking, recalls, POS, inventory, lens ordering, marketing, and accounting stack audit for optometry practices.",
+          },
+          {
+            href: "/architecture-firm-software-stack-audit",
+            title: "Architecture firm software stack audit",
+            description: "CAD/BIM seats, rendering plugins, project management, proposals, file storage, and admin tools for design studios.",
+          },
+          {
+            href: "/property-management-software-subscription-audit",
+            title: "Property management software subscription audit",
+            description: "Inspection apps, maintenance portals, e-signature, CRM, forms, payments, and accounting audit guide for property teams.",
           },
         ]}
       />
