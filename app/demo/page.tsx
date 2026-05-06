@@ -10,9 +10,9 @@ import { buildMetadata } from "@/lib/site";
 import { sampleAnalysis, sampleReportCreatedAt } from "@/lib/sample-report";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Sample SaaS Savings Report",
+  title: "Sample Savings Report for Owner-Led SMBs",
   description:
-    "Inspect a full StackSmart savings report built from real billing data. See what gets flagged, how actions are prioritized, and decide if it fits your review — before you pay.",
+    "See a full StackSmart savings report built from sample billing data for a 5-to-50-staff owner-led business. No login required — inspect every section before you decide.",
   path: "/demo",
 });
 
@@ -62,9 +62,9 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      name: "Sample SaaS Savings Report | StackSmart",
+      name: "Sample Savings Report for Owner-Led SMBs | StackSmart",
       description:
-        "Inspect a full StackSmart savings report built from real billing data. See what gets flagged, how actions are prioritized, and decide if it fits your review.",
+        "See a full StackSmart savings report built from sample billing data for a 5-to-50-staff owner-led business. No login required — inspect every section before you decide.",
       url: "https://stacksmart.app/demo",
     },
     {
@@ -107,6 +107,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "A Snapshot is a one-time self-serve audit — upload billing data once, get a full savings report. Recurring plans add ongoing visibility with renewal alerts, report history, and repeated optimization across a growing software stack.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What does a business owner typically see in a StackSmart savings report?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A business owner running a 5-to-50-person operation typically sees five categories of findings in a StackSmart report: duplicate tools where two subscriptions serve the same workflow, unused or over-provisioned seats still billing after staff changes, pricing tier mismatches where the team is on an Enterprise plan but only uses Pro-tier features, upcoming renewals with no review decision attached, and a list of consolidation opportunities where one vendor could replace two or three separate tools. Each finding is tagged with a clear action — keep, cut, consolidate, or renegotiate — so the output is a decision list, not just an inventory.",
           },
         },
       ],
@@ -162,6 +170,33 @@ export default function DemoPage() {
         </div>
       </section>
 
+      {/* Owner ICP framing */}
+      <section className="border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Built for owner-led SMBs</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              What a 5-to-50-staff business owner sees in this report
+            </h2>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              This sample report was built to reflect the kind of software stack a business owner running a 5-to-50-person operation actually sees. Not a 500-person enterprise with dedicated IT procurement. Not a startup with one tool per person. A business that has grown organically — multiple recurring tools, some inherited from previous staff, some signed up on autopilot, and a renewal calendar nobody is actively managing.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              {[
+                ["Owner-managed", "No dedicated IT, ops, or finance team reviewing the stack. The business owner is the de facto software purchaser."],
+                ["Admin-heavy stack", "Billing, rostering, booking, comms, file storage, design, and project management tools accumulated over time across multiple staff."],
+                ["Multiple payment sources", "Charges across a business credit card, a PayPal account, and an annual invoice paid by bank transfer — typical for owner-led SMBs."],
+              ].map(([title, detail]) => (
+                <div key={title} className="rounded-xl border border-dark-700 bg-dark-950/50 p-4">
+                  <p className="text-sm font-semibold text-white">{title}</p>
+                  <p className="mt-2 text-xs leading-6 text-dark-400">{detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* What you will spot in this report */}
       <section className="border-b border-dark-800/80 py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -181,6 +216,49 @@ export default function DemoPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Vertical-specific sample findings */}
+      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">By industry</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">How these findings translate to your industry</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            The categories of waste in the sample report appear across every industry. Here is how they typically show up in the owner-led SMBs we see most often.
+          </p>
+          <div className="mt-8 overflow-x-auto">
+            <table className="w-full text-left text-sm">
+              <thead>
+                <tr className="border-b border-dark-700 text-dark-400">
+                  <th className="pb-3 pr-6 font-medium text-xs uppercase tracking-[0.12em]">Industry</th>
+                  <th className="pb-3 pr-6 font-medium text-xs uppercase tracking-[0.12em]">Common waste category</th>
+                  <th className="pb-3 font-medium text-xs uppercase tracking-[0.12em]">Typical action</th>
+                </tr>
+              </thead>
+              <tbody className="text-dark-300">
+                {[
+                  ["Allied health / clinic", "Duplicate booking + telehealth + reminder tools", "Consolidate to one platform", "/clinic-software-subscription-audit"],
+                  ["Accounting / bookkeeping firm", "E-sign tool duplicated across practice management", "Cut one, keep built-in", "/accounting-firm-software-stack-audit"],
+                  ["Marketing / creative agency", "3+ SEO or analytics tools with overlapping reports", "Consolidate to primary tool", "/marketing-agency-software-stack-audit"],
+                  ["NDIS / community care", "Rostering platform + payroll tool both charging for scheduling", "Renegotiate or consolidate", "/ndis-provider-software-audit"],
+                  ["Childcare operator", "Communication app alongside parent comms in management tool", "Cut standalone app", "/childcare-software-subscription-audit"],
+                  ["Hospitality / multi-site venue", "Per-site POS add-ons duplicated across locations", "Consolidate to group plan", "/hospitality-group-software-audit"],
+                ].map(([industry, category, action, href]) => (
+                  <tr key={industry as string} className="border-b border-dark-800/60">
+                    <td className="py-3 pr-6">
+                      <a href={href as string} className="font-medium text-white hover:text-brand-300 transition-colors">{industry as string}</a>
+                    </td>
+                    <td className="py-3 pr-6">{category as string}</td>
+                    <td className="py-3">{action as string}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-xs text-dark-500">
+            See the <a href="/small-business-software-audit" className="text-brand-400 hover:text-brand-300 transition-colors">full vertical audit hub</a> for guides covering 20+ business types.
+          </p>
         </div>
       </section>
 
@@ -248,18 +326,18 @@ export default function DemoPage() {
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
               <p className="text-xs uppercase tracking-[0.18em] text-emerald-400">Good fit</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-200">
-                <li>Founders, ops leads, or finance owners managing 10+ paid tools</li>
+                <li>Business owners running a 5-to-50-person operation with multiple recurring software tools</li>
                 <li>Teams with recurring software spend that has not been reviewed recently</li>
-                <li>Companies preparing for budget season, fundraising, or headcount planning</li>
+                <li>Owner-operators preparing for a new financial year or coming off a period of staff changes</li>
                 <li>Anyone who wants a structured starting point before vendor negotiations</li>
               </ul>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
               <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Not the best fit</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-400">
+                <li>Individual consultants or sole traders with fewer than 5 software subscriptions</li>
                 <li>Enterprise procurement teams needing SSO, approval chains, and compliance workflows</li>
                 <li>Organizations requiring live usage telemetry from each individual tool</li>
-                <li>Teams with fewer than 5 software subscriptions</li>
                 <li>Companies that already have tight software governance in place</li>
               </ul>
             </div>
@@ -280,7 +358,7 @@ export default function DemoPage() {
               <p className="text-xs uppercase tracking-[0.18em] text-success-300">One-time audit</p>
               <h3 className="mt-3 text-lg font-semibold text-white">Get a Snapshot</h3>
               <p className="mt-3 text-sm leading-7 text-dark-200">
-                Upload billing data once, get a full savings report. Best for founders and ops leads who want a quick, self-serve answer on what to cut or renegotiate.
+                Upload a billing export from Xero, your credit card, or your accounting tool. Get a full savings report the same day. No finance team or IT admin required — best for business owners who want a concrete action list this week.
               </p>
               <div className="mt-6">
                 <TrackLink href="/pricing" event="demo_buyer_path_clicked" props={{ target: "snapshot", location: "demo_buyer_routing" }} className="btn-primary text-sm">

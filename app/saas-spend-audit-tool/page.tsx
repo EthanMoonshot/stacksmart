@@ -4,7 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
-import { buildMetadata } from "@/lib/site";
+import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "SaaS Spend Audit Tool",
@@ -60,13 +60,13 @@ const jsonLd = {
       name: "SaaS Spend Audit Tool | StackSmart",
       description:
         "See how StackSmart turns billing exports into clear cut, consolidate, and renegotiate actions for growing teams.",
-      url: "https://stacksmart.app/saas-spend-audit-tool",
+      url: absoluteUrl("/saas-spend-audit-tool"),
     },
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://stacksmart.app" },
-        { "@type": "ListItem", position: 2, name: "SaaS Spend Audit Tool", item: "https://stacksmart.app/saas-spend-audit-tool" },
+        { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
+        { "@type": "ListItem", position: 2, name: "SaaS Spend Audit Tool", item: absoluteUrl("/saas-spend-audit-tool") },
       ],
     },
     {
@@ -134,7 +134,7 @@ export default function SaaSSpendAuditToolPage() {
             <p className="text-xs uppercase tracking-[0.18em] text-brand-300">SaaS spend audit tool</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Turn billing data into clear savings actions</h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Upload a billing export. Get a report that tells you what to cut, consolidate, renegotiate, and keep — in minutes, not weeks.
+              If you run a business with 5 to 50 staff and have not reviewed your software subscriptions recently, a billing export is all you need to start. Upload it and get a report that tells you what to cut, consolidate, renegotiate, and keep — no bank access, no integrations, no platform rollout.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "seo_saas_spend_audit_tool_primary" }} className="btn-primary text-sm sm:text-base">
@@ -179,8 +179,54 @@ export default function SaaSSpendAuditToolPage() {
         </div>
       </section>
 
-      {/* Sample findings */}
+      {/* What you need to get started */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Input requirements</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">What you need to get started</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            Most business owners can pull this together in under ten minutes. No finance team, no IT admin, no bank credentials required.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                label: "A billing export",
+                detail: "CSV or PDF from Xero, QuickBooks, MYOB, your business credit card, or your bank's transaction history. Cover at least six months — twelve is better for finding annual charges.",
+                required: true,
+              },
+              {
+                label: "Rough seat counts (optional)",
+                detail: "If you know roughly how many people are on each tool, add it. StackSmart uses this to flag over-provisioned licences. If you do not have it, the report still runs.",
+                required: false,
+              },
+              {
+                label: "Renewal dates you know about (optional)",
+                detail: "Any annual contracts renewing in the next 60 to 90 days are worth flagging. Search your email for 'subscription renewal' or 'auto-renewal notice' to find them quickly.",
+                required: false,
+              },
+            ].map((item) => (
+              <div key={item.label} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <div className="flex items-center gap-2">
+                  <h3 className="text-sm font-semibold text-white">{item.label}</h3>
+                  {item.required && (
+                    <span className="rounded-full bg-brand-500/15 px-2 py-0.5 text-xs font-medium text-brand-300">Required</span>
+                  )}
+                </div>
+                <p className="mt-2 text-sm leading-7 text-dark-400">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+            <p className="text-sm font-semibold text-white">Why no bank access or live integrations?</p>
+            <p className="mt-2 text-sm leading-7 text-dark-300 max-w-3xl">
+              Most SaaS audit tools require you to connect live banking credentials or grant API access to each tool in your stack. For a business owner who just wants to find waste, that is a significant barrier. StackSmart works from a billing CSV — the same export you would already pull for tax time. No credentials, no integration setup, no waiting for a third-party connection to sync.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Sample findings */}
+      <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">What the report shows</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
@@ -200,8 +246,71 @@ export default function SaaSSpendAuditToolPage() {
         </div>
       </section>
 
-      {/* Savings estimator — static example */}
+      {/* Vertical examples */}
       <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">By industry</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">What owners in your industry typically find</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            Software waste patterns differ by industry and how the business is run. These are the most common findings StackSmart surfaces in owner-led SMBs across the verticals we see most often.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                vertical: "Allied health & clinics",
+                href: "/clinic-software-subscription-audit",
+                findings: ["Duplicate booking platforms running simultaneously", "Practice management tool with unused patient portal or telehealth seats", "SMS reminder tool and booking platform with overlapping reminder features"],
+              },
+              {
+                vertical: "Marketing & creative agencies",
+                href: "/marketing-agency-software-stack-audit",
+                findings: ["Three or more SEO or analytics tools with overlapping reports", "Design tool on an Enterprise plan used by two people", "Multiple project management tools across different client teams"],
+              },
+              {
+                vertical: "Accounting & bookkeeping firms",
+                href: "/accounting-firm-software-stack-audit",
+                findings: ["E-sign tool duplicated with e-sign built into the practice management platform", "Document management tool alongside cloud storage that covers the same use case", "Former staff still licensed on practice management or tax software"],
+              },
+              {
+                vertical: "Childcare & education operators",
+                href: "/childcare-software-subscription-audit",
+                findings: ["Rostering tool and payroll tool with overlapping scheduling features", "Communication platform alongside parent comms module in the management tool", "Enrolment tool still on a seat count from before last year's intake"],
+              },
+              {
+                vertical: "Hospitality & multi-site venues",
+                href: "/hospitality-group-software-audit",
+                findings: ["Per-site POS add-ons that duplicate across locations", "Separate reservations tools for each venue when one covers the group", "Rostering platform and payroll tool both charging for scheduling features"],
+              },
+              {
+                vertical: "Property services & real estate",
+                href: "/real-estate-agency-software-audit",
+                findings: ["CRM and portal platform both charging for e-signature or appraisal features", "Multiple inspection apps across a small team", "Marketing tool still on a full-agency tier for a principal-led office"],
+              },
+            ].map((item) => (
+              <div key={item.vertical} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="text-sm font-semibold text-white">{item.vertical}</h3>
+                  <a href={item.href} className="text-xs text-brand-400 hover:text-brand-300 transition-colors">Vertical guide →</a>
+                </div>
+                <ul className="mt-4 space-y-2">
+                  {item.findings.map((f) => (
+                    <li key={f} className="flex gap-2 text-xs leading-6 text-dark-300">
+                      <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-dark-500" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-xs text-dark-500">
+            Not your industry? See the <a href="/small-business-software-audit" className="text-brand-400 hover:text-brand-300 transition-colors">full vertical audit guide</a> for 20+ business types.
+          </p>
+        </div>
+      </section>
+
+      {/* Savings estimator — static example */}
+      <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Example estimate</p>
           <h2 className="mt-2 text-2xl font-semibold text-white">What might a 25-person team recover?</h2>
@@ -301,9 +410,9 @@ export default function SaaSSpendAuditToolPage() {
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
               <p className="text-xs uppercase tracking-[0.18em] text-emerald-400">Good fit</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-200">
-                <li>SMB or startup with 10 to 200 people</li>
+                <li>Owner-led SMB with 5 to 50 staff — you pay the bills and you want to see what is on them</li>
                 <li>Recurring software spend you have not reviewed recently</li>
-                <li>Ops or finance lead who wants a structured starting point</li>
+                <li>Business owner or operator running the review without a dedicated ops or finance team</li>
                 <li>Teams preparing for budget season or renewal pressure</li>
               </ul>
             </div>
@@ -388,14 +497,14 @@ export default function SaaSSpendAuditToolPage() {
         description="If you are looking for a SaaS spend audit tool, these related pages help you compare audit methods, software-cost optimisation approaches, and next-step decision support."
         links={[
           {
+            href: "/small-business-software-audit",
+            title: "Small business software audit hub",
+            description: "The owner-led SMB guide to finding software waste — with vertical routing to 20+ industry-specific audit guides.",
+          },
+          {
             href: "/how-to-audit-software-subscriptions",
             title: "How to audit software subscriptions",
             description: "See a simple sequence for turning recurring software spend into concrete action.",
-          },
-          {
-            href: "/small-business-software-audit",
-            title: "Small business software audit",
-            description: "Owner-led SMB guide to finding and acting on software waste without a dedicated finance team.",
           },
           {
             href: "/software-subscription-audit-checklist",

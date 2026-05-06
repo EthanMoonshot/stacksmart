@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Software Subscription Audit Checklist",
   description:
-    "Use this software subscription audit checklist to review recurring software spend, find overlaps, and decide what to cut, consolidate, or renegotiate.",
+    "Before you go line by line through the credit card statement, use this checklist to structure a business software subscription audit. Find what to cut, consolidate, or renegotiate — for owner-led businesses with 5 to 50 staff.",
   path: "/software-subscription-audit-checklist",
 });
 
@@ -66,18 +66,26 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "What should a software subscription audit checklist produce?",
+          name: "How do business owners typically start a software subscription audit?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "A completed audit checklist should produce four things: a full inventory of recurring software charges, a list of waste flags (unused seats, duplicate tools, tier mismatches), a renewal calendar with upcoming risk dates, and a decision for every tool — keep, cut, consolidate, or renegotiate. Without these outputs, the audit is just an inventory exercise.",
+            text: "Most owners start the same way: they pull up last month's credit card statement and begin scrolling through recurring charges. The problem is that monthly statements miss annual charges, and there is usually no clean way to group tools by what they actually do. A structured approach starts by gathering 12 months of billing data from all payment sources, grouping subscriptions by category, then applying a decision to each: keep, cut, consolidate, or renegotiate. That sequence turns a scroll through transactions into an action list.",
           },
         },
         {
           "@type": "Question",
-          name: "How often should you run a software subscription audit?",
+          name: "What should a software subscription audit checklist produce?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Most teams benefit from a full audit every 6 months, with lighter renewal-focused reviews monthly. The key trigger is any period where headcount changes significantly, a budget cycle starts, or renewals cluster together. Teams that only audit annually often miss waste that accumulates between reviews.",
+            text: "A completed audit checklist should produce four things: a full inventory of recurring charges, clear waste flags (unused seats, duplicate tools, tier mismatches), a renewal calendar with upcoming risk dates, and a specific decision for every subscription — keep, cut, consolidate, or renegotiate. Without those outputs, the audit is just an inventory exercise that does not drive action.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How often should a business owner audit their software subscriptions?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Most owner-led businesses benefit from a full review once a year, with a lighter renewal-focused check every quarter. The most important trigger is any period of significant headcount change — each hire or departure is an opportunity for new subscriptions to appear or old seats to linger. A one-time audit is the fastest way to find out whether the problem is worth ongoing attention.",
           },
         },
         {
@@ -86,14 +94,6 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "A manual checklist helps you structure the review process, but you do all the data gathering, categorization, and analysis yourself in spreadsheets. A SaaS audit tool like StackSmart automates the heavy lifting — it ingests billing data, groups tools by category, flags duplicates and waste, and produces a formatted report with specific savings recommendations. The checklist tells you what to look for; the tool does the looking.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How do I prioritize which subscriptions to review first?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Start with the highest-cost subscriptions and any renewals coming up in the next 60 days — these have the largest savings potential and the most time pressure. Then review tools where you suspect low adoption or overlap with other tools. Leave well-adopted, reasonably-priced tools for last.",
           },
         },
         {
@@ -126,7 +126,7 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
             <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Audit checklist</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Software subscription audit checklist</h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              A step-by-step checklist for reviewing recurring software spend. Use it standalone or pair it with StackSmart to turn the raw data into a formatted savings report.
+              Use this before you scroll line by line through the credit card statement. A structured checklist for owner-led businesses with 5 to 50 staff — covering everything from gathering billing data to assigning a clear decision to every subscription.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "seo_checklist_primary" }} className="btn-primary text-sm sm:text-base">
@@ -144,10 +144,54 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-8">
-            <h2 className="text-2xl font-semibold text-white">What should a completed audit produce?</h2>
+            <h2 className="text-2xl font-semibold text-white">What does &ldquo;going through the software subscriptions&rdquo; actually mean?</h2>
             <p className="mt-4 text-sm leading-7 text-dark-300 max-w-[65ch]">
-              A completed software subscription audit should produce four things: a full inventory of recurring charges, clear waste flags (unused seats, duplicate tools, tier mismatches), a renewal calendar with upcoming risk dates, and a specific decision for every subscription — keep, cut, consolidate, or renegotiate. Without those outputs, the audit is just an inventory exercise that does not drive action.
+              Most business owners think of a software audit as scrolling through a credit card statement and cancelling anything that looks unfamiliar. That finds the most obvious waste — but misses annual charges that do not appear in a monthly statement, duplicate tools spread across different payment methods, and seats that were correct twelve months ago but are now over-provisioned. A structured audit produces four specific outputs: a full inventory of every recurring charge, clear waste flags (unused seats, duplicate tools, tier mismatches), a renewal calendar with upcoming risk dates, and a decision for every subscription — keep, cut, consolidate, or renegotiate. Without those outputs, the review is just an inventory exercise.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How owners describe the problem */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Owner voice</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">How business owners describe this problem</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            These are the phrases that come up consistently when business owners talk about their software spend. If any of these sounds familiar, a structured review is overdue.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                quote: "I know I am paying for things I do not need. I just have not had the time to go through it properly.",
+                context: "The most common reason audits do not happen. A structured checklist turns an open-ended task into a series of decisions with a clear end.",
+              },
+              {
+                quote: "Before I go line by line through the credit card statement, I want to know what I am actually looking for.",
+                context: "A checklist converts a reactive scroll into a proactive review. Knowing the categories of waste before you start saves hours.",
+              },
+              {
+                quote: "There are charges on there I do not even recognise — I am not sure who set them up or whether anyone is still using them.",
+                context: "Common in businesses with any staff turnover. Owner ambiguity — where nobody is clearly responsible for a subscription — is one of the most common waste categories.",
+              },
+              {
+                quote: "It is like I need a Rocket Money for my business subscriptions.",
+                context: "The personal finance analogy is accurate. StackSmart does for your business software spend what Rocket Money does for personal subscriptions — but with keep/cut/consolidate/renegotiate actions and a shareable report instead of a consumer dashboard.",
+              },
+              {
+                quote: "I upgraded for a feature we used once during a proposal, and we have been paying the higher rate ever since.",
+                context: "Tier creep. An upgrade decision made in context stays even after the context has passed. The audit surfaces these and tells you whether the downgrade is worth pursuing.",
+              },
+              {
+                quote: "Every time I try to do this myself I get two thirds through and realise I do not have all the data in one place.",
+                context: "The worksheet below solves this. Gather the six items before you start — billing export, seat counts, active user data, renewal calendar, headcount, and last audit date — and the review does not stall.",
+              },
+            ].map((item) => (
+              <div key={item.quote} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-sm leading-7 text-dark-200 italic">&ldquo;{item.quote}&rdquo;</p>
+                <p className="mt-3 text-xs leading-6 text-dark-400">{item.context}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -363,8 +407,8 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture
             location="seo_software_subscription_audit_checklist"
-            heading="Email yourself the sample report"
-            body="See what the output looks like when the checklist work is done by StackSmart instead of a spreadsheet."
+            heading="See what the output looks like when the checklist work is done"
+            body="Most owners who complete the checklist want to see what a structured savings report looks like before uploading their own billing data. The sample report shows exactly that."
             successMessage="Sample report sent. Open it now or return from your inbox later."
           />
         </div>
@@ -426,14 +470,14 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
         description="These related pages help you turn a manual checklist into a faster software-spend decision path, with clearer next steps for review, comparison, and savings analysis."
         links={[
           {
+            href: "/small-business-software-audit",
+            title: "Small business software audit hub",
+            description: "Owner-led SMB guide covering waste signals, admin-sprawl symptoms, and vertical routing for 20+ industry types.",
+          },
+          {
             href: "/how-to-audit-software-subscriptions",
             title: "How to audit software subscriptions",
             description: "Follow a simple audit sequence without turning it into a giant finance project.",
-          },
-          {
-            href: "/small-business-software-audit",
-            title: "Small business software audit",
-            description: "Owner-led SMB guide to finding and acting on software waste without a dedicated ops team.",
           },
           {
             href: "/saas-spend-audit-tool",

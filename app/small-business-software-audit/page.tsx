@@ -82,6 +82,22 @@ const jsonLd = {
             text: "A billing export covering 6 to 12 months of recurring charges is enough. Most small businesses pull this from Xero, QuickBooks, their credit card, or Stripe. No bank login or live integrations required.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What do business owners usually find in their first week of auditing software?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Most owners find three to five surprises in the first week: at least one tool that was trialling and quietly converted to paid, one or two seats still billing for someone who left the business, and usually one category — file storage, project management, or communication — where two separate tools are running simultaneously. The most common reaction is 'I had no idea we were paying for that.' A billing export covering the last six to twelve months almost always surfaces at least one item that can be cancelled immediately.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How does software sprawl happen in a small business?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "It accumulates gradually. A team member signs up for a free trial during a crunch, the trial converts to paid, and nobody notices because the charge is small and the billing email goes to the person who set it up, not the owner. Someone onboards a new hire into three tools, then the hire leaves but the seats stay active. The owner upgrades a plan to unlock a feature for a project, the project ends, but the plan never gets downgraded. None of these individually are large. Together they often represent $4,000 to $15,000 in annual waste for a 10-to-30 person business.",
+          },
+        },
       ],
     },
   ],
@@ -144,7 +160,7 @@ export default function SmallBusinessSoftwareAuditPage() {
               Find software waste before it renews again
             </h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Creeping SaaS spend is one of the most common and least visible costs in a small business. Duplicate tools, seats nobody uses, trials that converted to paid plans, and annual contracts renewing on autopilot all add up quietly. A software audit finds exactly what to cut, consolidate, and renegotiate.
+              For most business owners running a 5-to-50-person operation, software spend is the one cost category nobody reviews between budget cycles. Trials convert to paid plans. People leave and their seats stay active. Renewals process before anyone checks whether the tool still earns its place. A software audit brings it all into the open.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink
@@ -179,6 +195,67 @@ export default function SmallBusinessSoftwareAuditPage() {
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
               Export 6 to 12 months of billing data from your payment processor, credit card, or accounting tool. Group every charge by category — project management, communication, file storage, design, analytics, and so on. Look for duplicates across categories, seats that no longer reflect your headcount, pricing tiers with features nobody uses, and renewals within the next 60 to 90 days. Assign each subscription a decision: keep, cut, consolidate, or renegotiate. Act on the highest-value items first.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What owners find in week one */}
+      <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Week one reality check</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">What owners typically find in week one</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            Most business owners who have not reviewed their software stack in the past six months find the same categories of problem. These are the most common first-week discoveries from owner-led audits of 5 to 50-person businesses.
+          </p>
+          <div className="mt-8 space-y-4">
+            {[
+              {
+                finding: "A trial that converted and kept billing quietly",
+                detail: "A team member signed up during a crunch. It looked like a free trial. It is now $79 a month and has been billing for eleven months. Nobody touched it after the project ended.",
+                tag: "Cut immediately",
+                color: "text-red-400",
+              },
+              {
+                finding: "Seats for people who left the business",
+                detail: "Three licensed seats on a project management or communication tool belonging to staff who left between three and eighteen months ago. Still active, still billing.",
+                tag: "Right-size",
+                color: "text-amber-400",
+              },
+              {
+                finding: "Two tools doing the same job across departments",
+                detail: "Operations uses one video conferencing platform. Admin uses another. Sales has a third. Three subscriptions, one workflow — because nobody compared what each team was using.",
+                tag: "Consolidate",
+                color: "text-brand-400",
+              },
+              {
+                finding: "An annual contract that auto-renewed without a review",
+                detail: "A $3,600 annual renewal processed last month. Nobody had reviewed whether the tool was still useful, still competitively priced, or still used by anyone on the team.",
+                tag: "Renegotiate next cycle",
+                color: "text-orange-400",
+              },
+              {
+                finding: "A Pro or Business tier nobody upgraded into",
+                detail: "Paying for an Enterprise plan because someone checked a feature once during evaluation. The team has never used the features that justify the premium tier price.",
+                tag: "Downgrade",
+                color: "text-amber-400",
+              },
+              {
+                finding: "Charges with no clear owner or use",
+                detail: "At least one recurring charge where the person who signed up has left the business, the tool has not been logged into in months, and nobody on the current team can confirm what it does.",
+                tag: "Assign or cancel",
+                color: "text-dark-400",
+              },
+            ].map((item) => (
+              <div key={item.finding} className="flex gap-4 rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h3 className={`text-sm font-semibold ${item.color}`}>{item.finding}</h3>
+                    <span className="rounded-full border border-dark-600 bg-dark-800 px-2.5 py-0.5 text-xs text-dark-300">{item.tag}</span>
+                  </div>
+                  <p className="mt-2 text-sm leading-7 text-dark-400">{item.detail}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -317,12 +394,38 @@ export default function SmallBusinessSoftwareAuditPage() {
         </div>
       </section>
 
+      {/* Admin-sprawl symptoms */}
+      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Recognition check</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">Signs your software stack needs a review</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            Admin-heavy small businesses accumulate software sprawl faster than they realise. These are the most common signals that the stack has not been reviewed in too long.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["You are not sure how many tools you are paying for", "Most owners who have not audited recently underestimate their tool count by 30 to 50 percent."],
+              ["Software charges appear on multiple cards or accounts", "When subscriptions span a business credit card, a personal card, and a PayPal account, things fall through the cracks."],
+              ["You have had staff turnover in the last 12 months", "Every departure is a potential ghost seat. Every new hire is a potential new subscription that duplicates something you already have."],
+              ["You have never renegotiated a software contract", "Vendors rarely lower prices automatically. Annual renewal is the only natural negotiation point, and most owners let it pass without a call."],
+              ["You are paying for the same category in two different tools", "Two project management tools. Two file storage platforms. Two scheduling apps. Common in businesses where different team members made separate purchasing decisions."],
+              ["Your last software review was more than six months ago", "Any stack older than six months without a review has almost certainly accumulated at least one unnecessary subscription."],
+            ].map(([title, detail]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-xs leading-6 text-dark-400">{detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Vertical routing section */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Which vertical audit fits your business?</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            The patterns of software waste differ by industry. These vertical guides go deeper on the specific tools, categories, and waste patterns relevant to your type of business.
+            Software waste patterns differ by industry. If you run one of the businesses below, the vertical guide covers the specific tools, admin stack, and waste patterns relevant to how your business operates.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -370,6 +473,7 @@ export default function SmallBusinessSoftwareAuditPage() {
               <p className="text-xs uppercase tracking-[0.18em] text-emerald-400">Good fit</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-200">
                 <li>Owner-led business with 5 to 50 staff</li>
+                <li>You are the one who pays the bills and you want to know what you are actually paying for</li>
                 <li>Multiple recurring software subscriptions you have not reviewed recently</li>
                 <li>No dedicated IT, ops, or procurement team</li>
                 <li>You want a report and action list, not a platform to manage</li>
@@ -411,6 +515,14 @@ export default function SmallBusinessSoftwareAuditPage() {
                 "What data do I need to start a software audit?",
                 "A billing export covering 6 to 12 months of recurring charges is enough. Most small businesses pull this from Xero, QuickBooks, their credit card, or Stripe. No bank login or live integrations required.",
               ],
+              [
+                "What do business owners usually find in their first week of auditing software?",
+                "Most owners find three to five surprises in the first week: at least one tool that was trialling and quietly converted to paid, one or two seats still billing for someone who left the business, and usually one category — file storage, project management, or communication — where two separate tools are running simultaneously. The most common reaction is 'I had no idea we were paying for that.' A billing export covering the last six to twelve months almost always surfaces at least one item that can be cancelled immediately.",
+              ],
+              [
+                "How does software sprawl happen in a small business?",
+                "It accumulates gradually. A team member signs up for a free trial during a crunch, the trial converts to paid, and nobody notices because the charge is small and the billing email goes to the person who set it up, not the owner. Someone onboards a new hire into three tools, then the hire leaves but the seats stay active. The owner upgrades a plan to unlock a feature for a project, the project ends, but the plan never gets downgraded. None of these individually are large. Together they often represent $4,000 to $15,000 in annual waste for a 10-to-30 person business.",
+              ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
@@ -426,8 +538,8 @@ export default function SmallBusinessSoftwareAuditPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture
             location="smb_software_audit"
-            heading="See what a software audit report looks like"
-            body="Email yourself the sample report to review the output format before uploading your own billing data."
+            heading="Get the sample report before uploading your own data"
+            body="See how StackSmart organises billing data into keep, cut, consolidate, and renegotiate actions for an owner-led SMB."
             successMessage="Sample report sent. Open it now or return from your inbox when you are ready."
           />
         </div>

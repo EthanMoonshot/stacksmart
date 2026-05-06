@@ -9,7 +9,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "SaaS Cost Optimization Software for SMBs",
   description:
-    "SaaS spend management software for lean teams. Upload billing data, get a savings report with keep, cut, consolidate, and renegotiate actions — no procurement platform required.",
+    "SaaS cost optimization for owner-led SMBs. Upload a billing export, get a clear savings report — see what to cut, consolidate, and renegotiate without enterprise pricing or a platform rollout.",
   path: "/saas-cost-optimization-software",
 });
 
@@ -22,7 +22,7 @@ const jsonLd = {
       url: absoluteUrl("/saas-cost-optimization-software"),
       name: "SaaS Cost Optimization Software for SMBs | StackSmart",
       description:
-        "SaaS spend management software for lean teams. Upload billing data, get a savings report with keep, cut, consolidate, and renegotiate actions — no procurement platform required.",
+        "SaaS cost optimization for owner-led SMBs. Upload a billing export, get a clear savings report — see what to cut, consolidate, and renegotiate without enterprise pricing or a platform rollout.",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -82,6 +82,14 @@ const jsonLd = {
             text: "Not necessarily. Smaller teams can start with billing exports and a report-first tool like StackSmart. Full spend management platforms with discovery agents and governance controls make more sense once your SaaS estate is large enough to warrant ongoing lifecycle management and compliance reporting.",
           },
         },
+        {
+          "@type": "Question",
+          name: "How much can a small business recover from a SaaS cost review?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "In a typical owner-led business with 10 to 30 staff and a stack of 15 to 40 recurring tools, a structured review commonly surfaces between $4,000 and $18,000 in annual review targets. These are not guaranteed savings — they are possible actions: tools that could be cancelled, seats that could be reduced, tiers that could be downgraded, and renewals worth renegotiating. The actual outcome depends on your specific tools, how long since the last review, and how much headcount change has occurred. A one-time Snapshot report is the fastest way to get a real number for your own stack.",
+          },
+        },
       ],
     },
   ],
@@ -105,11 +113,14 @@ export default function SaaSCostOptimizationSoftwarePage() {
               Find SaaS waste from billing data
             </h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Most SaaS cost optimization software assumes you need a full procurement platform. If you just need a clear view of waste, overlap, and renewal risk from billing exports, StackSmart delivers a concrete savings report you can act on this week.
+              Most SaaS cost optimization platforms are built for enterprise IT teams — multi-month rollouts, discovery agents, compliance controls, and five-figure annual pricing. If you run a 5-to-50-person business and want to know what you are wasting on software, a billing export and a clear savings report is all you need.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "seo_cost_optimization_primary" }} className="btn-primary text-sm sm:text-base">
                 View sample report
+              </TrackLink>
+              <TrackLink href="/small-business-software-audit" event="homepage_cta_clicked" props={{ target: "smb_hub", location: "seo_cost_optimization_secondary" }} className="btn-secondary text-sm sm:text-base">
+                SMB audit guide
               </TrackLink>
             </div>
           </div>
@@ -129,16 +140,74 @@ export default function SaaSCostOptimizationSoftwarePage() {
         </div>
       </section>
 
+      {/* Sample savings review proof block */}
+      <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Illustrative example</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">What a review looks like for a 15-person business</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            This is a representative example based on patterns StackSmart surfaces in owner-led businesses of this size. Actual results depend on your specific tools and how recently your stack was last reviewed.
+          </p>
+          <div className="mt-8 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Example findings — 15-person allied health practice</p>
+              <div className="mt-5 space-y-4">
+                {[
+                  { finding: "Duplicate booking + telehealth tool", action: "Consolidate", impact: "$1,800/yr", color: "text-brand-400" },
+                  { finding: "3 ghost seats on practice management", action: "Right-size", impact: "$1,080/yr", color: "text-amber-400" },
+                  { finding: "SMS reminder tool (duplicates booking platform)", action: "Cut", impact: "$960/yr", color: "text-red-400" },
+                  { finding: "Annual subscription renewing in 18 days — not reviewed", action: "Renegotiate", impact: "$2,400/yr at stake", color: "text-orange-400" },
+                  { finding: "File storage — 3 separate tools for same use", action: "Consolidate", impact: "$780/yr", color: "text-brand-400" },
+                ].map((row) => (
+                  <div key={row.finding} className="flex items-start justify-between gap-4 border-b border-dark-800/60 pb-4 last:border-0 last:pb-0">
+                    <div className="flex-1">
+                      <p className="text-sm text-white">{row.finding}</p>
+                      <p className={`mt-0.5 text-xs font-medium ${row.color}`}>{row.action}</p>
+                    </div>
+                    <p className="flex-shrink-0 text-sm tabular-nums text-dark-300">{row.impact}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 rounded-xl border border-brand-500/20 bg-brand-500/5 p-4">
+                <div className="flex items-center justify-between">
+                  <p className="text-xs text-dark-400">Possible annual review target</p>
+                  <p className="text-base font-semibold tabular-nums text-brand-300">$7,020 – $9,500+</p>
+                </div>
+                <p className="mt-1 text-xs text-dark-500">Estimate only. Your actual findings depend on your specific stack and billing history.</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4">
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs uppercase tracking-[0.18em] text-dark-400">What you need to run this</p>
+                <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                  <li>A billing export from Xero, MYOB, QuickBooks, or your credit card</li>
+                  <li>No bank credentials or live integrations</li>
+                  <li>No finance team or IT admin</li>
+                  <li>Under ten minutes to gather the data</li>
+                </ul>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs uppercase tracking-[0.18em] text-brand-300">To get your own numbers</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Open the sample report to see the full output format, then decide if a Snapshot is worth the $49 for your stack.</p>
+                <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "seo_cost_optimization_proof_block" }} className="btn-primary mt-4 inline-block text-sm">
+                  View sample report
+                </TrackLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* When lightweight beats full platform */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-white">When a report-first approach beats a full platform</h2>
+          <h2 className="text-2xl font-semibold text-white">Owner-led SMB vs enterprise IT team — different tools for different jobs</h2>
           <p className="mt-3 text-sm leading-7 text-dark-300 max-w-3xl">
             Full SaaS management platforms are built for enterprise IT teams running discovery agents, compliance audits, and user lifecycle management. If your team mainly needs cost clarity from billing data, a lightweight report gets you to savings faster.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
-              <h3 className="text-base font-semibold text-dark-400">Full SaaS management platform</h3>
+              <h3 className="text-base font-semibold text-dark-400">Enterprise SaaS management platform</h3>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
                 <li>Multi-week implementation and agent deployment</li>
                 <li>Discovery, compliance, and governance workflows</li>
@@ -238,10 +307,10 @@ export default function SaaSCostOptimizationSoftwarePage() {
           <h2 className="text-2xl font-semibold text-white">Is StackSmart the right fit?</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
-              <h3 className="text-base font-semibold text-white">Good fit</h3>
+              <p className="text-xs uppercase tracking-[0.18em] text-emerald-400">Good fit</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
-                <li>SMB or lean team with 20-200 SaaS subscriptions</li>
-                <li>Finance, ops, or founder running the spend review</li>
+                <li>Owner-led business with 5 to 50 staff and 8 or more recurring software tools</li>
+                <li>Business owner or operator who pays the software bills and wants to know what they are actually getting</li>
                 <li>You want a report and action list, not a platform rollout</li>
                 <li>You have billing exports or invoice data available</li>
                 <li>You want to act on savings within days, not months</li>
@@ -302,6 +371,7 @@ export default function SaaSCostOptimizationSoftwarePage() {
               ["When is a lightweight report better than a full SaaS management platform?", "When your primary need is cost visibility and savings actions from billing data — not discovery agents, compliance controls, or user lifecycle management. Teams with under 200 subscriptions and no dedicated IT procurement function typically get faster results from a report-first approach."],
               ["What findings should I expect from a cost optimization review?", "Common findings include duplicate tools serving the same workflow, unused seats still billing, enterprise tiers with features nobody uses, forgotten trial conversions, and annual renewals approaching without competitive benchmarking."],
               ["Do I need a SaaS spend management platform to reduce costs?", "Not necessarily. Smaller teams can start with billing exports and a report-first tool like StackSmart. Full spend management platforms with discovery agents and governance controls make more sense once your SaaS estate is large enough to warrant ongoing lifecycle management."],
+              ["How much can a small business recover from a SaaS cost review?", "In a typical owner-led business with 10 to 30 staff and a stack of 15 to 40 recurring tools, a structured review commonly surfaces between $4,000 and $18,000 in annual review targets. These are possible actions — tools to cancel, seats to reduce, tiers to downgrade, renewals worth renegotiating — not guaranteed outcomes. A one-time Snapshot report is the fastest way to get a real number for your specific stack."],
             ] as const).map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
@@ -344,9 +414,19 @@ export default function SaaSCostOptimizationSoftwarePage() {
         description="If you're evaluating SaaS cost optimization software, these pages help you compare approaches, review the audit workflow, and pressure-test whether StackSmart fits your team."
         links={[
           {
+            href: "/small-business-software-audit",
+            title: "Small business software audit hub",
+            description: "The owner-led SMB guide to finding software waste — with vertical routing for 20+ business types.",
+          },
+          {
             href: "/saas-spend-audit-tool",
             title: "SaaS spend audit tool",
             description: "See when a fast savings report is more useful than a broad procurement workflow.",
+          },
+          {
+            href: "/software-subscription-audit-checklist",
+            title: "Software subscription audit checklist",
+            description: "Work through a structured checklist before uploading billing data to StackSmart.",
           },
           {
             href: "/best-saas-spend-management-tools",
@@ -357,11 +437,6 @@ export default function SaaSCostOptimizationSoftwarePage() {
             href: "/reduce-saas-spend-small-business",
             title: "Reduce SaaS spend for small business",
             description: "A practical guide to finding and acting on SaaS savings from billing data.",
-          },
-          {
-            href: "/saas-management-software",
-            title: "SaaS management software",
-            description: "Evaluate when lightweight SaaS management is enough and when you need a full platform.",
           },
         ]}
       />
