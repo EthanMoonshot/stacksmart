@@ -5,6 +5,7 @@ import { getAllSlugs } from "@/lib/blog";
 const routes = [
   "",
   "/pricing",
+  "/demo",
   "/privacy",
   "/terms",
   "/blog",
