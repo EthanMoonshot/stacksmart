@@ -88,6 +88,14 @@ const jsonLd = {
             text: "The best trigger is 60 to 90 days before your largest annual contracts renew — practice management and tax platforms are often billed annually and carry the highest per-seat cost. For many firms, the end of tax season or end of financial year is a natural review point, when staffing and workflow volumes are clearer for the year ahead.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What does the StackSmart output look like for an accounting firm?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by practice function (practice management, tax, payroll, document management, e-sign, marketing), a list of flagged attention areas (zombie seats, duplicate tool pairs, forgotten subscriptions, upcoming renewals), and a prioritised action list ranked by annual dollar impact. The report is designed for the firm owner or accounting partner to review and share with a practice manager or office manager to action — a practical spend view, not an enterprise procurement audit.",
+          },
+        },
       ],
     },
   ],
@@ -156,7 +164,7 @@ export default function AccountingFirmSoftwareStackAuditPage() {
               Cut subscription waste in your practice stack
             </h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Small accounting and bookkeeping firms carry more software than most professional service businesses their size — practice management, tax, payroll, proposals, document management, e-sign, CRM, and marketing. As the major platforms have matured and expanded their features, many firms are paying for overlapping capability without realising it. A software audit finds the redundancies, idle seats, and renewals worth renegotiating.
+              Small accounting and bookkeeping firms carry more software than most professional services businesses their size — practice management, tax, payroll, proposals, document management, e-sign, CRM, and marketing. As platforms have expanded their native features, most practices end up with zombie seats from departed staff, forgotten annual subscriptions, and duplicate e-sign or document tools where nobody stopped to ask what they are actually paying for. StackSmart produces a practical software-spend snapshot — the kind of line-by-line view an owner or partner needs before going through statements manually — without enterprise procurement overhead.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink
@@ -320,8 +328,36 @@ export default function AccountingFirmSoftwareStackAuditPage() {
         </div>
       </section>
 
-      {/* Manual vs StackSmart */}
+      {/* What you get */}
       <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">What the audit report gives you</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            StackSmart produces a practical software-spend snapshot for owner-led accounting practices — not an enterprise procurement platform. A report you can review with a partner and action in a week.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            {[
+              ["Categorised spend", "Every recurring charge grouped by practice function — practice management, tax, payroll, document management, e-sign, and marketing. No manual sorting or spreadsheet required."],
+              ["Flagged attention areas", "Zombie seats, duplicate tool pairs, forgotten annual subscriptions, and renewal risks — recurring payments with no active owner making a decision about them."],
+              ["Prioritised action list", "Cancel, consolidate, downgrade, and renegotiate — ranked by annual dollar impact so you know where to start and what to delegate to your practice manager."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-6">
+            <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Who uses and shares this report</p>
+            <p className="mt-3 text-sm leading-7 text-dark-300">
+              The firm owner or accounting partner runs the initial review and owns the cancellation and renegotiation decisions. The completed savings report is typically shared with a practice manager or office manager to action seat removals and vendor conversations. It can also be handed to a bookkeeper or finance admin as a structured view of recurring payments — useful before anyone goes through statements line by line. Accounting partners who work with SMB clients sometimes share the StackSmart concept as a practical advisory exercise for clients with unreviewed software spend.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Manual vs StackSmart */}
+      <section className="border-t border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Manual audit vs StackSmart for accounting practices</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
@@ -404,6 +440,10 @@ export default function AccountingFirmSoftwareStackAuditPage() {
                 "When should an accounting firm audit its software subscriptions?",
                 "The best trigger is 60 to 90 days before your largest annual contracts renew — practice management and tax platforms are often billed annually and carry the highest per-seat cost. For many firms, the end of tax season or end of financial year is a natural review point, when staffing and workflow volumes are clearer for the year ahead.",
               ],
+              [
+                "What does the StackSmart output look like for an accounting firm?",
+                "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by practice function, a list of flagged attention areas (zombie seats, duplicate tool pairs, forgotten subscriptions, and upcoming renewals), and a prioritised action list ranked by annual dollar impact. The report is designed for the firm owner or accounting partner to review and share with a practice manager or office manager to action — a practical spend view, not an enterprise procurement audit.",
+              ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
@@ -460,34 +500,34 @@ export default function AccountingFirmSoftwareStackAuditPage() {
         description="These pages cover the software audit process, tools, and guides for other owner-led SMB verticals."
         links={[
           {
+            href: "/bookkeeping-firm-software-stack-audit",
+            title: "Bookkeeping firm software stack audit",
+            description: "Add-on sprawl, e-sign and receipt duplication, and tier creep in Xero, QBO, and MYOB ecosystem stacks.",
+          },
+          {
+            href: "/xero-app-stack-audit",
+            title: "Xero app stack audit",
+            description: "Audit your Xero add-ons for duplicate payroll, receipt capture, reporting, and practice management tools.",
+          },
+          {
+            href: "/allied-health-software-subscription-audit",
+            title: "Allied health software subscription audit",
+            description: "Booking, telehealth, recalls, and admin subscription audit for owner-led allied health practices.",
+          },
+          {
+            href: "/marketing-agency-software-stack-audit",
+            title: "Marketing agency software stack audit",
+            description: "SEO, social scheduling, design, and reporting stack audit for owner-led marketing and creative agencies.",
+          },
+          {
             href: "/small-business-software-audit",
             title: "Small business software audit",
-            description: "The general guide to running a software audit for any SMB without a finance or IT team.",
-          },
-          {
-            href: "/agency-software-stack-audit",
-            title: "Agency software stack audit",
-            description: "Audit guide for web studios, creative agencies, and consultancies managing tool spread across client work.",
-          },
-          {
-            href: "/how-to-audit-software-subscriptions",
-            title: "How to audit software subscriptions",
-            description: "Step-by-step process for reviewing recurring software spend without a procurement specialist.",
+            description: "The owner-led SMB guide to finding and acting on software waste without a dedicated IT or finance team.",
           },
           {
             href: "/software-subscription-audit-checklist",
             title: "Software subscription audit checklist",
             description: "Work through a structured checklist before turning billing data into a savings report.",
-          },
-          {
-            href: "/saas-spend-audit-tool",
-            title: "SaaS spend audit tool",
-            description: "See how StackSmart turns a billing export into a structured savings report.",
-          },
-          {
-            href: "/bookkeeping-firm-software-stack-audit",
-            title: "Bookkeeping firm software stack audit",
-            description: "Add-on sprawl, e-sign and receipt duplication, and tier creep in Xero, QBO, and MYOB ecosystem stacks.",
           },
         ]}
       />

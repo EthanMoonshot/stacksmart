@@ -88,6 +88,14 @@ const jsonLd = {
             text: "Yes. StackSmart processes any billing export CSV and recognises the common add-on categories in the Xero, QBO, and MYOB ecosystems — receipt capture, payroll, proposals, e-sign, client portals, and workflow tools. It categorises recurring charges, flags duplicates and idle seats, and produces a prioritised action list focused on the firm's internal software spend.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What does the StackSmart output look like for a bookkeeping firm?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by function (bookkeeping platform, receipt capture, payroll, proposals, e-sign, client portal, workflow, and marketing), a list of flagged attention areas (zombie seats, duplicate add-on pairs, forgotten subscriptions, upcoming renewals), and a prioritised action list ranked by annual dollar impact. The firm principal reviews the findings and can share the report with a practice manager or office manager to handle seat removals and vendor conversations — a practical spend view, not an enterprise procurement audit.",
+          },
+        },
       ],
     },
   ],
@@ -156,7 +164,7 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
               Audit the add-on sprawl in your bookkeeping firm stack
             </h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Bookkeeping firms running on Xero, QBO, or MYOB accumulate ecosystem add-ons faster than almost any other professional services business. Receipt capture tools, payroll platforms, e-sign subscriptions, proposal tools, client portals, and workflow apps — many carrying significant feature overlap that nobody has reviewed since the initial signup. A software stack audit finds the duplicates, tier creep, and partner-stack waste without disrupting client delivery.
+              Bookkeeping firms running on Xero, QBO, or MYOB accumulate ecosystem add-ons faster than almost any other professional services business. Receipt capture tools, payroll platforms, e-sign subscriptions, proposal tools, client portals, and workflow apps — many with significant feature overlap that nobody has reviewed since the initial signup. Zombie seats from past staff, forgotten annual subscriptions, and duplicate tools in the receipt or e-sign category are the patterns most principals don&apos;t realise are there until they look. StackSmart gives you a practical software-spend snapshot — not an enterprise procurement platform — so the firm owner or principal can see what they&apos;re paying for and act in a week.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink
@@ -351,6 +359,34 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
         </div>
       </section>
 
+      {/* What you get */}
+      <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">What the audit report gives you</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            StackSmart produces a practical software-spend snapshot for owner-led bookkeeping firms — not an enterprise procurement platform. The firm principal gets a clear view of recurring payments and a prioritised action list they can act on or hand off to a practice manager.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            {[
+              ["Categorised spend", "Every recurring charge grouped by function — bookkeeping platform, receipt capture, payroll, proposals, e-sign, client portal, workflow, and marketing. No manual sorting."],
+              ["Flagged attention areas", "Zombie seats, duplicate add-on pairs, forgotten annual subscriptions, and renewal risks — recurring payments where there is no active owner making a decision."],
+              ["Prioritised action list", "Cancel, consolidate, downgrade, and renegotiate — ranked by annual dollar impact so you know where to start before the next billing cycle."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-6">
+            <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Who uses and shares this report</p>
+            <p className="mt-3 text-sm leading-7 text-dark-300">
+              The firm principal or bookkeeping practice owner typically runs the initial review and owns the cancellation and renegotiation decisions. The completed savings report is shared with a practice manager or office manager to handle seat removals and vendor conversations. It can be handed to a finance admin as a structured view of recurring payments — a line-by-line spend snapshot before they go through statements manually. Bookkeepers who work with SMB clients can also share the StackSmart concept as a practical advisory step for clients with unreviewed software spend.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Manual vs StackSmart */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -435,6 +471,10 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
                 "Does StackSmart work for Xero and QBO ecosystem audits?",
                 "Yes. StackSmart processes any billing export CSV and recognises the common add-on categories in the Xero, QBO, and MYOB ecosystems — receipt capture, payroll, proposals, e-sign, client portals, and workflow tools. It categorises recurring charges, flags duplicates and idle seats, and produces a prioritised action list focused on the firm's internal software spend.",
               ],
+              [
+                "What does the StackSmart output look like for a bookkeeping firm?",
+                "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by function, a list of flagged attention areas (zombie seats, duplicate add-on pairs, forgotten subscriptions, and upcoming renewals), and a prioritised action list ranked by annual dollar impact. The firm principal reviews the findings and can share the report with a practice manager or office manager to handle seat removals and vendor conversations — a practical spend view, not an enterprise procurement audit.",
+              ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
@@ -496,6 +536,21 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
             description: "Practice management, tax, payroll, document, and e-sign stack audit guide for small accounting and bookkeeping firms.",
           },
           {
+            href: "/xero-app-stack-audit",
+            title: "Xero app stack audit",
+            description: "Audit your Xero add-ons for duplicate payroll, receipt capture, reporting, and practice management tools.",
+          },
+          {
+            href: "/allied-health-software-subscription-audit",
+            title: "Allied health software subscription audit",
+            description: "Booking, telehealth, recalls, and admin subscription audit for owner-led allied health practices.",
+          },
+          {
+            href: "/marketing-agency-software-stack-audit",
+            title: "Marketing agency software stack audit",
+            description: "SEO, social scheduling, design, and reporting stack audit for owner-led marketing and creative agencies.",
+          },
+          {
             href: "/small-business-software-audit",
             title: "Small business software audit",
             description: "The owner-led SMB guide to finding and acting on software waste without a dedicated IT or finance team.",
@@ -504,21 +559,6 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
             href: "/software-subscription-audit-checklist",
             title: "Software subscription audit checklist",
             description: "A structured checklist for reviewing every subscription category in your firm stack.",
-          },
-          {
-            href: "/saas-spend-audit-tool",
-            title: "SaaS spend audit tool",
-            description: "See how StackSmart turns a billing export into categorised findings and clear next actions.",
-          },
-          {
-            href: "/professional-services-software-audit",
-            title: "Professional services software audit",
-            description: "Project management, proposals, time tracking, and CRM audit guide for boutique consultancies.",
-          },
-          {
-            href: "/xero-app-stack-audit",
-            title: "Xero app stack audit",
-            description: "Audit your Xero add-ons for duplicate payroll, receipt capture, reporting, and practice management tools.",
           },
         ]}
       />

@@ -88,6 +88,14 @@ const jsonLd = {
             text: "StackSmart works with any billing export from any industry. It focuses entirely on the business administration side — booking, billing, recalls, telehealth, and marketing subscriptions — not clinical data. It categorises recurring charges, flags duplicates and inflated tiers, and produces a prioritised action list that the practice owner or manager can act on without disrupting clinical operations.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What does the StackSmart output look like for an allied health practice?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "StackSmart produces a categorised software-spend snapshot from your billing export: every recurring admin charge grouped by function (practice management, booking, recalls, telehealth, accounting and payroll, marketing), a list of flagged attention areas including zombie seats, duplicate tool pairs, inflated telehealth tiers, and upcoming annual renewals, and a prioritised action list ranked by annual dollar impact. The practice owner reviews the findings and can share the report with a practice manager or office manager to act on — a practical spend view, not an enterprise procurement audit. No clinical records or patient data are involved.",
+          },
+        },
       ],
     },
   ],
@@ -156,7 +164,7 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
               Cut the software overlap in your allied health practice
             </h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Physiotherapy, podiatry, psychology, speech pathology, and occupational therapy practices carry more software than most owners track — booking tools, recall platforms, telehealth subscriptions, payroll add-ons, and marketing tools that accumulate across disciplines and platform migrations. A subscription audit finds what to cut, consolidate, and renegotiate without accessing clinical records or disrupting patient care.
+              Physiotherapy, podiatry, psychology, speech pathology, and occupational therapy practices carry more software than most owners track — booking tools, recall platforms, telehealth subscriptions, payroll add-ons, and marketing tools that accumulate across disciplines and platform migrations. Zombie seats, forgotten annual subscriptions, and duplicate tools where nobody stopped to ask what the practice is paying for are the patterns that add up quietly. StackSmart gives you a practical software-spend snapshot — not an enterprise procurement platform — so the practice owner or manager can see the full picture and act without touching patient records.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink
@@ -326,6 +334,34 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+      {/* What you get */}
+      <section className="border-t border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">What the audit report gives you</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            StackSmart produces a practical software-spend snapshot for owner-led allied health practices — no clinical data involved. A report the practice owner, manager, or admin can review and act on in a week.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            {[
+              ["Categorised spend", "Every recurring admin charge grouped by function — practice management, booking, recalls, telehealth, accounting and payroll, and marketing. No manual sorting required."],
+              ["Flagged attention areas", "Zombie seats, duplicate tool pairs, telehealth tiers above current use, and forgotten annual subscriptions — recurring payments where there is no active owner reviewing them."],
+              ["Prioritised action list", "Cancel, consolidate, downgrade, and renegotiate — ranked by annual dollar impact so you know where to start and what to hand to your practice manager or office manager."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-6">
+            <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Who uses and shares this report</p>
+            <p className="mt-3 text-sm leading-7 text-dark-300">
+              The practice owner or principal typically runs the initial billing review and owns the cancellation and renegotiation decisions. The completed savings report is shared with a practice manager or office manager to handle seat removals, vendor conversations, and workflow consolidations. It can be handed to an admin or finance helper as a structured view of recurring payments — a line-by-line spend snapshot before anyone goes through statements manually. The report does not include any clinical records or patient data.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Manual vs StackSmart */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -410,6 +446,10 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
                 "Does StackSmart work for allied health and multi-disciplinary clinics?",
                 "StackSmart works with any billing export from any industry. It focuses entirely on the business administration side — booking, billing, recalls, telehealth, and marketing subscriptions — not clinical data. It categorises recurring charges, flags duplicates and inflated tiers, and produces a prioritised action list that the practice owner or manager can act on without disrupting clinical operations.",
               ],
+              [
+                "What does the StackSmart output look like for an allied health practice?",
+                "StackSmart produces a categorised software-spend snapshot: every recurring admin charge grouped by function, a list of flagged attention areas (zombie seats, duplicate tool pairs, inflated telehealth tiers, and upcoming renewals), and a prioritised action list ranked by annual dollar impact. The practice owner reviews the findings and can share the report with a practice manager or office manager to act on — a practical spend view, not an enterprise audit. No clinical records or patient data are involved.",
+              ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
@@ -462,33 +502,33 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
 
       <SeoClusterLinks
         eyebrow="Related audit resources"
-        title="More on software audits for health and clinical practices"
-        description="These related pages cover the broader SMB audit guide, the checklist, sibling health practice guides, and the core StackSmart audit tool."
+        title="More on software audits for health and owner-led SMB practices"
+        description="These related pages cover the broader SMB audit guide, the checklist, and guides for other owner-led SMB verticals."
         links={[
+          {
+            href: "/accounting-firm-software-stack-audit",
+            title: "Accounting firm software stack audit",
+            description: "Practice management, tax, payroll, document, and e-sign stack audit for small accounting and bookkeeping firms.",
+          },
+          {
+            href: "/bookkeeping-firm-software-stack-audit",
+            title: "Bookkeeping firm software stack audit",
+            description: "Add-on sprawl, e-sign and receipt duplication, and tier creep in Xero, QBO, and MYOB ecosystem stacks.",
+          },
+          {
+            href: "/marketing-agency-software-stack-audit",
+            title: "Marketing agency software stack audit",
+            description: "SEO, social scheduling, design, and reporting stack audit for owner-led marketing and creative agencies.",
+          },
           {
             href: "/small-business-software-audit",
             title: "Small business software audit",
             description: "The owner-led SMB guide to finding and acting on software waste without a dedicated IT or finance team.",
           },
           {
-            href: "/clinic-software-subscription-audit",
-            title: "Clinic software subscription audit",
-            description: "Broader allied health and clinic guide covering booking, billing, recalls, and marketing subscriptions.",
-          },
-          {
-            href: "/dental-practice-software-subscription-audit",
-            title: "Dental practice software subscription audit",
-            description: "Admin and billing subscription audit guide for owner-operated dental practices.",
-          },
-          {
             href: "/software-subscription-audit-checklist",
             title: "Software subscription audit checklist",
             description: "A structured checklist for reviewing every subscription category in your practice stack.",
-          },
-          {
-            href: "/psychology-practice-software-subscription-audit",
-            title: "Psychology practice software subscription audit",
-            description: "Booking, telehealth, reminders, billing, and marketing stack audit for psychology and counselling practices.",
           },
           {
             href: "/saas-spend-audit-tool",

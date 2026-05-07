@@ -88,6 +88,14 @@ const jsonLd = {
             text: "Yes. StackSmart processes any billing export CSV and recognises the common SEO, social scheduling, design, project management, and reporting tool categories that appear in agency billing. It flags duplicates, per-client tools still active after offboarding, idle seats in high per-seat-cost platforms, and renewal risks — and produces a prioritised action list without requiring a platform rollout.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What does the StackSmart output look like for a marketing agency?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "StackSmart produces a categorised software-spend snapshot from your billing export: every recurring charge grouped by workflow function (SEO, social scheduling, design, project management, client reporting, proposals, email, and CRM), a list of flagged attention areas including client-linked orphan subscriptions, zombie seats, duplicate platform pairs, and upcoming annual renewals, and a prioritised action list ranked by annual dollar impact. The agency founder or studio owner reviews the findings and can share the report with an ops manager, finance lead, or senior account manager to execute — a practical spend view, not an enterprise procurement audit.",
+          },
+        },
       ],
     },
   ],
@@ -156,7 +164,7 @@ export default function MarketingAgencySoftwareStackAuditPage() {
               Stop the margin leak in your marketing agency tool stack
             </h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Small marketing and creative agencies accumulate software faster than almost any other business type — SEO platforms, social scheduling tools, client reporting apps, design subscriptions, project management tools, and proposal software all layer up across clients, hires, and pitches. A software stack audit finds the duplicate tools, per-client subscriptions that outlived the engagement, and high-cost platforms where a tier change recovers real margin.
+              Small marketing and creative agencies accumulate software faster than almost any other business type — SEO platforms, social scheduling tools, client reporting apps, design subscriptions, project management tools, and proposal software all layer up across clients, hires, and pitches. Forgotten client-linked subscriptions, zombie seats from departed team members, and duplicate tools where nobody has asked what the agency is actually paying for are the patterns that leak real margin. StackSmart gives you a practical software-spend snapshot — not an enterprise procurement platform — so the agency founder or studio owner can see what&apos;s billing and act in a week.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink
@@ -330,6 +338,34 @@ export default function MarketingAgencySoftwareStackAuditPage() {
         </div>
       </section>
 
+      {/* What you get */}
+      <section className="border-t border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">What the audit report gives you</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            StackSmart produces a practical software-spend snapshot for owner-led marketing and creative agencies — not an enterprise procurement platform. A report the agency founder or studio owner can review and act on in a week, or hand to an ops or finance lead to execute.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            {[
+              ["Categorised spend", "Every recurring charge grouped by workflow function — SEO, social scheduling, design, project management, client reporting, proposals, email, and CRM. No manual sorting or spreadsheet required."],
+              ["Flagged attention areas", "Client-linked subscriptions that outlived the engagement, zombie seats, duplicate platform pairs in the same category, and annual contracts approaching renewal — recurring payments with no active owner reviewing them."],
+              ["Prioritised action list", "Cancel, consolidate, downgrade, and renegotiate — ranked by annual dollar impact. SEO and design platforms carry the highest per-seat cost in an agency stack, so those come first."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-6">
+            <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Who uses and shares this report</p>
+            <p className="mt-3 text-sm leading-7 text-dark-300">
+              The agency founder or studio owner typically runs the initial billing review and owns the cancellation and renegotiation decisions. The completed savings report is shared with an ops manager, finance lead, or senior account manager to handle seat removals, client-linked subscription clean-ups, and vendor conversations. It can be used as a quarterly spend check before renewal season hits — a practical line-by-line view of what the agency is paying for before anyone goes through card statements manually.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Manual vs StackSmart */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -414,6 +450,10 @@ export default function MarketingAgencySoftwareStackAuditPage() {
                 "Can StackSmart handle a marketing agency billing export?",
                 "Yes. StackSmart processes any billing export CSV and recognises the common SEO, social scheduling, design, project management, and reporting tool categories that appear in agency billing. It flags duplicates, per-client tools still active after offboarding, idle seats in high per-seat-cost platforms, and renewal risks — and produces a prioritised action list without requiring a platform rollout.",
               ],
+              [
+                "What does the StackSmart output look like for a marketing agency?",
+                "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by workflow function, a list of flagged attention areas (client-linked orphan subscriptions, zombie seats, duplicate platform pairs, and upcoming renewals), and a prioritised action list ranked by annual dollar impact. The agency founder reviews the findings and can share the report with an ops manager, finance lead, or account manager to execute — a practical spend view, not an enterprise procurement audit.",
+              ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
@@ -466,13 +506,23 @@ export default function MarketingAgencySoftwareStackAuditPage() {
 
       <SeoClusterLinks
         eyebrow="Related audit resources"
-        title="More on software audits for agencies and studios"
-        description="These pages cover the broader agency audit guide, the SMB hub, the checklist, and the core StackSmart audit tool."
+        title="More on software audits for agencies and owner-led SMBs"
+        description="These pages cover the SMB audit hub, the checklist, and guides for other owner-led SMB verticals where software spend is unreviewed."
         links={[
           {
-            href: "/agency-software-stack-audit",
-            title: "Agency software stack audit",
-            description: "Broader audit guide for web studios, creative agencies, and consultancies managing tool spread across client work.",
+            href: "/accounting-firm-software-stack-audit",
+            title: "Accounting firm software stack audit",
+            description: "Practice management, tax, payroll, document, and e-sign stack audit for small accounting and bookkeeping firms.",
+          },
+          {
+            href: "/bookkeeping-firm-software-stack-audit",
+            title: "Bookkeeping firm software stack audit",
+            description: "Add-on sprawl, e-sign and receipt duplication, and tier creep in Xero, QBO, and MYOB ecosystem stacks.",
+          },
+          {
+            href: "/allied-health-software-subscription-audit",
+            title: "Allied health software subscription audit",
+            description: "Booking, telehealth, recalls, and admin subscription audit for owner-led allied health practices.",
           },
           {
             href: "/small-business-software-audit",
@@ -488,11 +538,6 @@ export default function MarketingAgencySoftwareStackAuditPage() {
             href: "/saas-spend-audit-tool",
             title: "SaaS spend audit tool",
             description: "See how StackSmart turns a billing export into categorised findings and clear next actions.",
-          },
-          {
-            href: "/professional-services-software-audit",
-            title: "Professional services software audit",
-            description: "Project management, proposals, time tracking, and CRM audit guide for boutique consultancies.",
           },
         ]}
       />

@@ -88,6 +88,14 @@ const jsonLd = {
             text: "Yes. StackSmart is well-suited to accounting and bookkeeping firms using Xero who want to review their own practice stack — the tools they use internally to serve clients, not client financial data. Upload a billing export from your firm's accounting or card data. StackSmart categorises every subscription, flags duplicates and inflated tiers, and produces a prioritised action list. It does not access Xero ledgers, client files, or any regulated financial data.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What does StackSmart produce from a Xero app stack audit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "StackSmart produces a categorised software-spend snapshot from your billing export: every recurring charge grouped by Xero ecosystem function (payroll, receipt capture, reporting, practice management, client portals, e-sign, and CRM), a list of flagged attention areas including migration leftovers, zombie seats, duplicate add-on pairs, and upcoming annual renewals, and a prioritised action list ranked by annual dollar impact. The output is designed for the firm owner or principal to review and share with a practice manager or office manager to action — a practical spend view, not an enterprise audit platform.",
+          },
+        },
       ],
     },
   ],
@@ -156,7 +164,7 @@ export default function XeroAppStackAuditPage() {
               Find the add-on overlap in your Xero stack
             </h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Xero&apos;s marketplace makes it easy to solve one problem at a time. After a few years, most accounting firms and Xero-heavy SMBs carry duplicate receipt capture tools, overlapping payroll add-ons, two or three reporting platforms, and practice management systems left billing after a migration. A Xero app stack audit finds what to cut, consolidate, and renegotiate — without touching client financial data.
+              Xero&apos;s marketplace makes it easy to solve one problem at a time. After a few years, most accounting firms and Xero-heavy SMBs carry duplicate receipt capture tools, overlapping payroll add-ons, two or three reporting platforms, and practice management systems left billing after a migration — zombie seats, forgotten subscriptions, and tools where nobody has asked what the firm is actually paying for. StackSmart gives you a practical software-spend snapshot from your billing export — not an enterprise procurement platform — so the owner or principal can see the full picture and act in a week without touching client financial data.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink
@@ -330,6 +338,34 @@ export default function XeroAppStackAuditPage() {
         </div>
       </section>
 
+      {/* What you get */}
+      <section className="border-t border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">What the audit report gives you</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            StackSmart produces a practical Xero stack snapshot — a categorised view of what your firm is paying for across the full add-on ecosystem, with clear next actions the owner or practice manager can act on.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            {[
+              ["Categorised spend", "Every recurring charge grouped by function — payroll, receipt capture, reporting, practice management, client portals, e-sign, proposals, and CRM. No manual sorting or spreadsheet required."],
+              ["Flagged attention areas", "Migration leftovers still billing, zombie seats, duplicate add-on pairs, and annual contracts approaching renewal — recurring payments with no active owner reviewing them."],
+              ["Prioritised action list", "Cancel, consolidate, downgrade, and renegotiate — ranked by annual dollar impact so you know where to start before the next billing cycle hits."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-6">
+            <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Who uses and shares this report</p>
+            <p className="mt-3 text-sm leading-7 text-dark-300">
+              The accounting firm owner, bookkeeping principal, or Xero-heavy SMB operator runs the initial review and owns the cancellation and renegotiation decisions. The completed savings report is shared with a practice manager or office manager to handle seat removals and vendor conversations. It can be given to a finance admin or bookkeeper as a structured view of recurring payments — useful before they go through Xero billing statements line by line.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Fit / Not fit */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -378,7 +414,11 @@ export default function XeroAppStackAuditPage() {
               ],
               [
                 "Can StackSmart audit a Xero app stack for an accounting or bookkeeping firm?",
-                "Yes. StackSmart is well-suited to accounting and bookkeeping firms using Xero who want to review their own practice stack — the tools they use internally to serve clients. Upload a billing export from your firm&apos;s bank or card data. StackSmart categorises every subscription, flags duplicates and inflated tiers, and produces a prioritised action list. It does not access Xero ledgers, client files, or any regulated financial data.",
+                "Yes. StackSmart is well-suited to accounting and bookkeeping firms using Xero who want to review their own practice stack — the tools they use internally to serve clients. Upload a billing export from your firm's bank or card data. StackSmart categorises every subscription, flags duplicates and inflated tiers, and produces a prioritised action list. It does not access Xero ledgers, client files, or any regulated financial data.",
+              ],
+              [
+                "What does StackSmart produce from a Xero app stack audit?",
+                "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by Xero ecosystem function, a list of flagged attention areas (migration leftovers, zombie seats, duplicate add-on pairs, and upcoming renewals), and a prioritised action list ranked by annual dollar impact. The output is designed for the firm owner or principal to review and share with a practice manager or office manager to action — a practical spend view, not an enterprise audit platform.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
@@ -446,9 +486,14 @@ export default function XeroAppStackAuditPage() {
             description: "Practice management, tax, document, and e-sign stack audit guide for small accounting firms.",
           },
           {
-            href: "/consulting-firm-software-stack-audit",
-            title: "Consulting firm software stack audit",
-            description: "Project management, CRM, proposals, time tracking, and AI tool audit for owner-led consultancies.",
+            href: "/allied-health-software-subscription-audit",
+            title: "Allied health software subscription audit",
+            description: "Booking, telehealth, recalls, and admin subscription audit for owner-led allied health practices.",
+          },
+          {
+            href: "/marketing-agency-software-stack-audit",
+            title: "Marketing agency software stack audit",
+            description: "SEO, social scheduling, design, and reporting stack audit for owner-led marketing and creative agencies.",
           },
           {
             href: "/small-business-software-audit",
@@ -459,11 +504,6 @@ export default function XeroAppStackAuditPage() {
             href: "/software-subscription-audit-checklist",
             title: "Software subscription audit checklist",
             description: "A structured checklist for reviewing every subscription category in your practice stack.",
-          },
-          {
-            href: "/saas-spend-audit-tool",
-            title: "SaaS spend audit tool",
-            description: "See how StackSmart turns a billing export into categorised findings and a clear action list.",
           },
         ]}
       />
