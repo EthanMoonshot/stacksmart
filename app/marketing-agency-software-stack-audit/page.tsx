@@ -7,9 +7,9 @@ import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Marketing Agency Software Stack Audit",
+  title: "Marketing Agency Software Stack Audit | Cut Subscription Waste",
   description:
-    "Marketing and creative agencies accumulate SEO tools, social scheduling apps, reporting platforms, design tools, project management, and proposal software with significant overlap. A software audit cuts the margin leak from unused and duplicate subscriptions.",
+    "Owner-led marketing, creative, and web agencies accumulate SEO tools, AI subscriptions, design platforms, social scheduling apps, and reporting tools with significant overlap. A software audit cuts the margin leak before the next surprise renewal hits.",
   path: "/marketing-agency-software-stack-audit",
 });
 
@@ -22,7 +22,7 @@ const jsonLd = {
       url: absoluteUrl("/marketing-agency-software-stack-audit"),
       name: "Marketing Agency Software Stack Audit | StackSmart",
       description:
-        "Marketing and creative agencies accumulate SEO tools, social scheduling apps, reporting platforms, design tools, and project management software with significant overlap. A software audit finds the margin leak.",
+        "Owner-led marketing, creative, and web agencies accumulate SEO tools, AI subscriptions, design platforms, social scheduling apps, and reporting tools with significant overlap. A software audit finds what to cut, consolidate, and renegotiate.",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -61,7 +61,7 @@ const jsonLd = {
           name: "What software should a marketing agency audit?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "A marketing agency software audit should cover SEO and keyword research platforms (Ahrefs, Semrush, Moz), social media scheduling tools (Buffer, Hootsuite, Sprout Social, Later), client reporting platforms (Agency Analytics, DashThis), design and creative tools (Adobe CC, Figma, Canva), project management (Monday, Asana, ClickUp), proposal and contract tools, email and outreach platforms, and CRM or client management software. Focus the review on categories where per-seat pricing is highest and where client-driven signups have accumulated beyond active use.",
+            text: "A marketing agency software audit should cover SEO and keyword research platforms (Ahrefs, Semrush, Moz), social media scheduling tools (Buffer, Hootsuite, Sprout Social, Later), client reporting platforms (Agency Analytics, DashThis), design and creative tools (Adobe CC, Figma, Canva Pro), project management (Monday, Asana, ClickUp, Notion), proposal and contract tools, email and outreach platforms, CRM, and AI tools (ChatGPT Teams, Claude Pro, Midjourney, Notion AI, Otter.ai, Fireflies). Focus the review on categories where per-seat pricing is highest and where client-driven signups and AI subscriptions have accumulated beyond active use.",
           },
         },
         {
@@ -69,7 +69,15 @@ const jsonLd = {
           name: "Why do marketing agencies carry more software than other businesses their size?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Three patterns drive most of the accumulation: client-driven signups where a tool subscribed for one engagement keeps billing after the client offboards; new hire stack preferences where each senior strategist or designer brings their preferred SEO, reporting, or design platform; and pitch evaluation trials that convert to paid plans and never get cancelled. An agency that grew from 5 to 20 people over three years can carry 60-plus active subscriptions without a central review ever having been run.",
+            text: "Three patterns drive most of the accumulation: client-driven signups where a tool subscribed for one engagement keeps billing after the client offboards; new hire stack preferences where each senior strategist, designer, or developer brings their preferred SEO, reporting, design, or AI platform; and pitch evaluation trials that convert to paid plans and never get cancelled. An agency that grew from 5 to 20 people over three years can carry 60-plus active subscriptions — including multiple AI tool tiers bought at different points in 2023 and 2024 — without a central review ever having been run.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do marketing agencies overspend on AI subscriptions?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes — AI subscription waste is now one of the fastest-growing categories in marketing agency billing exports. Agencies that adopted ChatGPT Teams, Claude Pro, Midjourney, Notion AI, Canva Pro, and meeting transcription tools (Otter.ai, Fireflies) during the 2023–2024 AI adoption wave often find multiple AI tools billing at full team tiers while active use is concentrated in two or three people. A 12-person agency paying ChatGPT Teams ($30/user/month) across all seats — while only three staff use it regularly — is spending $3,240/year on unused AI licences. The fix is the same as any ghost licence: assign a named owner to each AI subscription and right-size seat counts before the annual renewal.",
           },
         },
         {
@@ -77,7 +85,15 @@ const jsonLd = {
           name: "How do I audit marketing agency software without disrupting client delivery?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Start with billing data only — no changes to live tools during the review. Export 6 to 12 months of charges from your accounting software or credit card, categorise by workflow type, and flag duplicates and client-linked tools still billing after offboarding. Plan any consolidations between campaigns or in a quieter delivery period rather than mid-execution.",
+            text: "Start with billing data only — no changes to live tools during the review. Export 6 to 12 months of charges from your accounting software or credit card, categorise by workflow type, and flag duplicates, AI seat accumulation, and client-linked tools still billing after offboarding. Plan any consolidations between campaigns or in a quieter delivery window rather than mid-execution. The review itself takes a few hours; execution can be staged across a fortnight.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What are surprise renewal charges in a marketing agency?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Surprise renewal charges are annual subscriptions — typically SEO platforms, design tool suites, and AI tools — that auto-renew without anyone reviewing whether the seat count or tier still matches the team. They are most common in tools where the annual plan was originally chosen for the price discount, then forgotten. Common examples: Ahrefs or Semrush renewing at an agency-tier seat count from a previous headcount peak; Adobe CC team plan renewing for a designer who left; Midjourney or Canva Pro subscriptions on individual plans billing across multiple team members independently. A billing export covering the last 12 months surfaces all of them in one pass.",
           },
         },
         {
@@ -85,7 +101,7 @@ const jsonLd = {
           name: "Can StackSmart handle a marketing agency billing export?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. StackSmart processes any billing export CSV and recognises the common SEO, social scheduling, design, project management, and reporting tool categories that appear in agency billing. It flags duplicates, per-client tools still active after offboarding, idle seats in high per-seat-cost platforms, and renewal risks — and produces a prioritised action list without requiring a platform rollout.",
+            text: "Yes. StackSmart processes any billing export CSV and recognises the common SEO, social scheduling, design, AI, project management, and reporting tool categories that appear in agency billing. It flags duplicates, per-client tools still active after offboarding, idle seats in high per-seat-cost platforms, AI subscription seat accumulation, and renewal risks — and produces a prioritised action list without requiring a platform rollout.",
           },
         },
         {
@@ -93,7 +109,7 @@ const jsonLd = {
           name: "What does the StackSmart output look like for a marketing agency?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "StackSmart produces a categorised software-spend snapshot from your billing export: every recurring charge grouped by workflow function (SEO, social scheduling, design, project management, client reporting, proposals, email, and CRM), a list of flagged attention areas including client-linked orphan subscriptions, zombie seats, duplicate platform pairs, and upcoming annual renewals, and a prioritised action list ranked by annual dollar impact. The agency founder or studio owner reviews the findings and can share the report with an ops manager, finance lead, or senior account manager to execute — a practical spend view, not an enterprise procurement audit.",
+            text: "StackSmart produces a categorised software-spend snapshot from your billing export: every recurring charge grouped by workflow function (SEO, social scheduling, design, AI tools, project management, client reporting, proposals, email, and CRM), a list of flagged attention areas including client-linked orphan subscriptions, zombie seats, duplicate platform pairs, AI seat accumulation, and upcoming annual renewals, and a prioritised action list ranked by annual dollar impact. The agency founder or studio owner reviews the findings and can share the report with an ops manager, finance lead, or senior account manager to execute — a practical weekly spend view, not an enterprise procurement audit.",
           },
         },
       ],
@@ -101,48 +117,62 @@ const jsonLd = {
   ],
 };
 
-const wasteCategories = [
+const wasteSignals = [
   {
-    category: "SEO and keyword research",
-    issue:
-      "Ahrefs, Semrush, and Moz licences all active across a team where one platform covers the full workflow. Per-seat pricing at enterprise or agency tiers makes running multiple SEO platforms simultaneously one of the highest-cost forms of software waste in a marketing agency.",
-    action: "Consolidate",
+    label: "Parallel SEO platforms at agency tier",
+    detail:
+      "Ahrefs, Semrush, and Moz licences all active across the same team. Per-seat agency-tier pricing makes running multiple SEO platforms simultaneously the single highest-cost form of software waste in most marketing agency stacks. Each tool was adopted by a different strategist or for a different client vertical, and no consolidation decision was ever made.",
     color: "text-red-400",
+    tag: "Consolidate",
   },
   {
-    category: "Social media scheduling",
-    issue:
-      "Buffer, Hootsuite, Sprout Social, and Later all active — each adopted for different client accounts, different channel types, or different team leads. Significant feature overlap across all four, with most teams regularly using only one or two.",
-    action: "Consolidate",
+    label: "AI tool seat accumulation",
+    detail:
+      "ChatGPT Teams, Claude Pro, Midjourney, Notion AI, and Canva Pro all billing at full team tier while active use is concentrated in two or three people. AI subscriptions adopted across the team during 2023–2024 now often have 60–80% idle seats with no named owner and no review before the annual renewal date.",
     color: "text-red-400",
+    tag: "Right-size",
   },
   {
-    category: "Client reporting and dashboards",
-    issue:
-      "Agency Analytics, DashThis, and Google Looker Studio Pro subscriptions covering the same client reporting workflow across different account managers — each signed up for their preferred platform rather than a shared team tool.",
-    action: "Consolidate",
+    label: "Post-client social scheduling subscriptions",
+    detail:
+      "Buffer, Hootsuite, Sprout Social, and Later subscriptions originally set up for specific client accounts — each on a separate tier or channel allocation — continuing to bill long after the client offboarded. Without a client-linked subscription review, these accumulate across every offboarded account.",
+    color: "text-red-400",
+    tag: "Cancel",
+  },
+  {
+    label: "Adobe CC full suite, partial use",
+    detail:
+      "Adobe CC team plan active across a team where most members use two or three applications. The full all-apps plan is significantly more expensive than individual app licences or a scaled-down tier. Often running alongside Figma and Canva Pro without a single platform decision being made.",
     color: "text-amber-400",
+    tag: "Right-size",
   },
   {
-    category: "Design and creative",
-    issue:
-      "Adobe CC team plan, Figma Organisation, and Canva Pro all licensed across the same team. The full Adobe CC plan is expensive but rarely needed by most team members who use two or three applications, making individual app licensing or a scaled-down tier more cost-effective.",
-    action: "Right-size",
+    label: "Redundant project management tools",
+    detail:
+      "Monday, Asana, ClickUp, and Notion all active across the same team — each adopted by a different account manager, inherited from a client communication preference, or carried over from a previous structure. No firm-wide consolidation has occurred as the team and client roster grew.",
     color: "text-amber-400",
+    tag: "Consolidate",
   },
   {
-    category: "Project management",
-    issue:
-      "Monday, Asana, ClickUp, and Notion all active — adopted by different account managers, inherited from client communication preferences, or carried from a previous team structure. No firm-wide consolidation has occurred as the team grew.",
-    action: "Consolidate",
+    label: "Meeting transcription tools forgotten post-trial",
+    detail:
+      "Otter.ai or Fireflies subscribed at a team plan during a push to document client calls and creative briefs. Often forgotten after the first month, or replaced by a built-in Zoom or Teams transcript feature. $10–$19/user/month at team tier, billed annually with no active owner reviewing the renewal.",
     color: "text-orange-400",
+    tag: "Review",
   },
   {
-    category: "Proposals and contracts",
-    issue:
-      "Proposal tool (Better Proposals, Proposify) running alongside a CRM or project management platform that now includes contract templates and proposal generation — both billing at team tier for overlapping front-of-house workflow.",
-    action: "Review",
+    label: "Client reporting tools per account manager",
+    detail:
+      "Agency Analytics, DashThis, or similar reporting platforms on separate plans per account manager rather than a shared team licence. Each signed up for their preferred platform, creating duplicate reporting capability at individual-plan pricing instead of a single team plan.",
+    color: "text-orange-400",
+    tag: "Consolidate",
+  },
+  {
+    label: "Proposal tool alongside CRM proposal features",
+    detail:
+      "Better Proposals or Proposify running at team tier alongside a CRM or project management platform that now includes contract templates and proposal generation natively. Both billing for the same front-of-house workflow. A common finding in agencies where the CRM expanded its feature set after the standalone proposal tool was already in place.",
     color: "text-brand-400",
+    tag: "Consolidate",
   },
 ];
 
@@ -159,12 +189,12 @@ export default function MarketingAgencySoftwareStackAuditPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Marketing agency software audit</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Marketing agency software stack audit</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
-              Stop the margin leak in your marketing agency tool stack
+              Cut the margin leak in your agency tool stack
             </h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Small marketing and creative agencies accumulate software faster than almost any other business type — SEO platforms, social scheduling tools, client reporting apps, design subscriptions, project management tools, and proposal software all layer up across clients, hires, and pitches. Forgotten client-linked subscriptions, zombie seats from departed team members, and duplicate tools where nobody has asked what the agency is actually paying for are the patterns that leak real margin. StackSmart gives you a practical software-spend snapshot — not an enterprise procurement platform — so the agency founder or studio owner can see what&apos;s billing and act in a week.
+              Owner-led marketing, creative, and web agencies accumulate software faster than almost any other business type — SEO platforms, social scheduling tools, client reporting apps, design subscriptions, project management tools, proposal software, and now a growing layer of AI tools all compound across clients, hires, and pitches. Forgotten client-linked subscriptions, zombie seats from departed staff, surprise annual renewals on AI tools bought at full team tier, and duplicate platforms nobody consolidated are the patterns that leak real margin. StackSmart gives you a practical software-spend snapshot — not an enterprise procurement platform — so the agency founder or studio owner can see the full picture and act in a week.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink
@@ -197,8 +227,74 @@ export default function MarketingAgencySoftwareStackAuditPage() {
               How do marketing agencies audit their software stack?
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              Export 6 to 12 months of billing data from your business credit card or accounting software. Include any tools expensed by individual team members. Group recurring charges by workflow category: SEO and keyword research, social media scheduling, design and creative, project management, client reporting and analytics, proposals and contracts, email and outreach, and finance or billing. Flag categories with more than one active tool, particularly SEO platforms and social scheduling tools where per-seat pricing is highest. Identify any per-client tool subscriptions still billing after the client engagement ended. These are immediate cancellation candidates. Rank flagged items by annual cost and act on the highest-value items first.
+              Export 6 to 12 months of billing data from your business credit card or accounting software, including any tools expensed by individual team members. Group recurring charges by workflow category: SEO and keyword research, social media scheduling, design and creative, AI tools, project management, client reporting and analytics, proposals and contracts, email and outreach, and finance or billing. Flag any category with more than one active tool — SEO platforms and AI subscriptions are where per-seat cost is highest. Identify any per-client tool subscriptions still billing after the client engagement ended. Check every AI subscription seat count against the number of staff who use it at least twice a week. Flag annual contracts renewing within the next 90 days as renegotiation targets. Rank all flagged items by annual cost and act on cancellations first — they need no vendor negotiation.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Typical agency stack */}
+      <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">What a typical owner-led marketing agency stack looks like</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            Most owner-led marketing and creative agencies with 5 to 30 staff are running 15 to 25 recurring subscriptions across these categories.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              ["SEO and keyword research", "Ahrefs, Semrush, or Moz — often multiple platforms active across the team, where different strategists or departments adopted their preferred tool independently. Agency-tier pricing makes this the highest-cost duplication category in most agency stacks."],
+              ["Social media scheduling", "Buffer, Hootsuite, Sprout Social, or Later — each adopted for different client accounts or channel types. Per-client signups accumulate quickly and continue billing after clients offboard if no lifecycle review is run."],
+              ["Design and creative tools", "Adobe CC team plan, Figma, and Canva Pro frequently running in parallel across the same team. The all-apps Adobe CC plan is expensive relative to what most team members actually open. Individual Canva Pro seats often bill independently rather than under a consolidated team account."],
+              ["AI writing and generation tools", "ChatGPT Teams, Claude Pro, Midjourney, Notion AI, and Canva Pro AI features — adopted at different points across 2023 and 2024, typically at full team tiers, with active use now concentrated in a few people. Meeting transcription tools (Otter.ai, Fireflies) frequently forgotten after the initial trial period."],
+              ["Project management", "Monday, Asana, ClickUp, and Notion often all present in a growing agency — each adopted by a different account manager or inherited from client communication preferences. No consolidation decision is made as the team expands."],
+              ["Client reporting and proposals", "Agency Analytics, DashThis, or similar reporting tools on per-account-manager plans instead of a shared team licence. Proposal tools (Better Proposals, Proposify) billing alongside a CRM or project management platform that now includes proposal features natively."],
+            ].map(([cat, detail]) => (
+              <div key={cat} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{cat}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AI subscription waste callout */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-amber-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">New waste category: AI tool sprawl</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              AI subscription seat accumulation is now a standard agency audit finding
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Since 2023, most owner-led marketing agencies have added at least three AI subscriptions — and many have six or more. The problem is not the tools themselves; it is that seat counts were set when the whole team was expected to adopt them, and usage concentrated in one or two people. Surprise annual renewals arrive before anyone reviews who is actually using each tool. Common findings:
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[
+                ["ChatGPT Teams or Claude Pro", "Purchased at full team tier (8–15 seats) for agency-wide AI writing and strategy assistance. Active use typically 2–3 people after the initial onboarding period. $25–$30/user/month. On a 12-person agency, unused seats cost $2,700–$3,240/year."],
+                ["Midjourney team subscription", "Subscribed for a design or creative push, then retained even after generative image work moved to a different tool or was deprioritised. Often on an individual plan per designer rather than a consolidated team account, with billing scattered across personal and business cards."],
+                ["Meeting transcription (Otter.ai / Fireflies)", "Subscribed at a team plan during a push to document client briefs and creative reviews. Frequently replaced by a built-in Zoom or Teams transcript feature and forgotten. $10–$19/user/month at team tier, typically billed annually with no active owner reviewing the renewal."],
+                ["Notion AI and Canva Pro seat sprawl", "Notion AI enabled across a full team Notion workspace when only a few writers use it regularly. Canva Pro seats on individual plans billing independently per team member rather than under one consolidated team account — doubling or tripling the effective cost versus a single team licence."],
+              ].map(([tool, detail]) => (
+                <div key={tool} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <h3 className="text-sm font-semibold text-amber-300">{tool}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              The owner-use check: before the next quarterly billing review or before a major annual renewal hits, pull every AI subscription from your billing export and assign a named seat-owner to each. If you cannot name who uses it at least twice a week, it is a right-size or cancellation candidate. A studio owner or ops lead can work through this in under 30 minutes with a billing export — the same pass you run on client-linked social scheduling and SEO tool duplication.
+            </p>
+            <div className="mt-6">
+              <TrackLink
+                href="/saas-spend-audit-tool"
+                event="homepage_cta_clicked"
+                props={{ target: "audit_tool", location: "marketing_agency_ai_callout" }}
+                className="btn-secondary text-sm"
+              >
+                Run the audit with StackSmart
+              </TrackLink>
+            </div>
           </div>
         </div>
       </section>
@@ -208,83 +304,83 @@ export default function MarketingAgencySoftwareStackAuditPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Why marketing agencies accumulate software waste faster</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            Three patterns drive the majority of tool accumulation at owner-led marketing and creative studios.
+            Four patterns drive the majority of tool accumulation at owner-led marketing, creative, and web studios.
           </p>
-          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {[
               [
                 "Per-client tool signups that outlive the engagement",
-                "A social scheduling tool subscribed for one client's channels, an SEO platform licensed for a specific campaign, or a reporting integration kept for a client dashboard — all quietly continue billing after the client offboards. Without a client-linked subscription review, these accumulate.",
+                "A social scheduling tool subscribed for one client&apos;s channels, an SEO platform licensed for a specific campaign, or a reporting integration kept for a client dashboard — all quietly continue billing after the client offboards. Without a client-lifecycle subscription review tied to offboarding, these accumulate across every departed client.",
               ],
               [
                 "New hire stack preferences",
-                "Each senior hire or strategist brings their preferred SEO platform, reporting tool, or design application. Without a standard stack policy, the agency ends up with parallel subscriptions in the same category across team members — each paying for the same type of tool.",
+                "Each senior hire — strategist, designer, developer, or account lead — brings their preferred SEO platform, reporting tool, design application, or AI assistant. Without a standard stack policy, the agency ends up with parallel subscriptions in the same category across team members, each paying for the same workflow at separate seat rates.",
+              ],
+              [
+                "AI tool sprawl across the 2023–2024 adoption wave",
+                "Teams that moved fast on AI adoption signed up for multiple tools at full team tiers — ChatGPT, Claude, Midjourney, Notion AI, transcription tools — expecting firm-wide adoption that concentrated in two or three users. Annual renewals arrive before anyone reviews seat counts, turning an intentional investment into a recurring margin leak.",
               ],
               [
                 "Pitch evaluation trials that convert to paid",
-                "Tools trialled during capability-building periods or pitch preparation convert to paid plans when the trial ends. When the pitch is won or lost, the evaluation tools often stay on the billing run for months or years without a cancellation decision being made.",
+                "Tools trialled during capability-building periods or pitch preparation convert to paid plans when the trial ends. When the pitch is won or lost, the evaluation tools often stay on the billing run for months without a cancellation decision being made — then renew annually before anyone notices.",
               ],
             ].map(([title, copy]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
                 <h3 className="text-base font-semibold text-white">{title}</h3>
-                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300" dangerouslySetInnerHTML={{ __html: copy as string }} />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Waste by category */}
+      {/* Waste signals */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Marketing agency software waste by category</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            These are the categories where overlap and unused spend appear most consistently in marketing and creative agency billing exports.
+            These are the eight patterns StackSmart most commonly surfaces when reviewing marketing and creative agency billing exports.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {wasteCategories.map((item) => (
-              <div key={item.category} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+            {wasteSignals.map((s) => (
+              <div key={s.label} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
                 <div className="flex items-center justify-between gap-3">
-                  <h3 className={`text-sm font-semibold ${item.color}`}>{item.category}</h3>
+                  <h3 className={`text-sm font-semibold ${s.color}`}>{s.label}</h3>
                   <span className="flex-shrink-0 rounded-full border border-dark-600 bg-dark-800 px-2.5 py-0.5 text-xs text-dark-300">
-                    {item.action}
+                    {s.tag}
                   </span>
                 </div>
-                <p className="mt-3 text-sm leading-7 text-dark-300">{item.issue}</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{s.detail}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 30-day audit workflow */}
+      {/* 4-week audit workflow */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-white">How to audit a marketing agency software stack</h2>
+          <h2 className="text-2xl font-semibold text-white">4-week software audit for an owner-led marketing agency</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            This works in a quieter delivery week. No disruption to active client campaigns required.
+            Designed to run in a quieter delivery window. No dedicated IT or ops function required.
           </p>
           <div className="mt-8 space-y-6">
             {[
               [
-                "Step 1 — Pull all billing data",
-                "Export 6 to 12 months of charges from your business credit card, accounting software (Xero, MYOB, QBO), or expense management tool. Include any tools expensed by individual team members on personal cards. Cover both monthly and annual subscriptions — SEO and design platforms frequently bill annually.",
+                "Week 1 — Pull all billing data",
+                "Export 6 to 12 months of charges from your business credit card, accounting software (Xero, MYOB, QBO), or expense management tool. Include any tools expensed by individual team members on personal cards — designers, developers, and strategists frequently have individual AI or design tool subscriptions billing independently. Cover at least 12 months to capture annual subscriptions: SEO platforms, design tool suites, and AI tools all frequently bill annually, and a renewal missed in month one can cost the same as three months of vigilance.",
               ],
               [
-                "Step 2 — Group by workflow category",
-                "Separate every subscription into a workflow bucket: SEO and keyword research, social scheduling, design and creative, project management, client reporting and analytics, proposals and contracts, email and outreach, and business operations. Running this across team members' preferences quickly surfaces parallel subscriptions in the same category.",
+                "Week 2 — Map the stack and identify overlap",
+                "Group every subscription by category: SEO and keyword research, social media scheduling, design and creative, AI tools, project management, client reporting and analytics, proposals and contracts, email and outreach, and business operations. For any category with more than one active tool, identify which the team uses most heavily. For AI subscriptions specifically, note each tool&apos;s seat count alongside the number of staff who use it at least twice a week. Flag any subscription that was set up for a specific client or campaign where that client is no longer active — these are your cleanest cancellation candidates.",
               ],
               [
-                "Step 3 — Flag per-client tools still billing",
-                "Identify any subscription originally set up for a specific client or campaign where that client has since offboarded. These are the cleanest cancellation candidates — no migration or consolidation planning needed. Flag every tool tied to a client account that is no longer active.",
+                "Week 3 — Size the savings and assign seat owners",
+                "Calculate the annual cost of each redundant tool and each over-provisioned AI subscription. The owner-use check for AI tools: if you cannot name who uses a seat regularly, it is a right-size or cancellation candidate. For SEO platforms, design tool suites, and social scheduling tools, compare active user counts against the seat tier being paid for. Rank all findings by annual dollar impact. Cancellations and seat removals come first — they require no vendor negotiation. Then consolidation, downgrade, and renegotiation conversations for contracts renewing within 90 days.",
               ],
               [
-                "Step 4 — Prioritise the highest-cost overlaps",
-                "SEO platforms and design tool suites carry the highest per-seat cost in a marketing agency stack. Review these categories first. Calculate the annual cost difference between running multiple platforms versus consolidating to the one your team uses most heavily.",
-              ],
-              [
-                "Step 5 — Consolidate to a standard stack",
-                "Cancel clearly redundant and per-client tools. Establish a standard tool for each workflow category and plan migrations between client campaigns. Renegotiate annual contracts approaching renewal using current headcount and usage data as leverage.",
+                "Week 4 — Act, document, and set a weekly spend check",
+                "Cancel clearly redundant tools and remove idle seats before the next billing cycle. Right-size AI subscriptions to active user counts before the next annual renewal date. Initiate consolidation conversations where you have identified tool overlap. Contact vendors on annual contracts renewing soon — current headcount and usage data are useful leverage. Establish a recurring weekly owner-facing spend snapshot: a five-minute review of new recurring charges and upcoming renewals so the next surprise renewal is caught before it hits, not after.",
               ],
             ].map(([title, copy], i) => (
               <div key={title} className="flex gap-4 sm:gap-6">
@@ -293,7 +389,7 @@ export default function MarketingAgencySoftwareStackAuditPage() {
                 </div>
                 <div>
                   <h3 className="text-base font-semibold text-white">{title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-dark-300">{copy}</p>
+                  <p className="mt-2 text-sm leading-7 text-dark-300" dangerouslySetInnerHTML={{ __html: copy as string }} />
                 </div>
               </div>
             ))}
@@ -304,9 +400,9 @@ export default function MarketingAgencySoftwareStackAuditPage() {
       {/* Sample findings */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-white">What a marketing agency audit typically surfaces</h2>
+          <h2 className="text-2xl font-semibold text-white">Example findings from a marketing agency software audit</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            These are example findings from marketing and creative agency billing exports. Amounts vary by team size and tool mix.
+            These are illustrative example findings based on common patterns in marketing and creative agency billing data. Actual amounts vary by team size and tool mix.
           </p>
           <div className="mt-8 overflow-x-auto">
             <table className="w-full text-left text-sm">
@@ -314,17 +410,20 @@ export default function MarketingAgencySoftwareStackAuditPage() {
                 <tr className="border-b border-dark-700 text-dark-400">
                   <th className="pb-3 pr-6 font-medium">Finding</th>
                   <th className="pb-3 pr-6 font-medium">Action</th>
-                  <th className="pb-3 font-medium">Typical annual impact</th>
+                  <th className="pb-3 font-medium">Typical annual saving</th>
                 </tr>
               </thead>
               <tbody className="text-dark-300">
                 {[
                   ["Three SEO platforms active across a team of 10", "Consolidate to one", "$2,400 – $9,600/yr"],
+                  ["ChatGPT Teams at 12 seats, 3 active users", "Right-size before renewal", "$2,430 – $3,240/yr"],
                   ["Post-client social scheduling subscriptions still billing", "Cancel", "$480 – $2,400/yr"],
-                  ["Adobe CC team plan, full suite rarely accessed", "Downgrade to individual apps", "$1,200 – $4,800/yr"],
+                  ["Adobe CC full-suite team plan, partial use", "Downgrade or switch to individual apps", "$1,200 – $4,800/yr"],
+                  ["Notion AI at full team tier, 2–3 regular users", "Right-size to active seats", "$720 – $2,160/yr"],
+                  ["Otter.ai or Fireflies team plan, unused after first month", "Cancel", "$480 – $1,800/yr"],
+                  ["Client reporting tools per account manager vs team plan", "Consolidate to team licence", "$960 – $3,600/yr"],
                   ["Four project management tools across 12 team members", "Consolidate to one", "$1,800 – $7,200/yr"],
-                  ["Reporting tool per account manager instead of shared", "Consolidate to team plan", "$960 – $3,600/yr"],
-                  ["Annual proposal tool, CRM now includes proposal templates", "Cancel standalone tool", "$480 – $1,800/yr"],
+                  ["Proposal tool, CRM now includes proposal templates", "Cancel standalone tool", "$480 – $1,800/yr"],
                 ].map(([finding, action, impact]) => (
                   <tr key={finding} className="border-b border-dark-800/60">
                     <td className="py-3 pr-6 text-white">{finding}</td>
@@ -339,7 +438,7 @@ export default function MarketingAgencySoftwareStackAuditPage() {
       </section>
 
       {/* What you get */}
-      <section className="border-t border-dark-800/80 py-14 sm:py-16">
+      <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">What the audit report gives you</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
@@ -347,9 +446,9 @@ export default function MarketingAgencySoftwareStackAuditPage() {
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {[
-              ["Categorised spend", "Every recurring charge grouped by workflow function — SEO, social scheduling, design, project management, client reporting, proposals, email, and CRM. No manual sorting or spreadsheet required."],
-              ["Flagged attention areas", "Client-linked subscriptions that outlived the engagement, zombie seats, duplicate platform pairs in the same category, and annual contracts approaching renewal — recurring payments with no active owner reviewing them."],
-              ["Prioritised action list", "Cancel, consolidate, downgrade, and renegotiate — ranked by annual dollar impact. SEO and design platforms carry the highest per-seat cost in an agency stack, so those come first."],
+              ["Categorised spend", "Every recurring charge grouped by workflow function — SEO, social scheduling, design, AI tools, project management, client reporting, proposals, email, and CRM. No manual sorting or spreadsheet required."],
+              ["Flagged attention areas", "Client-linked subscriptions that outlived the engagement, zombie seats from departed staff, AI seat accumulation, duplicate platform pairs, and annual contracts approaching renewal — recurring payments with no active owner reviewing them."],
+              ["Prioritised action list", "Cancel, consolidate, right-size, and renegotiate — ranked by annual dollar impact. SEO platforms and AI subscriptions carry the highest per-seat cost in an agency stack, so those surface first."],
             ].map(([title, copy]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
                 <h3 className="text-sm font-semibold text-white">{title}</h3>
@@ -360,28 +459,30 @@ export default function MarketingAgencySoftwareStackAuditPage() {
           <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-6">
             <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Who uses and shares this report</p>
             <p className="mt-3 text-sm leading-7 text-dark-300">
-              The agency founder or studio owner typically runs the initial billing review and owns the cancellation and renegotiation decisions. The completed savings report is shared with an ops manager, finance lead, or senior account manager to handle seat removals, client-linked subscription clean-ups, and vendor conversations. It can be used as a quarterly spend check before renewal season hits — a practical line-by-line view of what the agency is paying for before anyone goes through card statements manually.
+              The agency founder or studio owner typically runs the initial billing review and owns the cancellation, right-sizing, and renegotiation decisions — including AI subscription seat reviews before surprise annual renewals hit. The completed savings report is shared with an ops manager, finance lead, or senior account manager to handle seat removals, client-linked subscription clean-ups, and vendor conversations. It can be used as a quarterly spend check before renewal season, or set up as a recurring weekly owner-facing spend snapshot — a practical line-by-line view of what the agency is paying for before anyone goes through card statements manually.
             </p>
           </div>
         </div>
       </section>
 
       {/* Manual vs StackSmart */}
-      <section className="py-14 sm:py-16">
+      <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Manual audit vs StackSmart for marketing agencies</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            Both approaches surface the same waste. StackSmart removes the categorisation step and surfaces per-client orphan tools automatically.
+            Both approaches surface the same waste. StackSmart removes the categorisation step and surfaces per-client orphan tools and AI seat accumulation automatically.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
               <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Manual audit</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
-                <li>Export from accounting tool and collect team card expenses separately</li>
+                <li>Export from accounting tool and collect individual team card expenses separately</li>
                 <li>Manually categorise each subscription by workflow type</li>
                 <li>Cross-reference per-client tool signups against active client list</li>
+                <li>Check AI subscription seat counts against active usage individually</li>
                 <li>Review each SEO and design platform for active user counts</li>
                 <li>Build a prioritised action list in a spreadsheet</li>
+                <li>Format findings into something shareable with an ops lead or partner</li>
                 <li>Repeat from scratch at the next review cycle</li>
               </ul>
             </div>
@@ -390,10 +491,10 @@ export default function MarketingAgencySoftwareStackAuditPage() {
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
                 <li>Upload a single billing export (CSV or invoice data)</li>
                 <li>Automatic categorisation across marketing agency tool categories</li>
-                <li>Flags duplicate SEO tools, idle client subscriptions, and renewal risks</li>
-                <li>Prioritised keep, cut, consolidate, and renegotiate action list</li>
+                <li>Flags duplicate SEO tools, idle client subscriptions, AI seat accumulation, and renewal risks</li>
+                <li>Prioritised cancel, consolidate, right-size, and renegotiate action list</li>
                 <li>Shareable savings report ready for studio leads or owners</li>
-                <li>Repeatable baseline for the next annual or quarterly review</li>
+                <li>Repeatable baseline for the next quarterly or annual review</li>
               </ul>
             </div>
           </div>
@@ -401,27 +502,28 @@ export default function MarketingAgencySoftwareStackAuditPage() {
       </section>
 
       {/* Fit / Not fit */}
-      <section className="border-y border-dark-800/80 py-14 sm:py-16">
+      <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Is StackSmart the right fit for your agency?</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
               <p className="text-xs uppercase tracking-[0.18em] text-emerald-400">Good fit</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-200">
-                <li>Owner-led marketing, creative, content, or digital agency with 4 to 40 staff</li>
-                <li>Multiple SEO, social scheduling, reporting, and design subscriptions accumulated across clients and hires</li>
+                <li>Owner-led marketing, creative, content, web, or digital agency with 4 to 50 staff</li>
+                <li>Multiple SEO, AI tool, social scheduling, reporting, and design subscriptions accumulated across clients and hires</li>
                 <li>No dedicated IT or ops team managing tool purchases and renewals</li>
-                <li>You want a report and action list, not a platform rollout</li>
+                <li>You want a report and action list — not a platform rollout or ongoing SaaS management system</li>
                 <li>Billing data accessible from accounting software, credit card, or expense tool</li>
+                <li>Surprise annual renewals on AI or design tools have hit without anyone reviewing seat counts first</li>
               </ul>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
               <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Not the best fit</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-400">
-                <li>Large integrated marketing group with a central procurement function</li>
+                <li>Large integrated marketing group with a central procurement or IT function</li>
                 <li>Primary need is software governance, SSO, or identity management</li>
                 <li>Fewer than six active software subscriptions</li>
-                <li>Requires automated provisioning or enterprise compliance controls</li>
+                <li>Requires automated provisioning, vendor management, or enterprise compliance controls</li>
               </ul>
             </div>
           </div>
@@ -429,30 +531,38 @@ export default function MarketingAgencySoftwareStackAuditPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-14 sm:py-16">
+      <section className="border-t border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Frequently asked questions</h2>
           <div className="mt-8 space-y-6">
             {[
               [
                 "What software should a marketing agency audit?",
-                "A marketing agency software audit should cover SEO and keyword research platforms (Ahrefs, Semrush, Moz), social media scheduling tools (Buffer, Hootsuite, Sprout Social, Later), client reporting platforms (Agency Analytics, DashThis), design and creative tools (Adobe CC, Figma, Canva), project management (Monday, Asana, ClickUp), proposal and contract tools, email and outreach platforms, and CRM or client management software. Focus the review on categories where per-seat pricing is highest and where client-driven signups have accumulated beyond active use.",
+                "A marketing agency software audit should cover SEO and keyword research platforms (Ahrefs, Semrush, Moz), social media scheduling tools (Buffer, Hootsuite, Sprout Social, Later), client reporting platforms (Agency Analytics, DashThis), design and creative tools (Adobe CC, Figma, Canva Pro), project management (Monday, Asana, ClickUp, Notion), proposal and contract tools, email and outreach platforms, CRM, and AI tools (ChatGPT Teams, Claude Pro, Midjourney, Notion AI, Otter.ai, Fireflies). Focus the review on categories where per-seat pricing is highest and where client-driven signups and AI subscriptions have accumulated beyond active use.",
               ],
               [
                 "Why do marketing agencies carry more software than other businesses their size?",
-                "Three patterns drive most of the accumulation: client-driven signups where a tool subscribed for one engagement keeps billing after the client offboards; new hire stack preferences where each senior strategist or designer brings their preferred SEO, reporting, or design platform; and pitch evaluation trials that convert to paid plans and never get cancelled. An agency that grew from 5 to 20 people over three years can carry 60-plus active subscriptions without a central review ever having been run.",
+                "Four patterns drive most of the accumulation: client-driven signups where a tool subscribed for one engagement keeps billing after the client offboards; new hire stack preferences where each senior strategist, designer, or developer brings their preferred SEO, reporting, design, or AI platform; AI tool sprawl from the 2023–2024 adoption wave where tools were bought at full team tier and usage concentrated in a few users; and pitch evaluation trials that convert to paid plans and never get cancelled. An agency that grew from 5 to 20 people over three years can carry 60-plus active subscriptions without a central review ever having been run.",
+              ],
+              [
+                "Do marketing agencies overspend on AI subscriptions?",
+                "Yes — AI subscription waste is now one of the fastest-growing categories in marketing agency billing exports. Agencies that adopted ChatGPT Teams, Claude Pro, Midjourney, Notion AI, Canva Pro, and meeting transcription tools during the 2023–2024 AI adoption wave often find multiple AI tools billing at full team tiers while active use is concentrated in two or three people. A 12-person agency paying ChatGPT Teams at $30/user/month across all seats — while only three staff use it regularly — is spending $3,240/year on unused AI licences. The fix is the same as any ghost licence: assign a named owner to each AI subscription and right-size seat counts before the annual renewal.",
               ],
               [
                 "How do I audit marketing agency software without disrupting client delivery?",
-                "Start with billing data only — no changes to live tools during the review. Export 6 to 12 months of charges from your accounting software or credit card, categorise by workflow type, and flag duplicates and client-linked tools still billing after offboarding. Plan any consolidations between campaigns or in a quieter delivery period rather than mid-execution.",
+                "Start with billing data only — no changes to live tools during the review. Export 6 to 12 months of charges from your accounting software or credit card, categorise by workflow type, and flag duplicates, AI seat accumulation, and client-linked tools still billing after offboarding. Plan any consolidations between campaigns or in a quieter delivery window rather than mid-execution. The review itself takes a few hours; execution can be staged across a fortnight without touching any live client workflow.",
+              ],
+              [
+                "What are surprise renewal charges in a marketing agency?",
+                "Surprise renewal charges are annual subscriptions — typically SEO platforms, design tool suites, and AI tools — that auto-renew without anyone reviewing whether the seat count or tier still matches the team. Common examples: Ahrefs or Semrush renewing at an agency-tier seat count from a previous headcount peak; Adobe CC team plan renewing for a designer who left; Midjourney or Canva Pro subscriptions on individual plans billing across multiple team members independently. A billing export covering the last 12 months surfaces all of them in one pass.",
               ],
               [
                 "Can StackSmart handle a marketing agency billing export?",
-                "Yes. StackSmart processes any billing export CSV and recognises the common SEO, social scheduling, design, project management, and reporting tool categories that appear in agency billing. It flags duplicates, per-client tools still active after offboarding, idle seats in high per-seat-cost platforms, and renewal risks — and produces a prioritised action list without requiring a platform rollout.",
+                "Yes. StackSmart processes any billing export CSV and recognises the common SEO, social scheduling, design, AI, project management, and reporting tool categories that appear in agency billing. It flags duplicates, per-client tools still active after offboarding, idle seats in high per-seat-cost platforms, AI subscription seat accumulation, and renewal risks — and produces a prioritised action list without requiring a platform rollout.",
               ],
               [
                 "What does the StackSmart output look like for a marketing agency?",
-                "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by workflow function, a list of flagged attention areas (client-linked orphan subscriptions, zombie seats, duplicate platform pairs, and upcoming renewals), and a prioritised action list ranked by annual dollar impact. The agency founder reviews the findings and can share the report with an ops manager, finance lead, or account manager to execute — a practical spend view, not an enterprise procurement audit.",
+                "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by workflow function (SEO, social scheduling, design, AI tools, project management, client reporting, proposals, email, and CRM), a list of flagged attention areas including client-linked orphan subscriptions, zombie seats, duplicate platform pairs, AI seat accumulation, and upcoming annual renewals, and a prioritised action list ranked by annual dollar impact. The agency founder reviews the findings and can share the report with an ops manager, finance lead, or account manager to execute — a practical spend view, not an enterprise procurement audit.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
@@ -479,7 +589,7 @@ export default function MarketingAgencySoftwareStackAuditPage() {
       {/* Bottom CTA */}
       <section className="border-t border-dark-800/80 py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-semibold text-white">Start the audit before the next SEO renewal hits</h2>
+          <h2 className="text-3xl font-semibold text-white">Start the audit before the next surprise renewal hits</h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-dark-300">
             Open the sample report to see exactly what StackSmart produces from billing data, then decide if it fits your agency&apos;s review cycle.
           </p>

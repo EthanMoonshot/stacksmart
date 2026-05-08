@@ -9,7 +9,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Xero App Stack Audit",
   description:
-    "Audit your Xero app stack for duplicate add-ons, unused seats, and inflated tiers across payroll, receipt capture, reporting, practice management, and client portal tools. StackSmart turns your billing export into a clear action list.",
+    "Audit your Xero app stack for duplicate add-ons, unused seats, surprise annual renewals, and inflated tiers across payroll, receipt capture, reporting, practice management, and client portal tools. StackSmart turns your billing export into a clear action list.",
   path: "/xero-app-stack-audit",
 });
 
@@ -22,7 +22,7 @@ const jsonLd = {
       url: absoluteUrl("/xero-app-stack-audit"),
       name: "Xero App Stack Audit | StackSmart",
       description:
-        "Audit your Xero app stack for duplicate add-ons, unused seats, and tier creep across payroll, receipt capture, reporting, practice management, and client portal tools.",
+        "Audit your Xero app stack for duplicate add-ons, unused seats, surprise annual renewals, and tier creep across payroll, receipt capture, reporting, practice management, and client portal tools.",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -61,7 +61,7 @@ const jsonLd = {
           name: "What does a Xero app stack audit cover?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "A Xero app stack audit covers every recurring subscription connected to or used alongside Xero — payroll add-ons, receipt capture and expense tools, reporting and dashboard platforms, practice management or workflow software, client portal and document tools, e-signature platforms, proposal and quoting tools, CRM, debt collection or late payment tools, and any other Xero Marketplace add-ons in use. The goal is to find duplicate add-ons covering the same function, subscriptions that have been superseded by features now included in Xero natively, seats and tiers above actual usage, and tools left active after a migration to a different platform. StackSmart does not access financial data inside Xero — it works from billing statements only.",
+            text: "A Xero app stack audit covers every recurring subscription connected to or used alongside Xero — payroll add-ons, receipt capture and expense tools, reporting and dashboard platforms, practice management or workflow software, client portal and document tools, e-signature platforms, proposal and quoting tools, CRM, debt collection or late payment tools, and any other Xero Marketplace add-ons in use. The goal is to find duplicate add-ons covering the same function, subscriptions that have been superseded by features now included in Xero natively, seats and tiers above actual usage, and tools left active after a migration. StackSmart does not access financial data inside Xero — it works from billing statements only.",
           },
         },
         {
@@ -74,10 +74,18 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          name: "How do I audit my Xero app stack without disrupting bookkeeping workflows?",
+          name: "How do I separate firm-owned Xero app costs from client pass-through billing?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Start with billing data only — export 6 to 12 months of charges from your business bank, credit card, or the Xero subscription billing itself. Do not cancel or change any live tool until you have a complete picture. Group every charge by function, identify overlapping tools, and build a prioritised action list before touching any running workflow. Cancel clearly unused subscriptions first, then plan migrations for tools that are active but duplicated.",
+            text: "Start with your billing export and tag each line as either firm-owned (the subscription belongs to the firm) or client pass-through (billed on behalf of a client and recovered). Firm-owned subscriptions are the audit target — client pass-throughs should be reviewed separately to ensure they are being recovered. The most common error is a firm-owned subscription that was set up for a specific client engagement and never cancelled after that client left — it migrated from pass-through to firm cost without anyone noticing.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What are surprise annual renewal charges in Xero app stacks?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Many Xero Marketplace add-ons offer a discounted annual plan at the time of signup. When the annual renewal hits 12 months later — often at a higher rate than the introductory price — it appears as a single large charge on a credit card statement that was not budgeted for. The app owner who set up the subscription may no longer be in the firm, and nobody else has ownership of the renewal decision. Identifying these before they hit — typically by scanning for annual charges in the billing export and flagging those renewing within 60 days — is one of the highest-value actions in a Xero stack audit.",
           },
         },
         {
@@ -93,7 +101,7 @@ const jsonLd = {
           name: "What does StackSmart produce from a Xero app stack audit?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "StackSmart produces a categorised software-spend snapshot from your billing export: every recurring charge grouped by Xero ecosystem function (payroll, receipt capture, reporting, practice management, client portals, e-sign, and CRM), a list of flagged attention areas including migration leftovers, zombie seats, duplicate add-on pairs, and upcoming annual renewals, and a prioritised action list ranked by annual dollar impact. The output is designed for the firm owner or principal to review and share with a practice manager or office manager to action — a practical spend view, not an enterprise audit platform.",
+            text: "StackSmart produces a categorised software-spend snapshot from your billing export: every recurring charge grouped by Xero ecosystem function (payroll, receipt capture, reporting, practice management, client portals, e-sign, and CRM), a list of flagged attention areas including migration leftovers, zombie seats, duplicate add-on pairs, upcoming annual renewals, and app-owner accountability gaps, and a prioritised action list ranked by annual dollar impact. The output is designed for the firm owner or principal to review and share with a practice manager or office manager to action — a practical spend view, not an enterprise audit platform.",
           },
         },
       ],
@@ -126,7 +134,7 @@ const wasteCategories = [
   {
     category: "Practice management and workflow",
     issue:
-      "Karbon, XPM (Xero Practice Manager), and IgnitionApp all installed — typically one as the legacy system, one as the current tool, and one trialled and never formally cancelled after the evaluation period ended.",
+      "Karbon, XPM (Xero Practice Manager), and Ignition all installed — typically one as the legacy system, one as the current tool, and one trialled and never formally cancelled after the evaluation period ended.",
     action: "Consolidate",
     color: "text-amber-400",
   },
@@ -143,6 +151,13 @@ const wasteCategories = [
       "DocuSign, Adobe Acrobat Sign, and Dropbox Sign all active when one platform handles all engagement letters, authority forms, and client approvals. Two are holdovers from team members who set up their own preferences.",
     action: "Consolidate",
     color: "text-orange-400",
+  },
+  {
+    category: "App-owner accountability gaps",
+    issue:
+      "Xero Marketplace add-ons often have no named internal owner after the person who set them up leaves or changes role. Annual renewal charges arrive with no one authorised to make the keep-or-cancel decision. The subscription renews by default because nobody owns the action.",
+    action: "Assign owners",
+    color: "text-brand-400",
   },
 ];
 
@@ -164,7 +179,7 @@ export default function XeroAppStackAuditPage() {
               Find the add-on overlap in your Xero stack
             </h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Xero&apos;s marketplace makes it easy to solve one problem at a time. After a few years, most accounting firms and Xero-heavy SMBs carry duplicate receipt capture tools, overlapping payroll add-ons, two or three reporting platforms, and practice management systems left billing after a migration — zombie seats, forgotten subscriptions, and tools where nobody has asked what the firm is actually paying for. StackSmart gives you a practical software-spend snapshot from your billing export — not an enterprise procurement platform — so the owner or principal can see the full picture and act in a week without touching client financial data.
+              Xero&apos;s marketplace makes it easy to solve one problem at a time. After a few years, most accounting firms and Xero-heavy SMBs carry duplicate receipt capture tools, overlapping payroll add-ons, two or three reporting platforms, and practice management systems left billing after a migration — alongside zombie seats, forgotten subscriptions, and surprise annual renewal charges where the original app owner has left the firm. StackSmart gives you a practical software-spend snapshot from your billing export — not an enterprise procurement platform — so the owner or principal can see the full picture and act in a week without touching client financial data.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink
@@ -197,7 +212,7 @@ export default function XeroAppStackAuditPage() {
               How do you audit a Xero app stack?
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              Export billing data from your firm&apos;s business bank, credit card statements, or the Xero subscription billing history covering the past 6 to 12 months. Include every recurring charge: Xero itself, all connected add-ons and integrations, standalone tools used alongside Xero, and any platforms trialled or partially migrated. Group every charge by function: payroll, receipt capture, reporting and dashboards, practice management, client portals, e-signature, proposals, CRM, and late payment tools. Flag any category carrying more than one active subscription. Check seat counts against your current team roster. Identify any native Xero features that make previously purchased add-ons redundant. Note annual subscriptions renewing within 60 days. This review works from billing data only — no access to Xero ledgers, client files, or financial records is required.
+              Export billing data from your firm&apos;s business bank, credit card statements, or the Xero subscription billing history covering the past 6 to 12 months. Clearly separate firm-owned subscriptions from any client pass-through billing before reviewing. Group every firm charge by function: payroll, receipt capture, reporting and dashboards, practice management, client portals, e-signature, proposals, CRM, and late payment tools. Flag any category carrying more than one active subscription. Check seat counts against your current team roster. Identify any native Xero features that make previously purchased add-ons redundant. Note annual subscriptions renewing within 60 days and identify who owns the renewal decision for each. This review works from billing data only — no access to Xero ledgers, client files, or financial records is required.
             </p>
           </div>
         </div>
@@ -221,8 +236,8 @@ export default function XeroAppStackAuditPage() {
                 "Xero regularly adds features that make previously purchased add-ons redundant — document capture, bank reconciliation, reporting, and payroll have all been enhanced significantly. Add-ons that solved real gaps two years ago often duplicate current Xero functionality while continuing to bill.",
               ],
               [
-                "Migration leftovers",
-                "Switching from one practice management system, payroll tool, or reporting platform to another leaves the previous system active during the transition. Both bill simultaneously. The old platform often keeps charging for months after the team has fully moved — especially if payment is managed outside the day-to-day workflow.",
+                "Migration leftovers and no-owner renewals",
+                "Switching from one practice management system, payroll tool, or reporting platform to another leaves the previous system active during the transition. The old platform often keeps charging for months after the team has fully moved. When the original app owner leaves the firm, the renewal renews on autopilot because nobody else owns the decision.",
               ],
             ].map(([title, copy]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
@@ -234,8 +249,39 @@ export default function XeroAppStackAuditPage() {
         </div>
       </section>
 
+      {/* Xero Marketplace surprise renewals callout */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-amber-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">Xero Marketplace renewal pattern</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              Surprise annual renewal charges and app-owner accountability
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Many Xero Marketplace add-ons are purchased on an annual plan at signup — often at a discounted introductory rate. When year two arrives, the charge hits a card statement as a single large debit. Two problems compound this:
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[
+                ["No named app owner", "The staff member who signed up the add-on may have changed roles or left the firm. Nobody else has ownership of the renewal — so it renews by default. The first notice is a charge on the card statement that was not budgeted."],
+                ["Internal vs client pass-through confusion", "Add-ons originally set up for a client engagement can migrate to firm-owned costs after the client leaves. If the subscription was in the firm's name, it stays on the billing run without a client to recover it from."],
+                ["Rate changes at renewal", "Introductory partner or promotional rates often do not persist to year two. The renewal comes in at standard pricing — sometimes 20–40% higher than the original subscription — without a notification that prompts a review."],
+                ["Annual charges are easy to miss quarterly", "Monthly subscriptions appear on every card statement. Annual ones appear once — and if the billing period does not align with a regular review cycle, they can renew unnoticed for two or three years."],
+              ].map(([title, detail]) => (
+                <div key={title} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <h3 className="text-sm font-semibold text-amber-300">{title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              The fix: when reviewing your Xero stack, export 12 months of billing data (not just 3 or 6) and filter for annual charges. For each annual subscription, note the next renewal date and assign a named owner who has the authority to renew, renegotiate, or cancel. Do this pass 60 days before the renewal date — that window gives you time for a renegotiation conversation with the vendor.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Waste by category */}
-      <section className="border-y border-dark-800/80 py-14 sm:py-16">
+      <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Xero app stack waste by category</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
@@ -258,7 +304,7 @@ export default function XeroAppStackAuditPage() {
       </section>
 
       {/* 30-day audit workflow */}
-      <section className="py-14 sm:py-16">
+      <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">How to audit your Xero app stack in 30 days</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
@@ -267,8 +313,8 @@ export default function XeroAppStackAuditPage() {
           <div className="mt-8 space-y-6">
             {[
               [
-                "Step 1 — Export billing data",
-                "Pull 6 to 12 months of charges from your firm&apos;s business bank and card statements. Include Xero&apos;s own subscription, all partner and marketplace add-ons, and any standalone tools used alongside the Xero ecosystem. Annual subscriptions need a full 12-month view to appear correctly.",
+                "Step 1 — Export billing data (12 months minimum)",
+                "Pull 12 months of charges from your firm's business bank and card statements. Include Xero's own subscription, all partner and marketplace add-ons, and any standalone tools used alongside the Xero ecosystem. A 12-month view is essential — annual subscriptions only appear once and will be missed on a shorter export. Separate firm-owned costs from any client pass-through billing before you begin the review.",
               ],
               [
                 "Step 2 — Group by function",
@@ -279,12 +325,12 @@ export default function XeroAppStackAuditPage() {
                 "Review what Xero now includes natively in your current subscription tier. Add-ons purchased to fill gaps 18 to 36 months ago may be redundant today. Document capture, bank feeds, basic reporting, and payroll features have all been extended significantly in recent Xero releases.",
               ],
               [
-                "Step 4 — Flag migration leftovers and inflated seats",
-                "Identify any tools billing alongside their replacement — a previous practice management system, a legacy payroll add-on, an old client portal. Check seat counts on per-user tools against your current active team roster. Mark annual contracts renewing within 60 days.",
+                "Step 4 — Flag migration leftovers, inflated seats, and renewal orphans",
+                "Identify any tools billing alongside their replacement — a previous practice management system, a legacy payroll add-on, an old client portal. Check seat counts on per-user tools against your current active team roster. For each annual subscription, note the renewal date and identify who owns the renewal decision. If no one does, assign an owner now — before the charge hits.",
               ],
               [
                 "Step 5 — Act in order of dollar impact",
-                "Cancel clearly unused tools before the next billing cycle. Plan consolidations with the team before actioning — workflow migrations need lead time. Renegotiate annual contracts before auto-renew using current usage data and seat count as leverage.",
+                "Cancel clearly unused tools before the next billing cycle. Plan consolidations with the team before actioning — workflow migrations need lead time. Renegotiate annual contracts before auto-renew using current usage data, seat count, and the fact that you are an informed buyer as leverage.",
               ],
             ].map(([title, copy], i) => (
               <div key={title} className="flex gap-4 sm:gap-6">
@@ -302,7 +348,7 @@ export default function XeroAppStackAuditPage() {
       </section>
 
       {/* Sample findings */}
-      <section className="border-y border-dark-800/80 py-14 sm:py-16">
+      <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">What a Xero app stack audit typically finds</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
@@ -324,7 +370,8 @@ export default function XeroAppStackAuditPage() {
                   ["Three reporting platforms, one in active use", "Cancel unused two", "$1,200 – $6,000/yr"],
                   ["Previous practice management system still billing post-migration", "Cancel old system", "$1,800 – $8,400/yr"],
                   ["E-sign tools duplicated across team preferences", "Standardise one", "$480 – $2,400/yr"],
-                  ["Annual Xero add-on contract, no renegotiation conversation", "Renegotiate before renewal", "$600 – $3,600/yr"],
+                  ["Annual add-on renewed at new-rate with no renegotiation conversation", "Renegotiate before next renewal", "$600 – $3,600/yr"],
+                  ["App owner departed, annual renewal hit without a review decision", "Assign owner, review and negotiate", "$480 – $2,400/yr"],
                 ].map(([finding, action, impact]) => (
                   <tr key={finding} className="border-b border-dark-800/60">
                     <td className="py-3 pr-6 text-white">{finding}</td>
@@ -348,7 +395,7 @@ export default function XeroAppStackAuditPage() {
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {[
               ["Categorised spend", "Every recurring charge grouped by function — payroll, receipt capture, reporting, practice management, client portals, e-sign, proposals, and CRM. No manual sorting or spreadsheet required."],
-              ["Flagged attention areas", "Migration leftovers still billing, zombie seats, duplicate add-on pairs, and annual contracts approaching renewal — recurring payments with no active owner reviewing them."],
+              ["Flagged attention areas", "Migration leftovers still billing, zombie seats, duplicate add-on pairs, app-owner accountability gaps, and annual contracts approaching renewal — recurring payments with no active owner reviewing them."],
               ["Prioritised action list", "Cancel, consolidate, downgrade, and renegotiate — ranked by annual dollar impact so you know where to start before the next billing cycle hits."],
             ].map(([title, copy]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
@@ -360,14 +407,14 @@ export default function XeroAppStackAuditPage() {
           <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-6">
             <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Who uses and shares this report</p>
             <p className="mt-3 text-sm leading-7 text-dark-300">
-              The accounting firm owner, bookkeeping principal, or Xero-heavy SMB operator runs the initial review and owns the cancellation and renegotiation decisions. The completed savings report is shared with a practice manager or office manager to handle seat removals and vendor conversations. It can be given to a finance admin or bookkeeper as a structured view of recurring payments — useful before they go through Xero billing statements line by line.
+              The accounting firm owner, bookkeeping principal, or Xero-heavy SMB operator runs the initial review and owns the cancellation, renegotiation, and app-owner assignment decisions. The completed savings report is shared with a practice manager or office manager to handle seat removals and vendor conversations. It can be given to a finance admin or bookkeeper as a structured view of recurring payments — useful before they go through Xero billing statements line by line. The report also surfaces which add-ons have no named owner so the principal can assign accountability before the next renewal cycle.
             </p>
           </div>
         </div>
       </section>
 
       {/* Fit / Not fit */}
-      <section className="py-14 sm:py-16">
+      <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Is StackSmart right for your firm?</h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -395,7 +442,7 @@ export default function XeroAppStackAuditPage() {
       </section>
 
       {/* FAQ */}
-      <section className="border-y border-dark-800/80 py-14 sm:py-16">
+      <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Frequently asked questions</h2>
           <div className="mt-8 space-y-6">
@@ -406,19 +453,23 @@ export default function XeroAppStackAuditPage() {
               ],
               [
                 "Why do Xero users accumulate too many app stack subscriptions?",
-                "Xero&apos;s marketplace and partner ecosystem make it easy to add functionality incrementally. Over 18 to 36 months, a firm or SMB can accumulate multiple receipt capture tools, overlapping payroll options, several reporting platforms, and practice management systems left billing after a migration. Xero also adds native features over time, making previously essential add-ons redundant.",
+                "Xero's marketplace and partner ecosystem make it easy to add functionality incrementally. Over 18 to 36 months, a firm or SMB can accumulate multiple receipt capture tools, overlapping payroll options, several reporting platforms, and practice management systems left billing after a migration. Xero also adds native features over time, making previously essential add-ons redundant.",
               ],
               [
-                "How do I audit my Xero app stack without disrupting bookkeeping workflows?",
-                "Start with billing data only — export 6 to 12 months of charges from your business bank, credit card, or Xero subscription billing. Do not cancel or change any live tool until you have a complete picture. Group every charge by function, identify overlapping tools, and build a prioritised action list before touching any running workflow.",
+                "How do I separate firm-owned Xero app costs from client pass-through billing?",
+                "Tag each subscription in your billing export as firm-owned (the subscription belongs to the firm) or client pass-through (billed on behalf of a client and recovered). Firm-owned subscriptions are the audit target. The most common error is a firm-owned subscription originally set up for a client engagement that was never cancelled after that client left — it migrated from pass-through to firm cost without anyone noticing.",
+              ],
+              [
+                "What are surprise annual renewal charges in Xero app stacks?",
+                "Many Xero Marketplace add-ons are purchased on an annual plan at a discounted introductory rate. When year two arrives, the charge hits a card as a single large debit — often at a higher rate — with no named owner reviewing whether the app is still needed. Identifying annual renewals in your billing export 60 days before they hit creates the window to renegotiate or cancel.",
               ],
               [
                 "Can StackSmart audit a Xero app stack for an accounting or bookkeeping firm?",
-                "Yes. StackSmart is well-suited to accounting and bookkeeping firms using Xero who want to review their own practice stack — the tools they use internally to serve clients. Upload a billing export from your firm's bank or card data. StackSmart categorises every subscription, flags duplicates and inflated tiers, and produces a prioritised action list. It does not access Xero ledgers, client files, or any regulated financial data.",
+                "Yes. StackSmart is well-suited to accounting and bookkeeping firms using Xero who want to review their own practice stack. Upload a billing export from your firm's bank or card data. StackSmart categorises every subscription, flags duplicates, inflated tiers, and app-owner accountability gaps, and produces a prioritised action list. It does not access Xero ledgers, client files, or any regulated financial data.",
               ],
               [
                 "What does StackSmart produce from a Xero app stack audit?",
-                "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by Xero ecosystem function, a list of flagged attention areas (migration leftovers, zombie seats, duplicate add-on pairs, and upcoming renewals), and a prioritised action list ranked by annual dollar impact. The output is designed for the firm owner or principal to review and share with a practice manager or office manager to action — a practical spend view, not an enterprise audit platform.",
+                "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by Xero ecosystem function, a list of flagged attention areas (migration leftovers, zombie seats, duplicate add-on pairs, app-owner accountability gaps, and upcoming renewals), and a prioritised action list ranked by annual dollar impact. The output is designed for the firm owner or principal to review and share with a practice manager or office manager to action — a practical spend view, not an enterprise audit platform.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
