@@ -112,6 +112,22 @@ const jsonLd = {
             text: "Savings vary widely depending on stack size, how recently the stack was last reviewed, and how many renewals have auto-processed without a decision. In stacks of 10 to 50 people, StackSmart commonly surfaces between $6,000 and $24,000 in possible annual review targets — a combination of cut candidates, over-provisioned seats, tier mismatches, and upcoming renewals worth renegotiating. These are estimates and possible targets, not guarantees. Your actual findings depend on your specific tools and billing history.",
           },
         },
+        {
+          "@type": "Question",
+          name: "Can I use a SaaS spend audit tool starting from my credit card statement?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. The starting point is wherever you have billing data. For most business owners, the fastest starting point is the last three months of business credit card statements — this surfaces the most obvious recurring charges without requiring a formal export from accounting software. From there, pull a full billing export covering 12 months to catch annual charges, add-ons billed through platform marketplaces, and tools billed through different payment methods. Upload the combined export as a CSV and StackSmart categorises, flags waste, and prioritises findings without requiring bank access or live integrations. Software bills spread across multiple cards and accounts are common — a consolidated export gives you a clear picture of total recurring spend for the first time.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How does a SaaS spend audit tool help with the finance handoff to a bookkeeper or admin?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "StackSmart produces a formatted savings report that is designed to be handed off directly to a bookkeeper, finance admin, or practice manager. The report lists specific actions — what to cancel, which seats to remove, which vendor conversations to open — with the annual dollar impact for each. The business owner makes the keep, cut, consolidate, or renegotiate decision; the bookkeeper or finance admin executes it without needing to understand the audit methodology. This is the standard workflow for owner-led SMBs where the owner identifies the problem and a finance admin handles the vendor paperwork.",
+          },
+        },
       ],
     },
   ],
@@ -155,6 +171,60 @@ export default function SaaSSpendAuditToolPage() {
             <h2 className="text-2xl font-semibold text-white">What does a SaaS spend audit tool do?</h2>
             <p className="mt-4 text-sm leading-7 text-dark-300 max-w-[65ch]">
               A SaaS spend audit tool analyzes your recurring software subscriptions to surface waste and savings. It identifies duplicate tools across teams, unused or over-provisioned seats, tier mismatches where you are paying for features nobody uses, upcoming renewals at risk of auto-renewing without review, and consolidation opportunities where multiple tools serve the same job. The output is a structured report with four clear action buckets: keep, cut, consolidate, or renegotiate.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Starting from the card statement */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Where most audits start</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">Starting from your card statement</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            Most business owners do not have a clean inventory of their software subscriptions. What they do have is a credit card statement. Before uploading a formal billing export, a 30-minute card-statement pass is the fastest way to understand the scale of the problem and find the most obvious waste.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-sm font-semibold text-white">What a card-statement pass finds</h3>
+              <ul className="mt-4 space-y-2">
+                {[
+                  "Recurring charges nobody on the team can identify",
+                  "Trials that converted to paid plans and kept billing quietly",
+                  "The same software category appearing twice on different cards",
+                  "Annual charges that auto-renewed without a review decision",
+                  "Tools billed to a personal card rather than the business account",
+                  "Subscriptions where the person who signed up has left the business",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2 text-sm leading-7 text-dark-300">
+                    <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-dark-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-sm font-semibold text-white">What it misses — why the full export matters</h3>
+              <ul className="mt-4 space-y-2">
+                {[
+                  "Annual charges that fall outside a 3-month statement window",
+                  "Software billed through invoices or marketplace accounts, not cards",
+                  "Per-seat costs where the seat count has drifted from current headcount",
+                  "Tier mismatches where the plan is active but wrong-sized for actual usage",
+                  "Upcoming renewal dates — 12 months of history needed to surface them reliably",
+                  "Duplicate tools billed on different payment methods and easy to miss separately",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2 text-sm leading-7 text-dark-300">
+                    <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-dark-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-5">
+            <p className="text-sm leading-7 text-dark-300 max-w-3xl">
+              The card-statement pass and the full billing export audit are complementary. The statement pass takes 30 minutes and gives you a short list of obvious candidates. The full export — uploaded to StackSmart as a CSV — gives you the complete picture: every recurring charge, categorised, flagged for waste, with renewal risk dates and a prioritised action list you can hand to a bookkeeper or finance admin. No bank credentials or live integrations required for either.
             </p>
           </div>
         </div>
@@ -402,6 +472,34 @@ export default function SaaSSpendAuditToolPage() {
         </div>
       </section>
 
+      {/* Finance / admin handoff */}
+      <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Finance handoff</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">Handing the findings to your bookkeeper or finance admin</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            In most owner-led businesses, the owner runs the initial audit and makes the decisions. The execution — cancellations, seat removals, vendor conversations — is usually better delegated to a bookkeeper, finance admin, or practice manager. StackSmart&apos;s report is formatted to support exactly that handoff.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+            {[
+              ["Owner reviews and decides", "Pull the billing export and run it through StackSmart. Review the flagged findings — duplicate tools, ghost seats, tier mismatches, upcoming renewals — and make the keep, cut, consolidate, or renegotiate call on each one. This is the 20-minute finance-truth step: seeing clearly what the business is actually paying for."],
+              ["Share the prioritised action list", "The StackSmart report is formatted to share directly with a bookkeeper or practice manager. They get a clear list of what to cancel, which seats to remove, and which vendor conversations to open — with the annual dollar impact on each item — without needing to understand the audit methodology."],
+              ["Finance admin or bookkeeper executes", "Cancellations and seat removals do not require the business owner once decisions are documented. A finance admin or bookkeeper can work through the action list systematically, confirming each change in the accounting software or card statements as it processes. The report creates a clean handoff record for the next review cycle."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-5">
+            <p className="text-sm leading-7 text-dark-300 max-w-3xl">
+              Accounting and bookkeeping firms also use StackSmart with SMB clients as part of advisory practice — running a software spend review as part of EOFY or a business health check. The <a href="/accounting-firm-software-stack-audit" className="text-brand-400 hover:text-brand-300 transition-colors">accounting firm audit guide</a> and <a href="/bookkeeping-firm-software-stack-audit" className="text-brand-400 hover:text-brand-300 transition-colors">bookkeeping firm audit guide</a> cover the firm&apos;s own internal stack review and the client advisory context.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Who this is for / not for */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -499,17 +597,27 @@ export default function SaaSSpendAuditToolPage() {
           {
             href: "/small-business-software-audit",
             title: "Small business software audit hub",
-            description: "The owner-led SMB guide to finding software waste — with vertical routing to 20+ industry-specific audit guides.",
+            description: "The owner-led SMB guide to finding software waste — card-statement pass, owner-use accountability, and vertical routing for 20+ business types.",
+          },
+          {
+            href: "/software-subscription-audit-checklist",
+            title: "Software subscription audit checklist",
+            description: "Use a practical 8-step checklist — including the owner-use pass — to structure the review before turning it into a report.",
+          },
+          {
+            href: "/accounting-firm-software-stack-audit",
+            title: "Accounting firm software stack audit",
+            description: "Practice management, tax, AI subscription waste, e-sign duplication, and the 30-minute card-statement pass for accounting practices.",
+          },
+          {
+            href: "/bookkeeping-firm-software-stack-audit",
+            title: "Bookkeeping firm software stack audit",
+            description: "Add-on sprawl, receipt capture duplication, software bills across multiple accounts, and AI seat right-sizing in Xero, QBO, and MYOB stacks.",
           },
           {
             href: "/how-to-audit-software-subscriptions",
             title: "How to audit software subscriptions",
             description: "See a simple sequence for turning recurring software spend into concrete action.",
-          },
-          {
-            href: "/software-subscription-audit-checklist",
-            title: "Software subscription audit checklist",
-            description: "Use a practical checklist to structure the review before turning it into a report.",
           },
           {
             href: "/saas-cost-optimization-software",

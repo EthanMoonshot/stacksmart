@@ -104,6 +104,22 @@ const jsonLd = {
             text: "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by practice function (practice management, tax, payroll, document management, e-sign, AI tools, marketing), a list of flagged attention areas (zombie seats, duplicate tool pairs, forgotten subscriptions, upcoming renewals), and a prioritised action list ranked by annual dollar impact. The report is designed for the firm owner or accounting partner to review and share with a practice manager or office manager to action — a practical spend view, not an enterprise procurement audit.",
           },
         },
+        {
+          "@type": "Question",
+          name: "How does a 30-minute card-statement pass help accounting firms find software waste?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A card-statement pass for an accounting firm involves pulling the last three months of the firm credit card and reviewing every recurring charge against two questions: does this have an active named user on the current team, and is there a duplicate tool in the same category? This pass typically flags two to four obvious issues in 30 minutes — a standalone e-sign tool running alongside a practice management platform that already includes e-sign, AI subscriptions at full team tier with one or two active users, ghost licences from departed staff, and annual contracts approaching renewal without a review decision. If two or more flags appear, a full billing export audit covering 12 months will almost certainly surface additional recoverable spend.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How should an accounting firm handle the finance truth cleanup after an audit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "After running the audit, the firm owner or managing partner makes the keep, cut, consolidate, or renegotiate decision on each flagged item. The completed savings report is then handed to a practice manager or office manager to execute — removing seats, cancelling redundant subscriptions, and opening renegotiation conversations with vendors on upcoming renewals. Accounting partners who work with SMB clients can also share the StackSmart concept as a practical advisory exercise, running a software spend review as part of an EOFY check or business health review for clients who have no clear picture of what their business is actually paying for in recurring software charges.",
+          },
+        },
       ],
     },
   ],
@@ -214,6 +230,47 @@ export default function AccountingFirmSoftwareStackAuditPage() {
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
               Export 6 to 12 months of billing data from Xero, MYOB, or your firm credit card. Group every recurring charge by category — practice management, tax preparation, payroll, proposals, document management, e-sign, CRM, AI assistants, and marketing. For any category with more than one active tool, open each platform and compare what your primary practice management or document platform now includes natively. Cross-reference user licences against your current team list and flag any idle accounts. Check AI subscription seat counts — ChatGPT Teams, Microsoft 365 Copilot, Otter.ai, and Canva Pro often bill at the original purchase quantity long after active use concentrated in two or three users. Identify contracts renewing within the next 90 days and open renegotiation conversations before auto-renewal. Prioritise by annual cost and act on cancellations first — they require no vendor discussion.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 30-minute card-statement pass for accounting firms */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/15 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Partner or principal quick-start</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              What an accounting firm owner can check in 30 minutes from the card statement
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Before running a full billing export audit, a 30-minute card-statement pass gives a practice owner or managing partner a clear view of what the firm is paying for and where the most obvious waste is. Pull the last three months of the firm credit card and work through these categories:
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                ["Practice management and tax seats", "Confirm the seat counts on your practice management and tax platforms match current team size. A firm that went from 12 to 9 staff and never updated the licence count is one of the most common findings."],
+                ["E-sign and document tools", "Check whether DocuSign or Adobe Sign appears on the statement alongside your practice management platform. If your PM tool includes native e-sign, the standalone subscription is a consolidation candidate."],
+                ["AI subscriptions — the owner-use check", "List every AI tool on the statement: ChatGPT Teams, Microsoft 365 Copilot, Otter.ai, Fireflies, Canva Pro. For each, name one partner or staff member who used it this week. If you cannot — right-size the seat count before the next billing date."],
+                ["Proposal and engagement letter tools", "Note whether Ignition or a standalone proposal tool appears alongside your practice management subscription. PM platforms that now include engagement letter generation are a frequent source of duplication."],
+                ["Ghost licences from departed staff", "Any team member who left in the last 12 months may still have an active licence on a per-seat platform. Pull the user list from each tool and compare against current headcount."],
+                ["Annual renewals within 90 days", "Search email for auto-renewal notices and note any practice management, tax, or payroll contracts renewing soon. These are renegotiation windows — act before the renewal date, not after it processes."],
+              ].map(([step, detail]) => (
+                <div key={step} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <h3 className="text-sm font-semibold text-white">{step}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              If the 30-minute pass surfaces two or more flags — which is typical for a practice that has not reviewed its stack in the past 12 months — a full billing export audit will almost certainly surface additional recoverable spend. StackSmart automates the categorisation and flags the patterns most common in accounting firm stacks, producing a report the owner or partner can share with a practice manager or finance admin to execute. See also: <a href="/bookkeeping-firm-software-stack-audit" className="text-brand-400 hover:text-brand-300 transition-colors">bookkeeping firm audit guide</a> and <a href="/software-subscription-audit-checklist" className="text-brand-400 hover:text-brand-300 transition-colors">software subscription audit checklist</a>.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "accounting_card_statement_pass" }} className="btn-primary text-sm">
+                Run the full audit
+              </TrackLink>
+              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "accounting_card_statement_pass" }} className="btn-secondary text-sm">
+                View audit checklist
+              </TrackLink>
+            </div>
           </div>
         </div>
       </section>
@@ -564,7 +621,22 @@ export default function AccountingFirmSoftwareStackAuditPage() {
           {
             href: "/bookkeeping-firm-software-stack-audit",
             title: "Bookkeeping firm software stack audit",
-            description: "Add-on sprawl, e-sign and receipt duplication, and tier creep in Xero, QBO, and MYOB ecosystem stacks.",
+            description: "Add-on sprawl, e-sign and receipt duplication, software bills across multiple accounts, and AI seat right-sizing in Xero, QBO, and MYOB stacks.",
+          },
+          {
+            href: "/saas-spend-audit-tool",
+            title: "SaaS spend audit tool",
+            description: "See how StackSmart turns a billing export into structured savings actions — including the finance handoff workflow for practices.",
+          },
+          {
+            href: "/software-subscription-audit-checklist",
+            title: "Software subscription audit checklist",
+            description: "Work through a structured 8-step checklist — including owner-use accountability pass — before turning billing data into a savings report.",
+          },
+          {
+            href: "/small-business-software-audit",
+            title: "Small business software audit",
+            description: "The owner-led SMB guide to finding and acting on software waste — including the 30-minute card-statement pass and owner-use accountability workflow.",
           },
           {
             href: "/xero-app-stack-audit",
@@ -572,24 +644,9 @@ export default function AccountingFirmSoftwareStackAuditPage() {
             description: "Audit your Xero add-ons for duplicate payroll, receipt capture, reporting, and practice management tools.",
           },
           {
-            href: "/allied-health-software-subscription-audit",
-            title: "Allied health software subscription audit",
-            description: "Booking, telehealth, recalls, and admin subscription audit for owner-led allied health practices.",
-          },
-          {
             href: "/marketing-agency-software-stack-audit",
             title: "Marketing agency software stack audit",
             description: "SEO, social scheduling, design, and reporting stack audit for owner-led marketing and creative agencies.",
-          },
-          {
-            href: "/small-business-software-audit",
-            title: "Small business software audit",
-            description: "The owner-led SMB guide to finding and acting on software waste without a dedicated IT or finance team.",
-          },
-          {
-            href: "/software-subscription-audit-checklist",
-            title: "Software subscription audit checklist",
-            description: "Work through a structured checklist before turning billing data into a savings report.",
           },
         ]}
       />

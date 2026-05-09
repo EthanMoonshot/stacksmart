@@ -98,6 +98,22 @@ const jsonLd = {
             text: "It accumulates gradually. A team member signs up for a free trial during a crunch, the trial converts to paid, and nobody notices because the charge is small and the billing email goes to the person who set it up, not the owner. Someone onboards a new hire into three tools, then the hire leaves but the seats stay active. The owner upgrades a plan to unlock a feature for a project, the project ends, but the plan never gets downgraded. None of these individually are large. Together they often represent $4,000 to $15,000 in annual waste for a 10-to-30 person business.",
           },
         },
+        {
+          "@type": "Question",
+          name: "How do I start a software audit from my credit card statement?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Pull the last three months of your business credit card statements and scroll through every recurring charge. For each one, ask: can I name a current team member who uses this regularly? Mark anything without a clear owner as a cut or right-size candidate. This 30-minute card-statement pass surfaces the most obvious waste before moving to a full billing export covering 12 months. Software bills spread across multiple cards or accounts — including personal cards and ecosystem marketplace billing — should all be reviewed together. Annual charges may not appear in a three-month statement window, which is why the full 12-month export matters for catching forgotten annual renewals.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is an owner-use pass for software subscriptions?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "An owner-use pass is a simple accountability check applied to every recurring software payment: can you name one person on your current team who uses this tool regularly and would notice if it was cancelled? If yes, the subscription has an active owner and is a keep or right-size candidate. If not, the payment has no active owner — and that is the definition of recoverable spend. Running an owner-use pass on a small business stack typically takes 30 minutes and surfaces the most obvious categories of waste: ghost seats from departed staff, trials that converted without anyone adopting them, and AI subscriptions purchased at full team tier where active use concentrated in one or two people.",
+          },
+        },
       ],
     },
   ],
@@ -195,6 +211,47 @@ export default function SmallBusinessSoftwareAuditPage() {
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
               Export 6 to 12 months of billing data from your payment processor, credit card, or accounting tool. Group every charge by category — project management, communication, file storage, design, analytics, and so on. Look for duplicates across categories, seats that no longer reflect your headcount, pricing tiers with features nobody uses, and renewals within the next 60 to 90 days. Assign each subscription a decision: keep, cut, consolidate, or renegotiate. Act on the highest-value items first.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 30-minute card-statement pass */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/15 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Card-statement pass</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              What you can find in 30 minutes from your card statement
+            </h2>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              Most business owners already have everything they need to start: the last three months of business credit card statements. Before pulling a full billing export, a 30-minute card-statement pass surfaces the most obvious waste — recurring charges with no clear owner, trials that converted quietly, and tools appearing on multiple payment methods. Software bills spread across a business card, a personal card, and platform marketplace accounts are often harder to see as a whole than owners expect.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                ["Highlight every recurring charge", "Work through the statement and mark anything that appears every month or that looks like an annual subscription. Most owners find 20 to 40 percent more tools than they expected."],
+                ["Run the owner-use check", "For each charge, ask: can I name the person on the team who uses this regularly? If not, the subscription has no active owner and is a cut or right-size candidate."],
+                ["Flag charges with no named owner", "Subscriptions where the person who signed up has left or changed roles — and nobody currently accountable for the keep decision. These are your easiest cancellations."],
+                ["Note which card or account it came from", "Software bills spread across a business card, personal card, PayPal, and Stripe invoices are easy to miss in any single monthly review. The pass is how you find them all."],
+                ["Mark annual renewals in the next 90 days", "Annual charges appear once on a statement. Note the renewal date and the amount. These are your renegotiation windows — once the auto-renewal processes, the leverage is gone for another year."],
+                ["Total what you flagged", "Add up the flagged recurring charges. Most owners who have not reviewed recently find 30 to 50 percent more in monthly software spend than they expected — before a single subscription is touched."],
+              ].map(([step, detail]) => (
+                <div key={step} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <h3 className="text-sm font-semibold text-white">{step}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              A card-statement pass gives you a short list of obvious problems. A full billing export audit — covering 6 to 12 months including annual charges — turns that list into a structured savings report with clear decisions, dollar impact per line, and a handoff-ready action plan for whoever manages vendors in your business. See the <a href="/software-subscription-audit-checklist" className="text-brand-400 hover:text-brand-300 transition-colors">software subscription audit checklist</a> for the full structured workflow.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "smb_card_statement_pass" }} className="btn-secondary text-sm">
+                Full audit checklist
+              </TrackLink>
+              <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "smb_card_statement_pass" }} className="btn-secondary text-sm">
+                About the audit tool
+              </TrackLink>
+            </div>
           </div>
         </div>
       </section>
@@ -489,6 +546,62 @@ export default function SmallBusinessSoftwareAuditPage() {
                 <li>Need automated provisioning or user lifecycle management</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Owner-use accountability */}
+      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Owner-use accountability</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">Every recurring payment needs a named owner</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            The fastest path to a clear software spend picture is an owner-use pass: for every recurring charge, someone on the team should be able to name the person responsible for that subscription and confirm it is actively used. If you cannot do that, the payment has no active owner — and that is the definition of recoverable spend.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                status: "Has an active owner",
+                color: "text-emerald-400",
+                tag: "Keep",
+                tagColor: "text-emerald-400",
+                body: "A named person on your current team actively uses this tool at least twice a week. They would notice immediately if it was cancelled. No review needed — healthy spend.",
+              },
+              {
+                status: "Owner uses it but the tier no longer fits",
+                color: "text-amber-400",
+                tag: "Right-size",
+                tagColor: "text-amber-400",
+                body: "There is a clear user, but the seat count, plan tier, or feature set no longer matches how the business actually uses the tool. Right-size before the next renewal rather than cancel.",
+              },
+              {
+                status: "Owner left or changed roles",
+                color: "text-red-400",
+                tag: "Cancel",
+                tagColor: "text-red-400",
+                body: "The person who signed up has left or moved to a different role. Nobody on the current team has taken ownership of the keep decision. This is a ghost seat — the most common and easiest waste category to act on.",
+              },
+              {
+                status: "Cannot name a current owner",
+                color: "text-red-400",
+                tag: "Cut",
+                tagColor: "text-red-400",
+                body: "Nobody on the team can confidently name who uses this, why the business pays for it, or what would break if it was cancelled. The most common first-audit surprise — and almost always a candidate for immediate cancellation.",
+              },
+            ].map((item) => (
+              <div key={item.status} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <div className="flex items-center justify-between gap-3">
+                  <p className={`text-sm font-semibold ${item.color}`}>{item.status}</p>
+                  <span className={`flex-shrink-0 rounded-full border border-dark-600 bg-dark-800 px-2.5 py-0.5 text-xs ${item.tagColor}`}>{item.tag}</span>
+                </div>
+                <p className="mt-2 text-sm leading-7 text-dark-300">{item.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-5">
+            <p className="text-sm leading-7 text-dark-300 max-w-3xl">
+              Running an owner-use pass takes under 30 minutes for most small business stacks. The output is a short, clear decision list — not a spreadsheet project. Once the pass is done, act on the cancellations first (no vendor conversation needed), then hand the renegotiation and right-sizing list to whoever manages vendor conversations in your business. Accounting and bookkeeping firms that run audits for SMB clients can use the same pass as an advisory starting point — the <a href="/accounting-firm-software-stack-audit" className="text-brand-400 hover:text-brand-300 transition-colors">accounting firm audit guide</a> and <a href="/bookkeeping-firm-software-stack-audit" className="text-brand-400 hover:text-brand-300 transition-colors">bookkeeping firm audit guide</a> cover both internal reviews and client advisory use.
+            </p>
           </div>
         </div>
       </section>

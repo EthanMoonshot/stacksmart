@@ -15,8 +15,8 @@ export const metadata: Metadata = buildMetadata({
 
 const checklist = [
   {
-    step: "List every recurring software charge from the last 12 months",
-    detail: "Pull billing data from credit cards, invoices, and expense reports. Include annual and monthly charges.",
+    step: "Pull every recurring charge — starting from the card statement",
+    detail: "Start with the last three months of your business credit card statements to surface the most obvious recurring charges. Then broaden to 12 months of billing data from invoices and expense reports to catch annual charges. Software bills spread across multiple cards or accounts should all be consolidated into one list before you begin.",
   },
   {
     step: "Group tools by workflow or category",
@@ -36,11 +36,15 @@ const checklist = [
   },
   {
     step: "Mark renewals worth reviewing before they auto-process",
-    detail: "Identify contracts renewing in the next 60 days. Flag any that should be renegotiated, downgraded, or cancelled.",
+    detail: "Identify contracts renewing in the next 60 days. Flag any that should be renegotiated, downgraded, or cancelled. Forgotten annual renewals are one of the highest-value categories — once the charge processes, the renegotiation window is gone for another year.",
   },
   {
     step: "Sort every tool into a decision bucket",
     detail: "Classify each subscription as keep, cut, consolidate, or renegotiate. This is the output that drives action.",
+  },
+  {
+    step: "Run an owner-use accountability pass",
+    detail: "For every remaining subscription, name one current team member who uses this tool regularly and would notice if it was cancelled. If you cannot name someone, the payment has no active owner — mark it as a cut or right-size candidate regardless of the tool's original purpose. Ghost seats and AI subscriptions at full team tier with low active use are the most common findings in this step.",
   },
 ];
 
@@ -102,6 +106,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Before starting, gather: a billing export from your bank, credit card, or accounting tool covering the last 12 months; seat license counts from each tool's admin panel; a rough count of active users per tool; upcoming renewal dates for annual contracts; and current headcount by department. Having these ready prevents the review from stalling midway. The most common audit delay is discovering mid-review that you do not have seat or usage data for a specific tool.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is an owner-use pass and how does it fit into a software subscription audit checklist?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "An owner-use pass is a final accountability check added to the end of the software subscription audit process: for every recurring charge on your list, name one current team member who uses that tool regularly. Any subscription without a named active owner is a cut or right-size candidate. It is most effective as the last step before finalising the decision bucket for each tool — after you have already grouped subscriptions by category, checked seat counts, and reviewed tier fit. The owner-use pass catches the waste that category analysis misses: tools where one person is technically licensed but rarely logs in, AI subscriptions purchased at full team tier with minimal active use, and trials that converted without a genuine adoption decision being made.",
           },
         },
       ],
@@ -475,14 +487,24 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
             description: "Owner-led SMB guide covering waste signals, admin-sprawl symptoms, and vertical routing for 20+ industry types.",
           },
           {
+            href: "/saas-spend-audit-tool",
+            title: "SaaS spend audit tool",
+            description: "See how StackSmart turns billing data into keep, cut, consolidate, and renegotiate actions — including the finance handoff workflow.",
+          },
+          {
+            href: "/accounting-firm-software-stack-audit",
+            title: "Accounting firm software stack audit",
+            description: "Practice management, tax, AI subscription, e-sign, and document stack audit for owner-led accounting practices.",
+          },
+          {
+            href: "/bookkeeping-firm-software-stack-audit",
+            title: "Bookkeeping firm software stack audit",
+            description: "Add-on sprawl, receipt capture duplication, AI seat accumulation, and tier creep in Xero, QBO, and MYOB ecosystem stacks.",
+          },
+          {
             href: "/how-to-audit-software-subscriptions",
             title: "How to audit software subscriptions",
             description: "Follow a simple audit sequence without turning it into a giant finance project.",
-          },
-          {
-            href: "/saas-spend-audit-tool",
-            title: "SaaS spend audit tool",
-            description: "See how StackSmart turns billing data into keep, cut, consolidate, and renegotiate actions.",
           },
           {
             href: "/saas-cost-optimization-software",

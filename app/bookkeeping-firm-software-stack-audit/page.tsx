@@ -104,6 +104,22 @@ const jsonLd = {
             text: "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by function (bookkeeping platform, receipt capture, payroll, proposals, e-sign, client portal, workflow, AI tools, and marketing), a list of flagged attention areas (zombie seats, duplicate add-on pairs, AI tool seat accumulation, forgotten subscriptions, upcoming renewals), and a prioritised action list ranked by annual dollar impact. The firm principal reviews the findings and can share the report with a practice manager or office manager to handle seat removals and vendor conversations — a practical spend view, not an enterprise procurement audit.",
           },
         },
+        {
+          "@type": "Question",
+          name: "Why do bookkeeping firms often have software bills spread across multiple accounts?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Bookkeeping firms accumulate billing across multiple payment methods for three reasons. First, principals who started as sole traders often set up early subscriptions on a personal card before the firm had a dedicated business account. Second, the Xero, QBO, and MYOB ecosystem marketplaces bill add-ons directly through the platform account, which may use different payment details than the firm credit card. Third, team members sometimes sign up for tools independently during client projects, creating subscriptions on cards not reviewed in the principal's regular billing check. A software audit should cover all payment paths — firm credit card, marketplace account billing, and any personal cards used for firm tools — to get a clear picture of what the practice is actually paying for.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How does the owner-use accountability check work for bookkeeping firm software?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "For every recurring charge in the firm's software stack, the principal should be able to name one current team member who uses that tool regularly and would notice if it was cancelled. This owner-use check catches waste that category-level review misses: AI transcription tools at team tier with only one active user, receipt capture add-ons where both the standalone tool and the platform's native feature are billing simultaneously, and workflow seats for staff who departed months ago. The check takes under 30 minutes for most bookkeeping firm stacks and produces an immediate short list of cut candidates — no vendor conversation needed, just a cancellation or seat removal before the next billing cycle.",
+          },
+        },
       ],
     },
   ],
@@ -222,12 +238,12 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
       <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-brand-400/15 bg-dark-900/80 p-6 sm:p-8">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Principal quick-start</p>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Principal quick-start — card-statement pass</p>
             <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
-              What a bookkeeping firm principal can check in the first 30 minutes
+              What a bookkeeping firm principal can find in 30 minutes from the card statement
             </h2>
             <p className="mt-4 text-sm leading-7 text-dark-300">
-              You do not need a full audit to spot the most common waste. In 30 minutes with a billing export, a principal can work through the categories that most often carry recoverable spend:
+              You do not need a full audit to spot the most common waste. Pull the last three months of the firm credit card and any marketplace billing accounts (Xero, QBO, MYOB). Software bills spread across a business card, a personal card, and ecosystem marketplace accounts are easy to miss when reviewed separately — this is the finance-truth step that tells you what the practice is actually paying for. In 30 minutes, work through the categories that most often carry recoverable spend:
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {[
@@ -296,6 +312,53 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
                 <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Software bills across multiple accounts */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Finance-truth check</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">Why bookkeeping firm software bills are spread across multiple accounts</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            One of the most common reasons bookkeeping firm principals do not have a clear picture of their software spend is that the charges are never in one place. A software audit starts by consolidating all payment paths before going line by line.
+          </p>
+          <div className="mt-8 space-y-4">
+            {[
+              {
+                source: "The firm credit card",
+                detail: "The main business card is the first place to look — but it rarely contains everything. Tools signed up under individual team members' cards, or before the firm had a dedicated business account, will not appear here.",
+                color: "text-brand-300",
+              },
+              {
+                source: "Personal card or personal accounts",
+                detail: "Many principals who started as sole traders set up early subscriptions — Xero, QBO, receipt tools, e-sign — on a personal card before the firm had a proper business account. These subscriptions are often still billing there years later.",
+                color: "text-amber-400",
+              },
+              {
+                source: "Ecosystem marketplace billing",
+                detail: "The Xero, QBO, and MYOB marketplaces bill add-ons directly through the platform account — which may use different payment details than the firm's main card. Dext, Hubdoc, and workflow add-ons adopted through the marketplace may not appear in a standard card statement search.",
+                color: "text-amber-400",
+              },
+              {
+                source: "Team member personal accounts",
+                detail: "Staff who sign up for tools during a client project or busy period may use their own login and billing details. When they leave, the subscription keeps charging — sometimes to their personal card, sometimes re-billed to the firm, sometimes just forgotten.",
+                color: "text-red-400",
+              },
+            ].map((item) => (
+              <div key={item.source} className="flex gap-4 rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <div className="flex-1">
+                  <p className={`text-sm font-semibold ${item.color}`}>{item.source}</p>
+                  <p className="mt-1.5 text-sm leading-7 text-dark-400">{item.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-5">
+            <p className="text-sm leading-7 text-dark-300 max-w-3xl">
+              A complete bookkeeping firm software audit covers all four payment paths. The easiest starting point is 12 months of the firm credit card plus a download of the Xero or QBO marketplace billing history. Together, these two sources capture the majority of recurring spend. StackSmart processes any billing export CSV — export everything into one file and upload it as a single audit run. See the <a href="/software-subscription-audit-checklist" className="text-brand-400 hover:text-brand-300 transition-colors">software subscription audit checklist</a> for the full structured workflow before uploading.
+            </p>
           </div>
         </div>
       </section>
@@ -605,7 +668,22 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
           {
             href: "/accounting-firm-software-stack-audit",
             title: "Accounting firm software stack audit",
-            description: "Practice management, tax, payroll, document, and e-sign stack audit guide for small accounting and bookkeeping firms.",
+            description: "Practice management, tax, AI subscription right-sizing, e-sign duplication, and the 30-minute card-statement pass for accounting firms.",
+          },
+          {
+            href: "/saas-spend-audit-tool",
+            title: "SaaS spend audit tool",
+            description: "How StackSmart turns a billing CSV into a structured savings report — and how to hand the findings off to a practice manager or finance admin.",
+          },
+          {
+            href: "/software-subscription-audit-checklist",
+            title: "Software subscription audit checklist",
+            description: "A structured 8-step checklist — including owner-use accountability pass — for reviewing every subscription category in your firm stack.",
+          },
+          {
+            href: "/small-business-software-audit",
+            title: "Small business software audit",
+            description: "The owner-led SMB guide — card-statement pass, owner-use accountability, and vertical routing for 20+ business types.",
           },
           {
             href: "/xero-app-stack-audit",
@@ -613,24 +691,9 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
             description: "Audit your Xero add-ons for duplicate payroll, receipt capture, reporting, and practice management tools.",
           },
           {
-            href: "/allied-health-software-subscription-audit",
-            title: "Allied health software subscription audit",
-            description: "Booking, telehealth, recalls, and admin subscription audit for owner-led allied health practices.",
-          },
-          {
             href: "/marketing-agency-software-stack-audit",
             title: "Marketing agency software stack audit",
             description: "SEO, social scheduling, design, and reporting stack audit for owner-led marketing and creative agencies.",
-          },
-          {
-            href: "/small-business-software-audit",
-            title: "Small business software audit",
-            description: "The owner-led SMB guide to finding and acting on software waste without a dedicated IT or finance team.",
-          },
-          {
-            href: "/software-subscription-audit-checklist",
-            title: "Software subscription audit checklist",
-            description: "A structured checklist for reviewing every subscription category in your firm stack.",
           },
         ]}
       />
