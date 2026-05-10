@@ -16,15 +16,19 @@ export const metadata: Metadata = buildMetadata({
 const checklist = [
   {
     step: "Pull every recurring charge — starting from the card statement",
-    detail: "Start with the last three months of your business credit card statements to surface the most obvious recurring charges. Then broaden to 12 months of billing data from invoices and expense reports to catch annual charges. Software bills spread across multiple cards or accounts should all be consolidated into one list before you begin.",
+    detail: "Start with the last three months of your business credit card statements to surface the most obvious recurring charges. Then broaden to 12 months of billing data from invoices and expense reports to catch annual charges. Software bills spread across multiple cards or accounts should all be consolidated into one list before you begin. Once you have a baseline from this review, a quarterly 30-to-45-minute pass — covering converted trials, new ghost seats, and ownerless renewals — keeps the stack clean between full annual cycles.",
   },
   {
     step: "Group tools by workflow or category",
     detail: "Cluster subscriptions into buckets like project management, communication, design, dev tools, storage, and analytics.",
   },
   {
-    step: "Flag tools with overlapping jobs",
-    detail: "Look for two or more tools serving the same function across teams — these are consolidation candidates.",
+    step: "Build a software overlap map",
+    detail: "Lay out a category-by-category grid: every workflow function on one axis, every active tool per category on the other. Any row with more than one tool is a consolidation candidate. The overlap map is distinct from a seat-count check — it surfaces tools doing the same job, even when both are actively used by different teams or departments. Most owner-led businesses find two to four overlap categories in a first-time review.",
+  },
+  {
+    step: "Identify and consolidate duplicate accounts",
+    detail: "Check whether the same tool is being paid for more than once under separate individual plans rather than one consolidated team licence. Common examples: individual Canva Pro, Notion, or meeting transcription accounts billing per person instead of under one team account. Duplicate accounts differ from overlap — it is the same platform, just paid for separately. Consolidating individual plans to a team licence typically saves 30 to 50 percent and requires no vendor negotiation. This step belongs after the overlap map — once you have confirmed each category has one tool, verify that tool is on a single consolidated account.",
   },
   {
     step: "Check whether seat counts match actual usage",
@@ -35,8 +39,12 @@ const checklist = [
     detail: "Check if you are paying for an Enterprise or Pro tier when a lower tier covers the features your team actually uses.",
   },
   {
-    step: "Mark renewals worth reviewing before they auto-process",
-    detail: "Identify contracts renewing in the next 60 days. Flag any that should be renegotiated, downgraded, or cancelled. Forgotten annual renewals are one of the highest-value categories — once the charge processes, the renegotiation window is gone for another year.",
+    step: "Mark renewals and assign a named owner to each",
+    detail: "Identify contracts renewing in the next 60 days. For each, assign a named owner — one current team member accountable for the keep, right-size, or cancel decision before the auto-renewal processes. Renewals with no named owner are ownerless renewals: the highest-risk category in most SMB stacks. Once the charge processes, the renegotiation window is gone for another year. Flag ownerless renewals as immediate priority regardless of the tool's perceived value.",
+  },
+  {
+    step: "Flag and review converted trials",
+    detail: "Identify subscriptions that moved from free trial to paid plan — especially in the last 12 months. Look for charges that first appeared on billing statements in a specific month with no preceding annual commitment. For each converted trial, confirm: was this an intentional adoption decision, or did it convert by default when the trial ended? Trials that defaulted to paid without genuine adoption are cut candidates. Trials with real active use should be reviewed for seat count and tier — they often converted to a default full-team tier that is over-provisioned for actual usage.",
   },
   {
     step: "Sort every tool into a decision bucket",
@@ -44,7 +52,7 @@ const checklist = [
   },
   {
     step: "Run an owner-use accountability pass",
-    detail: "For every remaining subscription, name one current team member who uses this tool regularly and would notice if it was cancelled. If you cannot name someone, the payment has no active owner — mark it as a cut or right-size candidate regardless of the tool's original purpose. Ghost seats and AI subscriptions at full team tier with low active use are the most common findings in this step.",
+    detail: "For every remaining subscription, name one current team member who uses this tool regularly and would notice if it was cancelled. If you cannot name someone, the payment has no active owner — mark it as a cut or right-size candidate regardless of the tool's original purpose. Ghost seats, AI subscriptions at full team tier with low active use, and ownerless renewals are the most common findings in this final pass.",
   },
 ];
 
@@ -116,6 +124,30 @@ const jsonLd = {
             text: "An owner-use pass is a final accountability check added to the end of the software subscription audit process: for every recurring charge on your list, name one current team member who uses that tool regularly. Any subscription without a named active owner is a cut or right-size candidate. It is most effective as the last step before finalising the decision bucket for each tool — after you have already grouped subscriptions by category, checked seat counts, and reviewed tier fit. The owner-use pass catches the waste that category analysis misses: tools where one person is technically licensed but rarely logs in, AI subscriptions purchased at full team tier with minimal active use, and trials that converted without a genuine adoption decision being made.",
           },
         },
+        {
+          "@type": "Question",
+          name: "How does a quarterly software subscription review work?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A quarterly software subscription review is a lighter pass than the full annual audit, designed to run in 30 to 45 minutes once you have an established baseline. It covers three things: converted trials that moved from free to paid in the last 90 days without a deliberate adoption decision; new ghost seats from staff departures since the last review; and ownerless renewals — annual contracts due in the next 60 days where no current team member is the named owner and accountable for the keep, right-size, or cancel decision. The quarterly pass does not replace the full annual review; it prevents the drift that turns a clean stack into a messy one between cycles. Owner-led businesses with 5 to 50 staff that run quarterly reviews typically catch one to three recoverable items per pass.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is duplicate account cleanup in a software audit checklist?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Duplicate account cleanup is a specific audit step that checks whether the same tool is being paid for multiple times under separate individual plans rather than once under a consolidated team licence. It differs from overlap detection, which finds two different tools doing the same job. Duplicate account examples: three individual Canva Pro subscriptions billing on separate cards instead of one team plan; individual Notion plans per team member instead of one shared workspace; individual meeting transcription accounts instead of a team plan. The fix is consolidation — identify all individual accounts for the same tool, migrate to a single team licence, and cancel the individual plans. This step belongs after the overlap map is built: once you have confirmed each category has one chosen tool, verify that tool is on a single consolidated billing account.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do you handle a converted trial in a software audit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A converted trial is a subscription that moved from a free trial to a paid plan — sometimes without a deliberate decision being made. When auditing software subscriptions, identify converted trials by looking for charges that first appeared on billing statements in a specific month with no preceding annual commitment. For each converted trial, ask two questions: was this an intentional adoption decision, or did it convert by default when the trial period ended? Is the tool actively used by at least one current team member? Converted trials that defaulted to paid without genuine adoption are immediate cut candidates. Converted trials with genuine active use should be reviewed for seat count and tier fit — they often converted to a default full-team tier that is over-provisioned for actual usage.",
+          },
+        },
       ],
     },
   ],
@@ -138,7 +170,7 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
             <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Audit checklist</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Software subscription audit checklist</h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Use this before you scroll line by line through the credit card statement. A structured checklist for owner-led businesses with 5 to 50 staff — covering everything from gathering billing data to assigning a clear decision to every subscription.
+              Use this before you scroll line by line through the credit card statement. A structured checklist for owner-led businesses with 5 to 50 staff — covering everything from gathering billing data and building an overlap map to identifying duplicate accounts, flagging converted trials, assigning ownerless renewals, and making a clear decision on every subscription.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "seo_checklist_primary" }} className="btn-primary text-sm sm:text-base">
@@ -212,7 +244,7 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-[28px] border border-dark-700 bg-dark-900/75 p-8 shadow-xl">
-            <h2 className="text-2xl font-semibold text-white">The 7-step checklist</h2>
+            <h2 className="text-2xl font-semibold text-white">The 10-step checklist</h2>
             <div className="mt-6 space-y-4">
               {checklist.map((item, idx) => (
                 <div key={item.step} className="rounded-2xl border border-dark-700 bg-dark-950/70 p-4">
@@ -240,12 +272,12 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { label: "Billing export", detail: "CSV or PDF from your bank, card, or accounting tool — 12 months of charges preferred", color: "text-brand-300" },
+              { label: "Billing export", detail: "CSV or PDF from your bank, card, or accounting tool — 12 months of charges preferred to catch annual subscriptions", color: "text-brand-300" },
               { label: "Seat license counts", detail: "How many seats you are paying for per tool — check admin settings or the most recent invoice", color: "text-brand-300" },
               { label: "Active user data", detail: "Login or activity data per tool — even a rough count of who logged in during the past 90 days helps", color: "text-brand-300" },
-              { label: "Renewal calendar", detail: "Annual contract dates — search email for subscription confirmed or auto-renewal notice messages", color: "text-amber-400" },
-              { label: "Team headcount", detail: "Current employee count per department — needed to check whether seat counts still match actual team size", color: "text-brand-300" },
-              { label: "Last audit date", detail: "When (if ever) the stack was last reviewed — anything older than 6 months is a probable waste zone", color: "text-orange-400" },
+              { label: "Renewal calendar", detail: "Annual contract dates and named renewal owners — search email for subscription confirmed or auto-renewal notices, then assign a current team member as owner for each", color: "text-amber-400" },
+              { label: "Team headcount", detail: "Current employee count per department — needed to check whether seat counts still match actual team size and to identify ghost seats from departures", color: "text-brand-300" },
+              { label: "Last audit date", detail: "When (if ever) the stack was last reviewed — anything older than 6 months is a probable waste zone; set a quarterly review reminder after the initial audit completes", color: "text-orange-400" },
             ].map((item) => (
               <div key={item.label} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
                 <p className={`text-sm font-semibold ${item.color}`}>{item.label}</p>

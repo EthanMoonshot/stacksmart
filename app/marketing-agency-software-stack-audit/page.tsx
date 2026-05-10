@@ -112,6 +112,30 @@ const jsonLd = {
             text: "StackSmart produces a categorised software-spend snapshot from your billing export: every recurring charge grouped by workflow function (SEO, social scheduling, design, AI tools, project management, client reporting, proposals, email, and CRM), a list of flagged attention areas including client-linked orphan subscriptions, zombie seats, duplicate platform pairs, AI seat accumulation, and upcoming annual renewals, and a prioritised action list ranked by annual dollar impact. The agency founder or studio owner reviews the findings and can share the report with an ops manager, finance lead, or senior account manager to execute — a practical weekly spend view, not an enterprise procurement audit.",
           },
         },
+        {
+          "@type": "Question",
+          name: "How often should a marketing agency run a software subscription review?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Quarterly is the right cadence for most owner-led marketing and creative agencies. Run a full billing export review once a year — ideally before your largest annual renewals arrive — and a lighter quarterly pass in between. The quarterly check covers three things: new subscriptions added since the last review, converted trials that moved to paid in the last 90 days without a deliberate adoption decision, and upcoming annual renewals in the next 60 days where seat counts or tiers should be reassessed before the auto-renewal processes. Agencies that skip the quarterly check typically discover two to four converted trials and at least one AI subscription that renewed at full team tier before the annual review finds them.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What are duplicate accounts in a marketing agency software stack?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Duplicate accounts occur when the same tool is paid for multiple times under separate individual plans rather than once under a consolidated team licence. Common examples in marketing agencies: three individual Canva Pro subscriptions billing on separate cards instead of one team plan; individual Notion plans billing per team member instead of a single team workspace; separate Midjourney subscriptions per designer rather than a shared team account. Duplicate accounts are distinct from duplicate tools — they are the same tool, paid for separately. The fix is consolidation: migrate to a single team licence and cancel the individual plans. Savings are typically immediate and require no vendor negotiation.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is an ownerless renewal in a marketing agency tool stack?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "An ownerless renewal is an annual subscription that auto-renews without any current team member being responsible for the keep-or-cancel decision. Most common when the person who originally signed up has left, changed roles, or is no longer involved in the relevant workflow. Common examples: an SEO platform renewal owned by a strategist who departed six months ago; an annual Adobe CC seat for a designer who left; an AI tool subscription nobody has logged into since the first month. The fix is assigning a named owner before the renewal date — confirm current usage, then make an active keep, right-size, or cancel decision with the leverage of the upcoming renewal window.",
+          },
+        },
       ],
     },
   ],
@@ -171,6 +195,13 @@ const wasteSignals = [
     label: "Proposal tool alongside CRM proposal features",
     detail:
       "Better Proposals or Proposify running at team tier alongside a CRM or project management platform that now includes contract templates and proposal generation natively. Both billing for the same front-of-house workflow. A common finding in agencies where the CRM expanded its feature set after the standalone proposal tool was already in place.",
+    color: "text-brand-400",
+    tag: "Consolidate",
+  },
+  {
+    label: "Individual accounts instead of a team licence",
+    detail:
+      "Canva Pro, Notion, Midjourney, or meeting transcription tools each billing independently on separate individual plans per team member rather than under one consolidated team account. Most platforms charge 30 to 50 percent less per seat on a team plan than on multiple individual subscriptions. A common finding when team members signed up independently before a team account was set up — often on personal cards that never got consolidated.",
     color: "text-brand-400",
     tag: "Consolidate",
   },
@@ -397,6 +428,40 @@ export default function MarketingAgencySoftwareStackAuditPage() {
         </div>
       </section>
 
+      {/* Quarterly review and overlap map */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/15 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Quarterly subscription review</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              What a quarterly agency software review covers
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Most owner-led agencies run one big audit — then let subscriptions drift again. A quarterly review keeps the stack clean between annual contracts and catches the three patterns that accumulate fastest in active agencies: converted trials, duplicate accounts, and AI seat count drift. The quarterly pass is faster than the annual review because the baseline is already set.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[
+                ["Converted trial cleanup", "Any free trial that converted to a paid plan in the past 90 days without a deliberate adoption decision. Agencies running active pitches and capability evaluations convert two to four trials per quarter. Without a quarterly check, these are caught only at the annual review — after 9 to 12 months of billing."],
+                ["Duplicate account sweep", "The same tool paid for under separate individual plans by different team members — Canva Pro, Notion, Midjourney, or meeting transcription tools each billing independently per person. A quarterly sweep finds new individual signups and consolidates them onto the existing team account before they accumulate."],
+                ["Overlap map update", "Every new hire brings tool preferences. A quarterly review checks whether any new subscription duplicates a category already covered — project management, reporting, AI writing, design — and flags it before it becomes entrenched across the team."],
+                ["Ownerless renewal assignment", "Annual contracts renewing in the next 60 days where no current team member is the named renewal owner. These are the highest-risk renewals — nobody reviews the seat count or tier before the auto-renewal processes. A quarterly review gives a 60-day window to assign ownership and make an active keep, right-size, or cancel decision."],
+              ].map(([title, detail]) => (
+                <div key={title} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              The full structured workflow is in the{" "}
+              <a href="/software-subscription-audit-checklist" className="text-brand-400 hover:text-brand-300 transition-colors">software subscription audit checklist</a>.
+              For the broader owner-led SMB guide, see the{" "}
+              <a href="/small-business-software-audit" className="text-brand-400 hover:text-brand-300 transition-colors">small business software audit hub</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Sample findings */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -563,6 +628,18 @@ export default function MarketingAgencySoftwareStackAuditPage() {
               [
                 "What does the StackSmart output look like for a marketing agency?",
                 "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by workflow function (SEO, social scheduling, design, AI tools, project management, client reporting, proposals, email, and CRM), a list of flagged attention areas including client-linked orphan subscriptions, zombie seats, duplicate platform pairs, AI seat accumulation, and upcoming annual renewals, and a prioritised action list ranked by annual dollar impact. The agency founder reviews the findings and can share the report with an ops manager, finance lead, or account manager to execute — a practical spend view, not an enterprise procurement audit.",
+              ],
+              [
+                "How often should a marketing agency run a software subscription review?",
+                "Quarterly is the right cadence for most owner-led marketing and creative agencies. Run a full billing export review once a year — ideally before your largest annual renewals arrive — and a lighter quarterly pass in between. The quarterly check covers three things: new subscriptions added since the last review, converted trials that moved to paid in the last 90 days without a deliberate adoption decision, and upcoming annual renewals in the next 60 days where seat counts or tiers should be reassessed before auto-renewal processes. Agencies that skip the quarterly check typically discover two to four converted trials and at least one AI subscription that renewed at full team tier before the annual review finds them.",
+              ],
+              [
+                "What are duplicate accounts in a marketing agency software stack?",
+                "Duplicate accounts occur when the same tool is paid for multiple times under separate individual plans rather than once under a consolidated team licence. Common examples: three individual Canva Pro subscriptions billing on separate cards instead of one team plan; individual Notion plans per team member instead of a single team workspace; separate Midjourney subscriptions per designer. The fix is consolidation — migrate to a single team licence and cancel the individual plans. Savings are typically immediate and require no vendor negotiation.",
+              ],
+              [
+                "What is an ownerless renewal in a marketing agency tool stack?",
+                "An ownerless renewal is an annual subscription that auto-renews without any current team member being responsible for the keep-or-cancel decision. Most common when the person who originally signed up has left or changed roles. Examples: an SEO platform renewal owned by a strategist who departed six months ago; an annual Adobe CC seat for a designer who left; an AI tool nobody has logged into since the first month. The fix: assign a named owner before the renewal date, confirm current usage, then make an active keep, right-size, or cancel decision.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">

@@ -114,6 +114,30 @@ const jsonLd = {
             text: "An owner-use pass is a simple accountability check applied to every recurring software payment: can you name one person on your current team who uses this tool regularly and would notice if it was cancelled? If yes, the subscription has an active owner and is a keep or right-size candidate. If not, the payment has no active owner — and that is the definition of recoverable spend. Running an owner-use pass on a small business stack typically takes 30 minutes and surfaces the most obvious categories of waste: ghost seats from departed staff, trials that converted without anyone adopting them, and AI subscriptions purchased at full team tier where active use concentrated in one or two people.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What is a software overlap map for a small business?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A software overlap map is a category-by-category grid that shows every workflow function where your business has more than one active tool — communication, project management, file storage, design, analytics, and so on. For most owner-led businesses with 5 to 50 staff, an overlap map takes 15 to 20 minutes to build from a billing export and immediately reveals where consolidation decisions have never been made. Overlap is common in businesses that have grown from 5 to 20 people without a standard tool policy: different team members adopted different tools for the same job, and nobody compared what each team was running.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is duplicate account cleanup in a small business software audit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Duplicate account cleanup identifies tools being paid for multiple times under separate individual plans rather than once under a consolidated team licence. Common examples: individual Canva Pro subscriptions billing on separate cards for each team member instead of one team plan; separate Notion plans per person instead of a shared workspace; individual meeting transcription accounts instead of one team account. Duplicate accounts differ from duplicate tools — it is the same platform, just paid for separately. Consolidating to a team licence typically saves 30 to 50 percent versus multiple individual plans and requires no vendor negotiation.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do you run a quarterly software review for a small business?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A quarterly software review for a small business is a lighter pass than the full annual audit — around 30 to 45 minutes once you have a baseline. It covers three things: converted trials that moved from free to paid in the last 90 days, any ghost seats from staff departures since the last review, and annual contracts renewing in the next 60 days that need a seat count or tier check before auto-renewal. The quarterly pass does not replace the annual review; it prevents the drift between cycles. Owner-led businesses with 5 to 50 staff that run quarterly checks typically catch one to three recoverable items per pass — small individually, meaningful over the course of a year.",
+          },
+        },
       ],
     },
   ],
@@ -340,6 +364,46 @@ export default function SmallBusinessSoftwareAuditPage() {
         </div>
       </section>
 
+      {/* Overlap map and duplicate account cleanup */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">For owner-operators: 5–50 staff</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">Overlap mapping and duplicate account cleanup</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            Two of the fastest wins in an owner-led SMB audit — neither requires vendor negotiation. Both are common in businesses that have grown from 5 to 20 staff without a standard tool policy.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Overlap map</p>
+              <h3 className="mt-3 text-base font-semibold text-white">Same job, different tools</h3>
+              <p className="mt-2 text-sm leading-7 text-dark-300">
+                An overlap map lists every workflow category where you have more than one active subscription. For most owner-led businesses with 5 to 50 staff, the most common overlaps are project management, file storage, and design. Building the map takes 15 minutes from a billing export and immediately shows where a consolidation decision has not been made.
+              </p>
+              <p className="mt-3 text-sm leading-7 text-dark-300">
+                Overlap is common in businesses where different team members adopted different tools for the same job — ops uses one platform, sales uses another — with no single owner pushing for consolidation. The map makes the cost of inaction visible.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Duplicate account cleanup</p>
+              <h3 className="mt-3 text-base font-semibold text-white">Same tool, separate individual plans</h3>
+              <p className="mt-2 text-sm leading-7 text-dark-300">
+                Duplicate accounts occur when the same tool is paid for multiple times under individual plans per team member rather than one consolidated team licence. Common examples: individual Canva Pro subscriptions per designer, separate Notion plans per staff member, individual meeting transcription accounts. Most platforms offer a team plan at 30 to 50 percent less per seat.
+              </p>
+              <p className="mt-3 text-sm leading-7 text-dark-300">
+                Unlike tool overlap, duplicate account cleanup requires no migration decision. It is the same tool, just consolidated billing. One team account replaces multiple individual accounts. The savings are immediate.
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-5">
+            <p className="text-sm font-medium text-white">Quarterly review cadence for owner-led SMBs</p>
+            <p className="mt-2 text-sm leading-7 text-dark-300 max-w-3xl">
+              Once you have a baseline from the initial audit, a quarterly 30-minute pass covers three things: converted trials (free plans that moved to paid in the last 90 days), new ghost seats from staff departures, and ownerless renewals in the next 60 days. For businesses with 5 to 50 staff without a dedicated ops function, this is the lightest sustainable review cycle. See the{" "}
+              <a href="/software-subscription-audit-checklist" className="text-brand-400 hover:text-brand-300 transition-colors">software subscription audit checklist</a> for the full structured workflow.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 30-day workflow */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -354,16 +418,16 @@ export default function SmallBusinessSoftwareAuditPage() {
                 "Export transactions from your accounting tool, payment processor, or business credit card. Cover at least 6 months so annual charges appear. The output should be a list of every recurring software charge with vendor name, amount, and billing frequency.",
               ],
               [
-                "Week 2 — Categorise and flag",
-                "Group every subscription by function: communication, project management, file storage, design, analytics, finance, HR, marketing. Mark any category with more than one active tool. Flag seats that exceed your current headcount or where active usage looks low.",
+                "Week 2 — Categorise, map overlaps, and flag duplicate accounts",
+                "Group every subscription by function: communication, project management, file storage, design, analytics, finance, HR, marketing. Build an overlap map — a list of every category where you have more than one active tool. Separately, check each tool for duplicate accounts: the same platform being paid for under individual plans by multiple team members instead of one consolidated team licence. These two passes together typically surface 70 to 80 percent of recoverable spend for a 5-to-50 person owner-led business.",
               ],
               [
-                "Week 3 — Size and prioritise",
-                "Calculate the annual cost of each flagged item. Rank by dollar impact and ease of action. Start with cancellations — they require no negotiation. Then move to consolidations, downgrades, and renegotiations.",
+                "Week 3 — Size, prioritise, and assign renewal owners",
+                "Calculate the annual cost of each flagged item: duplicate tools, duplicate accounts, ghost seats, and converted trials. Rank by dollar impact and ease of action. Start with cancellations — they require no vendor negotiation. For annual contracts renewing within 90 days, assign a named owner from the current team: someone accountable for the keep, right-size, or cancel decision. Ownerless renewals that process without this review are one of the most common waste categories in owner-led SMBs.",
               ],
               [
-                "Week 4 — Act and document",
-                "Cancel unused subscriptions before the next billing cycle. Initiate consolidation where you identified overlaps. Open renegotiation conversations on contracts renewing within 90 days. Document each decision so the next review has a clean baseline.",
+                "Week 4 — Act, document, and set a quarterly review cadence",
+                "Cancel unused subscriptions before the next billing cycle. Consolidate duplicate tools and duplicate accounts. Initiate renegotiation conversations on contracts renewing within 90 days. Document each decision so the next review has a clean baseline. Then set a quarterly review reminder — a 30-to-45-minute pass to catch converted trials, new ghost seats, and ownerless renewals before they accumulate into the next annual audit.",
               ],
             ].map(([title, copy], i) => (
               <div key={title} className="flex gap-4 sm:gap-6">
@@ -635,6 +699,18 @@ export default function SmallBusinessSoftwareAuditPage() {
               [
                 "How does software sprawl happen in a small business?",
                 "It accumulates gradually. A team member signs up for a free trial during a crunch, the trial converts to paid, and nobody notices because the charge is small and the billing email goes to the person who set it up, not the owner. Someone onboards a new hire into three tools, then the hire leaves but the seats stay active. The owner upgrades a plan to unlock a feature for a project, the project ends, but the plan never gets downgraded. None of these individually are large. Together they often represent $4,000 to $15,000 in annual waste for a 10-to-30 person business.",
+              ],
+              [
+                "What is a software overlap map for a small business?",
+                "A software overlap map is a category-by-category grid that shows every workflow function where your business has more than one active tool. For most owner-led businesses with 5 to 50 staff, an overlap map takes 15 to 20 minutes to build from a billing export and immediately reveals where consolidation decisions have not been made. Overlap is common in businesses that have grown without a standard tool policy — different team members adopted different tools for the same job and nobody compared what each team was running.",
+              ],
+              [
+                "What is duplicate account cleanup in a small business software audit?",
+                "Duplicate account cleanup identifies tools being paid for multiple times under separate individual plans rather than once under a consolidated team licence. Common examples: individual Canva Pro subscriptions on separate cards per team member instead of one team plan; separate Notion plans per person instead of a shared workspace. Consolidating to a team licence typically saves 30 to 50 percent versus multiple individual plans and requires no vendor negotiation.",
+              ],
+              [
+                "How do you run a quarterly software review for a small business?",
+                "A quarterly software review covers three things: converted trials that moved from free to paid in the last 90 days, any ghost seats from staff departures, and annual contracts renewing in the next 60 days needing a review before auto-renewal. Once you have a baseline from the initial audit, the quarterly pass takes 30 to 45 minutes. Owner-led businesses with 5 to 50 staff that run quarterly reviews typically catch one to three recoverable items per pass — small individually but meaningful over the course of a year.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
