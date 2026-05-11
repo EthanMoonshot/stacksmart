@@ -9,7 +9,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Accounting Firm Software Stack Audit | Cut Subscription Waste in Your Practice",
   description:
-    "Small accounting and bookkeeping firms carry practice management, tax, payroll, proposal, document, e-sign, CRM, AI assistant, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate — before the next renewal cycle.",
+    "Small accounting and bookkeeping firms carry practice management, tax, payroll, proposal, document, e-sign, CRM, AI assistant, and marketing tools. A software audit builds an overlap map, renewal calendar, and cut list before the next renewal cycle.",
   path: "/accounting-firm-software-stack-audit",
 });
 
@@ -118,6 +118,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "After running the audit, the firm owner or managing partner makes the keep, cut, consolidate, or renegotiate decision on each flagged item. The completed savings report is then handed to a practice manager or office manager to execute — removing seats, cancelling redundant subscriptions, and opening renegotiation conversations with vendors on upcoming renewals. Accounting partners who work with SMB clients can also share the StackSmart concept as a practical advisory exercise, running a software spend review as part of an EOFY check or business health review for clients who have no clear picture of what their business is actually paying for in recurring software charges.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How should accounting firm owners use a software inventory spreadsheet?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Use the spreadsheet as a working overlap map, not a procurement database. List every recurring software charge, the category it serves, the named owner, current users, payment source, renewal date, and whether another tool already does the same job. In accounting firms the useful columns are practice management, tax, payroll, receipt capture, proposals, documents, e-sign, reporting, AI assistants, and marketing. The owner or practice manager can then ask the practical question: which app can we cancel before the next renewal without disrupting client work?",
           },
         },
       ],
@@ -569,6 +577,37 @@ export default function AccountingFirmSoftwareStackAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Software inventory and renewal ownership */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Inventory before opinions</p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Build the overlap map before asking partners what to cut</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The most useful first artifact for a 5–50 staff accounting practice is a simple software inventory spreadsheet. StackSmart turns billing exports into that map: every recurring charge, the function it serves, the payment source, a named owner, current user count, and the next renewal date. That makes the conversation practical: not “do we like this app?”, but “which app can we cancel, right-size, or move to the platform we already pay for?”
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">CPA / small-practice red flags to add to the sheet</h3>
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                {[
+                  ["Seven connected apps", "QuickBooks or Xero add-ons causing duplicate transactions, buried fees, and wrong mapping cleanup at month end."],
+                  ["No renewal owner", "Annual tax, proposal, document, AI, or reporting tools renewing because nobody owns the keep/cancel decision."],
+                  ["Two tools, one workflow", "Receipt capture, e-sign, reporting, or proposal tools overlapping with features already included in practice management."],
+                  ["Staff changed, seats stayed", "Practice management, AI assistants, and workflow seats still active for departed or inactive users."],
+                ].map(([title, detail]) => (
+                  <div key={title} className="rounded-xl border border-dark-700/80 bg-dark-950/80 p-4">
+                    <p className="text-sm font-semibold text-white">{title}</p>
+                    <p className="mt-2 text-xs leading-6 text-dark-300">{detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

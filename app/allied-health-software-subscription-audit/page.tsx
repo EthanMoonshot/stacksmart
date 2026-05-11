@@ -9,7 +9,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Allied Health Software Subscription Audit",
   description:
-    "Audit software subscriptions for physiotherapy, podiatry, psychology, occupational therapy, and multi-disciplinary allied health practices. Find duplicate booking, billing, telehealth, AI scribe, forms, and admin tools without disrupting patient operations.",
+    "Audit software subscriptions for physiotherapy, podiatry, psychology, occupational therapy, and multi-disciplinary allied health practices. Build a practical inventory, renewal calendar, and cut list for duplicate booking, billing, telehealth, AI scribe, forms, and admin tools without touching patient records.",
   path: "/allied-health-software-subscription-audit",
 });
 
@@ -102,6 +102,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "StackSmart produces a categorised software-spend snapshot from your billing export: every recurring admin charge grouped by function (practice management, booking, recalls, telehealth, AI scribe, accounting and payroll, marketing), a list of flagged attention areas including zombie seats from departed practitioners, duplicate tool pairs, inflated telehealth tiers, and upcoming annual renewals, and a prioritised action list ranked by annual dollar impact. The practice owner reviews the findings and can share the report with a practice manager or office manager to act on — a practical spend view, not an enterprise audit. No clinical records or patient data are involved.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How should allied health clinics review software renewals without touching patient records?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Use billing exports only. The owner or practice manager lists each recurring admin subscription, category, payment source, seat count, named owner, and renewal date. Practice-management, booking, recall, telehealth, AI scribe, forms, payroll, accounting, and marketing tools can be reviewed from card or accounting data without opening patient records or clinical notes. The result is a renewal calendar and cut list for admin software, not a clinical-system audit.",
           },
         },
       ],
@@ -525,6 +533,24 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Practice-manager inventory */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Admin software inventory</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">A clinic owner should be able to name the owner of every admin subscription</h2>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              Allied health practices often know exactly who owns clinical decisions but not who owns software renewals. Booking widgets, recall tools, SMS reminders, forms platforms, telehealth, AI scribe seats, payroll, accounting, and review tools can all renew without a named decision-maker. StackSmart creates a billing-only software inventory and renewal calendar so the practice manager can review admin spend without touching patient records, clinical notes, or regulated health systems.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {["booking vs PMS features", "telehealth tiers vs active use", "AI scribe seats vs roster", "forms / recall / SMS overlap"].map((item) => (
+                <div key={item} className="rounded-xl border border-dark-700 bg-dark-950/80 p-4 text-sm font-medium text-dark-200">{item}</div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

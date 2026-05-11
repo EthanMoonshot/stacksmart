@@ -9,7 +9,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Bookkeeping Firm Software Stack Audit",
   description:
-    "Bookkeeping firms using Xero, QBO, or MYOB ecosystems accumulate receipt capture, payroll, proposal, workflow, e-sign, AI transcription, and client portal add-ons with significant overlap. A software audit finds the duplicate tools, tier creep, and recurring payment waste.",
+    "Bookkeeping firms using Xero, QBO, QuickBooks, or MYOB ecosystems accumulate receipt capture, payroll, proposal, workflow, e-sign, AI transcription, and client portal add-ons. A software audit finds duplicate tools, renewal gaps, and recurring payment waste.",
   path: "/bookkeeping-firm-software-stack-audit",
 });
 
@@ -118,6 +118,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "For every recurring charge in the firm's software stack, the principal should be able to name one current team member who uses that tool regularly and would notice if it was cancelled. This owner-use check catches waste that category-level review misses: AI transcription tools at team tier with only one active user, receipt capture add-ons where both the standalone tool and the platform's native feature are billing simultaneously, and workflow seats for staff who departed months ago. The check takes under 30 minutes for most bookkeeping firm stacks and produces an immediate short list of cut candidates — no vendor conversation needed, just a cancellation or seat removal before the next billing cycle.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How can bookkeeping firms find duplicate QuickBooks or Xero-connected apps?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Export billing from the firm card plus marketplace billing from QuickBooks, Xero, QBO, or MYOB. Put each connected app into a software inventory spreadsheet with category, owner, current users, payment source, and renewal date. Then group apps by job: receipt capture, payroll, reporting, client portal, proposals, e-sign, workflow, and AI. If two apps do the same job, or if an app creates duplicate transaction mapping and month-end cleanup, it becomes a cut, consolidate, or reconfigure candidate.",
           },
         },
       ],
@@ -616,6 +624,31 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* QuickBooks and Xero connected-app cleanup */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/20 bg-dark-900/70 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Connected-app cleanup</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">When seven QuickBooks or Xero apps are all touching the same workflow</h2>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              The strongest bookkeeping waste signal is not just “too many apps”; it is duplicated admin work. A small practice can have a receipt tool, payroll add-on, reporting dashboard, proposal app, e-sign tool, workflow system, and AI meeting assistant all connected to QuickBooks or Xero — then spend month end untangling duplicate transactions, wrong mappings, buried fees, and subscriptions nobody remembers approving. StackSmart turns the billing export into a software inventory and renewal calendar so the principal can ask one concrete question per category: which app can we cancel or consolidate without breaking client delivery?
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {[
+                ["Map", "List every Xero/QBO/QuickBooks-connected app, payment source, owner, user count, and renewal date."],
+                ["Group", "Cluster by job: receipt capture, payroll, reporting, e-sign, proposals, workflow, portals, AI."],
+                ["Decide", "Mark each duplicate as keep, cancel, consolidate, reconfigure, or review before renewal."],
+              ].map(([step, detail]) => (
+                <div key={step} className="rounded-xl border border-dark-700 bg-dark-950/80 p-4">
+                  <p className="text-sm font-semibold text-brand-200">{step}</p>
+                  <p className="mt-2 text-xs leading-6 text-dark-300">{detail}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

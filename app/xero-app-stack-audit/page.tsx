@@ -9,7 +9,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Xero App Stack Audit",
   description:
-    "Audit your Xero app stack for duplicate add-ons, unused seats, surprise annual renewals, and inflated tiers across payroll, receipt capture, reporting, practice management, and client portal tools. StackSmart turns your billing export into a clear action list.",
+    "Audit your Xero app stack for duplicate add-ons, unused seats, ownerless renewals, surprise annual charges, and inflated tiers across payroll, receipt capture, reporting, practice management, and client portal tools. StackSmart turns your billing export into an overlap map and action list.",
   path: "/xero-app-stack-audit",
 });
 
@@ -102,6 +102,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "StackSmart produces a categorised software-spend snapshot from your billing export: every recurring charge grouped by Xero ecosystem function (payroll, receipt capture, reporting, practice management, client portals, e-sign, and CRM), a list of flagged attention areas including migration leftovers, zombie seats, duplicate add-on pairs, upcoming annual renewals, and app-owner accountability gaps, and a prioritised action list ranked by annual dollar impact. The output is designed for the firm owner or principal to review and share with a practice manager or office manager to action — a practical spend view, not an enterprise audit platform.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is a Xero app overlap map?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A Xero app overlap map groups every recurring Xero-connected subscription by the job it performs: payroll, receipt capture, reporting, practice management, client portal, e-sign, proposals, CRM, and AI assistance. It shows which apps do the same job, who owns each renewal, how many users are active, and whether Xero or the main practice platform now includes a native feature that makes an add-on redundant. The output is a practical keep, cancel, consolidate, or renegotiate list.",
           },
         },
       ],
@@ -477,6 +485,28 @@ export default function XeroAppStackAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Overlap map and renewal calendar */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Overlap map</p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">Group Xero apps by job, not vendor name</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                A Xero-heavy business does not need a procurement suite to find waste. It needs a category map: receipt capture, payroll, reporting, practice management, client portal, e-sign, proposals, late payment, CRM, and AI support. When two apps sit in the same box, or when Xero now covers the job natively, the owner has a specific cancellation conversation instead of a vague software review.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Renewal calendar</p>
+              <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white">Stop annual add-ons renewing by default</h3>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The hidden cost in Xero app stacks is ownerless renewal. Add-ons are often installed by a staff member during a client deadline, then the first annual renewal arrives after that person has changed role or left. StackSmart flags renewal dates and missing app owners so the question becomes “who decides before this renews?” rather than “why did this charge appear?”
+              </p>
+            </div>
           </div>
         </div>
       </section>

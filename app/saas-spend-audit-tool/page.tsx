@@ -9,7 +9,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "SaaS Spend Audit Tool",
   description:
-    "Looking for a SaaS spend audit tool? See how StackSmart turns billing exports into clear cut, consolidate, and renegotiate actions for growing teams.",
+    "Looking for a SaaS spend audit tool? See how StackSmart turns billing exports into a software inventory, overlap map, renewal calendar, and clear cut, consolidate, and renegotiate actions for owner-led SMBs.",
   path: "/saas-spend-audit-tool",
 });
 
@@ -126,6 +126,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "StackSmart produces a formatted savings report that is designed to be handed off directly to a bookkeeper, finance admin, or practice manager. The report lists specific actions — what to cancel, which seats to remove, which vendor conversations to open — with the annual dollar impact for each. The business owner makes the keep, cut, consolidate, or renegotiate decision; the bookkeeper or finance admin executes it without needing to understand the audit methodology. This is the standard workflow for owner-led SMBs where the owner identifies the problem and a finance admin handles the vendor paperwork.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does a SaaS spend audit tool replace a software inventory spreadsheet?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "For many owner-led SMBs, the useful output is the software inventory spreadsheet: every recurring charge grouped by category with owner, users, payment source, renewal date, and recommended action. StackSmart speeds up the work by turning a billing export into that inventory, adding duplicate-tool flags, ownerless renewal warnings, and a prioritised cut list so the owner is not starting from a blank spreadsheet.",
           },
         },
       ],
@@ -521,6 +529,30 @@ export default function SaaSSpendAuditToolPage() {
                 <li>Organizations requiring live usage telemetry from each tool</li>
                 <li>Teams with fewer than 5 software subscriptions</li>
                 <li>Companies that need contract lifecycle management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Inventory spreadsheet output */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Output owners can act on</p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">From billing export to software inventory, overlap map, and renewal calendar</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                A small business owner does not need another dashboard they have to maintain. They need the clean version of the spreadsheet they would build manually: every recurring software charge, category, active owner, payment source, rough usage signal, next renewal date, and recommended action. StackSmart turns a CSV export into that practical inventory and highlights the decisions most likely to recover money first.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">The questions the audit answers</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
+                <li>• Which app can we cancel because another tool already does the same job?</li>
+                <li>• Which subscriptions have no named owner before renewal?</li>
+                <li>• Which AI, reporting, booking, receipt, or e-sign tools have idle seats?</li>
+                <li>• Which annual renewals need a keep/cancel decision in the next 90 days?</li>
               </ul>
             </div>
           </div>
