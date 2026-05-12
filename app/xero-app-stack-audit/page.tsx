@@ -288,6 +288,39 @@ export default function XeroAppStackAuditPage() {
         </div>
       </section>
 
+      {/* Integration add-ons, paid bridge tools, and connected-app inventory */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/15 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Connected-app and bridge tool inventory</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              Integration add-ons, paid connectors, and the connected-app cancel decision
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Beyond the Xero Marketplace add-ons themselves, most Xero-heavy firms carry a second layer of recurring cost: the paid bridge tools and integration connectors that sit between Xero and other platforms. These are often missed in a standard billing review because they appear under obscure vendor names — not the platform names they connect — and they continue billing long after the connection becomes redundant or native Xero features replace the need.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                ["Paid connector and bridge tool fees", "Tools like Invoice Stack, Zapier, or Make that connect Xero to a CRM, ecommerce platform, or payroll tool. When either platform adds native integration, the connector keeps billing. These charges ($30–$120/month) often appear under unfamiliar vendor names and are rarely reviewed."],
+                ["Connected-app inventory — the which-app-can-we-cancel pass", "The connected-app audit starts with a simple question: for each Xero add-on, which job does it do, and does Xero or another active platform now do that job natively? Category by category — receipt capture, payroll, reporting, e-sign — this pass identifies the specific app that can be cancelled before the next renewal without disrupting any active workflow."],
+                ["Duplicate sync and cleanup cost", "When two tools both attempt to sync data to Xero — a CRM pushing invoices and an ecommerce platform pushing the same transactions — the result is duplicate records, reconciliation errors, and manual cleanup every month-end. Auditing the connected-app layer often reveals the root cause of recurring data cleanup work, not just the subscription cost."],
+                ["Migration leftover connectors", "A firm that migrated from QBO to Xero or from one payroll tool to another often retains the integration connectors from the old platform. These bridge tools continue billing while connecting to a platform the firm no longer uses. They appear in billing exports as $20–$80/month charges under names that do not match any active tool."],
+                ["AI subscription layer in Xero stacks", "AI tools — ChatGPT Teams, Claude Pro, Otter.ai, Microsoft 365 Copilot — are now a standard finding in Xero-heavy firm billing exports. They follow the same pattern as other add-ons: purchased at full team tier, usage concentrated in one or two people, annual renewals arriving before anyone checks the seat count. See the <span class='text-brand-400'>AI subscription audit</span> for the specific right-sizing workflow."],
+                ["App-cancel decision criteria", "For each connected app and bridge tool: Is the connection active and in daily use? Does a native Xero feature or another active platform now cover the same need? If the connector was cancelled tomorrow, which workflow would break — and could that workflow run through an existing tool instead? If the answer to the last question is yes, the connector is a cancellation candidate before the next billing cycle."],
+              ].map(([title, detail]) => (
+                <div key={title} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300" dangerouslySetInnerHTML={{ __html: detail }} />
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              The connected-app inventory pass takes 20 to 30 minutes from a 12-month billing export. Filter for any vendor name you don&apos;t immediately recognise as a core platform. These obscure line items are almost always connectors, bridge tools, or integration add-ons. For each one: identify what it connects, confirm the connection is still active, and check whether either platform now offers a native sync. See also: <a href="/ai-subscription-audit" className="text-brand-400 hover:text-brand-300 transition-colors">AI subscription audit</a> for the AI tool layer, and <a href="/accounting-firm-software-stack-audit" className="text-brand-400 hover:text-brand-300 transition-colors">accounting firm software stack audit</a> for the full practice stack review.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Waste by category */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -575,6 +608,11 @@ export default function XeroAppStackAuditPage() {
             href: "/marketing-agency-software-stack-audit",
             title: "Marketing agency software stack audit",
             description: "SEO, social scheduling, design, and reporting stack audit for owner-led marketing and creative agencies.",
+          },
+          {
+            href: "/ai-subscription-audit",
+            title: "AI subscription audit",
+            description: "ChatGPT Teams, Claude Pro, Copilot add-ons, and meeting transcription tools are now a standard Xero-firm billing finding. Right-size before the annual renewal.",
           },
           {
             href: "/small-business-software-audit",

@@ -283,6 +283,53 @@ export default function AccountingFirmSoftwareStackAuditPage() {
         </div>
       </section>
 
+      {/* Integration add-on and connected-app sprawl */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-amber-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">Connected-app sprawl and integration add-on costs</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              Paid connectors, bridge tools, and QuickBooks/Xero connected-app sprawl
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Beyond the core practice tools, accounting and bookkeeping firms accumulate a second layer of hidden recurring cost: the integration connectors, bridge subscriptions, and connected-app ecosystem fees that sit between primary platforms. These charges are easy to miss because they appear as obscure vendor names rather than the platforms they connect — and they keep billing long after the integration breaks, the client leaves, or the primary platforms introduce a native sync.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[
+                {
+                  title: "HubSpot–Xero integration add-ons",
+                  detail: "Connecting HubSpot CRM to Xero for invoicing often requires a paid connector — Invoice Stack, Zapier, or a native integration add-on. These connector fees ($30–$120/month) are separate from both platform subscriptions and are rarely reviewed when either platform changes its native integration capability. When HubSpot or Xero adds a native sync, the third-party connector keeps billing.",
+                  color: "text-amber-300",
+                },
+                {
+                  title: "QuickBooks connected-app sprawl",
+                  detail: "Firms that manage QuickBooks clients — or run QBO internally — accumulate connected apps through the QBO marketplace: receipt capture, payroll, inventory, time tracking, and reporting tools each requiring separate authorisation and often separate billing. When a firm switches a client from QBO to Xero, the QBO-connected apps frequently keep billing until someone audits the connected-app list explicitly.",
+                  color: "text-amber-300",
+                },
+                {
+                  title: "Xero connected-app ecosystem fees",
+                  detail: "Xero&apos;s marketplace add-ons often carry integration fees on top of the add-on subscription itself — per-transaction charges, API call fees, or data-sync costs that are not visible on the main Xero billing page. Receipt capture tools (Dext, Hubdoc), payroll integrations, and client portal add-ons all carry their own billing cycles. When the firm migrates a client or replaces a tool, the connected billing rarely cancels automatically.",
+                  color: "text-amber-300",
+                },
+                {
+                  title: "Cleanup drag: the time cost of broken integrations",
+                  detail: "A broken or partially configured integration between accounting and CRM platforms creates recurring manual cleanup work — duplicate transactions, mismatched records, manual export-import between tools. The cleanup drag compounds across every month the integration runs in a broken state. Auditing the connected-app layer often surfaces not just cost savings but the root cause of recurring reconciliation friction.",
+                  color: "text-amber-300",
+                },
+              ].map((item) => (
+                <div key={item.title} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <h3 className={`text-sm font-semibold ${item.color}`}>{item.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              The connected-app audit pass: export 12 months of billing data and filter for any vendor name you don&apos;t immediately recognise as a primary platform. These obscure line items are almost always connectors, add-ons, or bridge tools. For each one, identify which two platforms it connects, whether that connection is still active, and whether either platform now offers a native sync that makes the connector redundant. See also: <a href="/xero-app-stack-audit" className="text-brand-400 hover:text-brand-300 transition-colors">Xero app stack audit</a> for the full connected-app review workflow, and <a href="/ai-subscription-audit" className="text-brand-400 hover:text-brand-300 transition-colors">AI subscription audit</a> for the separate AI tool layer now common in accounting firm billing exports.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Typical software stack */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -681,6 +728,11 @@ export default function AccountingFirmSoftwareStackAuditPage() {
             href: "/xero-app-stack-audit",
             title: "Xero app stack audit",
             description: "Audit your Xero add-ons for duplicate payroll, receipt capture, reporting, and practice management tools.",
+          },
+          {
+            href: "/ai-subscription-audit",
+            title: "AI subscription audit",
+            description: "Find overlapping AI tools, idle seats on ChatGPT Teams and Claude Pro, and Copilot add-ons with low active use in accounting firm billing exports.",
           },
           {
             href: "/marketing-agency-software-stack-audit",

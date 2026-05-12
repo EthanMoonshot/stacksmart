@@ -330,6 +330,53 @@ export default function MarketingAgencySoftwareStackAuditPage() {
         </div>
       </section>
 
+      {/* AI sprawl and client-delivery/research overwhelm */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/15 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">AI sprawl in agency delivery and research workflows</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              AI tools bought for client work that now recreate the same sprawl they were meant to solve
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Marketing agencies are among the heaviest adopters of AI subscriptions — and now among the heaviest carriers of AI subscription waste. The pattern is consistent: tools adopted for client-delivery or research workflows during 2023–2024 that were purchased at full team tiers, used heavily for one campaign or client, and then retained at full billing while active use concentrated in two or three people across the whole agency. The AI layer has added a new version of the old problem: multiple tools doing the same research, writing, and generation job — creating the subscription overwhelm they were supposed to help manage.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[
+                {
+                  title: "Client-research AI tools that outlived the client",
+                  detail: "Perplexity Pro or a specialist AI research tool subscribed for a specific client&apos;s competitive research workflow, retained after the client offboarded. Research tools adopted for one client engagement — competitive intelligence, market mapping, trend monitoring — are the AI equivalent of client-linked social scheduling subscriptions: they keep billing after the workflow that justified them has ended.",
+                  color: "text-amber-300",
+                },
+                {
+                  title: "Five writing tools for the same content workflow",
+                  detail: "A typical mid-sized agency now carries ChatGPT Teams, Claude Pro, Notion AI, Grammarly Business, and Canva&apos;s AI writing features — all for the same content creation and editing workflow. Each was adopted at a different point by a different team member. The agency has five subscriptions covering two jobs: drafting and editing. The audit question is not which AI is better — it is which one the content team actually opens this week.",
+                  color: "text-amber-300",
+                },
+                {
+                  title: "Software shopping overwhelm recreating AI sprawl",
+                  detail: "New AI tools launch constantly promising to solve a specific client-delivery problem — briefing, transcription, content personalisation, SEO content at scale. Rather than reviewing whether existing AI subscriptions can handle the task, the agency adds another subscription. Six months later, the new tool has the same adoption problem as the old ones. The audit reveals that the agency needed better usage of one AI platform, not five separate ones.",
+                  color: "text-amber-300",
+                },
+                {
+                  title: "Seat count drift across a growing team",
+                  detail: "An agency that grew from 8 to 20 people often has AI subscriptions that were set up for the original team size and never updated — in either direction. Some tools are at 8-seat tiers serving a 20-person team (underprovided, causing friction), while others are at 20-seat tiers with 4 active users (overprovided, wasting money). Both are audit findings: one is a right-size up, the other is a right-size down. Neither is visible without a seat-count review against active usage.",
+                  color: "text-amber-300",
+                },
+              ].map((item) => (
+                <div key={item.title} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <h3 className={`text-sm font-semibold ${item.color}`}>{item.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              The AI subscription audit pass for agencies takes under 30 minutes: list every AI tool on the billing export, group by job (general-purpose AI, image generation, meeting transcription, research/search, writing/editing), and run the owner-use check on each seat. For each group where two tools do the same job, identify which the team uses more heavily and flag the other as a cancellation candidate. See the full workflow in the <a href="/ai-subscription-audit" className="text-brand-400 hover:text-brand-300 transition-colors">AI subscription audit guide</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Why agencies accumulate waste */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -720,6 +767,11 @@ export default function MarketingAgencySoftwareStackAuditPage() {
             href: "/software-subscription-audit-checklist",
             title: "Software subscription audit checklist",
             description: "A structured checklist for reviewing every subscription category in your agency stack.",
+          },
+          {
+            href: "/ai-subscription-audit",
+            title: "AI subscription audit",
+            description: "Five AI tools doing two jobs — find the overlap in ChatGPT, Claude, Midjourney, Notion AI, and meeting transcription before the annual renewal.",
           },
           {
             href: "/saas-spend-audit-tool",

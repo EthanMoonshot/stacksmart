@@ -55,6 +55,7 @@ const routes = [
   "/multi-site-venue-software-audit",
   "/psychology-practice-software-subscription-audit",
   "/xero-app-stack-audit",
+  "/ai-subscription-audit",
   "/law-firm-software-subscription-audit",
   "/consulting-firm-software-stack-audit",
   "/shopify-app-stack-audit",

@@ -404,6 +404,53 @@ export default function SmallBusinessSoftwareAuditPage() {
         </div>
       </section>
 
+      {/* Hidden fees, integration add-on costs, and shopping overwhelm */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-amber-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">The costs that hide in plain sight</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              Hidden monthly fees, integration add-ons, and the cleanup drag nobody budgets for
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Beyond duplicate tools and ghost seats, there is a second layer of software cost that most owner-led businesses do not see until they go looking. These four patterns together often add $2,000 to $6,000 per year to a small business software bill — without any of them appearing obviously on a high-level statement review.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[
+                {
+                  title: "Integration add-on and connector fees",
+                  detail: "Many software combinations require a paid bridge tool or native connector to sync data between platforms — HubSpot to Xero, QuickBooks to a CRM, Shopify to an accounting tool. Some of these connectors bill monthly at $30 to $120, others charge per-sync or per-record. When the integration breaks or is replaced by a native sync, the add-on keeps billing. Billing exports often show these as obscure vendor names rather than the platforms they connect.",
+                  color: "text-amber-300",
+                },
+                {
+                  title: "Hidden monthly fees inside free or cheap plans",
+                  detail: "Free trials that converted to paid, usage-based charges that spiked during a busy period and never reset, or platform \"add-ons\" sold inside an existing subscription — a premium inbox, a reporting module, a higher API limit. These charges are real but rarely reviewed because they appear as small line items on an existing vendor invoice rather than a new subscription.",
+                  color: "text-amber-300",
+                },
+                {
+                  title: "Software shopping overwhelm recreating sprawl",
+                  detail: "When the team runs into a workflow problem, the instinct is to find a new tool — not to check whether an existing subscription already handles it. A business paying for five productivity tools, three AI subscriptions, and two scheduling platforms often adds a sixth, fourth, and third before reviewing what the current stack can do. The solution is an audit of existing tools before adding any new subscription.",
+                  color: "text-amber-300",
+                },
+                {
+                  title: "Cleanup drag — the time cost of the mess",
+                  detail: "An unreviewed software stack creates recurring admin friction: duplicate data across systems that don&apos;t sync, manual export-import steps between tools that should talk directly, staff switching between three platforms to do one job. This is not just a cost of the subscriptions themselves — it is the compounding time cost of running a disorganised stack. The audit produces a cleaner baseline that reduces the ongoing drag, not just the recurring bill.",
+                  color: "text-amber-300",
+                },
+              ].map((item) => (
+                <div key={item.title} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <h3 className={`text-sm font-semibold ${item.color}`}>{item.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              AI subscriptions now form their own version of this pattern — tools adopted at full team tier, individual accounts billing separately, and overlap between ChatGPT, Claude, Canva, Notion AI, and meeting transcription tools. See the <a href="/ai-subscription-audit" className="text-brand-400 hover:text-brand-300 transition-colors">AI subscription audit guide</a> for the specific workflow to review and right-size AI tool spending.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 30-day workflow */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -856,6 +903,11 @@ export default function SmallBusinessSoftwareAuditPage() {
             href: "/consulting-firm-software-stack-audit",
             title: "Consulting firm software stack audit",
             description: "Project management, CRM, proposals, time tracking, AI tools, and reporting audit for owner-led consultancies.",
+          },
+          {
+            href: "/ai-subscription-audit",
+            title: "AI subscription audit",
+            description: "Find overlapping AI tools, idle seats on ChatGPT Teams and Claude Pro, and individual-plan duplicates that should be on a team account.",
           },
           {
             href: "/xero-app-stack-audit",
