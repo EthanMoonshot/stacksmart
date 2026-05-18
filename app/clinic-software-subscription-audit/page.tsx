@@ -177,7 +177,7 @@ export default function ClinicSoftwareSubscriptionAuditPage() {
               How do allied health clinics audit their software subscriptions?
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              Export billing data from your business credit card or accounting software covering the past 6 to 12 months. Group charges by function: practice management, booking, billing, communication, patient marketing, and other admin tools. Flag categories where you carry more than one active tool, seats that exceed your active staff count, and contracts renewing within the next 60 days. For each flagged item, assign a decision — keep, cut, consolidate, or renegotiate. Act on cancellations first, then plan consolidations to avoid disrupting admin workflows.
+              Export billing data from your business credit card or accounting software covering the past 6 to 12 months. Group charges by function: practice management, booking, reminders, telehealth, intake forms, payments, inventory, AI notes, billing, communication, patient marketing, connector fees, and other admin tools. Flag categories where you carry more than one active tool, seats that exceed your active staff count, and contracts renewing within the next 60 days. For each flagged item, assign a decision — keep, cut, consolidate, or renegotiate. Act on cancellations first, then plan consolidations to avoid disrupting admin workflows.
             </p>
           </div>
         </div>
@@ -207,6 +207,32 @@ export default function ClinicSoftwareSubscriptionAuditPage() {
             ].map(([title, copy]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
                 <h3 className="text-base font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Clinic owner cleanup map */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Clinic owner cleanup map</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">Map every clinic subscription to a current workflow owner</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-dark-300">
+            Multi-practitioner clinics collect small monthly tools because each admin problem feels urgent: booking, reminders, telehealth, intake, payments, inventory, roster changes, reporting, and AI notes. The audit question is practical: who uses this now, what workflow would break if it stopped, and is another tool already doing that job?
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["Booking + reminders", "Online booking, SMS reminders, recall messages, and email tools can overlap across the practice-management system, a standalone reminder app, and marketing software."],
+              ["Forms + intake", "Digital forms, consent, intake, and patient portal tools often bill separately even after the core system adds forms or secure upload features."],
+              ["Telehealth + AI notes", "Telehealth, transcription, AI scribe, and summarisation apps should be reviewed by active clinician usage, not by the seat count set during trial."],
+              ["Payments + inventory", "Payment terminals, payment links, stock/inventory, and reporting subscriptions can create extra monthly fees that look small until annualised."],
+              ["Connector fees", "Zapier, marketplace syncs, or reporting connectors that move data between booking, accounting, payroll, and practice systems need a separate cut/consolidate review."],
+              ["Renewal owner", "Every annual or monthly subscription should have a named owner. If nobody owns it, it goes onto the renewal calendar and becomes a review item before the next bill."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
               </div>
             ))}
