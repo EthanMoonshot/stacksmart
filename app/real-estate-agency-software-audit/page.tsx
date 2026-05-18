@@ -9,7 +9,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Real Estate Agency Software Audit",
   description:
-    "Audit your real estate agency's software subscriptions for duplicate CRM seats, unused portal listings, redundant e-sign tools, and subscriptions that crept in across offices and agents. StackSmart turns billing exports into a clear savings report.",
+    "Audit real estate agency software subscriptions for duplicate CRM seats, unused portal tiers, AI content tools expensed per agent, lead-gen platform add-ons, vendor marketing portals, and ownerless renewals after principal handover. StackSmart works from billing exports only.",
   path: "/real-estate-agency-software-audit",
 });
 
@@ -82,6 +82,14 @@ const jsonLd = {
             text: "Yes. StackSmart is built for owner-led businesses with messy billing histories — including real estate agencies where costs span offices, individual agent expenses, and shared business subscriptions. Upload a CSV from Xero, your credit card, or your expense platform. The report categorises every subscription, flags duplicates and unused seats, and gives you clear keep, cut, consolidate, and renegotiate actions.",
           },
         },
+        {
+          "@type": "Question",
+          name: "Do AI content tools and social media platforms add materially to real estate agency software costs?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. ChatGPT Plus, Canva Pro, AI copywriting tools, and social content schedulers are increasingly subscribed to individually by agents and expensed to the agency. A 15-agent office can have 8 to 10 active subscriptions for the same AI writing or design tool — each separately billed at $20 to $50 per month. These rarely appear as a single category in accounting software; they surface as many small charges from different vendors. An audit that maps charges by function groups them together and makes the duplication visible.",
+          },
+        },
       ],
     },
   ],
@@ -122,6 +130,18 @@ const wasteCategories = [
     category: "Communication and comms",
     issue: "Team chat, video conferencing, and SMS platforms each separately licensed across a small team where one tool would cover all daily needs.",
     action: "Consolidate",
+    color: "text-orange-400",
+  },
+  {
+    category: "AI content and social tools per agent",
+    issue: "ChatGPT Plus, Canva Pro, and AI copywriting tools individually subscribed by agents across a 10 to 20-agent office — often 6 to 12 active subscriptions for the same tool, each billed separately to the business or expensed.",
+    action: "Consolidate",
+    color: "text-amber-400",
+  },
+  {
+    category: "Lead-gen platform premium add-ons",
+    issue: "Real estate lead-gen platforms charge for priority leads, market insight dashboards, and premium placement as add-ons on top of the base subscription. These add-on fees often renew automatically and are rarely reviewed against actual lead conversion.",
+    action: "Audit add-ons",
     color: "text-orange-400",
   },
 ];
@@ -207,6 +227,29 @@ export default function RealEstateAgencySoftwareAuditPage() {
             ].map(([title, copy]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
                 <h3 className="text-base font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hidden costs section */}
+      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">Where real estate agency costs hide beyond the obvious subscriptions</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">The most frequently missed costs in agency billing exports appear outside the headline software categories.</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              ["AI tools subscribed per agent", "Individual agents subscribe to ChatGPT Plus, Canva Pro, and AI copywriting tools and expense them to the agency. A 15-agent office can run 8 to 10 active subscriptions to the same tool — each billed separately. These appear as many small charges from different vendors rather than one consolidated line item, so they pass through without triggering a review."],
+              ["Vendor marketing portal fees", "Property vendor marketing platforms — digital brochure tools, listing upgrade packages, and campaign portal access — often carry monthly recurring fees on top of per-listing charges. These sit in the same billing region as advertising spend and rarely get categorised as a software subscription."],
+              ["Lead-gen platform add-ons", "Real estate lead-gen platforms charge for premium placement, priority lead routing, and market analytics dashboards as optional add-ons. These are enabled during onboarding and auto-renew at amounts that can double the base subscription cost."],
+              ["Principal and operator handoff gaps", "When a principal retires, exits, or an office changes ownership, the existing subscriptions continue billing under the new operator. CRM contracts, portal tier agreements, and marketing platform accounts signed by the previous principal persist until explicitly reviewed — often for 12 to 24 months after the handover."],
+              ["Annual contracts with no renewal calendar", "Core CRM, portal, and appraisal data contracts often have 30-day cancellation notice windows. Without a forward-looking renewal calendar, the window closes quietly and another year of fees is locked in before the decision is even considered."],
+              ["Appraisal data and market report subscriptions", "CoreLogic, PriceFinder, and similar market data services are sometimes licensed at the office level and individually by senior agents simultaneously — creating duplicate access to the same data at combined costs that exceed what a group licence would cost."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
               </div>
             ))}
@@ -368,6 +411,10 @@ export default function RealEstateAgencySoftwareAuditPage() {
                 "Can StackSmart help real estate agencies find software savings?",
                 "Yes. StackSmart is built for owner-led businesses with messy billing histories — including real estate agencies where costs span offices, individual agent expenses, and shared business subscriptions. Upload a CSV from Xero, your credit card, or your expense platform. The report categorises every subscription, flags duplicates and unused seats, and gives you clear keep, cut, consolidate, and renegotiate actions.",
               ],
+              [
+                "Do AI content tools and social media platforms add materially to real estate agency software costs?",
+                "Yes. ChatGPT Plus, Canva Pro, AI copywriting tools, and social content schedulers are increasingly subscribed to individually by agents and expensed to the agency. A 15-agent office can have 8 to 10 active subscriptions for the same AI writing or design tool — each separately billed at $20 to $50 per month. These rarely appear as a single category in accounting software; they surface as many small charges from different vendors. An audit that maps charges by function groups them together and makes the duplication visible.",
+              ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
@@ -432,6 +479,11 @@ export default function RealEstateAgencySoftwareAuditPage() {
             href: "/how-to-audit-software-subscriptions",
             title: "How to audit software subscriptions",
             description: "A step-by-step walkthrough for turning billing data into a structured audit without a finance team.",
+          },
+          {
+            href: "/software-subscription-audit-checklist",
+            title: "Software subscription audit checklist",
+            description: "Prepare billing exports and group subscriptions by category before starting a real estate agency review.",
           },
           {
             href: "/agency-software-stack-audit",

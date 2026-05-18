@@ -9,7 +9,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Hospitality Group Software Audit | Cut Subscription Waste Across Your Venues",
   description:
-    "Small hospitality groups and multi-site venues carry POS, bookings, rostering, payroll, delivery, loyalty, accounting, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate before the next renewal.",
+    "Small hospitality groups and multi-site venues carry POS, bookings, rostering, delivery, music licensing, Wi-Fi tools, review platforms, and per-site add-on fees. A software audit finds duplication, idle staff seats, and renewals worth renegotiating before the next cycle.",
   path: "/hospitality-group-software-audit",
 });
 
@@ -88,6 +88,14 @@ const jsonLd = {
             text: "Usually yes. The most valuable actions in most hospitality audits do not require a platform switch — they are account removals, plan downgrades, and vendor conversations about group pricing. Removing idle staff accounts, consolidating delivery integrations, and negotiating a group rate across sites typically recovers more spend than switching to a different POS or reservations system.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What costs outside the main software categories should hospitality operators look for?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Background music licensing services (billed per venue at $30 to $120 per month), POS and reservations add-on modules, Wi-Fi management and venue analytics tools, and review or reputation management platforms are consistently missed in a standard software review. These appear outside the headline platform categories in accounting exports — often categorised as venue costs or marketing rather than software subscriptions. A 12-month billing export that captures all recurring charges, not just the obvious platform invoices, is the most reliable way to surface them.",
+          },
+        },
       ],
     },
   ],
@@ -135,6 +143,18 @@ const wasteSignals = [
       "Email and social scheduling platforms on a Business or Agencies plan selected when multi-venue expansion was imminent. If the expansion stalled, the tier is paying for volume and users that do not exist yet.",
     color: "text-brand-400",
     tag: "Downgrade",
+  },
+  {
+    label: "Background music and venue tech licensing",
+    detail: "Background music licensing services (Soundtrack Your Brand, Mood Media, Rockbot) billed per venue often stack alongside a personal music streaming account the owner also pays for. Wi-Fi management platforms, footfall counters, and venue analytics tools add further per-site recurring costs that don't surface in the main software category review.",
+    color: "text-amber-400",
+    tag: "Review",
+  },
+  {
+    label: "POS add-on modules billed at premium tiers",
+    detail: "Lightspeed Analytics, Square for Restaurants advanced features, and similar POS add-on modules are enabled during setup and often remain on premium tiers after the reporting or marketing workflow they supported has changed. Venues that trialled and switched POS systems sometimes retain add-on billing on the old platform.",
+    color: "text-orange-400",
+    tag: "Audit",
   },
 ];
 
@@ -220,12 +240,35 @@ export default function HospitalityGroupSoftwareAuditPage() {
         </div>
       </section>
 
+      {/* Venue-level add-ons and hidden costs */}
+      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">Venue-level add-ons and costs hidden outside the main software review</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">The highest-value missed costs in hospitality group billing exports appear outside the headline platform categories.</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              ["POS and reservations add-on modules", "Advanced reporting, analytics dashboards, marketing automation, and loyalty modules inside POS and reservations platforms carry separate billing on top of the core licence. These are enabled during onboarding or a growth period and rarely reviewed when the venue's needs change. Per-site, they add $50 to $300 per month without appearing in the headline subscription cost."],
+              ["Background music licensing per venue", "Commercial music licensing services are billed monthly per venue — typically $30 to $120 per site. Multi-venue operators paying for Soundtrack Your Brand or Mood Media across three venues may also carry a personal music subscription for the same purpose. These costs sit outside the software category in most billing reviews."],
+              ["Wi-Fi management and venue analytics tools", "Guest Wi-Fi platforms, footfall counters, and queue management tools billed per venue accumulate quickly across a multi-site group. These are often procured by a venue manager during a fit-out and never consolidated to a group agreement."],
+              ["Review and reputation management platforms", "Google review management tools, TripAdvisor premium features, and reputation monitoring services are often subscribed to during a marketing push and left running monthly with minimal ongoing activity. At two to three venues, these add up to a category worth reviewing."],
+              ["Multi-site renewal calendar gaps", "Hospitality groups with two to five venues often have no centralised renewal calendar. POS contracts, reservations platform agreements, and rostering plans renew at different times across different venues — often with 30-day cancellation windows that close without a renegotiation attempt."],
+              ["Delivery platform integration overlap", "Aggregator integration tools like Deliverect and Bopple were added as new delivery channels launched. As channel mix settles, two integration tools can cover overlapping platforms — both billing monthly with no consolidation review."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Waste signals */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Common software waste patterns in hospitality groups</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            These are the six patterns StackSmart most commonly surfaces when reviewing hospitality group billing exports.
+            These are the patterns StackSmart most commonly surfaces when reviewing hospitality group billing exports.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {wasteSignals.map((s) => (
@@ -403,6 +446,10 @@ export default function HospitalityGroupSoftwareAuditPage() {
               [
                 "Can a small hospitality group reduce software costs without switching platforms?",
                 "Usually yes. The most valuable actions in most hospitality audits do not require a platform switch — they are account removals, plan downgrades, and vendor conversations about group pricing. Removing idle staff accounts, consolidating delivery integrations, and negotiating a group rate across sites typically recovers more spend than switching to a different POS or reservations system.",
+              ],
+              [
+                "What costs outside the main software categories should hospitality operators look for?",
+                "Background music licensing services (billed per venue at $30 to $120 per month), POS and reservations add-on modules, Wi-Fi management and venue analytics tools, and review or reputation management platforms are consistently missed in a standard software review. These appear outside the headline platform categories in accounting exports — often categorised as venue costs or marketing rather than software subscriptions. A 12-month billing export that captures all recurring charges, not just the obvious platform invoices, is the most reliable way to surface them.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">

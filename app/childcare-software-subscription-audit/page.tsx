@@ -9,7 +9,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Childcare Software Subscription Audit | Cut the Cost of Your Admin Stack",
   description:
-    "Childcare and early learning centres carry enrolment, rostering, payroll, parent comms, compliance, CCS billing, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate before the next renewal.",
+    "Childcare and early learning centres carry enrolment, rostering, payroll, parent comms, CCS billing, compliance, training, and form tools. A software audit finds duplicate apps, idle educator seats, and ownerless subscriptions after director handover — from billing exports only, no child records needed.",
   path: "/childcare-software-subscription-audit",
 });
 
@@ -88,6 +88,14 @@ const jsonLd = {
             text: "The best time is 60 to 90 days before your largest annual contracts renew — this gives you enough lead time to renegotiate or switch. For childcare centres, the start of each enrolment year is a natural trigger: headcount and staffing change, which affects per-seat pricing on most platforms. Running the audit then means your subscription counts reflect actual operations.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What happens to childcare software subscriptions when a director or centre admin changes?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "When a director or lead admin leaves, several subscription categories persist without a named owner. Personal app store subscriptions expensed to the centre continue billing under the departing person's credentials. Annual management and billing platform contracts auto-renew at the previous seat count without the incoming director reviewing terms or enrolment numbers. Educator accounts in rostering and training platforms stay licensed for departed staff until an explicit review. Running a billing audit at the start of a director's tenure — or at the start of each enrolment year — catches these persisting costs before they compound over a full contract period.",
+          },
+        },
       ],
     },
   ],
@@ -135,6 +143,20 @@ const wasteSignals = [
       "CCS billing, management, and rostering contracts signed at peak enrolment renew at the same rate even when enrolment drops. Renegotiating to current numbers before auto-renewal avoids overpaying for capacity you do not need.",
     color: "text-brand-400",
     tag: "Renegotiate",
+  },
+  {
+    label: "Staff training and CPD platforms with idle accounts",
+    detail:
+      "Online early childhood training, CPD, and first aid renewal platforms carry per-user fees. As educators leave, their training platform accounts often stay active until explicitly reviewed — continuing to bill for access nobody uses.",
+    color: "text-amber-400",
+    tag: "Right-size",
+  },
+  {
+    label: "Digital form and sign-in tools alongside platform features",
+    detail:
+      "JotForm, Typeform, or dedicated childcare sign-in kiosk apps running alongside management platforms that now include digital forms and parent sign-in. The standalone tool persists because the form was built there before the platform added the capability.",
+    color: "text-red-400",
+    tag: "Consolidate",
   },
 ];
 
@@ -189,7 +211,7 @@ export default function ChildcareSoftwareSubscriptionAuditPage() {
               How do childcare centres audit their software subscriptions?
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              Export 6 to 12 months of billing data from Xero, MYOB, or your business credit card. Group every recurring software charge by category — enrolment management, rostering, payroll, parent communications, CCS billing, compliance, and marketing. For each category with more than one active tool, compare what each tool does against what your current management platform now includes natively. Flag seat counts that no longer reflect actual educator and admin headcount. Check upcoming annual renewal dates on your management and billing platforms. Assign each subscription a decision — keep, cut, consolidate, or renegotiate — and work from highest annual cost downward.
+              Export 6 to 12 months of billing data from Xero, MYOB, or your business credit card. Group every recurring software charge by category — enrolment management, rostering, payroll, parent communications, CCS billing, compliance, training, and marketing. For each category with more than one active tool, compare what each tool does against what your current management platform now includes natively. Flag seat counts that no longer reflect actual educator and admin headcount. Check upcoming annual renewal dates on your management and billing platforms. Assign each subscription a decision — keep, cut, consolidate, or renegotiate — and work from highest annual cost downward. StackSmart works from billing exports only — it does not need access to child records, CCS claiming data, immunisation records, or family contact information.
             </p>
           </div>
         </div>
@@ -214,6 +236,29 @@ export default function ChildcareSoftwareSubscriptionAuditPage() {
               <div key={cat} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
                 <h3 className="text-sm font-semibold text-white">{cat}</h3>
                 <p className="mt-3 text-sm leading-7 text-dark-300">{detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Director and admin handover */}
+      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">Director and admin handover: where childcare subscriptions persist</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">Childcare centres have above-average director and admin turnover relative to their size. Each handover creates a gap where subscriptions continue billing without anyone owning the decision.</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              ["Personal app store subscriptions keep billing", "Directors and lead administrators often sign up for tools on a personal card or Apple/Google account and expense them to the centre. When they leave, the subscription continues under their personal account — billing the centre's card — until a billing audit traces it to credentials nobody can access."],
+              ["Annual contracts auto-renew under new leadership", "Management platform, CCS billing, and compliance tool contracts signed by the previous director auto-renew without the incoming director knowing the terms, seat count, or cancellation window. The new director inherits the contract at the previous enrolment numbers — often above current capacity."],
+              ["Educator accounts persist after term end", "Casual and part-time educators who finish at the end of each term often retain active accounts in rostering, management, and training platforms. Per-user billing for departed educators accumulates every semester unless a deliberate offboarding checklist removes access promptly."],
+              ["Training platform seats tied to previous staff", "CPD, NQF professional development, and compliance training platforms carry per-educator seat fees. When a cohort of educators is replaced at the end of a term, the previous users' seats often stay licensed for months before an admin notices the discrepancy."],
+              ["Form and sign-in tools built by departing admins", "Digital forms, enrolment packs, and sign-in kiosk configurations built by a previous admin in a standalone tool (JotForm, Typeform) can't easily be moved. The tool stays active because the form lives there — even after the management platform added the same capability."],
+              ["Renewal calendar not handed over", "Most childcare subscription renewal dates are not formally documented. When a director or lead admin changes, the renewal calendar disappears with them. Annual contracts on management platforms, billing tools, and compliance software then renew silently — often with 30-day cancellation windows that close before the new director even knows the contract exists."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
               </div>
             ))}
           </div>
@@ -404,6 +449,10 @@ export default function ChildcareSoftwareSubscriptionAuditPage() {
                 "When is the best time to audit childcare software subscriptions?",
                 "The best time is 60 to 90 days before your largest annual contracts renew — this gives you enough lead time to renegotiate or switch. For childcare centres, the start of each enrolment year is a natural trigger: headcount and staffing change, which affects per-seat pricing on most platforms. Running the audit then means your subscription counts reflect actual operations.",
               ],
+              [
+                "What happens to childcare software subscriptions when a director or centre admin changes?",
+                "When a director or lead admin leaves, several subscription categories persist without a named owner. Personal app store subscriptions expensed to the centre continue billing under the departing person's credentials. Annual management and billing platform contracts auto-renew at the previous seat count without the incoming director reviewing terms or enrolment numbers. Educator accounts in rostering and training platforms stay licensed for departed staff until an explicit review. Running a billing audit at the start of a director's tenure — or at the start of each enrolment year — catches these persisting costs before they compound over a full contract period.",
+              ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
@@ -478,6 +527,11 @@ export default function ChildcareSoftwareSubscriptionAuditPage() {
             href: "/how-to-audit-software-subscriptions",
             title: "How to audit software subscriptions",
             description: "Step-by-step process for reviewing recurring software spend without a procurement specialist.",
+          },
+          {
+            href: "/software-subscription-audit-checklist",
+            title: "Software subscription audit checklist",
+            description: "Prepare billing exports and group subscriptions by category before starting a childcare centre review.",
           },
           {
             href: "/saas-spend-audit-tool",

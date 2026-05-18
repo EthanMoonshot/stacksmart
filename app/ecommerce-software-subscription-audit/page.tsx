@@ -9,7 +9,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Ecommerce Software Subscription Audit",
   description:
-    "Audit your Shopify store's app subscriptions for duplicate tools, unused integrations, and apps that crept in during testing. StackSmart turns billing exports into a clear savings report for small ecommerce operators.",
+    "Audit your ecommerce software subscriptions for duplicate Shopify apps, channel connectors, AI content tools subscribed per team member, unused marketing platforms, and apps still billing after a migration. StackSmart turns billing exports into a clear savings report.",
   path: "/ecommerce-software-subscription-audit",
 });
 
@@ -82,6 +82,14 @@ const jsonLd = {
             text: "Yes. StackSmart is designed for owner-operated businesses with layered billing from multiple tools — which describes most small ecommerce operations. Upload a CSV from Shopify, your card statement, or accounting software. The report categorises every subscription, flags duplicates and apps priced above your usage tier, and gives you a prioritised list of keep, cut, consolidate, and renegotiate actions.",
           },
         },
+        {
+          "@type": "Question",
+          name: "Where do ecommerce software costs hide beyond the Shopify app list?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Several cost categories consistently escape a standard app-list review. Shopify app marketplace charges appear in Shopify billing and accounting exports — not bank statements — so apps installed during testing and never removed stay invisible in a card-statement review. Channel connector fees for Amazon, eBay, and Google Shopping integrations appear as separate vendor charges alongside ad spend. Automation tools (Zapier, Make) on over-sized tiers, AI writing tools subscribed per contractor, and annual app billing that looks like a one-off charge all compound into meaningful overspend that only surfaces in a full 12-month billing export review.",
+          },
+        },
       ],
     },
   ],
@@ -121,6 +129,18 @@ const wasteCategories = [
   {
     category: "Shipping and fulfilment",
     issue: "ShipStation, Shippit, or Starshipit subscriptions at plan tiers sized for a peak period order volume that has since normalised.",
+    action: "Downgrade",
+    color: "text-orange-400",
+  },
+  {
+    category: "AI content and copy tools",
+    issue: "ChatGPT Plus, Jasper, Copy.ai, and Canva Pro subscribed separately by store owners, freelancers, and contractors — all billing simultaneously for tools with significant feature overlap. Each appears as a different vendor in accounting exports.",
+    action: "Consolidate",
+    color: "text-amber-400",
+  },
+  {
+    category: "Channel connectors and automation tiers",
+    issue: "Zapier, Make, or custom middleware on Business or Teams plans sized for an integration project that completed — the tier was never dropped when the automation task count reduced. Channel connectors for Amazon, eBay, or Google Shopping also carry recurring monthly fees separate from ad spend.",
     action: "Downgrade",
     color: "text-orange-400",
   },
@@ -207,6 +227,29 @@ export default function EcommerceSoftwareSubscriptionAuditPage() {
             ].map(([title, copy]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
                 <h3 className="text-base font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Where costs hide outside the obvious stack */}
+      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">Where ecommerce subscription costs hide outside the obvious stack</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">The most consistently missed charges in small store billing exports appear outside the main Shopify app list.</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              ["Shopify app marketplace charges not in bank statements", "Apps installed and billed through Shopify appear in the Shopify billing summary and accounting export — not in your bank statement. Apps installed during development, testing, or a product launch and never uninstalled continue charging without appearing in a standard card statement review."],
+              ["Channel connector fees alongside ad spend", "Integrations for Amazon, eBay, Google Shopping, and social commerce carry monthly connector fees from vendors like Codisto, Linnworks, or Channable — billed separately from the channel itself. These appear as unfamiliar vendor names in accounting exports and are often missed in a category-level subscription review."],
+              ["Automation tools at the wrong tier", "Zapier, Make, or similar tools are provisioned for an integration project at a Business or Teams tier. Once the project is complete and automations stabilise at lower volume, the tier stays unchanged. The overpayment for unused task capacity continues indefinitely."],
+              ["AI tools subscribed per team member", "Store owners, copywriters, VA contractors, and in-house staff each subscribe independently to AI writing, image, and content tools. Each one is expensed separately — making it invisible as a category until a billing export maps vendor names to function."],
+              ["Annual app subscriptions in a single charge", "Some Shopify apps offer annual billing at a discount. These appear as a large one-off charge from an app vendor — often categorised as a one-time cost rather than a recurring subscription — and are typically missed in a monthly subscription review."],
+              ["Returns and post-purchase app stack overlap", "Returns management, post-purchase upsell, and subscription box tools often duplicate features now included in the store's primary helpdesk or checkout platform. Both tools bill monthly while only one is actively used."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
               </div>
             ))}
@@ -367,6 +410,10 @@ export default function EcommerceSoftwareSubscriptionAuditPage() {
               [
                 "Can StackSmart help ecommerce businesses reduce software spend?",
                 "Yes. StackSmart is designed for owner-operated businesses with layered billing from multiple tools — which describes most small ecommerce operations. Upload a CSV from Shopify, your card statement, or accounting software. The report categorises every subscription, flags duplicates and apps priced above your usage tier, and gives you a prioritised list of keep, cut, consolidate, and renegotiate actions.",
+              ],
+              [
+                "Where do ecommerce software costs hide beyond the Shopify app list?",
+                "Several cost categories consistently escape a standard app-list review. Shopify app marketplace charges appear in Shopify billing and accounting exports — not bank statements — so apps installed during testing and never removed stay invisible in a card-statement review. Channel connector fees for Amazon, eBay, and Google Shopping integrations appear as separate vendor charges alongside ad spend. Automation tools (Zapier, Make) on over-sized tiers, AI writing tools subscribed per contractor, and annual app billing that looks like a one-off charge all compound into meaningful overspend that only surfaces in a full 12-month billing export review.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">

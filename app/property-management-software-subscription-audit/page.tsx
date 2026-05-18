@@ -8,7 +8,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Property management software subscription audit | StackSmart",
-  description: "Audit software subscriptions for property management, real estate, and strata offices. Find duplicate inspection apps, maintenance portals, e-signature tools, CRM, forms, payments, accounting, and marketing subscriptions from billing exports only.",
+  description: "Audit software subscriptions for property management and strata offices. Find hidden costs in platform add-ons, app marketplace installs, paid connectors, ownerless renewals, and duplicate inspection, maintenance, e-signature, CRM, and admin tools — from billing exports only.",
   path: "/property-management-software-subscription-audit",
 });
 
@@ -28,6 +28,10 @@ const faqs = [
   [
     "How often should property management teams audit subscriptions?",
     "Review subscriptions at least annually before core platform renewals, and after staff changes, portfolio changes, office mergers, or system migrations. A quarterly review is useful if the office regularly tests new inspection, maintenance, or communication tools."
+  ],
+  [
+    "Where do property management software costs hide beyond the main subscription?",
+    "Beyond the core platform renewal, costs appear in: platform add-ons (SMS packs, e-sign top-ups, advanced reporting modules billed separately), app marketplace installs visible only in Xero or MYOB line items, paid connector fees for maintenance portal or accounting integrations, subscriptions signed up by property managers who have since left, and annual auto-renewals that pass through billing without a usage review. A billing export covering 12 months across all business cards and accounting software is the most reliable way to surface them all."
   ]
 ];
 
@@ -39,7 +43,7 @@ const jsonLd = {
       "@id": absoluteUrl("/property-management-software-subscription-audit"),
       url: absoluteUrl("/property-management-software-subscription-audit"),
       name: "Property management software subscription audit | StackSmart",
-      description: "Audit software subscriptions for property management, real estate, and strata offices. Find duplicate inspection apps, maintenance portals, e-signature tools, CRM, forms, payments, accounting, and marketing subscriptions from billing exports only.",
+      description: "Audit software subscriptions for property management and strata offices. Find hidden costs in platform add-ons, app marketplace installs, paid connectors, ownerless renewals, and duplicate inspection, maintenance, e-signature, CRM, and admin tools — from billing exports only.",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -92,44 +96,52 @@ const stackCategories = [
     "Xero, MYOB, payroll, receipt capture, contractor payments, team comms, and scheduling tools used around the property-management operation."
   ]
 ];
+
 const wasteSignals = [
   {
-    "label": "Inspection app duplicated by core platform",
-    "detail": "A standalone inspection app keeps billing after the property management platform adds condition reports or inspection workflows. The old app stays active because a few staff still know it.",
-    "color": "text-red-400",
-    "tag": "Consolidate"
+    label: "Inspection app duplicated by core platform",
+    detail: "A standalone inspection app keeps billing after the property management platform adds condition reports or inspection workflows. The old app stays active because a few staff still know it.",
+    color: "text-red-400",
+    tag: "Consolidate"
   },
   {
-    "label": "Maintenance portal overlap",
-    "detail": "A dedicated maintenance request portal, a forms tool, and built-in tenant request features all collect the same maintenance jobs, creating workflow confusion and recurring charges.",
-    "color": "text-red-400",
-    "tag": "Review"
+    label: "Maintenance portal overlap",
+    detail: "A dedicated maintenance request portal, a forms tool, and built-in tenant request features all collect the same maintenance jobs, creating workflow confusion and recurring charges.",
+    color: "text-red-400",
+    tag: "Review"
   },
   {
-    "label": "Idle seats after portfolio or team changes",
-    "detail": "Property managers, assistants, or contractors leave the office but remain active in per-seat platforms, CRM tools, e-signature accounts, or reporting dashboards.",
-    "color": "text-amber-400",
-    "tag": "Right-size"
+    label: "Idle seats after portfolio or team changes",
+    detail: "Property managers, assistants, or contractors leave the office but remain active in per-seat platforms, CRM tools, e-signature accounts, or reporting dashboards.",
+    color: "text-amber-400",
+    tag: "Right-size"
   },
   {
-    "label": "E-signature and PDF tool sprawl",
-    "detail": "DocuSign, Adobe, Annature, and platform-native signing can all be active across the same office after lease workflow changes or mergers.",
-    "color": "text-amber-400",
-    "tag": "Consolidate"
+    label: "E-signature and PDF tool sprawl",
+    detail: "DocuSign, Adobe, Annature, and platform-native signing can all be active across the same office after lease workflow changes or mergers.",
+    color: "text-amber-400",
+    tag: "Consolidate"
   },
   {
-    "label": "Duplicate CRM and email tools",
-    "detail": "A property-specific CRM, agency-wide CRM, email marketing platform, and social scheduling tool can all hold overlapping contact lists and campaign features.",
-    "color": "text-orange-400",
-    "tag": "Standardise"
+    label: "Duplicate CRM and email tools",
+    detail: "A property-specific CRM, agency-wide CRM, email marketing platform, and social scheduling tool can all hold overlapping contact lists and campaign features.",
+    color: "text-orange-400",
+    tag: "Standardise"
   },
   {
-    "label": "Legacy reporting dashboards",
-    "detail": "Reporting or owner-dashboard tools stay subscribed after the office moves reporting into the core property management platform or changes owner-communication workflow.",
-    "color": "text-brand-400",
-    "tag": "Cancel"
+    label: "Legacy reporting dashboards",
+    detail: "Reporting or owner-dashboard tools stay subscribed after the office moves reporting into the core property management platform or changes owner-communication workflow.",
+    color: "text-brand-400",
+    tag: "Cancel"
+  },
+  {
+    label: "Platform add-ons billed outside the core subscription",
+    detail: "SMS credit packs, e-sign top-up modules, advanced reporting add-ons, and API connector fees appear as separate line items in accounting exports alongside the core PM platform subscription. These can add 20 to 40 per cent to the nominal subscription cost without surfacing in the usual renewal conversation.",
+    color: "text-brand-400",
+    tag: "Audit"
   }
 ];
+
 const auditWorkflow = [
   [
     "Week 1 \u2014 Export billing data",
@@ -148,6 +160,7 @@ const auditWorkflow = [
     "Cancel unused portals, remove idle seats, consolidate forms/signing workflows, and prepare renegotiation notes for core platforms or add-ons that no longer match portfolio size."
   ]
 ];
+
 const sampleFindings = [
   [
     "Standalone inspection app retained after core platform migration",
@@ -180,6 +193,7 @@ const sampleFindings = [
     "$400 \u2013 $1,800/yr"
   ]
 ];
+
 const goodFit = [
   "Property management, strata, or real estate office with 5 to 50 staff",
   "Principal, office manager, or operations lead owns subscriptions",
@@ -187,6 +201,7 @@ const goodFit = [
   "Billing export is available from accounting software or company cards",
   "No dedicated procurement function reviewing renewals"
 ];
+
 const notBestFit = [
   "Large enterprise property group with mature IT procurement and vendor governance",
   "Primary need is trust-account, lease-compliance, or cybersecurity audit work",
@@ -233,6 +248,28 @@ export default function PropertyManagementSoftwareSubscriptionAuditPage() {
               <div key={item[0]} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
                 <h3 className="text-sm font-semibold text-white">{item[0]}</h3>
                 <p className="mt-3 text-sm leading-7 text-dark-300">{item[1]}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">Where property management subscription costs hide</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">Most overspend in property management software is not in the main platform renewal. It accumulates across the smaller charges that pass through billing without a second look.</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              ["Platform add-ons in accounting exports", "SMS credit packs, e-sign modules, advanced reporting tiers, and API access fees from PropertyMe, Property Tree, or Console Cloud appear as separate line items in Xero or MYOB — alongside but distinct from the core subscription charge. Without a line-by-line review, these pass unnoticed at renewal."],
+              ["App marketplace installs", "Property management platforms carry their own app marketplaces. Add-ons installed by individual property managers — forms tools, inspection integrations, owner portal widgets — appear as direct-debit charges from third-party vendors, not from the core platform vendor."],
+              ["Paid connector and integration fees", "Maintenance portal integrations, Zapier automations, and API connectors to accounting or inspection tools carry monthly fees. These look like small charges from an unfamiliar vendor and are routinely categorised as miscellaneous rather than software."],
+              ["Ownerless subscriptions from departed staff", "Property managers who leave often hold the signup credential for a tool they chose. The subscription continues on a shared card until a billing audit traces it to an account nobody can access or justify."],
+              ["Annual renewals without a usage review", "Core platforms, data services, and reporting tools auto-renew annually. The charge appears as a familiar vendor name in the bank statement and gets approved without checking whether seat counts, portfolio size, or active usage still match the plan."],
+              ["Renewal calendar gaps", "Without a forward-looking renewal calendar, contract renegotiation windows close silently. A 30-day cancellation notice clause on a $4,000 annual subscription means missing the window costs another full year."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
               </div>
             ))}
           </div>
@@ -379,32 +416,37 @@ export default function PropertyManagementSoftwareSubscriptionAuditPage() {
       </section>
 
       <SeoClusterLinks eyebrow="Related audit resources" title="More audit resources for property and professional-services SMBs" description="Property-management teams sit between real estate, admin-heavy services, and owner-led SMB operations — these pages cover adjacent software-sprawl patterns." links={[
-  {
-    "href": "/real-estate-agency-software-audit",
-    "title": "Real estate agency software audit",
-    "description": "Audit CRM, listings, property management, forms, marketing, and admin subscriptions across a real estate office."
-  },
-  {
-    "href": "/professional-services-software-audit",
-    "title": "Professional services software audit",
-    "description": "A broader framework for owner-led services firms with scattered recurring software."
-  },
-  {
-    "href": "/small-business-software-audit",
-    "title": "Small business software audit",
-    "description": "The general owner-led SMB software audit process."
-  },
-  {
-    "href": "/software-subscription-audit-checklist",
-    "title": "Software subscription audit checklist",
-    "description": "Prepare billing exports and group subscriptions before a review."
-  },
-  {
-    "href": "/reduce-saas-spend-small-business",
-    "title": "Reduce SaaS spend for small business",
-    "description": "Practical ways to turn a software audit into concrete savings actions."
-  }
-]} />
+        {
+          href: "/real-estate-agency-software-audit",
+          title: "Real estate agency software audit",
+          description: "Audit CRM, listings, property management, forms, marketing, and admin subscriptions across a real estate office."
+        },
+        {
+          href: "/professional-services-software-audit",
+          title: "Professional services software audit",
+          description: "A broader framework for owner-led services firms with scattered recurring software."
+        },
+        {
+          href: "/small-business-software-audit",
+          title: "Small business software audit",
+          description: "The general owner-led SMB software audit process."
+        },
+        {
+          href: "/software-subscription-audit-checklist",
+          title: "Software subscription audit checklist",
+          description: "Prepare billing exports and group subscriptions before a review."
+        },
+        {
+          href: "/reduce-saas-spend-small-business",
+          title: "Reduce SaaS spend for small business",
+          description: "Practical ways to turn a software audit into concrete savings actions."
+        },
+        {
+          href: "/saas-spend-audit-tool",
+          title: "SaaS spend audit tool",
+          description: "See how StackSmart automates subscription categorisation and action planning from a billing export."
+        }
+      ]} />
 
       <Footer />
     </main>
