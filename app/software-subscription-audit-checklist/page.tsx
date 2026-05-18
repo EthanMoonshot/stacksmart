@@ -350,6 +350,27 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
         </div>
       </section>
 
+      {/* Connector, AI, and owner-use pass */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">High-yield checks</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">Three checks that find waste before a full procurement process exists</h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {[
+              ["Owner/use accountability", "Every recurring payment needs a named owner, current user count, and one plain-English reason it still exists. Unknown owner means review before next renewal."],
+              ["Connector-fee review", "List Zapier, Make, marketplace sync, reporting connector, and integration add-on charges separately. Map each fee to the two tools it connects, then cut connectors attached to replaced or native features."],
+              ["AI subscription pass", "Check ChatGPT, Claude, AI note tools, transcription, design AI, dashboard AI, and meeting assistants by active usage. Right-size team tiers before they renew."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 max-w-3xl text-sm leading-7 text-dark-300">For an owner-led SMB, the goal is a short list of decisions: which app can we cancel this week, which seats can we remove before renewal, which duplicate tools need a quieter consolidation window, and which annual contracts need renegotiation before auto-renewal.</p>
+        </div>
+      </section>
+
       {/* Output framework — 4 buckets */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -374,6 +395,24 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
               <p className="text-sm font-semibold text-amber-400">Renegotiate</p>
               <p className="mt-2 text-sm leading-7 text-dark-300">Worth keeping, but the price or tier is wrong. Right-size seats, downgrade plans, or negotiate better terms before renewal.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related audit paths */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-12">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-xl font-semibold text-white">Use this checklist with a focused audit page</h2>
+          <div className="mt-5 flex flex-wrap gap-3">
+            {[
+              ["Bookkeeping stack audit", "/bookkeeping-firm-software-stack-audit"],
+              ["Allied health audit", "/allied-health-software-subscription-audit"],
+              ["Clinic audit", "/clinic-software-subscription-audit"],
+              ["AI subscription audit", "/ai-subscription-audit"],
+              ["SaaS spend audit tool", "/saas-spend-audit-tool"],
+            ].map(([label, href]) => (
+              <a key={href} href={href} className="rounded-full border border-dark-700 bg-dark-900 px-4 py-2 text-sm text-dark-200 hover:border-brand-500/60 hover:text-white">{label}</a>
+            ))}
           </div>
         </div>
       </section>

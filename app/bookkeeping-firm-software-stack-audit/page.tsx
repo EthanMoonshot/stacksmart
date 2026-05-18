@@ -9,7 +9,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Bookkeeping Firm Software Stack Audit",
   description:
-    "Bookkeeping firms using Xero, QBO, QuickBooks, or MYOB ecosystems accumulate receipt capture, payroll, proposal, workflow, e-sign, AI transcription, and client portal add-ons. A software audit finds duplicate tools, renewal gaps, and recurring payment waste.",
+    "Bookkeeping firms using Xero, QBO, QuickBooks, or MYOB ecosystems accumulate receipt capture, payroll, proposal, workflow, e-sign, AI transcription, connector fees, and client portal add-ons. A software audit finds duplicate tools, integration fee waste, renewal gaps, and recurring payment sprawl.",
   path: "/bookkeeping-firm-software-stack-audit",
 });
 
@@ -22,7 +22,7 @@ const jsonLd = {
       url: absoluteUrl("/bookkeeping-firm-software-stack-audit"),
       name: "Bookkeeping Firm Software Stack Audit | StackSmart",
       description:
-        "Bookkeeping firms using Xero, QBO, or MYOB ecosystems accumulate receipt capture, payroll, proposal, workflow, e-sign, AI transcription, and client portal add-ons with significant overlap.",
+        "Bookkeeping firms using Xero, QBO, or MYOB ecosystems accumulate receipt capture, payroll, proposal, workflow, e-sign, AI transcription, connector fees, and client portal add-ons with significant overlap.",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -61,7 +61,7 @@ const jsonLd = {
           name: "What software should a bookkeeping firm audit?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "A bookkeeping firm software audit should cover the core bookkeeping platform (Xero, QBO, MYOB), receipt and expense capture tools (Dext, Hubdoc), payroll software, proposal and engagement letter platforms (Ignition), e-sign tools (DocuSign, Adobe Sign), client portal and document management, workflow and practice management (Karbon, Jetpack Workflow), AI transcription and automation tools (Otter.ai, Fireflies, ChatGPT Teams), and marketing tools. The highest waste is typically found in the receipt capture, e-sign, proposal, and AI tool categories where platforms have expanded their features and created natural overlap.",
+            text: "A bookkeeping firm software audit should cover the core bookkeeping platform (Xero, QBO, MYOB), receipt and expense capture tools (Dext, Hubdoc), payroll software, proposal and engagement letter platforms (Ignition), e-sign tools (DocuSign, Adobe Sign), client portal and document management, workflow and practice management (Karbon, Jetpack Workflow), AI transcription and automation tools (Otter.ai, Fireflies, ChatGPT Teams), and marketing tools. Also check connector and integration fees billed separately through the Xero, QBO, or MYOB marketplace. The highest waste is typically found in the receipt capture, e-sign, proposal, connector fees, and AI tool categories where platforms have expanded their features and created natural overlap.",
           },
         },
         {
@@ -70,6 +70,22 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Ecosystem marketplaces make it easy to trial multiple tools in the same category without a clear consolidation policy. Bookkeeping firms adopt a receipt capture tool early, the bookkeeping platform later adds a native feature, and both continue billing. Proposal platforms and practice management systems have both expanded into engagement letter and e-sign territory. AI transcription and meeting tools were adopted firm-wide but active use concentrated in one or two people — creating seat waste that is easy to miss without a structured review.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What are connector and integration fees in a Xero or QBO bookkeeping stack?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Connector and integration fees are charges billed separately from the base subscription of each tool — typically by the integration layer that keeps two platforms in sync. In a Xero or QBO bookkeeping stack, these appear as Zapier workflow fees, API connector charges, marketplace add-on sync fees, and third-party automation costs for things like receipt capture-to-ledger sync or payroll-to-payroll-platform connectors. These fees are often missed in a standard card-statement review because they appear as separate small-dollar recurring charges rather than named software subscriptions. The audit step is to pull Xero and QBO marketplace billing separately and map every connector to the two tools it connects — then check whether the underlying tools or native features have made the connector redundant.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How does month-end reconciliation cleanup relate to a bookkeeping firm software audit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Month-end reconciliation drag is often a symptom of connector sprawl. When a bookkeeping firm has three or four tools all touching the same ledger — a receipt capture tool, a payroll add-on, a reporting dashboard, and an expense platform — the overlap creates duplicate transaction mapping, wrong account allocations, and reconciliation work that takes hours each month to untangle. A software audit that maps which tools are touching the chart of accounts and what each connector is doing often surfaces consolidation opportunities that reduce reconciliation time as well as subscription cost. Firms that consolidate to two or three tools with clean, native integrations typically find month-end runs faster once the stack is cleaned up.",
           },
         },
         {
@@ -93,7 +109,7 @@ const jsonLd = {
           name: "Does StackSmart work for Xero and QBO ecosystem audits?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. StackSmart processes any billing export CSV and recognises the common add-on categories in the Xero, QBO, and MYOB ecosystems — receipt capture, payroll, proposals, e-sign, client portals, workflow tools, and AI assistants. It categorises recurring charges, flags duplicates and idle seats, and produces a prioritised action list focused on the firm's internal software spend.",
+            text: "Yes. StackSmart processes any billing export CSV and recognises the common add-on categories in the Xero, QBO, and MYOB ecosystems — receipt capture, payroll, proposals, e-sign, client portals, workflow tools, connector fees, and AI assistants. It categorises recurring charges, flags duplicates and idle seats, and produces a prioritised action list focused on the firm's internal software spend.",
           },
         },
         {
@@ -101,7 +117,7 @@ const jsonLd = {
           name: "What does the StackSmart output look like for a bookkeeping firm?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by function (bookkeeping platform, receipt capture, payroll, proposals, e-sign, client portal, workflow, AI tools, and marketing), a list of flagged attention areas (zombie seats, duplicate add-on pairs, AI tool seat accumulation, forgotten subscriptions, upcoming renewals), and a prioritised action list ranked by annual dollar impact. The firm principal reviews the findings and can share the report with a practice manager or office manager to handle seat removals and vendor conversations — a practical spend view, not an enterprise procurement audit.",
+            text: "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by function (bookkeeping platform, receipt capture, payroll, proposals, e-sign, client portal, workflow, AI tools, and marketing), a list of flagged attention areas (zombie seats, duplicate add-on pairs, AI tool seat accumulation, forgotten subscriptions, upcoming renewals, connector fees), and a prioritised action list ranked by annual dollar impact. The firm principal reviews the findings and can share the report with a practice manager or office manager to handle seat removals and vendor conversations — a practical spend view, not an enterprise procurement audit.",
           },
         },
         {
@@ -125,7 +141,7 @@ const jsonLd = {
           name: "How can bookkeeping firms find duplicate QuickBooks or Xero-connected apps?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Export billing from the firm card plus marketplace billing from QuickBooks, Xero, QBO, or MYOB. Put each connected app into a software inventory spreadsheet with category, owner, current users, payment source, and renewal date. Then group apps by job: receipt capture, payroll, reporting, client portal, proposals, e-sign, workflow, and AI. If two apps do the same job, or if an app creates duplicate transaction mapping and month-end cleanup, it becomes a cut, consolidate, or reconfigure candidate.",
+            text: "Export billing from the firm card plus marketplace billing from QuickBooks, Xero, QBO, or MYOB. Put each connected app into a software inventory spreadsheet with category, owner, current users, payment source, and renewal date. Then group apps by job: receipt capture, payroll, reporting, client portal, proposals, e-sign, workflow, and AI. If two apps do the same job, or if an app creates duplicate transaction mapping and month-end cleanup drag, it becomes a cut, consolidate, or reconfigure candidate.",
           },
         },
       ],
@@ -154,6 +170,13 @@ const wasteCategories = [
       "Otter.ai, Fireflies, or similar meeting transcription tools purchased at a team plan during a firm-wide AI adoption push, with active use now concentrated in one or two people. ChatGPT Teams or Notion AI similarly billing at full seat count while most staff have returned to previous workflows.",
     action: "Right-size",
     color: "text-red-400",
+  },
+  {
+    category: "Connector and integration fees",
+    issue:
+      "Zapier, Make, or third-party API connector fees billed separately to sync receipt capture tools, payroll platforms, reporting dashboards, and CRM tools to Xero or QBO. These connector charges often appear as small-dollar recurring items that survive long after the underlying tools are consolidated or replaced — or after the native integration made them redundant.",
+    action: "Map and cut",
+    color: "text-orange-400",
   },
   {
     category: "Payroll",
@@ -203,7 +226,7 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
               Audit the add-on sprawl in your bookkeeping firm stack
             </h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Bookkeeping firms running on Xero, QBO, or MYOB accumulate ecosystem add-ons faster than almost any other professional services business. Receipt capture tools, payroll platforms, e-sign subscriptions, proposal tools, AI transcription apps, client portals, and workflow apps — many with significant feature overlap that nobody has reviewed since the initial signup. Recurring payments that looked justified at launch quietly compound into thousands per year in waste. StackSmart gives you a practical software-spend snapshot — not an enterprise procurement platform — so the firm owner or principal can see what they&apos;re paying for and act in a week.
+              Bookkeeping firms running on Xero, QBO, or MYOB accumulate ecosystem add-ons faster than almost any other professional services business. Receipt capture tools, payroll platforms, e-sign subscriptions, proposal tools, AI transcription apps, client portals, workflow apps, and connector fees — many with significant feature overlap that nobody has reviewed since the initial signup. Recurring payments that looked justified at launch quietly compound into thousands per year in waste. StackSmart gives you a practical software-spend snapshot — not an enterprise procurement platform — so the firm owner or principal can see what they&apos;re paying for and act in a week.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink
@@ -236,7 +259,7 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
               How do bookkeeping firms audit their software stack?
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              Export 6 to 12 months of billing data from Xero, QBO, MYOB, or your business credit card. Clearly separate subscriptions used for internal firm operations from any client-pass-through billing, then group firm subscriptions by category: bookkeeping platform, receipt and expense capture, payroll, proposals and engagement letters, e-sign, client portal and document management, workflow and practice management, AI tools, and marketing. For any category with more than one active tool, check what your primary bookkeeping or practice management platform now includes natively. Cross-reference user lists against current staff headcount for every per-seat subscription — including AI tools where seat counts are often set at onboarding and never reviewed. Review whether partner-program pricing still applies to your active platform subscriptions. Flag annual contracts renewing within 90 days as renegotiation targets.
+              Export 6 to 12 months of billing data from Xero, QBO, MYOB, or your business credit card — and also pull your Xero or QBO marketplace billing separately, which is where connector fees and add-on charges often hide. Clearly separate subscriptions used for internal firm operations from any client-pass-through billing, then group firm subscriptions by category: bookkeeping platform, receipt and expense capture, payroll, proposals and engagement letters, e-sign, client portal and document management, workflow and practice management, AI tools, connector and integration fees, and marketing. For any category with more than one active tool, check what your primary bookkeeping or practice management platform now includes natively. Cross-reference user lists against current staff headcount for every per-seat subscription — including AI tools where seat counts are often set at onboarding and never reviewed. Flag annual contracts renewing within 90 days as renegotiation targets. Map every active connector fee to the two tools it joins — connectors for tools already consolidated are immediate cut candidates.
             </p>
           </div>
         </div>
@@ -258,7 +281,7 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
                 ["1. Receipt capture", "Count how many receipt/expense tools are on the bill — Dext, Hubdoc, AutoEntry, and any native feature inside Xero or QBO. If you have more than one, flag it. Most firms only need one."],
                 ["2. E-sign", "Check if DocuSign or Adobe Sign bills alongside your proposal or practice management platform. If yes, check which one the team actually uses for client signatures. Cancel the other."],
                 ["3. AI tools", "List every AI subscription: ChatGPT, Otter.ai, Fireflies, Notion AI, Canva Pro. For each, note the seat count and think of one person who used it this week. If you cannot — right-size it before the renewal date."],
-                ["4. Payroll", "Compare the tier/seat count on your payroll tool against current employee headcount. Note any standalone payroll subscription that may already be included in your core bookkeeping platform."],
+                ["4. Connector fees", "Open your Xero or QBO marketplace billing. List every connector or integration add-on fee. For each, name the two tools it connects. If either tool has been cancelled or replaced, cut the connector too."],
                 ["5. Workflow seats", "Open Karbon, Jetpack, or your practice management tool. Check the active user count against the invoice. Note departed staff who still have a seat."],
                 ["6. Annual renewals in the next 90 days", "Scan for any annual contracts with an upcoming renewal date. These are renegotiation windows — flag them now to open the conversation before auto-renewal."],
               ].map(([step, detail]) => (
@@ -311,8 +334,8 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
                 "AI tools adopted during 2023–2024 were purchased at full team tier with good intentions. After the initial onboarding, active use concentrated in one or two people. Otter.ai, ChatGPT Teams, and Notion AI now appear regularly in bookkeeping firm billing exports as recurring payments with no active owner reviewing whether the seat count still makes sense.",
               ],
               [
-                "Partner-stack tier creep",
-                "Xero and QBO partner programs offer favourable rates at launch that are renegotiated or shifted to standard pricing over time. Many bookkeeping firms do not review pricing annually and remain on tiers that no longer reflect their partner discount status or current team size.",
+                "Partner-stack tier creep and connector accumulation",
+                "Xero and QBO partner programs offer favourable rates at launch that are renegotiated or shifted to standard pricing over time. Many bookkeeping firms do not review pricing annually and remain on tiers that no longer reflect their partner discount status or current team size. Connector and automation fees accumulate alongside the tools, surviving even after consolidations.",
               ],
             ].map(([title, copy]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
@@ -346,7 +369,7 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
               },
               {
                 source: "Ecosystem marketplace billing",
-                detail: "The Xero, QBO, and MYOB marketplaces bill add-ons directly through the platform account — which may use different payment details than the firm's main card. Dext, Hubdoc, and workflow add-ons adopted through the marketplace may not appear in a standard card statement search.",
+                detail: "The Xero, QBO, and MYOB marketplaces bill add-ons directly through the platform account — which may use different payment details than the firm's main card. Dext, Hubdoc, and workflow add-ons adopted through the marketplace may not appear in a standard card statement search. Connector fees for Zapier or Make integrations often appear here too.",
                 color: "text-amber-400",
               },
               {
@@ -376,7 +399,7 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">What a typical bookkeeping firm software stack looks like</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            Most small bookkeeping firms running 1 to 20 staff are paying for 10 to 16 recurring subscriptions across these categories.
+            Most small bookkeeping firms running 1 to 20 staff are paying for 10 to 16 recurring subscriptions across these categories — plus additional connector and integration fees that do not appear in the main subscription list.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {[
@@ -396,12 +419,53 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
         </div>
       </section>
 
+      {/* Integration and connector-fee cleanup */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Connector-fee cleanup</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">Integration add-on fees and connector sprawl</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            Beyond the named tool subscriptions, bookkeeping firms accumulate a separate layer of connector and integration fees. These are recurring charges billed for automation workflows, API syncs, and marketplace add-ons that keep tools talking to each other. They are easy to miss in a card-statement review because they appear as small-dollar line items, not named software products.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                type: "Zapier or Make connector fees",
+                detail: "Automation workflows built to sync receipt capture tools, CRM platforms, and reporting dashboards to Xero or QBO. Often billed at a task or workflow tier that crept up during heavy adoption. When the underlying tools are consolidated or the platform adds a native integration, the connector keeps billing.",
+                color: "text-amber-400",
+              },
+              {
+                type: "Marketplace add-on sync fees",
+                detail: "The Xero and QBO marketplaces charge separate fees for certain connected app integrations — distinct from the add-on's own subscription cost. These marketplace sync fees survive tool consolidations because they are billed by the platform, not the add-on vendor, and require a separate cancellation step in the marketplace account.",
+                color: "text-amber-400",
+              },
+              {
+                type: "Reconciliation tool and reporting add-on fees",
+                detail: "Reporting dashboards and business intelligence add-ons sometimes bill a separate data-connector fee for pulling Xero or QBO ledger data. When the bookkeeping platform's native reports are sufficient — which is increasingly common — the reporting add-on and its connector fee are both candidates for removal.",
+                color: "text-orange-400",
+              },
+            ].map((item) => (
+              <div key={item.type} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className={`text-sm font-semibold ${item.color}`}>{item.type}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-5">
+            <p className="text-sm font-semibold text-white">The connector cleanup step</p>
+            <p className="mt-2 text-sm leading-7 text-dark-300 max-w-3xl">
+              After building the main software inventory, list every connector and integration fee separately. For each connector, name the two tools it joins. If either tool has been consolidated, cancelled, or replaced with a native feature, mark the connector for immediate cut. Connectors for tools that are still active should be reviewed to confirm the automation is still running and that a native integration has not made it redundant. A two-hour connector cleanup pass in a Xero or QBO ecosystem typically saves $600 to $2,400 per year in fees that would otherwise roll over unreviewed.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Waste by category */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Common software waste in bookkeeping firm stacks</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            These are the seven patterns StackSmart most commonly surfaces when reviewing bookkeeping firm billing exports.
+            These are the eight patterns StackSmart most commonly surfaces when reviewing bookkeeping firm billing exports.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {wasteCategories.map((s) => (
@@ -429,20 +493,20 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
           <div className="mt-8 space-y-6">
             {[
               [
-                "Week 1 — Export billing data",
-                "Pull 6 to 12 months of transactions from Xero, QBO, MYOB, or your business credit card. Include both direct subscriptions and any add-ons billed through the bookkeeping ecosystem accounts. Cover at least 12 months — workflow and practice management platforms often bill annually, and AI tools adopted in 2023–2024 may be approaching first-year renewals.",
+                "Week 1 — Export billing data from all payment paths",
+                "Pull 6 to 12 months of transactions from Xero, QBO, MYOB, or your business credit card. Critically, also export Xero or QBO marketplace billing separately — this is where connector fees, add-on sync charges, and ecosystem-specific fees appear. Cover at least 12 months — workflow and practice management platforms often bill annually, and AI tools adopted in 2023–2024 may be approaching first-year renewals.",
               ],
               [
-                "Week 2 — Separate firm tools from client billing and map the stack",
-                "Clearly identify which subscriptions are for internal firm use versus those passed through to client engagements. Group firm subscriptions by category: bookkeeping platform, receipt capture, payroll, proposals, e-sign, client portal, document management, workflow, AI tools, and marketing. Flag every category with more than one active tool. For AI subscriptions, note the seat count and the names of people actively using it weekly.",
+                "Week 2 — Separate firm tools from client billing, map the stack, and list connectors",
+                "Clearly identify which subscriptions are for internal firm use versus those passed through to client engagements. Group firm subscriptions by category: bookkeeping platform, receipt capture, payroll, proposals, e-sign, client portal, document management, workflow, AI tools, connector and integration fees, and marketing. Flag every category with more than one active tool. Create a separate connector list: for each connector or automation fee, name the two tools it joins.",
               ],
               [
-                "Week 3 — Check partner pricing, seat counts, and AI usage",
-                "For every per-seat subscription, pull the current user list and compare against active staff headcount. For AI tools specifically, check the last-login date for each seat — anything idle for 30-plus days is a right-size candidate. Review whether partner-program rates from Xero, QBO, or MYOB still apply to your current subscription terms. Calculate the annual cost of every flagged redundancy and idle licence.",
+                "Week 3 — Check partner pricing, seat counts, AI usage, and connector relevance",
+                "For every per-seat subscription, pull the current user list and compare against active staff headcount. For AI tools specifically, check the last-login date for each seat — anything idle for 30-plus days is a right-size candidate. Review whether partner-program rates from Xero, QBO, or MYOB still apply to your current subscription terms. For every connector in your connector list, verify that both connected tools are still active and that no native integration now covers the same sync.",
               ],
               [
                 "Week 4 — Act and document",
-                "Cancel clearly redundant add-ons — particularly in the receipt capture, e-sign, and AI tool categories — before the next billing cycle. Right-size AI subscription seat counts to active users. Consolidate overlapping tools in a quiet client week. Open renegotiation conversations on annual contracts renewing within 90 days. Document each decision for the next review cycle.",
+                "Cancel clearly redundant add-ons — particularly in the receipt capture, e-sign, and AI tool categories — before the next billing cycle. Cut connectors for tools that have been consolidated or replaced. Right-size AI subscription seat counts to active users. Consolidate overlapping tools in a quiet client week. Open renegotiation conversations on annual contracts renewing within 90 days. Document each decision for the next review cycle.",
               ],
             ].map(([title, copy], i) => (
               <div key={title} className="flex gap-4 sm:gap-6">
@@ -483,6 +547,8 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
                   ["ChatGPT Teams at 10 seats, 2 people actively using it", "Right-size before annual renewal", "$1,920 – $2,880/yr"],
                   ["Ignition plus practice management proposals both active", "Consolidate to one", "$480 – $1,800/yr"],
                   ["Payroll tool at 15-employee tier, 9 current staff", "Renegotiate or downgrade", "$720 – $3,600/yr"],
+                  ["Zapier connector fee for receipt capture tool that was cancelled", "Cut connector", "$240 – $960/yr"],
+                  ["QBO marketplace sync fee for reporting dashboard with native reports available", "Cut add-on connector", "$360 – $1,200/yr"],
                   ["Workflow tool on annual contract above current seat count", "Renegotiate to current headcount", "$1,080 – $4,320/yr"],
                 ].map(([finding, action, impact]) => (
                   <tr key={finding} className="border-b border-dark-800/60">
@@ -506,9 +572,9 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {[
-              ["Categorised spend", "Every recurring charge grouped by function — bookkeeping platform, receipt capture, payroll, proposals, e-sign, client portal, workflow, AI tools, and marketing. No manual sorting."],
-              ["Flagged attention areas", "Zombie seats, duplicate add-on pairs, AI tool seat accumulation, forgotten annual subscriptions, and renewal risks — recurring payments where there is no active owner making a decision."],
-              ["Prioritised action list", "Cancel, consolidate, downgrade, and renegotiate — ranked by annual dollar impact so you know where to start before the next billing cycle."],
+              ["Categorised spend", "Every recurring charge grouped by function — bookkeeping platform, receipt capture, payroll, proposals, e-sign, client portal, workflow, AI tools, connector fees, and marketing. No manual sorting."],
+              ["Flagged attention areas", "Zombie seats, duplicate add-on pairs, AI tool seat accumulation, connector fees for cancelled tools, forgotten annual subscriptions, and renewal risks — recurring payments where there is no active owner making a decision."],
+              ["Prioritised action list", "Cancel, consolidate, downgrade, cut connectors, and renegotiate — ranked by annual dollar impact so you know where to start before the next billing cycle."],
             ].map(([title, copy]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
                 <h3 className="text-sm font-semibold text-white">{title}</h3>
@@ -519,7 +585,7 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
           <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-6">
             <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Who uses and shares this report</p>
             <p className="mt-3 text-sm leading-7 text-dark-300">
-              The firm principal or bookkeeping practice owner typically runs the initial review and owns the cancellation and renegotiation decisions — including AI subscription seat right-sizing. The completed savings report is shared with a practice manager or office manager to handle seat removals and vendor conversations. It can be handed to a finance admin as a structured view of recurring payments — a line-by-line spend snapshot before they go through statements manually. Bookkeepers who work with SMB clients can also share the StackSmart concept as a practical advisory step for clients with unreviewed software spend.
+              The firm principal or bookkeeping practice owner typically runs the initial review and owns the cancellation and renegotiation decisions — including AI subscription seat right-sizing and connector fee cuts. The completed savings report is shared with a practice manager or office manager to handle seat removals and vendor conversations. It can be handed to a finance admin as a structured view of recurring payments — a line-by-line spend snapshot before they go through statements manually. Bookkeepers who work with SMB clients can also share the StackSmart concept as a practical advisory step for clients with unreviewed software spend.
             </p>
           </div>
         </div>
@@ -540,6 +606,7 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
                 <li>Manually separate firm billing from client-pass-through billing</li>
                 <li>Categorise each add-on by function and check current feature sets</li>
                 <li>Pull user lists from each per-seat platform individually</li>
+                <li>Map every connector fee to the two tools it joins</li>
                 <li>Check AI subscription last-login dates manually per tool</li>
                 <li>Build a prioritised action list in a spreadsheet</li>
                 <li>Format findings to share with firm principal or partners</li>
@@ -550,8 +617,8 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
                 <li>Upload a single billing export (CSV or invoice data)</li>
                 <li>Automatic categorisation across bookkeeping firm tool categories</li>
-                <li>Flags receipt capture overlap, idle seats, AI seat waste, and renewal risks</li>
-                <li>Prioritised keep, cut, consolidate, and renegotiate action list</li>
+                <li>Flags receipt capture overlap, connector fees, idle seats, AI seat waste, and renewal risks</li>
+                <li>Prioritised keep, cut, consolidate, cut connectors, and renegotiate action list</li>
                 <li>Shareable savings report ready for principals or partners</li>
                 <li>Repeatable baseline for the next annual review</li>
               </ul>
@@ -596,7 +663,15 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
             {[
               [
                 "What software should a bookkeeping firm audit?",
-                "A bookkeeping firm software audit should cover the core bookkeeping platform (Xero, QBO, MYOB), receipt and expense capture tools (Dext, Hubdoc), payroll software, proposal and engagement letter platforms (Ignition), e-sign tools (DocuSign, Adobe Sign), client portal and document management, workflow and practice management (Karbon, Jetpack Workflow), AI transcription and automation tools (Otter.ai, Fireflies, ChatGPT Teams), and marketing tools. The highest waste is typically found in the receipt capture, e-sign, proposal, and AI tool categories.",
+                "A bookkeeping firm software audit should cover the core bookkeeping platform (Xero, QBO, MYOB), receipt and expense capture tools (Dext, Hubdoc), payroll software, proposal and engagement letter platforms (Ignition), e-sign tools (DocuSign, Adobe Sign), client portal and document management, workflow and practice management (Karbon, Jetpack Workflow), AI transcription and automation tools (Otter.ai, Fireflies, ChatGPT Teams), connector and integration fees, and marketing tools. The highest waste is typically found in the receipt capture, e-sign, connector fees, proposal, and AI tool categories.",
+              ],
+              [
+                "What are connector and integration fees in a Xero or QBO bookkeeping stack?",
+                "Connector and integration fees are charges billed separately from the base subscription of each tool — typically by the integration layer (Zapier, Make, or a marketplace connector) that keeps two platforms in sync. In a Xero or QBO stack, these appear as automation workflow fees, API connector charges, marketplace add-on sync fees, and third-party connector costs. The audit step is to pull Xero and QBO marketplace billing separately, list every connector fee, and map each connector to the two tools it joins — connectors for tools already consolidated or replaced are immediate cut candidates.",
+              ],
+              [
+                "How does month-end reconciliation cleanup relate to a bookkeeping firm software audit?",
+                "Month-end reconciliation drag is often a symptom of connector sprawl. When a firm has three or four tools all touching the same ledger — receipt capture, payroll, reporting, and expense platform — the overlap creates duplicate transaction mapping and reconciliation work. A software audit that maps which tools touch the chart of accounts often surfaces consolidation opportunities that reduce both subscription cost and reconciliation time.",
               ],
               [
                 "Why do bookkeeping firms carry duplicate add-ons in the Xero and QBO ecosystem?",
@@ -604,19 +679,11 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
               ],
               [
                 "What AI tools do bookkeeping firms subscribe to that often go unused?",
-                "The most common AI tools appearing in bookkeeping firm billing exports are Otter.ai and Fireflies (meeting transcription), ChatGPT Teams or Claude Pro (writing assistance), and Notion AI (workflow documentation). These are typically purchased at team tier, then active use concentrates in one or two people while the remaining seats bill quietly. Before the annual renewal, pull each tool's active user list and right-size the seat count to active users.",
-              ],
-              [
-                "How do bookkeeping firms audit software without disrupting client work?",
-                "Start with billing data from your accounting software or business credit card — no client data is accessed. Clearly separate subscriptions used for internal firm operations from any client-pass-through billing before reviewing. The principal or practice manager handles the initial categorisation and flagging, then involves staff only when planning consolidations to avoid workflow disruption for active clients.",
+                "The most common AI tools in bookkeeping firm billing exports are Otter.ai and Fireflies (meeting transcription), ChatGPT Teams or Claude Pro (writing assistance), and Notion AI (workflow documentation). These are typically purchased at team tier, then active use concentrates in one or two people while the remaining seats bill quietly. Before the annual renewal, pull each tool's active user list and right-size the seat count to active users.",
               ],
               [
                 "Does StackSmart work for Xero and QBO ecosystem audits?",
-                "Yes. StackSmart processes any billing export CSV and recognises the common add-on categories in the Xero, QBO, and MYOB ecosystems — receipt capture, payroll, proposals, e-sign, client portals, workflow tools, and AI assistants. It categorises recurring charges, flags duplicates and idle seats, and produces a prioritised action list focused on the firm's internal software spend.",
-              ],
-              [
-                "What does the StackSmart output look like for a bookkeeping firm?",
-                "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by function, a list of flagged attention areas (zombie seats, duplicate add-on pairs, AI tool seat accumulation, forgotten subscriptions, and upcoming renewals), and a prioritised action list ranked by annual dollar impact. The firm principal reviews the findings and can share the report with a practice manager or office manager to handle seat removals and vendor conversations — a practical spend view, not an enterprise procurement audit.",
+                "Yes. StackSmart processes any billing export CSV and recognises the common add-on categories in the Xero, QBO, and MYOB ecosystems — receipt capture, payroll, proposals, e-sign, client portals, workflow tools, connector fees, and AI assistants. It categorises recurring charges, flags duplicates and idle seats, and produces a prioritised action list focused on the firm's internal software spend.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
@@ -635,13 +702,13 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Connected-app cleanup</p>
             <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">When seven QuickBooks or Xero apps are all touching the same workflow</h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              The strongest bookkeeping waste signal is not just “too many apps”; it is duplicated admin work. A small practice can have a receipt tool, payroll add-on, reporting dashboard, proposal app, e-sign tool, workflow system, and AI meeting assistant all connected to QuickBooks or Xero — then spend month end untangling duplicate transactions, wrong mappings, buried fees, and subscriptions nobody remembers approving. StackSmart turns the billing export into a software inventory and renewal calendar so the principal can ask one concrete question per category: which app can we cancel or consolidate without breaking client delivery?
+              The strongest bookkeeping waste signal is not just "too many apps"; it is duplicated admin work and connector sprawl. A small practice can have a receipt tool, payroll add-on, reporting dashboard, proposal app, e-sign tool, workflow system, and AI meeting assistant all connected to QuickBooks or Xero — plus a separate connector fee for each integration — then spend month end untangling duplicate transactions, wrong mappings, buried fees, and subscriptions nobody remembers approving. StackSmart turns the billing export into a software inventory, connector map, and renewal calendar so the principal can ask one concrete question per category: which app can we cancel or consolidate without breaking client delivery?
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {[
-                ["Map", "List every Xero/QBO/QuickBooks-connected app, payment source, owner, user count, and renewal date."],
-                ["Group", "Cluster by job: receipt capture, payroll, reporting, e-sign, proposals, workflow, portals, AI."],
-                ["Decide", "Mark each duplicate as keep, cancel, consolidate, reconfigure, or review before renewal."],
+                ["Map", "List every Xero/QBO/QuickBooks-connected app and every connector fee. Record payment source, owner, user count, and renewal date."],
+                ["Group", "Cluster by job: receipt capture, payroll, reporting, e-sign, proposals, workflow, portals, AI. List connectors alongside the tools they join."],
+                ["Decide", "Mark each duplicate as keep, cancel, consolidate, reconfigure, or review before renewal. Cut connectors for cancelled tools immediately."],
               ].map(([step, detail]) => (
                 <div key={step} className="rounded-xl border border-dark-700 bg-dark-950/80 p-4">
                   <p className="text-sm font-semibold text-brand-200">{step}</p>
@@ -696,7 +763,7 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
       <SeoClusterLinks
         eyebrow="Related audit resources"
         title="More on software audits for bookkeeping and accounting firms"
-        description="These pages cover the broader SMB audit guide, the accounting firm-specific guide, the checklist, and the core StackSmart audit tool."
+        description="These pages cover the broader SMB audit guide, the accounting firm-specific guide, the checklist, the core audit tool, and related health and AI subscription audit guides."
         links={[
           {
             href: "/accounting-firm-software-stack-audit",
@@ -711,7 +778,7 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
           {
             href: "/software-subscription-audit-checklist",
             title: "Software subscription audit checklist",
-            description: "A structured 8-step checklist — including owner-use accountability pass — for reviewing every subscription category in your firm stack.",
+            description: "A structured 10-step checklist — including owner-use accountability pass and connector-fee review — for reviewing every subscription category in your firm stack.",
           },
           {
             href: "/small-business-software-audit",
@@ -719,14 +786,14 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
             description: "The owner-led SMB guide — card-statement pass, owner-use accountability, and vertical routing for 20+ business types.",
           },
           {
-            href: "/xero-app-stack-audit",
-            title: "Xero app stack audit",
-            description: "Audit your Xero add-ons for duplicate payroll, receipt capture, reporting, and practice management tools.",
+            href: "/ai-subscription-audit",
+            title: "AI subscription audit",
+            description: "Audit AI tool seats, overlapping ChatGPT and meeting transcription plans, and AI dashboard sprawl across your firm stack.",
           },
           {
-            href: "/marketing-agency-software-stack-audit",
-            title: "Marketing agency software stack audit",
-            description: "SEO, social scheduling, design, and reporting stack audit for owner-led marketing and creative agencies.",
+            href: "/allied-health-software-subscription-audit",
+            title: "Allied health software subscription audit",
+            description: "Admin and billing subscription audit for physiotherapy, psychology, OT, and multi-disciplinary allied health practices.",
           },
         ]}
       />

@@ -346,6 +346,26 @@ export default function ClinicSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+      {/* Sample owner decisions */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">The useful output is a decision list, not a software catalogue</h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {[
+              ["Cancel", "A duplicate SMS/reminder tool still billing after reminders moved into the practice-management platform."],
+              ["Right-size", "AI scribe or transcription seats assigned to every practitioner when only two clinicians use it weekly."],
+              ["Consolidate", "Standalone forms/intake software where the patient portal now covers the same workflow."],
+              ["Renegotiate", "Annual online booking, payment, or reporting add-on due within 90 days with usage below the current tier."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-brand-300">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

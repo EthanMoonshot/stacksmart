@@ -303,6 +303,30 @@ export default function SaaSSpendAuditToolPage() {
         </div>
       </section>
 
+      {/* Proof: what the tool looks for */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">CSV-first audit logic</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">Built for owners who want a savings snapshot, not another platform to manage</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-dark-300">StackSmart starts with the billing export because that is where owner-led SMB waste shows up first: monthly card charges, annual renewals, app-store subscriptions, marketplace add-ons, connector fees, and team-tier AI tools. The output groups each payment by job, assigns an action, and gives the owner/operator a practical cut list.</p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["Integration add-on fees", "Zapier, Make, marketplace sync, reporting connector, and API add-on charges are grouped separately so hidden connector spend does not disappear inside generic software categories."],
+              ["AI dashboard overlap", "ChatGPT, Claude, transcription, AI note tools, design AI, reporting AI, and meeting assistants are checked for active users and overlapping jobs before the next renewal."],
+              ["Owner/use pass", "Each tool needs a named owner and a workflow. If nobody can explain why the app exists, it becomes a cancel, right-size, or investigate candidate."],
+              ["Renewal calendar", "Annual contracts and converted trials are flagged before auto-renewal so the owner has time to renegotiate or cancel without a last-minute scramble."],
+              ["Duplicate account cleanup", "Multiple accounts for the same vendor, departed-staff seats, old trials, and department-level duplicates are grouped into one review queue."],
+              ["Which app can we cancel?", "Every finding is translated into a plain action: cut now, right-size seats, consolidate after a quiet week, renegotiate, or leave because it is clearly used."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Sample findings */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -320,6 +344,21 @@ export default function SaaSSpendAuditToolPage() {
                 <p className="mt-3 text-sm leading-7 text-dark-300">{f.detail}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enterprise-platform contrast */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-12">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+            <h2 className="text-xl font-semibold text-white">Different from enterprise SaaS management software</h2>
+            <p className="mt-3 text-sm leading-7 text-dark-300">Enterprise SaaS management platforms are built for IT procurement teams, app discovery, access governance, and ongoing administration. StackSmart is narrower on purpose: an owner-led SMB can upload billing data, see recurring software waste, and make practical savings decisions without implementing a new management layer.</p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a href="/software-subscription-audit-checklist" className="rounded-full border border-dark-700 bg-dark-950 px-4 py-2 text-sm text-dark-200 hover:border-brand-500/60 hover:text-white">Audit checklist</a>
+              <a href="/small-business-software-audit" className="rounded-full border border-dark-700 bg-dark-950 px-4 py-2 text-sm text-dark-200 hover:border-brand-500/60 hover:text-white">Small business audit</a>
+              <a href="/ai-subscription-audit" className="rounded-full border border-dark-700 bg-dark-950 px-4 py-2 text-sm text-dark-200 hover:border-brand-500/60 hover:text-white">AI subscription audit</a>
+            </div>
           </div>
         </div>
       </section>

@@ -305,6 +305,36 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+      {/* Owner-use and connector-fee review */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">30-minute owner review</p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">Find the quiet add-ons before they become permanent overhead</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-dark-300">
+            The fastest allied-health audit is not a procurement project. It is an owner-use pass across the card statement, practice-management billing, and any marketplace or integration account. For each recurring payment, the practice owner or manager should be able to name the current user, the patient/admin workflow it supports, the renewal date, and whether another active tool already does the same job.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["Practice-management add-ons", "Check telehealth, SMS packs, reminder bundles, online forms, intake, payments, and reporting modules. Many clinics keep standalone tools after their core practice-management system adds a native feature."],
+              ["NDIS and admin connectors", "List NDIS claiming, rostering, payroll, reporting, and workflow connectors separately. If a connector syncs two tools that are no longer both active, it is a cut candidate — not just a technical detail."],
+              ["AI note and dashboard overlap", "AI scribe, transcription, dashboard, and summarisation tools are often bought at team tier but used by a small subset of clinicians. Pull active-user data before the renewal rolls over."],
+              ["Reminder and communication duplicates", "SMS reminders, email marketing, patient recall, and online-booking messages can all bill separately. Group them by job so the team can choose one communication path per use case."],
+              ["Card-statement line-by-line pass", "Search for monthly charges under vendor names, app-store billing, Stripe descriptors, and marketplace billing. Small recurring add-ons hide under generic payment descriptors."],
+              ["Which app can we cancel?", "For every flagged duplicate, write the lowest-risk next action: cancel, right-size, consolidate, renegotiate, or leave until after a quieter clinical week."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "allied_health_owner_use" }} className="btn-secondary text-sm">Use the audit checklist</TrackLink>
+            <TrackLink href="/ai-subscription-audit" event="homepage_cta_clicked" props={{ target: "ai_audit", location: "allied_health_owner_use" }} className="btn-secondary text-sm">Check AI subscriptions</TrackLink>
+          </div>
+        </div>
+      </section>
+
       {/* Waste by category */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -551,6 +581,16 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
                 <div key={item} className="rounded-xl border border-dark-700 bg-dark-950/80 p-4 text-sm font-medium text-dark-200">{item}</div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Proof note */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-12">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-500/25 bg-brand-500/10 p-6">
+            <p className="text-sm font-semibold text-brand-200">What StackSmart looks for in allied health exports</p>
+            <p className="mt-2 text-sm leading-7 text-dark-200">The output groups recurring charges by clinical admin job — practice management, booking, telehealth, reminders, forms, payments, payroll, NDIS/admin, AI notes, reporting, and marketing — then highlights duplicate jobs, idle seats, ownerless renewals, and add-on fees that need a simple cut/consolidate/right-size decision.</p>
           </div>
         </div>
       </section>
