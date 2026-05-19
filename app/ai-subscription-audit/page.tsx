@@ -120,6 +120,30 @@ const jsonLd = {
             text: "StackSmart produces a categorised software-spend snapshot that includes all AI subscriptions grouped by function — general-purpose AI, image generation, meeting transcription, writing assistance, and search/research tools. It flags idle seat counts on team-tier plans, duplicate tools in the same category, individual accounts that should be consolidated onto a team plan, and annual renewal dates where the seat count should be reviewed before auto-renewal. The output is a prioritised keep, right-size, consolidate, or cancel list ranked by annual dollar impact — designed for the business owner to review and action in under an hour, or hand to an admin or office manager to execute.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What is workspace-owner confusion in AI subscriptions?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Workspace-owner confusion occurs when the person who set up an AI team subscription — ChatGPT Teams, Claude Pro, Notion AI — has left or changed roles, leaving no current team member with admin access or accountability for the renewal decision. The subscription keeps billing. Seats from departed team members are never removed. Annual renewals auto-process without anyone reviewing the seat count. Renewal notices go to an inbox nobody monitors. The fix is a workspace ownership audit: for each AI team subscription, confirm the current workspace admin is still at the business in the relevant role, that billing notifications go to an active business email, and that a named current team member owns the keep-or-cancel renewal decision.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Should contractors have AI subscription seats?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Contractors are frequently provisioned with the same AI tool access as full-time staff — a seat on ChatGPT Teams, Claude Pro, or Notion AI — for the duration of a project. When the project ends and the contractor offboards, the seat typically stays active unless someone with workspace admin access explicitly removes it. On an annual plan at $25–$30 per seat per month, a single dormant contractor seat costs $300–$360 per year. Most owner-led businesses with regular contractor use have two to four of these sitting active at any point. The audit check: compare the active user list on each AI workspace against the current team roster, including contractors currently engaged. Anyone not on the current roster is a seat removal candidate.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What are converted AI trials and how do you find them in a billing review?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A converted AI trial is a subscription that moved from a free trial to a paid plan, often without a deliberate adoption decision. A team member starts a free trial of a specialist assistant, transcription service, or research platform to evaluate it for a specific use case. The trial ends and converts automatically. If the evaluation was inconclusive or the team member who signed up has since left, the subscription bills monthly without active use. In a billing review, converted AI trials appear as charges that first showed up in the last 12 months without a preceding annual commitment. For each one, confirm: was this an intentional adoption decision, and is there a current team member who uses it at least twice a week? If not, it is an immediate cancellation candidate before the next renewal.",
+          },
+        },
       ],
     },
   ],
@@ -323,6 +347,44 @@ export default function AiSubscriptionAuditPage() {
         </div>
       </section>
 
+      {/* Contractor seats and project-only AI subscriptions */}
+      <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">Contractor seats and project-only AI subscriptions</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            Two AI subscription patterns that create recurring waste in owner-led businesses and are rarely caught in a standard seat-count review: contractor seats on full-team-tier plans, and AI tools subscribed for a project that never got cancelled when the work ended.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-amber-400">Contractor seats</p>
+              <h3 className="mt-3 text-base font-semibold text-white">Full employee-tier AI seats for contractors</h3>
+              <p className="mt-2 text-sm leading-7 text-dark-300">
+                When a contractor joins for a project, they are typically provisioned with the same AI tool access as full-time staff — a seat on ChatGPT Teams, Claude Pro, or Notion AI. The contractor completes the project and offboards. The seat stays active. On an annual plan at $25–$30/month, a single dormant contractor seat costs $300–$360 per year. Most owner-led businesses with regular contractor use have two to four of these sitting active at any point.
+              </p>
+              <p className="mt-3 text-sm leading-7 text-dark-300">
+                The check: compare the active user list on each AI workspace against your current team list including contractors actively engaged. Anyone not on the current roster is a seat removal candidate.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-amber-400">Project-only tools</p>
+              <h3 className="mt-3 text-base font-semibold text-white">AI tools bought for a project that became permanent</h3>
+              <p className="mt-2 text-sm leading-7 text-dark-300">
+                A business runs an AI-driven content, research, or design project and signs up for a purpose-specific AI tool for the duration. The project ends. The tool stays on the billing run. Six months later, nobody remembers what it was for, the tool has not been opened since the project wrapped, and it is approaching its annual renewal with no named owner reviewing it.
+              </p>
+              <p className="mt-3 text-sm leading-7 text-dark-300">
+                The check: for any AI subscription you cannot immediately assign to a current ongoing workflow, ask — was this bought for a specific project or campaign? If yes and that project has ended, it is an immediate cancellation candidate before the next billing cycle.
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-5">
+            <p className="text-sm font-medium text-white">Converted AI trials: the third pattern</p>
+            <p className="mt-2 text-sm leading-7 text-dark-300 max-w-3xl">
+              A team member starts a free trial of a new AI tool — a specialist assistant, transcription service, or research platform — intending to evaluate it. The trial converts to paid automatically. The evaluation was inconclusive, the use case did not materialise, or the team member who signed up has since left — but the subscription is now billing monthly. Converted AI trials appear in billing reviews as charges that first showed up within the last 12 months. For each one, confirm: was this an intentional adoption decision, and is there a current team member who uses it at least twice a week? If not, cancel before the next renewal. See the <a href="/software-subscription-audit-checklist" className="text-brand-400 hover:text-brand-300 transition-colors">software subscription audit checklist</a> for the full converted-trial review step.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* AI waste patterns */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -373,6 +435,9 @@ export default function AiSubscriptionAuditPage() {
                   ["Notion AI at full workspace tier, 1 active writer", "Right-size or downgrade tier", "$480 – $960/yr"],
                   ["Fireflies annual plan renewed, team uses Teams recap", "Cancel at next renewal", "$480 – $1,800/yr"],
                   ["Perplexity Pro + Claude Pro for same research workflow", "Consolidate to one", "$240 – $960/yr"],
+                  ["Contractor seats left active after project ended — 2 seats", "Remove from workspace admin panel", "$600 – $720/yr"],
+                  ["AI trial converted to paid, no adoption decision made", "Cancel before next billing", "$120 – $960/yr"],
+                  ["Workspace admin email belongs to departed team member", "Recover admin access, audit and remove inactive seats", "$300 – $1,800/yr"],
                 ].map(([finding, action, impact]) => (
                   <tr key={finding} className="border-b border-dark-800/60">
                     <td className="py-3 pr-6 text-white">{finding}</td>
@@ -477,6 +542,60 @@ export default function AiSubscriptionAuditPage() {
         </div>
       </section>
 
+      {/* Workspace ownership and admin confusion */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-red-400/15 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-red-400">Workspace-owner confusion</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              Who owns the AI workspace when the person who set it up has left?
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              AI team subscriptions are typically set up by one person — often using their own email as the workspace admin. When that person leaves, the workspace does not transfer automatically. The subscription keeps billing, the seats stay active, but there is no named owner managing access, reviewing the seat count, or making the renewal decision. Renewal notices go to an inbox nobody monitors. Seat counts from departed team members are never adjusted. The annual renewal processes without review. This is the AI version of an ownerless renewal — and it is one of the most common findings in owner-led SMB billing audits.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[
+                {
+                  signal: "Admin email belongs to a departed team member",
+                  detail: "The workspace was set up under a personal email or the account of someone who has since left. Billing continues to a card on file, but no current team member has admin access to manage seats or review the renewal.",
+                  tag: "Reassign admin",
+                  color: "text-red-400",
+                },
+                {
+                  signal: "Renewal notices go to an unmonitored inbox",
+                  detail: "Seat limit alerts, renewal confirmations, and billing notifications go to an email address nobody currently checks. Annual renewals auto-process without anyone seeing the notification — or reviewing the seat count.",
+                  tag: "Update billing contact",
+                  color: "text-red-400",
+                },
+                {
+                  signal: "No current team member has workspace admin access",
+                  detail: "Nobody on the team can confirm how many seats are active, which users are on the plan, or when the annual renewal date is — because nobody has the admin credentials. The subscription is effectively ownerless even if two or three people actively use it.",
+                  tag: "Recover admin access",
+                  color: "text-amber-400",
+                },
+                {
+                  signal: "Departed users still listed as active seats",
+                  detail: "Team members who left are still provisioned on the ChatGPT Teams or Claude Pro workspace. Their accounts cannot be used after their email is deactivated, but the seats bill at full rate until someone with admin access explicitly removes them.",
+                  tag: "Remove inactive seats",
+                  color: "text-amber-400",
+                },
+              ].map((item) => (
+                <div key={item.signal} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <p className={`text-sm font-semibold ${item.color}`}>{item.signal}</p>
+                    <span className="flex-shrink-0 rounded-full border border-dark-600 bg-dark-800 px-2.5 py-0.5 text-xs text-dark-300">{item.tag}</span>
+                  </div>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              The workspace ownership audit is a one-time check before the next annual renewal: confirm who the current workspace admin is for each AI subscription, verify they are still at the business, and confirm billing notifications go to an active business inbox. If no current team member can access the workspace admin panel, recovering that access is the first step — before reviewing seat counts or making any renewal decision. See the <a href="/small-business-software-audit" className="text-brand-400 hover:text-brand-300 transition-colors">small business software audit guide</a> for the broader owner-use accountability workflow.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* What you get */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -563,6 +682,18 @@ export default function AiSubscriptionAuditPage() {
               [
                 "What does StackSmart produce from an AI subscription audit?",
                 "StackSmart produces a categorised AI-spend snapshot: every AI subscription grouped by function (general-purpose AI, image generation, meeting transcription, writing assistance, research tools), flagged findings (idle seat counts, duplicate tools, individual-plan duplicates, upcoming renewals), and a prioritised keep, right-size, consolidate, and cancel list ranked by annual dollar impact. The report is designed for the business owner to review in under an hour and share with an admin or office manager to execute.",
+              ],
+              [
+                "What is workspace-owner confusion in AI subscriptions?",
+                "Workspace-owner confusion occurs when the person who set up an AI team subscription — ChatGPT Teams, Claude Pro, Notion AI — has left or changed roles, leaving no current team member with admin access or accountability for the renewal decision. The subscription keeps billing, seats from departed users are never removed, and annual renewals auto-process without anyone reviewing the seat count. The fix: for each AI team subscription, confirm who the current workspace admin is, verify they are still at the business, and confirm billing notifications go to an active business email. If no current team member has admin access, recovering it is the first step before any seat review or renewal decision.",
+              ],
+              [
+                "Should contractors have AI subscription seats?",
+                "Contractors are frequently given the same AI tool access as full-time staff — a seat on ChatGPT Teams, Claude Pro, or Notion AI — for the duration of a project. When the project ends and the contractor offboards, the seat typically stays active unless someone with workspace admin access removes it. On an annual plan at $25–$30 per seat per month, a single dormant contractor seat costs $300–$360 per year. Most owner-led businesses with regular contractor use have two to four of these active at any point. The check: compare active users on each AI workspace against the current team roster. Anyone not on the current list is a removal candidate.",
+              ],
+              [
+                "What are converted AI trials and how do you find them?",
+                "A converted AI trial is a subscription that moved from a free trial to a paid plan, often without a deliberate adoption decision. A team member evaluates a tool, the trial ends, and it converts automatically. If the evaluation was inconclusive or the team member has since left, the subscription bills monthly without active use. In a billing review, converted AI trials appear as charges that first showed up in the last 12 months without a preceding annual commitment. For each one: was this an intentional adoption decision, and does a current team member use it at least twice a week? If not, cancel before the next renewal.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">

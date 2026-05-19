@@ -138,6 +138,22 @@ const jsonLd = {
             text: "A quarterly software review for a small business is a lighter pass than the full annual audit — around 30 to 45 minutes once you have a baseline. It covers three things: converted trials that moved from free to paid in the last 90 days, any ghost seats from staff departures since the last review, and annual contracts renewing in the next 60 days that need a seat count or tier check before auto-renewal. The quarterly pass does not replace the annual review; it prevents the drift between cycles. Owner-led businesses with 5 to 50 staff that run quarterly checks typically catch one to three recoverable items per pass — small individually, meaningful over the course of a year.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What is the leaver trigger in a small business software audit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The leaver trigger is the pattern where every staff departure leaves a trail of active software seats across multiple platforms. When someone leaves without a formal offboarding checklist, their licences on project management, communication, design, AI, and HR tools remain active and billing. A 10-person business with two departures in the last 12 months will typically have four to eight orphaned seats still billing across multiple platforms. The leaver trigger is often the fastest starting point for an audit: list every staff member who departed in the last 12 months, then check each per-seat platform for their active accounts. This pass alone typically surfaces $1,500–$6,000 in recoverable annual spend for a 10–30 person business with two or more recent departures.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What are project-only tools in a small business software audit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Project-only tools are software subscriptions originally purchased for a specific project, campaign, or initiative that kept billing after the project ended. The person who signed up has often since left or changed roles, so nobody is actively managing the keep-or-cancel decision. In a billing review, project-only tools often appear as subscriptions with a clear first-billing date that corresponds to a project or hire, followed by months of charges with no corresponding active use. For each one, ask: does this tool serve a current ongoing workflow, or was it bought for something that has since ended? If the latter, it is an immediate cancellation candidate.",
+          },
+        },
       ],
     },
   ],
@@ -179,6 +195,12 @@ const wasteSignals = [
     detail: "Sales using one video platform, ops using another, and admin using a third — three subscriptions doing the same job across a 12-person team.",
     color: "text-brand-400",
     tag: "Consolidate",
+  },
+  {
+    label: "Project-only tools that became permanent",
+    detail: "A tool purchased for a specific project — an AI pilot, a design sprint, a content campaign — that kept billing after the work wrapped. The original owner has often since left or changed roles, and nobody is actively managing the keep-or-cancel decision. These accumulate silently across every project cycle.",
+    color: "text-dark-400",
+    tag: "Review now",
   },
 ];
 
@@ -341,12 +363,78 @@ export default function SmallBusinessSoftwareAuditPage() {
         </div>
       </section>
 
+      {/* The leaver trigger */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-amber-400/15 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">The leaver trigger</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              Every staff departure leaves a trail of active software seats
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Staff turnover is one of the fastest drivers of software waste in owner-led SMBs. When someone leaves, their licences across project management, communication, design, AI, and HR tools rarely get removed on the same day — or the same week. In businesses without a formal offboarding checklist, seats from departed staff accumulate across every platform until a billing review catches them. A 10-person business with two staff departures in the last 12 months will typically have four to eight orphaned seats still billing across multiple platforms.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  title: "Immediate seat removal on departure",
+                  detail: "The day a staff member leaves, remove their accounts from every per-seat platform: project management, communication, design, AI tools, and any tool where they were the sole named owner. Do not wait for the next billing cycle.",
+                  urgency: "Day one",
+                  color: "text-red-400",
+                },
+                {
+                  title: "Workspace and admin access handoff",
+                  detail: "For every tool where the departing person was the workspace admin — AI platforms, Google Workspace, project management tools — transfer admin access to a current team member before the departure. Admin access left with a deactivated email creates an ownerless workspace that renews without review.",
+                  urgency: "Before departure",
+                  color: "text-red-400",
+                },
+                {
+                  title: "Contractor and project staff",
+                  detail: "Contractors and project-based staff are frequently given the same tool access as full-time employees. When the project or contract ends, their seats are rarely included in any formal offboarding process — they accumulate silently across AI platforms, design tools, and project management software.",
+                  urgency: "End of engagement",
+                  color: "text-amber-400",
+                },
+                {
+                  title: "Renewal ownership reassignment",
+                  detail: "Any annual subscription where the departed person was the named renewal owner needs to be reassigned immediately. Ownerless renewals — subscriptions due to auto-renew with no current team member accountable for the decision — are the single most common waste category in post-departure audits.",
+                  urgency: "Within one week",
+                  color: "text-amber-400",
+                },
+                {
+                  title: "Billing email and notification redirection",
+                  detail: "Subscription billing confirmations and renewal reminders that went to the departed person's email are now unmonitored. Annual renewals will auto-process without anyone seeing the notification. Update billing contacts for all subscriptions immediately after the departure.",
+                  urgency: "Within one week",
+                  color: "text-brand-400",
+                },
+                {
+                  title: "The quarterly departed-staff pass",
+                  detail: "A quarterly sweep of active seats against current headcount catches the cumulative drift between full annual audits. For any staff departure in the last 90 days, check every per-seat platform for their active accounts. Most businesses complete this pass in under 20 minutes once they have a baseline.",
+                  urgency: "Quarterly",
+                  color: "text-dark-400",
+                },
+              ].map((item) => (
+                <div key={item.title} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className={`text-sm font-semibold ${item.color}`}>{item.title}</h3>
+                    <span className="flex-shrink-0 rounded-full border border-dark-600 bg-dark-800 px-2 py-0.5 text-xs text-dark-400">{item.urgency}</span>
+                  </div>
+                  <p className="mt-2 text-xs leading-6 text-dark-300">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              The leaver trigger is the fastest way to start a software audit: list every staff member who departed in the last 12 months, then check each per-seat platform for their active accounts. This pass alone typically surfaces $1,500–$6,000 in recoverable annual spend for a 10–30 person business that has had two or more departures without a formal offboarding process. See the <a href="/ai-subscription-audit" className="text-brand-400 hover:text-brand-300 transition-colors">AI subscription audit guide</a> for specific AI seat and workspace cleanup after staff departures.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Waste signals */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Common software waste in small businesses</h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            Most owner-led businesses have no clear picture of what is being used across their software stack. These are the six patterns StackSmart most commonly surfaces from SMB billing exports — small leaks that become costly habits over time.
+            Most owner-led businesses have no clear picture of what is being used across their software stack. These are the seven patterns StackSmart most commonly surfaces from SMB billing exports — small leaks that become costly habits over time.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {wasteSignals.map((s) => (
@@ -758,6 +846,14 @@ export default function SmallBusinessSoftwareAuditPage() {
               [
                 "How do you run a quarterly software review for a small business?",
                 "A quarterly software review covers three things: converted trials that moved from free to paid in the last 90 days, any ghost seats from staff departures, and annual contracts renewing in the next 60 days needing a review before auto-renewal. Once you have a baseline from the initial audit, the quarterly pass takes 30 to 45 minutes. Owner-led businesses with 5 to 50 staff that run quarterly reviews typically catch one to three recoverable items per pass — small individually but meaningful over the course of a year.",
+              ],
+              [
+                "What is the leaver trigger in a software audit?",
+                "The leaver trigger is the pattern where every staff departure leaves a trail of active software seats across multiple platforms. When someone leaves without a formal offboarding process, their licences on project management, communication, design, AI, and other per-seat tools remain active and billing. A 10-person business with two departures in the last 12 months typically has four to eight orphaned seats still billing across multiple platforms. The leaver trigger is often the fastest starting point for an audit: list every staff member who departed in the last 12 months and check each per-seat platform for their active accounts. This pass alone typically surfaces $1,500–$6,000 in recoverable spend for a business with two or more recent departures.",
+              ],
+              [
+                "What are project-only tools in a software audit?",
+                "Project-only tools are software subscriptions originally purchased for a specific project, campaign, or initiative that kept billing after the project ended. The person who signed up has often since left or changed roles, so nobody is managing the keep-or-cancel decision. In a billing review, project-only tools appear as subscriptions with a clear first-billing date corresponding to a project or hire, followed by months of charges with no corresponding active use. For each one: does this tool serve a current ongoing workflow, or was it bought for something that has since ended? If the latter, it is an immediate cancellation candidate.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">

@@ -47,12 +47,20 @@ const checklist = [
     detail: "Identify subscriptions that moved from free trial to paid plan — especially in the last 12 months. Look for charges that first appeared on billing statements in a specific month with no preceding annual commitment. For each converted trial, confirm: was this an intentional adoption decision, or did it convert by default when the trial ended? Trials that defaulted to paid without genuine adoption are cut candidates. Trials with real active use should be reviewed for seat count and tier — they often converted to a default full-team tier that is over-provisioned for actual usage.",
   },
   {
+    step: "Run a leaver and contractor seat pass",
+    detail: "List every staff member who departed in the last 12 months — including contractors and project-based hires whose engagements ended. For each person, check every per-seat platform for their active accounts. Any seat belonging to a departed employee or ended contractor is an immediate removal candidate. This pass is the fastest source of recoverable spend in most first-time audits — a 10–30 person business with two or more recent departures typically finds four to eight orphaned seats across multiple platforms. Run this check immediately, not at the end of the review — seat removal on active plans takes effect right away.",
+  },
+  {
+    step: "Audit workspace admin access and renewal ownership",
+    detail: "For each platform — especially AI tools, project management, Google Workspace, and design tools — confirm that the current workspace admin is an active team member in the relevant role. If the person who set up the workspace has since left, their email may still be the admin contact and billing notification address. Ownerless workspaces renew automatically without anyone reviewing the seat count. For each tool: name the current workspace admin, confirm they are still at the business, and confirm billing notifications go to an active business inbox. Where the admin has left, recovering admin access is the first step before any seat review or renewal decision.",
+  },
+  {
     step: "Sort every tool into a decision bucket",
     detail: "Classify each subscription as keep, cut, consolidate, or renegotiate. This is the output that drives action.",
   },
   {
     step: "Run an owner-use accountability pass",
-    detail: "For every remaining subscription, name one current team member who uses this tool regularly and would notice if it was cancelled. If you cannot name someone, the payment has no active owner — mark it as a cut or right-size candidate regardless of the tool's original purpose. Ghost seats, AI subscriptions at full team tier with low active use, and ownerless renewals are the most common findings in this final pass.",
+    detail: "For every remaining subscription, name one current team member who uses this tool regularly and would notice if it was cancelled. If you cannot name someone, the payment has no active owner — mark it as a cut or right-size candidate regardless of the tool's original purpose. Ghost seats, AI subscriptions at full team tier with low active use, ownerless renewals, and project-only tools that outlived their original purpose are the most common findings in this final pass.",
   },
 ];
 
@@ -146,6 +154,22 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "A converted trial is a subscription that moved from a free trial to a paid plan — sometimes without a deliberate decision being made. When auditing software subscriptions, identify converted trials by looking for charges that first appeared on billing statements in a specific month with no preceding annual commitment. For each converted trial, ask two questions: was this an intentional adoption decision, or did it convert by default when the trial period ended? Is the tool actively used by at least one current team member? Converted trials that defaulted to paid without genuine adoption are immediate cut candidates. Converted trials with genuine active use should be reviewed for seat count and tier fit — they often converted to a default full-team tier that is over-provisioned for actual usage.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why should a software audit checklist include a leaver and contractor seat pass?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Every staff departure leaves a trail of active software seats across multiple platforms — project management, communication, design, AI, and HR tools. Without a formal offboarding checklist that removes seats, those accounts accumulate across every departure cycle. A leaver and contractor seat pass is one of the fastest sources of recoverable spend in any first-time audit: list every staff member and contractor whose employment or engagement ended in the last 12 months, then check each per-seat platform for their active accounts. Any seat belonging to a departed team member is an immediate removal candidate. A 10–30 person business with two or more recent departures typically finds four to eight orphaned seats across multiple platforms. Including this as an explicit checklist step — not an afterthought — ensures it gets done before the owner-use pass and renewal review, where incomplete seat counts can obscure the true cost of each subscription.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What is a workspace admin audit and why does it belong in a software subscription checklist?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A workspace admin audit checks whether the current admin for each platform — AI tools, project management, Google Workspace, design tools — is an active team member in the relevant role. If the person who originally set up a workspace has since left, their email may still be the admin contact and billing notification address. The subscription keeps billing, seats from departed users are never removed, and annual renewals auto-process without anyone reviewing the seat count. The workspace admin audit belongs in the checklist because it is a prerequisite for accurate seat counts — you cannot reliably review or remove seats on a platform where no current team member has admin access. For each tool, confirm: who is the workspace admin, are they still at the business, and do billing notifications go to an active business inbox?",
           },
         },
       ],
@@ -244,7 +268,7 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-[28px] border border-dark-700 bg-dark-900/75 p-8 shadow-xl">
-            <h2 className="text-2xl font-semibold text-white">The 10-step checklist</h2>
+            <h2 className="text-2xl font-semibold text-white">The 12-step checklist</h2>
             <div className="mt-6 space-y-4">
               {checklist.map((item, idx) => (
                 <div key={item.step} className="rounded-2xl border border-dark-700 bg-dark-950/70 p-4">
@@ -405,10 +429,13 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
           <h2 className="text-xl font-semibold text-white">Use this checklist with a focused audit page</h2>
           <div className="mt-5 flex flex-wrap gap-3">
             {[
+              ["Small business software audit", "/small-business-software-audit"],
+              ["AI subscription audit", "/ai-subscription-audit"],
+              ["Accounting firm audit", "/accounting-firm-software-stack-audit"],
+              ["Marketing agency audit", "/marketing-agency-software-stack-audit"],
               ["Bookkeeping stack audit", "/bookkeeping-firm-software-stack-audit"],
               ["Allied health audit", "/allied-health-software-subscription-audit"],
               ["Clinic audit", "/clinic-software-subscription-audit"],
-              ["AI subscription audit", "/ai-subscription-audit"],
               ["SaaS spend audit tool", "/saas-spend-audit-tool"],
             ].map(([label, href]) => (
               <a key={href} href={href} className="rounded-full border border-dark-700 bg-dark-900 px-4 py-2 text-sm text-dark-200 hover:border-brand-500/60 hover:text-white">{label}</a>

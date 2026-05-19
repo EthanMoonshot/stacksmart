@@ -128,6 +128,14 @@ const jsonLd = {
             text: "Use the spreadsheet as a working overlap map, not a procurement database. List every recurring software charge, the category it serves, the named owner, current users, payment source, renewal date, and whether another tool already does the same job. In accounting firms the useful columns are practice management, tax, payroll, receipt capture, proposals, documents, e-sign, reporting, AI assistants, and marketing. The owner or practice manager can then ask the practical question: which app can we cancel before the next renewal without disrupting client work?",
           },
         },
+        {
+          "@type": "Question",
+          name: "How do seasonal staff and contractor seat patterns create waste in accounting firms?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Accounting firms that bring on additional staff or contractors during tax season frequently provision them with the same tool access as permanent employees — seats on practice management, tax, payroll, AI assistant, and communication platforms. When the busy period ends and the seasonal staff leave, their seats are rarely removed immediately. On per-seat platforms at $60–$120 per user per month, three idle post-season seats cost $2,160–$4,320 per year. The pattern is compounded when a firm brings in seasonal staff annually — without a formal offboarding checklist, idle post-season seats accumulate across multiple platforms and multiple years. The post-season seat cleanup is the fastest audit action for a firm that has run busy periods without a formal offboarding process: pull the user list from each per-seat platform immediately after peak season, compare against current active staff, and remove any seat for a team member no longer working at the firm.",
+          },
+        },
       ],
     },
   ],
@@ -419,6 +427,60 @@ export default function AccountingFirmSoftwareStackAuditPage() {
         </div>
       </section>
 
+      {/* Seasonal staff, contractor seats, and departures */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-amber-400/15 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">Post-season and leaver seat cleanup</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              Seasonal staff, contractor seats, and the post-departure seat trail
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Accounting firms have a distinct seat-waste pattern driven by the busy-season cycle: seasonal staff and contractors are provisioned with practice management, tax, AI, and communication tool access during peak periods — then leave without a formal offboarding process that removes those licences. On per-seat platforms at $60–$120 per user per month, three idle post-season seats cost $2,160–$4,320 per year. The pattern compounds when a firm brings in seasonal staff annually without a formal post-season seat removal step.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[
+                {
+                  title: "Post-busy-season seat cleanup",
+                  detail: "After tax season or EOFY, pull the user list from every per-seat platform — practice management, tax, AI assistants, communication tools — and compare against current permanent staff. Any seat belonging to a seasonal hire or short-term contractor who has left is a removal candidate. This is the single fastest seat-recovery action for most accounting firms.",
+                  color: "text-red-400",
+                  tag: "Post-season",
+                },
+                {
+                  title: "Contractor workspace access on AI tools",
+                  detail: "Contractors brought in for a busy period are often provisioned with a ChatGPT Teams, Copilot, or Canva Pro seat alongside permanent staff. When the contract ends, these seats are rarely removed from the workspace admin panel. A contractor seat on a $30/user/month annual plan costs $360 per year per idle seat. Firms with two to three post-season contractors typically have six to nine months of idle billing before a review catches it.",
+                  color: "text-red-400",
+                  tag: "End of contract",
+                },
+                {
+                  title: "Ownerless renewals from departed staff",
+                  detail: "When a permanent staff member departs — whether a junior accountant, a senior bookkeeper, or the practice admin — any annual subscription they owned as the named renewal contact becomes ownerless. The renewal auto-processes without anyone reviewing the seat count or tier. Identify every annual contract where the renewal owner has left the firm and reassign ownership to a current team member before the next renewal date.",
+                  color: "text-amber-400",
+                  tag: "Reassign owner",
+                },
+                {
+                  title: "Who owns the AI workspace admin after a departure?",
+                  detail: "If the team member who set up ChatGPT Teams, Copilot, or Notion AI was the workspace admin and has since left, no current team member may have admin access. The workspace keeps billing, but nobody can remove inactive seats, change the seat count, or review the renewal. Recovering admin access is the first step before any seat or renewal review — contact the platform's support team with billing ownership documentation to transfer admin credentials.",
+                  color: "text-amber-400",
+                  tag: "Priority fix",
+                },
+              ].map((item) => (
+                <div key={item.title} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className={`text-sm font-semibold ${item.color}`}>{item.title}</h3>
+                    <span className="flex-shrink-0 rounded-full border border-dark-600 bg-dark-800 px-2.5 py-0.5 text-xs text-dark-300">{item.tag}</span>
+                  </div>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              The post-season seat cleanup takes under 30 minutes once you have admin access to each platform. For firms that run annual busy periods, adding a post-season seat removal step to the standard EOFY or post-tax-season checklist prevents this waste category from accumulating year over year. See the <a href="/ai-subscription-audit" className="text-brand-400 hover:text-brand-300 transition-colors">AI subscription audit guide</a> for the full workspace ownership and seat recovery workflow across AI tools specifically.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 30-day workflow */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -617,6 +679,10 @@ export default function AccountingFirmSoftwareStackAuditPage() {
               [
                 "What does the StackSmart output look like for an accounting firm?",
                 "StackSmart produces a categorised software-spend snapshot: every recurring charge grouped by practice function, a list of flagged attention areas (zombie seats, duplicate tool pairs, AI seat accumulation, forgotten subscriptions, and upcoming renewals), and a prioritised action list ranked by annual dollar impact. The report is designed for the firm owner or accounting partner to review and share with a practice manager or office manager to action — a practical spend view, not an enterprise procurement audit.",
+              ],
+              [
+                "How do seasonal staff and contractor seats create waste in accounting firms?",
+                "Accounting firms that bring on additional staff or contractors during tax season provision them with practice management, tax, AI, and communication tool access. When the busy period ends and seasonal staff leave, their seats are rarely removed immediately. On per-seat platforms at $60–$120 per user per month, three idle post-season seats cost $2,160–$4,320 per year. The post-season seat cleanup is the fastest audit action for firms that run busy periods without a formal offboarding process: pull the user list from each per-seat platform after peak season, compare against current active staff, and remove any seat belonging to a team member no longer at the firm.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">

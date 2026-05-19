@@ -133,7 +133,15 @@ const jsonLd = {
           name: "What is an ownerless renewal in a marketing agency tool stack?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "An ownerless renewal is an annual subscription that auto-renews without any current team member being responsible for the keep-or-cancel decision. Most common when the person who originally signed up has left, changed roles, or is no longer involved in the relevant workflow. Common examples: an SEO platform renewal owned by a strategist who departed six months ago; an annual Adobe CC seat for a designer who left; an AI tool subscription nobody has logged into since the first month. The fix is assigning a named owner before the renewal date — confirm current usage, then make an active keep, right-size, or cancel decision with the leverage of the upcoming renewal window.",
+            text: "An ownerless renewal is an annual subscription that auto-renews without any current team member being responsible for the keep-or-cancel decision. Most common when the person who originally signed up has left, changed roles, or is no longer involved in the relevant workflow. Common examples: an SEO platform renewal owned by a strategist who departed six months ago; an annual Adobe CC seat for a designer who left; an AI tool nobody has logged into since the first month. The fix is assigning a named owner before the renewal date — confirm current usage, then make an active keep, right-size, or cancel decision with the leverage of the upcoming renewal window.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do freelancer and contractor seats create software waste in marketing agencies?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Marketing agencies frequently bring in freelancers and contractors for specific campaigns, client accounts, or specialist work — and provision them with the same tool access as full-time staff. A freelance designer gets an Adobe CC seat. A contract SEO specialist gets access to Ahrefs or Semrush at agency tier. A project-based strategist gets a ChatGPT Teams seat. When the engagement ends, these seats are rarely removed unless someone runs an explicit offboarding checklist. At agency-tier per-seat pricing for SEO tools ($100–$200/month) and AI tools ($25–$30/month), a single dormant freelancer seat can cost $1,200–$2,400 per year. Agencies with regular freelancer use typically have three to six of these active at any point — sitting between reviews and accumulating across every engagement cycle.",
           },
         },
       ],
@@ -408,6 +416,60 @@ export default function MarketingAgencySoftwareStackAuditPage() {
                 <p className="mt-3 text-sm leading-7 text-dark-300" dangerouslySetInnerHTML={{ __html: copy as string }} />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Freelancer and contractor seat patterns */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-amber-400/15 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">Freelancer and contractor seat waste</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              Contractor and freelancer seats that outlive the engagement
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Marketing agencies bring in freelancers and contractors frequently — for campaigns, client onboarding, specialist work, and growth periods. Each engagement generates tool access: SEO platform seats, Adobe CC licences, AI writing tool seats, project management access, and meeting transcription accounts. When the engagement ends, that access rarely ends at the same time. The result is a growing list of dormant freelancer seats billing at full agency-tier rates long after the work has wrapped.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[
+                {
+                  title: "SEO platform seats at agency tier",
+                  detail: "A contract SEO specialist is given access to the agency's Ahrefs or Semrush account at agency-tier pricing. When the contract ends, the seat stays active. At $100–$200 per seat per month at agency tier, a single dormant contractor access costs $1,200–$2,400 per year. Agencies with two to three regular contract SEO specialists typically have at least one idle seat active between engagements.",
+                  color: "text-red-400",
+                  tag: "Remove seat",
+                },
+                {
+                  title: "AI writing and generation tool seats",
+                  detail: "A freelance content writer or strategist is provisioned with a ChatGPT Teams, Claude Pro, or Notion AI seat during a campaign. The campaign ends, the freelancer offboards, the seat remains. At $25–$30/month, this is a smaller individual cost — but agencies with frequent freelancer use accumulate three to five of these dormant seats at any point, totalling $900–$1,800 per year from a single platform.",
+                  color: "text-red-400",
+                  tag: "Remove seat",
+                },
+                {
+                  title: "Design tool access for project-based work",
+                  detail: "A contract designer is added to the Adobe CC team plan or given an individual Figma or Canva Pro account for a project. When the project wraps, the team plan seat is not removed. On an all-apps Adobe CC team plan, a single unused seat costs $80–$90 per month. An annual Figma or Canva Pro seat at individual billing costs $150–$240 per year. Neither is reviewed between engagements.",
+                  color: "text-amber-400",
+                  tag: "Review and remove",
+                },
+                {
+                  title: "Ownerless workspace admin after contractor departure",
+                  detail: "In smaller agencies, a senior contractor or long-term freelancer is sometimes the named workspace admin on an AI tool, reporting platform, or project management workspace. When that contractor ends their engagement, no current permanent team member has admin access — the subscription keeps billing, seats cannot be managed, and the annual renewal auto-processes with no review. Recovering admin access before the renewal date is the priority fix.",
+                  color: "text-amber-400",
+                  tag: "Recover admin",
+                },
+              ].map((item) => (
+                <div key={item.title} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className={`text-sm font-semibold ${item.color}`}>{item.title}</h3>
+                    <span className="flex-shrink-0 rounded-full border border-dark-600 bg-dark-800 px-2.5 py-0.5 text-xs text-dark-300">{item.tag}</span>
+                  </div>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              The freelancer seat pass belongs in every agency quarterly review: list every contractor and freelancer engaged in the last 12 months, then check the active user list on each tool against currently active engagements. Anyone not on an active engagement is a seat removal candidate. For AI tool workspaces specifically, confirm who the current workspace admin is before running the seat review — see the <a href="/ai-subscription-audit" className="text-brand-400 hover:text-brand-300 transition-colors">AI subscription audit guide</a> for the workspace ownership check and seat removal workflow.
+            </p>
           </div>
         </div>
       </section>
@@ -687,6 +749,10 @@ export default function MarketingAgencySoftwareStackAuditPage() {
               [
                 "What is an ownerless renewal in a marketing agency tool stack?",
                 "An ownerless renewal is an annual subscription that auto-renews without any current team member being responsible for the keep-or-cancel decision. Most common when the person who originally signed up has left or changed roles. Examples: an SEO platform renewal owned by a strategist who departed six months ago; an annual Adobe CC seat for a designer who left; an AI tool nobody has logged into since the first month. The fix: assign a named owner before the renewal date, confirm current usage, then make an active keep, right-size, or cancel decision.",
+              ],
+              [
+                "How do freelancer and contractor seats create software waste in marketing agencies?",
+                "Marketing agencies provision freelancers and contractors with the same tool access as full-time staff — SEO platform seats, Adobe CC licences, AI writing tool seats, and project management access — for the duration of an engagement. When the engagement ends, that access rarely ends at the same time. At agency-tier per-seat pricing for SEO tools ($100–$200/month) and AI tools ($25–$30/month), a single dormant freelancer seat costs $1,200–$2,400 per year. Agencies with regular freelancer use typically have three to six of these active at any point. The freelancer seat pass — comparing active users on each platform against currently active engagements — belongs in every quarterly review cycle.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
