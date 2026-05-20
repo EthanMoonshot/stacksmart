@@ -88,6 +88,14 @@ const jsonLd = {
             text: "The best trigger is 60 to 90 days before your largest annual contracts renew — member management platforms are often billed annually and carry the highest monthly equivalent cost. For fitness studios, a natural review point is at the end of each membership cycle or before the January rush and the mid-year slow period, when member numbers and active class volumes are clearest.",
           },
         },
+        {
+          "@type": "Question",
+          name: "What is a member-management add-on audit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A member-management add-on audit separates the core fitness booking or member platform from optional paid modules such as SMS, waivers, access control, reporting, payment add-ons, challenge tools, and marketing upgrades. The goal is not to replace the platform; it is to decide which add-ons are used often enough to keep and which should be cut, downgraded, consolidated, or renegotiated.",
+          },
+        },
       ],
     },
   ],
@@ -320,6 +328,46 @@ export default function FitnessStudioSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+
+      {/* 2026 proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Owner/admin cleanup</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Member-management add-on audit for fitness and wellness operators</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            Fitness studios often know the core booking platform cost but miss the member-management add-on audit: SMS packs, waiver tools, payment modules, challenge apps, email tiers, and trial tools that became permanent after one campaign.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Booking and member-management modules</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Split the core booking/member platform from add-ons for SMS, waivers, access control, reporting, and payments. Keep modules that are part of weekly operations; challenge one-off campaign tools that became permanent.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Coach, contractor, and leaver seats</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Compare instructors, admin staff, casual contractors, and past managers against paid accounts in booking, payroll, M365/Google Workspace, Canva, email, and community tools. Remove people who only needed access for a launch or timetable change.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Campaign tools that stayed on</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Review free-trial conversions, challenge apps, landing-page tools, social schedulers, and email upgrades bought for a seasonal campaign. Assign a renewal owner so marketing extras do not renew after the campaign is finished.</p>
+            </div>
+          </div>
+          <div className="mt-8 rounded-2xl border border-brand-400/20 bg-dark-950/70 p-6">
+            <h3 className="text-base font-semibold text-white">What StackSmart returns</h3>
+            <p className="mt-3 text-sm leading-7 text-dark-300">
+              StackSmart turns the billing export into a practical owner/operator action list: keep the tools that are still doing real work, cut unused seats, right-size tiers, consolidate overlapping workflows, and renegotiate renewals before the card is charged again. It is deliberately lighter than an enterprise procurement platform and designed for a busy SMB owner, practice manager, operator, or bookkeeper.
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "fitness_studio_software_subscription_audit_proof_refresh" }} className="btn-primary text-sm">
+                See the audit tool
+              </TrackLink>
+              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "fitness_studio_software_subscription_audit_proof_refresh" }} className="btn-secondary text-sm">
+                Use the checklist
+              </TrackLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Manual vs StackSmart */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -403,6 +451,10 @@ export default function FitnessStudioSoftwareSubscriptionAuditPage() {
               [
                 "When is the best time to audit a fitness studio's software subscriptions?",
                 "The best trigger is 60 to 90 days before your largest annual contracts renew — member management platforms are often billed annually and carry the highest monthly equivalent cost. A natural review point is at the end of each membership cycle or before the January rush and the mid-year slow period, when member numbers and active class volumes are clearest.",
+              ],
+              [
+                "What is a member-management add-on audit?",
+                "A member-management add-on audit separates the core fitness booking or member platform from optional paid modules such as SMS, waivers, access control, reporting, payment add-ons, challenge tools, and marketing upgrades. The goal is not to replace the platform; it is to decide which add-ons are used often enough to keep and which should be cut, downgraded, consolidated, or renegotiated.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">

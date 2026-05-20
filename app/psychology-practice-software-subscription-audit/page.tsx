@@ -88,6 +88,14 @@ const jsonLd = {
             text: "Most psychology practices with 2 to 15 practitioners carry between $3,000 and $12,000 in recoverable software spend annually. The largest items are typically telehealth platforms contracted at a peak-demand tier with only one or two active remote users, practice management migration leftovers where both the old and new system bill simultaneously, and standalone reminder tools that duplicate recall functionality already included in the core practice management platform.",
           },
         },
+        {
+          "@type": "Question",
+          name: "How can a psychology practice do contractor clinician seat cleanup safely?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Start from billing and admin access lists rather than clinical records. Compare paid users in practice-management, telehealth, forms, transcription, M365/Google Workspace, and design/admin tools against current clinicians, contractors, and admin staff. Remove or downgrade unused paid seats while preserving any access the practice needs for records and continuity.",
+          },
+        },
       ],
     },
   ],
@@ -326,6 +334,46 @@ export default function PsychologyPracticeSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+
+      {/* 2026 proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Owner/admin cleanup</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Contractor clinician seat cleanup for psychology practices</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            Psychology practices often grow with a mix of employees, contractors, rooms, telehealth, forms, transcription, and practice-management tools. The biggest practical win is contractor clinician seat cleanup: removing or right-sizing accounts after clinicians change days, leave, or only need temporary access.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Clinician and contractor access pass</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Compare paid practice-management, telehealth, form, M365/Google Workspace, and AI/transcription seats against active clinicians, contractor days, admin staff, and leavers. Keep access needed for records; remove paid seats that are no longer operational.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Telehealth, forms, and transcription overlap</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Check whether telehealth, intake forms, reminders, notes, and transcription are already included in the practice-management platform. If a separate tool duplicates an included module, mark it for cut, downgrade, or consolidation.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Privacy-aware billing review</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Use billing exports and subscription names for the audit; do not upload patient notes or clinical records. StackSmart’s useful role here is cost and ownership cleanup, not clinical governance or legal compliance advice.</p>
+            </div>
+          </div>
+          <div className="mt-8 rounded-2xl border border-brand-400/20 bg-dark-950/70 p-6">
+            <h3 className="text-base font-semibold text-white">What StackSmart returns</h3>
+            <p className="mt-3 text-sm leading-7 text-dark-300">
+              StackSmart turns the billing export into a practical owner/operator action list: keep the tools that are still doing real work, cut unused seats, right-size tiers, consolidate overlapping workflows, and renegotiate renewals before the card is charged again. It is deliberately lighter than an enterprise procurement platform and designed for a busy SMB owner, practice manager, operator, or bookkeeper.
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "psychology_practice_software_subscription_audit_proof_refresh" }} className="btn-primary text-sm">
+                See the audit tool
+              </TrackLink>
+              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "psychology_practice_software_subscription_audit_proof_refresh" }} className="btn-secondary text-sm">
+                Use the checklist
+              </TrackLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Manual vs StackSmart */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -409,6 +457,10 @@ export default function PsychologyPracticeSoftwareSubscriptionAuditPage() {
               [
                 "How much does software waste typically cost a psychology practice per year?",
                 "Most psychology practices with 2 to 15 practitioners carry between $3,000 and $12,000 in recoverable software spend annually. The largest items are typically telehealth platforms contracted at a peak-demand tier with only one or two active remote users, practice management migration leftovers where both old and new systems bill simultaneously, and standalone reminder tools that duplicate functionality already in the core practice management platform.",
+              ],
+              [
+                "How can a psychology practice do contractor clinician seat cleanup safely?",
+                "Start from billing and admin access lists rather than clinical records. Compare paid users in practice-management, telehealth, forms, transcription, M365/Google Workspace, and design/admin tools against current clinicians, contractors, and admin staff. Remove or downgrade unused paid seats while preserving any access the practice needs for records and continuity.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">

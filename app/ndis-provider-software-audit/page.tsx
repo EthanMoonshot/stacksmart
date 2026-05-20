@@ -82,6 +82,14 @@ const jsonLd = {
         },
         {
           "@type": "Question",
+          name: "How should an NDIS provider handle a plan-management subscription handoff?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Treat the plan-management subscription handoff as an owner/admin control point: list each plan-management, claims, billing, and care-platform add-on, record the person responsible for renewal, and compare paid users against current coordinators and finance staff. StackSmart can help turn the billing export into a keep, cut, right-size, consolidate, or renegotiate action list, but the provider still makes the operational decision.",
+          },
+        },
+        {
+          "@type": "Question",
           name: "Should a small NDIS provider use a subscription management platform?",
           acceptedAnswer: {
             "@type": "Answer",
@@ -320,6 +328,46 @@ export default function NdisProviderSoftwareAuditPage() {
         </div>
       </section>
 
+
+      {/* 2026 proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Owner/admin cleanup</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Billing handoff checks for NDIS and community care teams</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            The easiest waste to miss is not the headline care platform. It is the plan-management subscription handoff between coordinators, finance, and owners: old users, add-ons, connector fees, and annual renewals that nobody owns after staff or participant mix changes.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Plan-management and billing handoff</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Match plan-management, claims, and billing add-ons against the current person who owns each workflow. If finance, a coordinator, and the owner all think someone else reviews the subscription, assign one renewal owner before the next auto-renewal.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Support-worker and coordinator seats</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Compare active support workers, coordinators, contractors, and departed staff against rostering, care-management, Microsoft 365, Google Workspace, and e-sign seats. Remove or downgrade accounts that are only retained for historical access.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Connector and compliance add-ons</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Separate core care-management spend from optional SMS, document, compliance, reporting, and accounting connectors. Keep add-ons that are used weekly; pause or renegotiate modules bought for a past audit or implementation push.</p>
+            </div>
+          </div>
+          <div className="mt-8 rounded-2xl border border-brand-400/20 bg-dark-950/70 p-6">
+            <h3 className="text-base font-semibold text-white">What StackSmart returns</h3>
+            <p className="mt-3 text-sm leading-7 text-dark-300">
+              StackSmart turns the billing export into a practical owner/operator action list: keep the tools that are still doing real work, cut unused seats, right-size tiers, consolidate overlapping workflows, and renegotiate renewals before the card is charged again. It is deliberately lighter than an enterprise procurement platform and designed for a busy SMB owner, practice manager, operator, or bookkeeper.
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "ndis_provider_software_audit_proof_refresh" }} className="btn-primary text-sm">
+                See the audit tool
+              </TrackLink>
+              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "ndis_provider_software_audit_proof_refresh" }} className="btn-secondary text-sm">
+                Use the checklist
+              </TrackLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Manual vs StackSmart */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -399,6 +447,10 @@ export default function NdisProviderSoftwareAuditPage() {
               [
                 "What is the biggest source of software waste for NDIS providers?",
                 "Ghost seats are the most common finding. NDIS providers often have high staff turnover among support workers and coordinators. When someone leaves, their software licences are rarely removed promptly — leaving paid seats sitting idle. Rostering and care management platforms with per-user pricing are particularly affected.",
+              ],
+              [
+                "How should an NDIS provider handle a plan-management subscription handoff?",
+                "Treat the plan-management subscription handoff as an owner/admin control point: list each plan-management, claims, billing, and care-platform add-on, record the person responsible for renewal, and compare paid users against current coordinators and finance staff. StackSmart can help turn the billing export into a keep, cut, right-size, consolidate, or renegotiate action list, but the provider still makes the operational decision.",
               ],
               [
                 "Should a small NDIS provider use a subscription management platform?",

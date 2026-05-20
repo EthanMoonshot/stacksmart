@@ -88,6 +88,14 @@ const jsonLd = {
             text: "The best trigger is 60 to 90 days before your largest annual contracts renew — practice management and POS systems are typically billed annually. For optometry practices, the start of a new financial year is a natural review point, as it aligns with frame and lens pricing cycles from suppliers and gives a clean baseline for the year ahead.",
           },
         },
+        {
+          "@type": "Question",
+          name: "Why does an optometry practice need a recall-system renewal owner?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Recall, reminder, SMS, booking, and marketing tools often renew quietly because they sit between clinical admin, retail, and ownership. A recall-system renewal owner is the person responsible for checking usage, duplicate modules, send volume, and price changes before renewal, then deciding whether to keep, downgrade, consolidate, or renegotiate the tool.",
+          },
+        },
       ],
     },
   ],
@@ -320,6 +328,46 @@ export default function OptometryPracticeSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+
+      {/* 2026 proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Owner/admin cleanup</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Recall-system renewal owner checks for optometry practices</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            Optometry practices often combine PMS/clinical systems, recall reminders, online booking, payments, ecommerce, stock/inventory, marketing, email, and M365/Google Workspace. A recall-system renewal owner makes sure reminder, SMS, and marketing tools are reviewed before they auto-renew.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Recall and reminder renewal owner</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Assign a recall-system renewal owner for SMS, email, booking, patient reminder, and marketing automation tools. Review usage, send volume, and duplicate reminder modules before annual renewal rather than after the card is charged.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Retail, ecommerce, and inventory add-ons</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Separate clinical/PMS costs from retail inventory, ecommerce, payment, and stock-management add-ons. Keep tools tied to active sales workflows; downgrade modules bought for a short campaign or supplier change.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Staff, locum, and admin seat cleanup</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Compare paid accounts across PMS, M365/Google Workspace, Canva, email, booking, forms, and reporting tools against optometrists, dispensers, locums, admin, and leavers. Remove project-only or departed-user seats after handoff.</p>
+            </div>
+          </div>
+          <div className="mt-8 rounded-2xl border border-brand-400/20 bg-dark-950/70 p-6">
+            <h3 className="text-base font-semibold text-white">What StackSmart returns</h3>
+            <p className="mt-3 text-sm leading-7 text-dark-300">
+              StackSmart turns the billing export into a practical owner/operator action list: keep the tools that are still doing real work, cut unused seats, right-size tiers, consolidate overlapping workflows, and renegotiate renewals before the card is charged again. It is deliberately lighter than an enterprise procurement platform and designed for a busy SMB owner, practice manager, operator, or bookkeeper.
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "optometry_practice_software_subscription_audit_proof_refresh" }} className="btn-primary text-sm">
+                See the audit tool
+              </TrackLink>
+              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "optometry_practice_software_subscription_audit_proof_refresh" }} className="btn-secondary text-sm">
+                Use the checklist
+              </TrackLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Manual vs StackSmart */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -403,6 +451,10 @@ export default function OptometryPracticeSoftwareSubscriptionAuditPage() {
               [
                 "When is the best time for an optometry practice to audit its software subscriptions?",
                 "The best trigger is 60 to 90 days before your largest annual contracts renew — practice management and POS systems typically bill annually and carry the highest per-seat cost. The start of a new financial year is a natural review point as it aligns with supplier pricing cycles and gives a clean baseline for the year ahead.",
+              ],
+              [
+                "Why does an optometry practice need a recall-system renewal owner?",
+                "Recall, reminder, SMS, booking, and marketing tools often renew quietly because they sit between clinical admin, retail, and ownership. A recall-system renewal owner is the person responsible for checking usage, duplicate modules, send volume, and price changes before renewal, then deciding whether to keep, downgrade, consolidate, or renegotiate the tool.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">

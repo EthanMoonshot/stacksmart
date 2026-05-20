@@ -88,6 +88,14 @@ const jsonLd = {
             text: "No. StackSmart works entirely from billing exports — bank statements, card statements, or accounting system exports. No patient records, clinical notes, Medicare data, or operational system access is needed or used. The audit identifies software waste from subscription billing data only, which keeps the process straightforward and avoids any privacy or compliance concerns.",
           },
         },
+        {
+          "@type": "Question",
+          name: "Where do practice-management connector fees hide?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Practice-management connector fees often appear as separate line items or add-ons for payments, SMS reminders, online forms, telehealth, reporting, accounting sync, transcription, or document workflows. A billing-export audit groups those charges beside the core practice-management platform so the owner or practice manager can decide what to keep, cut, right-size, consolidate, or renegotiate.",
+          },
+        },
       ],
     },
   ],
@@ -320,6 +328,46 @@ export default function MedicalPracticeSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+
+      {/* 2026 proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Owner/admin cleanup</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Practice-management connector fees and admin add-ons</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            Medical practices rarely overspend because of one obvious tool. Waste usually hides in practice-management connector fees, payment add-ons, SMS/reminder packs, forms, recalls, telehealth, transcription, reporting, and M365/Google Workspace seats that renew without an owner.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Practice-management connector fees</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Separate core practice-management costs from paid connectors to accounting, payments, forms, telehealth, pathology, reminders, and reporting. Keep connectors used every week; challenge add-ons enabled during rollout that now have low value.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Admin, GP, nurse, and leaver seats</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Compare paid users across practice-management, M365/Google Workspace, e-sign, document storage, transcription, and task tools against current doctors, nurses, practice managers, reception, contractors, and leavers.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">Renewal-owner assignment</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Assign one owner for each renewal: practice manager, owner GP, bookkeeper, or external IT. The goal is to stop annual tools renewing because everyone assumes another person checked the bill.</p>
+            </div>
+          </div>
+          <div className="mt-8 rounded-2xl border border-brand-400/20 bg-dark-950/70 p-6">
+            <h3 className="text-base font-semibold text-white">What StackSmart returns</h3>
+            <p className="mt-3 text-sm leading-7 text-dark-300">
+              StackSmart turns the billing export into a practical owner/operator action list: keep the tools that are still doing real work, cut unused seats, right-size tiers, consolidate overlapping workflows, and renegotiate renewals before the card is charged again. It is deliberately lighter than an enterprise procurement platform and designed for a busy SMB owner, practice manager, operator, or bookkeeper.
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "medical_practice_software_subscription_audit_proof_refresh" }} className="btn-primary text-sm">
+                See the audit tool
+              </TrackLink>
+              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "medical_practice_software_subscription_audit_proof_refresh" }} className="btn-secondary text-sm">
+                Use the checklist
+              </TrackLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Manual vs StackSmart */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -403,6 +451,10 @@ export default function MedicalPracticeSoftwareSubscriptionAuditPage() {
               [
                 "Does StackSmart need access to patient records or clinical data?",
                 "No. StackSmart works entirely from billing exports — bank statements, card statements, or accounting system exports. No patient records, clinical notes, Medicare data, or operational system access is needed or used. The audit identifies software waste from subscription billing data only.",
+              ],
+              [
+                "Where do practice-management connector fees hide?",
+                "Practice-management connector fees often appear as separate line items or add-ons for payments, SMS reminders, online forms, telehealth, reporting, accounting sync, transcription, or document workflows. A billing-export audit groups those charges beside the core practice-management platform so the owner or practice manager can decide what to keep, cut, right-size, consolidate, or renegotiate.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
