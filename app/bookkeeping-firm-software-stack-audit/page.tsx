@@ -655,6 +655,29 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
         </div>
       </section>
 
+      {/* 2026 owner-led SMB proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">What a principal should check before the next renewal window</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            The highest-value bookkeeping firm audit is not a generic software list. It is a practical owner review of which app is doing which job, who owns the renewal, and whether the firm can keep, cancel, downgrade, or consolidate before another annual charge lands.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Standardise the client app stack", "Group Xero, QBO, MYOB, receipt capture, payroll, reporting, document, portal, proposal, e-sign, workflow, and AI tools by job so the principal can pick one default workflow instead of funding every historical preference."],
+              ["Assign a renewal owner", "Every app gets one named owner, a renewal date, a payment source, and a keep/cancel recommendation. Ownerless marketplace add-ons and ex-staff workflow seats move to the top of the action list."],
+              ["Separate pass-through from firm waste", "Client-recovered subscriptions are tagged separately from firm-owned costs. The waste usually sits in legacy client-project tools, seasonal staff seats, and add-ons that stayed on after the client or workflow changed."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-950/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

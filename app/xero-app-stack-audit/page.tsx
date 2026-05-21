@@ -482,6 +482,29 @@ export default function XeroAppStackAuditPage() {
         </div>
       </section>
 
+      {/* 2026 owner-led SMB proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Turn the Xero app list into a keep, cancel, downgrade, or consolidate plan</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            Xero app stack waste usually hides in small recurring marketplace charges, connected-app permissions, and annual renewals nobody owns. StackSmart keeps the review billing-led: no ledger access, no client data, just the subscriptions and decisions an owner can act on.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Connected-app cleanup", "Map each Xero-connected app to its job: receipt capture, payroll, reporting, client portal, proposals, e-sign, workflow, debt collection, AI notes, or payment collection. Duplicate jobs become consolidation candidates."],
+              ["Permission and owner check", "Flag apps where the original admin left, the renewal contact is unclear, or team seats remain active after a contractor, bookkeeper, or practice manager changed role."],
+              ["Pre-renewal action list", "Pull renewals due in the next 60 days and decide before the charge hits: keep, cancel, downgrade, consolidate, or renegotiate based on actual use and overlap."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-950/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

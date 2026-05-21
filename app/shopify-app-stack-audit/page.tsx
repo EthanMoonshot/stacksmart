@@ -358,6 +358,29 @@ export default function ShopifyAppStackAuditPage() {
         </div>
       </section>
 
+      {/* 2026 owner-led SMB proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Find the hidden app-marketplace charges before they become margin drag</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            For small ecommerce operators, app waste is rarely one huge platform mistake. It is review apps, loyalty tools, page builders, inventory helpers, SMS/email tiers, attribution dashboards, and seasonal campaign tools quietly billing through Shopify and card statements after the owner has moved on.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Marketplace plus card export", "Review Shopify billing, app-store charges, and external SaaS paid by card so app subscriptions outside the Shopify invoice are not missed."],
+              ["Agency and owner access cleanup", "Flag apps installed by an agency, freelancer, or ex-team member where no current owner can say why it is still active or which campaign uses it."],
+              ["Tier right-sizing after peaks", "Check whether holiday, launch, or growth-period upgrades are still billing at higher order, contact, usage, or feature tiers after sales volume normalised."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-950/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

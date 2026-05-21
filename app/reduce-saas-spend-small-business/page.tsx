@@ -307,6 +307,30 @@ export default function ReduceSaaSSpendSmallBusinessPage() {
         </div>
       </section>
 
+      {/* 2026 owner-led SMB proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">The 30-day owner-led software-cost reduction plan</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            For a 5-50 person business, the fastest savings usually come from a billing-export audit rather than a new SaaS-management platform. Pull the charges, group the tools, assign owners, and make keep/cancel/downgrade/consolidate decisions before the next renewal cycle.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-4">
+            {[
+              ["Week 1", "Export card, bank, Xero, QuickBooks, Shopify, and marketplace charges. Tag obvious software subscriptions and annual renewals."],
+              ["Week 2", "Group by job: CRM, marketing, accounting, payroll, scheduling, documents, AI, project management, ecommerce, and reporting."],
+              ["Week 3", "Ask one question per tool: who uses it, who owns it, what would break if it was cancelled, and when does it renew?"],
+              ["Week 4", "Cancel dead tools, downgrade inflated tiers, remove leaver seats, consolidate duplicate apps, and renegotiate only the subscriptions worth keeping."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-950/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

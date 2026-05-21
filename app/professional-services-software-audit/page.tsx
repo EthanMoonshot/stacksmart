@@ -346,6 +346,29 @@ export default function ProfessionalServicesSoftwareAuditPage() {
         </div>
       </section>
 
+      {/* 2026 owner-led SMB proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">A practical software audit for partner-led firms without procurement maturity</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            Boutique advisory, consulting, and professional services firms often buy software project-by-project. The audit should help an owner see which proposal, CRM, project, time, document, e-sign, AI, and client delivery tools still earn their place after the project or contractor has moved on.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Project-only tools", "Spot subscriptions bought for one client engagement, pitch, or implementation that became permanent card charges after the work ended."],
+              ["Contractor and leaver seats", "Find project-management, time-tracking, AI meeting, document, and CRM seats still assigned to departed contractors, freelancers, or former staff."],
+              ["Stack standardisation", "Choose the default tool for proposals, CRM, delivery, time, files, and signing so every partner is not funding their preferred alternative."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-950/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
