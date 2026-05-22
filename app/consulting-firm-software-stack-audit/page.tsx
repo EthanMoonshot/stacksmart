@@ -330,6 +330,34 @@ export default function ConsultingFirmSoftwareStackAuditPage() {
         </div>
       </section>
 
+
+      {/* Renewal and delivery-boundary proof block */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-3">
+            {[
+              [
+                "Project-only tools that stuck",
+                "Workshop, research, proposal, AI, meeting, dashboard, and client-collaboration tools often start as one-project expenses and become permanent subscriptions. StackSmart separates active delivery tools from forgotten project residue.",
+              ],
+              [
+                "Client-paid vs internal spend",
+                "The audit helps the owner identify subscriptions that should be recharged to a client, retained as firm capability, downgraded, or cancelled before the next renewal cycle.",
+              ],
+              [
+                "Admin handoff, not enterprise rollout",
+                "StackSmart produces a practical keep, cancel, downgrade, consolidate, and renegotiate list from billing exports. It is designed for low-procurement consultancies, not enterprise SaaS-management implementations.",
+              ],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h2 className="text-lg font-semibold text-white">{title}</h2>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Fit / Not fit */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

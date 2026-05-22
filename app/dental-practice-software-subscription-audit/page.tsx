@@ -326,6 +326,34 @@ export default function DentalPracticeSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+
+      {/* Renewal and data-boundary proof block */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-3">
+            {[
+              [
+                "90-day renewal triage",
+                "StackSmart flags PMS, imaging, online booking, SMS/recall, payment, payroll, and connector subscriptions that renew soon, with a suggested keep, cancel, downgrade, consolidate, or renegotiate action before the notice period closes.",
+              ],
+              [
+                "Seats, chairs, and locations",
+                "The audit checks for hygienist, contractor, room, and location licences that no longer match the practice roster, chair count, or active sites — without changing access inside clinical systems.",
+              ],
+              [
+                "Patient-data boundary",
+                "No patient records, treatment notes, X-rays, imaging files, health identifiers, or PMS credentials are needed. Billing exports are enough to surface duplicate add-ons and renewal risk.",
+              ],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h2 className="text-lg font-semibold text-white">{title}</h2>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Manual vs StackSmart */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -368,8 +396,8 @@ export default function DentalPracticeSoftwareSubscriptionAuditPage() {
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
               <p className="text-xs uppercase tracking-[0.18em] text-emerald-400">Good fit</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-200">
-                <li>Owner-operated single or dual-site dental practice</li>
-                <li>Practice owner or manager responsible for software decisions</li>
+                <li>Owner-operated single or multi-chair dental practice with roughly 5 to 50 staff</li>
+                <li>Practice owner, practice manager, or operations lead responsible for software decisions</li>
                 <li>Multiple admin subscriptions across booking, reminders, payment plans, reviews, and marketing</li>
                 <li>No dedicated IT or ops team managing software spend</li>
                 <li>Billing data accessible from Xero, MYOB, or business credit card statements</li>

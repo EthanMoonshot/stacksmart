@@ -320,6 +320,34 @@ export default function VeterinaryClinicSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+
+      {/* Renewal and data-boundary proof block */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-3">
+            {[
+              [
+                "Renewal windows that matter",
+                "StackSmart highlights PMS, reminder, telehealth, forms, diagnostics, payment, payroll, and marketing subscriptions with annual renewals inside the next 90 days so the clinic owner can act before auto-renew clauses roll over.",
+              ],
+              [
+                "Seat and role cleanup",
+                "Part-time vets, locums, nurses, reception staff, and former contractors often leave paid seats behind. The audit separates clinical access decisions from obvious billing and roster mismatches.",
+              ],
+              [
+                "Billing data only",
+                "The review does not require patient records, clinical notes, animal health data, lab results, or PMS login access. Vendor, amount, date, and billing frequency are enough to find recurring waste.",
+              ],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h2 className="text-lg font-semibold text-white">{title}</h2>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Manual vs StackSmart */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -362,8 +390,8 @@ export default function VeterinaryClinicSoftwareSubscriptionAuditPage() {
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
               <p className="text-xs uppercase tracking-[0.18em] text-emerald-400">Good fit</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-200">
-                <li>Independent or small-group vet clinic with 2 to 20 staff</li>
-                <li>Practice owner or head nurse responsible for software decisions</li>
+                <li>Independent or small-group vet clinic with roughly 5 to 50 staff</li>
+                <li>Practice owner, clinic manager, or head nurse responsible for software decisions</li>
                 <li>Paying for a PMS plus 4 or more additional tools</li>
                 <li>No dedicated IT, ops, or procurement function</li>
                 <li>Billing data accessible from bank statements, card, or Xero/MYOB</li>

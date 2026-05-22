@@ -330,6 +330,34 @@ export default function LawFirmSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+
+      {/* Renewal and data-boundary proof block */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-3">
+            {[
+              [
+                "Renewals before they become sunk cost",
+                "Matter management, legal research, e-signature, document automation, trust-accounting connectors, and Microsoft or Google licences are flagged by renewal timing so the firm can act before annual terms roll over.",
+              ],
+              [
+                "Per-matter and contractor cleanup",
+                "Short-term matters often leave research tools, project workspaces, solicitor seats, paralegal accounts, and client collaboration tools billing after the work ends. StackSmart turns those into owner-review actions.",
+              ],
+              [
+                "No client-file access",
+                "The audit uses billing exports only. It does not require matter files, trust ledgers, privileged documents, client names, document repositories, or access to legal practice-management systems.",
+              ],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h2 className="text-lg font-semibold text-white">{title}</h2>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Fit / Not fit */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -338,8 +366,8 @@ export default function LawFirmSoftwareSubscriptionAuditPage() {
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
               <p className="text-xs uppercase tracking-[0.18em] text-emerald-400">Good fit</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-200">
-                <li>Managing partner or firm administrator of a boutique or sole-practitioner law firm</li>
-                <li>3 to 25 fee earners and admin staff</li>
+                <li>Managing partner, owner, or firm administrator of a boutique law firm</li>
+                <li>5 to 50 fee earners and admin staff</li>
                 <li>Software stack that has grown through individual partner adoption without a firm-wide standard</li>
                 <li>No dedicated IT or procurement team managing subscriptions</li>
                 <li>Billing data accessible from accounting software, bank, or card statements</li>

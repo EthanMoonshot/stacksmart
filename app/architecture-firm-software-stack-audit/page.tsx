@@ -302,6 +302,34 @@ export default function ArchitectureFirmSoftwareStackAuditPage() {
         </div>
       </section>
 
+
+      {/* Renewal and data-boundary proof block */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-3">
+            {[
+              [
+                "Annual licence timing",
+                "CAD, BIM, rendering, model-sharing, Adobe, and project-management renewals are prioritised by notice period so the practice manager can right-size before another annual design-software invoice lands.",
+              ],
+              [
+                "Project and contractor seats",
+                "StackSmart looks for contractor, intern, renderer, and project-only accounts left active after a studio handoff, competition, visualisation phase, or project closeout.",
+              ],
+              [
+                "No drawings or models",
+                "The audit does not need drawings, BIM files, renders, client briefs, project folders, or design-system credentials. Billing metadata is enough to flag waste and renewal risk.",
+              ],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h2 className="text-lg font-semibold text-white">{title}</h2>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">Manual audit vs StackSmart</h2>
