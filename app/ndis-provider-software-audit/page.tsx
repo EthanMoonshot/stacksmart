@@ -58,6 +58,14 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
+          name: "Where do NDIS software costs hide outside the core care-management platform?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "They hide in optional rostering, SMS, compliance, claims, reporting, document, and accounting connector fees, plus dormant coordinator, support-worker, contractor, and admin seats. A 2026 proof refresh should compare billing exports with the current roster and renewal calendar, then assign keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decisions.",
+          },
+        },
+        {
+          "@type": "Question",
           name: "What software subscriptions do NDIS providers typically carry?",
           acceptedAnswer: {
             "@type": "Answer",
@@ -198,6 +206,9 @@ export default function NdisProviderSoftwareAuditPage() {
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
               Export 6 to 12 months of billing data from Xero, MYOB, or your business credit card. Group every recurring charge by category — rostering, care management, payroll, compliance, NDIS billing, and communications. For each category with more than one active tool, flag it for consolidation. Cross-reference seat counts against your current support worker and coordinator headcount and remove idle licences. Check renewal dates for any annual contracts — particularly care management and rostering platforms — and open renegotiation conversations before auto-renewal. Assign each subscription a keep, cut, consolidate, or renegotiate decision and act on the highest-value items first.
+            </p>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              2026 proof refresh: measured AU demand for NDIS software is useful category intent, but StackSmart is not trying to replace the operating platform. It audits the subscription layer around that platform for an owner-led NDIS provider or community care operator: rostering add-ons, care-management modules, SMS/document packs, claims and plan-management connectors, compliance tools bought for an audit, duplicate payroll/admin systems, and coordinator or support-worker seats left active after handover. Start with Xero or MYOB exports, business-card statements, direct debits, and invoices for care-management, rostering, payroll, SMS, compliance, and claims tools. The output is a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list before notice windows or auto-renewals close.
             </p>
           </div>
         </div>

@@ -58,6 +58,14 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
+          name: "Where do fitness studio software costs hide outside the booking platform?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "They often hide in SMS packs, payment add-ons, access-control tools, email/CRM automations, class-pack apps, review tools, instructor seats, and trials kept after a campaign or timetable change. A 2026 proof refresh should match those charges to current classes, staff, and member workflows before assigning keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decisions.",
+          },
+        },
+        {
+          "@type": "Question",
           name: "What software do fitness and wellness studios typically subscribe to?",
           acceptedAnswer: {
             "@type": "Answer",
@@ -198,6 +206,9 @@ export default function FitnessStudioSoftwareSubscriptionAuditPage() {
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
               Export 6 to 12 months of billing data from Xero, MYOB, or your business credit card. Group every recurring charge by category — member management and booking, payments, marketing, payroll, access control, accounting, and class or content tools. For any category with more than one active tool, check what your member management platform now includes natively — email marketing, payments, and scheduling features are commonly bundled in platforms like Mindbody, Glofox, and TeamUp. Pull your current staff and instructor list and remove idle accounts from per-user tools. Identify your highest annual contract — usually the member management platform — and flag it for renegotiation if your current active member count has changed since the contract was signed. Assign each subscription a keep, cut, consolidate, or renegotiate decision and act on the highest-value items first.
+            </p>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              2026 proof refresh: measured AU demand for fitness studio software is useful category intent, but StackSmart is not trying to replace the operating platform. It audits the subscription layer around that platform for an owner-led fitness, pilates, yoga, wellness, or boutique studio owner/operator: booking platform add-ons, payment/merchant tools, SMS/email packs, access-control and check-in tools, class-pack apps, marketing automations, instructor or admin seats, and legacy trial tools kept after a promotion or timetable change. Start with Xero or MYOB exports, business-card statements, payment/merchant invoices, booking-platform invoices, app-store receipts, and email/SMS/marketing tool invoices. The output is a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list before notice windows or auto-renewals close.
             </p>
           </div>
         </div>

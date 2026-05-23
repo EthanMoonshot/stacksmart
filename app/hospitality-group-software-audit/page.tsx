@@ -58,6 +58,14 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
+          name: "Where do hospitality management software costs hide outside the POS or booking platform?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "They hide in reservations, delivery integrations, loyalty, SMS, review-management, guest Wi-Fi, analytics, music, reporting, and per-site add-on modules. A 2026 proof refresh should reconcile venue-level billing exports against actual active venues and workflows, then create keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner actions before auto-renewals pass.",
+          },
+        },
+        {
+          "@type": "Question",
           name: "What software do small hospitality groups and venues typically subscribe to?",
           acceptedAnswer: {
             "@type": "Answer",
@@ -210,6 +218,9 @@ export default function HospitalityGroupSoftwareAuditPage() {
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
               Export 6 to 12 months of billing data from Xero, MYOB, or your business credit card — capturing charges across all venues, which are often billed to different payment methods. Group every recurring charge by category: POS, reservations, rostering, payroll, delivery integrations, loyalty, accounting, and marketing. Flag categories where you are paying per-site for tools that offer group pricing. Cross-reference staff accounts in rostering and payroll tools against your current active headcount and remove idle accounts from the last seasonal cycle. Check annual contract renewal dates on your POS, reservations, and rostering platforms — these are your highest-value renegotiation targets. Assign each subscription a decision and act on seat removals and cancellations first.
+            </p>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              2026 proof refresh: measured AU demand for hospitality management software is useful category intent, but StackSmart is not trying to replace the operating platform. It audits the subscription layer around that platform for an owner-led multi-site venue group, restaurant group, cafe group, or bar operator: POS and reservations add-ons, delivery/order integrations, loyalty and review tools, Wi-Fi/guest analytics, SMS/email packs, music or venue-specific subscriptions, and per-site contracts renewed without group pricing review. Start with Xero or MYOB exports, business-card statements, venue-level direct debits, POS/reservation invoices, delivery-integration invoices, and marketing/review platform receipts. The output is a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list before notice windows or auto-renewals close.
             </p>
           </div>
         </div>

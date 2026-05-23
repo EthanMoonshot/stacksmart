@@ -14,6 +14,10 @@ export const metadata: Metadata = buildMetadata({
 
 const faqs = [
   [
+    "Where do property management software costs hide outside the main platform?",
+    "They usually hide in paid add-ons for SMS, e-signatures, reporting, inspections, maintenance portals, tenant/owner communications, CRM/email tools, and API connectors. A 2026 proof refresh should reconcile those charges against card statements and accounting exports, then assign keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decisions before the next notice window closes."
+  ],
+  [
     "What software should a property management office audit?",
     "Audit the core property management platform, inspection apps, maintenance request tools, tenant and owner communication portals, e-signature, forms, CRM, email marketing, payments, accounting, payroll, file storage, reporting, and admin subscriptions. The goal is to find duplicate workflow tools and idle seats, not to interfere with trust accounting or property records."
   ],
@@ -235,6 +239,9 @@ export default function PropertyManagementSoftwareSubscriptionAuditPage() {
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Direct answer</p>
             <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">What is a property management software subscription audit?</h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">A property management software subscription audit is a structured review of every recurring software charge used by a rent roll, strata office, or property services team — property management platforms, inspection apps, maintenance portals, communications tools, e-signature, CRM, forms, payments, accounting, marketing, reporting, and admin software. It identifies duplicate tools, idle staff seats, retired portals, legacy inspection apps, and annual renewals that no longer match portfolio size. StackSmart works from billing exports only, so it does not need tenant records, owner ledgers, lease documents, trust-account data, or access to property-management systems.</p>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              2026 proof refresh: measured AU demand for property management software is useful category intent, but StackSmart is not trying to replace the operating platform. It audits the subscription layer around that platform for an owner-led rent roll, strata office, or property services team: platform add-ons, inspection and maintenance portals, SMS/e-sign/reporting modules, app-marketplace installs, API connector fees, duplicate CRM/email tools, and idle seats left after portfolio or staff changes. Start with Xero or MYOB exports, business-card statements, direct-debit lists, and any marketplace/add-on invoices from the core property platform. The output is a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list before notice windows or auto-renewals close.
+            </p>
           </div>
         </div>
       </section>
