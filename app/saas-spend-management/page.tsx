@@ -193,8 +193,8 @@ export default function SaaSSpendManagementPage() {
       <section className="border-b border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
-          <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-            <div>
+          <div className="grid min-w-0 gap-8 lg:grid-cols-[1fr_1fr]">
+            <div className="min-w-0">
               <h2 className="text-2xl font-semibold text-white">SaaS spend management for SMBs starts with the spend you can actually see.</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
                 The fastest way for an owner-operator to control SaaS spend is not a procurement suite. It is a billing-data pass that shows every recurring software charge, what it belongs to, who owns it, and what should happen next. StackSmart focuses on the practical 5-50 staff workflow: export, categorise, detect waste, decide, and assign follow-through.
@@ -203,7 +203,7 @@ export default function SaaSSpendManagementPage() {
                 Use it before quarterly budget reviews, annual renewals, staff offboarding, vendor price increases, new site launches, or after a messy growth phase where teams bought tools independently.
               </p>
             </div>
-            <div className="rounded-3xl border border-dark-700 bg-dark-900/70 p-6">
+            <div className="min-w-0 rounded-3xl border border-dark-700 bg-dark-900/70 p-6">
               <h3 className="text-lg font-semibold text-white">The StackSmart spend-management output</h3>
               <div className="mt-5 grid gap-3">
                 {[
@@ -212,9 +212,9 @@ export default function SaaSSpendManagementPage() {
                   "Leaver, contractor, project-only, and ownerless-seat cleanup list",
                   "Connector, API, reporting, SMS, marketplace, and add-on fee review",
                   "Renewal owner and notice-window assignments",
-                  "Keep/cancel/downgrade/consolidate/renegotiate action list",
+                  "Keep, cancel, downgrade, consolidate, or renegotiate action list",
                 ].map((item) => (
-                  <div key={item} className="rounded-xl border border-dark-700/80 bg-dark-950/60 px-4 py-3 text-sm text-dark-300">{item}</div>
+                  <div key={item} className="min-w-0 break-words rounded-xl border border-dark-700/80 bg-dark-950/60 px-4 py-3 text-sm text-dark-300">{item}</div>
                 ))}
               </div>
             </div>
