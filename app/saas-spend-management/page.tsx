@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "SaaS Spend Management for SMBs",
   description:
-    "Learn what SaaS spend management is, compare three approaches (spreadsheet, enterprise platform, savings report), and find the fastest first step for small teams.",
+    "SaaS spend management for owner-led SMBs: use billing exports to find duplicate tools, unused seats, connector fees, marketplace add-ons, ownerless renewals, and practical savings actions.",
   path: "/saas-spend-management",
 });
 
@@ -20,7 +20,7 @@ const jsonLd = {
       "@type": "WebPage",
       name: "SaaS Spend Management for SMBs | StackSmart",
       description:
-        "Learn what SaaS spend management is, compare three approaches, and find the fastest first step for small teams.",
+        "SaaS spend management for owner-led SMBs: find duplicate tools, unused seats, add-on fees, ownerless renewals, and practical savings actions from billing exports.",
       url: "https://stacksmart.app/saas-spend-management",
     },
     {
@@ -185,6 +185,47 @@ export default function SaaSSpendManagementPage() {
                 StackSmart gives you a concrete savings report — waste, overlap, renewal risk, renegotiation targets — from billing data alone. No IT involvement. No procurement workflow. Just a clear picture of where money is going and what to do about it.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 proof refresh */}
+      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+            <div>
+              <h2 className="text-2xl font-semibold text-white">SaaS spend management for SMBs starts with the spend you can actually see.</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The fastest way for an owner/operator to control SaaS spend is not a procurement suite. It is a billing-data pass that shows every recurring software charge, what it belongs to, who owns it, and what should happen next. StackSmart focuses on the practical 5-50 staff workflow: export, categorise, detect waste, decide, and assign follow-through.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Use it before quarterly budget reviews, annual renewals, staff offboarding, vendor price increases, new site launches, or after a messy growth phase where teams bought tools independently.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-lg font-semibold text-white">The StackSmart spend-management output</h3>
+              <div className="mt-5 grid gap-3">
+                {[
+                  "Recurring software inventory from uploaded billing exports",
+                  "Duplicate category and overlap flags",
+                  "Leaver, contractor, project-only, and ownerless-seat cleanup list",
+                  "Connector, API, reporting, SMS, marketplace, and add-on fee review",
+                  "Renewal owner and notice-window assignments",
+                  "Keep/cancel/downgrade/consolidate/renegotiate action list",
+                ].map((item) => (
+                  <div key={item} className="rounded-xl border border-dark-700/80 bg-dark-950/60 px-4 py-3 text-sm text-dark-300">{item}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/reduce-saas-spend-small-business" event="homepage_cta_clicked" props={{ target: "reduce_saas_spend", location: "seo_spend_management_refresh" }} className="btn-secondary text-sm">
+              Reduce SaaS spend in 30 days
+            </TrackLink>
+            <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ target: "pricing", location: "seo_spend_management_refresh" }} className="btn-primary text-sm">
+              See audit options
+            </TrackLink>
           </div>
         </div>
       </section>

@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "SaaS Renewal Management for Small Teams",
   description:
-    "Stop surprise SaaS renewals from draining your budget. Learn how to track renewal dates, evaluate contracts before auto-renewal, and reduce recurring waste with a savings report.",
+    "Stop surprise SaaS renewals in owner-led SMBs. Track 90-day notice windows, auto-renew clauses, renewal owners, leaver seats, and keep/cancel/downgrade decisions from billing data.",
   path: "/saas-renewal-management",
 });
 
@@ -46,7 +46,7 @@ const jsonLd = {
           name: "What is the best first step for small teams managing SaaS renewals?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Export your billing data (credit card statements, invoices, or accounting exports) and run it through a savings report tool like StackSmart. The report flags upcoming renewal dates, identifies tools you may no longer need, and highlights renegotiation opportunities — giving you a concrete action list in under an hour without building a spreadsheet from scratch.",
+            text: "Export billing data from card statements, Xero, QuickBooks, invoices, direct debits, and marketplace/app-store receipts, then run it through a savings report tool like StackSmart. A 2026 proof refresh should flag 30/60/90-day notice windows, auto-renew clauses, ownerless contracts, leaver or contractor seats, duplicate categories, add-on fees, and concrete keep/cancel/downgrade/consolidate/renegotiate/renewal-owner actions in under an hour without building a spreadsheet from scratch.",
           },
         },
         {
@@ -113,7 +113,7 @@ export default function SaaSRenewalManagementPage() {
             </p>
             <h3 className="mt-8 text-lg font-semibold text-white">What is the best first step for small teams?</h3>
             <p className="mt-3 text-sm leading-7 text-dark-300">
-              Export your billing data (credit card statements, invoices, or accounting exports) and run it through a savings report tool like StackSmart. The report flags upcoming renewal dates, identifies tools you may no longer need, and highlights renegotiation opportunities — giving you a concrete action list in under an hour without building a spreadsheet from scratch.
+              Export billing data from card statements, Xero, QuickBooks, invoices, direct debits, and marketplace/app-store receipts, then run it through a savings report tool like StackSmart. A 2026 proof refresh should flag 30/60/90-day notice windows, auto-renew clauses, ownerless contracts, leaver or contractor seats, duplicate categories, add-on fees, and concrete keep/cancel/downgrade/consolidate/renegotiate/renewal-owner actions in under an hour without building a spreadsheet from scratch.
             </p>
           </div>
         </div>
@@ -302,6 +302,46 @@ export default function SaaSRenewalManagementPage() {
                 <p className="mt-2 text-sm font-medium text-brand-300">{item.impact}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 proof refresh */}
+      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <div className="mt-4 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <h2 className="text-2xl font-semibold text-white">Renewal management for teams without a procurement owner</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                In owner-led SMBs, renewals often belong to whoever first bought the tool: the bookkeeper, clinic admin, venue manager, agency producer, or founder. When that person changes role or leaves, the renewal window closes quietly. StackSmart gives the operator a billing-first renewal map before the 30, 60, or 90-day notice period passes.
+              </p>
+              <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <h3 className="text-base font-semibold text-white">Direct answer: what should you track?</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">
+                  Track vendor, renewal date, notice window, billing owner, admin owner, current seat count, last known usage, contract term, cancellation method, and the next decision: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner. If you do not know all of that yet, start with the charges: card statements and accounting exports reveal the highest-risk renewals first.
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                ["90-day notice missed", "A contract needed notice last quarter, but the admin owner had left and the calendar invite was never transferred."],
+                ["Auto-renew by default", "A CRM, booking app, practice tool, or reporting add-on renews for another year unless someone acts before the clause date."],
+                ["Seat pool drift", "Contractors, casual staff, clinicians, designers, or project-only users kept paid seats after the work ended."],
+                ["Add-ons renew separately", "SMS, forms, API, reporting, marketplace, and connector modules renew outside the core platform invoice."],
+              ].map(([title, detail]) => (
+                <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-dark-300">{detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 rounded-2xl border border-brand-500/25 bg-brand-500/5 p-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm leading-6 text-dark-300">Want the faster path? Upload billing exports and get a renewal-risk action list without connecting bank accounts or rolling out SSO.</p>
+            <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "seo_renewal_refresh" }} className="btn-primary shrink-0 text-sm">
+              View sample renewal output
+            </TrackLink>
           </div>
         </div>
       </section>

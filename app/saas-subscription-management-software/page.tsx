@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "SaaS Subscription Management Software for Small Business",
   description:
-    "Compare SaaS subscription management software for small businesses. See when a lightweight savings report beats an enterprise platform — and what to look for in each approach.",
+    "Compare software subscription management for owner-led SMBs. Find duplicate tools, ownerless renewals, leaver seats, add-on fees, and the fastest billing-export audit path before buying an enterprise platform.",
   path: "/saas-subscription-management-software",
 });
 
@@ -46,7 +46,7 @@ const jsonLd = {
           name: "What should small businesses look for in subscription management software?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Small businesses should prioritize fast time to first output, low setup overhead, and actionable recommendations over governance features. The best first step is a tool that produces a savings report from billing data alone — showing waste, overlap, renewal risk, and specific savings actions — without requiring SSO integration, IT involvement, or multi-week implementation.",
+            text: "Owner-led SMBs should prioritize fast time to first output, low setup overhead, and actionable recommendations over governance features. A 2026 proof refresh should start with billing exports, card statements, and accounting data, then flag duplicate tools, ownerless renewals, leaver or contractor seats, connector fees, converted trials, and specific keep/cancel/downgrade/consolidate/renegotiate actions without SSO integration, bank access, IT involvement, or multi-week implementation.",
           },
         },
         {
@@ -113,7 +113,7 @@ export default function SaaSSubscriptionManagementSoftwarePage() {
             </p>
             <h3 className="mt-8 text-lg font-semibold text-white">What should small businesses look for first?</h3>
             <p className="mt-3 text-sm leading-7 text-dark-300">
-              Small businesses should prioritize fast time to first output, low setup overhead, and actionable recommendations over governance features. The best first step is a tool that produces a savings report from billing data alone — showing waste, overlap, renewal risk, and specific savings actions — without requiring SSO integration, IT involvement, or multi-week implementation.
+              Owner-led SMBs should prioritize fast time to first output, low setup overhead, and actionable recommendations over governance features. A 2026 proof refresh should start with billing exports, card statements, and accounting data, then flag duplicate tools, ownerless renewals, leaver or contractor seats, connector fees, converted trials, and specific keep/cancel/downgrade/consolidate/renegotiate actions without SSO integration, bank access, IT involvement, or multi-week implementation.
             </p>
           </div>
         </div>
@@ -267,6 +267,51 @@ export default function SaaSSubscriptionManagementSoftwarePage() {
               <p className="mt-2 text-sm leading-7 text-dark-300">
                 A prioritized list of savings actions — not just data, but what to do about it. Each recommendation includes the estimated savings amount, the effort required, and a suggested timeline. Typical first-report savings: 15-30% of total SaaS spend.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 proof refresh */}
+      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <div className="mt-4 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+            <div>
+              <h2 className="text-2xl font-semibold text-white">The first subscription-management job is not buying a platform. It is finding the waste you can act on this month.</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                For an owner-led business with 5-50 staff, software subscription management usually starts with messy billing reality: the old designer still has a Figma seat, a clinic manager bought an SMS add-on, the agency has two project tools, and a renewal owner left six months ago. StackSmart turns billing exports, card statements, Xero or QuickBooks data, direct debits, and marketplace invoices into a practical decision list before you spend weeks implementing enterprise procurement software.
+              </p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {[
+                  ["Find", "Every recurring software, app, connector, API, SMS, reporting, marketplace, and add-on charge across uploaded billing sources."],
+                  ["Explain", "Which charge has an owner, which workflow it supports, whether it overlaps another tool, and whether the billing tier still matches actual use."],
+                  ["Act", "Assign keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner actions with the highest-value cleanups first."],
+                  ["Protect", "Use billing data only. No bank connection, no SSO rollout, no sensitive client, patient, or employee records needed for the first pass."],
+                ].map(([title, detail]) => (
+                  <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                    <h3 className="text-sm font-semibold text-white">{title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-dark-300">{detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-3xl border border-brand-500/25 bg-brand-500/5 p-6">
+              <h3 className="text-lg font-semibold text-white">Where 5-50 staff teams usually leak subscription spend</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
+                <li><span className="font-semibold text-brand-300">Leavers and contractors:</span> seats still active after staff, clinicians, designers, coordinators, bookkeepers, or project contractors leave.</li>
+                <li><span className="font-semibold text-brand-300">Ownerless renewals:</span> annual tools renewing after the admin, practice manager, or agency producer who bought them has moved on.</li>
+                <li><span className="font-semibold text-brand-300">Connector fees:</span> paid integrations, reporting packs, SMS bundles, marketplace modules, and API add-ons that escaped the main software budget.</li>
+                <li><span className="font-semibold text-brand-300">Duplicate categories:</span> two CRMs, two booking tools, two design apps, two file stores, or multiple project boards doing the same job.</li>
+              </ul>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col">
+                <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "seo_subscription_management_refresh" }} className="btn-secondary text-sm">
+                  Use the audit checklist
+                </TrackLink>
+                <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "seo_subscription_management_refresh" }} className="btn-primary text-sm">
+                  See the sample decision list
+                </TrackLink>
+              </div>
             </div>
           </div>
         </div>

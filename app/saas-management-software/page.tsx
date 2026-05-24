@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "SaaS Management Software for Small Teams",
   description:
-    "Evaluating SaaS management software? See what it does, when lightweight management is enough, and how to get inventory, waste flags, and savings recommendations without an enterprise rollout.",
+    "Compare SaaS management software for owner-led SMBs. See when a billing-export audit beats an enterprise platform for duplicate apps, leaver seats, add-ons, and renewals.",
   path: "/saas-management-software",
 });
 
@@ -20,7 +20,7 @@ const jsonLd = {
       "@type": "WebPage",
       name: "SaaS Management Software for Small Teams | StackSmart",
       description:
-        "Evaluating SaaS management software? See what it does, when lightweight management is enough, and how to get useful output fast.",
+        "Compare SaaS management software for owner-led SMBs and see when a billing-export audit beats an enterprise platform for duplicate apps, leaver seats, add-ons, and renewals.",
       url: "https://stacksmart.app/saas-management-software",
     },
     {
@@ -229,6 +229,37 @@ export default function SaaSManagementSoftwarePage() {
                 Are you paying a fair price? StackSmart surfaces renegotiation opportunities based on contract size, vendor pricing patterns, and common discount triggers so you know which conversations are worth having.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 proof refresh */}
+      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <div className="mt-4 max-w-3xl">
+            <h2 className="text-2xl font-semibold text-white">Most 5-50 staff businesses do not need enterprise SaaS management first. They need a clean software-waste map.</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Enterprise SaaS management software is built for procurement, IT, SSO, approval workflows, and hundreds of managed apps. Owner-led SMBs usually have a different problem: recurring charges spread across cards, Xero or QuickBooks, direct debits, marketplace add-ons, and invoices nobody reviews until a renewal hits. StackSmart starts with the billing evidence and turns it into an action plan before a full platform rollout is justified.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {[
+              ["Start from charges", "CSV exports, accounting data, card statements, app-store receipts, and platform invoices reveal the tools people forgot."],
+              ["Match to owners", "Assign each tool to a current workflow owner, admin owner, and renewal owner so waste does not hide behind old staff or contractors."],
+              ["Act before procurement", "Cut, downgrade, consolidate, renegotiate, or calendar renewals before deciding whether you need heavier governance software."],
+            ].map(([title, detail]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-base font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{detail}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 grid gap-4 rounded-3xl border border-brand-500/25 bg-brand-500/5 p-6 md:grid-cols-[1fr_auto] md:items-center">
+            <p className="text-sm leading-7 text-dark-300">Best-fit verticals include clinics, NDIS/community care, childcare, agencies, bookkeeping firms, boutique consultancies, hospitality groups, fitness/wellness operators, property services, and small ecommerce or retail teams that have recurring tools but no dedicated procurement owner.</p>
+            <TrackLink href="/small-business-software-audit" event="homepage_cta_clicked" props={{ target: "small_business_audit", location: "seo_saas_management_refresh" }} className="btn-primary text-sm">
+              Start with an SMB audit
+            </TrackLink>
           </div>
         </div>
       </section>
