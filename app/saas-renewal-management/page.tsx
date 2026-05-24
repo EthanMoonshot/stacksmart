@@ -46,7 +46,7 @@ const jsonLd = {
           name: "What is the best first step for small teams managing SaaS renewals?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Export billing data from card statements, Xero, QuickBooks, invoices, direct debits, and marketplace/app-store receipts, then run it through a savings report tool like StackSmart. A 2026 proof refresh should flag 30/60/90-day notice windows, auto-renew clauses, ownerless contracts, leaver or contractor seats, duplicate categories, add-on fees, and concrete keep/cancel/downgrade/consolidate/renegotiate/renewal-owner actions in under an hour without building a spreadsheet from scratch.",
+            text: "Export billing data from card statements, Xero, QuickBooks, invoices, direct debits, and marketplace/app-store receipts, then run it through a savings report tool like StackSmart. A 2026 proof refresh should flag 30, 60, or 90-day notice windows, auto-renew clauses, ownerless contracts, leaver or contractor seats, duplicate categories, add-on fees, and concrete keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner actions in under an hour without building a spreadsheet from scratch.",
           },
         },
         {
@@ -113,7 +113,7 @@ export default function SaaSRenewalManagementPage() {
             </p>
             <h3 className="mt-8 text-lg font-semibold text-white">What is the best first step for small teams?</h3>
             <p className="mt-3 text-sm leading-7 text-dark-300">
-              Export billing data from card statements, Xero, QuickBooks, invoices, direct debits, and marketplace/app-store receipts, then run it through a savings report tool like StackSmart. A 2026 proof refresh should flag 30/60/90-day notice windows, auto-renew clauses, ownerless contracts, leaver or contractor seats, duplicate categories, add-on fees, and concrete keep/cancel/downgrade/consolidate/renegotiate/renewal-owner actions in under an hour without building a spreadsheet from scratch.
+              Export billing data from card statements, Xero, QuickBooks, invoices, direct debits, and marketplace/app-store receipts, then run it through a savings report tool like StackSmart. A 2026 proof refresh should flag 30, 60, or 90-day notice windows, auto-renew clauses, ownerless contracts, leaver or contractor seats, duplicate categories, add-on fees, and concrete keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner actions in under an hour without building a spreadsheet from scratch.
             </p>
           </div>
         </div>

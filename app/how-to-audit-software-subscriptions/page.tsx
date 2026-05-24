@@ -9,7 +9,7 @@ import { buildMetadata, absoluteUrl } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "How to Audit Software Subscriptions",
   description:
-    "How owner-led SMBs audit software subscriptions: export billing data, find duplicate tools, leaver seats, connector fees, ownerless renewals, and turn findings into cut/downgrade/consolidate actions.",
+    "How owner-led SMBs audit software subscriptions: export billing data, find duplicate tools, leaver seats, connector fees, ownerless renewals, and turn findings into cut, downgrade, or consolidate actions.",
   path: "/how-to-audit-software-subscriptions",
 });
 
@@ -55,7 +55,7 @@ const jsonLd = {
           name: "How do you audit software subscriptions for a small business?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Export 6 to 12 months of billing data from your payment processor, credit card, direct debits, app stores, Xero, QuickBooks, MYOB, or invoices. Group every recurring charge by category and owner. Look for duplicate tools, seats for leavers or contractors, converted trials, connector/API/SMS/reporting add-ons, pricing tiers with unused features, and renewals inside the next 30/60/90 days. A 2026 proof refresh should assign each subscription a keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decision, then act on the highest-value items first.",
+            text: "Export 6 to 12 months of billing data from your payment processor, credit card, direct debits, app stores, Xero, QuickBooks, MYOB, or invoices. Group every recurring charge by category and owner. Look for duplicate tools, seats for leavers or contractors, converted trials, connector, API, SMS, and reporting add-ons, pricing tiers with unused features, and renewals inside the next 30/60/90 days. A 2026 proof refresh should assign each subscription a keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decision, then act on the highest-value items first.",
           },
         },
         {
@@ -202,7 +202,7 @@ export default function HowToAuditSoftwareSubscriptionsPage() {
               How do you audit software subscriptions for a small business?
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              Export 6 to 12 months of billing data from your payment processor, credit card, direct debits, app stores, Xero, QuickBooks, MYOB, or invoices. Group every recurring charge by category and owner. Look for duplicate tools, seats for leavers or contractors, converted trials, connector/API/SMS/reporting add-ons, pricing tiers with unused features, and renewals inside the next 30/60/90 days. A 2026 proof refresh should assign each subscription a keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decision, then act on the highest-value items first.
+              Export 6 to 12 months of billing data from your payment processor, credit card, direct debits, app stores, Xero, QuickBooks, MYOB, or invoices. Group every recurring charge by category and owner. Look for duplicate tools, seats for leavers or contractors, converted trials, connector, API, SMS, and reporting add-ons, pricing tiers with unused features, and renewals inside the next 30/60/90 days. A 2026 proof refresh should assign each subscription a keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decision, then act on the highest-value items first.
             </p>
           </div>
         </div>
@@ -365,11 +365,11 @@ export default function HowToAuditSoftwareSubscriptionsPage() {
                 If you run a clinic, NDIS provider, childcare centre, agency, accounting practice, consultancy, hospitality group, fitness studio, property office, or ecommerce operation, your first audit should answer one practical question: which recurring software charges should we keep, cancel, downgrade, consolidate, renegotiate, or assign to a renewal owner before more money leaks out?
               </p>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                Start with billing exports, card statements, Xero/QuickBooks/MYOB data, direct debits, app-store receipts, and invoices. You do not need bank access, SSO logs, or sensitive patient/client/customer records to find the first round of waste.
+                Start with billing exports, card statements, Xero, QuickBooks, or MYOB data, direct debits, app-store receipts, and invoices. You do not need bank access, SSO logs, or sensitive patient, client, or customer records to find the first round of waste.
               </p>
             </div>
             <div className="rounded-3xl border border-brand-500/25 bg-brand-500/5 p-6">
-              <h3 className="text-lg font-semibold text-white">The 45-minute owner/operator pass</h3>
+              <h3 className="text-lg font-semibold text-white">The 45-minute owner-operator pass</h3>
               <ol className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
                 <li><span className="font-semibold text-brand-300">1. Export:</span> pull 6-12 months of recurring software charges from finance sources.</li>
                 <li><span className="font-semibold text-brand-300">2. Group:</span> label each charge by workflow: finance, admin, clinical/care, bookings, marketing, design, ecommerce, POS, reporting, communication, or operations.</li>
@@ -382,7 +382,7 @@ export default function HowToAuditSoftwareSubscriptionsPage() {
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {[
               ["Waste signals", "Duplicate tools, ghost seats, trial bleed, tier mismatch, ownerless renewals, and connector fees."],
-              ["Data boundary", "Billing data only. No bank connection, no SSO rollout, no patient/client/customer records."],
+              ["Data boundary", "Billing data only. No bank connection, no SSO rollout, no patient, client, or customer records."],
               ["Output", "A ranked action list your owner, bookkeeper, admin lead, or operations manager can execute."],
             ].map(([title, detail]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">

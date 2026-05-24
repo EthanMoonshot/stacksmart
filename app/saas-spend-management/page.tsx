@@ -197,7 +197,7 @@ export default function SaaSSpendManagementPage() {
             <div>
               <h2 className="text-2xl font-semibold text-white">SaaS spend management for SMBs starts with the spend you can actually see.</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                The fastest way for an owner/operator to control SaaS spend is not a procurement suite. It is a billing-data pass that shows every recurring software charge, what it belongs to, who owns it, and what should happen next. StackSmart focuses on the practical 5-50 staff workflow: export, categorise, detect waste, decide, and assign follow-through.
+                The fastest way for an owner-operator to control SaaS spend is not a procurement suite. It is a billing-data pass that shows every recurring software charge, what it belongs to, who owns it, and what should happen next. StackSmart focuses on the practical 5-50 staff workflow: export, categorise, detect waste, decide, and assign follow-through.
               </p>
               <p className="mt-4 text-sm leading-7 text-dark-300">
                 Use it before quarterly budget reviews, annual renewals, staff offboarding, vendor price increases, new site launches, or after a messy growth phase where teams bought tools independently.

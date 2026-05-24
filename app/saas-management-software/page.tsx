@@ -256,7 +256,7 @@ export default function SaaSManagementSoftwarePage() {
             ))}
           </div>
           <div className="mt-8 grid gap-4 rounded-3xl border border-brand-500/25 bg-brand-500/5 p-6 md:grid-cols-[1fr_auto] md:items-center">
-            <p className="text-sm leading-7 text-dark-300">Best-fit verticals include clinics, NDIS/community care, childcare, agencies, bookkeeping firms, boutique consultancies, hospitality groups, fitness/wellness operators, property services, and small ecommerce or retail teams that have recurring tools but no dedicated procurement owner.</p>
+            <p className="text-sm leading-7 text-dark-300">Best-fit verticals include clinics, NDIS and community care, childcare, agencies, bookkeeping firms, boutique consultancies, hospitality groups, fitness and wellness operators, property services, and small ecommerce or retail teams that have recurring tools but no dedicated procurement owner.</p>
             <TrackLink href="/small-business-software-audit" event="homepage_cta_clicked" props={{ target: "small_business_audit", location: "seo_saas_management_refresh" }} className="btn-primary text-sm">
               Start with an SMB audit
             </TrackLink>
