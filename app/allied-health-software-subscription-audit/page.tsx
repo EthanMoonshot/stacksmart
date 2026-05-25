@@ -233,6 +233,21 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+      {/* 2026 proof refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-amber-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">2026 proof refresh</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              Allied-health and physio software searches point to platform buyers; StackSmart audits the add-on layer
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Today’s AU keyword check showed measured demand for allied health software and physio practice software. The owner-led practice problem is not choosing another PMS; it is the recurring software drag around the PMS: online booking, payments, telehealth, reminders, digital forms, exercise-prescription tools, AI scribes, marketing platforms, and contractor clinician seats that keep billing after roster changes. StackSmart uses billing exports and card statements — not patient records — to turn that stack into a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Clinic-owner subscription blind spots callout */}
       <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

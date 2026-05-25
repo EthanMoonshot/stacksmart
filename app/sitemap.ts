@@ -40,6 +40,7 @@ const routes = [
   "/agency-software-stack-audit",
   "/clinic-software-subscription-audit",
   "/ndis-provider-software-audit",
+  "/community-care-software-subscription-audit",
   "/childcare-software-subscription-audit",
   "/accounting-firm-software-stack-audit",
   "/hospitality-group-software-audit",

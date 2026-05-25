@@ -250,6 +250,21 @@ export default function AccountingFirmSoftwareStackAuditPage() {
         </div>
       </section>
 
+      {/* 2026 proof refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-amber-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">2026 proof refresh</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              Accounting practice software has measurable demand; the small-firm gap is subscription ownership
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Today’s AU keyword check showed accounting practice software as the strongest measured vertical term in this batch. StackSmart is not replacing Xero Practice Manager, Karbon, Ignition, MYOB, CCH, FYI Docs, or payroll systems. It audits the subscription layer around them for owner-led practices: proposal/e-sign overlap, document tools duplicated by the practice platform, AI and meeting-recorder seats with light use, seasonal staff licences left active after tax season, and renewal dates owned by a former admin. The output is a partner-ready action list: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner before the next annual contract rolls over.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 30-minute card-statement pass for accounting firms */}
       <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
