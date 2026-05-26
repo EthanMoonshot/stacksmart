@@ -210,6 +210,9 @@ export default function NdisProviderSoftwareAuditPage() {
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
               2026 proof refresh: measured AU demand for NDIS software is useful category intent, but StackSmart is not trying to replace the operating platform. It audits the subscription layer around that platform for an owner-led NDIS provider or community care operator: rostering add-ons, care-management modules, SMS/document packs, claims and plan-management connectors, compliance tools bought for an audit, duplicate payroll/admin systems, and coordinator or support-worker seats left active after handover. Start with Xero or MYOB exports, business-card statements, direct debits, and invoices for care-management, rostering, payroll, SMS, compliance, and claims tools. The output is a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list before notice windows or auto-renewals close.
             </p>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              DataForSEO showed 390 monthly Australian searches for “NDIS software” plus adjacent home/community-care demand. This page now turns that category research into the safer owner-led provider question: which roster, care, plan-management, claims, document, SMS, and compliance subscriptions are still needed, and which can be cut without touching participant records.
+            </p>
           </div>
         </div>
       </section>
@@ -437,6 +440,37 @@ export default function NdisProviderSoftwareAuditPage() {
                 <li>Requires live integrations or automated provisioning workflows</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 measured demand action map */}
+      <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">NDIS software audit action map</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            This 2026 proof refresh turns NDIS software demand into a billing-only audit for smaller providers: find unused seats, add-ons, modules, SMS packs, connectors, and renewal owners without touching participant records.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Billing source", "Start with accounting exports, card statements, direct debits, and vendor invoices so annual charges and off-platform subscriptions are visible."],
+              ["Owner/use check", "Attach each tool to a current owner, user group, workflow, and renewal date; anything ownerless becomes a review candidate."],
+              ["Action output", "Produce a keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decision list that a busy operator can work through this month."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "ndis_demand_map" }} className="btn-primary text-sm">
+              See the audit tool
+            </TrackLink>
+            <TrackLink href="/community-care-software-subscription-audit" event="homepage_cta_clicked" props={{ target: "related_audit", location: "ndis_demand_map" }} className="btn-secondary text-sm">
+              Compare the community care audit
+            </TrackLink>
           </div>
         </div>
       </section>

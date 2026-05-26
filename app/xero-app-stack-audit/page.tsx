@@ -490,6 +490,9 @@ export default function XeroAppStackAuditPage() {
           <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
             Xero app stack waste usually hides in small recurring marketplace charges, connected-app permissions, and annual renewals nobody owns. StackSmart keeps the review billing-led: no ledger access, no client data, just the subscriptions and decisions an owner can act on.
           </p>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-dark-300">
+            The measured demand is practical rather than theoretical: DataForSEO showed 260 monthly Australian searches for “Xero apps” and 110 for “Xero app marketplace”. StackSmart now frames that marketplace demand as a finance-truth audit: match every add-on to a current owner, client, workflow, renewal date, and recovery path.
+          </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
               ["Connected-app cleanup", "Map each Xero-connected app to its job: receipt capture, payroll, reporting, client portal, proposals, e-sign, workflow, debt collection, AI notes, or payment collection. Duplicate jobs become consolidation candidates."],
@@ -501,6 +504,37 @@ export default function XeroAppStackAuditPage() {
                 <p className="mt-3 text-sm leading-6 text-dark-300">{body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 measured demand action map */}
+      <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Xero app audit action map</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            This 2026 proof refresh turns Xero marketplace demand into a practical owner/principal workflow: separate firm-owned from client pass-through costs, identify duplicate add-ons, and assign every renewal to a named person.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Billing source", "Start with accounting exports, card statements, direct debits, and vendor invoices so annual charges and off-platform subscriptions are visible."],
+              ["Owner/use check", "Attach each tool to a current owner, user group, workflow, and renewal date; anything ownerless becomes a review candidate."],
+              ["Action output", "Produce a keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decision list that a busy operator can work through this month."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "xero_app_demand_map" }} className="btn-primary text-sm">
+              See the audit tool
+            </TrackLink>
+            <TrackLink href="/bookkeeping-firm-software-stack-audit" event="homepage_cta_clicked" props={{ target: "related_audit", location: "xero_app_demand_map" }} className="btn-secondary text-sm">
+              Compare the bookkeeping stack audit
+            </TrackLink>
           </div>
         </div>
       </section>

@@ -356,6 +356,9 @@ export default function MedicalPracticeSoftwareSubscriptionAuditPage() {
             <p className="mt-3 text-sm leading-7 text-dark-300">
               StackSmart turns the billing export into a practical owner/operator action list: keep the tools that are still doing real work, cut unused seats, right-size tiers, consolidate overlapping workflows, and renegotiate renewals before the card is charged again. It is deliberately lighter than an enterprise procurement platform and designed for a busy SMB owner, practice manager, operator, or bookkeeper.
             </p>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              DataForSEO showed 480 monthly Australian searches for “practice management software” and 140 for “medical practice management software”. StackSmart uses that demand without pretending to replace the clinical system: the audit checks the subscription layer around it — recall packs, online booking, telehealth, forms, payments, Medicare/billing connectors, AI scribes, review tools, and clinician seats — from billing exports only.
+            </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "medical_practice_software_subscription_audit_proof_refresh" }} className="btn-primary text-sm">
                 See the audit tool
@@ -426,6 +429,37 @@ export default function MedicalPracticeSoftwareSubscriptionAuditPage() {
                 <li>Requires automated provisioning, SSO, or directory integration</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 measured demand action map */}
+      <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Practice software audit action map</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            This 2026 proof refresh turns practice-management software demand into a clinic-safe subscription review: audit bookings, reminders, forms, telehealth, billing connectors, AI scribes, and clinician seats from billing data only.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Billing source", "Start with accounting exports, card statements, direct debits, and vendor invoices so annual charges and off-platform subscriptions are visible."],
+              ["Owner/use check", "Attach each tool to a current owner, user group, workflow, and renewal date; anything ownerless becomes a review candidate."],
+              ["Action output", "Produce a keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decision list that a busy operator can work through this month."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "medical_demand_map" }} className="btn-primary text-sm">
+              See the audit tool
+            </TrackLink>
+            <TrackLink href="/allied-health-software-subscription-audit" event="homepage_cta_clicked" props={{ target: "related_audit", location: "medical_demand_map" }} className="btn-secondary text-sm">
+              Compare the allied health audit
+            </TrackLink>
           </div>
         </div>
       </section>

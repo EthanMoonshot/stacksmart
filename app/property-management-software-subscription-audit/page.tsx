@@ -242,6 +242,9 @@ export default function PropertyManagementSoftwareSubscriptionAuditPage() {
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
               2026 proof refresh: measured AU demand for property management software is useful category intent, but StackSmart is not trying to replace the operating platform. It audits the subscription layer around that platform for an owner-led rent roll, strata office, or property services team: platform add-ons, inspection and maintenance portals, SMS/e-sign/reporting modules, app-marketplace installs, API connector fees, duplicate CRM/email tools, and idle seats left after portfolio or staff changes. Start with Xero or MYOB exports, business-card statements, direct-debit lists, and any marketplace/add-on invoices from the core property platform. The output is a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list before notice windows or auto-renewals close.
             </p>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              DataForSEO showed 880 monthly Australian searches for “property management software” and 210 for “real estate CRM software”. This refresh uses that demand to capture owners who are comparing platforms but actually need the cheaper first move: reconcile the paid add-ons, portals, connectors, e-signature tools, SMS packs, CRM seats, and renewal owners around the system they already run.
+            </p>
           </div>
         </div>
       </section>
@@ -387,6 +390,37 @@ export default function PropertyManagementSoftwareSubscriptionAuditPage() {
               <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Not the best fit</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-400">{notBestFit.map((item) => <li key={item}>{item}</li>)}</ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 measured demand action map */}
+      <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Property software audit action map</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            This 2026 proof refresh turns property-management software demand into a safer first step for owner-led agencies and strata offices: audit the paid subscription layer around the core platform before considering a disruptive system switch.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Billing source", "Start with accounting exports, card statements, direct debits, and vendor invoices so annual charges and off-platform subscriptions are visible."],
+              ["Owner/use check", "Attach each tool to a current owner, user group, workflow, and renewal date; anything ownerless becomes a review candidate."],
+              ["Action output", "Produce a keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decision list that a busy operator can work through this month."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "property_demand_map" }} className="btn-primary text-sm">
+              See the audit tool
+            </TrackLink>
+            <TrackLink href="/real-estate-agency-software-audit" event="homepage_cta_clicked" props={{ target: "related_audit", location: "property_demand_map" }} className="btn-secondary text-sm">
+              Compare the real estate agency audit
+            </TrackLink>
           </div>
         </div>
       </section>

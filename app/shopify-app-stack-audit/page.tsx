@@ -366,6 +366,9 @@ export default function ShopifyAppStackAuditPage() {
           <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
             For small ecommerce operators, app waste is rarely one huge platform mistake. It is review apps, loyalty tools, page builders, inventory helpers, SMS/email tiers, attribution dashboards, and seasonal campaign tools quietly billing through Shopify and card statements after the owner has moved on.
           </p>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-dark-300">
+            DataForSEO showed 1,600 monthly Australian searches for “Shopify apps”, so this refresh answers the commercial question behind that search: which installed apps still deserve to stay, which campaign or agency leftovers can go, and which renewals need an owner before the next card charge.
+          </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
               ["Marketplace plus card export", "Review Shopify billing, app-store charges, and external SaaS paid by card so app subscriptions outside the Shopify invoice are not missed."],
@@ -377,6 +380,37 @@ export default function ShopifyAppStackAuditPage() {
                 <p className="mt-3 text-sm leading-6 text-dark-300">{body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 measured demand action map */}
+      <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Shopify app audit action map</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            This 2026 proof refresh turns broad Shopify app-search demand into a specific owner-led ecommerce workflow: reconcile every app charge, assign a current owner, and make a keep/cut/right-size decision before the next monthly or annual renewal.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Billing source", "Start with accounting exports, card statements, direct debits, and vendor invoices so annual charges and off-platform subscriptions are visible."],
+              ["Owner/use check", "Attach each tool to a current owner, user group, workflow, and renewal date; anything ownerless becomes a review candidate."],
+              ["Action output", "Produce a keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decision list that a busy operator can work through this month."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "shopify_app_demand_map" }} className="btn-primary text-sm">
+              See the audit tool
+            </TrackLink>
+            <TrackLink href="/ecommerce-software-subscription-audit" event="homepage_cta_clicked" props={{ target: "related_audit", location: "shopify_app_demand_map" }} className="btn-secondary text-sm">
+              Compare the ecommerce software audit
+            </TrackLink>
           </div>
         </div>
       </section>
