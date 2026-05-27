@@ -183,6 +183,31 @@ export default function ProfessionalServicesSoftwareAuditPage() {
         </div>
       </section>
 
+
+      {/* 2026 proof refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Professional-services software waste usually hides between projects</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Current AU checks show professional services software (50), consulting firm software (10), and project management software for consultants (10). StackSmart targets the practical owner-led firm problem underneath those searches: tools bought for a client, matter, engagement, proposal, or delivery sprint keep billing after the project closes because no one owns the renewal or seat cleanup.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">Professional-services action map</h3>
+              <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">1.</span> Collect billing lines for practice/project management, document management, CRM, proposal, e-sign, AI notes, research databases, client portals, and time/billing tools.</li>
+                <li><span className="font-semibold text-white">2.</span> Separate firm-owned subscriptions from client or project-pass-through expenses so recoverable spend is not mistaken for overhead.</li>
+                <li><span className="font-semibold text-white">3.</span> Check partner/admin owners, temporary project seats, contractor/leaver access, duplicate document/e-sign tools, and renewals with no named decision maker.</li>
+                <li><span className="font-semibold text-white">4.</span> Output a simple keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner plan between project phases — without reading client files or confidential matter data.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why firms accumulate waste */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

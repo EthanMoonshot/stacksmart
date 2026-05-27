@@ -184,6 +184,31 @@ export default function SaaSSpendAuditToolPage() {
         </div>
       </section>
 
+
+      {/* 2026 proof refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Built for the 20-person team asking “which subscriptions can we actually cut?”</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The latest buyer-intent signal was a small startup/operator asking whether all-in-one and AI workspaces really reduce fragmented subscription spend. That is exactly the owner-led SMB use case StackSmart serves: before buying another platform, upload the billing export or card statement and get a decision list for the tools already charging you. Live AU keyword checks also show software audit (110), software subscription management (90), and SaaS spend management (10) demand, while Plausible has started recording sparse visits to related high-intent pages.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">SaaS spend audit action map</h3>
+              <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">1.</span> Upload a card statement, Xero/MYOB export, or software billing CSV — no employee surveillance or enterprise rollout required.</li>
+                <li><span className="font-semibold text-white">2.</span> Group charges by tool, category, owner, billing cadence, renewal date, and likely team/use case.</li>
+                <li><span className="font-semibold text-white">3.</span> Review duplicate tools, converted trials, inactive seats, AI workspace overlap, connector fees, annual renewals, and charges with no accountable owner.</li>
+                <li><span className="font-semibold text-white">4.</span> Get an action-ready savings plan: keep, cancel, downgrade, consolidate, renegotiate, and assign a renewal owner for every meaningful line item.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Starting from the card statement */}
       <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

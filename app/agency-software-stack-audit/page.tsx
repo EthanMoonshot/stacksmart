@@ -183,6 +183,31 @@ export default function AgencySoftwareStackAuditPage() {
         </div>
       </section>
 
+
+      {/* 2026 proof refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Agency software audits for owner-led teams, not procurement departments</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Live AU demand is modest but specific — marketing agency software, agency project management software, creative agency software, and web design agency software each show measurable buyer searches. That is enough to justify a focused refresh because agencies keep creating StackSmart-fit waste: client-paid versus agency-paid tools, project-only seats that become permanent, contractor logins, duplicate reporting apps, and converted trials from campaigns that ended months ago.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">Agency action map</h3>
+              <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">1.</span> Export card and accounting lines for project management, design/prototyping, SEO, reporting, social scheduling, proposal, e-sign, hosting, AI, and client-collaboration tools.</li>
+                <li><span className="font-semibold text-white">2.</span> Separate client-pass-through charges from agency-owned subscriptions so margin leaks do not hide inside job costs.</li>
+                <li><span className="font-semibold text-white">3.</span> Review freelancers, leavers, project-only seats, duplicate analytics/reporting tools, converted trials, and renewal notices with no named owner.</li>
+                <li><span className="font-semibold text-white">4.</span> Turn the stack into practical decisions: keep core delivery tools, cancel dead campaign apps, downgrade inflated tiers, consolidate overlaps, renegotiate annual renewals, and assign renewal owners.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why agencies accumulate waste */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

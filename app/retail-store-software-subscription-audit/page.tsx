@@ -183,6 +183,31 @@ export default function RetailStoreSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+
+      {/* 2026 proof refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Measured retail demand, translated into a waste audit</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Live AU keyword checks show active demand around retail inventory software (170 monthly searches), retail POS software (140), ecommerce software (90), and Shopify apps (1,600). StackSmart uses that buying moment differently: before an owner-led retailer adds another system, it reconciles the paid stack already hiding in card statements, accounting exports, app marketplaces, and site-level admin accounts.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">Retail action map</h3>
+              <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">1.</span> Pull POS, payments, Shopify app, loyalty, SMS/email, returns, review, inventory, marketplace, and card-statement charges into one list.</li>
+                <li><span className="font-semibold text-white">2.</span> Mark who owns each tool, which store or channel uses it, and whether casual/seasonal staff seats are still active after peak trading.</li>
+                <li><span className="font-semibold text-white">3.</span> Flag duplicate site-level tools, forgotten app-marketplace add-ons, inactive manager logins, connector fees, and renewals with no owner.</li>
+                <li><span className="font-semibold text-white">4.</span> Leave with a keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner list — without replacing your POS or touching customer order data.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why retailers accumulate waste */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

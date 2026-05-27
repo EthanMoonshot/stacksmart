@@ -195,6 +195,31 @@ export default function MultiSiteVenueSoftwareAuditPage() {
         </div>
       </section>
 
+
+      {/* 2026 proof refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Venue software demand points to the subscription layer, not another platform swap</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                DataForSEO AU checks show venue management software (40), hospitality software (40), and restaurant management software (70) demand. For small groups and multi-site venues, the fastest commercial win is usually not replacing the operating system. It is reconciling the paid layer around it: POS add-ons, reservations, rostering, delivery, loyalty, music, Wi-Fi, signage, SMS, reviews, and site-specific manager seats.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">Venue action map</h3>
+              <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">1.</span> Pull billing exports and card statements across every venue, not just head office accounts.</li>
+                <li><span className="font-semibold text-white">2.</span> Map each POS, reservation, roster, delivery, loyalty, music, Wi-Fi, signage, review, SMS, payroll, and reporting subscription to the venue that uses it.</li>
+                <li><span className="font-semibold text-white">3.</span> Flag site-level duplicates, old manager/leaver seats, trial apps from promotions, connector fees, and annual renewals nobody owns.</li>
+                <li><span className="font-semibold text-white">4.</span> Produce the practical list: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner before the next busy season.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why venues accumulate software */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
