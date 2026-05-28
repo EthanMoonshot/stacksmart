@@ -346,7 +346,7 @@ export default function FitnessStudioSoftwareSubscriptionAuditPage() {
           <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Owner/admin cleanup</p>
           <h2 className="mt-3 text-2xl font-semibold text-white">Member-management add-on audit for fitness and wellness operators</h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-            Fitness studios often know the core booking platform cost but miss the member-management add-on audit: SMS packs, waiver tools, payment modules, challenge apps, email tiers, and trial tools that became permanent after one campaign.
+            Live AU keyword checks showed gym management software (170), membership management software (140), and fitness studio software (50). That category demand is useful, but the practical owner-led wedge is not another platform-selection project. It is the member-management add-on audit: SMS packs, waiver tools, payment modules, challenge apps, email tiers, access-control subscriptions, instructor seats, and trial tools that became permanent after one campaign.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">

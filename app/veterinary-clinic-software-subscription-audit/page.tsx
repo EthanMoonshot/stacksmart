@@ -321,6 +321,38 @@ export default function VeterinaryClinicSoftwareSubscriptionAuditPage() {
       </section>
 
 
+      {/* 2026 proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Vet software searches point to a cheaper first step than platform replacement</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                DataForSEO AU checks showed veterinary software and vet software at 70 monthly searches each, plus veterinary practice management software at 40. The category demand is real, but most owner-led clinics do not need another procurement project first. They need the paid layer around the clinic system reconciled from billing exports.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                StackSmart reviews PMS add-ons, reminders, online booking, stock/inventory tools, lab or diagnostics connectors, forms, payment tools, payroll, marketing, review platforms, and casual/locum seats — billing data only, no animal health records or PMS credentials.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-base font-semibold text-white">Vet clinic owner action map</h3>
+              <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">1.</span> Export 12 months of Xero/MYOB/card charges so annual PMS, diagnostic, inventory, and reminder renewals appear.</li>
+                <li><span className="font-semibold text-white">2.</span> Separate clinical must-keep systems from optional add-ons, duplicate reminders, review tools, and marketing subscriptions.</li>
+                <li><span className="font-semibold text-white">3.</span> Match paid accounts to current vets, nurses, reception, locums, and former contractors before the next seat-based invoice.</li>
+                <li><span className="font-semibold text-white">4.</span> Produce the practical list: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner.</li>
+              </ol>
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                <TrackLink href="/medical-practice-software-subscription-audit" event="homepage_cta_clicked" props={{ target: "medical_practice_audit", location: "vet_2026_refresh" }} className="btn-secondary text-sm">See medical practice audit</TrackLink>
+                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "vet_2026_refresh" }} className="btn-primary text-sm">See the audit tool</TrackLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Renewal and data-boundary proof block */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

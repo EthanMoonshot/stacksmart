@@ -327,6 +327,38 @@ export default function DentalPracticeSoftwareSubscriptionAuditPage() {
       </section>
 
 
+      {/* 2026 proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Dental software demand is rising — audit the paid layer before replacing the PMS</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Live AU keyword checks showed dental software (210 monthly searches) and dental practice management software (140) with high commercial CPC. StackSmart uses that demand as a practical owner-led clinic wedge: not “buy a new PMS”, but “prove which booking, recall, payment-plan, review, SMS, marketing, payroll, and connector subscriptions still deserve to bill next month.”
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The best fit is a 5-50 staff dental practice where the owner, practice manager, or bookkeeper can export Xero/MYOB/card data, then hand a clean keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner list to admin — without clinical records or patient-data access.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-base font-semibold text-white">Dental practice action map</h3>
+              <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">1.</span> Separate the core PMS from bolt-ons: booking widgets, recall/SMS packs, treatment-plan finance, forms, reviews, marketing, and reporting.</li>
+                <li><span className="font-semibold text-white">2.</span> Match each paid seat, chair, location, and admin account to the current roster — flag departed clinicians, locums, and temporary campaign accounts.</li>
+                <li><span className="font-semibold text-white">3.</span> Find add-ons already included in the current platform tier or no longer used after a PMS migration.</li>
+                <li><span className="font-semibold text-white">4.</span> Assign a renewal owner and next action before annual PMS, SMS, payment, review, and marketing terms roll over.</li>
+              </ol>
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                <TrackLink href="/clinic-software-subscription-audit" event="homepage_cta_clicked" props={{ target: "clinic_audit", location: "dental_2026_refresh" }} className="btn-secondary text-sm">Compare clinic audit</TrackLink>
+                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "dental_2026_refresh" }} className="btn-primary text-sm">See the audit tool</TrackLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Renewal and data-boundary proof block */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

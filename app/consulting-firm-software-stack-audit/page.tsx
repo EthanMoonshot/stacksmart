@@ -331,6 +331,38 @@ export default function ConsultingFirmSoftwareStackAuditPage() {
       </section>
 
 
+      {/* 2026 proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Consultancies inherit project tools long after the project ends</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Fresh AU checks showed professional services automation software at 210 monthly searches, consulting software at 170, and project management software at 3,600. StackSmart should not pretend to be PSA procurement. The stronger small-firm wedge is a billing-led audit of project-only tools, client-collaboration spaces, AI/research subscriptions, CRM overlap, proposal tools, and contractor seats that became permanent spend.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                This is built for owner-led advisory, research, strategy, and boutique consulting firms with 5-50 staff and low ops maturity: export the billing data, identify what is still serving active delivery, and hand admin a prioritised action list.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-base font-semibold text-white">Consulting firm action map</h3>
+              <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">1.</span> Split internal operating tools from client-specific tools, research trials, workshop apps, proposal platforms, and delivery workspaces.</li>
+                <li><span className="font-semibold text-white">2.</span> Match every seat to current employees, associates, contractors, and active client projects.</li>
+                <li><span className="font-semibold text-white">3.</span> Decide whether each tool is firm capability, client-rechargeable, project residue, or a consolidation candidate.</li>
+                <li><span className="font-semibold text-white">4.</span> Turn the export into a keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner handoff.</li>
+              </ol>
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                <TrackLink href="/professional-services-software-audit" event="homepage_cta_clicked" props={{ target: "professional_services_audit", location: "consulting_2026_refresh" }} className="btn-secondary text-sm">Professional services audit</TrackLink>
+                <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "consulting_2026_refresh" }} className="btn-primary text-sm">Use the checklist</TrackLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Renewal and delivery-boundary proof block */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

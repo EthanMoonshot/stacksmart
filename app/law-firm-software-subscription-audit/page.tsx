@@ -331,6 +331,38 @@ export default function LawFirmSoftwareSubscriptionAuditPage() {
       </section>
 
 
+      {/* 2026 proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Legal software demand is commercially strong, but boutique firms need billing truth first</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                AU checks showed legal practice management software at 260 monthly searches and law firm software at 90, both with high CPC. StackSmart answers the owner/operator question behind those searches: before replacing the matter system, which subscriptions around it are duplicated, ownerless, over-seated, or renewing without a partner decision?
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The refresh is intentionally for boutique firms and small professional-services operators, not enterprise legal IT. It starts from invoices, card statements, and accounting exports, then preserves the client-file boundary while surfacing paid research, dictation, AI, document, e-signature, CRM, trust-accounting connector, and collaboration waste.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-base font-semibold text-white">Boutique firm action map</h3>
+              <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">1.</span> Group every charge by matter system, research, document, dictation/AI, e-signature, CRM, marketing, Microsoft/Google, and accounting connector.</li>
+                <li><span className="font-semibold text-white">2.</span> Match paid seats to current partners, solicitors, paralegals, admin staff, contractors, and matter-only workspaces.</li>
+                <li><span className="font-semibold text-white">3.</span> Flag partner-preference tools where three products are solving one job and no firm standard exists.</li>
+                <li><span className="font-semibold text-white">4.</span> Prioritise high-dollar annual renewals and assign one renewal owner before notice periods close.</li>
+              </ol>
+              <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+                <TrackLink href="/professional-services-software-audit" event="homepage_cta_clicked" props={{ target: "professional_services_audit", location: "law_2026_refresh" }} className="btn-secondary text-sm">Professional services audit</TrackLink>
+                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "law_2026_refresh" }} className="btn-primary text-sm">See the audit tool</TrackLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Renewal and data-boundary proof block */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
