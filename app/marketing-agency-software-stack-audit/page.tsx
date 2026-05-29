@@ -21,6 +21,7 @@ const jsonLd = {
       "@id": absoluteUrl("/marketing-agency-software-stack-audit"),
       url: absoluteUrl("/marketing-agency-software-stack-audit"),
       name: "Marketing Agency Software Stack Audit | StackSmart",
+      dateModified: "2026-05-30",
       description:
         "Owner-led marketing, creative, and web agencies accumulate SEO tools, AI subscriptions, design platforms, social scheduling apps, and reporting tools with significant overlap. A software audit finds what to cut, consolidate, and renegotiate.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -760,6 +761,44 @@ export default function MarketingAgencySoftwareStackAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026-05-30 measured owner-led SMB refresh */}
+      <section className="border-y border-dark-800/80 py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh · agency subscription cleanup</p>
+          <div className="mt-4 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+            <div>
+              <h2 className="text-2xl font-semibold text-white">Agency software sprawl is usually a client-project hangover.</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Marketing and creative agencies rarely have enterprise procurement. They have owners, ops managers, and account leads buying tools to unblock projects: design seats, social schedulers, project boards, reporting dashboards, AI content tools, proposal and e-sign platforms, SEO tools, client portals, and temporary contractor access that becomes permanent billing.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                StackSmart’s agency audit starts from billing exports and card statements, then separates agency-owned subscriptions from client-pass-through charges. The output is an owner/operator action list for duplicate accounts, converted trials, project-only tools, leaver seats, AI workspace drift, and renewal owners — not a procurement-policy document.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-lg font-semibold text-white">Agency action map</h3>
+              <div className="mt-5 grid gap-3">
+                {[
+                  "Separate client-pass-through apps from agency-owned recurring subscriptions",
+                  "Find duplicate design, project, reporting, scheduling, AI, proposal, and e-sign tools",
+                  "Identify converted trials and project-only tools still billing after delivery",
+                  "Compare employees, freelancers, contractors, and leavers against paid seats",
+                  "Review AI workspaces, social tools, SEO tools, content platforms, and dashboard add-ons",
+                  "Assign renewals to the owner, ops lead, finance/admin lead, or account owner",
+                ].map((item) => (
+                  <div key={item} className="rounded-xl border border-dark-700/80 bg-dark-950/60 px-4 py-3 text-sm leading-6 text-dark-300">{item}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/agency-software-stack-audit" event="homepage_cta_clicked" props={{ from: "marketing_agency_refresh", target: "agency" }} className="btn-secondary text-sm">Agency stack audit</TrackLink>
+            <TrackLink href="/professional-services-software-audit" event="homepage_cta_clicked" props={{ from: "marketing_agency_refresh", target: "professional_services" }} className="btn-primary text-sm">Professional services audit</TrackLink>
           </div>
         </div>
       </section>

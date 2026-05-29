@@ -21,6 +21,7 @@ const jsonLd = {
       "@id": absoluteUrl("/allied-health-software-subscription-audit"),
       url: absoluteUrl("/allied-health-software-subscription-audit"),
       name: "Allied Health Software Subscription Audit | StackSmart",
+      dateModified: "2026-05-30",
       description:
         "Audit software subscriptions for physiotherapy, podiatry, psychology, occupational therapy, and multi-disciplinary allied health practices — booking, billing, telehealth, AI scribe, and admin tools.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -606,6 +607,44 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
           <div className="rounded-2xl border border-brand-500/25 bg-brand-500/10 p-6">
             <p className="text-sm font-semibold text-brand-200">What StackSmart looks for in allied health exports</p>
             <p className="mt-2 text-sm leading-7 text-dark-200">The output groups recurring charges by clinical admin job — practice management, booking, telehealth, reminders, forms, payments, payroll, NDIS/admin, AI notes, reporting, and marketing — then highlights duplicate jobs, idle seats, ownerless renewals, and add-on fees that need a simple cut/consolidate/right-size decision.</p>
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026-05-30 measured owner-led SMB refresh */}
+      <section className="border-y border-dark-800/80 py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh · allied health owner/operator fit</p>
+          <div className="mt-4 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+            <div>
+              <h2 className="text-2xl font-semibold text-white">Allied health software waste usually hides in seats, add-ons, and forgotten admin tools.</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Allied health software demand is smaller than broad practice-management demand, but it is highly relevant for owner-led physio, OT, psychology-adjacent, podiatry, speech, and multi-discipline clinics. The waste often sits around the operating system: online bookings, forms, reminders, telehealth, payments, exercise or patient-engagement tools, NDIS/admin modules, SMS packs, contractor seats, and AI or reporting add-ons.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                StackSmart reviews billing exports and invoices, not treatment notes, participant records, or clinical files. That makes it safe for a practice owner or admin manager to get a first action list before deciding whether any clinical workflow change is worth discussing with practitioners.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-lg font-semibold text-white">Allied health action map</h3>
+              <div className="mt-5 grid gap-3">
+                {[
+                  "Map practice-management, booking, forms, SMS, telehealth, payment, and patient-engagement charges",
+                  "Separate NDIS/admin modules and reporting add-ons from clinical records",
+                  "Compare practitioner, contractor, locum, and admin seats with current rosters",
+                  "Find duplicate exercise-library, form, reminder, and marketing tools",
+                  "Check AI scribe, transcription, and reporting trials before they renew",
+                  "Create keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner actions",
+                ].map((item) => (
+                  <div key={item} className="rounded-xl border border-dark-700/80 bg-dark-950/60 px-4 py-3 text-sm leading-6 text-dark-300">{item}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/clinic-software-subscription-audit" event="homepage_cta_clicked" props={{ from: "allied_health_refresh", target: "clinic" }} className="btn-secondary text-sm">Clinic software audit</TrackLink>
+            <TrackLink href="/ndis-provider-software-audit" event="homepage_cta_clicked" props={{ from: "allied_health_refresh", target: "ndis_provider" }} className="btn-primary text-sm">NDIS provider audit</TrackLink>
           </div>
         </div>
       </section>

@@ -21,6 +21,7 @@ const jsonLd = {
       "@id": absoluteUrl("/clinic-software-subscription-audit"),
       url: absoluteUrl("/clinic-software-subscription-audit"),
       name: "Clinic Software Subscription Audit | StackSmart",
+      dateModified: "2026-05-30",
       description:
         "Review and cut wasted software spend at your clinic or allied health practice — admin, booking, billing, and marketing subscriptions.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -420,6 +421,44 @@ export default function ClinicSoftwareSubscriptionAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026-05-30 measured owner-led SMB refresh */}
+      <section className="border-y border-dark-800/80 py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh · clinic-safe subscription audit</p>
+          <div className="mt-4 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+            <div>
+              <h2 className="text-2xl font-semibold text-white">Clinic management demand points to a safer first step: audit the paid admin layer.</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The latest AU check showed measured demand for clinic management software, but most owner-led clinics do not need to start with a platform replacement project. A 5-50 staff practice usually needs a clean view of booking, forms, reminder/SMS, telehealth, payment, billing connector, AI scribe, marketing, and clinician/admin seat charges already billing around the core PMS.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                StackSmart keeps the boundary simple: billing exports, business-card statements, invoices, and subscription receipts only. No patient records, clinical notes, appointment content, or health information is reviewed. The report gives the practice owner or manager a keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner list that can be actioned without interrupting clinicians.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-lg font-semibold text-white">Clinic action map</h3>
+              <div className="mt-5 grid gap-3">
+                {[
+                  "Group PMS, online booking, intake forms, reminders, SMS, telehealth, payments, and billing connectors",
+                  "Flag duplicate reminder, forms, marketing, reputation, and patient-engagement tools",
+                  "Right-size clinician, admin, contractor, and leaver seats before renewal",
+                  "Check AI scribe and meeting-note tools for active users and converted trials",
+                  "Review payment-terminal, Medicare/private-billing connector, and add-on charges separately",
+                  "Assign renewal owners to the practice owner, practice manager, or admin lead",
+                ].map((item) => (
+                  <div key={item} className="rounded-xl border border-dark-700/80 bg-dark-950/60 px-4 py-3 text-sm leading-6 text-dark-300">{item}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/medical-practice-software-subscription-audit" event="homepage_cta_clicked" props={{ from: "clinic_refresh", target: "medical_practice" }} className="btn-secondary text-sm">Medical practice audit</TrackLink>
+            <TrackLink href="/allied-health-software-subscription-audit" event="homepage_cta_clicked" props={{ from: "clinic_refresh", target: "allied_health" }} className="btn-primary text-sm">Allied health version</TrackLink>
           </div>
         </div>
       </section>

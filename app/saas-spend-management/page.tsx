@@ -19,6 +19,7 @@ const jsonLd = {
     {
       "@type": "WebPage",
       name: "SaaS Spend Management for SMBs | StackSmart",
+      dateModified: "2026-05-30",
       description:
         "SaaS spend management for owner-led SMBs: find duplicate tools, unused seats, add-on fees, ownerless renewals, and practical savings actions from billing exports.",
       url: "https://stacksmart.app/saas-spend-management",
@@ -226,6 +227,44 @@ export default function SaaSSpendManagementPage() {
             <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ target: "pricing", location: "seo_spend_management_refresh" }} className="btn-primary text-sm">
               See audit options
             </TrackLink>
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026-05-30 measured owner-led SMB refresh */}
+      <section className="border-y border-dark-800/80 py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh · small-business SaaS spend management</p>
+          <div className="mt-4 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+            <div>
+              <h2 className="text-2xl font-semibold text-white">For a small business, SaaS spend management means one actionable billing pass.</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                SaaS spend management is often sold as an enterprise procurement system. For a 5-50 staff owner-led business, the first win is simpler: export card statements, invoices, and accounting data; group recurring software charges; find unused seats, duplicate tools, connector fees, converted trials, and ownerless renewals; then decide what to keep, cancel, downgrade, consolidate, or renegotiate.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                StackSmart is built for that first 30-day cleanup. It does not require SSO, SCIM, bank access, vendor portals, or a procurement team. It gives the owner, operator, bookkeeper, or admin lead a practical action list they can work through before the next renewal calendar closes.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-lg font-semibold text-white">First 30 days with StackSmart</h3>
+              <div className="mt-5 grid gap-3">
+                {[
+                  "Day 1: upload billing exports, card statements, invoices, or accounting CSVs",
+                  "Day 2: group recurring charges by tool, category, payment path, and owner",
+                  "Week 1: cancel clear waste, remove leaver seats, and downgrade unused tiers",
+                  "Week 2: consolidate duplicate categories and close converted trials",
+                  "Week 3: renegotiate material vendors and check annual renewal notice windows",
+                  "Week 4: assign renewal owners and repeat the billing pass quarterly",
+                ].map((item) => (
+                  <div key={item} className="rounded-xl border border-dark-700/80 bg-dark-950/60 px-4 py-3 text-sm leading-6 text-dark-300">{item}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/small-business-software-audit" event="homepage_cta_clicked" props={{ from: "saas_spend_management_refresh", target: "small_business_audit" }} className="btn-secondary text-sm">Small business audit</TrackLink>
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ from: "saas_spend_management_refresh", target: "audit_tool" }} className="btn-primary text-sm">Use the audit tool</TrackLink>
           </div>
         </div>
       </section>

@@ -21,6 +21,7 @@ const jsonLd = {
       "@id": absoluteUrl("/bookkeeping-firm-software-stack-audit"),
       url: absoluteUrl("/bookkeeping-firm-software-stack-audit"),
       name: "Bookkeeping Firm Software Stack Audit | StackSmart",
+      dateModified: "2026-05-30",
       description:
         "Bookkeeping firms using Xero, QBO, or MYOB ecosystems accumulate receipt capture, payroll, proposal, workflow, e-sign, AI transcription, connector fees, and client portal add-ons with significant overlap.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -739,6 +740,44 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026-05-30 measured owner-led SMB refresh */}
+      <section className="border-y border-dark-800/80 py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh · measured AU demand</p>
+          <div className="mt-4 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+            <div>
+              <h2 className="text-2xl font-semibold text-white">Bookkeeping firms need a billing-layer audit, not another practice platform.</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Today’s AU keyword check showed strong commercial demand around bookkeeping software in Australia. For an owner-led bookkeeping firm with 5-50 staff, the practical opportunity is usually not replacing Xero, QBO, MYOB, or the practice system. It is finding the firm-owned add-ons, client-pass-through subscriptions, connector fees, AI seats, and renewal owners that nobody has reviewed since the last growth phase.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                StackSmart starts from firm billing exports, card statements, marketplace invoices, and subscription receipts only. It does not review client ledgers or client financial records. The output is a principal-friendly action list: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner before the next monthly or annual charge hits.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-lg font-semibold text-white">Bookkeeping action map</h3>
+              <div className="mt-5 grid gap-3">
+                {[
+                  "Separate firm-owned tools from client pass-through app billing",
+                  "Map Xero, QBO, MYOB, payroll, receipt-capture, reporting, proposal, document, and e-sign charges",
+                  "Find duplicate workflow, AI, meeting-note, document, and automation tools",
+                  "Compare staff, contractor, and leaver seats with current users",
+                  "Review marketplace connectors, Zapier/API fees, and add-ons that survived a process change",
+                  "Assign each renewal to a principal, practice manager, or admin owner",
+                ].map((item) => (
+                  <div key={item} className="rounded-xl border border-dark-700/80 bg-dark-950/60 px-4 py-3 text-sm leading-6 text-dark-300">{item}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/xero-app-stack-audit" event="homepage_cta_clicked" props={{ from: "bookkeeping_firm_refresh", target: "xero_app_stack_audit" }} className="btn-secondary text-sm">Audit Xero app billing</TrackLink>
+            <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "bookkeeping_firm_refresh", target: "subscription_checklist" }} className="btn-primary text-sm">Use the audit checklist</TrackLink>
           </div>
         </div>
       </section>
