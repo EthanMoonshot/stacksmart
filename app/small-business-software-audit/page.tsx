@@ -217,7 +217,7 @@ export default function SmallBusinessSoftwareAuditPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Small business software audit</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Small business software audit · 2026 owner-led SMB proof refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
               Find software waste before it renews again
             </h1>
@@ -255,7 +255,7 @@ export default function SmallBusinessSoftwareAuditPage() {
               How do you audit software subscriptions for a small business?
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              Export 6 to 12 months of billing data from your payment processor, credit card, or accounting tool. Group every charge by category — project management, communication, file storage, design, analytics, and so on. Look for duplicates across categories, seats that no longer reflect your headcount, pricing tiers with features nobody uses, and renewals within the next 60 to 90 days. Assign each subscription a decision: keep, cut, consolidate, or renegotiate. Act on the highest-value items first.
+              A small business software audit is a billing-first review for owner-led, admin-heavy businesses with roughly 5 to 50 staff — clinics, NDIS and community care providers, childcare operators, agencies, bookkeeping firms, boutique professional services, hospitality groups, fitness studios, property offices, and ecommerce or retail teams. Start with 6 to 12 months of billing exports, card statements, accounting exports, invoices, or marketplace receipts only; StackSmart does not need bank login access, SSO rollout, patient records, client files, or employee performance data for the first pass. The output is an action list for every subscription: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner, ranked by the fastest savings and renewal-risk items first.
             </p>
           </div>
         </div>
@@ -665,6 +665,7 @@ export default function SmallBusinessSoftwareAuditPage() {
               ["You have had staff turnover in the last 12 months", "Every departure is a potential ghost seat. Every new hire is a potential new subscription that duplicates something you already have."],
               ["You have never renegotiated a software contract", "Vendors rarely lower prices automatically. Annual renewal is the only natural negotiation point, and most owners let it pass without a call."],
               ["You are paying for the same category in two different tools", "Two project management tools. Two file storage platforms. Two scheduling apps. Common in businesses where different team members made separate purchasing decisions."],
+              ["You want a savings snapshot, not enterprise SAM", "StackSmart is built for a fast owner/operator decision list from billing data. It is not legal advice, compliance evidence, or a replacement for vertical operating systems."],
               ["Your last software review was more than six months ago", "Any stack older than six months without a review has almost certainly accumulated at least one unnecessary subscription."],
             ].map(([title, detail]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
@@ -687,7 +688,7 @@ export default function SmallBusinessSoftwareAuditPage() {
             {[
               ["/agency-software-stack-audit", "Agency / web studio", "Project delivery, design, client reporting, and dev tools across a creative or digital studio."],
               ["/clinic-software-subscription-audit", "Allied health clinic", "Booking, billing, patient recalls, telehealth, and admin tools for practice owners."],
-              ["/accounting-firm-software-stack-audit", "Accounting firm", "Practice management, tax, document, e-sign, and client portal tools for small firms."],
+              ["/law-firm-software-subscription-audit", "Law firm", "Practice management, document, e-sign, matter intake, billing, and client portal tools for small firms."],
               ["/hospitality-group-software-audit", "Hospitality group", "POS, reservations, rostering, and delivery stack for small venues and multi-site groups."],
               ["/fitness-studio-software-subscription-audit", "Fitness studio", "Booking, member management, payments, and marketing for gyms and wellness studios."],
               ["/ndis-provider-software-audit", "NDIS provider", "Rostering, care management, and compliance tools for community care and NDIS providers."],
@@ -799,7 +800,7 @@ export default function SmallBusinessSoftwareAuditPage() {
           </div>
           <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-5">
             <p className="text-sm leading-7 text-dark-300 max-w-3xl">
-              Running an owner-use pass takes under 30 minutes for most small business stacks. The output is a short, clear decision list — not a spreadsheet project. Once the pass is done, act on the cancellations first (no vendor conversation needed), then hand the renegotiation and right-sizing list to whoever manages vendor conversations in your business. Accounting and bookkeeping firms that run audits for SMB clients can use the same pass as an advisory starting point — the <a href="/accounting-firm-software-stack-audit" className="text-brand-400 hover:text-brand-300 transition-colors">accounting firm audit guide</a> and <a href="/bookkeeping-firm-software-stack-audit" className="text-brand-400 hover:text-brand-300 transition-colors">bookkeeping firm audit guide</a> cover both internal reviews and client advisory use.
+              Running an owner-use pass takes under 30 minutes for most small business stacks. The output is a short, clear decision list — not a spreadsheet project. Once the pass is done, act on the cancellations first (no vendor conversation needed), then hand the renegotiation and right-sizing list to whoever manages vendor conversations in your business. Accounting and bookkeeping firms that run audits for SMB clients can use the same pass as an advisory starting point — the <a href="/bookkeeping-firm-software-stack-audit" className="text-brand-400 hover:text-brand-300 transition-colors">bookkeeping firm audit guide</a> and <a href="/professional-services-software-audit" className="text-brand-400 hover:text-brand-300 transition-colors">professional services audit guide</a> cover both internal reviews and client advisory use.
             </p>
           </div>
         </div>

@@ -38,7 +38,7 @@ const jsonLd = {
           name: "What is SaaS renewal management?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "SaaS renewal management is the process of tracking when each software subscription renews, evaluating whether the tool is still needed at its current tier, and acting before auto-renewal clauses lock you into another billing cycle. For small teams, this usually means maintaining a renewal calendar, reviewing usage before each renewal window, and canceling or renegotiating contracts that no longer deliver value.",
+            text: "SaaS renewal management is the process of finding each software renewal before the notice window closes, checking whether the tool still has an owner and active use, and deciding whether to keep, cancel, downgrade, consolidate, or renegotiate. For owner-led SMBs with 5 to 50 staff, the first pass can come from billing exports, card statements, accounting exports, invoices, direct debits, and marketplace receipts — not a six-month procurement platform rollout. The action output is a renewal-risk list with vendor, amount, likely renewal date, notice window, billing owner, admin owner, seat drift, and the next decision.",
           },
         },
         {
@@ -46,7 +46,7 @@ const jsonLd = {
           name: "What is the best first step for small teams managing SaaS renewals?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Export billing data from card statements, Xero, QuickBooks, invoices, direct debits, and marketplace/app-store receipts, then run it through a savings report tool like StackSmart. A 2026 proof refresh should flag 30, 60, or 90-day notice windows, auto-renew clauses, ownerless contracts, leaver or contractor seats, duplicate categories, add-on fees, and concrete keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner actions in under an hour without building a spreadsheet from scratch.",
+            text: "Export billing data from card statements, Xero, QuickBooks, invoices, direct debits, and marketplace/app-store receipts, then run it through a savings report tool like StackSmart. The 2026 owner-led SMB proof refresh should flag 30, 60, or 90-day notice windows, auto-renew clauses, ownerless contracts, leaver or contractor seats, duplicate categories, AI workspaces, add-on fees, and concrete keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner actions in under an hour. Privacy boundary: use billing and seat data only; do not upload client records, patient records, employee files, or contracts containing sensitive legal terms for a first-pass savings snapshot.",
           },
         },
         {
@@ -84,7 +84,7 @@ export default function SaaSRenewalManagementPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Renewal guide</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Renewal guide · 2026 owner-led SMB proof refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
               Stop surprise SaaS renewals before they hit
             </h1>
@@ -309,7 +309,7 @@ export default function SaaSRenewalManagementPage() {
       {/* 2026 proof refresh */}
       <section className="border-b border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 owner-led SMB proof refresh</p>
           <div className="mt-4 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <h2 className="text-2xl font-semibold text-white">Renewal management for teams without a procurement owner</h2>
@@ -367,7 +367,7 @@ export default function SaaSRenewalManagementPage() {
             <div className="rounded-2xl border border-brand-500/30 bg-gradient-to-br from-brand-500/5 to-dark-900/70 p-6">
               <h3 className="text-lg font-semibold text-brand-300">Good fit</h3>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
-                <li>Your team is 10-200 people with 20-150 SaaS subscriptions</li>
+                <li>Your team is roughly 5-50 people with enough recurring subscriptions that renewals are no longer visible from memory</li>
                 <li>You want renewal visibility from billing data without IT involvement</li>
                 <li>You need actionable output this week, not a six-month rollout</li>
                 <li>Your primary goal is stopping waste and renegotiating before renewals hit</li>
@@ -383,6 +383,7 @@ export default function SaaSRenewalManagementPage() {
                 <li>Your organization has 500+ subscriptions with compliance requirements</li>
                 <li>You need a vendor lifecycle management system with contract storage</li>
                 <li>You already have a SaaS management platform handling renewals</li>
+                <li>You need legal advice on contract terms rather than an operational renewal-risk snapshot</li>
               </ul>
             </div>
           </div>

@@ -221,7 +221,7 @@ export default function AiSubscriptionAuditPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">AI subscription audit</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">AI subscription audit · 2026 owner-led SMB proof refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
               Stop paying for AI tools nobody uses
             </h1>
@@ -259,7 +259,7 @@ export default function AiSubscriptionAuditPage() {
               How do you audit AI subscriptions for a small business?
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              Export 3 to 6 months of billing data from your business credit card or accounting software. Filter for any charge containing AI, Pro, Teams, Plus, Business, or the names of known AI tools — ChatGPT, Claude, Midjourney, Canva, Notion, Otter, Fireflies, Perplexity, Copilot, Grammarly. For each AI subscription, record the tool name, monthly or annual cost, and seat count. Run the owner-use check: can you name a current team member who uses this tool at least twice a week? If not, it is a right-size or cancellation candidate. Then look for category overlap — two general-purpose AI assistants, two image generation tools, two meeting transcription platforms. Rank findings by annual cost. Act on cancellations and seat right-sizing first — they require no vendor conversation. Complete this pass in under 30 minutes for most small business stacks.
+              An AI subscription audit is a billing-first review of ChatGPT, Claude, Copilot, Canva AI, Notion AI, Midjourney, meeting transcription, image generation, and research assistants for owner-led SMBs with roughly 5 to 50 staff. Start with card statements, accounting exports, invoices, and marketplace receipts; do not upload prompts, client work, patient records, private documents, or employee monitoring data. Record tool, cost, workspace, paid seats, AI credits or add-ons, admin owner, and current active users. The output is a keep, cancel, downgrade, consolidate, or right-size decision for each AI subscription — with unused seats, duplicate assistants, converted trials, contractor seats, and ownerless workspaces ranked by annual impact. Complete this pass in under 30 minutes for most small business AI stacks, then use the <a href="/software-subscription-audit-checklist" className="text-brand-400 hover:text-brand-300 transition-colors">software subscription audit checklist</a> to roll the findings into the wider stack review.
             </p>
           </div>
         </div>
@@ -341,7 +341,7 @@ export default function AiSubscriptionAuditPage() {
               ))}
             </div>
             <p className="mt-6 text-sm leading-7 text-dark-300">
-              Running the owner-use check across these three categories takes under 20 minutes. For each tool in each category, name the current team member who used it this week. If you cannot — or if two tools in the same category have the same answer — you have identified the consolidation candidates before touching a single vendor conversation.
+              Running the owner-use check across these three categories takes under 20 minutes. For each tool in each category, name the current team member who used it this week, the workspace admin, and the billing owner. If you cannot — or if two tools in the same category have the same answer — you have identified consolidation candidates before touching a single vendor conversation. This is a savings snapshot and ownership check, not legal, HR, compliance, or AI policy advice.
             </p>
           </div>
         </div>

@@ -191,7 +191,7 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Audit checklist</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Audit checklist · 2026 owner-led SMB proof refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Software subscription audit checklist</h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
               Use this before you scroll line by line through the credit card statement. A structured checklist for owner-led businesses with 5 to 50 staff — covering everything from gathering billing data and building an overlap map to identifying duplicate accounts, flagging converted trials, assigning ownerless renewals, and making a clear decision on every subscription.
@@ -214,7 +214,7 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
           <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-8">
             <h2 className="text-2xl font-semibold text-white">What does &ldquo;going through the software subscriptions&rdquo; actually mean?</h2>
             <p className="mt-4 text-sm leading-7 text-dark-300 max-w-[65ch]">
-              Most business owners think of a software audit as scrolling through a credit card statement and cancelling anything that looks unfamiliar. That finds the most obvious waste — but misses annual charges that do not appear in a monthly statement, duplicate tools spread across different payment methods, and seats that were correct twelve months ago but are now over-provisioned. A structured audit produces four specific outputs: a full inventory of every recurring charge, clear waste flags (unused seats, duplicate tools, tier mismatches), a renewal calendar with upcoming risk dates, and a decision for every subscription — keep, cut, consolidate, or renegotiate. Without those outputs, the review is just an inventory exercise.
+              A software subscription audit checklist is a practical decision workflow for owner-led SMBs with 5 to 50 staff that have software creep but no procurement team. Start from billing exports, card statements, accounting exports, invoices, and marketplace receipts only; you do not need bank login access, SSO, client files, patient records, or employee monitoring data to complete the first pass. The finished checklist should produce four outputs: a full recurring-charge inventory, clear waste flags (unused seats, duplicate tools, converted trials, tier mismatches), a renewal calendar with notice windows, and a decision for every subscription — keep, cancel, downgrade, consolidate, renegotiate, or assign an owner. Use the <a href="/small-business-software-audit" className="text-brand-400 hover:text-brand-300 transition-colors">small business software audit guide</a> for the broader workflow, the <a href="/ai-subscription-audit" className="text-brand-400 hover:text-brand-300 transition-colors">AI subscription audit</a> for AI seats and credits, and <a href="/saas-renewal-management" className="text-brand-400 hover:text-brand-300 transition-colors">SaaS renewal management</a> when notice windows are the risk.
             </p>
           </div>
         </div>
@@ -296,9 +296,9 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { label: "Billing export", detail: "CSV or PDF from your bank, card, or accounting tool — 12 months of charges preferred to catch annual subscriptions", color: "text-brand-300" },
+              { label: "Billing export", detail: "CSV or PDF from your card, accounting tool, invoice folder, direct debits, or marketplace receipts — 12 months preferred to catch annual subscriptions", color: "text-brand-300" },
               { label: "Seat license counts", detail: "How many seats you are paying for per tool — check admin settings or the most recent invoice", color: "text-brand-300" },
-              { label: "Active user data", detail: "Login or activity data per tool — even a rough count of who logged in during the past 90 days helps", color: "text-brand-300" },
+              { label: "Privacy boundary", detail: "Use seat counts, billing exports, and rough active-user checks only. Do not upload patient records, client files, payroll details, or employee-performance data for a subscription-spend review", color: "text-amber-400" },
               { label: "Renewal calendar", detail: "Annual contract dates and named renewal owners — search email for subscription confirmed or auto-renewal notices, then assign a current team member as owner for each", color: "text-amber-400" },
               { label: "Team headcount", detail: "Current employee count per department — needed to check whether seat counts still match actual team size and to identify ghost seats from departures", color: "text-brand-300" },
               { label: "Last audit date", detail: "When (if ever) the stack was last reviewed — anything older than 6 months is a probable waste zone; set a quarterly review reminder after the initial audit completes", color: "text-orange-400" },

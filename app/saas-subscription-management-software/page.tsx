@@ -38,7 +38,7 @@ const jsonLd = {
           name: "What is SaaS subscription management software?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "SaaS subscription management software helps businesses track, organize, and optimize their recurring software subscriptions. Core features include building a tool inventory, monitoring spend across payment methods, flagging waste from unused licenses or duplicate tools, tracking renewal dates, and producing actionable savings recommendations. Options range from lightweight report-based tools to enterprise platforms with full procurement workflows.",
+            text: "SaaS subscription management software helps businesses track, organise, and optimise recurring software subscriptions. For owner-led SMBs with 5 to 50 staff, the useful first version is not an enterprise procurement platform; it is a fast audit of billing exports, credit-card statements, accounting exports, invoices, direct debits, and marketplace receipts. The action output should name each tool, category, billing source, likely owner, renewal risk, and next decision: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner.",
           },
         },
         {
@@ -46,7 +46,7 @@ const jsonLd = {
           name: "What should small businesses look for in subscription management software?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Owner-led SMBs should prioritize fast time to first output, low setup overhead, and actionable recommendations over governance features. A 2026 proof refresh should start with billing exports, card statements, and accounting data, then flag duplicate tools, ownerless renewals, leaver or contractor seats, connector fees, converted trials, and specific keep, cancel, downgrade, consolidate, or renegotiate actions without SSO integration, bank access, IT involvement, or multi-week implementation.",
+            text: "Owner-led SMBs should prioritise fast time to first output, low setup overhead, and actionable recommendations over governance features. The 2026 owner-led SMB proof refresh starts with billing exports, card statements, accounting data, invoices, direct debits, and marketplace receipts only, then flags duplicate tools, ownerless renewals, leaver or contractor seats, AI credits and workspaces, connector fees, converted trials, and specific keep, cancel, downgrade, consolidate, or renegotiate actions without SSO integration, bank access, sensitive client records, IT involvement, or multi-week implementation.",
           },
         },
         {
@@ -84,7 +84,7 @@ export default function SaaSSubscriptionManagementSoftwarePage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Comparison guide</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Comparison guide · 2026 owner-led SMB proof refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
               SaaS subscription management software for small businesses
             </h1>
@@ -386,7 +386,7 @@ export default function SaaSSubscriptionManagementSoftwarePage() {
             <div className="rounded-2xl border border-brand-500/30 bg-gradient-to-br from-brand-500/5 to-dark-900/70 p-6">
               <h3 className="text-lg font-semibold text-brand-300">Good fit</h3>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
-                <li>Your team is 10-200 people and subscriptions are growing faster than oversight</li>
+                <li>Your team is roughly 5-50 people, owner-led or admin-heavy, and subscriptions are growing faster than oversight</li>
                 <li>You want savings visibility from billing data without IT involvement</li>
                 <li>You need a clear inventory, waste flags, and action items this week</li>
                 <li>Your goal is reducing spend, not building a procurement workflow</li>
@@ -402,6 +402,7 @@ export default function SaaSSubscriptionManagementSoftwarePage() {
                 <li>Your organization has compliance mandates around vendor access control</li>
                 <li>You need contract storage, e-signature workflows, and vendor lifecycle management</li>
                 <li>You already have a functioning SaaS management platform</li>
+                <li>You need legal, compliance, SAM certification, or vendor-risk advice rather than a cost and renewal snapshot</li>
               </ul>
             </div>
           </div>
