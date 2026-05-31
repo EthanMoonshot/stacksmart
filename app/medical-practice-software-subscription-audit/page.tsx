@@ -23,6 +23,7 @@ const jsonLd = {
       name: "Medical Practice Software Subscription Audit | StackSmart",
       description:
         "GP and specialist clinics carry booking, recalls, telehealth, billing, forms, marketing, payroll, accounting, rostering, and patient comms subscriptions. A software audit finds what to cut, consolidate, and renegotiate — using billing exports only, not patient records.",
+      dateModified: "2026-06-01",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -494,6 +495,32 @@ export default function MedicalPracticeSoftwareSubscriptionAuditPage() {
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026 proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-300">2026-06-01 proof refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Direct answer: medical practices should audit the paid layer around the PMS</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              DataForSEO shows 480 monthly Australian searches for “practice management software” and 140 for “medical practice management software”. StackSmart captures that demand without claiming to replace the clinical platform: it reviews recurring charges around the PMS — reminders, online booking, forms, payments, telehealth, transcription, review tools, reporting, connectors, and clinician/admin seats — from billing data only.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Clinical-safe boundary", "No patient files, appointment notes, Medicare data, clinical records, or PMS login is needed."],
+              ["Used-this-month proof", "Check whether each reminder, forms, AI scribe, payment, or review subscription has a current owner and active use."],
+              ["Renewal action list", "Give the practice manager a keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner list before the next contract cycle."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-3xl border border-dark-800 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-dark-300">{body}</p>
               </div>
             ))}
           </div>

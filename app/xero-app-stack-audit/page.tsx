@@ -23,6 +23,7 @@ const jsonLd = {
       name: "Xero App Stack Audit | StackSmart",
       description:
         "Audit your Xero app stack for duplicate add-ons, unused seats, surprise annual renewals, and tier creep across payroll, receipt capture, reporting, practice management, and client portal tools.",
+      dateModified: "2026-06-01",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -597,6 +598,39 @@ export default function XeroAppStackAuditPage() {
                 The hidden cost in Xero app stacks is ownerless renewal. Add-ons are often installed by a staff member during a client deadline, then the first annual renewal arrives after that person has changed role or left. StackSmart flags renewal dates and missing app owners so the question becomes “who decides before this renews?” rather than “why did this charge appear?”
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026 proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-300">2026-06-01 proof refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Direct answer: a Xero app audit should separate firm cost from client pass-through</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              DataForSEO shows 260 monthly Australian searches for “Xero apps”. StackSmart uses that demand as a practical audit moment for small accounting and bookkeeping firms: list each Xero Marketplace add-on, practice tool, AI seat, proposal app, e-signature account, reporting dashboard, and document tool, then decide whether it is firm-owned, client-recovered, duplicated, underused, or due for renewal.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-4">
+            {[
+              ["Firm-owned", "Practice tools paid by the firm and used by staff."],
+              ["Client pass-through", "Subscriptions recovered from a client and excluded from savings math."],
+              ["Ownerless", "Apps created for a past client or staff member that now bill silently."],
+              ["Renewal-risk", "Annual tools needing a named owner before the notice window closes."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-3xl border border-dark-800 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-3xl border border-primary-400/20 bg-primary-500/10 p-5">
+            <p className="text-sm font-semibold text-white">Privacy boundary</p>
+            <p className="mt-2 text-sm leading-7 text-dark-200">
+              The audit works from the firm’s billing exports and card statements. It does not require Xero ledger access, BAS/tax data, client files, payroll records, or regulated financial records.
+            </p>
           </div>
         </div>
       </section>

@@ -23,6 +23,7 @@ const jsonLd = {
       name: "NDIS Provider Software Audit | StackSmart",
       description:
         "NDIS and community care providers carry rostering, care management, payroll, compliance, billing, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
+      dateModified: "2026-06-01",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -505,6 +506,32 @@ export default function NdisProviderSoftwareAuditPage() {
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026 proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-300">2026-06-01 proof refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Direct answer: NDIS providers can review software waste without touching participant records</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              DataForSEO shows 390 monthly Australian searches for “NDIS software”. StackSmart turns that category intent into a practical owner/operator audit for small providers: review recurring charges for rostering, care management, claims, plan-management support tools, document workflows, SMS, telehealth, payroll connectors, AI note tools, and admin seats from billing exports only.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Safe data scope", "Card statements, accounting exports, vendor invoices, and subscription lists — no participant plans, case notes, claims detail, or clinical records."],
+              ["Owner handoff", "Record who owns each renewal across operations, finance, support coordination, rostering, and admin."],
+              ["Action map", "Label each tool keep, cancel, downgrade, consolidate, renegotiate, or monitor before the next renewal."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-3xl border border-dark-800 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-dark-300">{body}</p>
               </div>
             ))}
           </div>

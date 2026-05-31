@@ -23,6 +23,7 @@ const jsonLd = {
       name: "Shopify App Stack Audit | StackSmart",
       description:
         "Audit your Shopify app stack for duplicate and unused apps across reviews, loyalty, email and SMS, upsell, returns, shipping, inventory, analytics, and helpdesk.",
+      dateModified: "2026-06-01",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -441,6 +442,44 @@ export default function ShopifyAppStackAuditPage() {
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026 proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-300">2026-06-01 proof refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Direct answer: audit the Shopify app bill before replacing your store stack</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              DataForSEO shows 1,600 monthly Australian searches for “Shopify apps”. For an owner-led ecommerce store, the highest-intent question is rarely “which app should we add next?” It is “which installed apps still earn their place this month?” StackSmart reviews Shopify billing, card statements, and off-platform SaaS invoices to find duplicate review tools, idle email/SMS tiers, campaign apps that became permanent, and annual renewals without an owner.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["90-day usage proof", "Flag apps with no campaign, order, fulfilment, support, or reporting owner in the last quarter before the next card charge."],
+              ["Keep/cancel map", "Separate must-keep store operations from downgrade, consolidate, renegotiate, and cancel candidates."],
+              ["Billing-data only", "Use Shopify billing exports, bank/card statements, and vendor invoices — no customer records or Shopify admin login required."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-3xl border border-dark-800 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 overflow-hidden rounded-3xl border border-dark-800 bg-dark-900/60">
+            {[
+              ["Review/UGC and loyalty", "Pick one system of record; cancel legacy trial or rebrand leftovers."],
+              ["Email, SMS, and support", "Right-size tiers against active contacts, ticket volume, and campaigns actually running."],
+              ["Analytics, attribution, and AI", "Keep proof tools tied to current decisions; cut dashboards nobody opens."],
+            ].map(([area, action]) => (
+              <div key={area} className="grid gap-2 border-b border-dark-800/70 p-4 last:border-b-0 sm:grid-cols-[220px_1fr]">
+                <p className="text-sm font-semibold text-white">{area}</p>
+                <p className="text-sm leading-6 text-dark-300">{action}</p>
               </div>
             ))}
           </div>
