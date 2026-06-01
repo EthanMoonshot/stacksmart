@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import PlausibleProvider from "@/components/analytics/PlausibleProvider";
 import AppProviders from "@/components/analytics/AppProviders";
@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   ],
   applicationName: siteConfig.name,
   category: "business",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
