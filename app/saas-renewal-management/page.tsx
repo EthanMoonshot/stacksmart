@@ -22,6 +22,7 @@ const jsonLd = {
       description:
         "Stop surprise SaaS renewals from draining your budget. Track renewal dates, evaluate contracts, and reduce recurring waste.",
       url: "https://stacksmart.app/saas-renewal-management",
+      dateModified: "2026-06-02",
     },
     {
       "@type": "BreadcrumbList",
@@ -342,6 +343,36 @@ export default function SaaSRenewalManagementPage() {
             <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "seo_renewal_refresh" }} className="btn-primary shrink-0 text-sm">
               View sample renewal output
             </TrackLink>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-amber-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">2026-06-02 buyer-intent refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">The renewal problem is showing up as accidental renewals, not platform shopping</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Fresh public VOC this week included an owner asking how to stop accidental subscription renewals and an 18-person business describing roughly $40k in annual SaaS spend with about $5.2k/year in unused-tool leakage. Treat those as directional signals, not customer claims: small teams need a renewal-risk workflow that starts from billing exports and tells them what to do before the notice window closes.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-4">
+              {[
+                ["Find", "Pull 12 months of card statements, Xero/QuickBooks exports, invoices, direct debits, and marketplace receipts."],
+                ["Prioritise", "Rank vendors by renewal date, annual amount, notice window, seat drift, ownerless billing, and duplicate category risk."],
+                ["Decide", "Mark each subscription keep, cancel, downgrade, consolidate, renegotiate, or assign-owner."],
+                ["Prevent", "Run a lightweight quarterly check for converted trials, staff leavers, contractor seats, and renewals inside 90 days."],
+              ].map(([title, detail]) => (
+                <div key={title} className="rounded-xl border border-dark-700/80 bg-dark-950/70 p-4">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-xs leading-6 text-dark-300">{detail}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "renewal_2026_06_02", target: "checklist" }} className="btn-secondary text-sm">Use the renewal checklist</TrackLink>
+              <TrackLink href="/small-business-software-audit" event="homepage_cta_clicked" props={{ from: "renewal_2026_06_02", target: "small_business_audit" }} className="btn-primary text-sm">Audit the whole stack</TrackLink>
+            </div>
           </div>
         </div>
       </section>

@@ -23,6 +23,7 @@ const jsonLd = {
       name: "Accounting Firm Software Stack Audit | StackSmart",
       description:
         "Small accounting and bookkeeping firms carry practice management, tax, payroll, proposal, document, e-sign, CRM, AI assistant, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
+      dateModified: "2026-06-02",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -735,6 +736,35 @@ export default function AccountingFirmSoftwareStackAuditPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-amber-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">2026-06-02 measured refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">Accounting-practice software demand is high — but small firms need billing truth before new tools</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              DataForSEO AU checks show accounting practice software at 390 monthly searches with low measured competition. The StackSmart angle is deliberately narrower than practice-management replacement: help a principal or practice manager see which Xero/MYOB add-ons, proposal tools, e-sign tools, AI seats, document systems, reporting apps, and client-portal subscriptions are still worth paying for.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {[
+                ["Client-work boundary", "Review firm-owned billing, seats, invoices, card statements, and marketplace receipts — not client ledgers, tax files, payroll records, or working papers."],
+                ["Renewal owner", "Assign every annual tax, proposal, document, AI, reporting, and practice workflow renewal to a named partner, admin lead, or practice manager."],
+                ["Action output", "Mark each item keep, cancel, downgrade, consolidate, renegotiate, or assign-owner so the firm has a decision list, not another inventory spreadsheet."],
+              ].map(([title, detail]) => (
+                <div key={title} className="rounded-xl border border-dark-700/80 bg-dark-950/70 p-4">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-xs leading-6 text-dark-300">{detail}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <TrackLink href="/xero-app-stack-audit" event="homepage_cta_clicked" props={{ from: "accounting_2026_06_02", target: "xero_app_stack" }} className="btn-secondary text-sm">Audit Xero app billing</TrackLink>
+              <TrackLink href="/bookkeeping-firm-software-stack-audit" event="homepage_cta_clicked" props={{ from: "accounting_2026_06_02", target: "bookkeeping" }} className="btn-primary text-sm">Bookkeeping-firm version</TrackLink>
             </div>
           </div>
         </div>

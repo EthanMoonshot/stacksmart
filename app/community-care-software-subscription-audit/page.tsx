@@ -23,6 +23,7 @@ const jsonLd = {
       name: "Community Care Software Subscription Audit | StackSmart",
       description:
         "A practical software subscription audit for owner-led community care, home care, support coordination, and smaller care providers that need to find unused seats, duplicate tools, add-ons, and ownerless renewals.",
+      dateModified: "2026-06-02",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -256,6 +257,35 @@ export default function CommunityCareSoftwareSubscriptionAuditPage() {
                 <li>• Teams needing clinical/care-record review, care-plan analysis, or compliance advice.</li>
                 <li>• Providers without billing exports, card statements, or vendor invoices to analyse.</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-02 measured refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">Community-care software audits should start with renewal risk, not another platform shortlist</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Live AU demand still shows buyers searching for aged-care software (170 monthly searches, CPC about $14.91) and community-care software (40 monthly searches). For owner-led providers with 5–50 staff, the fastest commercial win is usually not replacing the care-management system. It is finding the paid layer around it: SMS packs, form tools, coordinator seats, payroll connectors, onboarding apps, reporting add-ons, document storage, telehealth, and renewals nobody owns.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {[
+                ["90-day renewal lane", "List every annual care, roster, payroll, SMS, form, document, and reporting vendor renewing in the next 90 days before the notice window closes."],
+                ["Roster-to-seat check", "Compare active software seats with current coordinators, support workers, clinicians, contractors, and admin staff — not last quarter's roster."],
+                ["Billing-only boundary", "Use invoices, Xero/MYOB exports, card statements, and vendor receipts. Do not upload participant notes, care plans, health records, or clinical files."],
+              ].map(([title, detail]) => (
+                <div key={title} className="rounded-xl border border-dark-700/80 bg-dark-950/70 p-4">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-xs leading-6 text-dark-300">{detail}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <TrackLink href="/ndis-provider-software-audit" event="homepage_cta_clicked" props={{ from: "community_care_2026_06_02", target: "ndis_provider" }} className="btn-secondary text-sm">NDIS provider version</TrackLink>
+              <TrackLink href="/saas-renewal-management" event="homepage_cta_clicked" props={{ from: "community_care_2026_06_02", target: "renewal_management" }} className="btn-primary text-sm">Build a renewal-risk list</TrackLink>
             </div>
           </div>
         </div>

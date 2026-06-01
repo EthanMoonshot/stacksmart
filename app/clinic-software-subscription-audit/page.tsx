@@ -21,9 +21,9 @@ const jsonLd = {
       "@id": absoluteUrl("/clinic-software-subscription-audit"),
       url: absoluteUrl("/clinic-software-subscription-audit"),
       name: "Clinic Software Subscription Audit | StackSmart",
-      dateModified: "2026-05-30",
       description:
         "Review and cut wasted software spend at your clinic or allied health practice — admin, booking, billing, and marketing subscriptions.",
+      dateModified: "2026-06-02",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -459,6 +459,35 @@ export default function ClinicSoftwareSubscriptionAuditPage() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <TrackLink href="/medical-practice-software-subscription-audit" event="homepage_cta_clicked" props={{ from: "clinic_refresh", target: "medical_practice" }} className="btn-secondary text-sm">Medical practice audit</TrackLink>
             <TrackLink href="/allied-health-software-subscription-audit" event="homepage_cta_clicked" props={{ from: "clinic_refresh", target: "allied_health" }} className="btn-primary text-sm">Allied health version</TrackLink>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-emerald-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-emerald-300">2026-06-02 measured refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">Clinic software audits should protect patient data and still find the paid waste</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              DataForSEO AU shows clinic management software demand at 90 monthly searches with meaningful CPC. Owner-led clinics do not need a procurement platform to start; they need a safe billing-layer review of booking, reminders, payments, forms, telehealth, AI scribes, payment terminals, marketing, payroll, and practice-management add-ons before the next renewal or seat true-up.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {[
+                ["No patient records", "Use billing exports, card statements, invoices, and vendor receipts only — no clinical notes, referrals, patient records, or appointment histories."],
+                ["Clinician-seat check", "Compare active clinician, contractor, admin, telehealth, AI-scribe, and reminder seats against the current roster."],
+                ["Owner decision list", "Give the practice owner or manager a keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decision for every flagged tool."],
+              ].map(([title, detail]) => (
+                <div key={title} className="rounded-xl border border-dark-700/80 bg-dark-950/70 p-4">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-xs leading-6 text-dark-300">{detail}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <TrackLink href="/community-care-software-subscription-audit" event="homepage_cta_clicked" props={{ from: "clinic_2026_06_02", target: "community_care" }} className="btn-secondary text-sm">Community-care version</TrackLink>
+              <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ from: "clinic_2026_06_02", target: "audit_tool" }} className="btn-primary text-sm">Try the audit tool</TrackLink>
+            </div>
           </div>
         </div>
       </section>

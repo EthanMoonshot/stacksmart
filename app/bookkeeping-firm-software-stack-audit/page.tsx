@@ -21,9 +21,9 @@ const jsonLd = {
       "@id": absoluteUrl("/bookkeeping-firm-software-stack-audit"),
       url: absoluteUrl("/bookkeeping-firm-software-stack-audit"),
       name: "Bookkeeping Firm Software Stack Audit | StackSmart",
-      dateModified: "2026-05-30",
       description:
         "Bookkeeping firms using Xero, QBO, or MYOB ecosystems accumulate receipt capture, payroll, proposal, workflow, e-sign, AI transcription, connector fees, and client portal add-ons with significant overlap.",
+      dateModified: "2026-06-02",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -778,6 +778,35 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <TrackLink href="/xero-app-stack-audit" event="homepage_cta_clicked" props={{ from: "bookkeeping_firm_refresh", target: "xero_app_stack_audit" }} className="btn-secondary text-sm">Audit Xero app billing</TrackLink>
             <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "bookkeeping_firm_refresh", target: "subscription_checklist" }} className="btn-primary text-sm">Use the audit checklist</TrackLink>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-02 measured refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">Bookkeeping software demand has volume — the conversion wedge is unused add-ons and renewal leakage</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Live AU checks show “bookkeeping software Australia” at 880 monthly searches and high CPC. For owner-led bookkeeping firms, StackSmart should not look like another bookkeeping app shortlist. It should help the owner reconcile Xero/QBO/MYOB add-ons, receipt capture, workflow tools, AI assistants, client portals, proposal tools, e-sign, document storage, and forgotten annual renewals against actual staff and client workflow use.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {[
+                ["Firm vs client billing", "Separate firm-owned subscriptions from client-pass-through apps before making cancellation decisions."],
+                ["Connected-app cleanup", "Flag duplicate receipt capture, workflow, reporting, proposal, e-sign, and AI tools now overlapping with the core accounting stack."],
+                ["Notice-window pass", "Build a 30/60/90-day renewal list so accidental renewals do not become another year of margin drag."],
+              ].map(([title, detail]) => (
+                <div key={title} className="rounded-xl border border-dark-700/80 bg-dark-950/70 p-4">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-xs leading-6 text-dark-300">{detail}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "bookkeeping_2026_06_02", target: "checklist" }} className="btn-secondary text-sm">Use the checklist</TrackLink>
+              <TrackLink href="/saas-renewal-management" event="homepage_cta_clicked" props={{ from: "bookkeeping_2026_06_02", target: "renewal_management" }} className="btn-primary text-sm">Track renewal risk</TrackLink>
+            </div>
           </div>
         </div>
       </section>
