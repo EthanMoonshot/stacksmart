@@ -23,6 +23,7 @@ const jsonLd = {
       name: "Retail Store Software Subscription Audit | StackSmart",
       description:
         "Audit your retail store software subscriptions for duplicate tools, unused seats, and subscriptions that accumulated across sites and seasons.",
+      dateModified: "2026-06-03",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -399,6 +400,36 @@ export default function RetailStoreSoftwareSubscriptionAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* June 3 proof/conversion refresh */}
+      <section className="border-t border-dark-800/80 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 POS and inventory audit refresh</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Use the POS search before it becomes a platform-replacement project</h2>
+            <p className="mt-4 text-base leading-7 text-dark-300">Live AU keyword checks for this run showed demand around POS software Australia, retail inventory management software, and ecommerce software. For an owner-led retailer, the fastest win is usually not replacing the POS; it is reconciling every paid add-on, app, seat, and renewal around the store stack before the next bill lands.</p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">1. Map the payment paths</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Pull the business card, Xero or MYOB export, POS marketplace billing, Shopify billing, and any per-site expense cards. Store groups often miss subscriptions because one location, ecommerce, and head office each pay separately.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">2. Find duplicate jobs</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Group charges by job: POS, payments, inventory, rostering, loyalty, email/SMS, reporting, ecommerce apps, reviews, and payroll. If two tools do the same job, assign consolidate, cancel, downgrade, or renegotiate.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">3. Assign renewal owners</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Every annual POS, inventory, rostering, SMS, and loyalty renewal needs one named owner and a notice-window date. If nobody owns it, the default action is review before renewal, not auto-renew.</p>
+              </div>
+          </div>
+          <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">What the StackSmart output should prove</p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">A useful retail audit output is an action list the owner can hand to a store manager or bookkeeper: keep the core POS, cancel old campaign apps, downgrade seasonal rostering seats, consolidate duplicate email/SMS tools, renegotiate inventory modules, and set the next review date.</p>
           </div>
         </div>
       </section>

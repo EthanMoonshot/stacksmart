@@ -21,7 +21,7 @@ const jsonLd = {
       "@id": absoluteUrl("/marketing-agency-software-stack-audit"),
       url: absoluteUrl("/marketing-agency-software-stack-audit"),
       name: "Marketing Agency Software Stack Audit | StackSmart",
-      dateModified: "2026-05-30",
+      dateModified: "2026-06-03",
       description:
         "Owner-led marketing, creative, and web agencies accumulate SEO tools, AI subscriptions, design platforms, social scheduling apps, and reporting tools with significant overlap. A software audit finds what to cut, consolidate, and renegotiate.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -799,6 +799,36 @@ export default function MarketingAgencySoftwareStackAuditPage() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <TrackLink href="/agency-software-stack-audit" event="homepage_cta_clicked" props={{ from: "marketing_agency_refresh", target: "agency" }} className="btn-secondary text-sm">Agency stack audit</TrackLink>
             <TrackLink href="/professional-services-software-audit" event="homepage_cta_clicked" props={{ from: "marketing_agency_refresh", target: "professional_services" }} className="btn-primary text-sm">Professional services audit</TrackLink>
+          </div>
+        </div>
+      </section>
+
+
+      {/* June 3 proof/conversion refresh */}
+      <section className="border-t border-dark-800/80 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 agency-stack proof refresh</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Clean up the agency tool stack before software becomes margin leakage</h2>
+            <p className="mt-4 text-base leading-7 text-dark-300">Marketing agency keyword volume is smaller than retail or healthcare categories, but the commercial fit is strong: owner-led agencies carry SEO, reporting, project management, social scheduling, design, AI, research, proposal, and client-portal subscriptions across client work and internal ops.</p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">1. Separate client tools from agency overhead</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Mark every charge as client-pass-through, reusable agency platform, project-only tool, or forgotten internal subscription. Margin leakage often hides when a client-project tool becomes permanent overhead.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">2. Find duplicate creative and AI seats</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Agencies commonly carry ChatGPT, Claude, Midjourney, Canva, Figma, transcription, SEO, reporting, and content tools with overlapping seats. The owner-use check asks who used each tool in the last 30 days.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">3. Stop trials becoming retainers</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Converted trials, old client reporting dashboards, inactive social tools, and duplicate proposal/e-sign platforms should get an explicit cancel, downgrade, consolidate, or renewal-owner action before annual renewal.</p>
+              </div>
+          </div>
+          <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">What the StackSmart output should prove</p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">The useful agency output is a billing-led action board: keep production-critical tools, cancel finished-project subscriptions, downgrade inactive seats, consolidate duplicate reporting/design/AI tools, renegotiate core platforms, and set a quarterly stack review.</p>
           </div>
         </div>
       </section>

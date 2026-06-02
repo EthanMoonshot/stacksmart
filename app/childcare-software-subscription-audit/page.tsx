@@ -23,6 +23,7 @@ const jsonLd = {
       name: "Childcare Software Subscription Audit | StackSmart",
       description:
         "Childcare and early learning centres carry enrolment, rostering, payroll, parent comms, compliance, CCS billing, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
+      dateModified: "2026-06-03",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -470,6 +471,36 @@ export default function ChildcareSoftwareSubscriptionAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* June 3 proof/conversion refresh */}
+      <section className="border-t border-dark-800/80 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 childcare-management audit refresh</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Review childcare admin subscriptions without touching child records</h2>
+            <p className="mt-4 text-base leading-7 text-dark-300">Live AU checks showed measurable intent for childcare management software and childcare software. For owner-led centres, StackSmart answers the adjacent question: what software charges are still billing across enrolment, parent comms, CCS billing, rostering, training, compliance, forms, and marketing?</p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">1. Use billing data only</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">The audit starts from Xero, MYOB, card, and vendor billing exports. It does not need child records, attendance records, parent data, medical information, or compliance documents.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">2. Catch director-handover waste</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">When a centre director or admin lead changes, app-store tools, training platforms, parent-comms add-ons, and annual contracts often keep renewing under the old operating pattern.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">3. Turn findings into centre actions</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Each charge gets a practical decision: keep for daily operations, cancel a duplicate form/comms tool, downgrade educator seats, consolidate with the main centre platform, renegotiate to current enrolment, or assign a renewal owner.</p>
+              </div>
+          </div>
+          <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">What the StackSmart output should prove</p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">A centre owner should finish the audit with a clear admin-stack map: what the main platform covers, what standalone tools remain justified, what tools are duplicated, and which renewal dates need action before the next enrolment cycle.</p>
           </div>
         </div>
       </section>

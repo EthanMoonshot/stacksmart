@@ -21,7 +21,7 @@ const jsonLd = {
       "@id": absoluteUrl("/allied-health-software-subscription-audit"),
       url: absoluteUrl("/allied-health-software-subscription-audit"),
       name: "Allied Health Software Subscription Audit | StackSmart",
-      dateModified: "2026-05-30",
+      dateModified: "2026-06-03",
       description:
         "Audit software subscriptions for physiotherapy, podiatry, psychology, occupational therapy, and multi-disciplinary allied health practices — booking, billing, telehealth, AI scribe, and admin tools.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -645,6 +645,36 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <TrackLink href="/clinic-software-subscription-audit" event="homepage_cta_clicked" props={{ from: "allied_health_refresh", target: "clinic" }} className="btn-secondary text-sm">Clinic software audit</TrackLink>
             <TrackLink href="/ndis-provider-software-audit" event="homepage_cta_clicked" props={{ from: "allied_health_refresh", target: "ndis_provider" }} className="btn-primary text-sm">NDIS provider audit</TrackLink>
+          </div>
+        </div>
+      </section>
+
+
+      {/* June 3 proof/conversion refresh */}
+      <section className="border-t border-dark-800/80 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 allied-health demand refresh</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Audit the admin software layer around the practice-management system</h2>
+            <p className="mt-4 text-base leading-7 text-dark-300">This run found live AU demand for practice management software allied health and allied health software, while fresh prospect inventory is also strongest in allied-health and clinic lanes. The page now needs to answer an owner-operator question: what can we clean up without risking patient records or changing our core PMS?</p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">1. Protect the clinical boundary</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Use billing exports, card statements, and vendor invoices only. Do not upload patient notes, appointment details, treatment plans, referral documents, or NDIS participant records.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">2. Review the tools around the PMS</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Booking reminders, telehealth, payment terminals, forms, recalls, SMS packs, practice marketing, transcription, payroll, and reporting tools often bill outside the core PMS and overlap with newer native features.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">3. Prepare an admin-friendly action list</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">For each tool, StackSmart should identify keep, cancel, downgrade, consolidate, renegotiate, assign renewal owner, and review again in 90 days — language a practice manager can act on without procurement expertise.</p>
+              </div>
+          </div>
+          <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">What the StackSmart output should prove</p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">For a 5-50 staff allied-health practice, the best proof is not a theoretical savings number. It is a list of exact admin tools to remove, seat counts to right-size, connectors to check, and renewal dates the owner must not let roll over silently.</p>
           </div>
         </div>
       </section>
