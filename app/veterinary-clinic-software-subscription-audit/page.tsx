@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,6 +24,7 @@ const jsonLd = {
       name: "Veterinary Clinic Software Subscription Audit | StackSmart",
       description:
         "Vet clinics carry practice management, online booking, reminders, payment terminals, inventory and pharmacy add-ons, payroll, team comms, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate — using billing exports only.",
+      dateModified: "2026-06-04",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -86,6 +88,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "The best trigger is 60 to 90 days before your largest annual contracts renew — practice management systems are typically billed annually and carry the highest per-seat cost. For many clinics, the quieter winter months (June to August in Australia, January to February in the northern hemisphere) provide a natural window to run a review when the clinical pace is slightly lower.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What changed in the 2026 owner-led SMB proof refresh?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The 2026 refresh adds stronger owner-led SMB proof: billing-export-only boundaries, late-fee and barely-used-subscription examples, recurring-payment cleanup, renewal-owner assignment, and practical keep, cancel, downgrade, consolidate, and renegotiate actions for smaller teams without procurement maturity.",
           },
         },
       ],
@@ -442,6 +452,15 @@ export default function VeterinaryClinicSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+
+      <OwnerLedProofRefresh
+        title='What the 2026 owner-led vet clinic audit now proves'
+        summary='The refresh focuses on smaller veterinary clinics where the owner, practice manager, and bookkeeper share software admin. The page now answers veterinary practice management software searches with a billing-led cleanup path for PMS add-ons, reminders, inventory, payment, payroll, team comms, AI, and review tools — without touching patient or clinical records.'
+        proofItems={[{ label: 'PMS feature overlap', finding: 'Standalone booking, recall, or client-message tools keep billing after the practice management system adds comparable features.', action: 'Consolidate' }, { label: 'Former staff seats', finding: 'Per-user payroll, comms, inventory, AI note, or document tools still include leavers, locums, or contractors after roster changes.', action: 'Cancel seats' }, { label: 'Inventory and reminder renewals', finding: 'Annual add-ons renew quietly at the old clinic size or locked-rate uplift with no owner comparing actual use.', action: 'Renegotiate' }]}
+        boundaries={['Works from business billing exports and card statements, not patient files, treatment notes, or medical records.', 'Designed for clinics with lean admin capacity, not corporate veterinary groups with procurement teams.', 'Separates core clinical systems from admin subscriptions so the first audit is low disruption.', 'Produces a keep/cancel/downgrade/consolidate/renegotiate list the owner can review with the practice manager.']}
+        location='vet_clinic_audit'
+      />
+
       {/* FAQ */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -463,6 +482,11 @@ export default function VeterinaryClinicSoftwareSubscriptionAuditPage() {
               [
                 "When is the best time for a vet clinic to audit its software subscriptions?",
                 "The best trigger is 60 to 90 days before your largest annual contracts renew — practice management systems are typically billed annually and carry the highest per-seat cost. For many clinics, slightly quieter seasonal periods provide a natural window to run a review without disrupting clinical operations.",
+              ],
+
+              [
+                "What changed in the 2026 owner-led SMB proof refresh?",
+                "The 2026 refresh adds stronger owner-led SMB proof: billing-export-only boundaries, late-fee and barely-used-subscription examples, recurring-payment cleanup, renewal-owner assignment, and practical keep, cancel, downgrade, consolidate, and renegotiate actions for smaller teams without procurement maturity.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">

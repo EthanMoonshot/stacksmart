@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -28,6 +29,10 @@ const faqs = [
   [
     "How often should an architecture studio audit its software stack?",
     "At minimum, review software before annual CAD/BIM renewals and after major project closeouts. A quarterly review is useful for studios with frequent contractor onboarding, pitch work, or project-specific visualisation tools."
+  ],
+  [
+    "What changed in the 2026 owner-led SMB proof refresh?",
+    "The 2026 refresh adds stronger owner-led SMB proof: billing-export-only boundaries, project-only tool cleanup, contractor-seat removal, renewal-owner assignment, and practical keep, cancel, downgrade, consolidate, and renegotiate actions for smaller studios without procurement maturity."
   ]
 ];
 
@@ -40,6 +45,7 @@ const jsonLd = {
       url: absoluteUrl("/architecture-firm-software-stack-audit"),
       name: "Architecture firm software stack audit | StackSmart",
       description: "Audit software subscriptions for small architecture and design studios. Find duplicate CAD/BIM seats, rendering tools, proposal apps, file storage, project management, e-signature, CRM, and accounting subscriptions from billing exports only.",
+      dateModified: "2026-06-04",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -374,6 +380,15 @@ export default function ArchitectureFirmSoftwareStackAuditPage() {
           </div>
         </div>
       </section>
+
+
+      <OwnerLedProofRefresh
+        title='What the 2026 owner-led architecture studio audit now proves'
+        summary='Architecture studios often buy project tools around deadlines, tenders, contractors, and collaboration needs. The 2026 refresh reframes the page around architecture project management software demand while keeping StackSmart focused on the subscription layer: project tools, file sharing, rendering, e-sign, CRM, proposal, AI, and contractor seats that continue after the project phase ends.'
+        proofItems={[{ label: 'Project-only tools became permanent', finding: 'A rendering, collaboration, proposal, or site-management subscription bought for one project is still billing after handover.', action: 'Cancel' }, { label: 'Contractor seats and licenses', finding: 'Project management, design-adjacent admin, file, meeting, and AI tools still include contractors or former staff.', action: 'Remove seats' }, { label: 'Studio stack lacks defaults', finding: 'Multiple partners keep preferred task, CRM, e-sign, and file tools alive instead of choosing one default workflow.', action: 'Consolidate' }]}
+        boundaries={['Uses billing exports, invoices, and statements only — no drawings, BIM files, project documents, or client deliverables.', 'Suitable for small studios and owner-led firms, not enterprise architecture groups with central procurement.', 'Keeps CAD/BIM replacement decisions out of scope unless the billing data shows duplicate or idle subscriptions.', 'Creates an owner-friendly renewal and action list for the studio manager, principal, or bookkeeper.']}
+        location='architecture_firm_audit'
+      />
 
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

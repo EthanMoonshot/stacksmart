@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,6 +24,7 @@ const jsonLd = {
       name: "Professional Services Software Audit | StackSmart",
       description:
         "Audit your professional services firm's software subscriptions for duplicate tools, unused seats, and subscriptions that accumulated across project work and team growth.",
+      dateModified: "2026-06-04",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -80,6 +82,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Yes. StackSmart is well-suited to boutique consultancies and professional services firms with layered software spend and no dedicated IT or procurement role. Upload a CSV from Xero, QuickBooks, or your card statement. The report categorises every subscription, flags duplicates and unused seats, and produces a clear keep, cut, consolidate, and renegotiate action list.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What changed in the 2026 owner-led SMB proof refresh?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The 2026 refresh adds stronger owner-led SMB proof: billing-export-only boundaries, late-fee and barely-used-subscription examples, recurring-payment cleanup, renewal-owner assignment, and practical keep, cancel, downgrade, consolidate, and renegotiate actions for smaller teams without procurement maturity.",
           },
         },
       ],
@@ -394,6 +404,15 @@ export default function ProfessionalServicesSoftwareAuditPage() {
         </div>
       </section>
 
+
+      <OwnerLedProofRefresh
+        title='What the 2026 owner-led professional services audit now proves'
+        summary='The refresh broadens the professional-services page for boutique consultancies and partner-led firms where software is purchased around clients, pitches, contractors, and delivery pods. It adds sharper proof around QuickBooks/Xero recurring payments, project-only tools, AI meeting apps, proposal platforms, CRM overlap, and no-clear-owner renewals.'
+        proofItems={[{ label: 'Recurring payments with no owner', finding: 'QuickBooks, Xero, or card exports show monthly software charges that no partner, consultant, or admin person clearly owns.', action: 'Assign owner' }, { label: 'Client-project tools linger', finding: 'Tools bought for one engagement, workshop, dashboard, or AI workflow keep billing after the project has closed.', action: 'Cancel' }, { label: 'Multiple delivery-stack defaults', finding: 'Proposal, CRM, project, time, document, and e-sign apps overlap because each partner kept a preferred option.', action: 'Standardise' }]}
+        boundaries={['Uses billing exports, card statements, and vendor invoices only — no client files, commercial documents, or project IP.', 'Built for owner-led firms with low ops maturity, not large firms with mature procurement operations.', 'Works best between project phases when the owner can act on keep/cancel/downgrade decisions.', 'Produces a practical action plan tied to savings, renewal windows, and accountable owners.']}
+        location='professional_services_audit'
+      />
+
       {/* FAQ */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -415,6 +434,11 @@ export default function ProfessionalServicesSoftwareAuditPage() {
               [
                 "Can StackSmart help professional services firms find software savings?",
                 "Yes. StackSmart is well-suited to boutique consultancies and professional services firms with layered software spend and no dedicated IT or procurement role. Upload a CSV from Xero, QuickBooks, or your card statement. The report categorises every subscription, flags duplicates and unused seats, and produces a clear keep, cut, consolidate, and renegotiate action list.",
+              ],
+
+              [
+                "What changed in the 2026 owner-led SMB proof refresh?",
+                "The 2026 refresh adds stronger owner-led SMB proof: billing-export-only boundaries, late-fee and barely-used-subscription examples, recurring-payment cleanup, renewal-owner assignment, and practical keep, cancel, downgrade, consolidate, and renegotiate actions for smaller teams without procurement maturity.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">

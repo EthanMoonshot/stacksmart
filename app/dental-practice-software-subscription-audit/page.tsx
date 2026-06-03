@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,6 +24,7 @@ const jsonLd = {
       name: "Dental Practice Software Subscription Audit | StackSmart",
       description:
         "Audit admin, billing, booking, and marketing software subscriptions at your dental practice. Focus on the business side: booking, reminders, payment plans, reviews, and marketing.",
+      dateModified: "2026-06-04",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -86,6 +88,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "StackSmart works with any billing export from any industry. It focuses on the admin and business side of the practice stack — booking, billing, reminders, reviews, and marketing subscriptions. It does not process clinical records or imaging data. Upload a CSV from your accounting software or card statements and the report categorises charges, flags overlap, and produces a prioritised action list.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What changed in the 2026 owner-led SMB proof refresh?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The 2026 refresh adds stronger owner-led SMB proof: billing-export-only boundaries, late-fee and barely-used-subscription examples, recurring-payment cleanup, renewal-owner assignment, and practical keep, cancel, downgrade, consolidate, and renegotiate actions for smaller teams without procurement maturity.",
           },
         },
       ],
@@ -448,6 +458,15 @@ export default function DentalPracticeSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+
+      <OwnerLedProofRefresh
+        title='What the 2026 owner-led dental practice audit now proves'
+        summary='The 2026 refresh sharpens this page for owner-operated dental practices searching dental practice management software or dental software Australia. StackSmart is framed as the cheaper first pass before another platform switch: use billing exports to find duplicate booking, recall, payment, review, marketing, AI, and admin subscriptions, then decide what to keep, cancel, downgrade, consolidate, renegotiate, or assign an owner to.'
+        proofItems={[{ label: 'Barely-used add-on still billing', finding: 'A review-management or SMS reminder add-on bought during a growth push is still charging monthly even though the core PMS now includes similar recall and review workflows.', action: 'Consolidate' }, { label: 'Practice tier no longer matches chairs', finding: 'Payment-plan, booking, or marketing tools stayed on a higher tier after chair utilisation or admin headcount changed.', action: 'Downgrade' }, { label: 'Renewal owner missing', finding: 'The PMS, imaging-adjacent admin tools, payment terminals, and AI note tools renew on different dates with no single practice owner watching notice windows.', action: 'Assign owner' }]}
+        boundaries={['Uses accounting exports, card statements, and vendor invoices only — no clinical notes, imaging files, or patient records.', 'Owner, practice manager, or bookkeeper can run the first pass without interrupting reception or clinicians.', 'Flags overlap and renewal risk before recommending any vendor cancellation or migration.', 'Links findings back to practical action categories rather than enterprise procurement workflows.']}
+        location='dental_practice_software_audit'
+      />
+
       {/* FAQ */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -469,6 +488,11 @@ export default function DentalPracticeSoftwareSubscriptionAuditPage() {
               [
                 "Does StackSmart work for dental practice billing exports?",
                 "StackSmart works with any billing export from any industry. It focuses on the admin and business side of the practice stack — booking, billing, reminders, reviews, and marketing subscriptions. It does not process clinical records or imaging data. Upload a CSV from your accounting software or card statements and the report categorises charges, flags overlap, and produces a prioritised action list.",
+              ],
+
+              [
+                "What changed in the 2026 owner-led SMB proof refresh?",
+                "The 2026 refresh adds stronger owner-led SMB proof: billing-export-only boundaries, late-fee and barely-used-subscription examples, recurring-payment cleanup, renewal-owner assignment, and practical keep, cancel, downgrade, consolidate, and renegotiate actions for smaller teams without procurement maturity.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">

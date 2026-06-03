@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,6 +24,7 @@ const jsonLd = {
       name: "Law Firm Software Subscription Audit | StackSmart",
       description:
         "Audit software subscriptions for boutique law firms — matter management, document, e-sign, dictation, trust accounting, and marketing tools without accessing client files or regulated legal data.",
+      dateModified: "2026-06-04",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -86,6 +88,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Boutique law firms with 3 to 20 fee earners typically carry $4,000 to $18,000 in recoverable software spend annually. The largest items are usually matter management systems left billing post-migration, duplicated dictation or AI transcription tools adopted by different partners independently, e-signature tools that have proliferated across team preferences, and legal research subscriptions contracted at firm-wide tiers when only one or two practitioners actively use them.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What changed in the 2026 owner-led SMB proof refresh?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The 2026 refresh adds stronger owner-led SMB proof: billing-export-only boundaries, late-fee and barely-used-subscription examples, recurring-payment cleanup, renewal-owner assignment, and practical keep, cancel, downgrade, consolidate, and renegotiate actions for smaller teams without procurement maturity.",
           },
         },
       ],
@@ -418,6 +428,15 @@ export default function LawFirmSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
+
+      <OwnerLedProofRefresh
+        title='What the 2026 owner-led boutique law firm audit now proves'
+        summary='The 2026 refresh targets principal-led and partner-led law firms searching law practice management software or legal practice management software Australia. StackSmart is positioned as a billing-only audit before another system change: find duplicated matter, dictation, e-sign, research, AI, document, CRM, and client-intake tools, then assign renewal ownership without exposing privileged client work.'
+        proofItems={[{ label: 'Partner-by-partner tool spread', finding: 'Different partners fund separate dictation, AI transcription, research, CRM, or e-sign tools for similar workflows.', action: 'Standardise' }, { label: 'Matter-system migration tail', finding: 'Old matter management, intake, or document platforms continue billing months after the firm shifted workflows.', action: 'Cancel' }, { label: 'Research and AI tier creep', finding: 'Firm-wide legal research, precedent, or AI tools are priced for more active users than actually rely on them.', action: 'Right-size' }]}
+        boundaries={['Uses firm billing exports, invoices, and card statements only — no client files, matter details, privileged documents, or trust-account records.', 'Best for boutique and owner-led firms without IT/procurement maturity, not enterprise legal operations teams.', 'Highlights renewal windows and usage-owner gaps before any sensitive system decision.', 'Turns findings into plain commercial actions the managing partner or practice manager can own.']}
+        location='law_firm_software_audit'
+      />
+
       {/* FAQ */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -439,6 +458,11 @@ export default function LawFirmSoftwareSubscriptionAuditPage() {
               [
                 "How much software waste does a boutique law firm typically carry?",
                 "Boutique law firms with 3 to 20 fee earners typically carry $4,000 to $18,000 in recoverable software spend annually. The largest items are usually matter management systems left billing post-migration, duplicated dictation or AI transcription tools adopted by different partners independently, and legal research subscriptions at firm-wide tiers with concentrated active usage.",
+              ],
+
+              [
+                "What changed in the 2026 owner-led SMB proof refresh?",
+                "The 2026 refresh adds stronger owner-led SMB proof: billing-export-only boundaries, late-fee and barely-used-subscription examples, recurring-payment cleanup, renewal-owner assignment, and practical keep, cancel, downgrade, consolidate, and renegotiate actions for smaller teams without procurement maturity.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
