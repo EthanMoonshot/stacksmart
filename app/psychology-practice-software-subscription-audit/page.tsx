@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,6 +24,7 @@ const jsonLd = {
       name: "Psychology Practice Software Subscription Audit | StackSmart",
       description:
         "Audit software subscriptions for psychology and counselling practices — booking, telehealth, reminders, billing, payroll, and marketing tools without accessing clinical records.",
+      dateModified: "2026-06-05",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -471,6 +473,23 @@ export default function PsychologyPracticeSoftwareSubscriptionAuditPage() {
           </div>
         </div>
       </section>
+
+      <OwnerLedProofRefresh
+        title="2026 psychology practice waste signals owners can act on without touching client records"
+        summary="This refresh focuses on owner-led psychology and counselling practices with a handful of clinicians, contractor movement, quiet annual renewals, and admin tools bought during busy growth periods. StackSmart turns a Xero, MYOB, card, or bank export into a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list."
+        proofItems={[
+          { label: "Contractor clinician seats", finding: "Telehealth, AI scribe, forms, M365/Google Workspace, and practice-management seats stay paid after a contractor reduces days or leaves the practice.", action: "Assign owner + right-size" },
+          { label: "Booking/reminder overlap", finding: "A standalone booking, SMS, recall, or review tool remains active after the PMS already includes the workflow at the current tier.", action: "Consolidate" },
+          { label: "Annual/prepaid lock-in", finding: "Clinical admin tools renew annually with no usage review, so the owner only notices the cost after the card charge lands.", action: "Renegotiate before renewal" },
+        ]}
+        boundaries={[
+          "Use billing exports, card statements, Xero/MYOB supplier lines, and admin seat counts only.",
+          "Do not upload client files, session notes, intake forms, Medicare details, or regulated health data.",
+          "Treat clinical continuity as protected: downgrade or remove software only after confirming records and appointments remain accessible.",
+          "Give the practice owner or admin manager a renewal-owner list so quiet software charges stop drifting.",
+        ]}
+        location="psychology_practice_20260605"
+      />
 
       {/* Lead capture */}
       <section className="py-16">

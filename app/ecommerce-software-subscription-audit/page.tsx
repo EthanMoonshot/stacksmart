@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,6 +24,7 @@ const jsonLd = {
       name: "Ecommerce Software Subscription Audit | StackSmart",
       description:
         "Audit your ecommerce software subscriptions for duplicate apps, unused integrations, and tools that grew with a store that has since scaled back.",
+      dateModified: "2026-06-05",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -424,6 +426,23 @@ export default function EcommerceSoftwareSubscriptionAuditPage() {
           </div>
         </div>
       </section>
+
+      <OwnerLedProofRefresh
+        title="2026 ecommerce app-stack cleanup for owner-led stores"
+        summary="Ecommerce stores have measured demand around Shopify apps and inventory tools, but the practical owner-led wedge is waste in the paid layer: app marketplace charges, duplicate email/review/returns tools, connector fees, inventory add-ons, agency-installed trials, and seasonal tools that never got turned off."
+        proofItems={[
+          { label: "App marketplace sprawl", finding: "Shopify/WooCommerce apps installed for a campaign, promo, bundle, review flow, or upsell keep billing after the store stops using the feature.", action: "Cancel or assign owner" },
+          { label: "Inventory and fulfilment overlap", finding: "Inventory, shipping, returns, marketplace-sync, and analytics subscriptions overlap with tools now included in the core commerce platform or 3PL workflow.", action: "Consolidate" },
+          { label: "HubSpot/Zapier-style overages", finding: "Marketing contacts, automation tasks, connector fees, and production workflow usage can jump before the owner sees the cost in monthly billing.", action: "Downgrade or renegotiate" },
+        ]}
+        boundaries={[
+          "Use billing exports, app billing lines, card statements, and account-owner lists only.",
+          "Do not upload customer orders, payment data, support conversations, or fulfilment files.",
+          "Separate revenue-critical apps from campaign leftovers before cutting anything.",
+          "Give every app, connector, and marketplace charge a renewal owner before peak season.",
+        ]}
+        location="ecommerce_audit_20260605"
+      />
 
       {/* Lead capture */}
       <section className="py-16">

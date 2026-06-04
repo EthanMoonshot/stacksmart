@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,6 +24,7 @@ const jsonLd = {
       name: "Optometry Practice Software Subscription Audit | StackSmart",
       description:
         "Optometry practices carry appointment booking, recalls, POS and inventory, frame and lens ordering portals, marketing, reviews, accounting, and payroll subscriptions. A software audit finds what to cut, consolidate, and renegotiate — using billing exports only.",
+      dateModified: "2026-06-05",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -465,6 +467,23 @@ export default function OptometryPracticeSoftwareSubscriptionAuditPage() {
           </div>
         </div>
       </section>
+
+      <OwnerLedProofRefresh
+        title="2026 optometry software cleanup for owners running clinical and retail systems together"
+        summary="Optometry practices often pay for both health-practice tools and retail optical tools. The 2026 refresh sharpens the audit around booking, recalls, POS, inventory, supplier portals, staff seats, and quiet annual renewals so a practice owner can reduce spend without interrupting patient care or frame/lens ordering."
+        proofItems={[
+          { label: "Recall and SMS duplication", finding: "A paid recall, SMS, or review platform overlaps with recall workflows already bundled into the PMS or optical POS tier.", action: "Consolidate" },
+          { label: "POS/inventory module drift", finding: "A standalone inventory or optical POS subscription continues after the core practice platform adds comparable functionality.", action: "Audit overlap" },
+          { label: "Supplier and ordering portals", finding: "Paid ordering aggregators, marketplace add-ons, or rarely-used supplier portals create subscription drag beside free supplier-direct access.", action: "Keep or cancel with owner sign-off" },
+        ]}
+        boundaries={[
+          "Use billing exports, accounting supplier lines, card statements, and paid-seat lists only.",
+          "Avoid patient records, prescriptions, clinical notes, Medicare/private-health information, and optical order details.",
+          "Separate patient-care continuity from software cost action: recalls, orders, and appointment history must remain safe before cancellation.",
+          "Assign renewal owners for PMS, POS, recall, payroll, marketing, and supplier portal subscriptions.",
+        ]}
+        location="optometry_practice_20260605"
+      />
 
       {/* Lead capture */}
       <section className="py-16">

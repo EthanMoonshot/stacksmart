@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,7 +24,7 @@ const jsonLd = {
       name: "Medical Practice Software Subscription Audit | StackSmart",
       description:
         "GP and specialist clinics carry booking, recalls, telehealth, billing, forms, marketing, payroll, accounting, rostering, and patient comms subscriptions. A software audit finds what to cut, consolidate, and renegotiate — using billing exports only, not patient records.",
-      dateModified: "2026-06-01",
+      dateModified: "2026-06-05",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -526,6 +527,23 @@ export default function MedicalPracticeSoftwareSubscriptionAuditPage() {
           </div>
         </div>
       </section>
+
+      <OwnerLedProofRefresh
+        title="2026 medical clinic software audit: billing-only proof for owner-led practices"
+        summary="Medical clinics have strong category demand for practice-management and clinic-management software, but StackSmart is not a PMS replacement. The refresh positions StackSmart as the practical paid-layer audit around the PMS: booking, reminders, forms, payments, payroll, marketing, AI scribes, connector fees, and annual renewals."
+        proofItems={[
+          { label: "PMS-adjacent add-ons", finding: "Forms, booking, SMS, payments, review, and patient-message tools keep billing even when the PMS tier already includes enough functionality.", action: "Consolidate or downgrade" },
+          { label: "AI scribe and transcription seats", finding: "Clinician AI seats are added quickly, then stay paid for part-time doctors, contractors, or trial users who no longer use them.", action: "Right-size seats" },
+          { label: "Poor exports and reconciliation drag", finding: "Software invoices, card charges, and Xero/MYOB supplier names do not reconcile cleanly, so owners cannot see which clinic tools are still justified.", action: "Run billing-export review" },
+        ]}
+        boundaries={[
+          "Analyse supplier, invoice, card, and accounting exports; do not access patient records or clinical documents.",
+          "Keep Medicare, pathology, eRx, and patient communication continuity out of any automated cut decision.",
+          "Use current doctor, nurse, allied-health, and admin headcount to right-size paid seats.",
+          "Create a renewal-owner map for PMS-adjacent tools before annual charges land.",
+        ]}
+        location="medical_practice_20260605"
+      />
 
       {/* Lead capture */}
       <section className="py-16">

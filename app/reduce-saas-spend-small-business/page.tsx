@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,6 +24,7 @@ const jsonLd = {
       name: "How to Reduce SaaS Spend for Small Business | StackSmart",
       description:
         "A practical guide to reducing SaaS spend for small business teams — find duplicate subscriptions, flag renewal risks, and act on the highest-leverage savings from billing data.",
+      dateModified: "2026-06-05",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -350,6 +352,23 @@ export default function ReduceSaaSSpendSmallBusinessPage() {
           </div>
         </div>
       </section>
+
+      <OwnerLedProofRefresh
+        title="2026 small-business SaaS spend reduction: start with the billing truth"
+        summary="For owner-led teams with 5-50 staff, the fastest route is not an enterprise procurement platform. It is a billing-export pass that finds duplicate tools, poor exports, annual/prepaid lock-in, former-employee seats, licence policing gaps, and unclear renewal owners — then turns them into a practical action queue."
+        proofItems={[
+          { label: "Line-by-line software cleanup", finding: "Owners and bookkeepers often see a messy Software & Subscriptions category in Xero/QuickBooks but lack a clean keep/cancel/use-owner pass.", action: "Categorise + assign owner" },
+          { label: "Automation and contact overages", finding: "HubSpot marketing contacts, Zapier task usage, AI tools, and connector add-ons can become production costs before anyone sets a budget guardrail.", action: "Set tier and usage limits" },
+          { label: "Annual renewal surprises", finding: "Prepaid SaaS contracts renew quietly because no one owns the decision 60-90 days before the card or invoice charge.", action: "Renegotiate before renewal" },
+        ]}
+        boundaries={[
+          "Use card, bank, Xero/MYOB/QuickBooks, and invoice exports rather than employee monitoring or browser agents.",
+          "Protect active workflows: every recommendation should say keep, cancel, downgrade, consolidate, renegotiate, or assign owner.",
+          "Flag ownerless tools and former-employee seats before removing access.",
+          "Prioritise recoverable spend and renewal risk over raw app count.",
+        ]}
+        location="reduce_saas_spend_20260605"
+      />
 
       {/* Lead Capture + Final CTA */}
       <section className="py-16">
