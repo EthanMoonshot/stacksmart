@@ -61,6 +61,7 @@ const jsonLd = {
       description:
         "See how StackSmart turns billing exports into clear cut, consolidate, and renegotiate actions for growing teams.",
       url: absoluteUrl("/saas-spend-audit-tool"),
+      dateModified: "2026-06-06",
     },
     {
       "@type": "BreadcrumbList",
@@ -617,6 +618,34 @@ export default function SaaSSpendAuditToolPage() {
                 <li>• Which subscriptions have no named owner before renewal?</li>
                 <li>• Which AI, reporting, booking, receipt, or e-sign tools have idle seats?</li>
                 <li>• Which annual renewals need a keep/cancel decision in the next 90 days?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026-06-06 owner-led SMB proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-06 owner-led SMB proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">A billing-export audit before another dashboard</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The strongest current buying signal is not “we need enterprise SaaS management”. It is the owner or admin saying the software bills are scattered across card statements, QuickBooks/Xero, invoices, app stores, and direct debits. StackSmart is built for that moment: consolidate the billing evidence, find recurring waste, and produce actions the owner can hand to a bookkeeper, practice manager, or ops/admin lead.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <TrackLink href="/saas-subscription-management-software" event="homepage_cta_clicked" props={{ target: "subscription_management", location: "spend_audit_tool_2026_06_06" }} className="btn-secondary text-sm">Compare lightweight management</TrackLink>
+                <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ target: "pricing", location: "spend_audit_tool_2026_06_06" }} className="btn-primary text-sm">Start with a $49 Snapshot</TrackLink>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">Best first-step data sources</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
+                <li><span className="font-semibold text-white">Fastest:</span> 3-6 months of business card transactions to spot obvious monthly leakage.</li>
+                <li><span className="font-semibold text-white">Most complete:</span> 12 months of Xero, QuickBooks, MYOB, invoices, direct debits, and marketplace receipts.</li>
+                <li><span className="font-semibold text-white">Best proof:</span> seat/admin exports for AI, design, project, booking, CRM, reporting, and communication tools.</li>
+                <li><span className="font-semibold text-white">Do not include:</span> bank logins, clinical/client records, employee files, participant notes, or confidential project content.</li>
               </ul>
             </div>
           </div>

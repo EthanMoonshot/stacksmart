@@ -20,6 +20,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": absoluteUrl("/ai-subscription-audit"),
       url: absoluteUrl("/ai-subscription-audit"),
+      dateModified: "2026-06-06",
       name: "AI Subscription Audit | StackSmart",
       description:
         "ChatGPT Teams, Claude Pro, Midjourney, Canva Pro, Notion AI, and meeting transcription tools are a fast-growing waste category in owner-led SMB billing exports. An AI subscription audit finds overlapping tools, idle seats, and full-tier plans with two active users.",
@@ -701,6 +702,34 @@ export default function AiSubscriptionAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2026-06-06 owner-led SMB proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-06 owner-led SMB proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">AI spend now needs the same owner-use pass as the rest of the stack</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Recent monitoring keeps surfacing AI subscription/card leakage, full-team workspaces with light use, and new tools added before the old ones are cancelled. For a 5-50 staff business, the first AI governance step is simple: match every AI charge to a current owner, workspace admin, real use case, renewal date, and decision.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "ai_subscription_2026_06_06" }} className="btn-secondary text-sm">Run the owner-use checklist</TrackLink>
+                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "ai_subscription_2026_06_06" }} className="btn-primary text-sm">Find AI spend in billing data</TrackLink>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">The AI audit questions StackSmart answers</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
+                <li><span className="font-semibold text-white">Which AI tools overlap?</span> ChatGPT, Claude, Perplexity, Notion AI, meeting assistants, image tools, and writing tools often cover the same job.</li>
+                <li><span className="font-semibold text-white">Which seats are idle?</span> Leavers, contractors, project-only users, and optimistic full-team purchases stay active unless someone reviews them.</li>
+                <li><span className="font-semibold text-white">Who owns the workspace?</span> The admin and billing inbox must belong to a current person before seat cleanup can happen.</li>
+                <li><span className="font-semibold text-white">What data is safe?</span> Use billing lines and seat/admin counts only. Do not upload prompts, client files, confidential work, or employee records.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

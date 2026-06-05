@@ -73,6 +73,7 @@ const jsonLd = {
       description:
         "A practical checklist for reviewing recurring software spend — find overlaps, right-size seats, and decide what to cut, consolidate, or renegotiate.",
       url: "https://stacksmart.app/software-subscription-audit-checklist",
+      dateModified: "2026-06-06",
     },
     {
       "@type": "BreadcrumbList",
@@ -507,6 +508,34 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
               <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ target: "pricing", location: "seo_checklist_completion_routing" }} className="btn-primary mt-5 inline-block text-sm">
                 View pricing
               </TrackLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026-06-06 owner-led SMB proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-06 owner-led SMB proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Use the checklist to avoid a line-by-line finance rabbit hole</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Recent owner/operator VOC is practical: “before I go line by line”, “recurring payments”, “subscription tracker”, and “CSV billing issue detection”. This checklist is now framed for the owner, office manager, bookkeeper, or practice manager who needs a clean action list without exposing sensitive operational records.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <TrackLink href="/saas-subscription-management-software" event="homepage_cta_clicked" props={{ target: "subscription_management", location: "checklist_2026_06_06" }} className="btn-secondary text-sm">Compare management options</TrackLink>
+                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "checklist_2026_06_06" }} className="btn-primary text-sm">Automate the checklist</TrackLink>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">Checklist outputs that matter commercially</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
+                <li><span className="font-semibold text-white">Recoverable spend:</span> charges to cancel, downgrade, consolidate, or renegotiate before the next renewal.</li>
+                <li><span className="font-semibold text-white">Owner-use proof:</span> one current person who would notice if the tool disappeared. No owner means review first.</li>
+                <li><span className="font-semibold text-white">Renewal control:</span> 30, 60, and 90-day windows with a named owner, not a forgotten calendar reminder.</li>
+                <li><span className="font-semibold text-white">Privacy boundary:</span> billing exports and seat/admin lists only — not client files, patient notes, staff records, or project data.</li>
+              </ul>
             </div>
           </div>
         </div>

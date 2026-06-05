@@ -22,7 +22,7 @@ const jsonLd = {
       description:
         "Stop surprise SaaS renewals from draining your budget. Track renewal dates, evaluate contracts, and reduce recurring waste.",
       url: "https://stacksmart.app/saas-renewal-management",
-      dateModified: "2026-06-02",
+      dateModified: "2026-06-06",
     },
     {
       "@type": "BreadcrumbList",
@@ -372,6 +372,34 @@ export default function SaaSRenewalManagementPage() {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "renewal_2026_06_02", target: "checklist" }} className="btn-secondary text-sm">Use the renewal checklist</TrackLink>
               <TrackLink href="/small-business-software-audit" event="homepage_cta_clicked" props={{ from: "renewal_2026_06_02", target: "small_business_audit" }} className="btn-primary text-sm">Audit the whole stack</TrackLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026-06-06 owner-led SMB proof refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-06 owner-led SMB proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">The renewal problem is usually an ownership problem</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Fresh VOC keeps pointing to renewal trackers, spreadsheet fatigue, cancelled-subscription charges, and bookkeeper/client software bills. For owner-led SMBs, the most useful SaaS renewal management output is not a contract repository first. It is a list of renewals where nobody currently owns the keep-or-cancel decision before the 30, 60, or 90-day notice window closes.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "renewal_management_2026_06_06" }} className="btn-secondary text-sm">Use the quarterly review checklist</TrackLink>
+                <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "renewal_management_2026_06_06" }} className="btn-primary text-sm">See renewal flags in the sample</TrackLink>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">A renewal-owner pass for 5-50 staff teams</h3>
+              <ol className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
+                <li><span className="font-semibold text-white">1.</span> Pull billing lines from card statements, Xero/QuickBooks, invoices, direct debits, and marketplace receipts.</li>
+                <li><span className="font-semibold text-white">2.</span> Sort annual and quarterly charges by amount, likely renewal date, payment owner, and tool category.</li>
+                <li><span className="font-semibold text-white">3.</span> Name the current admin or business owner for every renewal. If nobody can be named, mark it high-risk.</li>
+                <li><span className="font-semibold text-white">4.</span> Decide keep, cancel, downgrade, consolidate, or renegotiate before the notice window closes.</li>
+              </ol>
             </div>
           </div>
         </div>

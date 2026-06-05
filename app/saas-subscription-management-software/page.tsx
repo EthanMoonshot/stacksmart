@@ -22,6 +22,7 @@ const jsonLd = {
       description:
         "Compare SaaS subscription management software for small businesses and find the right approach for your team size.",
       url: "https://stacksmart.app/saas-subscription-management-software",
+      dateModified: "2026-06-06",
     },
     {
       "@type": "BreadcrumbList",
@@ -312,6 +313,34 @@ export default function SaaSSubscriptionManagementSoftwarePage() {
                   See the sample decision list
                 </TrackLink>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026-06-06 owner-led SMB proof refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-06 owner-led SMB proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Measured demand, but a lighter first step than enterprise procurement</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Live AU keyword data now shows <span className="font-semibold text-white">software subscription management</span> at 90 searches, low competition, and high commercial CPC. For a 5-50 person owner-led business, that demand usually does not mean “buy a procurement suite”. It means: turn the card statement, Xero/QuickBooks export, invoices, direct debits, and marketplace receipts into one practical decision list before more tools renew.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <TrackLink href="/saas-renewal-management" event="homepage_cta_clicked" props={{ target: "renewal_management", location: "subscription_management_2026_06_06" }} className="btn-secondary text-sm">Map renewal risk</TrackLink>
+                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "subscription_management_2026_06_06" }} className="btn-primary text-sm">Run a billing-led audit</TrackLink>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">What the first pass should answer</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
+                <li><span className="font-semibold text-white">What data to use:</span> billing exports, card statements, accounting exports, invoices, direct debits, and app-marketplace receipts.</li>
+                <li><span className="font-semibold text-white">What not to upload:</span> patient, client, employee, participant, or confidential project records. Billing lines are enough for the first savings snapshot.</li>
+                <li><span className="font-semibold text-white">What to flag:</span> duplicate accounts, idle seats, converted trials, AI workspace overlap, connector fees, leaver/contractor seats, and subscriptions with no owner.</li>
+                <li><span className="font-semibold text-white">What to produce:</span> a keep, cancel, downgrade, consolidate, renegotiate, or assign-owner decision for each meaningful recurring charge.</li>
+              </ul>
             </div>
           </div>
         </div>
