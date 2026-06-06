@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedRefreshSection from "@/components/landing/OwnerLedRefreshSection";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,7 +24,7 @@ const jsonLd = {
       name: "Xero App Stack Audit | StackSmart",
       description:
         "Audit your Xero app stack for duplicate add-ons, unused seats, surprise annual renewals, and tier creep across payroll, receipt capture, reporting, practice management, and client portal tools.",
-      dateModified: "2026-06-01",
+      dateModified: "2026-06-07",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -636,6 +637,8 @@ export default function XeroAppStackAuditPage() {
       </section>
 
       {/* Lead capture */}
+      <OwnerLedRefreshSection type="xero" />
+
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture

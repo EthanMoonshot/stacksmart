@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedRefreshSection from "@/components/landing/OwnerLedRefreshSection";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,7 +24,7 @@ const jsonLd = {
       name: "NDIS Provider Software Audit | StackSmart",
       description:
         "NDIS and community care providers carry rostering, care management, payroll, compliance, billing, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
-      dateModified: "2026-06-01",
+      dateModified: "2026-06-07",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -539,6 +540,8 @@ export default function NdisProviderSoftwareAuditPage() {
       </section>
 
       {/* Lead capture */}
+      <OwnerLedRefreshSection type="ndis" />
+
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture

@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedRefreshSection from "@/components/landing/OwnerLedRefreshSection";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,7 +24,7 @@ const jsonLd = {
       name: "Bookkeeping Firm Software Stack Audit | StackSmart",
       description:
         "Bookkeeping firms using Xero, QBO, or MYOB ecosystems accumulate receipt capture, payroll, proposal, workflow, e-sign, AI transcription, connector fees, and client portal add-ons with significant overlap.",
-      dateModified: "2026-06-02",
+      dateModified: "2026-06-07",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -812,6 +813,8 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
       </section>
 
       {/* Lead capture */}
+      <OwnerLedRefreshSection type="bookkeeping" />
+
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture

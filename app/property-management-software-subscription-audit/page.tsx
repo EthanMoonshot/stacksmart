@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedRefreshSection from "@/components/landing/OwnerLedRefreshSection";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -48,7 +49,7 @@ const jsonLd = {
       url: absoluteUrl("/property-management-software-subscription-audit"),
       name: "Property management software subscription audit | StackSmart",
       description: "Audit software subscriptions for property management and strata offices. Find hidden costs in platform add-ons, app marketplace installs, paid connectors, ownerless renewals, and duplicate inspection, maintenance, e-signature, CRM, and admin tools — from billing exports only.",
-      dateModified: "2026-06-01",
+      dateModified: "2026-06-07",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -464,6 +465,8 @@ export default function PropertyManagementSoftwareSubscriptionAuditPage() {
           </div>
         </div>
       </section>
+
+      <OwnerLedRefreshSection type="property" />
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
