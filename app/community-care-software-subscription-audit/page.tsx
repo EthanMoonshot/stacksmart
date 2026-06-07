@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Community Care Software Subscription Audit | StackSmart",
       description:
         "A practical software subscription audit for owner-led community care, home care, support coordination, and smaller care providers that need to find unused seats, duplicate tools, add-ons, and ownerless renewals.",
-      dateModified: "2026-06-02",
+      dateModified: "2026-06-08",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -287,6 +287,56 @@ export default function CommunityCareSoftwareSubscriptionAuditPage() {
               <TrackLink href="/ndis-provider-software-audit" event="homepage_cta_clicked" props={{ from: "community_care_2026_06_02", target: "ndis_provider" }} className="btn-secondary text-sm">NDIS provider version</TrackLink>
               <TrackLink href="/saas-renewal-management" event="homepage_cta_clicked" props={{ from: "community_care_2026_06_02", target: "renewal_management" }} className="btn-primary text-sm">Build a renewal-risk list</TrackLink>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026-06-08 owner-led community care billing audit workflow */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-08 conversion refresh · practical billing-export audit for care providers</p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">Run the subscription cleanup from invoices and card statements — no participant records needed</h2>
+          <p className="mt-4 text-sm leading-7 text-dark-300">
+            Owner-led community care, home care, and support coordination teams carry rostering, care-management add-ons, SMS packs, document storage, forms, telehealth, compliance/training tools, payroll connectors, and marketing subscriptions — all bought one operational problem at a time. The audit starts and finishes with billing data. No participant notes, care plans, or clinical files are reviewed.
+          </p>
+          <div className="mt-8 space-y-4">
+            {[
+              {
+                step: "1. Export from Xero, MYOB, card statements, and vendor invoices",
+                detail: "Pull 12 months of recurring charges from every payment source: accounting software, business cards, direct debits, and software vendor invoices. Community care providers commonly have charges spread across a director card, an operations account, and individual vendor direct debits set up during implementation.",
+              },
+              {
+                step: "2. Match each tool to a current coordinator, worker, or admin role",
+                detail: "For every subscription ask: who on the current roster uses this? Care coordinators, support workers, admin staff, and contractor clinicians all generate seats. Common orphans: rostering seats for workers who left months ago, SMS packs at old volume tiers, compliance/training tools purchased for one audit cycle, document-signing platforms retained after the care system added e-signatures.",
+              },
+              {
+                step: "3. Flag add-ons that outlived their original purpose",
+                detail: "Care-management platforms add features over time. Forms, document storage, SMS, reporting, and scheduling modules that were originally purchased as standalone tools may now duplicate what the core platform includes. Check whether each standalone subscription covers a job the care system already handles.",
+              },
+              {
+                step: "4. Assign keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner",
+                detail: "Every flagged item gets one decision. Seat removals need no vendor call. Add-on cancellations where the core platform now covers the function are immediate savings. Renegotiation targets are annual rostering, care-management, payroll, and compliance contracts approaching renewal — current headcount and program scope are your leverage.",
+              },
+              {
+                step: "5. Set a 90-day renewal lane and named owners",
+                detail: "List every vendor renewing inside 90 days and assign a named decision-maker: the owner, operations manager, or admin lead. Ownerless renewals — subscriptions that auto-renew from an old director card or ops inbox with nobody reviewing — are the single most common waste category in community care teams that have not run a formal audit.",
+              },
+            ].map((item) => (
+              <div key={item.step} className="rounded-xl border border-dark-700 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{item.step}</h3>
+                <p className="mt-2 text-sm leading-7 text-dark-300">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-2xl border border-emerald-400/20 bg-emerald-500/5 p-6">
+            <h3 className="text-base font-semibold text-white">Billing-only boundary: what StackSmart does and does not touch</h3>
+            <p className="mt-3 text-sm leading-7 text-dark-300">
+              StackSmart processes invoices, card statements, accounting exports, and vendor receipts. It does not access, request, or store participant records, care plans, clinical notes, health information, NDIS plan details, or any data covered by privacy legislation. The output is a subscription-level action list for the provider owner or operations lead — not clinical advice, compliance evidence, or care-management reporting.
+            </p>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/demo" event="homepage_cta_clicked" props={{ from: "community_care_2026_06_08", target: "demo" }} className="btn-primary text-sm">See sample care-provider report</TrackLink>
+            <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "community_care_2026_06_08", target: "checklist" }} className="btn-secondary text-sm">Use the audit checklist</TrackLink>
           </div>
         </div>
       </section>

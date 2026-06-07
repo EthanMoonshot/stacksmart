@@ -23,6 +23,7 @@ const jsonLd = {
       name: "Small Business Software Audit | StackSmart",
       description:
         "Run a software audit for your small business without a finance team or IT department. StackSmart turns billing exports into a clear savings report.",
+      dateModified: "2026-06-08",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -862,6 +863,64 @@ export default function SmallBusinessSoftwareAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2026-06-08 owner-led SMB card-statement and billing-export audit */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-08 conversion refresh · line-by-line billing review for SMB owners</p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">The line-by-line software bill review every owner should run before renewal season</h2>
+          <p className="mt-4 text-sm leading-7 text-dark-300">
+            Owner-led businesses with 5 to 50 staff typically carry 15 to 40 recurring software charges across card statements, accounting exports, and direct debits. Most have never been reviewed as a group. The line-by-line pass takes one sitting and produces a clear action list: which tools to keep, which to cancel immediately, which seats to remove, which duplicate charges to consolidate, and which renewals need a named owner before the auto-renewal window closes.
+          </p>
+          <div className="mt-8 space-y-4">
+            {[
+              {
+                step: "1. Export card statements and accounting data",
+                detail: "Pull 12 months from your business credit card, Xero, MYOB, or QBO. Include personal cards used for business subscriptions, PayPal, Stripe invoices, and any marketplace billing (Shopify apps, Xero add-ons, Google Workspace marketplace). The goal is one consolidated list of every recurring software charge, regardless of payment source.",
+              },
+              {
+                step: "2. Run the owner-use pass on every line item",
+                detail: "For each recurring charge, name the person on your current team who uses it at least twice a week. If you cannot name someone, the subscription has no active owner — and that is the definition of recoverable spend. This single pass typically flags 20 to 40 percent of subscriptions in a 5-to-50 person business.",
+              },
+              {
+                step: "3. Flag duplicate charges, unused licences, and ownerless renewals",
+                detail: "Look for the same tool paid multiple times on individual plans (Canva, Notion, Midjourney, transcription tools), seats still active for departed staff, trials that quietly converted to paid, and annual contracts renewing in the next 90 days with no named decision-maker. These four categories account for the majority of recoverable spend.",
+              },
+              {
+                step: "4. Build a software inventory with one action per line",
+                detail: "Every subscription gets a decision: keep (active owner, justified tier), cancel (no owner, no workflow), right-size (remove idle seats or downgrade tier), consolidate (merge individual plans to team account or eliminate duplicate tools), renegotiate (annual renewal approaching with usage below current tier), or assign renewal-owner (someone must own the keep/cancel decision before auto-renewal).",
+              },
+              {
+                step: "5. Act on cancellations first, then schedule renegotiations",
+                detail: "Cancellations and seat removals need no vendor conversation — execute them before the next billing cycle. Consolidations (individual to team plans) save 30 to 50 percent and require only an account migration. Renegotiations require a call but have highest dollar impact on annual SEO, design, AI, and project management contracts. Set a quarterly 30-minute review to catch drift between annual audits.",
+              },
+            ].map((item) => (
+              <div key={item.step} className="rounded-xl border border-dark-700 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{item.step}</h3>
+                <p className="mt-2 text-sm leading-7 text-dark-300">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6">
+              <h3 className="text-base font-semibold text-white">Why owner-led SMBs carry more waste than they expect</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">
+                Without a dedicated IT, ops, or finance function reviewing recurring spend, software charges accumulate through four patterns: staff signups that nobody tracks centrally, trials that auto-convert, leavers whose seats stay active, and annual renewals that process before anyone reviews usage. A 15-person business that has not audited in 12 months typically discovers $4,000 to $12,000 in annual recoverable spend — mostly from duplicate tools, ghost seats, and ownerless renewals.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6">
+              <h3 className="text-base font-semibold text-white">The output: a decision list, not a procurement platform</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">
+                StackSmart produces a categorised spend snapshot with one action per subscription. The business owner reviews the flagged items and either acts directly (cancellations, seat removals) or hands the renegotiation and consolidation list to whoever manages vendor relationships. It is a practical one-sitting review tool for busy owners — not an ongoing SaaS management platform.
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/demo" event="homepage_cta_clicked" props={{ from: "smb_2026_06_08", target: "demo" }} className="btn-primary text-sm">See sample SMB report</TrackLink>
+            <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ from: "smb_2026_06_08", target: "pricing" }} className="btn-secondary text-sm">View pricing</TrackLink>
           </div>
         </div>
       </section>

@@ -23,6 +23,7 @@ const jsonLd = {
       name: "Hospitality Group Software Audit | StackSmart",
       description:
         "Small hospitality groups and multi-site venues carry POS, bookings, rostering, payroll, delivery, loyalty, accounting, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
+      dateModified: "2026-06-08",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -468,6 +469,64 @@ export default function HospitalityGroupSoftwareAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2026-06-08 owner-led hospitality venue billing audit */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-08 conversion refresh · venue-level billing audit steps</p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">Run the venue software audit from card statements and accounting exports</h2>
+          <p className="mt-4 text-sm leading-7 text-dark-300">
+            Hospitality operators do not need a procurement system to review software costs. The practical starting point is the same as any owner-led SMB: pull billing data, match each charge to a current venue and workflow, and make a keep/cancel/consolidate/renegotiate decision before auto-renewals process. The difference is that hospitality stacks multiply across sites — every venue adds its own POS add-ons, rostering seats, delivery integrations, music licensing, and review tools.
+          </p>
+          <div className="mt-8 space-y-4">
+            {[
+              {
+                step: "1. Export billing across all venues and entities",
+                detail: "Pull 12 months from Xero, MYOB, or QBO plus every business card, direct debit, and venue-level payment method. Hospitality groups commonly have charges spread across venue-specific cards, a head-office account, and direct-debit arrangements with POS and rostering vendors. Consolidate into one list with venue, vendor, amount, and frequency.",
+              },
+              {
+                step: "2. Match each subscription to a venue and active workflow",
+                detail: "For each charge, confirm: which venue uses this, is it still trading at a level that justifies the tier, and does a current manager own it? Common orphans: delivery integrations for platforms you no longer use, rostering seats for casuals who finished months ago, loyalty/CRM tools with no active programme, music licensing at closed or seasonal venues.",
+              },
+              {
+                step: "3. Flag site-level duplicates and group-pricing gaps",
+                detail: "Identify where the same category is billed per-site at individual rates — reservations, rostering, delivery, review management, Wi-Fi/analytics. Most vendors offer multi-site group pricing when asked. Flag each per-site subscription where a group rate would reduce the combined cost.",
+              },
+              {
+                step: "4. Assign keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner",
+                detail: "Every flagged item gets one decision. Seat removals (casual staff, seasonal workers) need no vendor conversation. Group-pricing consolidation requires one call per vendor. POS add-on downgrades require checking whether the venue still uses the premium reporting or marketing module. Assign a named renewal owner for every annual contract.",
+              },
+              {
+                step: "5. Set a seasonal review cadence",
+                detail: "Hospitality staff turnover peaks after summer, Christmas, and event seasons. Set a post-season review to clear ghost seats and check whether delivery, loyalty, and marketing tool tiers still match trading volumes. A 30-minute post-season pass prevents the worst accumulation between annual reviews.",
+              },
+            ].map((item) => (
+              <div key={item.step} className="rounded-xl border border-dark-700 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{item.step}</h3>
+                <p className="mt-2 text-sm leading-7 text-dark-300">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6">
+              <h3 className="text-base font-semibold text-white">Why venue groups carry more waste per dollar of revenue</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">
+                Every site multiplies the stack: POS at each venue, reservations per location, rostering seats for each team, delivery integrations per kitchen, music licensing per trading floor, and review/reputation tools per listing. A three-venue operator often pays three times what a single-site equivalent would — without ever negotiating group rates or consolidating accounts. The billing export reveals the full per-site multiplication in one pass.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6">
+              <h3 className="text-base font-semibold text-white">The operator action list</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">
+                The useful output is a venue-by-venue action board: keep production-critical POS and rostering, cancel dormant delivery/loyalty/marketing tools, right-size rostering seats to current headcount, consolidate per-site reservations and review tools to group pricing, renegotiate annual POS and rostering contracts using multi-site leverage, and assign renewal ownership to the operator, GM, or venue manager responsible for each vendor relationship.
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/demo" event="homepage_cta_clicked" props={{ from: "hospitality_2026_06_08", target: "demo" }} className="btn-primary text-sm">See sample venue report</TrackLink>
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ from: "hospitality_2026_06_08", target: "audit_tool" }} className="btn-secondary text-sm">Try the audit tool</TrackLink>
           </div>
         </div>
       </section>

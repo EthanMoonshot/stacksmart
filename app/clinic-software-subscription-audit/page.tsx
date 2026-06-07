@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Clinic Software Subscription Audit | StackSmart",
       description:
         "Review and cut wasted software spend at your clinic or allied health practice — admin, booking, billing, and marketing subscriptions.",
-      dateModified: "2026-06-02",
+      dateModified: "2026-06-08",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -488,6 +488,56 @@ export default function ClinicSoftwareSubscriptionAuditPage() {
               <TrackLink href="/community-care-software-subscription-audit" event="homepage_cta_clicked" props={{ from: "clinic_2026_06_02", target: "community_care" }} className="btn-secondary text-sm">Community-care version</TrackLink>
               <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ from: "clinic_2026_06_02", target: "audit_tool" }} className="btn-primary text-sm">Try the audit tool</TrackLink>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026-06-08 owner-led clinic billing-export audit workflow */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-08 conversion refresh · billing-data-only clinic audit workflow</p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">Audit the admin subscription layer from billing data — no patient records involved</h2>
+          <p className="mt-4 text-sm leading-7 text-dark-300">
+            Multi-practitioner clinics and allied health practices accumulate small monthly charges around the core practice-management system: online booking, SMS reminders, intake forms, telehealth, AI scribes, payment terminals, marketing tools, and clinician/contractor seats. The audit reviews billing data only — invoices, card statements, and accounting exports — and produces a decision list the practice owner or manager can act on without involving clinicians in the data-gathering phase.
+          </p>
+          <div className="mt-8 space-y-4">
+            {[
+              {
+                step: "1. Export card statements, accounting data, and vendor invoices",
+                detail: "Pull 12 months from Xero, MYOB, or your business card. Include direct debits from PMS vendors, payment terminal providers, and SMS/reminder platforms. Clinics commonly have charges spread across the practice card, the principal's personal card, and vendor-specific direct debits set up during onboarding.",
+              },
+              {
+                step: "2. Match each subscription to a current clinician, admin role, or workflow",
+                detail: "For every charge ask: which practitioner or admin staff member uses this, and what workflow would break if it stopped? Common orphans: telehealth seats from a pandemic-era trial, AI scribe subscriptions assigned to clinicians who never adopted them, forms tools retained after the PMS added digital intake, reminder/SMS platforms duplicating built-in PMS recalls.",
+              },
+              {
+                step: "3. Flag duplicates across PMS add-ons and standalone tools",
+                detail: "Practice-management systems expand features over time. Check whether standalone booking, forms, reminders, payments, or reporting tools now duplicate what the PMS includes at no extra cost. Clinics that migrated PMS in the last two years often retain billing on the old platform's add-on modules alongside the new system.",
+              },
+              {
+                step: "4. Assign keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner",
+                detail: "Every flagged subscription gets one action. Cancel clearly unused tools (no clinician or admin staff member can name the workflow). Right-size AI scribe and telehealth seats to the practitioners who actually use them weekly. Consolidate standalone forms/booking/reminders where the PMS covers the same function. Renegotiate annual PMS, payment, and reminder contracts approaching renewal — current practitioner count and consultation volume are leverage.",
+              },
+              {
+                step: "5. Set renewal owners and a quarterly practice-admin review",
+                detail: "Assign a named owner (practice owner, practice manager, or admin lead) to every annual contract. Set a quarterly 20-minute pass: check for converted trials, new clinician/contractor seats, and annual renewals approaching in the next 60 days. This catches the drift between annual reviews without requiring clinical team involvement.",
+              },
+            ].map((item) => (
+              <div key={item.step} className="rounded-xl border border-dark-700 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{item.step}</h3>
+                <p className="mt-2 text-sm leading-7 text-dark-300">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-2xl border border-emerald-400/20 bg-emerald-500/5 p-6">
+            <h3 className="text-base font-semibold text-white">Patient data boundary</h3>
+            <p className="mt-3 text-sm leading-7 text-dark-300">
+              StackSmart processes billing exports, card statements, invoices, and subscription receipts only. It does not access, request, or store patient records, clinical notes, appointment content, health information, Medicare claims data, or referral details. The output is a subscription-level action list for the practice owner or admin manager — not clinical advice, compliance reporting, or health-record analysis.
+            </p>
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/demo" event="homepage_cta_clicked" props={{ from: "clinic_2026_06_08", target: "demo" }} className="btn-primary text-sm">See sample clinic report</TrackLink>
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ from: "clinic_2026_06_08", target: "audit_tool" }} className="btn-secondary text-sm">Try the audit tool</TrackLink>
           </div>
         </div>
       </section>
