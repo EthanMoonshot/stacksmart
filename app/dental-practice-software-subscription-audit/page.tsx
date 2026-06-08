@@ -4,7 +4,6 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
-import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -24,7 +23,7 @@ const jsonLd = {
       name: "Dental Practice Software Subscription Audit | StackSmart",
       description:
         "Audit admin, billing, booking, and marketing software subscriptions at your dental practice. Focus on the business side: booking, reminders, payment plans, reviews, and marketing.",
-      dateModified: "2026-06-04",
+      dateModified: "2026-06-09",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -459,13 +458,34 @@ export default function DentalPracticeSoftwareSubscriptionAuditPage() {
       </section>
 
 
-      <OwnerLedProofRefresh
-        title='What the 2026 owner-led dental practice audit now proves'
-        summary='The 2026 refresh sharpens this page for owner-operated dental practices searching dental practice management software or dental software Australia. StackSmart is framed as the cheaper first pass before another platform switch: use billing exports to find duplicate booking, recall, payment, review, marketing, AI, and admin subscriptions, then decide what to keep, cancel, downgrade, consolidate, renegotiate, or assign an owner to.'
-        proofItems={[{ label: 'Barely-used add-on still billing', finding: 'A review-management or SMS reminder add-on bought during a growth push is still charging monthly even though the core PMS now includes similar recall and review workflows.', action: 'Consolidate' }, { label: 'Practice tier no longer matches chairs', finding: 'Payment-plan, booking, or marketing tools stayed on a higher tier after chair utilisation or admin headcount changed.', action: 'Downgrade' }, { label: 'Renewal owner missing', finding: 'The PMS, imaging-adjacent admin tools, payment terminals, and AI note tools renew on different dates with no single practice owner watching notice windows.', action: 'Assign owner' }]}
-        boundaries={['Uses accounting exports, card statements, and vendor invoices only — no clinical notes, imaging files, or patient records.', 'Owner, practice manager, or bookkeeper can run the first pass without interrupting reception or clinicians.', 'Flags overlap and renewal risk before recommending any vendor cancellation or migration.', 'Links findings back to practical action categories rather than enterprise procurement workflows.']}
-        location='dental_practice_software_audit'
-      />
+      {/* June 9 owner-led proof/conversion refresh */}
+      <section className="border-t border-dark-800/80 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">June 2026 owner-led dental audit</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Reconcile admin subscriptions before the next PMS renewal</h2>
+            <p className="mt-4 text-base leading-7 text-dark-300">DataForSEO AU checks (June 2026) show dental software at 210 monthly searches / $13.07 CPC. For an owner-operated dental practice, the fastest cost win is not replacing the PMS — it is reconciling every paid reminder tool, forms platform, payment-plan module, imaging-adjacent admin add-on, review service, marketing subscription, rostering/payroll seat, and AI scribe or admin tool already billing on the card statement.</p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">1. Separate PMS bolt-ons from core licensing</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Pull card statements, Xero/MYOB exports, and vendor invoices. Separate the core PMS from paid bolt-ons: recall/SMS packs, online booking widgets, waiver/forms tools, payment-plan modules, imaging-adjacent admin tools, AI scribe subscriptions, and review-management platforms.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">2. Match seats and tiers to current roster</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Compare paid seats, chair licences, and location tiers to the current clinician, hygienist, locum, admin, and reception roster. Flag converted trial accounts, departed-staff logins, and marketing tiers set during a growth push that no longer match patient volume.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">3. Assign a renewal owner before notice windows close</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">PMS, payment-plan, recall/SMS, review, imaging admin, AI scribe, rostering, and payroll subscriptions all renew on different dates. Each needs one named owner and a notice-window date — if nobody owns it, the default is review before renewal, not auto-renew.</p>
+              </div>
+          </div>
+          <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">Clinic-safe boundary: what StackSmart does and does not touch</p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">StackSmart uses billing exports and card statements only — no clinical notes, imaging files, patient records, health identifiers, or PMS credentials. The owner, practice manager, or bookkeeper runs the first pass independently. The output is a keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list covering duplicate add-ons, unused licences, AI/tool overlap, connector fees, converted trials, and ownerless renewals.</p>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ */}
       <section className="py-14 sm:py-16">

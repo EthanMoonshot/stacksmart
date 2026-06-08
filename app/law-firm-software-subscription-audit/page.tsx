@@ -4,7 +4,6 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
-import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -24,7 +23,7 @@ const jsonLd = {
       name: "Law Firm Software Subscription Audit | StackSmart",
       description:
         "Audit software subscriptions for boutique law firms — matter management, document, e-sign, dictation, trust accounting, and marketing tools without accessing client files or regulated legal data.",
-      dateModified: "2026-06-04",
+      dateModified: "2026-06-09",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -429,13 +428,34 @@ export default function LawFirmSoftwareSubscriptionAuditPage() {
       </section>
 
 
-      <OwnerLedProofRefresh
-        title='What the 2026 owner-led boutique law firm audit now proves'
-        summary='The 2026 refresh targets principal-led and partner-led law firms searching law practice management software or legal practice management software Australia. StackSmart is positioned as a billing-only audit before another system change: find duplicated matter, dictation, e-sign, research, AI, document, CRM, and client-intake tools, then assign renewal ownership without exposing privileged client work.'
-        proofItems={[{ label: 'Partner-by-partner tool spread', finding: 'Different partners fund separate dictation, AI transcription, research, CRM, or e-sign tools for similar workflows.', action: 'Standardise' }, { label: 'Matter-system migration tail', finding: 'Old matter management, intake, or document platforms continue billing months after the firm shifted workflows.', action: 'Cancel' }, { label: 'Research and AI tier creep', finding: 'Firm-wide legal research, precedent, or AI tools are priced for more active users than actually rely on them.', action: 'Right-size' }]}
-        boundaries={['Uses firm billing exports, invoices, and card statements only — no client files, matter details, privileged documents, or trust-account records.', 'Best for boutique and owner-led firms without IT/procurement maturity, not enterprise legal operations teams.', 'Highlights renewal windows and usage-owner gaps before any sensitive system decision.', 'Turns findings into plain commercial actions the managing partner or practice manager can own.']}
-        location='law_firm_software_audit'
-      />
+      {/* June 9 owner-led proof/conversion refresh */}
+      <section className="border-t border-dark-800/80 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">June 2026 owner-led law firm audit</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Pull the billing export before replacing the matter system</h2>
+            <p className="mt-4 text-base leading-7 text-dark-300">DataForSEO AU checks (June 2026) show legal practice management software at 260 monthly searches / $22.57 CPC. That buying intent is real, but for a boutique firm the cheaper first move is auditing what is already billing: duplicate dictation/transcription/AI tools across partners, e-sign platforms nobody standardised, legal research seats above actual usage, client portal add-ons, CRM/marketing subscriptions from a growth phase, and accounting connector fees that renew without a named owner.</p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">1. Map partner-preference tools to firm spend</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Pull card statements, accounting exports, and vendor invoices. Group by practice/matter management, document/e-sign, dictation/transcription/AI, legal research, client portals, CRM/marketing, accounting connectors, and Microsoft/Google licensing. Flag any category where the firm runs more than one active tool.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">2. Check seats against fee earner and admin roster</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Compare paid licences to active partners, solicitors, paralegals, admin staff, and contractors. Flag unused licence seats from departed fee earners, converted trial accounts, matter-only workspaces still billing, and AI/tool overlap where multiple transcription or note-taking apps cover the same job.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">3. Assign renewal owners before notice periods close</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Matter management, legal research, e-sign, document automation, dictation/AI, trust-accounting connectors, and Microsoft/Google licences all renew on different schedules. Each needs one named owner. The output is a keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner list.</p>
+              </div>
+          </div>
+          <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">No client matter or trust-account data needed</p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">StackSmart uses billing exports, card statements, and vendor invoices only — no client files, matter details, privileged documents, trust-account records, or practice-management credentials. The managing partner, firm administrator, or bookkeeper runs the first pass independently. Findings cover duplicate charges, platform add-ons, converted trials, unused licences, connector fees, AI/tool overlap, and ownerless renewals.</p>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">

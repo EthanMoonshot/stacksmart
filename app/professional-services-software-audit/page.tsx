@@ -4,7 +4,6 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
-import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -24,7 +23,7 @@ const jsonLd = {
       name: "Professional Services Software Audit | StackSmart",
       description:
         "Audit your professional services firm's software subscriptions for duplicate tools, unused seats, and subscriptions that accumulated across project work and team growth.",
-      dateModified: "2026-06-04",
+      dateModified: "2026-06-09",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -405,13 +404,34 @@ export default function ProfessionalServicesSoftwareAuditPage() {
       </section>
 
 
-      <OwnerLedProofRefresh
-        title='What the 2026 owner-led professional services audit now proves'
-        summary='The refresh broadens the professional-services page for boutique consultancies and partner-led firms where software is purchased around clients, pitches, contractors, and delivery pods. It adds sharper proof around QuickBooks/Xero recurring payments, project-only tools, AI meeting apps, proposal platforms, CRM overlap, and no-clear-owner renewals.'
-        proofItems={[{ label: 'Recurring payments with no owner', finding: 'QuickBooks, Xero, or card exports show monthly software charges that no partner, consultant, or admin person clearly owns.', action: 'Assign owner' }, { label: 'Client-project tools linger', finding: 'Tools bought for one engagement, workshop, dashboard, or AI workflow keep billing after the project has closed.', action: 'Cancel' }, { label: 'Multiple delivery-stack defaults', finding: 'Proposal, CRM, project, time, document, and e-sign apps overlap because each partner kept a preferred option.', action: 'Standardise' }]}
-        boundaries={['Uses billing exports, card statements, and vendor invoices only — no client files, commercial documents, or project IP.', 'Built for owner-led firms with low ops maturity, not large firms with mature procurement operations.', 'Works best between project phases when the owner can act on keep/cancel/downgrade decisions.', 'Produces a practical action plan tied to savings, renewal windows, and accountable owners.']}
-        location='professional_services_audit'
-      />
+      {/* June 9 owner-led proof/conversion refresh */}
+      <section className="border-t border-dark-800/80 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">June 2026 owner-led professional services audit</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Audit the delivery stack between project phases</h2>
+            <p className="mt-4 text-base leading-7 text-dark-300">DataForSEO AU checks (June 2026) show professional services automation software at 210 monthly searches / $116.20 CPC and software subscriptions at 70 / $50.53 CPC. That CPC signals serious commercial intent. StackSmart meets it practically: before buying a PSA platform, reconcile the billing export for duplicate project management tools, proposal platforms nobody standardised, CRM overlap, time-tracking sprawl, converted trial AI tools, reporting dashboard add-ons, and client portal seats that outlived the engagement.</p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">1. Separate firm tools from project pass-throughs</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Pull card statements, Xero/QuickBooks exports, and vendor invoices. Group by PSA/project management, CRM, proposals, time tracking, reporting dashboards, doc/e-sign, research/AI, transcription, accounting, and client portals. Separate firm-owned subscriptions from client-reimbursable charges so recoverable spend is not confused with project overhead.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">2. Flag partner-preference tools and leaver seats</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Compare paid licences to the current partner, consultant, contractor, and admin roster. Flag unused licence seats from departed contractors, converted trial accounts, AI/tool overlap where three transcription or meeting-note apps cover the same job, and duplicate doc/e-sign platforms that were never consolidated across the firm.</p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">3. Assign renewal owners before auto-renew</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">PSA/project management, CRM, proposal, time-tracking, reporting, doc/e-sign, research/AI, and accounting tools all renew on different schedules. Each needs one named owner and a notice-window date. The output is a keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list the principal can hand to an operations lead.</p>
+              </div>
+          </div>
+          <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">Owner-led proof: billing exports only — no client files or project IP</p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">StackSmart uses billing exports, card statements, and vendor invoices only — no client files, commercial documents, project IP, or system credentials. The principal, practice manager, or bookkeeper runs the first pass between project phases. Findings cover duplicate charges, platform add-ons, converted trials, unused licences, connector fees, AI/tool overlap, and ownerless renewals across the professional services delivery stack.</p>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">

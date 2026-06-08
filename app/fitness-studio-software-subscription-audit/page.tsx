@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Fitness Studio Software Subscription Audit | StackSmart",
       description:
         "Fitness and wellness studios carry booking, member management, payments, marketing, payroll, access control, accounting, and class tools. A software audit finds what to cut, consolidate, and renegotiate.",
-      dateModified: "2026-06-03",
+      dateModified: "2026-06-09",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -479,31 +479,31 @@ export default function FitnessStudioSoftwareSubscriptionAuditPage() {
       </section>
 
 
-      {/* June 3 proof/conversion refresh */}
+      {/* June 9 proof/conversion refresh */}
       <section className="border-t border-dark-800/80 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 gym-management audit refresh</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Audit member-management add-ons before buying another fitness platform</h2>
-            <p className="mt-4 text-base leading-7 text-dark-300">DataForSEO AU checks showed gym management software and fitness studio software carrying strong commercial intent and high CPC. StackSmart should meet that intent with a practical audit of booking, member, payment, marketing, access-control, and instructor-seat spend — not a platform replacement pitch.</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">June 2026 owner-led studio audit</p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Pull the card statement before buying another gym management platform</h2>
+            <p className="mt-4 text-base leading-7 text-dark-300">DataForSEO AU checks (June 2026) show gym management software at 170 monthly searches / $40.41 CPC — serious commercial intent. StackSmart meets that intent differently: instead of a platform comparison, it reconciles the paid subscription layer around the booking platform an owner already runs. Door-access modules, SMS packs, waiver tools, class-pack add-ons, converted trial upgrades, AI admin tools, review platforms, and instructor seats that outlasted the last timetable change.</p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
               <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">1. Check add-ons against actual classes</p>
-                <p className="mt-3 text-sm leading-7 text-dark-300">Match SMS packs, waivers, challenge tools, on-demand video, payment add-ons, and access-control modules to current class schedules and active member workflows.</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">1. Match add-ons to active class schedules</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Pull card statements, Xero/MYOB exports, booking-platform invoices, and app-store receipts. Match SMS packs, waivers/forms, challenge apps, on-demand video, payment modules, door-access fees, and marketing automations to current class schedules and active member workflows.</p>
               </div>
               <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">2. Right-size staff and instructor seats</p>
-                <p className="mt-3 text-sm leading-7 text-dark-300">Pull active staff, contractor, and casual instructor lists before the renewal. Leaver seats in booking, payroll, email, and access tools are common because studio admin changes happen faster than subscription reviews.</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">2. Remove leaver and ghost seats</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Compare active staff, contractors, casual instructors, and admin accounts against paid seats in booking, payroll/rostering, email/SMS, access-control, Canva, and community tools. Flag unused licences from departed coaches, seasonal casuals, and temporary campaign accounts.</p>
               </div>
               <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">3. Separate permanent tools from campaign tools</p>
-                <p className="mt-3 text-sm leading-7 text-dark-300">Challenge apps, virtual-class tools, design tools, and promotion-specific automations often survive after the campaign ends. Mark each as permanent, project-only, or cancel-before-next-bill.</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">3. Separate campaign tools from permanent tools</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">Challenge apps, virtual-class platforms, design tools, AI/admin tool trials, and promotion-specific email upgrades survive after the campaign ends. Mark each as permanent, project-only, or cancel-before-next-bill, and assign a renewal owner so it does not auto-renew silently.</p>
               </div>
           </div>
           <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">What the StackSmart output should prove</p>
-            <p className="mt-3 text-sm leading-7 text-dark-200">The June 2026 audit answer is simple: keep the member platform you rely on, remove add-ons nobody uses, downgrade over-sized tiers, consolidate marketing overlap, renegotiate annual contracts against current membership, and assign a renewal owner.</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">Owner-led proof: what StackSmart needs from you</p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">A billing export or card statement — no member database credentials, booking-platform admin access, or door-access system logins. The audit stays on the billing layer: it finds duplicate charges, platform add-ons, converted trials, unused instructor licences, AI/tool overlap, connector fees, and ownerless renewals hiding in the studio stack, then returns a keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list.</p>
           </div>
         </div>
       </section>
