@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Psychology Practice Software Subscription Audit | StackSmart",
       description:
         "Audit software subscriptions for psychology and counselling practices — booking, telehealth, reminders, billing, payroll, and marketing tools without accessing clinical records.",
-      dateModified: "2026-06-05",
+      dateModified: "2026-06-10",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -337,41 +337,61 @@ export default function PsychologyPracticeSoftwareSubscriptionAuditPage() {
       </section>
 
 
-      {/* 2026 proof refresh */}
+      {/* GEO scannable: What this audit checks / What StackSmart needs / What you get back */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">June 2026 owner-led audit</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">How the billing-export audit works for psychology practices</h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">What this audit checks</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Every recurring charge around the PMS: online booking, reminders, SMS, telehealth, intake forms, payment gateways, AI scribes, transcription, secure messaging, review tools, M365/Google Workspace, and per-clinician/contractor seats.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">What StackSmart needs</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">A billing export from Xero, MYOB, QuickBooks, or business card statements covering 6 to 12 months. No client records, session notes, intake forms, or regulated health data. The audit reads vendor names, amounts, and billing dates only.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">What you get back</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">A categorised action list: keep tools doing real work, cancel duplicates, downgrade inflated telehealth tiers, consolidate overlapping booking/reminder tools, renegotiate before renewal, and assign a renewal owner for every annual charge.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">What to do before a renewal</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Run the export review 60 to 90 days before PMS, telehealth, or payroll contracts renew. Compare clinician and contractor seat counts against current headcount and prepare usage data for vendor renegotiation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Owner/admin cleanup */}
+      <section className="border-b border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Owner/admin cleanup</p>
-          <h2 className="mt-3 text-2xl font-semibold text-white">Contractor clinician seat cleanup for psychology practices</h2>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Contractor clinician seat cleanup and PMS add-on review</h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-            Psychology practices often grow with a mix of employees, contractors, rooms, telehealth, forms, transcription, and practice-management tools. The biggest practical win is contractor clinician seat cleanup: removing or right-sizing accounts after clinicians change days, leave, or only need temporary access.
+            Psychology practices grow with a mix of employees, contractors, rooms, telehealth, forms, transcription, AI tools, and practice-management add-ons. The biggest practical wins in a June 2026 billing review are contractor clinician seat cleanup, duplicate booking/reminder consolidation, and converted-trial subscriptions that never got reviewed after the trial period ended.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
-              <h3 className="text-sm font-semibold text-white">Clinician and contractor access pass</h3>
-              <p className="mt-3 text-sm leading-7 text-dark-300">Compare paid practice-management, telehealth, form, M365/Google Workspace, and AI/transcription seats against active clinicians, contractor days, admin staff, and leavers. Keep access needed for records; remove paid seats that are no longer operational.</p>
+              <h3 className="text-sm font-semibold text-white">Clinician and contractor seats</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Compare paid PMS, telehealth, forms, AI scribe, M365/Google Workspace, and transcription seats against active clinicians, contractor days, admin staff, and leavers. Converted trial seats and accounts for clinicians who reduced days are consistent findings.</p>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
-              <h3 className="text-sm font-semibold text-white">Telehealth, forms, and transcription overlap</h3>
-              <p className="mt-3 text-sm leading-7 text-dark-300">Check whether telehealth, intake forms, reminders, notes, and transcription are already included in the practice-management platform. If a separate tool duplicates an included module, mark it for cut, downgrade, or consolidation.</p>
+              <h3 className="text-sm font-semibold text-white">Telehealth, forms, and AI overlap</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Check whether telehealth, intake forms, reminders, notes, transcription, and AI scribes are already included in the PMS. If a separate tool duplicates an included module, or multiple clinicians each hold their own AI-tool subscription, mark it for consolidation or right-sizing.</p>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
               <h3 className="text-sm font-semibold text-white">Privacy-aware billing review</h3>
-              <p className="mt-3 text-sm leading-7 text-dark-300">Use billing exports and subscription names for the audit; do not upload patient notes or clinical records. StackSmart’s useful role here is cost and ownership cleanup, not clinical governance or legal compliance advice.</p>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Use billing exports and subscription vendor names for the audit; do not upload client notes, session records, or intake forms. StackSmart handles cost and ownership cleanup from billing data only, not clinical governance or legal compliance.</p>
             </div>
           </div>
-          <div className="mt-8 rounded-2xl border border-brand-400/20 bg-dark-950/70 p-6">
-            <h3 className="text-base font-semibold text-white">What StackSmart returns</h3>
-            <p className="mt-3 text-sm leading-7 text-dark-300">
-              StackSmart turns the billing export into a practical owner/operator action list: keep the tools that are still doing real work, cut unused seats, right-size tiers, consolidate overlapping workflows, and renegotiate renewals before the card is charged again. It is deliberately lighter than an enterprise procurement platform and designed for a busy SMB owner, practice manager, operator, or bookkeeper.
-            </p>
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-              <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "psychology_practice_software_subscription_audit_proof_refresh" }} className="btn-primary text-sm">
-                See the audit tool
-              </TrackLink>
-              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "psychology_practice_software_subscription_audit_proof_refresh" }} className="btn-secondary text-sm">
-                Use the checklist
-              </TrackLink>
-            </div>
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "psychology_practice_software_subscription_audit_proof_refresh" }} className="btn-primary text-sm">
+              See the audit tool
+            </TrackLink>
+            <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "psychology_practice_software_subscription_audit_proof_refresh" }} className="btn-secondary text-sm">
+              Use the checklist
+            </TrackLink>
           </div>
         </div>
       </section>
@@ -475,20 +495,20 @@ export default function PsychologyPracticeSoftwareSubscriptionAuditPage() {
       </section>
 
       <OwnerLedProofRefresh
-        title="2026 psychology practice waste signals owners can act on without touching client records"
-        summary="This refresh focuses on owner-led psychology and counselling practices with a handful of clinicians, contractor movement, quiet annual renewals, and admin tools bought during busy growth periods. StackSmart turns a Xero, MYOB, card, or bank export into a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list."
+        title="June 2026 psychology practice waste signals owners can act on without touching client records"
+        summary="Psychology practice management software carries meaningful Australian search demand. StackSmart captures that demand by auditing the paid subscription layer around the PMS — not by replacing it. Contractor seat cleanup, duplicate booking/reminder tools, converted-trial charges, AI-tool overlap across clinicians, and ownerless annual renewals are the patterns that surface most often from billing exports."
         proofItems={[
-          { label: "Contractor clinician seats", finding: "Telehealth, AI scribe, forms, M365/Google Workspace, and practice-management seats stay paid after a contractor reduces days or leaves the practice.", action: "Assign owner + right-size" },
-          { label: "Booking/reminder overlap", finding: "A standalone booking, SMS, recall, or review tool remains active after the PMS already includes the workflow at the current tier.", action: "Consolidate" },
-          { label: "Annual/prepaid lock-in", finding: "Clinical admin tools renew annually with no usage review, so the owner only notices the cost after the card charge lands.", action: "Renegotiate before renewal" },
+          { label: "Contractor clinician seats", finding: "Telehealth, AI scribe, forms, M365/Google Workspace, and PMS seats stay paid after a contractor reduces days, leaves the practice, or converted from a trial without review.", action: "Assign owner + right-size" },
+          { label: "Booking/reminder/AI overlap", finding: "A standalone booking, SMS, recall, review, or AI-note tool remains active after the PMS already includes the workflow at the current tier, or multiple clinicians hold separate AI subscriptions.", action: "Consolidate" },
+          { label: "Ownerless annual renewals", finding: "Clinical admin tools renew annually with no usage review and no named owner, so the practice only notices the cost after the card charge lands.", action: "Assign renewal owner + renegotiate" },
         ]}
         boundaries={[
-          "Use billing exports, card statements, Xero/MYOB supplier lines, and admin seat counts only.",
+          "Use billing exports, card statements, Xero/MYOB/QuickBooks supplier lines, and admin seat counts only.",
           "Do not upload client files, session notes, intake forms, Medicare details, or regulated health data.",
           "Treat clinical continuity as protected: downgrade or remove software only after confirming records and appointments remain accessible.",
           "Give the practice owner or admin manager a renewal-owner list so quiet software charges stop drifting.",
         ]}
-        location="psychology_practice_20260605"
+        location="psychology_practice_20260610"
       />
 
       {/* Lead capture */}

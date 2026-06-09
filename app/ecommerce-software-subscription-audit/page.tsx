@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Ecommerce Software Subscription Audit | StackSmart",
       description:
         "Audit your ecommerce software subscriptions for duplicate apps, unused integrations, and tools that grew with a store that has since scaled back.",
-      dateModified: "2026-06-05",
+      dateModified: "2026-06-10",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -428,20 +428,20 @@ export default function EcommerceSoftwareSubscriptionAuditPage() {
       </section>
 
       <OwnerLedProofRefresh
-        title="2026 ecommerce app-stack cleanup for owner-led stores"
-        summary="Ecommerce stores have measured demand around Shopify apps and inventory tools, but the practical owner-led wedge is waste in the paid layer: app marketplace charges, duplicate email/review/returns tools, connector fees, inventory add-ons, agency-installed trials, and seasonal tools that never got turned off."
+        title="2026-06-10 ecommerce app-stack cleanup for owner-led stores"
+        summary="Ecommerce software demand is measurable in Australia (ecommerce software 90 monthly searches; inventory management software small business 320). The practical owner-led wedge is waste in the paid layer: Shopify/WooCommerce app marketplace charges, duplicate email/review/returns/helpdesk tools, marketplace and shipping connectors, inventory add-ons, AI/content subscriptions, agency-installed trials, seasonal tools, and annual app renewals that never got an owner."
         proofItems={[
-          { label: "App marketplace sprawl", finding: "Shopify/WooCommerce apps installed for a campaign, promo, bundle, review flow, or upsell keep billing after the store stops using the feature.", action: "Cancel or assign owner" },
-          { label: "Inventory and fulfilment overlap", finding: "Inventory, shipping, returns, marketplace-sync, and analytics subscriptions overlap with tools now included in the core commerce platform or 3PL workflow.", action: "Consolidate" },
-          { label: "HubSpot/Zapier-style overages", finding: "Marketing contacts, automation tasks, connector fees, and production workflow usage can jump before the owner sees the cost in monthly billing.", action: "Downgrade or renegotiate" },
+          { label: "App marketplace sprawl", finding: "Shopify/WooCommerce apps installed for a campaign, promo, bundle, review flow, upsell, or AI/content workflow keep billing after the store stops using the feature.", action: "Cancel or assign owner" },
+          { label: "Inventory and fulfilment overlap", finding: "Inventory, shipping, returns, marketplace-sync, helpdesk, loyalty, and analytics subscriptions overlap with tools now included in the core commerce platform or 3PL workflow.", action: "Consolidate" },
+          { label: "Connector and usage overages", finding: "Marketing contacts, SMS sends, automation tasks, connector fees, shipping labels, AI credits, and workflow usage can jump before the owner sees the cost in monthly billing.", action: "Downgrade or renegotiate" },
         ]}
         boundaries={[
           "Use billing exports, app billing lines, card statements, and account-owner lists only.",
           "Do not upload customer orders, payment data, support conversations, or fulfilment files.",
           "Separate revenue-critical apps from campaign leftovers before cutting anything.",
-          "Give every app, connector, and marketplace charge a renewal owner before peak season.",
+          "Give every app, connector, AI/content tool, and marketplace charge a renewal owner before peak season or annual app billing renews.",
         ]}
-        location="ecommerce_audit_20260605"
+        location="ecommerce_audit_20260610"
       />
 
       {/* Lead capture */}

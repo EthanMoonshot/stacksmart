@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Optometry Practice Software Subscription Audit | StackSmart",
       description:
         "Optometry practices carry appointment booking, recalls, POS and inventory, frame and lens ordering portals, marketing, reviews, accounting, and payroll subscriptions. A software audit finds what to cut, consolidate, and renegotiate — using billing exports only.",
-      dateModified: "2026-06-05",
+      dateModified: "2026-06-10",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -331,41 +331,61 @@ export default function OptometryPracticeSoftwareSubscriptionAuditPage() {
       </section>
 
 
-      {/* 2026 proof refresh */}
+      {/* GEO scannable: What this audit checks / What StackSmart needs / What you get back */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">June 2026 owner-led audit</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">How the billing-export audit works for optometry practices</h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">What this audit checks</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Every recurring charge spanning clinical and retail: PMS, POS, optical inventory, online booking, recalls, SMS packs, frame and lens ordering portals, payment terminals, review and marketing tools, M365/Google Workspace, and staff/locum/dispenser seats.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">What StackSmart needs</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">A billing export from Xero, MYOB, or business card statements covering 6 to 12 months. No patient records, prescriptions, clinical notes, or health fund data. The audit reads vendor names, amounts, and billing dates only.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">What you get back</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">A categorised action list: keep tools tied to daily patient and retail workflows, cancel duplicates, downgrade oversized tiers, consolidate recall/SMS overlap, renegotiate contracts, and assign a renewal owner for every annual charge.</p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
+              <h3 className="text-sm font-semibold text-white">What to do before a renewal</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Run the export review 60 to 90 days before PMS, POS, or payroll contracts renew. Compare staff seats against current headcount, check ordering portal usage, and prepare data for vendor renegotiation on annual charges.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Owner/admin cleanup */}
+      <section className="border-b border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Owner/admin cleanup</p>
-          <h2 className="mt-3 text-2xl font-semibold text-white">Recall-system renewal owner checks for optometry practices</h2>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Recall-system renewal owners and POS/inventory add-on review</h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-            Optometry practices often combine PMS/clinical systems, recall reminders, online booking, payments, ecommerce, stock/inventory, marketing, email, and M365/Google Workspace. A recall-system renewal owner makes sure reminder, SMS, and marketing tools are reviewed before they auto-renew.
+            Optometry practices combine PMS/clinical systems, recall reminders, online booking, payments, POS, optical inventory, ordering portals, marketing, and M365/Google Workspace. A June 2026 billing-export review assigns recall-system renewal owners, catches POS/inventory duplication after PMS plan upgrades, and flags converted-trial subscriptions and ordering aggregators with low utilisation.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
               <h3 className="text-sm font-semibold text-white">Recall and reminder renewal owner</h3>
-              <p className="mt-3 text-sm leading-7 text-dark-300">Assign a recall-system renewal owner for SMS, email, booking, patient reminder, and marketing automation tools. Review usage, send volume, and duplicate reminder modules before annual renewal rather than after the card is charged.</p>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Assign a recall-system renewal owner for SMS, email, booking, patient reminder, and marketing automation tools. Review usage, send volume, and duplicate reminder modules before annual renewal rather than after the card is charged. Converted-trial SMS packs are a consistent finding.</p>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
-              <h3 className="text-sm font-semibold text-white">Retail, ecommerce, and inventory add-ons</h3>
-              <p className="mt-3 text-sm leading-7 text-dark-300">Separate clinical/PMS costs from retail inventory, ecommerce, payment, and stock-management add-ons. Keep tools tied to active sales workflows; downgrade modules bought for a short campaign or supplier change.</p>
+              <h3 className="text-sm font-semibold text-white">POS, inventory, and ordering add-ons</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Separate clinical/PMS costs from retail POS, inventory, ecommerce, payment terminal, and ordering portal add-ons. Keep tools tied to active daily sales workflows; downgrade or cancel modules bought for a short campaign, supplier change, or ordering aggregator with low utilisation versus free supplier-direct portals.</p>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
-              <h3 className="text-sm font-semibold text-white">Staff, locum, and admin seat cleanup</h3>
-              <p className="mt-3 text-sm leading-7 text-dark-300">Compare paid accounts across PMS, M365/Google Workspace, Canva, email, booking, forms, and reporting tools against optometrists, dispensers, locums, admin, and leavers. Remove project-only or departed-user seats after handoff.</p>
+              <h3 className="text-sm font-semibold text-white">Staff, locum, and dispenser seats</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">Compare paid accounts across PMS, POS, M365/Google Workspace, Canva, email, booking, forms, and reporting tools against optometrists, dispensers, locums, admin, and leavers. Remove project-only, departed-user, or converted-trial seats after handoff.</p>
             </div>
           </div>
-          <div className="mt-8 rounded-2xl border border-brand-400/20 bg-dark-950/70 p-6">
-            <h3 className="text-base font-semibold text-white">What StackSmart returns</h3>
-            <p className="mt-3 text-sm leading-7 text-dark-300">
-              StackSmart turns the billing export into a practical owner/operator action list: keep the tools that are still doing real work, cut unused seats, right-size tiers, consolidate overlapping workflows, and renegotiate renewals before the card is charged again. It is deliberately lighter than an enterprise procurement platform and designed for a busy SMB owner, practice manager, operator, or bookkeeper.
-            </p>
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-              <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "optometry_practice_software_subscription_audit_proof_refresh" }} className="btn-primary text-sm">
-                See the audit tool
-              </TrackLink>
-              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "optometry_practice_software_subscription_audit_proof_refresh" }} className="btn-secondary text-sm">
-                Use the checklist
-              </TrackLink>
-            </div>
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "optometry_practice_software_subscription_audit_proof_refresh" }} className="btn-primary text-sm">
+              See the audit tool
+            </TrackLink>
+            <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "optometry_practice_software_subscription_audit_proof_refresh" }} className="btn-secondary text-sm">
+              Use the checklist
+            </TrackLink>
           </div>
         </div>
       </section>
@@ -469,12 +489,12 @@ export default function OptometryPracticeSoftwareSubscriptionAuditPage() {
       </section>
 
       <OwnerLedProofRefresh
-        title="2026 optometry software cleanup for owners running clinical and retail systems together"
-        summary="Optometry practices often pay for both health-practice tools and retail optical tools. The 2026 refresh sharpens the audit around booking, recalls, POS, inventory, supplier portals, staff seats, and quiet annual renewals so a practice owner can reduce spend without interrupting patient care or frame/lens ordering."
+        title="June 2026 optometry software cleanup for owners running clinical and retail systems together"
+        summary="Optometry practices pay for both health-practice and retail optical tools. The June 2026 refresh targets booking, recalls, SMS packs, POS, inventory, ordering portals, payment terminals, staff/locum seats, converted-trial subscriptions, and ownerless annual renewals so a practice owner can reduce spend without interrupting patient care or frame/lens ordering."
         proofItems={[
-          { label: "Recall and SMS duplication", finding: "A paid recall, SMS, or review platform overlaps with recall workflows already bundled into the PMS or optical POS tier.", action: "Consolidate" },
-          { label: "POS/inventory module drift", finding: "A standalone inventory or optical POS subscription continues after the core practice platform adds comparable functionality.", action: "Audit overlap" },
-          { label: "Supplier and ordering portals", finding: "Paid ordering aggregators, marketplace add-ons, or rarely-used supplier portals create subscription drag beside free supplier-direct access.", action: "Keep or cancel with owner sign-off" },
+          { label: "Recall, SMS, and booking duplication", finding: "A paid recall, SMS pack, booking, or review platform overlaps with recall and booking workflows already bundled into the PMS or optical POS tier. Converted-trial SMS packs are a consistent finding.", action: "Consolidate" },
+          { label: "POS/inventory module drift", finding: "A standalone inventory or optical POS subscription continues billing after the core practice platform adds comparable functionality at the current tier, or after a plan upgrade that was never reviewed.", action: "Audit overlap" },
+          { label: "Ordering portals and ownerless renewals", finding: "Paid ordering aggregators with low utilisation versus free supplier-direct access, plus annual PMS, POS, payroll, and marketing charges that renew without a named owner checking seat count or tier.", action: "Assign renewal owner + renegotiate" },
         ]}
         boundaries={[
           "Use billing exports, accounting supplier lines, card statements, and paid-seat lists only.",
@@ -482,7 +502,7 @@ export default function OptometryPracticeSoftwareSubscriptionAuditPage() {
           "Separate patient-care continuity from software cost action: recalls, orders, and appointment history must remain safe before cancellation.",
           "Assign renewal owners for PMS, POS, recall, payroll, marketing, and supplier portal subscriptions.",
         ]}
-        location="optometry_practice_20260605"
+        location="optometry_practice_20260610"
       />
 
       {/* Lead capture */}
