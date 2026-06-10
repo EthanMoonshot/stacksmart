@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedRefreshSection from "@/components/landing/OwnerLedRefreshSection";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,7 +24,7 @@ const jsonLd = {
       name: "Shopify App Stack Audit | StackSmart",
       description:
         "Audit your Shopify app stack for duplicate and unused apps across reviews, loyalty, email and SMS, upsell, returns, shipping, inventory, analytics, and helpdesk.",
-      dateModified: "2026-06-01",
+      dateModified: "2026-06-11",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -135,6 +136,34 @@ const wasteCategories = [
     issue:
       "Gorgias and Zendesk both active — Gorgias adopted for its Shopify integration but Zendesk left billing after the full migration was delayed. Both routing tickets from the same customer support queue.",
     action: "Complete migration",
+    color: "text-brand-400",
+  },
+  {
+    category: "SMS marketing",
+    issue:
+      "Postscript, Attentive, and Klaviyo SMS all active — Klaviyo added SMS to its email platform, but the standalone SMS tool was never cancelled. Both sending to the same subscriber list with separate per-message billing and overlapping automation triggers.",
+    action: "Consolidate",
+    color: "text-red-400",
+  },
+  {
+    category: "Shipping and fulfilment",
+    issue:
+      "ShipStation, Shippit, and a Shopify-native shipping integration all running. The store migrated fulfilment providers but left the legacy shipping app billing at its previous tier. Label generation and tracking notifications are split across platforms.",
+    action: "Cut legacy",
+    color: "text-amber-400",
+  },
+  {
+    category: "Inventory and warehouse management",
+    issue:
+      "Stocky, Cin7, or TradeGecko (now QuickBooks Commerce) subscribed at a previous SKU tier alongside Shopify native inventory. Stores that grew and then simplified their fulfilment rarely downgrade or cancel the standalone inventory tool.",
+    action: "Right-size or cut",
+    color: "text-orange-400",
+  },
+  {
+    category: "AI content and personalisation tools",
+    issue:
+      "AI product description generators, personalisation engines, and AI-powered search apps installed during 2023–2024 at trial or team tiers. Active use concentrated in the initial setup phase — the tools now bill monthly while the store owner assumes they are running but rarely checks output quality or ROI.",
+    action: "Review and cut",
     color: "text-brand-400",
   },
 ];
@@ -368,7 +397,7 @@ export default function ShopifyAppStackAuditPage() {
             For small ecommerce operators, app waste is rarely one huge platform mistake. It is review apps, loyalty tools, page builders, inventory helpers, SMS/email tiers, attribution dashboards, and seasonal campaign tools quietly billing through Shopify and card statements after the owner has moved on.
           </p>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-dark-300">
-            DataForSEO showed 1,600 monthly Australian searches for “Shopify apps”, so this refresh answers the commercial question behind that search: which installed apps still deserve to stay, which campaign or agency leftovers can go, and which renewals need an owner before the next card charge.
+            DataForSEO showed 1,600 monthly Australian searches for "Shopify apps", so this refresh answers the commercial question behind that search: which installed apps still deserve to stay, which campaign or agency leftovers can go, and which renewals need an owner before the next card charge.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
@@ -388,10 +417,10 @@ export default function ShopifyAppStackAuditPage() {
       {/* 2026 measured demand action map */}
       <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
-          <h2 className="mt-3 text-2xl font-semibold text-white">Shopify app audit action map</h2>
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-11 proof refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Shopify app audit action map — updated for June 2026 demand data</h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-            This 2026 proof refresh turns broad Shopify app-search demand into a specific owner-led ecommerce workflow: reconcile every app charge, assign a current owner, and make a keep/cut/right-size decision before the next monthly or annual renewal.
+            This refresh turns measured Shopify marketplace demand (1,600 searches for &ldquo;Shopify apps&rdquo;, 170 for &ldquo;Shopify inventory management software&rdquo;, 320 for &ldquo;small business inventory software&rdquo;) into a specific owner-led ecommerce workflow: reconcile every app charge across Shopify billing and card statements, assign a current owner, and make a keep/cut/right-size decision before the next monthly or annual renewal.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
@@ -449,21 +478,61 @@ export default function ShopifyAppStackAuditPage() {
       </section>
 
 
-      {/* 2026 proof refresh */}
+      {/* 2026-06-11 card-statement pass for Shopify store owners */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/15 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Store owner quick-start — card-statement and Shopify billing pass</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
+              What a Shopify store owner can check in 30 minutes from billing data
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Before running a full billing export audit, a 30-minute pass across your Shopify billing page and business card statement gives you a clear view of app charges and the most obvious waste. Shopify app charges split across two billing paths — apps billed through Shopify and standalone SaaS billed directly to your card — so both sources matter.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                ["1. Review and loyalty apps", "Count how many review/UGC and loyalty/referral apps are on the Shopify billing page. If you have more than one in either category, flag it. Stores that rebranded or changed themes frequently carry legacy review apps from the previous design."],
+                ["2. Email and SMS platform tiers", "Check the contact count and send tier on Klaviyo, Omnisend, or Mailchimp against your actual active subscriber list. If the tier is 30 percent or more above your list size, flag it for a downgrade before the next billing cycle."],
+                ["3. Campaign and seasonal apps", "Scan the installed apps list for anything added more than 90 days ago that was not part of the core store operations. Holiday campaign apps, one-time upsell tests, and pop-up tools installed for a promotion are the most common orphans."],
+                ["4. Shipping and fulfilment overlap", "Check if a standalone shipping app (ShipStation, Shippit, EasyShip) is running alongside Shopify Shipping or a 3PL integration that handles its own labels. If yes, identify which one the team actually uses for daily orders."],
+                ["5. Inventory tools vs Shopify native", "If a standalone inventory management app (Stocky, Cin7, TradeGecko) appears on the bill, check whether Shopify native inventory tracking now covers the store&apos;s needs. Stores that simplified their fulfilment setup rarely cancel the legacy inventory tool."],
+                ["6. AI and analytics apps", "List every AI content, personalisation, search, and analytics app. For each, ask: did we check the output or open the dashboard in the last 30 days? If not, it is an uninstall candidate before the next billing cycle."],
+              ].map(([step, detail]) => (
+                <div key={step} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
+                  <h3 className="text-sm font-semibold text-white">{step}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-7 text-dark-300">
+              If the 30-minute pass surfaces three or more flags — which is typical for a store with 15 or more installed apps — a full billing export audit will almost always surface additional recoverable spend. StackSmart automates the full categorisation and surfaces the patterns most common in Shopify app stacks. See also: <a href="/ecommerce-software-subscription-audit" className="text-brand-400 hover:text-brand-300 transition-colors">ecommerce software subscription audit</a> and <a href="/software-subscription-audit-checklist" className="text-brand-400 hover:text-brand-300 transition-colors">software subscription audit checklist</a>.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "shopify_card_statement_pass" }} className="btn-primary text-sm">Run the full audit</TrackLink>
+              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "shopify_card_statement_pass" }} className="btn-secondary text-sm">View audit checklist</TrackLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026-06-11 measured proof refresh */}
       <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-300">2026-06-01 proof refresh</p>
-            <h2 className="mt-3 text-2xl font-semibold text-white">Direct answer: audit the Shopify app bill before replacing your store stack</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-300">2026-06-11 proof refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Shopify apps at 1,600 monthly searches — the audit question is which installed apps still earn their billing</h2>
             <p className="mt-4 text-sm leading-7 text-dark-300">
-              DataForSEO shows 1,600 monthly Australian searches for “Shopify apps”. For an owner-led ecommerce store, the highest-intent question is rarely “which app should we add next?” It is “which installed apps still earn their place this month?” StackSmart reviews Shopify billing, card statements, and off-platform SaaS invoices to find duplicate review tools, idle email/SMS tiers, campaign apps that became permanent, and annual renewals without an owner.
+              Today&apos;s DataForSEO AU live check confirms &ldquo;Shopify apps&rdquo; at 1,600 monthly searches (competition index 12, CPC $1.51) — the highest-volume term in the ecommerce cluster. Related terms confirm commercial intent behind inventory and fulfilment tooling: &ldquo;Shopify inventory management software&rdquo; at 170 searches (competition 21, CPC $39.94, high bid $54.86) and &ldquo;small business inventory software&rdquo; at 320 searches (competition 18, CPC $42.60, high bid $50.24). The CPC spread tells the story: generic Shopify app browsing is cheap, but inventory and fulfilment decisions carry high commercial value because they affect recurring operational cost.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              For an owner-led ecommerce store with 5 to 50 staff, StackSmart turns that search intent into a billing-export audit: match every app charge — Shopify billing plus card-statement SaaS — to a current campaign, order workflow, or fulfilment process. Apps without a current owner or active workflow match become uninstall, downgrade, or consolidation candidates. The output is a keep, cancel, downgrade, consolidate, renegotiate, or assign-owner action list the store operator can work through before the next monthly billing cycle.
             </p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
-              ["90-day usage proof", "Flag apps with no campaign, order, fulfilment, support, or reporting owner in the last quarter before the next card charge."],
-              ["Keep/cancel map", "Separate must-keep store operations from downgrade, consolidate, renegotiate, and cancel candidates."],
-              ["Billing-data only", "Use Shopify billing exports, bank/card statements, and vendor invoices — no customer records or Shopify admin login required."],
+              ["App-marketplace plus card-statement split", "Review Shopify billing, app-store charges, and external SaaS paid by card. App subscriptions outside the Shopify invoice — email platforms, analytics tools, helpdesk, inventory management — are the charges most commonly missed in a Shopify-only billing review."],
+              ["Inventory and fulfilment right-sizing", "Check whether standalone inventory management apps are still needed alongside Shopify native inventory. Stores that simplified fulfilment or moved to a 3PL rarely cancel the legacy inventory tool. At $42.60 CPC for &ldquo;small business inventory software&rdquo;, the market confirms these decisions carry real cost."],
+              ["AI app and converted-trial cleanup", "Flag AI product-description generators, personalisation engines, and AI search tools installed during 2023&ndash;2024. Most were adopted at trial or growth tiers and left billing after the initial setup phase. The owner-use check: did anyone open the dashboard or review the output in the last 30 days?"],
             ].map(([title, body]) => (
               <div key={title} className="rounded-3xl border border-dark-800 bg-dark-900/70 p-5">
                 <h3 className="text-sm font-semibold text-white">{title}</h3>
@@ -475,7 +544,8 @@ export default function ShopifyAppStackAuditPage() {
             {[
               ["Review/UGC and loyalty", "Pick one system of record; cancel legacy trial or rebrand leftovers."],
               ["Email, SMS, and support", "Right-size tiers against active contacts, ticket volume, and campaigns actually running."],
-              ["Analytics, attribution, and AI", "Keep proof tools tied to current decisions; cut dashboards nobody opens."],
+              ["Inventory and shipping", "Confirm standalone tools are still needed alongside Shopify native features and 3PL integrations."],
+              ["Analytics, attribution, and AI", "Keep proof tools tied to current decisions; uninstall dashboards nobody opens and AI apps with no active output review."],
             ].map(([area, action]) => (
               <div key={area} className="grid gap-2 border-b border-dark-800/70 p-4 last:border-b-0 sm:grid-cols-[220px_1fr]">
                 <p className="text-sm font-semibold text-white">{area}</p>
@@ -487,6 +557,8 @@ export default function ShopifyAppStackAuditPage() {
       </section>
 
       {/* Lead capture */}
+      <OwnerLedRefreshSection type="shopify" />
+
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture

@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Bookkeeping Firm Software Stack Audit | StackSmart",
       description:
         "Bookkeeping firms using Xero, QBO, or MYOB ecosystems accumulate receipt capture, payroll, proposal, workflow, e-sign, AI transcription, connector fees, and client portal add-ons with significant overlap.",
-      dateModified: "2026-06-07",
+      dateModified: "2026-06-11",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -749,12 +749,12 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
       {/* 2026-05-30 measured owner-led SMB refresh */}
       <section className="border-y border-dark-800/80 py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh · measured AU demand</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-11 proof refresh · measured AU demand</p>
           <div className="mt-4 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
               <h2 className="text-2xl font-semibold text-white">Bookkeeping firms need a billing-layer audit, not another practice platform.</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                Today’s AU keyword check showed strong commercial demand around bookkeeping software in Australia. For an owner-led bookkeeping firm with 5-50 staff, the practical opportunity is usually not replacing Xero, QBO, MYOB, or the practice system. It is finding the firm-owned add-ons, client-pass-through subscriptions, connector fees, AI seats, and renewal owners that nobody has reviewed since the last growth phase.
+                June 2026 AU keyword data shows &ldquo;bookkeeping software Australia&rdquo; at 880 monthly searches (CPC $36.09, high bid $51.55) — strong commercial demand where the conversion wedge is not platform selection but subscription ownership. For an owner-led bookkeeping firm with 5 to 50 staff, the practical opportunity is finding the firm-owned add-ons, client-pass-through subscriptions, connector fees, AI seats, duplicate charges, and renewal owners that nobody has reviewed since the last growth phase or seasonal staffing cycle.
               </p>
               <p className="mt-4 text-sm leading-7 text-dark-300">
                 StackSmart starts from firm billing exports, card statements, marketplace invoices, and subscription receipts only. It does not review client ledgers or client financial records. The output is a principal-friendly action list: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner before the next monthly or annual charge hits.
@@ -784,19 +784,23 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
       </section>
 
 
+      {/* 2026-06-11 measured refresh */}
       <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-02 measured refresh</p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">Bookkeeping software demand has volume — the conversion wedge is unused add-ons and renewal leakage</h2>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-11 measured refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">Bookkeeping software Australia holds at 880 monthly searches — the conversion gap is add-on ownership, not platform choice</h2>
             <p className="mt-4 text-sm leading-7 text-dark-300">
-              Live AU checks show “bookkeeping software Australia” at 880 monthly searches and high CPC. For owner-led bookkeeping firms, StackSmart should not look like another bookkeeping app shortlist. It should help the owner reconcile Xero/QBO/MYOB add-ons, receipt capture, workflow tools, AI assistants, client portals, proposal tools, e-sign, document storage, and forgotten annual renewals against actual staff and client workflow use.
+              Today&apos;s DataForSEO AU live check confirms &ldquo;bookkeeping software Australia&rdquo; at 880 monthly searches with a competition index of 46 and a high-bid CPC of $51.55 — the strongest measured commercial term in the accounting/bookkeeping cluster. For owner-led bookkeeping firms with 5 to 50 staff, the practical question is not which bookkeeping platform to switch to. It is which Xero, QBO, or MYOB add-ons are still earning their place this month — and who owns the renewal decision for each one.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              The billing-export pass starts from firm card statements, marketplace invoices, and direct debits. It separates firm-owned subscriptions from client-pass-through billing, then flags the patterns that compound across every quarter without a structured review: duplicate receipt capture tools where Dext and Hubdoc both run alongside a native platform feature, connector fees for integrations that were replaced by native sync, AI workspace seats purchased during the 2023&ndash;2024 adoption wave and never right-sized, converted trials on proposal and workflow tools, ghost users from seasonal contractors and departed bookkeepers, and ownerless annual renewals on practice management and reporting platforms.
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {[
-                ["Firm vs client billing", "Separate firm-owned subscriptions from client-pass-through apps before making cancellation decisions."],
-                ["Connected-app cleanup", "Flag duplicate receipt capture, workflow, reporting, proposal, e-sign, and AI tools now overlapping with the core accounting stack."],
-                ["Notice-window pass", "Build a 30/60/90-day renewal list so accidental renewals do not become another year of margin drag."],
+                ["Firm vs client billing split", "Separate firm-owned subscriptions from client-pass-through billing before cancellation decisions. The most common error is a client-engagement tool that migrated to firm cost after the client left — nobody noticed because it was never tagged."],
+                ["Duplicate-charge and connector cleanup", "Flag receipt capture, workflow, reporting, proposal, e-sign, and AI tools overlapping with the core platform. Map every connector fee to the two tools it joins — connectors for consolidated tools are immediate cuts."],
+                ["Renewal-owner and notice-window pass", "Build a 30/60/90-day renewal list with a named owner for each contract. Ownerless renewals auto-process at the previous tier and headcount — the window to renegotiate or cancel closes before anyone reviews the charge."],
               ].map(([title, detail]) => (
                 <div key={title} className="rounded-xl border border-dark-700/80 bg-dark-950/70 p-4">
                   <h3 className="text-sm font-semibold text-white">{title}</h3>
@@ -805,8 +809,8 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
               ))}
             </div>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "bookkeeping_2026_06_02", target: "checklist" }} className="btn-secondary text-sm">Use the checklist</TrackLink>
-              <TrackLink href="/saas-renewal-management" event="homepage_cta_clicked" props={{ from: "bookkeeping_2026_06_02", target: "renewal_management" }} className="btn-primary text-sm">Track renewal risk</TrackLink>
+              <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "bookkeeping_2026_06_11", target: "checklist" }} className="btn-secondary text-sm">Use the checklist</TrackLink>
+              <TrackLink href="/saas-renewal-management" event="homepage_cta_clicked" props={{ from: "bookkeeping_2026_06_11", target: "renewal_management" }} className="btn-primary text-sm">Track renewal risk</TrackLink>
             </div>
           </div>
         </div>

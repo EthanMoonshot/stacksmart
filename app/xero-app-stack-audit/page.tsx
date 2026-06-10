@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Xero App Stack Audit | StackSmart",
       description:
         "Audit your Xero app stack for duplicate add-ons, unused seats, surprise annual renewals, and tier creep across payroll, receipt capture, reporting, practice management, and client portal tools.",
-      dateModified: "2026-06-07",
+      dateModified: "2026-06-11",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -493,7 +493,7 @@ export default function XeroAppStackAuditPage() {
             Xero app stack waste usually hides in small recurring marketplace charges, connected-app permissions, and annual renewals nobody owns. StackSmart keeps the review billing-led: no ledger access, no client data, just the subscriptions and decisions an owner can act on.
           </p>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-dark-300">
-            The measured demand is practical rather than theoretical: DataForSEO showed 260 monthly Australian searches for “Xero apps” and 110 for “Xero app marketplace”. StackSmart now frames that marketplace demand as a finance-truth audit: match every add-on to a current owner, client, workflow, renewal date, and recovery path.
+            The measured demand is practical rather than theoretical: DataForSEO showed 260 monthly Australian searches for "Xero apps" and 110 for "Xero app marketplace". StackSmart now frames that marketplace demand as a finance-truth audit: match every add-on to a current owner, client, workflow, renewal date, and recovery path.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
@@ -513,10 +513,10 @@ export default function XeroAppStackAuditPage() {
       {/* 2026 measured demand action map */}
       <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
-          <h2 className="mt-3 text-2xl font-semibold text-white">Xero app audit action map</h2>
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-11 proof refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Xero app audit action map — updated for June 2026 demand data</h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-            This 2026 proof refresh turns Xero marketplace demand into a practical owner/principal workflow: separate firm-owned from client pass-through costs, identify duplicate add-ons, and assign every renewal to a named person.
+            This refresh turns measured Xero marketplace demand (260 searches for &ldquo;Xero apps&rdquo;, 210 for &ldquo;Xero add ons&rdquo;, high-bid CPCs above $200) into a practical owner/principal workflow: separate firm-owned from client pass-through costs, identify duplicate add-ons and connector fees, surface converted trials and ghost users, and assign every renewal to a named person with authority to keep, cancel, or renegotiate.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
@@ -596,7 +596,7 @@ export default function XeroAppStackAuditPage() {
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Renewal calendar</p>
               <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white">Stop annual add-ons renewing by default</h3>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                The hidden cost in Xero app stacks is ownerless renewal. Add-ons are often installed by a staff member during a client deadline, then the first annual renewal arrives after that person has changed role or left. StackSmart flags renewal dates and missing app owners so the question becomes “who decides before this renews?” rather than “why did this charge appear?”
+                The hidden cost in Xero app stacks is ownerless renewal. Add-ons are often installed by a staff member during a client deadline, then the first annual renewal arrives after that person has changed role or left. StackSmart flags renewal dates and missing app owners so the question becomes "who decides before this renews?" rather than "why did this charge appear?"
               </p>
             </div>
           </div>
@@ -604,22 +604,22 @@ export default function XeroAppStackAuditPage() {
       </section>
 
 
-      {/* 2026 proof refresh */}
+      {/* 2026-06-11 proof refresh */}
       <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-300">2026-06-01 proof refresh</p>
-            <h2 className="mt-3 text-2xl font-semibold text-white">Direct answer: a Xero app audit should separate firm cost from client pass-through</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-300">2026-06-11 proof refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Xero apps at 260 searches and Xero add-ons at 210 — the audit question is which installed add-ons still earn their billing</h2>
             <p className="mt-4 text-sm leading-7 text-dark-300">
-              DataForSEO shows 260 monthly Australian searches for “Xero apps”. StackSmart uses that demand as a practical audit moment for small accounting and bookkeeping firms: list each Xero Marketplace add-on, practice tool, AI seat, proposal app, e-signature account, reporting dashboard, and document tool, then decide whether it is firm-owned, client-recovered, duplicated, underused, or due for renewal.
+              Today&apos;s DataForSEO AU live check shows &ldquo;Xero apps&rdquo; at 260 monthly searches (competition index 35, high bid $242.09) and &ldquo;Xero add ons&rdquo; at 210 monthly searches (competition index 37, high bid $217.33). The high-bid CPCs confirm strong commercial intent behind both terms — advertisers pay over $200 per click because Xero add-on decisions directly affect recurring revenue. StackSmart uses that demand as a practical audit moment: list each Xero Marketplace add-on, practice tool, AI seat, proposal app, e-signature account, reporting dashboard, connector fee, and document tool, then decide whether it is firm-owned, client-recovered, duplicated, underused, or due for renewal with no named owner.
             </p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-4">
             {[
-              ["Firm-owned", "Practice tools paid by the firm and used by staff."],
-              ["Client pass-through", "Subscriptions recovered from a client and excluded from savings math."],
-              ["Ownerless", "Apps created for a past client or staff member that now bill silently."],
-              ["Renewal-risk", "Annual tools needing a named owner before the notice window closes."],
+              ["Firm-owned", "Practice tools paid by the firm and used by staff — the audit target."],
+              ["Client pass-through", "Subscriptions recovered from a client, excluded from savings math."],
+              ["Ownerless", "Apps created for a past client or staff member that bill silently with no current decision-maker."],
+              ["Renewal-risk", "Annual tools needing a named owner before the 60-day notice window closes."],
             ].map(([title, body]) => (
               <div key={title} className="rounded-3xl border border-dark-800 bg-dark-900/70 p-5">
                 <h3 className="text-sm font-semibold text-white">{title}</h3>
@@ -630,7 +630,7 @@ export default function XeroAppStackAuditPage() {
           <div className="mt-8 rounded-3xl border border-primary-400/20 bg-primary-500/10 p-5">
             <p className="text-sm font-semibold text-white">Privacy boundary</p>
             <p className="mt-2 text-sm leading-7 text-dark-200">
-              The audit works from the firm’s billing exports and card statements. It does not require Xero ledger access, BAS/tax data, client files, payroll records, or regulated financial records.
+              The audit works from the firm&apos;s billing exports, card statements, and marketplace invoices. It does not require Xero ledger access, BAS/tax data, client files, payroll records, or regulated financial records.
             </p>
           </div>
         </div>

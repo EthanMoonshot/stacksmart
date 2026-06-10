@@ -86,6 +86,23 @@ const refreshes = {
     ],
     links: [["Real estate agency audit", "/real-estate-agency-software-audit"], ["Professional services audit", "/professional-services-software-audit"], ["Renewal management", "/saas-renewal-management"]],
   },
+  shopify: {
+    eyebrow: "2026 owner-led Shopify store refresh",
+    title: "Audit the app stack before adding another Shopify app",
+    answer:
+      "A Shopify app stack audit starts from Shopify billing history and card statements — not customer data or store admin access. StackSmart helps an owner-operator find duplicate review and loyalty apps, email/SMS tiers above actual list size, campaign apps that became permanent charges, shipping and inventory tools superseded by Shopify native features, AI apps with no active output review, and annual renewals without a named owner.",
+    proof: [
+      "Pull both Shopify billing and card-statement charges so off-platform SaaS is not missed.",
+      "Run the owner-use check: every app needs one person who used it in the last 30 days.",
+      "Right-size email/SMS tiers to actual contacts and check inventory tools against Shopify native.",
+    ],
+    checklist: ["Export Shopify billing history", "Export business card recurring charges", "Group every app by store function", "Flag duplicates, campaign leftovers, and tier mismatches"],
+    faq: [
+      ["Can a Shopify store owner audit apps without customer data?", "Yes. The audit uses Shopify billing exports, card statements, and vendor invoices only. Customer records, order data, and store admin access are not required for the billing-layer review."],
+      ["Where does app waste show up most in Shopify stores?", "The most common waste is duplicate review/loyalty apps, email platforms at over-committed contact tiers, campaign and seasonal apps left installed, shipping tools superseded by Shopify Shipping or 3PL integrations, and AI content tools adopted during 2023-2024 that nobody checks."],
+    ],
+    links: [["Ecommerce audit", "/ecommerce-software-subscription-audit"], ["Retail store audit", "/retail-store-software-subscription-audit"], ["Audit checklist", "/software-subscription-audit-checklist"]],
+  },
 } as const;
 
 type RefreshKey = keyof typeof refreshes;

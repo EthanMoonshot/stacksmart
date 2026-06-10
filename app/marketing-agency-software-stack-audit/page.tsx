@@ -21,7 +21,7 @@ const jsonLd = {
       "@id": absoluteUrl("/marketing-agency-software-stack-audit"),
       url: absoluteUrl("/marketing-agency-software-stack-audit"),
       name: "Marketing Agency Software Stack Audit | StackSmart",
-      dateModified: "2026-06-08",
+      dateModified: "2026-06-11",
       description:
         "Owner-led marketing, creative, and web agencies accumulate SEO tools, AI subscriptions, design platforms, social scheduling apps, and reporting tools with significant overlap. A software audit finds what to cut, consolidate, and renegotiate.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -777,7 +777,7 @@ export default function MarketingAgencySoftwareStackAuditPage() {
                 Marketing and creative agencies rarely have enterprise procurement. They have owners, ops managers, and account leads buying tools to unblock projects: design seats, social schedulers, project boards, reporting dashboards, AI content tools, proposal and e-sign platforms, SEO tools, client portals, and temporary contractor access that becomes permanent billing.
               </p>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                StackSmart’s agency audit starts from billing exports and card statements, then separates agency-owned subscriptions from client-pass-through charges. The output is an owner/operator action list for duplicate accounts, converted trials, project-only tools, leaver seats, AI workspace drift, and renewal owners — not a procurement-policy document.
+                StackSmart's agency audit starts from billing exports and card statements, then separates agency-owned subscriptions from client-pass-through charges. The output is an owner/operator action list for duplicate accounts, converted trials, project-only tools, leaver seats, AI workspace drift, and renewal owners — not a procurement-policy document.
               </p>
             </div>
             <div className="rounded-3xl border border-dark-700 bg-dark-900/70 p-6">
@@ -833,35 +833,35 @@ export default function MarketingAgencySoftwareStackAuditPage() {
         </div>
       </section>
 
-      {/* 2026-06-08 owner-led agency billing-export audit workflow */}
+      {/* 2026-06-11 owner-led agency margin-leakage audit */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-08 conversion refresh · billing-export workflow for agency owners</p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">How to run the agency software audit from a billing export in one sitting</h2>
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-11 conversion refresh · shared logins, client residue, and margin leakage</p>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">The agency margin leak is not one big platform — it is 15 small subscriptions nobody consolidated</h2>
           <p className="mt-4 text-sm leading-7 text-dark-300">
-            Most agency founders ask: where do I actually start? The answer is a single billing export covering the last 6 to 12 months. You do not need to log into every tool, survey the team, or install anything. The billing data already contains every recurring charge — the audit is about matching each charge to a current owner, workflow, and decision.
+            Today&apos;s DataForSEO AU live check shows &ldquo;marketing agency software&rdquo; at 10 monthly searches with a competition index of 22 and a high-bid CPC of $40.97. The search volume is small, but the commercial fit is strong: every search represents an owner-led agency actively looking for tooling answers. The waste pattern in agency stacks is not one large procurement mistake — it is a compounding layer of duplicate project tools, SEO/reporting/design/social/AI subscriptions accumulated across client engagements and hires, shared-login tools where one person set up the workspace and three others created their own accounts, converted trials that became annual commitments, and client-project residue that keeps billing after delivery.
           </p>
           <div className="mt-8 space-y-4">
             {[
               {
-                step: "1. Export card and accounting data",
-                detail: "Pull a CSV from Xero, MYOB, or QBO covering at least 12 months. Add any charges on personal cards, PayPal, or Stripe. Agency owners typically discover 20 to 40 percent more subscriptions than they expected once all payment sources are consolidated into one list.",
+                step: "1. Consolidate all payment sources",
+                detail: "Pull a CSV from Xero, MYOB, or QBO covering at least 12 months. Add charges on personal cards, PayPal, and Stripe. Agencies typically discover 20 to 40 percent more subscriptions than expected once all payment sources are consolidated. Flag any tool where multiple team members have separate individual accounts billing independently — Canva Pro, Notion, Midjourney, and meeting transcription tools are the most common duplicates.",
               },
               {
-                step: "2. Match every tool to a current owner and workflow",
-                detail: "For each line item ask: who on the team uses this at least twice a week? If nobody, it is immediately flagged. Common agency orphans: client-project SEO tools, old proposal platforms, AI seats from departed contractors, social scheduling for offboarded accounts, duplicate Canva/Notion/ClickUp/Asana accounts on individual plans.",
+                step: "2. Run the shared-login and duplicate-account pass",
+                detail: "For SEO platforms, AI workspaces, design tools, and social scheduling accounts: check whether the team is using one shared login or multiple individual accounts. Shared logins mask the true user count and create admin-access risk when someone leaves. Multiple individual accounts create billing duplication. Both are audit findings — one is a security and ownership issue, the other is a cost issue. Consolidate to a named team account with named admin access.",
               },
               {
-                step: "3. Flag duplicates, unused seats, and ownerless renewals",
-                detail: "Group by category — SEO, social, design, AI/transcription, project management, reporting, proposals/e-sign, analytics, CRM — and highlight where two tools do the same job, where seat counts exceed active users, and where annual contracts renew within 90 days without a named decision-maker.",
+                step: "3. Flag client-project residue and converted trials",
+                detail: "Every offboarded client leaves behind social scheduling accounts, SEO platform access, reporting dashboards, and project boards. Every pitch or evaluation period generates trial conversions. Match every subscription to a current client, active campaign, or internal workflow. Anything without a current match is a cancellation candidate. Client-project residue is the pattern unique to agencies — the billing equivalent of a client folder that was never archived.",
               },
               {
                 step: "4. Assign keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner",
-                detail: "Every flagged subscription gets one action. Cancellations need no vendor conversation. Consolidations (e.g. three individual Canva Pro plans to one team account) save 30 to 50 percent immediately. Renegotiation targets are annual SEO, design suite, and AI contracts approaching renewal — current seat usage and headcount data are your leverage.",
+                detail: "Every flagged subscription gets one action. Cancellations need no vendor conversation. Consolidations (e.g. three individual Canva Pro plans to one team account) save 30 to 50 percent immediately. Renegotiation targets are annual SEO, design suite, and AI contracts approaching renewal — current seat usage and headcount data are leverage. For AI workspaces specifically: right-size seat counts to people who used the tool in the last 30 days, not the original team-wide purchase tier.",
               },
               {
-                step: "5. Build a renewal calendar and set a quarterly check",
-                detail: "List every annual renewal date alongside the assigned owner. Set a 60-day pre-renewal reminder so the keep/cancel/right-size decision happens before the auto-renewal window closes. A 30-minute quarterly pass catches converted trials, new freelancer seats, and client-project residue between annual reviews.",
+                step: "5. Build a renewal calendar and quarterly margin check",
+                detail: "List every annual renewal date alongside a named owner. Set a 60-day pre-renewal reminder so the keep/cancel/right-size decision happens before auto-renewal. A 30-minute quarterly pass catches new converted trials, freelancer seats that outlived engagements, and client-project tools that migrated from delivery to permanent overhead. The quarterly check is the single most effective margin-protection habit an agency owner can adopt.",
               },
             ].map((item) => (
               <div key={item.step} className="rounded-xl border border-dark-700 bg-dark-900/70 p-5">
@@ -874,19 +874,19 @@ export default function MarketingAgencySoftwareStackAuditPage() {
             <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6">
               <h3 className="text-base font-semibold text-white">What makes agency stacks different</h3>
               <p className="mt-3 text-sm leading-7 text-dark-300">
-                Client-project residue is the pattern unique to agencies: every offboarded client leaves behind social scheduling accounts, SEO platform access, reporting dashboards, and project boards that keep billing. Combined with freelancer/contractor seats that outlive engagements and duplicate design-tool accounts on individual plans, an agency with 10 to 25 staff typically carries $6,000 to $18,000 in annual recoverable spend — most of it in SEO platforms, AI subscriptions, and duplicate creative tool accounts.
+                Client-project residue is the pattern unique to agencies: every offboarded client leaves behind social scheduling accounts, SEO platform access, reporting dashboards, and project boards that keep billing. Combined with shared-login tools where admin access belongs to a departed freelancer, converted trials from pitch evaluations, and duplicate design-tool accounts on individual plans, an agency with 10 to 25 staff typically carries $6,000 to $18,000 in annual recoverable spend — concentrated in SEO platforms, AI subscriptions, and duplicate creative tool accounts.
               </p>
             </div>
             <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6">
               <h3 className="text-base font-semibold text-white">The output the agency owner needs</h3>
               <p className="mt-3 text-sm leading-7 text-dark-300">
-                A one-page action board: production-critical tools marked as keep, finished-project subscriptions marked cancel, inactive seats right-sized, duplicate reporting/design/AI tools consolidated, core platforms flagged for renegotiation, and a renewal calendar with named owners. The agency owner reviews, the ops lead or account manager executes. No procurement platform required.
+                A one-page action board: production-critical tools marked as keep, finished-project subscriptions marked cancel, inactive seats right-sized, shared-login tools consolidated to named team accounts, duplicate reporting/design/AI tools consolidated, core platforms flagged for renegotiation, and a renewal calendar with named owners. The agency owner reviews, the ops lead or account manager executes. No procurement platform required.
               </p>
             </div>
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <TrackLink href="/demo" event="homepage_cta_clicked" props={{ from: "marketing_agency_2026_06_08", target: "demo" }} className="btn-primary text-sm">See sample agency report</TrackLink>
-            <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "marketing_agency_2026_06_08", target: "checklist" }} className="btn-secondary text-sm">Use the audit checklist</TrackLink>
+            <TrackLink href="/demo" event="homepage_cta_clicked" props={{ from: "marketing_agency_2026_06_11", target: "demo" }} className="btn-primary text-sm">See sample agency report</TrackLink>
+            <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "marketing_agency_2026_06_11", target: "checklist" }} className="btn-secondary text-sm">Use the audit checklist</TrackLink>
           </div>
         </div>
       </section>

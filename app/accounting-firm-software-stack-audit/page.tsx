@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Accounting Firm Software Stack Audit | StackSmart",
       description:
         "Small accounting and bookkeeping firms carry practice management, tax, payroll, proposal, document, e-sign, CRM, AI assistant, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
-      dateModified: "2026-06-07",
+      dateModified: "2026-06-11",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -256,12 +256,12 @@ export default function AccountingFirmSoftwareStackAuditPage() {
       <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-amber-400/20 bg-dark-900/80 p-6 sm:p-8">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">2026 proof refresh</p>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">2026-06-11 proof refresh</p>
             <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
-              Accounting practice software has measurable demand; the small-firm gap is subscription ownership
+              Accounting practice software demand holds steady — the small-firm gap is still subscription ownership, not platform selection
             </h2>
             <p className="mt-4 text-sm leading-7 text-dark-300">
-              Today’s AU keyword check showed accounting practice software as the strongest measured vertical term in this batch. StackSmart is not replacing Xero Practice Manager, Karbon, Ignition, MYOB, CCH, FYI Docs, or payroll systems. It audits the subscription layer around them for owner-led practices: proposal/e-sign overlap, document tools duplicated by the practice platform, AI and meeting-recorder seats with light use, seasonal staff licences left active after tax season, and renewal dates owned by a former admin. The output is a partner-ready action list: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner before the next annual contract rolls over.
+              June 2026 AU keyword data confirms accounting practice software at 390 monthly searches with a competition index of 5 — high commercial intent, low competition. StackSmart is not replacing Xero Practice Manager, Karbon, Ignition, MYOB, CCH, FYI Docs, or payroll systems. It audits the subscription layer around them for owner-led practices with 5 to 50 staff: proposal/e-sign overlap, document tools duplicated by the practice platform, AI and meeting-recorder seats with light use, seasonal staff licences left active after tax season, duplicate charges across marketplace and card billing, converted trials that became annual commitments, and renewal dates owned by a former admin or departed practice manager. The output is a partner-ready action list: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner before the next annual contract rolls over.
             </p>
           </div>
         </div>
@@ -719,7 +719,7 @@ export default function AccountingFirmSoftwareStackAuditPage() {
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Inventory before opinions</p>
               <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Build the overlap map before asking partners what to cut</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                The most useful first artifact for a 5–50 staff accounting practice is a simple software inventory spreadsheet. StackSmart turns billing exports into that map: every recurring charge, the function it serves, the payment source, a named owner, current user count, and the next renewal date. That makes the conversation practical: not “do we like this app?”, but “which app can we cancel, right-size, or move to the platform we already pay for?”
+                The most useful first artifact for a 5–50 staff accounting practice is a simple software inventory spreadsheet. StackSmart turns billing exports into that map: every recurring charge, the function it serves, the payment source, a named owner, current user count, and the next renewal date. That makes the conversation practical: not "do we like this app?", but "which app can we cancel, right-size, or move to the platform we already pay for?"
               </p>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
@@ -743,19 +743,23 @@ export default function AccountingFirmSoftwareStackAuditPage() {
       </section>
 
 
+      {/* 2026-06-11 measured refresh — accounting as largest named recovery lane */}
       <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-amber-400/20 bg-dark-900/80 p-6 sm:p-8">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">2026-06-02 measured refresh</p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">Accounting-practice software demand is high — but small firms need billing truth before new tools</h2>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">2026-06-11 measured refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white">Accounting and bookkeeping remain the largest named recovery lane — principals need a billing-export pass, not another practice platform</h2>
             <p className="mt-4 text-sm leading-7 text-dark-300">
-              DataForSEO AU checks show accounting practice software at 390 monthly searches with low measured competition. The StackSmart angle is deliberately narrower than practice-management replacement: help a principal or practice manager see which Xero/MYOB add-ons, proposal tools, e-sign tools, AI seats, document systems, reporting apps, and client-portal subscriptions are still worth paying for.
+              Today&apos;s DataForSEO AU live check confirms steady commercial demand: &ldquo;accounting practice software&rdquo; holds at 390 monthly searches with a competition index of just 5 and a high-bid CPC of $37.11 — low competition, high commercial intent. &ldquo;Software audit&rdquo; sits at 110 searches with a $38.42 CPC, and &ldquo;software subscriptions&rdquo; at 70 with a $50.53 CPC. These numbers confirm the gap StackSmart addresses: principals and practice managers searching for software solutions are commercially valuable, but the tools they find are replacement platforms — not subscription-layer audits that start from a billing export and card statement.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              For a 5-to-50-staff accounting practice, the practical first step is never &ldquo;which new practice management tool should we buy?&rdquo; It is &ldquo;what are we actually paying for across Xero add-ons, tax tools, proposal platforms, e-sign, document management, AI assistant seats, reporting dashboards, and marketing subscriptions — and who owns each renewal?&rdquo; The billing-export pass surfaces duplicate charges, converted trials, ghost users from departed seasonal staff, ownerless annual renewals, and AI workspace seats purchased at full team tier with two active users. The output is a partner-ready action list: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner.
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               {[
-                ["Client-work boundary", "Review firm-owned billing, seats, invoices, card statements, and marketplace receipts — not client ledgers, tax files, payroll records, or working papers."],
-                ["Renewal owner", "Assign every annual tax, proposal, document, AI, reporting, and practice workflow renewal to a named partner, admin lead, or practice manager."],
-                ["Action output", "Mark each item keep, cancel, downgrade, consolidate, renegotiate, or assign-owner so the firm has a decision list, not another inventory spreadsheet."],
+                ["Client-ledger boundary", "StackSmart reviews firm-owned billing exports, card statements, marketplace receipts, and subscription invoices. It does not access client ledgers, tax files, payroll records, BAS data, or working papers."],
+                ["Ghost-user and converted-trial pass", "Pull the user list from every per-seat platform after tax season or EOFY. Compare against current permanent staff. Flag seasonal-hire seats, contractor access, and AI tool trials that converted to paid plans without a deliberate adoption decision."],
+                ["Renewal-owner assignment", "Every annual contract — practice management, tax, proposal, document, AI, reporting — gets a named owner with authority to keep, cancel, or renegotiate before the auto-renewal window closes. Ownerless renewals are the single highest-risk pattern in accounting firm billing exports."],
               ].map(([title, detail]) => (
                 <div key={title} className="rounded-xl border border-dark-700/80 bg-dark-950/70 p-4">
                   <h3 className="text-sm font-semibold text-white">{title}</h3>
@@ -764,8 +768,8 @@ export default function AccountingFirmSoftwareStackAuditPage() {
               ))}
             </div>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <TrackLink href="/xero-app-stack-audit" event="homepage_cta_clicked" props={{ from: "accounting_2026_06_02", target: "xero_app_stack" }} className="btn-secondary text-sm">Audit Xero app billing</TrackLink>
-              <TrackLink href="/bookkeeping-firm-software-stack-audit" event="homepage_cta_clicked" props={{ from: "accounting_2026_06_02", target: "bookkeeping" }} className="btn-primary text-sm">Bookkeeping-firm version</TrackLink>
+              <TrackLink href="/xero-app-stack-audit" event="homepage_cta_clicked" props={{ from: "accounting_2026_06_11", target: "xero_app_stack" }} className="btn-secondary text-sm">Audit Xero app billing</TrackLink>
+              <TrackLink href="/bookkeeping-firm-software-stack-audit" event="homepage_cta_clicked" props={{ from: "accounting_2026_06_11", target: "bookkeeping" }} className="btn-primary text-sm">Bookkeeping-firm version</TrackLink>
             </div>
           </div>
         </div>
