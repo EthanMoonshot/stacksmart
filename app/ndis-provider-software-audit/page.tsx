@@ -24,7 +24,7 @@ const jsonLd = {
       name: "NDIS Provider Software Audit | StackSmart",
       description:
         "NDIS and community care providers carry rostering, care management, payroll, compliance, billing, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
-      dateModified: "2026-06-07",
+      dateModified: "2026-06-12",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -213,7 +213,7 @@ export default function NdisProviderSoftwareAuditPage() {
               2026 proof refresh: measured AU demand for NDIS software is useful category intent, but StackSmart is not trying to replace the operating platform. It audits the subscription layer around that platform for an owner-led NDIS provider or community care operator: rostering add-ons, care-management modules, SMS/document packs, claims and plan-management connectors, compliance tools bought for an audit, duplicate payroll/admin systems, and coordinator or support-worker seats left active after handover. Start with Xero or MYOB exports, business-card statements, direct debits, and invoices for care-management, rostering, payroll, SMS, compliance, and claims tools. The output is a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list before notice windows or auto-renewals close.
             </p>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              DataForSEO showed 390 monthly Australian searches for “NDIS software” plus adjacent home/community-care demand. This page now turns that category research into the safer owner-led provider question: which roster, care, plan-management, claims, document, SMS, and compliance subscriptions are still needed, and which can be cut without touching participant records.
+              DataForSEO showed 390 monthly Australian searches for "NDIS software" plus adjacent home/community-care demand. This page now turns that category research into the safer owner-led provider question: which roster, care, plan-management, claims, document, SMS, and compliance subscriptions are still needed, and which can be cut without touching participant records.
             </p>
           </div>
         </div>
@@ -446,19 +446,19 @@ export default function NdisProviderSoftwareAuditPage() {
         </div>
       </section>
 
-      {/* 2026 measured demand action map */}
+      {/* 2026-06-12 NDIS action map */}
       <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
-          <h2 className="mt-3 text-2xl font-semibold text-white">NDIS software audit action map</h2>
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-12 action map</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">NDIS provider billing-layer audit</h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-            This 2026 proof refresh turns NDIS software demand into a billing-only audit for smaller providers: find unused seats, add-ons, modules, SMS packs, connectors, and renewal owners without touching participant records.
+            For an owner-led NDIS or community care provider, the billing-layer audit covers rostering, care management, claims and plan-support tools, document and forms workflows, SMS packs, compliance modules, payroll connectors, AI note and admin tools, and coordinator/support-worker seats. Start with Xero or MYOB exports, business-card statements, direct debits, and vendor invoices. The output is a practical action list — not a compliance review or platform replacement project.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
-              ["Billing source", "Start with accounting exports, card statements, direct debits, and vendor invoices so annual charges and off-platform subscriptions are visible."],
-              ["Owner/use check", "Attach each tool to a current owner, user group, workflow, and renewal date; anything ownerless becomes a review candidate."],
-              ["Action output", "Produce a keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decision list that a busy operator can work through this month."],
+              ["Card-statement + billing export", "Consolidate all recurring charges across card statements, accounting exports, direct debits, marketplace billing, and vendor invoices so annual charges and off-platform subscriptions surface in one view."],
+              ["Owner/use pass", "Attach each tool to a current owner, user group, active workflow, and renewal date. Anything ownerless or with no login in 90 days becomes a review candidate — especially after coordinator or support-worker turnover."],
+              ["Decision list output", "Keep, cancel, downgrade, consolidate, renegotiate, or assign-renewal-owner for every meaningful line item. Ranked by annual dollar impact so the busy provider operator starts with the highest-value actions."],
             ].map(([title, body]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
                 <h3 className="text-sm font-semibold text-white">{title}</h3>
@@ -467,10 +467,10 @@ export default function NdisProviderSoftwareAuditPage() {
             ))}
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "ndis_demand_map" }} className="btn-primary text-sm">
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "ndis_demand_map_0612" }} className="btn-primary text-sm">
               See the audit tool
             </TrackLink>
-            <TrackLink href="/community-care-software-subscription-audit" event="homepage_cta_clicked" props={{ target: "related_audit", location: "ndis_demand_map" }} className="btn-secondary text-sm">
+            <TrackLink href="/community-care-software-subscription-audit" event="homepage_cta_clicked" props={{ target: "related_audit", location: "ndis_demand_map_0612" }} className="btn-secondary text-sm">
               Compare the community care audit
             </TrackLink>
           </div>
@@ -514,21 +514,22 @@ export default function NdisProviderSoftwareAuditPage() {
       </section>
 
 
-      {/* 2026 proof refresh */}
+      {/* 2026-06-12 proof refresh */}
       <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-300">2026-06-01 proof refresh</p>
-            <h2 className="mt-3 text-2xl font-semibold text-white">Direct answer: NDIS providers can review software waste without touching participant records</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-300">2026-06-12 provider-safe billing audit</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Every subscription under the microscope — no participant data needed</h2>
             <p className="mt-4 text-sm leading-7 text-dark-300">
-              DataForSEO shows 390 monthly Australian searches for “NDIS software”. StackSmart turns that category intent into a practical owner/operator audit for small providers: review recurring charges for rostering, care management, claims, plan-management support tools, document workflows, SMS, telehealth, payroll connectors, AI note tools, and admin seats from billing exports only.
+              DataForSEO shows 390 monthly AU searches for NDIS software (competition 61, CPC $21.19). Most results serve platform buyers. The owner-led NDIS provider with 5 to 50 staff needs the cheaper first move: pull card statements and billing exports, find the ghost support-worker seats, duplicate rostering charges, auto-renewing compliance tools from the last audit, AI note subscriptions at full coordinator headcount, and ownerless plan-management renewals that nobody reviews before the direct debit processes.
             </p>
           </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[
-              ["Safe data scope", "Card statements, accounting exports, vendor invoices, and subscription lists — no participant plans, case notes, claims detail, or clinical records."],
-              ["Owner handoff", "Record who owns each renewal across operations, finance, support coordination, rostering, and admin."],
-              ["Action map", "Label each tool keep, cancel, downgrade, consolidate, renegotiate, or monitor before the next renewal."],
+              ["Provider-safe scope", "Card statements, accounting exports, vendor invoices, and direct-debit lists only. No participant plans, case notes, claims detail, support logs, or clinical records."],
+              ["Seat and role audit", "Compare active support workers, coordinators, contractors, and admin staff against rostering, care-management, Microsoft 365, Google Workspace, and e-sign seat counts. Departed staff and ended contractors are immediate removal candidates."],
+              ["AI and admin sprawl", "AI note tools, transcription, compliance dashboards, and ChatGPT or Claude subscriptions adopted during a team push often concentrate active use in one or two coordinators. Right-size before the next renewal."],
+              ["Renewal-owner handoff", "Every subscription needs a named renewal owner across operations, finance, support coordination, rostering, and admin. Ownerless renewals are the highest-risk category — assign one person before the auto-charge window closes."],
             ].map(([title, body]) => (
               <div key={title} className="rounded-3xl border border-dark-800 bg-dark-900/70 p-5">
                 <h3 className="text-sm font-semibold text-white">{title}</h3>

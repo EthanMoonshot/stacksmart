@@ -49,7 +49,7 @@ const jsonLd = {
       url: absoluteUrl("/property-management-software-subscription-audit"),
       name: "Property management software subscription audit | StackSmart",
       description: "Audit software subscriptions for property management and strata offices. Find hidden costs in platform add-ons, app marketplace installs, paid connectors, ownerless renewals, and duplicate inspection, maintenance, e-signature, CRM, and admin tools — from billing exports only.",
-      dateModified: "2026-06-07",
+      dateModified: "2026-06-12",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -245,7 +245,7 @@ export default function PropertyManagementSoftwareSubscriptionAuditPage() {
               2026 proof refresh: measured AU demand for property management software is useful category intent, but StackSmart is not trying to replace the operating platform. It audits the subscription layer around that platform for an owner-led rent roll, strata office, or property services team: platform add-ons, inspection and maintenance portals, SMS/e-sign/reporting modules, app-marketplace installs, API connector fees, duplicate CRM/email tools, and idle seats left after portfolio or staff changes. Start with Xero or MYOB exports, business-card statements, direct-debit lists, and any marketplace/add-on invoices from the core property platform. The output is a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list before notice windows or auto-renewals close.
             </p>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              DataForSEO showed 880 monthly Australian searches for “property management software” and 210 for “real estate CRM software”. This refresh uses that demand to capture owners who are comparing platforms but actually need the cheaper first move: reconcile the paid add-ons, portals, connectors, e-signature tools, SMS packs, CRM seats, and renewal owners around the system they already run.
+              DataForSEO showed 880 monthly Australian searches for "property management software" and 210 for "real estate CRM software". This refresh uses that demand to capture owners who are comparing platforms but actually need the cheaper first move: reconcile the paid add-ons, portals, connectors, e-signature tools, SMS packs, CRM seats, and renewal owners around the system they already run.
             </p>
           </div>
         </div>
@@ -396,19 +396,19 @@ export default function PropertyManagementSoftwareSubscriptionAuditPage() {
         </div>
       </section>
 
-      {/* 2026 measured demand action map */}
+      {/* 2026-06-12 property action map */}
       <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
-          <h2 className="mt-3 text-2xl font-semibold text-white">Property software audit action map</h2>
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-12 action map</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Property software billing-layer audit</h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-            This 2026 proof refresh turns property-management software demand into a safer first step for owner-led agencies and strata offices: audit the paid subscription layer around the core platform before considering a disruptive system switch.
+            For an owner-led rent roll, strata office, or property-services team, the billing-layer audit covers the core PM platform plus inspection apps, maintenance portals, e-signature accounts, SMS packs, CRM and listing tools, owner/tenant communication portals, reporting dashboards, AI and admin add-ons, and connector fees. Every tool under the microscope — from card-statement charges to marketplace installs that pass through billing without a second look.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
-              ["Billing source", "Start with accounting exports, card statements, direct debits, and vendor invoices so annual charges and off-platform subscriptions are visible."],
-              ["Owner/use check", "Attach each tool to a current owner, user group, workflow, and renewal date; anything ownerless becomes a review candidate."],
-              ["Action output", "Produce a keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decision list that a busy operator can work through this month."],
+              ["Card-statement + accounting export", "Consolidate all recurring charges — business cards, Xero or MYOB line items, direct debits, marketplace billing, and vendor invoices — so platform add-ons and off-platform subscriptions appear in one view."],
+              ["Owner/use pass", "Attach each tool to a current property manager, admin, or principal. Anything ownerless, any seat belonging to departed staff, and any tool with no login in 90 days becomes a review candidate."],
+              ["Decision list output", "Keep, cancel, downgrade, consolidate, renegotiate, or assign-renewal-owner for every line item. Ranked by annual dollar impact so the principal or office manager starts with the highest-value actions this month."],
             ].map(([title, body]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
                 <h3 className="text-sm font-semibold text-white">{title}</h3>
@@ -417,10 +417,10 @@ export default function PropertyManagementSoftwareSubscriptionAuditPage() {
             ))}
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "property_demand_map" }} className="btn-primary text-sm">
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "property_demand_map_0612" }} className="btn-primary text-sm">
               See the audit tool
             </TrackLink>
-            <TrackLink href="/real-estate-agency-software-audit" event="homepage_cta_clicked" props={{ target: "related_audit", location: "property_demand_map" }} className="btn-secondary text-sm">
+            <TrackLink href="/real-estate-agency-software-audit" event="homepage_cta_clicked" props={{ target: "related_audit", location: "property_demand_map_0612" }} className="btn-secondary text-sm">
               Compare the real estate agency audit
             </TrackLink>
           </div>
@@ -442,20 +442,22 @@ export default function PropertyManagementSoftwareSubscriptionAuditPage() {
       </section>
 
 
+      {/* 2026-06-12 proof refresh */}
       <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-300">2026-06-01 proof refresh</p>
-            <h2 className="mt-3 text-2xl font-semibold text-white">Direct answer: property teams should audit add-ons before changing the platform</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-300">2026-06-12 billing-layer audit</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">The cheaper first step: audit the add-ons before replacing the platform</h2>
             <p className="mt-4 text-sm leading-7 text-dark-300">
-              DataForSEO shows 880 monthly Australian searches for “property management software”. For a 5-50 staff rent roll, strata office, or property-services business, StackSmart’s first step is cheaper than a migration: reconcile the subscription layer around the core system — inspection tools, maintenance portals, SMS packs, e-signature, CRM seats, listing tools, reporting dashboards, AI/admin add-ons, and quiet annual renewals.
+              DataForSEO shows 880 monthly AU searches for property management software (competition 21, CPC $19.87) and 260 for real estate CRM software (CPC $78.83). Most of that search volume serves platform comparison. For a 5-50 staff rent roll, strata office, or property-services business, StackSmart offers the cheaper first move: pull the card statement and billing exports, then audit the subscription layer around the system you already run — inspection apps, maintenance portals, SMS packs, e-signature tools, CRM seats, listing syndication, owner/tenant communication portals, reporting dashboards, AI and admin add-ons, and quiet annual renewals with no named owner.
             </p>
           </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[
-              ["Portfolio-fit check", "Compare paid users and modules with current properties, offices, and active managers."],
-              ["Notice-window check", "Surface renewals where a missed 30- or 60-day cancellation date creates another full-year charge."],
-              ["Tenant-safe boundary", "Use billing exports and invoices only — no tenant records, trust data, lease documents, or owner ledgers."],
+              ["Portfolio-fit check", "Compare paid users, modules, and property counts with current portfolio size, office locations, and active property managers."],
+              ["Notice-window calendar", "Surface renewals where a missed 30- or 60-day cancellation notice creates another full-year charge. Assign a named renewal owner before the window closes."],
+              ["Platform add-on reconciliation", "Match SMS credit packs, e-sign top-ups, reporting modules, and API connector fees back to the core PM platform subscription so the true annual cost is visible in one view."],
+              ["Tenant-safe boundary", "Use billing exports, card statements, and vendor invoices only. No tenant records, trust-account data, lease documents, or owner ledgers needed."],
             ].map(([title, body]) => (
               <div key={title} className="rounded-3xl border border-dark-800 bg-dark-900/70 p-5">
                 <h3 className="text-sm font-semibold text-white">{title}</h3>

@@ -61,7 +61,7 @@ const jsonLd = {
       description:
         "See how StackSmart turns billing exports into clear cut, consolidate, and renegotiate actions for growing teams.",
       url: absoluteUrl("/saas-spend-audit-tool"),
-      dateModified: "2026-06-06",
+      dateModified: "2026-06-12",
     },
     {
       "@type": "BreadcrumbList",
@@ -186,24 +186,24 @@ export default function SaaSSpendAuditToolPage() {
       </section>
 
 
-      {/* 2026 proof refresh */}
+      {/* 2026-06-12 proof refresh */}
       <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
-              <h2 className="mt-3 text-2xl font-semibold text-white">Built for the 20-person team asking “which subscriptions can we actually cut?”</h2>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-12 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Every tool under the microscope for 10-500 person companies</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                The latest buyer-intent signal was a small startup/operator asking whether all-in-one and AI workspaces really reduce fragmented subscription spend. That is exactly the owner-led SMB use case StackSmart serves: before buying another platform, upload the billing export or card statement and get a decision list for the tools already charging you. Live AU keyword checks also show software audit (110), software subscription management (90), and SaaS spend management (10) demand, while Plausible has started recording sparse visits to related high-intent pages.
+                Recent buyer language from owner-led SMBs is practical: scattered client context across tools, AI-tool sprawl from shared GPT and Chrome logins, duplicate auto-renewing charges nobody reviews, and hidden admin overhead from ownerless renewals. StackSmart serves that moment: upload a billing export or card statement and get a decision list for the tools already charging you. No enterprise rollout, no SSO requirement, no multi-month implementation.
               </p>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
-              <h3 className="text-base font-semibold text-white">SaaS spend audit action map</h3>
+              <h3 className="text-base font-semibold text-white">Upload, review, decide, act</h3>
               <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
-                <li><span className="font-semibold text-white">1.</span> Upload a card statement, Xero/MYOB export, or software billing CSV — no employee surveillance or enterprise rollout required.</li>
-                <li><span className="font-semibold text-white">2.</span> Group charges by tool, category, owner, billing cadence, renewal date, and likely team/use case.</li>
-                <li><span className="font-semibold text-white">3.</span> Review duplicate tools, converted trials, inactive seats, AI workspace overlap, connector fees, annual renewals, and charges with no accountable owner.</li>
-                <li><span className="font-semibold text-white">4.</span> Get an action-ready savings plan: keep, cancel, downgrade, consolidate, renegotiate, and assign a renewal owner for every meaningful line item.</li>
+                <li><span className="font-semibold text-white">1.</span> Upload a card statement, Xero/MYOB/QuickBooks export, or software billing CSV — no bank access or employee surveillance required.</li>
+                <li><span className="font-semibold text-white">2.</span> Group charges by tool, category, owner, billing cadence, renewal date, and likely team or use case.</li>
+                <li><span className="font-semibold text-white">3.</span> Review duplicate tools, converted trials, ghost seats from departed staff, AI workspace overlap, connector fees, annual renewals, and charges with no accountable owner.</li>
+                <li><span className="font-semibold text-white">4.</span> Get an action-ready decision list: keep, cancel, downgrade, consolidate, renegotiate, and assign a renewal owner for every meaningful line item.</li>
               </ol>
             </div>
           </div>
@@ -420,14 +420,14 @@ export default function SaaSSpendAuditToolPage() {
                 findings: ["Rostering tool and payroll tool with overlapping scheduling features", "Communication platform alongside parent comms module in the management tool", "Enrolment tool still on a seat count from before last year's intake"],
               },
               {
-                vertical: "Hospitality & multi-site venues",
-                href: "/hospitality-group-software-audit",
-                findings: ["Per-site POS add-ons that duplicate across locations", "Separate reservations tools for each venue when one covers the group", "Rostering platform and payroll tool both charging for scheduling features"],
+                vertical: "NDIS & community care",
+                href: "/ndis-provider-software-audit",
+                findings: ["Ghost support-worker seats in rostering and care-management platforms after turnover", "Compliance tool still billing after the accreditation period ended", "Duplicate rostering and scheduling tools across coordinators"],
               },
               {
-                vertical: "Property services & real estate",
-                href: "/real-estate-agency-software-audit",
-                findings: ["CRM and portal platform both charging for e-signature or appraisal features", "Multiple inspection apps across a small team", "Marketing tool still on a full-agency tier for a principal-led office"],
+                vertical: "Property management & strata",
+                href: "/property-management-software-subscription-audit",
+                findings: ["Standalone inspection app retained after core platform added condition reports", "E-signature accounts from DocuSign and Annature both active for lease signing", "Platform add-ons (SMS packs, reporting modules) billing separately from core subscription"],
               },
             ].map((item) => (
               <div key={item.vertical} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
@@ -624,28 +624,28 @@ export default function SaaSSpendAuditToolPage() {
         </div>
       </section>
 
-      {/* 2026-06-06 owner-led SMB proof refresh */}
+      {/* 2026-06-12 owner-led SMB proof refresh */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-06 owner-led SMB proof refresh</p>
-              <h2 className="mt-3 text-2xl font-semibold text-white">A billing-export audit before another dashboard</h2>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-12 owner-led SMB proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">The practical first pass before buying enterprise SaaS management</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                The strongest current buying signal is not “we need enterprise SaaS management”. It is the owner or admin saying the software bills are scattered across card statements, QuickBooks/Xero, invoices, app stores, and direct debits. StackSmart is built for that moment: consolidate the billing evidence, find recurring waste, and produce actions the owner can hand to a bookkeeper, practice manager, or ops/admin lead.
+                DataForSEO shows 110 monthly AU searches for software asset management (CPC $10.62) and 10 for SaaS management software (competition 14). The enterprise platforms behind those terms require SSO rollouts, IT procurement teams, and multi-month implementations. For a 5-50 person business where every tool is under the microscope, the practical first move is simpler: pull the card statement and billing exports, find the duplicate auto-renewing charges, ghost seats from departed staff, AI-tool sprawl across shared GPT and Chrome logins, and ownerless renewals — then produce a decision list the owner can hand to a bookkeeper or admin.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <TrackLink href="/saas-subscription-management-software" event="homepage_cta_clicked" props={{ target: "subscription_management", location: "spend_audit_tool_2026_06_06" }} className="btn-secondary text-sm">Compare lightweight management</TrackLink>
-                <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ target: "pricing", location: "spend_audit_tool_2026_06_06" }} className="btn-primary text-sm">Start with a $49 Snapshot</TrackLink>
+                <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ target: "pricing", location: "spend_audit_tool_2026_06_12" }} className="btn-primary text-sm">Start with a $49 Snapshot</TrackLink>
+                <TrackLink href="/saas-subscription-management-software" event="homepage_cta_clicked" props={{ target: "subscription_management", location: "spend_audit_tool_2026_06_12" }} className="btn-secondary text-sm">Compare lightweight management</TrackLink>
               </div>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
               <h3 className="text-base font-semibold text-white">Best first-step data sources</h3>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
-                <li><span className="font-semibold text-white">Fastest:</span> 3-6 months of business card transactions to spot obvious monthly leakage.</li>
-                <li><span className="font-semibold text-white">Most complete:</span> 12 months of Xero, QuickBooks, MYOB, invoices, direct debits, and marketplace receipts.</li>
-                <li><span className="font-semibold text-white">Best proof:</span> seat/admin exports for AI, design, project, booking, CRM, reporting, and communication tools.</li>
-                <li><span className="font-semibold text-white">Do not include:</span> bank logins, clinical/client records, employee files, participant notes, or confidential project content.</li>
+                <li><span className="font-semibold text-white">Fastest:</span> 3-6 months of business card transactions to spot duplicate charges, converted trials, and obvious monthly leakage.</li>
+                <li><span className="font-semibold text-white">Most complete:</span> 12 months of Xero, QuickBooks, MYOB, invoices, direct debits, and marketplace receipts — catches annual charges and seasonal tools.</li>
+                <li><span className="font-semibold text-white">Best proof:</span> seat or admin exports for AI tools, design apps, project management, CRM, booking, and communication platforms — surfaces ghost seats immediately.</li>
+                <li><span className="font-semibold text-white">Keep out of scope:</span> bank logins, clinical/patient records, client files, participant notes, employee performance data, or confidential project content.</li>
               </ul>
             </div>
           </div>

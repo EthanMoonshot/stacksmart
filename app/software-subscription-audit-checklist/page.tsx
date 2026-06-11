@@ -73,7 +73,7 @@ const jsonLd = {
       description:
         "A practical checklist for reviewing recurring software spend — find overlaps, right-size seats, and decide what to cut, consolidate, or renegotiate.",
       url: "https://stacksmart.app/software-subscription-audit-checklist",
-      dateModified: "2026-06-06",
+      dateModified: "2026-06-12",
     },
     {
       "@type": "BreadcrumbList",
@@ -436,6 +436,8 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
               ["Marketing agency audit", "/marketing-agency-software-stack-audit"],
               ["Bookkeeping stack audit", "/bookkeeping-firm-software-stack-audit"],
               ["Allied health audit", "/allied-health-software-subscription-audit"],
+              ["NDIS provider audit", "/ndis-provider-software-audit"],
+              ["Property management audit", "/property-management-software-subscription-audit"],
               ["Clinic audit", "/clinic-software-subscription-audit"],
               ["SaaS spend audit tool", "/saas-spend-audit-tool"],
             ].map(([label, href]) => (
@@ -513,28 +515,29 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
         </div>
       </section>
 
-      {/* 2026-06-06 owner-led SMB proof refresh */}
+      {/* 2026-06-12 owner-led SMB proof refresh */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-06 owner-led SMB proof refresh</p>
-              <h2 className="mt-3 text-2xl font-semibold text-white">Use the checklist to avoid a line-by-line finance rabbit hole</h2>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-12 owner-led SMB proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Five steps that turn a card statement into a decision list</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                Recent owner/operator VOC is practical: “before I go line by line”, “recurring payments”, “subscription tracker”, and “CSV billing issue detection”. This checklist is now framed for the owner, office manager, bookkeeper, or practice manager who needs a clean action list without exposing sensitive operational records.
+                Owner/operator VOC is consistent: every tool under the microscope, scattered client context across apps, AI-tool sprawl from shared GPT and Chrome logins, duplicate auto-renewing charges nobody reviews, and hidden admin overhead from ownerless renewals. This checklist converts the card-statement scroll into an action-oriented workflow: billing export, owner/use pass, renewal-owner assignment, decision list, and handoff to a bookkeeper or admin.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <TrackLink href="/saas-subscription-management-software" event="homepage_cta_clicked" props={{ target: "subscription_management", location: "checklist_2026_06_06" }} className="btn-secondary text-sm">Compare management options</TrackLink>
-                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "checklist_2026_06_06" }} className="btn-primary text-sm">Automate the checklist</TrackLink>
+                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "checklist_2026_06_12" }} className="btn-primary text-sm">Automate the checklist</TrackLink>
+                <TrackLink href="/saas-subscription-management-software" event="homepage_cta_clicked" props={{ target: "subscription_management", location: "checklist_2026_06_12" }} className="btn-secondary text-sm">Compare management options</TrackLink>
               </div>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
-              <h3 className="text-base font-semibold text-white">Checklist outputs that matter commercially</h3>
+              <h3 className="text-base font-semibold text-white">The five action outputs</h3>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
-                <li><span className="font-semibold text-white">Recoverable spend:</span> charges to cancel, downgrade, consolidate, or renegotiate before the next renewal.</li>
-                <li><span className="font-semibold text-white">Owner-use proof:</span> one current person who would notice if the tool disappeared. No owner means review first.</li>
-                <li><span className="font-semibold text-white">Renewal control:</span> 30, 60, and 90-day windows with a named owner, not a forgotten calendar reminder.</li>
-                <li><span className="font-semibold text-white">Privacy boundary:</span> billing exports and seat/admin lists only — not client files, patient notes, staff records, or project data.</li>
+                <li><span className="font-semibold text-white">1. Card statement + billing export:</span> consolidate all recurring charges from cards, Xero/MYOB, direct debits, and marketplace billing into one view.</li>
+                <li><span className="font-semibold text-white">2. Owner/use pass:</span> every subscription needs a named current user who would notice if the tool disappeared. No owner means review before renewal.</li>
+                <li><span className="font-semibold text-white">3. Renewal-owner assignment:</span> 30, 60, and 90-day windows with a named decision-maker, not a forgotten calendar reminder. Ownerless renewals are the highest-risk category.</li>
+                <li><span className="font-semibold text-white">4. Decision list:</span> keep, cancel, downgrade, consolidate, renegotiate, or assign-owner for every meaningful line item — ranked by annual dollar impact.</li>
+                <li><span className="font-semibold text-white">5. Handoff record:</span> a formatted list the bookkeeper, practice manager, or ops admin can execute without understanding the audit methodology.</li>
               </ul>
             </div>
           </div>
