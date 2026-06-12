@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Hospitality Group Software Audit | StackSmart",
       description:
         "Small hospitality groups and multi-site venues carry POS, bookings, rostering, payroll, delivery, loyalty, accounting, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
-      dateModified: "2026-06-08",
+      dateModified: "2026-06-13",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -221,7 +221,7 @@ export default function HospitalityGroupSoftwareAuditPage() {
               Export 6 to 12 months of billing data from Xero, MYOB, or your business credit card — capturing charges across all venues, which are often billed to different payment methods. Group every recurring charge by category: POS, reservations, rostering, payroll, delivery integrations, loyalty, accounting, and marketing. Flag categories where you are paying per-site for tools that offer group pricing. Cross-reference staff accounts in rostering and payroll tools against your current active headcount and remove idle accounts from the last seasonal cycle. Check annual contract renewal dates on your POS, reservations, and rostering platforms — these are your highest-value renegotiation targets. Assign each subscription a decision and act on seat removals and cancellations first.
             </p>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              2026 proof refresh: today’s AU keyword check showed measured demand for restaurant management software and hospitality software, but StackSmart is not trying to replace the operating platform. It audits the subscription layer around that platform for an owner-led multi-site venue group, restaurant group, cafe group, or bar operator: POS and reservations add-ons, delivery/order integrations, rostering and payroll connectors, loyalty and review tools, Wi-Fi/guest analytics, SMS/email packs, music, signage, and per-site contracts renewed without group pricing review. Start with Xero or MYOB exports, business-card statements, venue-level direct debits, POS/reservation invoices, delivery-integration invoices, and marketing/review platform receipts. The output is a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list before notice windows or auto-renewals close.
+              2026 proof refresh: today’s DataForSEO AU live check showed restaurant management software at 70 monthly searches / $20.98 CPC / $19.33 high bid, hospitality software at 40 / $28.88 CPC / $37.56 high bid, POS software Australia at 210 / $30.24 CPC / $28.15 high bid, and POS system for small business at 210 / $50.98 CPC / $53.03 high bid. StackSmart is not trying to replace the operating platform. It audits the subscription layer around that platform for an owner-led 5-50 staff multi-site venue group, restaurant group, cafe group, or bar operator: POS and reservations add-ons, delivery/order integrations, rostering and payroll connectors, loyalty and review tools, Wi-Fi/guest analytics, SMS/email packs, music, signage, and per-site contracts renewed without group pricing review. Start with Xero or MYOB exports, business-card statements, venue-level direct debits, POS/reservation invoices, delivery-integration invoices, and marketing/review platform receipts. The output is a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list before notice windows or auto-renewals close.
             </p>
           </div>
         </div>

@@ -23,6 +23,7 @@ const jsonLd = {
       name: "Real Estate Agency Software Audit | StackSmart",
       description:
         "Audit your real estate agency software for duplicate CRM licences, unused portal seats, and subscriptions that accumulated across agents and offices.",
+      dateModified: "2026-06-13",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -71,7 +72,7 @@ const jsonLd = {
           name: "How do I audit real estate software subscriptions without disrupting active listings?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Start with billing data only — no need to touch active tools during a live campaign. Export 6 to 12 months of charges from your business card or accounting software, identify every recurring subscription by name, and cross-reference seat counts against your current active agent roster. Flag unused seats and duplicate category tools before taking any action. Plan cancellations and consolidations in quieter periods between settlement cycles.",
+            text: "Start with billing data only — no need to touch active tools during a live campaign. Export 6 to 12 months of charges from your business card or accounting software, identify every recurring subscription by name, and cross-reference seat counts against your current active agent roster. Flag unused seats and duplicate category tools before taking any action. Plan cancellations, downgrades, consolidations, and renegotiations in quieter periods between settlement cycles, with a named renewal owner for every portal, CRM, and data contract.",
           },
         },
         {
@@ -79,7 +80,7 @@ const jsonLd = {
           name: "Can StackSmart help real estate agencies find software savings?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. StackSmart is built for owner-led businesses with messy billing histories — including real estate agencies where costs span offices, individual agent expenses, and shared business subscriptions. Upload a CSV from Xero, your credit card, or your expense platform. The report categorises every subscription, flags duplicates and unused seats, and gives you clear keep, cut, consolidate, and renegotiate actions.",
+            text: "Yes. StackSmart is built for owner-led businesses with messy billing histories — including real estate agencies where costs span offices, individual agent expenses, and shared business subscriptions. Upload a CSV from Xero, your credit card, or your expense platform. The report categorises every subscription, flags duplicates and unused seats, and gives you clear keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner actions.",
           },
         },
         {
@@ -197,8 +198,32 @@ export default function RealEstateAgencySoftwareAuditPage() {
               What is a real estate agency software audit?
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              A real estate agency software audit is a structured review of every software subscription your agency pays for — across CRM, portal subscriptions, marketing, appraisal data, inspection tools, e-signature, communication, accounting, and agent support platforms. The goal is to find duplicate licences, seats that no longer reflect your active agent roster, and subscriptions that crept in during growth phases and were never reviewed. The output is a clear action list: which tools to keep, which to cut, where to consolidate, and which contracts to renegotiate before renewal.
+              A real estate agency software audit is a structured review of every software subscription your agency pays for — across CRM, portal subscriptions, property management software, marketing, appraisal data, inspection tools, e-signature, communication, accounting, and agent support platforms. For an owner-led agency with 5-50 staff, start with Xero/MYOB exports, business-card statements, direct debits, agent expense claims, portal invoices, and CRM renewal notices. The goal is to find duplicate licences, seats that no longer reflect your active agent roster, and subscriptions that crept in during growth phases and were never reviewed. The output is a clear keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list before listing, portal, or CRM renewals roll over.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 proof refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Real estate software demand is expensive — audit the stack before adding another platform</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                DataForSEO AU live checks show real estate CRM software at 260 monthly searches / $78.83 CPC / $62.02 high bid and property management software at 880 / $19.87 CPC / $20.23 high bid. That commercial intent is real, but StackSmart is not an enterprise procurement suite or a property-management replacement. It is a billing-export audit for principals and owner-led agencies that need to clean up the subscription layer around their CRM, portals, appraisal data, inspection tools, marketing stack, AI content tools, and agent seats.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">Agency action map</h3>
+              <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">1.</span> Pull 6-12 months of card statements, Xero/MYOB exports, portal invoices, CRM bills, direct debits, and reimbursed agent software charges.</li>
+                <li><span className="font-semibold text-white">2.</span> Group charges by CRM, property management, portals, appraisals, inspections, e-signature, marketing, AI/content, comms, accounting, and admin support.</li>
+                <li><span className="font-semibold text-white">3.</span> Compare seats against the current agent/admin roster and flag duplicate office-level tools, premium portal add-ons, former-agent licences, and ownerless renewals.</li>
+                <li><span className="font-semibold text-white">4.</span> Leave with keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner decisions that protect live listings while removing waste.</li>
+              </ol>
+            </div>
           </div>
         </div>
       </section>
@@ -405,11 +430,11 @@ export default function RealEstateAgencySoftwareAuditPage() {
               ],
               [
                 "How do I audit real estate software subscriptions without disrupting active listings?",
-                "Start with billing data only — no need to touch active tools during a live campaign. Export 6 to 12 months of charges from your business card or accounting software, identify every recurring subscription by name, and cross-reference seat counts against your current active agent roster. Flag unused seats and duplicate category tools before taking any action. Plan cancellations and consolidations in quieter periods between settlement cycles.",
+                "Start with billing data only — no need to touch active tools during a live campaign. Export 6 to 12 months of charges from your business card or accounting software, identify every recurring subscription by name, and cross-reference seat counts against your current active agent roster. Flag unused seats and duplicate category tools before taking any action. Plan cancellations, downgrades, consolidations, and renegotiations in quieter periods between settlement cycles, with a named renewal owner for every portal, CRM, and data contract.",
               ],
               [
                 "Can StackSmart help real estate agencies find software savings?",
-                "Yes. StackSmart is built for owner-led businesses with messy billing histories — including real estate agencies where costs span offices, individual agent expenses, and shared business subscriptions. Upload a CSV from Xero, your credit card, or your expense platform. The report categorises every subscription, flags duplicates and unused seats, and gives you clear keep, cut, consolidate, and renegotiate actions.",
+                "Yes. StackSmart is built for owner-led businesses with messy billing histories — including real estate agencies where costs span offices, individual agent expenses, and shared business subscriptions. Upload a CSV from Xero, your credit card, or your expense platform. The report categorises every subscription, flags duplicates and unused seats, and gives you clear keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner actions.",
               ],
               [
                 "Do AI content tools and social media platforms add materially to real estate agency software costs?",

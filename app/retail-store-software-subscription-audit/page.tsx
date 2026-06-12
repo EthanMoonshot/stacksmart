@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Retail Store Software Subscription Audit | StackSmart",
       description:
         "Audit your retail store software subscriptions for duplicate tools, unused seats, and subscriptions that accumulated across sites and seasons.",
-      dateModified: "2026-06-09",
+      dateModified: "2026-06-13",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -80,7 +80,7 @@ const jsonLd = {
           name: "Can StackSmart help retail businesses find software savings?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. StackSmart is designed for owner-led multi-site businesses with fragmented billing across tools and locations. Upload a CSV from Xero, MYOB, or your business card. The report categorises every subscription, flags duplicates and unused seats, and gives you a clear keep, cut, consolidate, and renegotiate action list — without a platform rollout.",
+            text: "Yes. StackSmart is designed for owner-led multi-site businesses with fragmented billing across tools and locations. Upload a CSV from Xero, MYOB, or your business card. The report categorises every subscription, flags duplicates and unused seats, and gives you a clear keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list — without a platform rollout.",
           },
         },
       ],
@@ -178,7 +178,7 @@ export default function RetailStoreSoftwareSubscriptionAuditPage() {
               What is a retail store software subscription audit?
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              A retail store software subscription audit is a structured review of every software subscription your retail business pays for — across POS and payment processing, rostering and workforce management, inventory and stock control, loyalty programs, ecommerce, email and SMS marketing, payroll, accounting, and reporting tools. The goal is to find tools duplicated across sites, seats that grew with a larger team and were never reduced, and subscriptions priced at tiers above your actual trading volume. The output is a clear action list: keep, cut, consolidate, or renegotiate.
+              A retail store software subscription audit is a structured review of every software subscription your retail business pays for — across POS and payment processing, rostering and workforce management, inventory and stock control, loyalty programs, ecommerce, email and SMS marketing, payroll, accounting, and reporting tools. For an owner-led retailer with 5-50 staff, start with Xero, MYOB, business-card statements, POS invoices, Shopify/app-marketplace exports, direct debits, and site-level receipts. The goal is to find tools duplicated across sites, seats that grew with a larger team and were never reduced, and subscriptions priced at tiers above actual trading volume. The output is a clear action list: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner.
             </p>
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function RetailStoreSoftwareSubscriptionAuditPage() {
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
               <h2 className="mt-3 text-2xl font-semibold text-white">Measured retail demand, translated into a waste audit</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                Live AU keyword checks show active demand around retail inventory software (170 monthly searches), retail POS software (140), ecommerce software (90), and Shopify apps (1,600). StackSmart uses that buying moment differently: before an owner-led retailer adds another system, it reconciles the paid stack already hiding in card statements, accounting exports, app marketplaces, and site-level admin accounts.
+                DataForSEO AU live checks show retail POS system at 590 monthly searches / $38.50 CPC / $31.77 high bid, retail inventory software at 170 / $22.20 CPC / $43.45 high bid, POS software Australia at 210 / $30.24 CPC / $28.15 high bid, and POS system for small business at 210 / $50.98 CPC / $53.03 high bid. StackSmart uses that buying moment differently: before an owner-led 5-50 staff retailer adds another system, it reconciles the paid stack already hiding in card statements, accounting exports, POS invoices, app marketplaces, and site-level admin accounts.
               </p>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
@@ -392,7 +392,7 @@ export default function RetailStoreSoftwareSubscriptionAuditPage() {
               ],
               [
                 "Can StackSmart help retail businesses find software savings?",
-                "Yes. StackSmart is designed for owner-led multi-site businesses with fragmented billing across tools and locations. Upload a CSV from Xero, MYOB, or your business card. The report categorises every subscription, flags duplicates and unused seats, and gives you a clear keep, cut, consolidate, and renegotiate action list.",
+                "Yes. StackSmart is designed for owner-led multi-site businesses with fragmented billing across tools and locations. Upload a CSV from Xero, MYOB, or your business card. The report categorises every subscription, flags duplicates and unused seats, and gives you a clear keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list.",
               ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
@@ -411,7 +411,7 @@ export default function RetailStoreSoftwareSubscriptionAuditPage() {
           <div className="max-w-3xl">
             <p className="text-xs uppercase tracking-[0.18em] text-brand-300">June 2026 owner-led retail audit</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Reconcile card-statement charges before adding another retail platform</h2>
-            <p className="mt-4 text-base leading-7 text-dark-300">DataForSEO AU checks (June 2026) show POS software Australia at 260 monthly searches / $20.22 CPC and retail inventory management software at 170 / $39.69 CPC. That buying intent is real, but for an owner-led retailer the faster win is not another platform evaluation — it is pulling the billing export and reconciling every POS add-on, app-marketplace charge, connector fee, converted trial, loyalty renewal, and multi-site duplicate already on the card statement.</p>
+            <p className="mt-4 text-base leading-7 text-dark-300">DataForSEO AU checks (13 June 2026) show retail POS system at 590 monthly searches / $38.50 CPC / $31.77 high bid and retail inventory software at 170 / $22.20 CPC / $43.45 high bid. POS software Australia and POS system for small business each also showed 210 monthly searches with high commercial CPCs. That buying intent is real, but for an owner-led retailer the faster win is not another platform evaluation — it is pulling the billing export and reconciling every POS add-on, app-marketplace charge, connector fee, converted trial, loyalty renewal, and multi-site duplicate already on the card statement.</p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
               <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">

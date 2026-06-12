@@ -24,7 +24,7 @@ const jsonLd = {
       name: "How to Reduce SaaS Spend for Small Business | StackSmart",
       description:
         "A practical guide to reducing SaaS spend for small business teams — find duplicate subscriptions, flag renewal risks, and act on the highest-leverage savings from billing data.",
-      dateModified: "2026-06-05",
+      dateModified: "2026-06-13",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -73,7 +73,7 @@ const jsonLd = {
           name: "What is a SaaS spend audit?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "A SaaS spend audit reviews every software subscription your team pays for, categorises each tool, identifies waste like duplicate seats or unused licences, flags upcoming renewals, and produces a concrete list of actions: keep, cut, consolidate, or renegotiate.",
+            text: "A SaaS spend audit reviews every software subscription your team pays for, categorises each tool, identifies waste like duplicate seats or unused licences, flags upcoming renewals, and produces a concrete list of actions: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner.",
           },
         },
         {
@@ -128,7 +128,7 @@ export default function ReduceSaaSSpendSmallBusinessPage() {
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Direct answer</p>
             <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">How do small businesses reduce SaaS spend?</h2>
             <p className="mt-4 text-sm leading-7 text-dark-300 max-w-3xl">
-              Export your billing data, group subscriptions by category, and look for four things: duplicate tools serving the same workflow, seats nobody uses, subscriptions on tiers you have outgrown or underutilise, and renewals approaching without a review. Then prioritise actions — cut the waste, consolidate overlapping tools, renegotiate contracts with leverage, and keep what your team actually depends on.
+              For a 5-50 staff business, export billing data first — Xero, MYOB, QuickBooks, bank and card statements, direct debits, marketplace invoices, and annual vendor receipts — then group subscriptions by category. Look for duplicate tools serving the same workflow, seats nobody uses, subscriptions on tiers you have outgrown or underutilise, and renewals approaching without an owner. Then prioritise actions: keep what the team depends on, cancel dead tools, downgrade inflated tiers, consolidate overlaps, renegotiate valuable contracts, and assign a named renewal owner before notice windows close.
             </p>
           </div>
         </div>
@@ -192,14 +192,14 @@ export default function ReduceSaaSSpendSmallBusinessPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-semibold text-white">The keep / cut / consolidate / renegotiate framework</h2>
           <p className="mt-3 text-sm leading-7 text-dark-300 max-w-3xl">
-            Every subscription in your audit gets one of four actions. This is the decision model StackSmart reports use.
+            Every subscription in your audit gets one practical action. This is the decision model StackSmart reports use.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {([
               ["Keep", "The tool is actively used, correctly sized, and competitively priced. No action needed until the next review cycle."],
-              ["Cut", "The tool is unused, redundant, or replaced by another subscription. Cancel before the next billing cycle or renewal date."],
-              ["Consolidate", "Two or more tools serve the same workflow. Pick the best fit, migrate users, and cancel the rest."],
-              ["Renegotiate", "The tool is needed but overpriced — wrong tier, too many seats, or a renewal approaching without competitive leverage. Open a pricing conversation."],
+              ["Cancel", "The tool is unused, redundant, or replaced by another subscription. Cancel before the next billing cycle or renewal date."],
+              ["Downgrade", "The tool is needed, but the current tier, module set, or seat count is bigger than actual usage."],
+              ["Consolidate / renegotiate / assign owner", "Two or more tools serve the same workflow, or a valuable tool is renewing without leverage. Pick the best fit, negotiate if it stays, and give one person the renewal date."],
             ] as const).map(([title, copy]) => (
               <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
                 <h3 className="text-base font-semibold text-white">{title}</h3>
@@ -272,7 +272,7 @@ export default function ReduceSaaSSpendSmallBusinessPage() {
                 <li>Upload billing exports or invoice data</li>
                 <li>Automatic categorisation and duplicate detection</li>
                 <li>Renewal risk flags and seat-count analysis</li>
-                <li>Prioritised keep/cut/consolidate/renegotiate actions</li>
+                <li>Prioritised keep/cancel/downgrade/consolidate/renegotiate/renewal-owner actions</li>
                 <li>Shareable savings report for stakeholders</li>
                 <li>Recurring Snapshots without rebuilding from scratch</li>
               </ul>
@@ -289,7 +289,7 @@ export default function ReduceSaaSSpendSmallBusinessPage() {
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
               <h3 className="text-base font-semibold text-white">Good fit</h3>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
-                <li>Small business or lean team with 20-200 SaaS subscriptions</li>
+                <li>Owner-led small business with 5-50 staff and messy subscription billing</li>
                 <li>Finance, ops, or founder running the spend review</li>
                 <li>You want a report and action list, not a platform rollout</li>
                 <li>You have billing exports or invoice data available</li>
@@ -302,7 +302,7 @@ export default function ReduceSaaSSpendSmallBusinessPage() {
                 <li>Enterprise IT team needing discovery agents and compliance controls</li>
                 <li>You need automated provisioning or user lifecycle management</li>
                 <li>Your primary goal is security governance, not cost reduction</li>
-                <li>You need a full procurement platform with vendor negotiation services</li>
+                <li>You need a full enterprise procurement platform with vendor negotiation services</li>
               </ul>
             </div>
           </div>
@@ -315,7 +315,7 @@ export default function ReduceSaaSSpendSmallBusinessPage() {
           <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
           <h2 className="mt-3 text-2xl font-semibold text-white">The 30-day owner-led software-cost reduction plan</h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-            For a 5-50 person business, the fastest savings usually come from a billing-export audit rather than a new SaaS-management platform. Pull the charges, group the tools, assign owners, and make keep/cancel/downgrade/consolidate decisions before the next renewal cycle.
+            For a 5-50 person business, the fastest savings usually come from a billing-export audit rather than a new SaaS-management platform. DataForSEO AU live checks show software subscription management at 90 monthly searches / $32.54 CPC / $24.95 high bid and software audit at 110 / $8.59 CPC / $20.40 high bid, confirming the commercial problem without requiring enterprise procurement positioning. Pull the charges, group the tools, assign owners, and make keep/cancel/downgrade/consolidate/renegotiate/renewal-owner decisions before the next renewal cycle.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-4">
             {[
@@ -341,7 +341,7 @@ export default function ReduceSaaSSpendSmallBusinessPage() {
             {([
               ["How much can a small business save on SaaS?", "Small businesses often find avoidable SaaS waste in duplicate seats, forgotten trials, overlapping tools, and unreviewed renewals. The actual savings depend on how many subscriptions you carry and how long it has been since the last review."],
               ["How do I find duplicate SaaS subscriptions?", "Export billing data from your payment processor or accounting tool, then group subscriptions by category. Look for multiple tools serving the same workflow — project management, file storage, video conferencing, and design tools are common overlap areas."],
-              ["What is a SaaS spend audit?", "A SaaS spend audit reviews every software subscription your team pays for, categorises each tool, identifies waste like duplicate seats or unused licences, flags upcoming renewals, and produces a concrete list of actions: keep, cut, consolidate, or renegotiate."],
+              ["What is a SaaS spend audit?", "A SaaS spend audit reviews every software subscription your team pays for, categorises each tool, identifies waste like duplicate seats or unused licences, flags upcoming renewals, and produces a concrete list of actions: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner."],
               ["Do I need a SaaS management platform to reduce spend?", "Not necessarily. Smaller teams can start with a billing export and a report-first tool like StackSmart to surface savings. Full management platforms with discovery agents and governance controls make more sense once your SaaS estate is large enough to warrant ongoing lifecycle management."],
             ] as const).map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">

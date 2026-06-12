@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Community Care Software Subscription Audit | StackSmart",
       description:
         "A practical software subscription audit for owner-led community care, home care, support coordination, and smaller care providers that need to find unused seats, duplicate tools, add-ons, and ownerless renewals.",
-      dateModified: "2026-06-08",
+      dateModified: "2026-06-13",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -113,7 +113,7 @@ const auditSteps = [
   "Tag every recurring charge as care management, rostering, payroll, onboarding, forms, document storage, SMS, telehealth, compliance, reporting, accounting, marketing, or AI/admin tools.",
   "Compare per-seat tools with the current support-worker, coordinator, clinician, and admin roster.",
   "Flag add-on modules that were bought for one program, audit cycle, funding change, or implementation project but still bill monthly or annually.",
-  "List every contract renewing inside 90 days and assign one named owner to approve keep, cancel, downgrade, consolidate, or renegotiate actions.",
+  "List every contract renewing inside 90 days and assign one named owner to approve keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner actions.",
 ];
 
 export default function CommunityCareSoftwareSubscriptionAuditPage() {
@@ -179,7 +179,7 @@ export default function CommunityCareSoftwareSubscriptionAuditPage() {
               Aged-care and community-care software demand is real — but the audit opportunity is the subscription layer
             </h2>
             <p className="mt-4 text-sm leading-7 text-dark-300">
-              Today’s AU keyword check showed measurable demand for aged care software and community care software. StackSmart is not trying to replace those operating platforms. The buyer-intent wedge is practical: smaller owner-led providers already have care-management, rostering, payroll, SMS, forms, document, compliance, accounting, and marketing subscriptions, but no mature procurement function to keep the stack clean. A billing-export audit turns that messy renewal picture into a simple owner/operator action list.
+              Today’s DataForSEO AU live check showed community care software at 30 monthly searches, aged care software at 140 / $19.77 CPC / $23.49 high bid, home care software at 110 / $9.10 CPC / $13.23 high bid, and support coordination software at 140 / $25.25 CPC / $33.06 high bid. StackSmart is not trying to replace those operating platforms. The buyer-intent wedge is practical: owner-led 5-50 staff providers already have care-management, rostering, payroll, SMS, forms, document, compliance, accounting, and marketing subscriptions, but no mature procurement function to keep the stack clean. A billing-export audit turns that messy renewal picture into a simple owner/operator keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list.
             </p>
           </div>
         </div>
