@@ -19,7 +19,7 @@ const jsonLd = {
     {
       "@type": "WebPage",
       name: "SaaS Spend Management for SMBs | StackSmart",
-      dateModified: "2026-05-30",
+      dateModified: "2026-06-14",
       description:
         "SaaS spend management for owner-led SMBs: find duplicate tools, unused seats, add-on fees, ownerless renewals, and practical savings actions from billing exports.",
       url: "https://stacksmart.app/saas-spend-management",
@@ -232,18 +232,18 @@ export default function SaaSSpendManagementPage() {
       </section>
 
 
-      {/* 2026-05-30 measured owner-led SMB refresh */}
+      {/* June 2026 owner-led SMB proof refresh */}
       <section className="border-y border-dark-800/80 py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh · small-business SaaS spend management</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">June 2026 proof refresh · owner-led SMB spend management</p>
           <div className="mt-4 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
               <h2 className="text-2xl font-semibold text-white">For a small business, SaaS spend management means one actionable billing pass.</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                SaaS spend management is often sold as an enterprise procurement system. For a 5-50 staff owner-led business, the first win is simpler: export card statements, invoices, and accounting data; group recurring software charges; find unused seats, duplicate tools, connector fees, converted trials, and ownerless renewals; then decide what to keep, cancel, downgrade, consolidate, or renegotiate.
+                SaaS spend management is often sold as an enterprise procurement system. For a 5-50 staff owner-led business with low procurement maturity, the first win is simpler: export card statements, invoices, and accounting data; group recurring software charges; find unused seats, duplicate vendor bills, converted trials nobody adopted, offboarding gaps where departed staff left seats active, and ownerless renewals approaching auto-renew — then decide what to keep, cancel, downgrade, consolidate, or renegotiate.
               </p>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                StackSmart is built for that first 30-day cleanup. It does not require SSO, SCIM, bank access, vendor portals, or a procurement team. It gives the owner, operator, bookkeeper, or admin lead a practical action list they can work through before the next renewal calendar closes.
+                StackSmart is built for that first 30-day cleanup. It does not require SSO, SCIM, bank access, vendor portals, or a procurement team. It gives the owner, operator, bookkeeper, or admin lead a practical action list — with a named renewal owner for each subscription — they can work through before the next renewal calendar closes.
               </p>
             </div>
             <div className="rounded-3xl border border-dark-700 bg-dark-900/70 p-6">
@@ -251,9 +251,9 @@ export default function SaaSSpendManagementPage() {
               <div className="mt-5 grid gap-3">
                 {[
                   "Day 1: upload billing exports, card statements, invoices, or accounting CSVs",
-                  "Day 2: group recurring charges by tool, category, payment path, and owner",
-                  "Week 1: cancel clear waste, remove leaver seats, and downgrade unused tiers",
-                  "Week 2: consolidate duplicate categories and close converted trials",
+                  "Day 2: group recurring charges by tool, category, payment path, and subscription owner",
+                  "Week 1: cancel clear waste, remove leaver seats, close converted trials",
+                  "Week 2: consolidate duplicate categories and downgrade unused tiers",
                   "Week 3: renegotiate material vendors and check annual renewal notice windows",
                   "Week 4: assign renewal owners and repeat the billing pass quarterly",
                 ].map((item) => (
@@ -263,9 +263,35 @@ export default function SaaSSpendManagementPage() {
             </div>
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <TrackLink href="/small-business-software-audit" event="homepage_cta_clicked" props={{ from: "saas_spend_management_refresh", target: "small_business_audit" }} className="btn-secondary text-sm">Small business audit</TrackLink>
-            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ from: "saas_spend_management_refresh", target: "audit_tool" }} className="btn-primary text-sm">Use the audit tool</TrackLink>
+            <TrackLink href="/small-business-software-audit" event="homepage_cta_clicked" props={{ from: "saas_spend_management_2026_06_14", target: "small_business_audit" }} className="btn-secondary text-sm">Small business audit</TrackLink>
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ from: "saas_spend_management_2026_06_14", target: "audit_tool" }} className="btn-primary text-sm">Use the audit tool</TrackLink>
           </div>
+        </div>
+      </section>
+
+      {/* Credit-card statement audit and evidence workflow */}
+      <section className="border-b border-dark-800/80 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">The credit-card statement audit: what to export and what to look for</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            For admin-heavy SMBs where the owner pays the software bills, the credit-card statement is the single richest source of subscription data. Here is the evidence workflow StackSmart uses.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            {[
+              ["What evidence to export", "Business credit-card statements (6-12 months), Xero/QuickBooks/MYOB transaction exports, invoice PDFs from vendor portals, marketplace receipts (Xero Marketplace, Shopify App Store), and any tools expensed on personal cards and reimbursed."],
+              ["What to look for", "Still paying for it after cancellation, duplicate vendor bills on different cards, converted trials nobody deliberately adopted, seats for staff who left, project-only tools that became permanent spend, and connector or API fees buried in platform invoices."],
+              ["Owner-use review per subscription", "For each charge: name the current team member who uses it weekly, confirm the subscription owner and billing contact are current staff, note whether the tool is project-only or permanent, and flag any tool where you cannot name an active user."],
+              ["Action output from the pass", "A prioritised keep, cancel, downgrade, consolidate, renegotiate list — ranked by recoverable annual spend — with a named renewal owner for each subscription. Hand the list to an admin or office manager to execute."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-base font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-sm leading-7 text-dark-300">
+            This workflow applies across verticals. See the <TrackLink href="/ai-subscription-audit" event="homepage_cta_clicked" props={{ target: "ai_audit", location: "spend_management_evidence" }} className="text-brand-400 hover:text-brand-300 transition-colors">AI subscription audit</TrackLink> for the AI-specific seat and overlap review, the <TrackLink href="/consulting-firm-software-stack-audit" event="homepage_cta_clicked" props={{ target: "consulting_audit", location: "spend_management_evidence" }} className="text-brand-400 hover:text-brand-300 transition-colors">consulting firm software stack audit</TrackLink> for project-tool residue patterns, or the <TrackLink href="/veterinary-clinic-software-subscription-audit" event="homepage_cta_clicked" props={{ target: "vet_audit", location: "spend_management_evidence" }} className="text-brand-400 hover:text-brand-300 transition-colors">veterinary clinic software audit</TrackLink> for PMS add-on overlap in clinic settings.
+          </p>
         </div>
       </section>
 
@@ -342,7 +368,17 @@ export default function SaaSSpendManagementPage() {
           {
             href: "/saas-renewal-management",
             title: "SaaS renewal management",
-            description: "Stop surprise renewals and reduce recurring waste with a structured approach.",
+            description: "Stop surprise renewals and assign renewal owners before auto-renew clauses roll over.",
+          },
+          {
+            href: "/saas-cost-optimization-software",
+            title: "SaaS cost optimization software",
+            description: "See where StackSmart fits when the main job is fast savings visibility from billing data.",
+          },
+          {
+            href: "/ai-subscription-audit",
+            title: "AI subscription audit",
+            description: "Find overlapping AI tools, idle seats, and unused workspace subscriptions in owner-led SMB billing exports.",
           },
           {
             href: "/saas-spend-audit-tool",
@@ -350,24 +386,24 @@ export default function SaaSSpendManagementPage() {
             description: "See when a fast savings report replaces a manual audit process.",
           },
           {
-            href: "/best-saas-spend-management-tools",
-            title: "Best SaaS spend management tools",
-            description: "Compare StackSmart with heavier platforms and SMB-friendly alternatives.",
-          },
-          {
-            href: "/saas-cost-optimization-software",
-            title: "SaaS cost optimization software",
-            description: "See where StackSmart fits when the main job is fast savings visibility.",
-          },
-          {
             href: "/software-subscription-audit-checklist",
             title: "Software subscription audit checklist",
             description: "A step-by-step framework for running your first subscription audit.",
           },
           {
-            href: "/torii-alternative",
-            title: "Torii alternative",
-            description: "See how StackSmart compares when you want spend visibility without a full SMP.",
+            href: "/consulting-firm-software-stack-audit",
+            title: "Consulting firm software stack audit",
+            description: "Project management, proposals, CRM, and AI tool audit for owner-led consultancies.",
+          },
+          {
+            href: "/veterinary-clinic-software-subscription-audit",
+            title: "Veterinary clinic software subscription audit",
+            description: "PMS add-ons, reminders, booking, inventory, and staff seat audit for independent vet clinics.",
+          },
+          {
+            href: "/saas-subscription-management-software",
+            title: "SaaS subscription management software",
+            description: "Compare subscription management approaches for teams that need renewal tracking and seat accountability.",
           },
         ]}
       />

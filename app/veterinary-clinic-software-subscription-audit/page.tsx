@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Veterinary Clinic Software Subscription Audit | StackSmart",
       description:
         "Vet clinics carry practice management, online booking, reminders, payment terminals, inventory and pharmacy add-ons, payroll, team comms, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate — using billing exports only.",
-      dateModified: "2026-06-04",
+      dateModified: "2026-06-14",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -331,31 +331,31 @@ export default function VeterinaryClinicSoftwareSubscriptionAuditPage() {
       </section>
 
 
-      {/* 2026 proof refresh */}
+      {/* June 2026 proof refresh */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
-              <h2 className="mt-3 text-2xl font-semibold text-white">Vet software searches point to a cheaper first step than platform replacement</h2>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">June 2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Vet practice management software is a $9.79 CPC search — the real spend problem is the paid layer around it</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                DataForSEO AU checks showed veterinary software and vet software at 70 monthly searches each, plus veterinary practice management software at 40. The category demand is real, but most owner-led clinics do not need another procurement project first. They need the paid layer around the clinic system reconciled from billing exports.
+                DataForSEO AU live checks show veterinary practice management software at 50 monthly searches with a $9.79 CPC and $12.98 high top bid. The category demand is real, but most owner-led clinics do not need another procurement project. They need the paid layer around their existing PMS reconciled from billing exports — the add-ons, reminders, booking tools, inventory modules, and staff seats that duplicate what the practice management system already includes.
               </p>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                StackSmart reviews PMS add-ons, reminders, online booking, stock/inventory tools, lab or diagnostics connectors, forms, payment tools, payroll, marketing, review platforms, and casual/locum seats — billing data only, no animal health records or PMS credentials.
+                StackSmart reviews PMS add-ons, reminders, online booking, stock and inventory tools, lab and diagnostics connectors, forms, payment tools, payroll, marketing, review platforms, and casual or locum seats — billing data only, no animal health records or PMS credentials. The output is a credit-card statement audit with a keep, cancel, downgrade, consolidate, renegotiate decision and a named renewal owner for every subscription.
               </p>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
-              <h3 className="text-base font-semibold text-white">Vet clinic owner action map</h3>
+              <h3 className="text-base font-semibold text-white">Vet clinic billing-export workflow</h3>
               <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
-                <li><span className="font-semibold text-white">1.</span> Export 12 months of Xero/MYOB/card charges so annual PMS, diagnostic, inventory, and reminder renewals appear.</li>
-                <li><span className="font-semibold text-white">2.</span> Separate clinical must-keep systems from optional add-ons, duplicate reminders, review tools, and marketing subscriptions.</li>
-                <li><span className="font-semibold text-white">3.</span> Match paid accounts to current vets, nurses, reception, locums, and former contractors before the next seat-based invoice.</li>
-                <li><span className="font-semibold text-white">4.</span> Produce the practical list: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner.</li>
+                <li><span className="font-semibold text-white">1.</span> Export 12 months of Xero/MYOB/card charges so annual PMS, diagnostic, inventory, and reminder renewals appear. Include any tools on personal cards.</li>
+                <li><span className="font-semibold text-white">2.</span> Separate clinical must-keep systems from optional add-ons, duplicate reminders, review tools, and marketing subscriptions that may duplicate PMS features.</li>
+                <li><span className="font-semibold text-white">3.</span> Run the seat and offboarding check: match paid accounts to current vets, nurses, reception, locums, and former contractors. Flag anyone not on the current roster.</li>
+                <li><span className="font-semibold text-white">4.</span> Produce the practical list: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner. Hand the list to the practice manager or admin to execute.</li>
               </ol>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-                <TrackLink href="/medical-practice-software-subscription-audit" event="homepage_cta_clicked" props={{ target: "medical_practice_audit", location: "vet_2026_refresh" }} className="btn-secondary text-sm">See medical practice audit</TrackLink>
-                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "vet_2026_refresh" }} className="btn-primary text-sm">See the audit tool</TrackLink>
+                <TrackLink href="/clinic-software-subscription-audit" event="homepage_cta_clicked" props={{ target: "clinic_audit", location: "vet_2026_06_14" }} className="btn-secondary text-sm">General clinic audit</TrackLink>
+                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "vet_2026_06_14" }} className="btn-primary text-sm">See the audit tool</TrackLink>
               </div>
             </div>
           </div>

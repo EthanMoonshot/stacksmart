@@ -20,7 +20,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": absoluteUrl("/ai-subscription-audit"),
       url: absoluteUrl("/ai-subscription-audit"),
-      dateModified: "2026-06-06",
+      dateModified: "2026-06-14",
       name: "AI Subscription Audit | StackSmart",
       description:
         "ChatGPT Teams, Claude Pro, Midjourney, Canva Pro, Notion AI, and meeting transcription tools are a fast-growing waste category in owner-led SMB billing exports. An AI subscription audit finds overlapping tools, idle seats, and full-tier plans with two active users.",
@@ -222,7 +222,7 @@ export default function AiSubscriptionAuditPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">AI subscription audit · 2026 owner-led SMB proof refresh</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">AI subscription audit · June 2026 owner-led SMB refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
               Stop paying for AI tools nobody uses
             </h1>
@@ -706,31 +706,59 @@ export default function AiSubscriptionAuditPage() {
         </div>
       </section>
 
-      {/* 2026-06-06 owner-led SMB proof refresh */}
+      {/* June 2026 owner-led SMB proof refresh */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-06 owner-led SMB proof refresh</p>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">June 2026 owner-led SMB proof refresh</p>
               <h2 className="mt-3 text-2xl font-semibold text-white">AI spend now needs the same owner-use pass as the rest of the stack</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                Recent monitoring keeps surfacing AI subscription/card leakage, full-team workspaces with light use, and new tools added before the old ones are cancelled. For a 5-50 staff business, the first AI governance step is simple: match every AI charge to a current owner, workspace admin, real use case, renewal date, and decision.
+                Billing exports keep surfacing the same AI subscription patterns: still paying for it after the trial converted, cancelled but still charged on a second card, duplicate vendor bills across team members, and unused AI seats from offboarding gaps. For a 5-50 staff business, the first AI governance step is a credit-card statement audit matching every AI charge to a subscription owner, workspace admin, real use case, renewal date, and a keep, cancel, downgrade, or consolidate decision.
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "ai_subscription_2026_06_06" }} className="btn-secondary text-sm">Run the owner-use checklist</TrackLink>
-                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "ai_subscription_2026_06_06" }} className="btn-primary text-sm">Find AI spend in billing data</TrackLink>
+                <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "ai_subscription_2026_06_14" }} className="btn-secondary text-sm">Run the owner-use checklist</TrackLink>
+                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "ai_subscription_2026_06_14" }} className="btn-primary text-sm">Find AI spend in billing data</TrackLink>
               </div>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
-              <h3 className="text-base font-semibold text-white">The AI audit questions StackSmart answers</h3>
+              <h3 className="text-base font-semibold text-white">The AI audit workflow StackSmart produces</h3>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
-                <li><span className="font-semibold text-white">Which AI tools overlap?</span> ChatGPT, Claude, Perplexity, Notion AI, meeting assistants, image tools, and writing tools often cover the same job.</li>
-                <li><span className="font-semibold text-white">Which seats are idle?</span> Leavers, contractors, project-only users, and optimistic full-team purchases stay active unless someone reviews them.</li>
-                <li><span className="font-semibold text-white">Who owns the workspace?</span> The admin and billing inbox must belong to a current person before seat cleanup can happen.</li>
-                <li><span className="font-semibold text-white">What data is safe?</span> Use billing lines and seat/admin counts only. Do not upload prompts, client files, confidential work, or employee records.</li>
+                <li><span className="font-semibold text-white">Billing export and card statement pass.</span> Export invoices, card charges, and accounting data. Filter for AI tool vendors. No prompts, client files, or employee data.</li>
+                <li><span className="font-semibold text-white">Seat and offboarding check.</span> Match every paid AI seat to a current team member. Flag leavers, contractors, project-only users, and AI workspace owners who have moved on.</li>
+                <li><span className="font-semibold text-white">Overlap and duplicate review.</span> Group tools by job — general-purpose AI, image generation, meeting transcription, writing, research. Flag categories with two or more active subscriptions.</li>
+                <li><span className="font-semibold text-white">Action output.</span> Keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner — ranked by recoverable spend. Hand the list to admin to execute.</li>
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Switching-cost and renewal-owner decisions */}
+      <section className="py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-white">The keep, cancel, downgrade, consolidate decision for each AI tool</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
+            The audit is not about cancelling everything. Each AI subscription gets one of six outcomes — and a named renewal owner responsible for the next decision window.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["Keep", "Active users, clear use case, correctly sized tier. No action except assigning a renewal owner and setting a 60-day pre-renewal review.", "text-emerald-400"],
+              ["Cancel", "No current user, duplicate of another tool, project-only subscription that outlived the project, or converted trial nobody adopted.", "text-red-400"],
+              ["Downgrade", "Active users but on a tier with features or seat count the team does not use. Right-size to the plan that matches actual usage.", "text-amber-400"],
+              ["Consolidate", "Two tools doing the same job for the same team. Pick the one with more adoption and migrate the other users.", "text-orange-400"],
+              ["Renegotiate", "Annual renewal approaching within 60 days. Use current seat count and usage data as leverage before auto-renewal processes.", "text-brand-400"],
+              ["Assign renewal owner", "Every AI subscription needs a named person who owns the keep-or-cancel decision at renewal. If nobody owns it, it renews by default.", "text-teal-400"],
+            ].map(([title, copy, color]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className={`text-sm font-semibold ${color}`}>{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-sm leading-7 text-dark-300">
+            Switching-cost anxiety keeps many subscriptions alive past their usefulness. The audit separates genuine switching cost (data migration, team retraining) from inertia. Most AI tool cancellations have zero switching cost — the team already stopped using it. See the <TrackLink href="/saas-spend-management" event="homepage_cta_clicked" props={{ target: "saas_spend_management", location: "ai_subscription_switching_cost" }} className="text-brand-400 hover:text-brand-300 transition-colors">SaaS spend management guide</TrackLink> for the broader framework, or the <TrackLink href="/saas-cost-optimization-software" event="homepage_cta_clicked" props={{ target: "saas_cost_optimization", location: "ai_subscription_switching_cost" }} className="text-brand-400 hover:text-brand-300 transition-colors">SaaS cost optimization software</TrackLink> page for how StackSmart automates this from billing exports.
+          </p>
         </div>
       </section>
 
@@ -785,19 +813,24 @@ export default function AiSubscriptionAuditPage() {
             description: "The owner-led SMB guide to finding and acting on software waste — including the 30-minute card-statement pass and owner-use accountability workflow.",
           },
           {
-            href: "/marketing-agency-software-stack-audit",
-            title: "Marketing agency software stack audit",
-            description: "SEO tools, AI subscriptions, social scheduling, design platforms, and reporting stack audit for owner-led marketing and creative agencies.",
+            href: "/saas-cost-optimization-software",
+            title: "SaaS cost optimization software",
+            description: "How StackSmart compares to enterprise SaaS management platforms for owner-led businesses that need savings visibility from billing data.",
           },
           {
-            href: "/accounting-firm-software-stack-audit",
-            title: "Accounting firm software stack audit",
-            description: "Practice management, tax, payroll, document, e-sign, and AI subscription stack audit for small accounting and bookkeeping firms.",
+            href: "/saas-spend-management",
+            title: "SaaS spend management",
+            description: "The practical spend-management workflow for SMBs: billing export, categorise, detect waste, decide, and assign follow-through.",
           },
           {
-            href: "/xero-app-stack-audit",
-            title: "Xero app stack audit",
-            description: "Audit your Xero add-ons and connected apps for duplicate payroll, receipt capture, reporting, and practice management tools.",
+            href: "/consulting-firm-software-stack-audit",
+            title: "Consulting firm software stack audit",
+            description: "Project management, proposals, CRM, time tracking, and AI tool audit for owner-led consultancies and advisory firms.",
+          },
+          {
+            href: "/veterinary-clinic-software-subscription-audit",
+            title: "Veterinary clinic software subscription audit",
+            description: "PMS add-ons, reminders, booking, inventory, and staff seat audit for independent vet clinics.",
           },
           {
             href: "/software-subscription-audit-checklist",
@@ -808,6 +841,11 @@ export default function AiSubscriptionAuditPage() {
             href: "/saas-spend-audit-tool",
             title: "SaaS spend audit tool",
             description: "See how StackSmart turns a billing export into structured savings actions — including AI subscription seat right-sizing.",
+          },
+          {
+            href: "/saas-renewal-management",
+            title: "SaaS renewal management",
+            description: "Stop surprise renewals and assign renewal owners before auto-renew clauses roll over.",
           },
         ]}
       />

@@ -21,6 +21,7 @@ const jsonLd = {
       "@id": absoluteUrl("/consulting-firm-software-stack-audit"),
       url: absoluteUrl("/consulting-firm-software-stack-audit"),
       name: "Consulting Firm Software Stack Audit | StackSmart",
+      dateModified: "2026-06-14",
       description:
         "Audit your consulting firm's software subscriptions for duplicate project management, CRM, proposals, time tracking, research and AI tools, reporting dashboards, and document tools.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -331,31 +332,31 @@ export default function ConsultingFirmSoftwareStackAuditPage() {
       </section>
 
 
-      {/* 2026 proof refresh */}
+      {/* June 2026 proof refresh */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">June 2026 proof refresh</p>
               <h2 className="mt-3 text-2xl font-semibold text-white">Consultancies inherit project tools long after the project ends</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                Fresh AU checks showed professional services automation software at 210 monthly searches, consulting software at 170, and project management software at 3,600. StackSmart should not pretend to be PSA procurement. The stronger small-firm wedge is a billing-led audit of project-only tools, client-collaboration spaces, AI/research subscriptions, CRM overlap, proposal tools, and contractor seats that became permanent spend.
+                Consulting practice management software shows 10 AU monthly searches with a $80.96 CPC — the buyers are real but few. The stronger small-firm wedge is not procurement software. It is a billing-led audit of project-only tools that became permanent subscriptions, AI research assistants nobody consolidated, proposal platforms from testing phases, CRM overlap across principals, contractor seats that outlived the engagement, and duplicate vendor bills on different cards.
               </p>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                This is built for owner-led advisory, research, strategy, and boutique consulting firms with 5-50 staff and low ops maturity: export the billing data, identify what is still serving active delivery, and hand admin a prioritised action list.
+                This is built for owner-led advisory, research, strategy, and boutique consulting firms with 5-50 staff and low ops maturity. The owner or managing director exports the billing data, identifies what is still serving active delivery, and hands admin a prioritised action list with a renewal owner assigned to every subscription.
               </p>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-950/70 p-6">
-              <h3 className="text-base font-semibold text-white">Consulting firm action map</h3>
+              <h3 className="text-base font-semibold text-white">Consulting firm billing-export workflow</h3>
               <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
-                <li><span className="font-semibold text-white">1.</span> Split internal operating tools from client-specific tools, research trials, workshop apps, proposal platforms, and delivery workspaces.</li>
-                <li><span className="font-semibold text-white">2.</span> Match every seat to current employees, associates, contractors, and active client projects.</li>
-                <li><span className="font-semibold text-white">3.</span> Decide whether each tool is firm capability, client-rechargeable, project residue, or a consolidation candidate.</li>
-                <li><span className="font-semibold text-white">4.</span> Turn the export into a keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner handoff.</li>
+                <li><span className="font-semibold text-white">1.</span> Export card statements, Xero/QuickBooks data, and invoice PDFs. Split internal operating tools from client-specific tools, research trials, workshop apps, proposal platforms, and delivery workspaces.</li>
+                <li><span className="font-semibold text-white">2.</span> Run the owner-use check: match every seat to current employees, associates, contractors, and active client projects. Flag offboarding gaps where departed consultants left tools billing.</li>
+                <li><span className="font-semibold text-white">3.</span> Decide whether each tool is firm capability, client-rechargeable, project residue, a consolidation candidate, or an immediate cancellation (still paying for it, nobody uses it).</li>
+                <li><span className="font-semibold text-white">4.</span> Turn the export into a keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner handoff the admin can execute.</li>
               </ol>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-                <TrackLink href="/professional-services-software-audit" event="homepage_cta_clicked" props={{ target: "professional_services_audit", location: "consulting_2026_refresh" }} className="btn-secondary text-sm">Professional services audit</TrackLink>
-                <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "consulting_2026_refresh" }} className="btn-primary text-sm">Use the checklist</TrackLink>
+                <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "consulting_2026_06_14" }} className="btn-secondary text-sm">Use the checklist</TrackLink>
+                <TrackLink href="/saas-cost-optimization-software" event="homepage_cta_clicked" props={{ target: "cost_optimization", location: "consulting_2026_06_14" }} className="btn-primary text-sm">See cost optimization software</TrackLink>
               </div>
             </div>
           </div>
@@ -496,34 +497,44 @@ export default function ConsultingFirmSoftwareStackAuditPage() {
         description="These related pages cover the professional services audit guide, sibling firm-type guides, and the core StackSmart audit tool."
         links={[
           {
-            href: "/professional-services-software-audit",
-            title: "Professional services software audit",
-            description: "Project management, proposals, time tracking, and CRM audit guide for boutique professional services firms.",
-          },
-          {
-            href: "/law-firm-software-subscription-audit",
-            title: "Law firm software subscription audit",
-            description: "Matter management, dictation, e-sign, and research stack audit for boutique and owner-led law firms.",
-          },
-          {
-            href: "/agency-software-stack-audit",
-            title: "Agency software stack audit",
-            description: "Audit guide for creative and digital agencies with project-driven tool spread across client work.",
-          },
-          {
-            href: "/xero-app-stack-audit",
-            title: "Xero app stack audit",
-            description: "Audit your Xero add-ons for duplicate receipt capture, payroll, reporting, and practice management tools.",
-          },
-          {
             href: "/small-business-software-audit",
             title: "Small business software audit",
             description: "The owner-led SMB guide to finding and acting on software waste without a dedicated IT or finance team.",
           },
           {
+            href: "/ai-subscription-audit",
+            title: "AI subscription audit",
+            description: "Find overlapping AI tools, idle seats, and unused workspace subscriptions in owner-led SMB billing exports.",
+          },
+          {
+            href: "/saas-cost-optimization-software",
+            title: "SaaS cost optimization software",
+            description: "How StackSmart compares to enterprise platforms for owner-led businesses that need savings visibility.",
+          },
+          {
+            href: "/saas-spend-management",
+            title: "SaaS spend management",
+            description: "The practical spend-management workflow for SMBs: billing export, categorise, detect waste, decide, assign follow-through.",
+          },
+          {
+            href: "/marketing-agency-software-stack-audit",
+            title: "Marketing agency software stack audit",
+            description: "SEO tools, AI subscriptions, social scheduling, and reporting stack audit for owner-led agencies.",
+          },
+          {
+            href: "/software-subscription-audit-checklist",
+            title: "Software subscription audit checklist",
+            description: "A step-by-step framework for running your first subscription audit.",
+          },
+          {
             href: "/saas-spend-audit-tool",
             title: "SaaS spend audit tool",
             description: "See how StackSmart turns a billing export into categorised findings and a clear action list.",
+          },
+          {
+            href: "/saas-renewal-management",
+            title: "SaaS renewal management",
+            description: "Stop surprise renewals and assign renewal owners before auto-renew clauses roll over.",
           },
         ]}
       />
