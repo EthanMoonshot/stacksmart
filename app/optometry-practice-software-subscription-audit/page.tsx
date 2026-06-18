@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Optometry Practice Software Subscription Audit | StackSmart",
       description:
         "Optometry practices carry appointment booking, recalls, POS and inventory, frame and lens ordering portals, marketing, reviews, accounting, and payroll subscriptions. A software audit finds what to cut, consolidate, and renegotiate — using billing exports only.",
-      dateModified: "2026-06-10",
+      dateModified: "2026-06-19",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -96,6 +96,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Recall, reminder, SMS, booking, and marketing tools often renew quietly because they sit between clinical admin, retail, and ownership. A recall-system renewal owner is the person responsible for checking usage, duplicate modules, send volume, and price changes before renewal, then deciding whether to keep, downgrade, consolidate, or renegotiate the tool.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do optometry practice owners build a recurring bills register to track software due dates and payment accounts?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Export 6 to 12 months of transactions from Xero, MYOB, or your business card. For each recurring charge, record the vendor name, monthly or annual cost, next billing or renewal date, which card or bank account it debits, who last confirmed the tool is still needed, and a decision: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner. Sort by next billing date so the most urgent renewals get attention first. Optometry practices span clinical and retail billing, so charges appear across the practice card, supplier accounts, POS terminal agreements, and sometimes the owner's personal card — making a consolidated register essential.",
           },
         },
       ],
@@ -478,12 +486,43 @@ export default function OptometryPracticeSoftwareSubscriptionAuditPage() {
                 "Why does an optometry practice need a recall-system renewal owner?",
                 "Recall, reminder, SMS, booking, and marketing tools often renew quietly because they sit between clinical admin, retail, and ownership. A recall-system renewal owner is the person responsible for checking usage, duplicate modules, send volume, and price changes before renewal, then deciding whether to keep, downgrade, consolidate, or renegotiate the tool.",
               ],
+              [
+                "How do optometry practice owners build a recurring bills register to track software due dates and payment accounts?",
+                "Export 6 to 12 months of transactions from Xero, MYOB, or your business card. For each recurring charge, record the vendor name, monthly or annual cost, next billing or renewal date, which card or bank account it debits, who last confirmed the tool is still needed, and a decision: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner. Sort by next billing date so the most urgent renewals get attention first. Optometry practices span clinical and retail billing, so charges appear across the practice card, supplier accounts, POS terminal agreements, and sometimes the owner's personal card — making a consolidated register essential.",
+              ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recurring bills register */}
+      <section className="border-t border-dark-800/80 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-19 recurring bills register</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Build a recurring bills register for your optometry practice</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            Optometry practice owners manage both clinical and retail software — which means recurring charges come from more billing sources than a typical clinic. PMS subscriptions, POS terminal agreements, optical inventory tools, supplier ordering portals, recall and SMS services, marketing platforms, and staff seat licences all bill through different accounts. Australian search demand for optometry practice management software (10 monthly searches, high bid $15) is modest but highly targeted — owners searching for platform options are evaluating whether their current stack is right. The billing-layer audit is the practical first step: map what you are actually paying for before considering a platform change.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["Due date and payment account", "Record the billing date and which card, direct debit, supplier account, or POS terminal agreement each subscription charges. Optometry practices frequently discover charges split across the practice card, the owner's personal card, a supplier direct-debit, a POS terminal lease, and Apple ID subscriptions — making total software spend invisible from any single statement."],
+              ["Last confirmed still needed", "For each tool, note when someone last verified it is actively used. Recall and SMS platforms, paid ordering aggregators alongside free supplier portals, POS inventory modules after a PMS plan upgrade, and marketing tools from a patient acquisition drive are the categories most likely to have no recent confirmation. If nobody has checked usage in 6 months, it belongs on the review list."],
+              ["Keep, cancel, downgrade, consolidate, renegotiate, assign owner", "Give every subscription a decision. Keep tools tied to daily patient appointments and frame/lens ordering. Cancel duplicates — especially recall tools that overlap with PMS recall features. Downgrade POS and marketing tiers above current volume. Consolidate where the PMS now covers a standalone tool's function. Renegotiate annual PMS and POS contracts before the notice window closes. Assign a named renewal owner for every annual charge so nothing auto-renews at last year's seat count or tier."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">Why billing-layer audit before platform migration</p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">Most optometry software demand is for the core clinical and POS platform — Optomate, Sunix, Nuvola. StackSmart does not replace any PMS or POS system. It reviews the paid subscription layer around it: booking tools, recall services, SMS packs, ordering portals, marketing platforms, payment terminals, and staff seats that accumulate across practice growth and staff changes. Cleaning up the billing layer first means the owner knows exactly what the practice is paying for before evaluating whether a platform change is worth the migration effort.</p>
           </div>
         </div>
       </section>
@@ -502,7 +541,7 @@ export default function OptometryPracticeSoftwareSubscriptionAuditPage() {
           "Separate patient-care continuity from software cost action: recalls, orders, and appointment history must remain safe before cancellation.",
           "Assign renewal owners for PMS, POS, recall, payroll, marketing, and supplier portal subscriptions.",
         ]}
-        location="optometry_practice_20260610"
+        location="optometry_practice_20260619"
       />
 
       {/* Lead capture */}

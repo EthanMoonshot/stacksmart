@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Ecommerce Software Subscription Audit | StackSmart",
       description:
         "Audit your ecommerce software subscriptions for duplicate apps, unused integrations, and tools that grew with a store that has since scaled back.",
-      dateModified: "2026-06-10",
+      dateModified: "2026-06-19",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -90,6 +90,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Several cost categories consistently escape a standard app-list review. Shopify app marketplace charges appear in Shopify billing and accounting exports — not bank statements — so apps installed during testing and never removed stay invisible in a card-statement review. Channel connector fees for Amazon, eBay, and Google Shopping integrations appear as separate vendor charges alongside ad spend. Automation tools (Zapier, Make) on over-sized tiers, AI writing tools subscribed per contractor, and annual app billing that looks like a one-off charge all compound into meaningful overspend that only surfaces in a full 12-month billing export review.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do ecommerce store owners build a recurring bills register to track app due dates and payment accounts?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Export 6 to 12 months of charges from your Shopify billing summary, business card, and Xero or accounting tool. For each recurring charge, record the app or vendor name, monthly or annual cost, next billing date, which payment method it charges (Shopify billing, card, PayPal, direct debit), who last confirmed the app is still needed, and a decision: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner. Sort by next billing date so the most urgent charges get reviewed first. Ecommerce billing is harder to track than most small businesses because app charges split across the Shopify invoice, card statements, and standalone vendor invoices — a consolidated register is the only way to see total recurring spend in one place.",
           },
         },
       ],
@@ -417,12 +425,43 @@ export default function EcommerceSoftwareSubscriptionAuditPage() {
                 "Where do ecommerce software costs hide beyond the Shopify app list?",
                 "Several cost categories consistently escape a standard app-list review. Shopify app marketplace charges appear in Shopify billing and accounting exports — not bank statements — so apps installed during testing and never removed stay invisible in a card-statement review. Channel connector fees for Amazon, eBay, and Google Shopping integrations appear as separate vendor charges alongside ad spend. Automation tools (Zapier, Make) on over-sized tiers, AI writing tools subscribed per contractor, and annual app billing that looks like a one-off charge all compound into meaningful overspend that only surfaces in a full 12-month billing export review.",
               ],
+              [
+                "How do ecommerce store owners build a recurring bills register to track app due dates and payment accounts?",
+                "Export 6 to 12 months of charges from your Shopify billing summary, business card, and Xero or accounting tool. For each recurring charge, record the app or vendor name, monthly or annual cost, next billing date, which payment method it charges (Shopify billing, card, PayPal, direct debit), who last confirmed the app is still needed, and a decision: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner. Sort by next billing date so the most urgent charges get reviewed first. Ecommerce billing is harder to track than most small businesses because app charges split across the Shopify invoice, card statements, and standalone vendor invoices — a consolidated register is the only way to see total recurring spend in one place.",
+              ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recurring bills register */}
+      <section className="border-t border-dark-800/80 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-19 recurring bills register</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Build a recurring bills register for your ecommerce store</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            Owner-operated ecommerce stores have a unique billing problem: app charges are scattered across Shopify billing, card statements, PayPal, and standalone vendor invoices. A store owner searching for Shopify apps (1,600 monthly AU searches, $1 CPC) or ecommerce inventory software (110 searches, high bid $43) is looking for capability they may already have installed — or may be paying for twice. Before adding another app, a recurring bills register maps what you already pay for, when each charge hits, which payment method it uses, and whether anyone has confirmed it is still needed. Owners who have tried Wave or Zoho for expense tracking often find those tools cover invoicing and accounting but miss recurring app-level subscription management — the billing register fills that gap.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["Due date and payment method", "Record the billing date and which payment method each app or tool charges — Shopify billing, business card, PayPal, direct debit, or a contractor's personal card. Store owners consistently discover charges they cannot see from any single statement because Shopify app charges appear in the Shopify invoice, not the bank feed, while standalone tools bill separately to a card or PayPal account."],
+              ["Last confirmed still needed", "For each app, note when someone last verified it is actively contributing to orders or operations. Review apps installed for a campaign, loyalty programs with low redemption, email platforms from a completed migration, helpdesk tools tested but never rolled out, and AI content tools subscribed per contractor are the categories most likely to have no recent confirmation."],
+              ["Keep, cancel, downgrade, consolidate, renegotiate, assign owner", "Give every subscription a decision. Keep apps actively driving revenue or solving a live operational problem. Cancel test installs, campaign leftovers, and duplicate tools from incomplete migrations. Downgrade plans sized for a peak-period volume that has since normalised. Consolidate where the core platform or a primary app now covers a standalone tool's function. Renegotiate annual app contracts before renewal. Assign a named owner for every recurring charge so no app auto-renews unchecked before peak season."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">Why billing-layer audit before adding another app</p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">Most ecommerce software demand is for platform capability — inventory management, marketing automation, analytics. StackSmart does not replace Shopify, any app, or any platform. It reviews the billing layer: the recurring charges for apps, connectors, AI tools, marketing platforms, and SaaS subscriptions that accumulate across campaigns, seasonal pushes, and contractor engagements. Cleaning up the billing layer first means the store owner knows exactly what is already installed and charging before evaluating whether a new app or platform feature is worth adding.</p>
           </div>
         </div>
       </section>
@@ -441,7 +480,7 @@ export default function EcommerceSoftwareSubscriptionAuditPage() {
           "Separate revenue-critical apps from campaign leftovers before cutting anything.",
           "Give every app, connector, AI/content tool, and marketplace charge a renewal owner before peak season or annual app billing renews.",
         ]}
-        location="ecommerce_audit_20260610"
+        location="ecommerce_audit_20260619"
       />
 
       {/* Lead capture */}

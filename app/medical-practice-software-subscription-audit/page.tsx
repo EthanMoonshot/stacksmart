@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Medical Practice Software Subscription Audit | StackSmart",
       description:
         "GP and specialist clinics carry booking, recalls, telehealth, billing, forms, marketing, payroll, accounting, rostering, and patient comms subscriptions. A software audit finds what to cut, consolidate, and renegotiate — using billing exports only, not patient records.",
-      dateModified: "2026-06-10",
+      dateModified: "2026-06-19",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -96,6 +96,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Practice-management connector fees often appear as separate line items or add-ons for payments, SMS reminders, online forms, telehealth, reporting, accounting sync, transcription, or document workflows. A billing-export audit groups those charges beside the core practice-management platform so the owner or practice manager can decide what to keep, cut, right-size, consolidate, or renegotiate.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "How does a practice manager build a recurring bills register for clinic software?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Export 6 to 12 months of transactions from Xero, MYOB, or your business card. For each recurring charge, record the vendor name, monthly or annual cost, next billing or renewal date, which card or bank account it debits, who last confirmed the tool is still needed, and a decision: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner. Sort by renewal date so the most urgent contracts get attention first. This register replaces the informal tracking that disappears when a practice manager or owner GP changes — and prevents annual PMS, telehealth, and payroll contracts from auto-renewing at last year's seat count.",
           },
         },
       ],
@@ -455,10 +463,10 @@ export default function MedicalPracticeSoftwareSubscriptionAuditPage() {
       {/* 2026-06-10 measured demand action map */}
       <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-10 proof refresh</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-19 proof refresh</p>
           <h2 className="mt-3 text-2xl font-semibold text-white">Practice software audit action map</h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-            Australian practices actively search for practice management software (480 monthly searches) and medical practice management software (140 monthly searches). StackSmart does not replace the PMS — it reviews the paid subscription layer around it: booking, reminders, forms, telehealth, payments, Medicare/billing connectors, AI scribes, review tools, and clinician seats. The audit works from billing data only and produces a practical action list for an owner-operator or practice manager.
+            Australian practices actively search for practice management software (480 monthly searches, $21 CPC, competition index 27) and medical practice management software (140 monthly searches, $11 CPC). StackSmart does not replace the PMS — it reviews the paid subscription layer around it: booking, reminders, forms, telehealth, payments, Medicare/billing connectors, AI scribes, review tools, and clinician seats. The audit works from billing data only and produces a practical action list for an owner-operator or practice manager.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
@@ -509,6 +517,10 @@ export default function MedicalPracticeSoftwareSubscriptionAuditPage() {
                 "Where do practice-management connector fees hide?",
                 "Practice-management connector fees often appear as separate line items or add-ons for payments, SMS reminders, online forms, telehealth, reporting, accounting sync, transcription, or document workflows. A billing-export audit groups those charges beside the core practice-management platform so the owner or practice manager can decide what to keep, cut, right-size, consolidate, or renegotiate.",
               ],
+              [
+                "How does a practice manager build a recurring bills register for clinic software?",
+                "Export 6 to 12 months of transactions from Xero, MYOB, or your business card. For each recurring charge, record the vendor name, monthly or annual cost, next billing or renewal date, which card or bank account it debits, who last confirmed the tool is still needed, and a decision: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner. Sort by renewal date so the most urgent contracts get attention first. This register replaces the informal tracking that disappears when a practice manager or owner GP changes — and prevents annual PMS, telehealth, and payroll contracts from auto-renewing at last year's seat count.",
+              ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
@@ -520,11 +532,11 @@ export default function MedicalPracticeSoftwareSubscriptionAuditPage() {
       </section>
 
 
-      {/* 2026-06-10 proof refresh */}
+      {/* 2026-06-19 proof refresh */}
       <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-300">2026-06-10 proof refresh</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary-300">2026-06-19 proof refresh</p>
             <h2 className="mt-3 text-2xl font-semibold text-white">Audit the paid layer around the PMS — not the PMS itself</h2>
             <p className="mt-4 text-sm leading-7 text-dark-300">
               Practice management software carries strong search demand in Australia, but StackSmart is not a PMS replacement. It reviews the subscription charges that accumulate around the clinical platform — booking, reminders, SMS packs, forms, telehealth, payments, Medicare/billing connectors, AI scribes, transcription, review tools, reporting dashboards, and clinician/admin seats — from card statements and accounting exports only. Duplicate charges, unused seats, converted-trial subscriptions, AI-tool overlap across clinicians, and ownerless annual renewals are the patterns that surface most often.
@@ -561,6 +573,33 @@ export default function MedicalPracticeSoftwareSubscriptionAuditPage() {
         ]}
         location="medical_practice_20260610"
       />
+
+      {/* Recurring bills register */}
+      <section className="border-t border-dark-800/80 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-19 recurring bills register</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Build a recurring bills register for your medical practice</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            Practice managers and owner GPs track software subscriptions informally — who remembers which card pays for the booking platform, when the PMS contract renews, and whether departed locum accounts are still licensed. Australian practices actively search for practice management software (480 monthly searches, $21 CPC) and medical practice management software (140 monthly searches, $11 CPC). StackSmart does not replace the PMS — it reviews the billing layer around it. A recurring bills register captures what matters for every charge before the next renewal cycle.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["Due date and payment account", "Record the billing date and which card, direct debit, or bank account each subscription charges. Clinic subscriptions frequently split across a practice card, an owner GP's personal card, a PayPal account, and direct debits set up by a previous practice manager — making total software spend invisible from any single statement."],
+              ["Last confirmed still needed", "For each tool, note when someone last verified it is actively used and by whom. Telehealth platforms post-pandemic, AI scribe trial-to-paid conversions, SMS packs, forms tools, and reporting dashboards are the categories most likely to have no recent confirmation. If nobody has checked usage in 6 months, add it to the review list."],
+              ["Keep, cancel, downgrade, consolidate, renegotiate, assign owner", "Give every subscription a decision. Keep tools tied to daily clinical and admin workflows. Cancel duplicates and unused trial conversions. Downgrade telehealth and PMS tiers above current practitioner count. Consolidate where the PMS now covers a standalone tool. Renegotiate annual contracts using current headcount. Assign a named renewal owner — practice manager, owner GP, or bookkeeper — so no charge auto-renews unchecked."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">Why billing-layer audit before platform migration</p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">Most medical practice software demand is for the core clinical platform — Best Practice, Medical Director, Genie, Cliniko. StackSmart does not replace any PMS. It reviews the paid subscription layer around it: booking add-ons, recall tools, SMS packs, AI scribes, telehealth, forms, payment connectors, reporting dashboards, and practitioner seats that accumulate across practice manager handovers and locum rotations. Cleaning up the billing layer first means the practice knows exactly what it is paying for before evaluating whether a platform change is warranted.</p>
+          </div>
+        </div>
+      </section>
 
       {/* Lead capture */}
       <section className="py-16">

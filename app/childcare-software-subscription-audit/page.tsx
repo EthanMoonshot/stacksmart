@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Childcare Software Subscription Audit | StackSmart",
       description:
         "Childcare and early learning centres carry enrolment, rostering, payroll, parent comms, compliance, CCS billing, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
-      dateModified: "2026-06-10",
+      dateModified: "2026-06-19",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -103,6 +103,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "When a director or lead admin leaves, several subscription categories persist without a named owner. Personal app store subscriptions expensed to the centre continue billing under the departing person's credentials. Annual management and billing platform contracts auto-renew at the previous seat count without the incoming director reviewing terms or enrolment numbers. Educator accounts in rostering and training platforms stay licensed for departed staff until an explicit review. Running a billing audit at the start of a director's tenure — or at the start of each enrolment year — catches these persisting costs before they compound over a full contract period.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do childcare operators build a recurring bills register to track subscription due dates and payment accounts?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "List every recurring software charge from your Xero, MYOB, or card export. For each subscription, record the vendor, monthly or annual cost, billing date, which card or bank account it charges, who last confirmed the tool is still needed, and a decision column: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner. Sort by next billing date so you act on the most urgent charges first. This register replaces the informal knowledge that disappears when a director or admin leaves and gives the incoming person a clear starting point.",
           },
         },
       ],
@@ -462,6 +470,10 @@ export default function ChildcareSoftwareSubscriptionAuditPage() {
                 "What happens to childcare software subscriptions when a director or centre admin changes?",
                 "When a director or lead admin leaves, several subscription categories persist without a named owner. Personal app store subscriptions expensed to the centre continue billing under the departing person's credentials. Annual management and billing platform contracts auto-renew at the previous seat count without the incoming director reviewing terms or enrolment numbers. Educator accounts in rostering and training platforms stay licensed for departed staff until an explicit review. Running a billing audit at the start of a director's tenure — or at the start of each enrolment year — catches these persisting costs before they compound over a full contract period.",
               ],
+              [
+                "How do childcare operators build a recurring bills register to track subscription due dates and payment accounts?",
+                "List every recurring software charge from your Xero, MYOB, or card export. For each subscription, record the vendor, monthly or annual cost, billing date, which card or bank account it charges, who last confirmed the tool is still needed, and a decision column: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner. Sort by next billing date so you act on the most urgent charges first. This register replaces the informal knowledge that disappears when a director or admin leaves and gives the incoming person a clear starting point.",
+              ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
@@ -477,9 +489,9 @@ export default function ChildcareSoftwareSubscriptionAuditPage() {
       <section className="border-t border-dark-800/80 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-10 childcare-management audit refresh</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-19 childcare-management audit refresh</p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Review childcare admin subscriptions without touching child records</h2>
-            <p className="mt-4 text-base leading-7 text-dark-300">Live AU checks showed measurable intent for childcare management software (90 monthly searches) and childcare software (70). For owner-led single-centre and small multi-site operators, StackSmart answers the adjacent question: what software charges are still billing across enrolment, parent comms, CCS billing, rostering, payroll, payments, learning stories, SMS packs, compliance modules, casual staff access, forms, and marketing?</p>
+            <p className="mt-4 text-base leading-7 text-dark-300">Live AU checks show measurable demand for childcare management software (110 monthly searches, $46 CPC, competition index 3) and childcare software (70 searches, $13 CPC). For owner-led single-centre and small multi-site operators, StackSmart answers the adjacent question: what software charges are still billing across enrolment, parent comms, CCS billing, rostering, payroll, payments, learning stories, SMS packs, compliance modules, casual staff access, forms, and marketing?</p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
               <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
@@ -498,6 +510,33 @@ export default function ChildcareSoftwareSubscriptionAuditPage() {
           <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">What the StackSmart output should prove</p>
             <p className="mt-3 text-sm leading-7 text-dark-200">A centre owner should finish the audit with a clear admin-stack map: what the main platform covers, what standalone tools remain justified, what tools are duplicated, where staff/leaver seats are still paid, and which renewal dates need action before the next enrolment cycle.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Recurring bills register */}
+      <section className="border-t border-dark-800/80 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-19 recurring bills register</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Build a recurring bills register for your childcare centre</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            Owner-led childcare centres often track subscriptions informally — a director remembers which card pays for the parent comms app, when the management platform renews, and which educator training seats are still active. When that director leaves, the knowledge goes with them. A recurring bills register captures what matters for every charge: vendor, cost, billing date, payment account, last-confirmed-still-needed date, and a clear decision. Australian centres searching for childcare management software (110 monthly searches, $46 CPC) and childcare software (70 searches) are often looking for platform capability they may already have — making the billing-layer audit the cheaper first step before a platform migration.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["Due date and payment account", "Record the billing date and which card, direct debit, or bank account each subscription charges. Centre operators frequently discover charges split across a business card, a director's personal card, an Apple ID, and a direct debit — making it impossible to see total software spend from a single statement."],
+              ["Last confirmed still needed", "For each tool, note when someone last verified it is actively used. Parent comms apps, compliance tools post-assessment, casual educator training seats, and form builders are the categories most likely to have no recent confirmation. If nobody has checked in 6 months, it is a review candidate."],
+              ["Keep, cancel, downgrade, consolidate, renegotiate, assign owner", "Give every subscription a decision. Keep tools tied to daily operations. Cancel duplicates and idle subscriptions. Downgrade tiers that exceed current enrolment or educator count. Consolidate where the management platform now covers a standalone tool's function. Renegotiate annual contracts before the notice window closes. Assign a named renewal owner so no charge auto-renews without a decision."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">Why billing-layer audit before platform migration</p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">Most childcare software demand is for management platforms — the core operational system. StackSmart does not replace Xplor, Kinderm8, or any management platform. It reviews the billing layer around it: the recurring charges for parent comms, forms, sign-in tools, SMS packs, compliance modules, educator training seats, and marketing tools that accumulate across director handovers and enrolment cycles. Cleaning up the billing layer first means the centre knows exactly what it is paying for before evaluating whether a platform change is worth the disruption.</p>
           </div>
         </div>
       </section>

@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Psychology Practice Software Subscription Audit | StackSmart",
       description:
         "Audit software subscriptions for psychology and counselling practices — booking, telehealth, reminders, billing, payroll, and marketing tools without accessing clinical records.",
-      dateModified: "2026-06-10",
+      dateModified: "2026-06-19",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -96,6 +96,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Start from billing and admin access lists rather than clinical records. Compare paid users in practice-management, telehealth, forms, transcription, M365/Google Workspace, and design/admin tools against current clinicians, contractors, and admin staff. Remove or downgrade unused paid seats while preserving any access the practice needs for records and continuity.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How do psychology practice owners track recurring software bills, due dates, and payment accounts?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Export 6 to 12 months of transactions from Xero, MYOB, QuickBooks, or your business card. For each recurring charge, record the vendor, monthly or annual cost, next billing date, which card or bank account it charges, who last confirmed the tool is still needed, and a decision: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner. Sort by next billing date so the most urgent renewals get reviewed first. This register is especially important in psychology practices where contractor clinicians come and go — each one may have signed up for individual AI scribe, telehealth, or forms tool subscriptions expensed to the practice, and those charges persist after the contractor reduces days or leaves.",
           },
         },
       ],
@@ -484,12 +492,43 @@ export default function PsychologyPracticeSoftwareSubscriptionAuditPage() {
                 "How can a psychology practice do contractor clinician seat cleanup safely?",
                 "Start from billing and admin access lists rather than clinical records. Compare paid users in practice-management, telehealth, forms, transcription, M365/Google Workspace, and design/admin tools against current clinicians, contractors, and admin staff. Remove or downgrade unused paid seats while preserving any access the practice needs for records and continuity.",
               ],
+              [
+                "How do psychology practice owners track recurring software bills, due dates, and payment accounts?",
+                "Export 6 to 12 months of transactions from Xero, MYOB, QuickBooks, or your business card. For each recurring charge, record the vendor, monthly or annual cost, next billing date, which card or bank account it charges, who last confirmed the tool is still needed, and a decision: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner. Sort by next billing date so the most urgent renewals get reviewed first. This register is especially important in psychology practices where contractor clinicians come and go — each one may have signed up for individual AI scribe, telehealth, or forms tool subscriptions expensed to the practice, and those charges persist after the contractor reduces days or leaves.",
+              ],
             ].map(([q, a]) => (
               <div key={q} className="border-b border-dark-800/60 pb-6">
                 <h3 className="text-base font-semibold text-white">{q}</h3>
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recurring bills register */}
+      <section className="border-t border-dark-800/80 py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-19 recurring bills register</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Build a recurring bills register for your psychology practice</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            Psychology practice owners juggle clinical work and business operations simultaneously. Software subscriptions get added when a problem appears — a telehealth platform during a high-demand period, a booking widget to capture referrals, an AI scribe a contractor recommended — and nobody circles back to check whether each tool is still earning its cost. Australian search demand for psychology practice management software (50 monthly searches, $19 CPC, competition index 44) confirms owners are actively evaluating their platform options. The billing-layer audit is the cheaper first step: review what you are paying for before deciding whether the platform itself needs to change.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["Due date and payment account", "Record the billing date and which card, direct debit, or bank account each subscription charges. Psychology practices frequently discover charges split across the practice card, a principal psychologist's personal card, individual contractor expense claims, and PayPal — making total software spend invisible from any single statement."],
+              ["Last confirmed still needed", "For each tool, note when someone last verified it is actively used and by whom. Telehealth platforms at inflated tiers, standalone booking widgets alongside PMS booking, SMS reminder tools, and AI scribe or transcription subscriptions added by individual clinicians are the categories most likely to have no recent confirmation."],
+              ["Keep, cancel, downgrade, consolidate, renegotiate, assign owner", "Give every subscription a decision. Keep tools tied to daily clinical scheduling and client communications. Cancel duplicates and tools from completed platform migrations. Downgrade telehealth tiers to match current remote-session volume. Consolidate booking and reminder tools where the PMS covers both. Renegotiate annual contracts before the notice window closes. Assign a named renewal owner so no charge drifts past the next billing cycle unchecked."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">Why billing-layer audit before platform migration</p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">Most psychology software demand is for the core practice management platform. StackSmart does not replace Halaxy, Cliniko, Power Diary, or any PMS. It reviews the paid subscription layer around it: booking widgets, reminders, SMS packs, telehealth, AI scribes, transcription tools, forms, payment gateways, and clinician seats that accumulate across contractor rotations and growth phases. Cleaning up the billing layer first means the practice owner knows exactly what is still charging before evaluating whether a platform change is worth the disruption to clinical workflows.</p>
           </div>
         </div>
       </section>
@@ -508,7 +547,7 @@ export default function PsychologyPracticeSoftwareSubscriptionAuditPage() {
           "Treat clinical continuity as protected: downgrade or remove software only after confirming records and appointments remain accessible.",
           "Give the practice owner or admin manager a renewal-owner list so quiet software charges stop drifting.",
         ]}
-        location="psychology_practice_20260610"
+        location="psychology_practice_20260619"
       />
 
       {/* Lead capture */}
