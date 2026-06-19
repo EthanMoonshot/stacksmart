@@ -22,7 +22,7 @@ const jsonLd = {
       description:
         "Compare SaaS subscription management software for small businesses and find the right approach for your team size.",
       url: "https://stacksmart.app/saas-subscription-management-software",
-      dateModified: "2026-06-06",
+      dateModified: "2026-06-20",
     },
     {
       "@type": "BreadcrumbList",
@@ -346,6 +346,85 @@ export default function SaaSSubscriptionManagementSoftwarePage() {
         </div>
       </section>
 
+      {/* 2026-06-20 management software vs fast licence audit */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-20 refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Subscription management software vs a fast licence audit</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            When an owner-led business with 5 to 50 staff searches for subscription management software, the actual problem is usually not &ldquo;I need a procurement platform.&rdquo; It is: I am carrying 12 to 18 active subscriptions at $1,800 to $2,400 per month, I know there is waste in there, and I need a structured way to find and act on it without a multi-week implementation. The distinction matters because the right first step is usually a billing-led audit, not a platform purchase.
+          </p>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Subscription management software</p>
+              <h3 className="mt-3 text-base font-semibold text-white">What it does well</h3>
+              <ul className="mt-4 space-y-2 text-sm leading-7 text-dark-300">
+                <li>Ongoing governance and approval workflows for new tool purchases</li>
+                <li>SSO/SCIM-based per-employee usage tracking</li>
+                <li>Contract lifecycle management with e-signature and vendor scoring</li>
+                <li>Compliance and audit-trail requirements for regulated industries</li>
+              </ul>
+              <h3 className="mt-5 text-base font-semibold text-white">Where it falls short for SMBs</h3>
+              <ul className="mt-3 space-y-2 text-sm leading-7 text-dark-300">
+                <li>6 to 12 week implementation before first useful output</li>
+                <li>$30K to $150K per year — often more than the waste it finds</li>
+                <li>Requires dedicated IT or ops staff to configure and maintain</li>
+                <li>Does not surface Microsoft 365 or Google Workspace licence-level waste</li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-brand-500/30 bg-gradient-to-br from-brand-500/5 to-dark-900/70 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Fast licence and subscription audit</p>
+              <h3 className="mt-3 text-base font-semibold text-white">What it does well</h3>
+              <ul className="mt-4 space-y-2 text-sm leading-7 text-dark-300">
+                <li>Actionable output from billing data in under one hour</li>
+                <li>Finds leaver seats, duplicate tools, tier mismatches, and ownerless renewals</li>
+                <li>Covers Microsoft 365 and Google Workspace licence waste specifically</li>
+                <li>Recurring bills tracker with payment account, owner, and decision per charge</li>
+                <li>From $49 one-time or $29/month — no IT rollout, no SSO integration</li>
+              </ul>
+              <h3 className="mt-5 text-base font-semibold text-white">Where it stops</h3>
+              <ul className="mt-3 space-y-2 text-sm leading-7 text-dark-300">
+                <li>No automated approval workflows for new purchases</li>
+                <li>No per-employee usage monitoring via SSO/SCIM</li>
+                <li>Not a contract repository or vendor lifecycle tool</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-8 rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+            <h3 className="text-base font-semibold text-white">Start with the licence audit, then decide on a platform</h3>
+            <p className="mt-3 text-sm leading-7 text-dark-300">
+              Most owner-led SMBs that run a billing-led audit first discover that 80 percent of the value comes from visibility and action — not from governance features. The audit produces a recurring bills register, flags Microsoft 365 and Google Workspace licence waste, identifies subscription bloat across all payment methods, and gives you a clear decision list you can act on this week. If the output shows you need ongoing procurement controls, you now have data to justify the platform purchase.
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <a href="/microsoft-365-license-audit-small-business" className="group rounded-xl border border-dark-700 bg-dark-800/60 p-4 transition-colors hover:border-brand-400/40">
+                <p className="text-sm font-semibold text-white group-hover:text-brand-300">M365 licence audit</p>
+                <p className="mt-1 text-xs text-dark-400">Leaver seats, Copilot, tier downgrades</p>
+              </a>
+              <a href="/google-workspace-license-audit-small-business" className="group rounded-xl border border-dark-700 bg-dark-800/60 p-4 transition-colors hover:border-brand-400/40">
+                <p className="text-sm font-semibold text-white group-hover:text-brand-300">Workspace licence audit</p>
+                <p className="mt-1 text-xs text-dark-400">Suspended users, Gemini, aliases</p>
+              </a>
+              <a href="/software-subscription-audit-checklist" className="group rounded-xl border border-dark-700 bg-dark-800/60 p-4 transition-colors hover:border-brand-400/40">
+                <p className="text-sm font-semibold text-white group-hover:text-brand-300">Audit checklist</p>
+                <p className="mt-1 text-xs text-dark-400">Full structured review workflow</p>
+              </a>
+              <a href="/small-business-software-audit" className="group rounded-xl border border-dark-700 bg-dark-800/60 p-4 transition-colors hover:border-brand-400/40">
+                <p className="text-sm font-semibold text-white group-hover:text-brand-300">SMB software audit</p>
+                <p className="mt-1 text-xs text-dark-400">Full owner-led audit guide</p>
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "subscription_management_2026_06_20" }} className="btn-primary text-sm">See the audit output</TrackLink>
+            <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ target: "pricing", location: "subscription_management_2026_06_20" }} className="btn-secondary text-sm">View pricing</TrackLink>
+          </div>
+        </div>
+      </section>
+
       {/* Lead Capture */}
       <section className="border-b border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -477,6 +556,16 @@ export default function SaaSSubscriptionManagementSoftwarePage() {
         title="Explore related subscription management topics"
         description="If you are evaluating subscription management software, these pages cover related approaches — spend management, renewal tracking, audit workflows, and tool comparisons."
         links={[
+          {
+            href: "/microsoft-365-license-audit-small-business",
+            title: "Microsoft 365 licence audit",
+            description: "Billing-first M365 licence audit — leaver seats, Copilot waste, tier downgrades, and shared mailbox conversions.",
+          },
+          {
+            href: "/google-workspace-license-audit-small-business",
+            title: "Google Workspace licence audit",
+            description: "Billing-first Workspace audit — suspended accounts, Gemini waste, aliases vs paid users, and storage review.",
+          },
           {
             href: "/saas-spend-management",
             title: "SaaS spend management for SMBs",

@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Small Business Software Audit | StackSmart",
       description:
         "Run a software audit for your small business without a finance team or IT department. StackSmart turns billing exports into a clear savings report.",
-      dateModified: "2026-06-08",
+      dateModified: "2026-06-20",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -925,6 +925,60 @@ export default function SmallBusinessSoftwareAuditPage() {
         </div>
       </section>
 
+      {/* 2026-06-20 owner-led SMB subscription bloat + M365/GWS routing */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-20 subscription bloat refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">The subscription bloat pattern in owner-led businesses</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            Owner-led SMBs with 5 to 50 staff and no dedicated procurement or IT function share a consistent pattern: 12 to 18 active software subscriptions, $1,800 to $2,400 per month in recurring charges, duplicate services running in parallel across departments, forgotten signups from past projects that quietly converted to paid, and an estimated 30 to 40 percent in recoverable spend once the full picture is visible. The surprise is never one large charge. It is the accumulation of small charges that were never reviewed together.
+          </p>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-start">
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">Where the bloat hides</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
+                <li><span className="font-semibold text-white">Microsoft 365 and Google Workspace:</span> leaver seats, tier mismatches, Copilot or Gemini add-ons assigned to the full team, shared mailboxes on paid seats, and suspended accounts still billing. These are typically the two largest single software line items.</li>
+                <li><span className="font-semibold text-white">Recurring bills across payment methods:</span> subscriptions split across a business credit card, a personal card, PayPal, Stripe invoices, and platform marketplace billing (Shopify apps, Xero add-ons) are harder to see as a whole than owners expect.</li>
+                <li><span className="font-semibold text-white">Duplicate services across departments:</span> operations using one project tool, sales using another, admin using a third. Three subscriptions doing the same job across a 15-person team because nobody compared what each group was paying for.</li>
+                <li><span className="font-semibold text-white">Forgotten signups and converted trials:</span> a team member started a free trial during a crunch, the trial converted to paid, and nobody noticed because the billing email went to the person who set it up — not the business owner.</li>
+              </ul>
+            </div>
+
+            <div className="space-y-4">
+              <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6">
+                <h3 className="text-base font-semibold text-white">Platform-specific licence audits</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">
+                  Microsoft 365 and Google Workspace each carry distinct waste patterns that a general subscription audit misses. Run the platform-specific licence audit alongside your broader software review to catch leaver seats, add-on waste, and tier mismatches specific to each platform.
+                </p>
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  <a href="/microsoft-365-license-audit-small-business" className="group rounded-xl border border-dark-700 bg-dark-800/60 p-4 transition-colors hover:border-brand-400/40">
+                    <p className="text-sm font-semibold text-white group-hover:text-brand-300">Microsoft 365 licence audit</p>
+                    <p className="mt-1 text-xs leading-5 text-dark-400">Leaver seats, Copilot waste, tier downgrades, shared mailbox conversions</p>
+                  </a>
+                  <a href="/google-workspace-license-audit-small-business" className="group rounded-xl border border-dark-700 bg-dark-800/60 p-4 transition-colors hover:border-brand-400/40">
+                    <p className="text-sm font-semibold text-white group-hover:text-brand-300">Google Workspace licence audit</p>
+                    <p className="mt-1 text-xs leading-5 text-dark-400">Suspended accounts, Gemini waste, aliases vs paid users, storage review</p>
+                  </a>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-base font-semibold text-white">From bloat recognition to action list</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">
+                  The recurring bills tracker turns the card-statement scroll into a structured register: one row per charge, with payment account, billing date, named owner, last-confirmed-still-needed date, and a clear decision — keep, cancel, downgrade, consolidate, renegotiate, or assign-owner. The <a href="/software-subscription-audit-checklist" className="text-brand-400 hover:text-brand-300 transition-colors">software subscription audit checklist</a> walks through the full process step by step.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "smb_2026_06_20_bloat" }} className="btn-primary text-sm">Run the audit from billing data</TrackLink>
+            <TrackLink href="/saas-subscription-management-software" event="homepage_cta_clicked" props={{ target: "subscription_management", location: "smb_2026_06_20_bloat" }} className="btn-secondary text-sm">Compare management options</TrackLink>
+          </div>
+        </div>
+      </section>
+
       {/* Lead capture */}
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -970,6 +1024,16 @@ export default function SmallBusinessSoftwareAuditPage() {
         title="More on software audits and spend review"
         description="If you are running a small business software audit, these related pages cover the checklist, the audit tool, and vertical-specific guides for agencies and clinics."
         links={[
+          {
+            href: "/microsoft-365-license-audit-small-business",
+            title: "Microsoft 365 licence audit",
+            description: "Billing-first M365 licence audit for small businesses — leaver seats, Copilot waste, tier downgrades, and shared mailbox conversions.",
+          },
+          {
+            href: "/google-workspace-license-audit-small-business",
+            title: "Google Workspace licence audit",
+            description: "Billing-first Workspace audit for small businesses — suspended accounts, Gemini waste, aliases vs paid users, and storage review.",
+          },
           {
             href: "/how-to-audit-software-subscriptions",
             title: "How to audit software subscriptions",

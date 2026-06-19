@@ -73,7 +73,7 @@ const jsonLd = {
       description:
         "A practical checklist for reviewing recurring software spend — find overlaps, right-size seats, and decide what to cut, consolidate, or renegotiate.",
       url: "https://stacksmart.app/software-subscription-audit-checklist",
-      dateModified: "2026-06-12",
+      dateModified: "2026-06-20",
     },
     {
       "@type": "BreadcrumbList",
@@ -431,6 +431,8 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
           <div className="mt-5 flex flex-wrap gap-3">
             {[
               ["Small business software audit", "/small-business-software-audit"],
+              ["Microsoft 365 licence audit", "/microsoft-365-license-audit-small-business"],
+              ["Google Workspace licence audit", "/google-workspace-license-audit-small-business"],
               ["AI subscription audit", "/ai-subscription-audit"],
               ["Accounting firm audit", "/accounting-firm-software-stack-audit"],
               ["Marketing agency audit", "/marketing-agency-software-stack-audit"],
@@ -540,6 +542,77 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
                 <li><span className="font-semibold text-white">5. Handoff record:</span> a formatted list the bookkeeper, practice manager, or ops admin can execute without understanding the audit methodology.</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026-06-20 recurring bills tracker / subscription bloat section */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-20 subscription bloat refresh</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">The recurring bills tracker every owner-led business needs before a full audit</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+            Owner-led businesses with 5 to 50 staff typically carry 12 to 18 active software subscriptions across multiple payment methods. The pattern is consistent: duplicate services running simultaneously, forgotten signups that quietly converted to paid, and charges nobody has reviewed since the original purchase. A recurring bills tracker turns the card-statement scroll into a structured register with one row per charge and one decision per row.
+          </p>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">What the recurring bills register captures</h3>
+              <p className="mt-3 text-sm leading-7 text-dark-300">
+                For every recurring software charge, record these fields in one place. Missing any one of them is how subscriptions become invisible waste.
+              </p>
+              <div className="mt-5 overflow-x-auto">
+                <table className="w-full min-w-[480px] text-sm">
+                  <thead>
+                    <tr className="border-b border-dark-700">
+                      {["Field", "Why it matters"].map((col) => (
+                        <th key={col} className="pb-3 pr-5 text-left text-xs font-medium uppercase tracking-[0.12em] text-dark-400 last:pr-0">{col}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-dark-800/60">
+                    {[
+                      ["Tool name and vendor", "Identifies the charge — some billing lines use parent company names, not the product name you recognise"],
+                      ["Monthly or annual cost", "Normalise everything to monthly for comparison; flag annual charges separately for renewal-window tracking"],
+                      ["Payment account", "Which card, direct debit, PayPal, or accounting source the charge hits — subscriptions spread across accounts are harder to see as a whole"],
+                      ["Billing date or renewal date", "When the next charge processes — annual renewals need a decision 30 to 60 days before the auto-renewal window closes"],
+                      ["Named owner", "One current team member responsible for the keep/cancel decision — subscriptions with no owner are the highest-risk category"],
+                      ["Last confirmed still needed", "The date someone on the team last confirmed this tool is actively used and earning its cost — anything older than 6 months is a review candidate"],
+                      ["Decision", "Keep, cancel, downgrade, consolidate, renegotiate, or assign-owner — every row needs a decision before the register is complete"],
+                    ].map(([field, detail]) => (
+                      <tr key={field}>
+                        <td className="py-3 pr-5 text-xs font-medium text-dark-200">{field}</td>
+                        <td className="py-3 pr-0 text-xs text-dark-400">{detail}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-base font-semibold text-white">Subscription bloat: what it looks like from inside</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">
+                  The pattern is consistent across owner-led SMBs: a business discovers it is carrying 12 to 16 active subscriptions at $1,800 to $2,400 per month, with duplicate services running in parallel, forgotten signups from past projects, and an estimated 30 to 40 percent in recoverable spend once the full picture is visible. The surprise is rarely one large charge — it is the accumulation of small charges that were never reviewed together.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+                <h3 className="text-base font-semibold text-white">Platform-specific licence audits</h3>
+                <p className="mt-3 text-sm leading-7 text-dark-300">
+                  Microsoft 365 and Google Workspace are typically the two largest single subscription line items in a small business software bill. Both carry their own waste patterns — leaver seats, tier mismatches, and add-ons assigned to the full team when only a few people use them. Run the platform-specific audit alongside the general subscription review.
+                </p>
+                <div className="mt-4 flex flex-col gap-2">
+                  <a href="/microsoft-365-license-audit-small-business" className="text-sm text-brand-400 hover:text-brand-300 transition-colors">Microsoft 365 licence audit for small business</a>
+                  <a href="/google-workspace-license-audit-small-business" className="text-sm text-brand-400 hover:text-brand-300 transition-colors">Google Workspace licence audit for small business</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "checklist_2026_06_20_bloat" }} className="btn-primary text-sm">Automate the register</TrackLink>
+            <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "checklist_2026_06_20_bloat" }} className="btn-secondary text-sm">See the sample output</TrackLink>
           </div>
         </div>
       </section>

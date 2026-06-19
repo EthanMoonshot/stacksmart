@@ -65,6 +65,8 @@ const routes = [
   "/optometry-practice-software-subscription-audit",
   "/architecture-firm-software-stack-audit",
   "/property-management-software-subscription-audit",
+  "/microsoft-365-license-audit-small-business",
+  "/google-workspace-license-audit-small-business",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
