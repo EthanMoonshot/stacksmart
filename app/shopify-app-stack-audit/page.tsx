@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Shopify App Stack Audit | StackSmart",
       description:
         "Audit your Shopify app stack for duplicate and unused apps across reviews, loyalty, email and SMS, upsell, returns, shipping, inventory, analytics, and helpdesk.",
-      dateModified: "2026-06-11",
+      dateModified: "2026-06-26",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -181,7 +181,7 @@ export default function ShopifyAppStackAuditPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Shopify app stack audit</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Shopify app stack audit · 2026-06-26 refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
               Find the app overlap charging your Shopify store
             </h1>
@@ -556,6 +556,38 @@ export default function ShopifyAppStackAuditPage() {
         </div>
       </section>
 
+
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-300">2026-06-26 app subscription refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Shopify app subscriptions need a billing export, not just an installed-app list</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Today&apos;s DataForSEO AU check still shows strong ecommerce intent: “Shopify apps” at 1,600 monthly searches and “Shopify app subscription” at 210 searches with $24.11 CPC. For an owner-led Shopify store, that intent should translate into a practical app-billing audit: Shopify app charges, external SaaS paid by card, email and SMS platforms, analytics tools, support software, inventory apps, shipping apps, review and loyalty products, and annual app renewals.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              The high-value question is not “which app category is best?” It is “which app is still earning its place on this month&apos;s bill?” StackSmart groups every recurring app charge by job, flags duplicate review/UGC, loyalty, email/SMS, page-builder, shipping, inventory, subscription, analytics, and support apps, and gives the store operator a keep, cancel, downgrade, consolidate, renegotiate, or assign-owner action list.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Duplicate app jobs", "Review apps, loyalty tools, email/SMS products, upsell apps, page builders, and subscription tools often overlap after tests, rebrands, or agency-led projects."],
+              ["External SaaS tied to Shopify", "Klaviyo, Gorgias, Triple Whale, shipping, returns, inventory, and attribution tools may bill outside Shopify, so a Shopify-only installed-app review misses real spend."],
+              ["Annual renewals", "App contracts and ecommerce SaaS plans renew before the owner checks order volume, contact count, feature usage, or whether the campaign that justified the tool is still running."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-3xl border border-dark-800 bg-dark-950/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/business-subscription-tracker-small-business" event="homepage_cta_clicked" props={{ from: "shopify_2026_06_26", target: "subscription_tracker" }} className="btn-secondary text-sm">Track app subscriptions</TrackLink>
+            <TrackLink href="/small-business-software-inventory" event="homepage_cta_clicked" props={{ from: "shopify_2026_06_26", target: "software_inventory" }} className="btn-primary text-sm">Build the software inventory</TrackLink>
+          </div>
+        </div>
+      </section>
+
       {/* Lead capture */}
       <OwnerLedRefreshSection type="shopify" />
 
@@ -612,6 +644,16 @@ export default function ShopifyAppStackAuditPage() {
             href: "/retail-store-software-subscription-audit",
             title: "Retail store software subscription audit",
             description: "POS, rostering, inventory, loyalty, and ecommerce stack audit guide for independent and multi-site retailers.",
+          },
+          {
+            href: "/small-business-software-inventory",
+            title: "Small business software inventory",
+            description: "Build the billing-first inventory behind app stack and subscription cleanup decisions.",
+          },
+          {
+            href: "/business-subscription-tracker-small-business",
+            title: "Business subscription tracker",
+            description: "Track Shopify app subscriptions, owners, payment sources, and renewal dates.",
           },
           {
             href: "/small-business-software-audit",

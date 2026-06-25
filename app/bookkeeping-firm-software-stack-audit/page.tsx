@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Bookkeeping Firm Software Stack Audit | StackSmart",
       description:
         "Bookkeeping firms using Xero, QBO, or MYOB ecosystems accumulate receipt capture, payroll, proposal, workflow, e-sign, AI transcription, connector fees, and client portal add-ons with significant overlap.",
-      dateModified: "2026-06-11",
+      dateModified: "2026-06-26",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -223,7 +223,7 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Bookkeeping firm software audit</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Bookkeeping firm software audit · 2026-06-26 refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
               Audit the add-on sprawl in your bookkeeping firm stack
             </h1>
@@ -816,6 +816,38 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
         </div>
       </section>
 
+
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-300">2026-06-26 practice-owner refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Bookkeeping software bills hide across Xero apps, QBO add-ons, cards, and client-tool overlap</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Today&apos;s DataForSEO AU check showed “bookkeeping software Australia” at 880 searches with $33.75 CPC, “accounting practice software” at 390 searches, and “Xero apps” at 260 searches. That demand is broader than software selection. For a 5-to-50-person bookkeeping firm, the commercial pain is usually the connected-app stack: Xero or QBO add-ons, receipt capture, payroll, practice management, proposals, e-sign, client portals, reporting, AI meeting notes, and connector fees all billing in different places.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              StackSmart treats the bookkeeping stack as a billing and ownership problem first. Pull the firm card, accounting export, marketplace billing, and invoices. Then assign each tool a job, owner, payment source, renewal date, last-confirmed-still-needed date, and action decision before the next busy-season or annual-plan renewal.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              ["Xero and QBO connected apps", "Receipt capture, payroll, reporting, workflow, and client-portal add-ons often survive after the core platform or practice-management tool adds overlapping features."],
+              ["Seasonal and former-staff seats", "Bookkeepers, contractors, and admin support can remain active after peak lodgement work, maternity cover, or short-term client projects end."],
+              ["Connector and AI fees", "Zapier, Make, API sync tools, ChatGPT, transcription, and document automation subscriptions are easy to approve but rarely reviewed for active use."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-3xl border border-dark-800 bg-dark-950/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/small-business-software-inventory" event="homepage_cta_clicked" props={{ from: "bookkeeping_2026_06_26", target: "software_inventory" }} className="btn-primary text-sm">Build the software inventory</TrackLink>
+            <TrackLink href="/business-subscription-tracker-small-business" event="homepage_cta_clicked" props={{ from: "bookkeeping_2026_06_26", target: "subscription_tracker" }} className="btn-secondary text-sm">Track recurring subscriptions</TrackLink>
+          </div>
+        </div>
+      </section>
+
       {/* Lead capture */}
       <OwnerLedRefreshSection type="bookkeeping" />
 
@@ -867,6 +899,16 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
             href: "/accounting-firm-software-stack-audit",
             title: "Accounting firm software stack audit",
             description: "Practice management, tax, AI subscription right-sizing, e-sign duplication, and the 30-minute card-statement pass for accounting firms.",
+          },
+          {
+            href: "/small-business-software-inventory",
+            title: "Small business software inventory",
+            description: "Build the billing-first software inventory for Xero, QBO, MYOB, practice tools, add-ons, and firm subscriptions.",
+          },
+          {
+            href: "/business-subscription-tracker-small-business",
+            title: "Business subscription tracker",
+            description: "Track renewal dates, owners, payment sources, and action decisions for recurring firm software subscriptions.",
           },
           {
             href: "/saas-spend-audit-tool",

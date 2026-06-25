@@ -17,6 +17,8 @@ const routes = [
   "/zylo-alternative",
   "/vendr-alternative",
   "/jira-cost-small-team",
+  "/small-business-software-inventory",
+  "/business-subscription-tracker-small-business",
   "/best-saas-spend-management-tools",
   "/saas-cost-optimization-software",
   "/saas-subscription-management-software",
