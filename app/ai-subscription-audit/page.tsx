@@ -20,7 +20,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": absoluteUrl("/ai-subscription-audit"),
       url: absoluteUrl("/ai-subscription-audit"),
-      dateModified: "2026-06-14",
+      dateModified: "2026-06-27",
       name: "AI Subscription Audit | StackSmart",
       description:
         "ChatGPT Teams, Claude Pro, Midjourney, Canva Pro, Notion AI, and meeting transcription tools are a fast-growing waste category in owner-led SMB billing exports. An AI subscription audit finds overlapping tools, idle seats, and full-tier plans with two active users.",
@@ -218,11 +218,14 @@ export default function AiSubscriptionAuditPage() {
       />
       <Navbar />
 
+      {/* 2026-06-27 owner-led SMB AI-spend refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16"><div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8"><div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8"><p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-27 refresh · AI subscriptions as the new SaaS sprawl</p><h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">For owner-led SMBs, the question is usually “which AI tools do we actually still need?”</h2><p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">Pull 6-12 months of card and accounting exports, isolate ChatGPT, Claude, Perplexity, Canva, Midjourney, meeting-transcript, writing, image, and AI add-on charges, then assign one current owner and one current use case to every subscription. Anything without an owner, active user, or distinct job becomes a cancel, downgrade, consolidate, or renewal-review candidate.</p><div className="mt-6 grid gap-4 sm:grid-cols-2"><div className="rounded-2xl border border-dark-700 bg-dark-950/60 p-5"><h3 className="text-sm font-semibold text-white">Most common 5-50 staff pattern</h3><p className="mt-3 text-sm leading-7 text-dark-300">One general-purpose AI adopted by the owner, another adopted by the team, individual Canva or transcription accounts on separate cards, and an annual team plan that still reflects optimistic rollout rather than actual weekly users.</p></div><div className="rounded-2xl border border-dark-700 bg-dark-950/60 p-5"><h3 className="text-sm font-semibold text-white">Best next page</h3><p className="mt-3 text-sm leading-7 text-dark-300">If AI is only one part of the mess, start with the <TrackLink href="/small-business-software-inventory" event="homepage_cta_clicked" props={{ from: "ai_subscription_audit", to: "small_business_software_inventory" }} className="text-brand-200 hover:text-brand-100">small business software inventory</TrackLink> or the <TrackLink href="/business-subscription-tracker-small-business" event="homepage_cta_clicked" props={{ from: "ai_subscription_audit", to: "business_subscription_tracker" }} className="text-brand-200 hover:text-brand-100">business subscription tracker</TrackLink>.</p></div></div></div></div></section>
+
       {/* Hero */}
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">AI subscription audit · June 2026 owner-led SMB refresh</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">AI subscription audit · 2026-06-27 owner-led SMB refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
               Stop paying for AI tools nobody uses
             </h1>

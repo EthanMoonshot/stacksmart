@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Retail Store Software Subscription Audit | StackSmart",
       description:
         "Audit your retail store software subscriptions for duplicate tools, unused seats, and subscriptions that accumulated across sites and seasons.",
-      dateModified: "2026-06-13",
+      dateModified: "2026-06-27",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -185,12 +185,12 @@ export default function RetailStoreSoftwareSubscriptionAuditPage() {
       </section>
 
 
-      {/* 2026 proof refresh */}
+      {/* 2026-06-27 retail proof refresh */}
       <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-27 retail proof refresh</p>
               <h2 className="mt-3 text-2xl font-semibold text-white">Measured retail demand, translated into a waste audit</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
                 DataForSEO AU live checks show retail POS system at 590 monthly searches / $38.50 CPC / $31.77 high bid, retail inventory software at 170 / $22.20 CPC / $43.45 high bid, POS software Australia at 210 / $30.24 CPC / $28.15 high bid, and POS system for small business at 210 / $50.98 CPC / $53.03 high bid. StackSmart uses that buying moment differently: before an owner-led 5-50 staff retailer adds another system, it reconciles the paid stack already hiding in card statements, accounting exports, POS invoices, app marketplaces, and site-level admin accounts.
@@ -208,6 +208,9 @@ export default function RetailStoreSoftwareSubscriptionAuditPage() {
           </div>
         </div>
       </section>
+
+      {/* 2026-06-27 retail operator refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16"><div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8"><div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8"><p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-27 refresh · independent and multi-site retail</p><h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">Audit the subscription layer before replacing POS, inventory, or loyalty systems</h2><p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">Retail search demand is often framed as software selection. StackSmart’s buyer is the owner who suspects waste before they buy: old campaign apps, duplicate loyalty/review tools, inventory add-ons that overlap with Shopify or POS features, seasonal rostering seats, SMS/email tiers above the current list, and payment add-ons no manager currently owns. The output is a billing-backed action list, not a recommendation to rip out the operating system.</p><div className="mt-6 flex flex-wrap gap-3 text-sm"><TrackLink href="/shopify-app-stack-audit" event="homepage_cta_clicked" props={{ from: "retail_store_software_audit", to: "shopify_app_stack_audit" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Shopify app audit</TrackLink><TrackLink href="/ecommerce-software-subscription-audit" event="homepage_cta_clicked" props={{ from: "retail_store_software_audit", to: "ecommerce_software_subscription_audit" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Ecommerce software audit</TrackLink><TrackLink href="/small-business-software-inventory" event="homepage_cta_clicked" props={{ from: "retail_store_software_audit", to: "small_business_software_inventory" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Software inventory</TrackLink></div></div></div></section>
 
       {/* Why retailers accumulate waste */}
       <section className="py-14 sm:py-16">

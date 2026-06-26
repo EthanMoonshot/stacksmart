@@ -61,7 +61,7 @@ const jsonLd = {
       description:
         "See how StackSmart turns billing exports into clear cut, consolidate, and renegotiate actions for growing teams.",
       url: absoluteUrl("/saas-spend-audit-tool"),
-      dateModified: "2026-06-12",
+      dateModified: "2026-06-27",
     },
     {
       "@type": "BreadcrumbList",
@@ -186,12 +186,15 @@ export default function SaaSSpendAuditToolPage() {
       </section>
 
 
-      {/* 2026-06-12 proof refresh */}
+      {/* 2026-06-27 owner-led SMB conversion refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16"><div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8"><div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start"><div><p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-27 refresh · owner-led SMB fit</p><h2 className="mt-3 text-2xl font-semibold text-white">Built for the owner who needs a usable cut list, not a procurement platform</h2><p className="mt-4 text-sm leading-7 text-dark-300">StackSmart is strongest when a 5-50 staff business has too many recurring tools, scattered card payments, and no formal software owner. The audit starts from billing exports and turns them into a working software inventory: vendor, category, payment source, likely owner, renewal risk, and recommended action. That makes it useful for clinics, agencies, bookkeeping firms, studios, retailers, and multi-site operators where the owner spots the waste but an admin, bookkeeper, or office manager has to execute the cleanup.</p></div><div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6"><h3 className="text-base font-semibold text-white">High-intent paths to compare</h3><ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300"><li><TrackLink href="/small-business-software-inventory" event="homepage_cta_clicked" props={{ from: "saas_spend_audit_tool", to: "small_business_software_inventory" }} className="text-brand-200 hover:text-brand-100">Software inventory for small business</TrackLink> — if your first problem is not knowing what is active.</li><li><TrackLink href="/business-subscription-tracker-small-business" event="homepage_cta_clicked" props={{ from: "saas_spend_audit_tool", to: "business_subscription_tracker" }} className="text-brand-200 hover:text-brand-100">Business subscription tracker</TrackLink> — if recurring bills and payment sources are scattered.</li><li><TrackLink href="/microsoft-365-license-audit-small-business" event="homepage_cta_clicked" props={{ from: "saas_spend_audit_tool", to: "m365_license_audit" }} className="text-brand-200 hover:text-brand-100">Microsoft 365 licence audit</TrackLink> and <TrackLink href="/google-workspace-license-audit-small-business" event="homepage_cta_clicked" props={{ from: "saas_spend_audit_tool", to: "google_workspace_license_audit" }} className="text-brand-200 hover:text-brand-100">Google Workspace licence audit</TrackLink> — if seat waste is the obvious first cleanup.</li></ul></div></div></div></section>
+
+      {/* 2026-06-27 owner-led SMB refresh */}
       <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-12 proof refresh</p>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-27 owner-led SMB refresh</p>
               <h2 className="mt-3 text-2xl font-semibold text-white">Every tool under the microscope for 10-500 person companies</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
                 Recent buyer language from owner-led SMBs is practical: scattered client context across tools, AI-tool sprawl from shared GPT and Chrome logins, duplicate auto-renewing charges nobody reviews, and hidden admin overhead from ownerless renewals. StackSmart serves that moment: upload a billing export or card statement and get a decision list for the tools already charging you. No enterprise rollout, no SSO requirement, no multi-month implementation.

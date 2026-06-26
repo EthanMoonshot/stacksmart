@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Fitness Studio Software Subscription Audit | StackSmart",
       description:
         "Fitness and wellness studios carry booking, member management, payments, marketing, payroll, access control, accounting, and class tools. A software audit finds what to cut, consolidate, and renegotiate.",
-      dateModified: "2026-06-09",
+      dateModified: "2026-06-27",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -62,7 +62,7 @@ const jsonLd = {
           name: "Where do fitness studio software costs hide outside the booking platform?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "They often hide in SMS packs, payment add-ons, access-control tools, email/CRM automations, class-pack apps, review tools, instructor seats, and trials kept after a campaign or timetable change. A 2026 proof refresh should match those charges to current classes, staff, and member workflows before assigning keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decisions.",
+            text: "They often hide in SMS packs, payment add-ons, access-control tools, email/CRM automations, class-pack apps, review tools, instructor seats, and trials kept after a campaign or timetable change. A 2026-06-27 retail proof refresh should match those charges to current classes, staff, and member workflows before assigning keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner decisions.",
           },
         },
         {
@@ -209,11 +209,14 @@ export default function FitnessStudioSoftwareSubscriptionAuditPage() {
               Export 6 to 12 months of billing data from Xero, MYOB, or your business credit card. Group every recurring charge by category — member management and booking, payments, marketing, payroll, access control, accounting, and class or content tools. For any category with more than one active tool, check what your member management platform now includes natively — email marketing, payments, and scheduling features are commonly bundled in platforms like Mindbody, Glofox, and TeamUp. Pull your current staff and instructor list and remove idle accounts from per-user tools. Identify your highest annual contract — usually the member management platform — and flag it for renegotiation if your current active member count has changed since the contract was signed. Assign each subscription a keep, cut, consolidate, or renegotiate decision and act on the highest-value items first.
             </p>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              2026 proof refresh: measured AU demand for fitness studio software is useful category intent, but StackSmart is not trying to replace the operating platform. It audits the subscription layer around that platform for an owner-led fitness, pilates, yoga, wellness, or boutique studio owner/operator: booking platform add-ons, payment/merchant tools, SMS/email packs, access-control and check-in tools, class-pack apps, marketing automations, instructor or admin seats, and legacy trial tools kept after a promotion or timetable change. Start with Xero or MYOB exports, business-card statements, payment/merchant invoices, booking-platform invoices, app-store receipts, and email/SMS/marketing tool invoices. The output is a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list before notice windows or auto-renewals close.
+              2026-06-27 retail proof refresh: measured AU demand for fitness studio software is useful category intent, but StackSmart is not trying to replace the operating platform. It audits the subscription layer around that platform for an owner-led fitness, pilates, yoga, wellness, or boutique studio owner/operator: booking platform add-ons, payment/merchant tools, SMS/email packs, access-control and check-in tools, class-pack apps, marketing automations, instructor or admin seats, and legacy trial tools kept after a promotion or timetable change. Start with Xero or MYOB exports, business-card statements, payment/merchant invoices, booking-platform invoices, app-store receipts, and email/SMS/marketing tool invoices. The output is a practical keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner action list before notice windows or auto-renewals close.
             </p>
           </div>
         </div>
       </section>
+
+      {/* 2026-06-27 fitness/wellness operator refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16"><div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8"><div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start"><div><p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-27 refresh · fitness and wellness SMBs</p><h2 className="mt-3 text-2xl font-semibold text-white">For studios, the waste is usually around the booking platform</h2><p className="mt-4 text-sm leading-7 text-dark-300">Owner-led gyms, pilates studios, yoga studios, wellness clinics, and boutique fitness operators often do not need a new platform first. They need a clean view of the paid layer around it: member-management add-ons, SMS packs, email automations, casual instructor seats, access-control tools, payment processors, challenge apps, video/content subscriptions, and AI/admin tools that stayed live after a campaign ended.</p></div><div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6"><h3 className="text-base font-semibold text-white">Audit outputs a studio owner can action</h3><ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300"><li>Payment-source map across Xero/MYOB, card statements, booking-platform invoices, and app receipts.</li><li>Current owner and last-confirmed-needed status for every booking, marketing, payroll, access, and content tool.</li><li>Renewal-owner list for annual platform and add-on costs before notice windows close.</li><li>Related: <TrackLink href="/business-subscription-tracker-small-business" event="homepage_cta_clicked" props={{ from: "fitness_studio_software_audit", to: "business_subscription_tracker" }} className="text-brand-200 hover:text-brand-100">business subscription tracker</TrackLink> and <TrackLink href="/small-business-software-inventory" event="homepage_cta_clicked" props={{ from: "fitness_studio_software_audit", to: "small_business_software_inventory" }} className="text-brand-200 hover:text-brand-100">software inventory</TrackLink>.</li></ul></div></div></div></section>
 
       {/* Typical software stack */}
       <section className="py-14 sm:py-16">
@@ -341,7 +344,7 @@ export default function FitnessStudioSoftwareSubscriptionAuditPage() {
       </section>
 
 
-      {/* 2026 proof refresh */}
+      {/* 2026-06-27 retail proof refresh */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Owner/admin cleanup</p>

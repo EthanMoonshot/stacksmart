@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Xero App Stack Audit | StackSmart",
       description:
         "Audit your Xero app stack for duplicate add-ons, unused seats, surprise annual renewals, and tier creep across payroll, receipt capture, reporting, practice management, and client portal tools.",
-      dateModified: "2026-06-11",
+      dateModified: "2026-06-27",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -227,6 +227,9 @@ export default function XeroAppStackAuditPage() {
           </div>
         </div>
       </section>
+
+      {/* 2026-06-27 owner-led Xero refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16"><div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8"><div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start"><div><p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-27 refresh · Xero-heavy SMBs</p><h2 className="mt-3 text-2xl font-semibold text-white">Use Xero billing to find app waste before buying another add-on</h2><p className="mt-4 text-sm leading-7 text-dark-300">For a Xero-heavy owner-led business, the audit is billing-first: Xero marketplace charges, card-statement tools, payroll/receipt/reporting add-ons, proposal and e-sign subscriptions, and AI/admin tools around the finance workflow. StackSmart does not need client files or ledger access; it builds the owner’s action list from the payments already leaving the business.</p></div><div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6"><h3 className="text-base font-semibold text-white">Related cleanup lanes</h3><ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300"><li><TrackLink href="/accounting-firm-software-stack-audit" event="homepage_cta_clicked" props={{ from: "xero_app_stack_audit", to: "accounting_firm_software_stack_audit" }} className="text-brand-200 hover:text-brand-100">Accounting firm stack audit</TrackLink> for practice-wide tool overlap.</li><li><TrackLink href="/bookkeeping-firm-software-stack-audit" event="homepage_cta_clicked" props={{ from: "xero_app_stack_audit", to: "bookkeeping_firm_software_stack_audit" }} className="text-brand-200 hover:text-brand-100">Bookkeeping firm software audit</TrackLink> for receipt, payroll, workflow, and client-admin tools.</li><li><TrackLink href="/business-subscription-tracker-small-business" event="homepage_cta_clicked" props={{ from: "xero_app_stack_audit", to: "business_subscription_tracker" }} className="text-brand-200 hover:text-brand-100">Business subscription tracker</TrackLink> when the real issue is payment-source sprawl.</li></ul></div></div></div></section>
 
       {/* Why Xero stacks accumulate waste */}
       <section className="py-14 sm:py-16">
@@ -487,7 +490,7 @@ export default function XeroAppStackAuditPage() {
       {/* 2026 owner-led SMB proof refresh */}
       <section className="border-y border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026 proof refresh</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-27 retail proof refresh</p>
           <h2 className="mt-3 text-2xl font-semibold text-white">Turn the Xero app list into a keep, cancel, downgrade, or consolidate plan</h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
             Xero app stack waste usually hides in small recurring marketplace charges, connected-app permissions, and annual renewals nobody owns. StackSmart keeps the review billing-led: no ledger access, no client data, just the subscriptions and decisions an owner can act on.
