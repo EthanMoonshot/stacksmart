@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Google Workspace Licence Audit for Small Business | StackSmart",
       description:
         "Find suspended users, departed staff seats, Gemini add-on waste, storage overspend, and annual renewal savings in your Google Workspace subscription — for owner-led businesses with 5 to 50 staff.",
-      dateModified: "2026-06-20",
+      dateModified: "2026-06-30",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -434,6 +434,31 @@ export default function GoogleWorkspaceLicenseAuditPage() {
                 <li>Plan tier and add-on recommendations included in the report</li>
                 <li>Suspended account and alias conversion candidates identified from billing</li>
                 <li>Combined savings report covering Workspace and your full software stack</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">June 2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Workspace pricing searches should land on a billing-first licence decision</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                A small business searching Google Workspace pricing or admin guidance usually needs a practical answer before renewal: which accounts still need paid seats, which aliases should be aliases, which Gemini or Marketplace add-ons are ownerless, and what can be changed without a full IT project?
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                StackSmart is a fit when the owner, practice manager, bookkeeper, or operations lead can export billing and confirm current team ownership. It is not a replacement for a managed IT provider, legal hold design, or Workspace security migration.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+              <h3 className="text-lg font-semibold text-white">Workspace audit output</h3>
+              <ul className="mt-5 space-y-3 text-sm leading-7 text-dark-300">
+                <li>Suspended users, departed staff, aliases-as-users, and unused Gemini seats separated into action rows.</li>
+                <li>Payment source, renewal date, billing owner, last-confirmed-still-needed date, and cancellation or downgrade path recorded.</li>
+                <li>Related software charges linked into the broader <a href="/small-business-software-inventory" className="text-brand-400 hover:text-brand-300 transition-colors">software inventory</a> and <a href="/business-subscription-tracker-small-business" className="text-brand-400 hover:text-brand-300 transition-colors">subscription tracker</a>.</li>
               </ul>
             </div>
           </div>

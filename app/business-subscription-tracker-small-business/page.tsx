@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Business Subscription Tracker for Small Business | StackSmart",
       description:
         "A practical subscription tracker for owner-led SMBs reviewing recurring software payments, renewal dates, named owners, payment sources, and action decisions.",
-      dateModified: "2026-06-26",
+      dateModified: "2026-06-30",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: { "@type": "Organization", name: "StackSmart", url: absoluteUrl("/") },
     },
@@ -102,7 +102,7 @@ export default function BusinessSubscriptionTrackerSmallBusinessPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Business subscription tracker · 2026-06-26</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Business subscription tracker · 2026-06-30</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Track software subscriptions before they renew again</h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
               A normal expense tracker tells you what was paid. A useful business subscription tracker tells you who owns each recurring software payment, whether it is still needed, when it renews, and what decision should happen next. StackSmart helps owner-led SMBs turn billing exports into a clear subscription tracker for action — not another spreadsheet nobody maintains.
@@ -168,6 +168,46 @@ export default function BusinessSubscriptionTrackerSmallBusinessPage() {
             <div className="mt-5 space-y-4 text-sm leading-7 text-dark-300">
               <p>Many subscription trackers fail because someone starts with a blank spreadsheet and asks the team to remember every tool. Start with data instead: card exports, accounting exports, invoices, app marketplaces, Microsoft 365, Google Workspace, Shopify, Xero, QBO, and MYOB billing. Then ask the team to confirm ownership only for the tools that remain uncertain.</p>
               <p>That sequence keeps the tracker grounded in actual spend and avoids turning a quick cleanup into a company-wide software survey.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">June 2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">A tracker is only useful if it creates a renewal decision</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                For owner-led SMBs, the subscription tracker should be a decision register, not a passive expense list. Each row should show payment source, renewal date, named owner, last-confirmed-still-needed date, and a clear next action before the charge rolls over again.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                StackSmart keeps the workflow practical for operators who do not have procurement maturity: pull billing exports first, group recurring tools by job, then send only the uncertain rows to the team for owner confirmation.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+              <h3 className="text-lg font-semibold text-white">Tracker action list</h3>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Keep because current owner and usage are confirmed",
+                  "Cancel because no active owner or workflow remains",
+                  "Downgrade because the tier exceeds actual use",
+                  "Consolidate because another tool already does the job",
+                  "Renegotiate before the annual renewal date",
+                  "Assign an owner because nobody currently owns the spend",
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl border border-dark-700 bg-dark-950/60 p-4 text-sm leading-6 text-dark-300">{item}</div>
+                ))}
+              </div>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "subscription_tracker_proof" }} className="btn-secondary text-sm">
+                  Use the audit checklist
+                </TrackLink>
+                <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "subscription_tracker_proof" }} className="btn-primary text-sm">
+                  View sample report
+                </TrackLink>
+              </div>
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Small Business Software Inventory | StackSmart",
       description:
         "A practical owner-led SMB software inventory workflow for finding recurring software waste, duplicate tools, unused seats, ownerless renewals, and billing-source gaps.",
-      dateModified: "2026-06-26",
+      dateModified: "2026-06-30",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: { "@type": "Organization", name: "StackSmart", url: absoluteUrl("/") },
     },
@@ -102,7 +102,7 @@ export default function SmallBusinessSoftwareInventoryPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Small business software inventory · 2026-06-26</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Small business software inventory · 2026-06-30</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Build a software inventory that actually finds waste</h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
               Software inventory management sounds like an IT project. For an owner-led SMB, it should start with a simpler question: what are we paying for, who owns it, when does it renew, and what should we do next? StackSmart turns billing exports into a practical software inventory for businesses with 5 to 50 staff — without enterprise procurement overhead.
@@ -180,6 +180,41 @@ export default function SmallBusinessSoftwareInventoryPage() {
                 <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">June 2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">What a decision-grade inventory looks like for a 5-50 staff SMB</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The highest-intent inventory searches are not asking for an enterprise CMDB. They are usually an owner, office manager, bookkeeper, practice manager, or agency operator trying to answer: which recurring software charges are still needed, who owns them, and what can we change before renewal?
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col">
+                <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "software_inventory_proof" }} className="btn-primary text-sm">
+                  See the sample inventory output
+                </TrackLink>
+                <TrackLink href="/business-subscription-tracker-small-business" event="homepage_cta_clicked" props={{ target: "tracker", location: "software_inventory_proof" }} className="btn-secondary text-sm">
+                  Compare with a subscription tracker
+                </TrackLink>
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                ["Clinics and allied health", "Practice management, bookings, reminders, forms, telehealth, payment terminals, AI scribes, and review tools often sit across invoices, cards, and app marketplaces."],
+                ["Agencies and studios", "Project tools, design seats, client portals, AI/content subscriptions, proposal software, and converted trials need a named owner and last-confirmed-use date."],
+                ["Accounting and bookkeeping", "Xero/MYOB/QBO add-ons, proposal/e-signature, document portals, AI tools, and client-pass-through subscriptions need separation before renewal decisions."],
+                ["Retail and ecommerce", "Shopify apps, POS add-ons, email/SMS platforms, reviews, loyalty, inventory, returns, and marketplace fees create inventory blind spots that card exports alone miss."],
+              ].map(([title, copy]) => (
+                <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/80 p-5">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{copy}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

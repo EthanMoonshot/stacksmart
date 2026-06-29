@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Microsoft 365 Licence Audit for Small Business | StackSmart",
       description:
         "Find inactive users, leaver seats, shared mailbox waste, duplicate add-ons, and annual renewal savings in your Microsoft 365 subscription — for owner-led businesses with 5 to 50 staff.",
-      dateModified: "2026-06-20",
+      dateModified: "2026-06-30",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -432,6 +432,31 @@ export default function Microsoft365LicenseAuditPage() {
                 <li>Licence tier and add-on recommendations included in the report</li>
                 <li>Shared mailbox conversion candidates identified from billing patterns</li>
                 <li>Combined savings report covering M365 and your full software stack</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">June 2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">M365 pricing checks should become licence actions before renewal</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Microsoft 365 pricing intent is often a symptom: an owner sees the bill rising, notices Copilot or Teams Phone add-ons, or suspects departed staff are still active. The useful audit answer is not another plan table — it is a keep, cancel, downgrade, consolidate, renegotiate, or assign-owner decision for each paid licence line.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                StackSmart is a fit for owner-led SMBs that can provide billing exports, current team lists, and renewal dates. It is not a replacement for security hardening, tenant migration, endpoint management, or complex enterprise licence negotiation.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+              <h3 className="text-lg font-semibold text-white">M365 audit output</h3>
+              <ul className="mt-5 space-y-3 text-sm leading-7 text-dark-300">
+                <li>Leaver seats, shared-mailbox conversion candidates, tier mismatch, Copilot/Teams Phone add-ons, and project-only licences separated into action rows.</li>
+                <li>Payment source, renewal date, owner, last-confirmed-still-needed date, and practical next action recorded for each licence line.</li>
+                <li>Broader recurring software waste linked into the <a href="/small-business-software-inventory" className="text-brand-400 hover:text-brand-300 transition-colors">software inventory</a>, <a href="/business-subscription-tracker-small-business" className="text-brand-400 hover:text-brand-300 transition-colors">subscription tracker</a>, and <a href="/software-subscription-audit-checklist" className="text-brand-400 hover:text-brand-300 transition-colors">audit checklist</a>.</li>
               </ul>
             </div>
           </div>

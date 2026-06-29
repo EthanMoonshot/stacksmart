@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Jira Cost for Small Teams | StackSmart",
       description:
         "A practical Jira cost review for small teams comparing pricing, inactive seats, project-management overlap, and consolidation decisions.",
-      dateModified: "2026-06-26",
+      dateModified: "2026-06-30",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: { "@type": "Organization", name: "StackSmart", url: absoluteUrl("/") },
     },
@@ -88,7 +88,7 @@ export default function JiraCostSmallTeamPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Tool cost analysis · 2026-06-26 refresh</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Tool cost analysis · 2026-06-30 refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Jira cost for small teams, and the project-tool overlap around it</h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
               Jira can be the right system of record for technical teams. But in owner-led SMBs, agencies, ecommerce operators, and boutique service firms, the real cost problem is often Jira plus the project tools sitting beside it: Asana, ClickUp, Trello, Notion, Monday, client portals, and old project-only subscriptions that never got cancelled.
@@ -161,6 +161,35 @@ export default function JiraCostSmallTeamPage() {
                 ["3. Map overlap", "List other project tools and decide which one owns each workflow."],
               ].map(([title, copy]) => (
                 <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{copy}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">June 2026 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Jira cost is usually a stack-overlap question for non-enterprise teams</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                In small agencies, ecommerce teams, boutique consultancies, and owner-led product teams, Jira is rarely the only cost to inspect. The practical review is Jira plus the adjacent project tools, client portals, add-ons, and old project-only subscriptions that keep billing after a delivery phase ends.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                StackSmart does not need issue content or client project data. A billing export, seat list, add-on list, renewal date, and adjacent project-tool inventory are enough for a first keep/cancel/downgrade/consolidate recommendation.
+              </p>
+            </div>
+            <div className="space-y-4">
+              {[
+                ["Keep Jira", "If engineering or technical delivery genuinely runs there, keep Jira and clean up inactive seats, marketplace add-ons, and duplicate lightweight boards."],
+                ["Cancel Jira", "If Jira was bought for a past build, migration, or client project and current work now happens in Asana, ClickUp, Notion, or Trello, cancellation may be the right action."],
+                ["Consolidate the workflow", "If multiple tools own the same project updates, decide which one is the system of record and remove the rest before the next renewal."],
+              ].map(([title, copy]) => (
+                <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/80 p-5">
                   <h3 className="text-sm font-semibold text-white">{title}</h3>
                   <p className="mt-2 text-sm leading-7 text-dark-300">{copy}</p>
                 </div>
