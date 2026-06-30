@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Accounting Firm Software Stack Audit | StackSmart",
       description:
         "Small accounting and bookkeeping firms carry practice management, tax, payroll, proposal, document, e-sign, CRM, AI assistant, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
-      dateModified: "2026-06-11",
+      dateModified: "2026-07-01",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",

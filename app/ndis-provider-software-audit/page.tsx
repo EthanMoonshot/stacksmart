@@ -24,7 +24,7 @@ const jsonLd = {
       name: "NDIS Provider Software Audit | StackSmart",
       description:
         "NDIS and community care providers carry rostering, care management, payroll, compliance, billing, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
-      dateModified: "2026-06-12",
+      dateModified: "2026-07-01",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",

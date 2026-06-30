@@ -107,8 +107,58 @@ const refreshes = {
 
 type RefreshKey = keyof typeof refreshes;
 
+const dailyProductionNotes: Partial<Record<RefreshKey, {
+  demand: string;
+  ownerFit: string;
+  exportList: string[];
+  actionList: string[];
+  notFor: string;
+}>> = {
+  accounting: {
+    demand:
+      "DataForSEO-backed keyword intelligence keeps accounting practice software at 390 AU monthly searches with high commercial bid pressure, while software audit and software subscriptions terms show principals are already looking for cost-control answers.",
+    ownerFit:
+      "Best fit: a 5-50 person accounting firm where the principal or practice manager pays for proposal tools, workflow, e-signature, reporting, Xero/QBO/MYOB add-ons, AI note tools, and client-portal subscriptions but does not have a procurement team checking every renewal.",
+    exportList: ["Firm card and bank recurring charges", "Xero, MYOB, QBO, and marketplace invoices", "Practice-management, proposal, e-sign, reporting, AI, and connector bills", "A current staff/app-owner list with last confirmed still-needed notes"],
+    actionList: ["Separate firm-owned subscriptions from client-recovered costs", "Mark duplicate proposal/e-sign/reporting/AI tools", "Right-size idle seats and unused AI licences", "Assign a renewal owner, due date, and payment account to every recurring bill"],
+    notFor:
+      "Not for client-ledger review, tax-file inspection, or enterprise procurement rollout. The first pass is billing-only and produces decisions the principal can hand to an admin or bookkeeper.",
+  },
+  ndis: {
+    demand:
+      "DataForSEO shows 390 monthly AU searches for NDIS software with $21.19 CPC. Most SERPs serve platform selection; StackSmart captures the practical owner/operator need underneath: stop paying for duplicate roster, care, claims, compliance, document, SMS, payroll, AI, and admin tools before the next direct debit.",
+    ownerFit:
+      "Best fit: a 5-50 staff NDIS or community-care provider where the owner, coordinator, finance admin, and rostering lead each own part of the stack and nobody has a single subscription tracker.",
+    exportList: ["Business card, bank, Xero, or MYOB recurring charges", "Care-management, rostering, plan-management, claims, SMS, document, payroll, compliance, and AI/admin invoices", "Current staff/coordinator seat counts", "Renewal dates, billing contacts, and payment accounts where known"],
+    actionList: ["Find ghost support-worker, coordinator, and admin seats", "Compare duplicate rostering, forms, SMS, payroll, and claims workflows", "Flag cancelled-but-still-charged and compliance tools from the last audit cycle", "Create keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner decisions"],
+    notFor:
+      "Not for participant-record, support-plan, clinical-note, or care-document access. StackSmart can run the first pass from subscription billing only.",
+  },
+  property: {
+    demand:
+      "Keyword intelligence keeps property management software at 880 AU monthly searches with $19.87 CPC and real estate CRM demand at high commercial bid pressure. That demand often starts as platform comparison, but the cheaper first move is auditing the paid layer around the system already in use.",
+    ownerFit:
+      "Best fit: an owner-led rent roll, strata office, property-services team, or real-estate group with 5-50 staff and scattered charges for portals, inspections, maintenance, e-signature, CRM, SMS, reporting, listing, AI, and admin tools.",
+    exportList: ["Card and bank recurring charges across the agency or rent-roll entity", "Property-management platform invoices and add-on bills", "Inspection, maintenance, e-sign, CRM, SMS, reporting, listing, AI, and admin subscriptions", "Payment account, renewal date, billing contact, and last confirmed still-needed notes"],
+    actionList: ["Identify add-ons billed outside the core PM system", "Find duplicate portals, inspection, e-sign, CRM, and SMS tools", "Right-size departed property-manager and admin seats", "Build a renewal-owner register before notice windows close"],
+    notFor:
+      "Not for tenant data, owner ledgers, leases, or trust-account records. The audit is billing-export only and stays at the subscription layer.",
+  },
+  shopify: {
+    demand:
+      "DataForSEO shows 1,600 monthly AU searches for Shopify apps and 210 for Shopify app subscription with $24.11 CPC. The high-intent question is not another app list; it is which installed apps, external SaaS charges, and annual renewals still deserve to stay.",
+    ownerFit:
+      "Best fit: an owner-led ecommerce or retail operator with 5-50 staff where Shopify apps, email/SMS tools, reviews, loyalty, shipping, inventory, support, analytics, AI, and agency-installed campaign tools all bill in different places.",
+    exportList: ["Shopify billing history and app invoices", "Business card and bank recurring software charges", "Email/SMS/contact-tier, shipping, inventory, review, loyalty, support, analytics, and AI bills", "App owner, last-used, renewal date, and payment-account notes"],
+    actionList: ["Find campaign apps and converted trials that became permanent charges", "Compare duplicate review, loyalty, email/SMS, shipping, and inventory tools", "Right-size contact tiers, unused AI seats, and off-platform SaaS", "Assign keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner decisions"],
+    notFor:
+      "Not for customer records, order history, or store admin access. StackSmart can start from Shopify billing exports, invoices, and card statements.",
+  },
+};
+
 export default function OwnerLedRefreshSection({ type }: { type: RefreshKey }) {
   const data = refreshes[type];
+  const dailyNote = dailyProductionNotes[type];
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -137,13 +187,22 @@ export default function OwnerLedRefreshSection({ type }: { type: RefreshKey }) {
               </div>
             ))}
           </div>
+
+          {dailyNote ? (
+            <div className="mt-6 rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.06] p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200">2026-07-01 production refresh</p>
+              <p className="mt-3 text-sm leading-7 text-slate-200">{dailyNote.demand}</p>
+              <p className="mt-3 text-sm leading-7 text-slate-300">{dailyNote.ownerFit}</p>
+              <p className="mt-3 text-sm leading-7 text-slate-400">{dailyNote.notFor}</p>
+            </div>
+          ) : null}
         </div>
 
         <div className="space-y-5">
           <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 sm:p-8">
             <h3 className="text-xl font-semibold text-white">First 30-minute audit pass</h3>
             <ol className="mt-5 space-y-3 text-sm leading-6 text-slate-300">
-              {data.checklist.map((item, index) => (
+              {(dailyNote?.exportList ?? data.checklist).map((item, index) => (
                 <li key={item} className="flex gap-3">
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cyan-300 text-xs font-bold text-slate-950">{index + 1}</span>
                   <span>{item}</span>
@@ -151,6 +210,19 @@ export default function OwnerLedRefreshSection({ type }: { type: RefreshKey }) {
               ))}
             </ol>
           </div>
+          {dailyNote ? (
+            <div className="rounded-3xl border border-amber-300/20 bg-amber-300/[0.06] p-6 sm:p-8">
+              <h3 className="text-xl font-semibold text-white">What the owner gets back</h3>
+              <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-300">
+                {dailyNote.actionList.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-200" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
           <div className="rounded-3xl border border-white/10 bg-slate-900/80 p-6 sm:p-8">
             <h3 className="text-xl font-semibold text-white">Related owner-led SMB audits</h3>
             <div className="mt-4 flex flex-wrap gap-3">

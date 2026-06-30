@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Shopify App Stack Audit | StackSmart",
       description:
         "Audit your Shopify app stack for duplicate and unused apps across reviews, loyalty, email and SMS, upsell, returns, shipping, inventory, analytics, and helpdesk.",
-      dateModified: "2026-06-26",
+      dateModified: "2026-07-01",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",

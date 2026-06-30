@@ -49,7 +49,7 @@ const jsonLd = {
       url: absoluteUrl("/property-management-software-subscription-audit"),
       name: "Property management software subscription audit | StackSmart",
       description: "Audit software subscriptions for property management and strata offices. Find hidden costs in platform add-ons, app marketplace installs, paid connectors, ownerless renewals, and duplicate inspection, maintenance, e-signature, CRM, and admin tools — from billing exports only.",
-      dateModified: "2026-06-12",
+      dateModified: "2026-07-01",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",

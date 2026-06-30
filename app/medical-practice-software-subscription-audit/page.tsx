@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Medical Practice Software Subscription Audit | StackSmart",
       description:
         "GP and specialist clinics carry booking, recalls, telehealth, billing, forms, marketing, payroll, accounting, rostering, and patient comms subscriptions. A software audit finds what to cut, consolidate, and renegotiate — using billing exports only, not patient records.",
-      dateModified: "2026-06-19",
+      dateModified: "2026-07-01",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -558,20 +558,21 @@ export default function MedicalPracticeSoftwareSubscriptionAuditPage() {
       </section>
 
       <OwnerLedProofRefresh
-        title="June 2026 medical clinic software audit: billing-only proof for owner-led practices"
-        summary="StackSmart reviews the paid subscription layer around the clinical platform — not the PMS itself. Booking, reminders, SMS packs, forms, telehealth, payments, Medicare/billing connectors, AI scribes, transcription, review tools, reporting dashboards, and clinician/admin seats all get checked for duplicates, unused capacity, converted-trial charges, AI-tool overlap, and ownerless renewals."
+        eyebrow="2026-07-01 clinic buyer-intent refresh"
+        title="Medical practice software audit: billing-only proof for 5-50 staff clinics"
+        summary="Keyword intelligence keeps practice-management and clinic-software demand commercially relevant, but the owner-led clinic does not need another procurement project first. StackSmart reviews the paid subscription layer around the clinical platform — booking, reminders, SMS packs, forms, telehealth, payments, Medicare/billing connectors, AI scribes, transcription, review tools, reporting dashboards, M365/Google Workspace, and clinician/admin seats — from card statements and accounting exports only. The output is a practical recurring-bills register with keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner decisions."
         proofItems={[
-          { label: "PMS add-ons and connector fees", finding: "Forms, booking, SMS, payments, review, telehealth, and AI scribe connectors keep billing even when the PMS tier already includes enough functionality or usage has dropped since rollout.", action: "Consolidate or downgrade" },
-          { label: "AI scribe and transcription seats", finding: "Per-clinician AI seats are added quickly during onboarding, then stay paid for part-time doctors, contractors, converted trial users, and departed practitioners.", action: "Right-size seats" },
-          { label: "Ownerless annual renewals", finding: "Annual charges for reporting, compliance, M365/Google Workspace, telehealth, and training renew without a named owner checking seat count, tier, or actual use.", action: "Assign renewal owner" },
+          { label: "PMS add-ons and connector fees", finding: "Forms, booking, SMS, payments, review, telehealth, reporting, and AI scribe connectors keep billing even when the PMS tier includes enough functionality or usage has dropped since rollout.", action: "Consolidate or downgrade" },
+          { label: "Unused AI and practitioner seats", finding: "Per-clinician AI, transcription, booking, reminder, and admin seats are added quickly, then stay paid for part-time doctors, contractors, locums, converted trial users, and departed practitioners.", action: "Right-size seats" },
+          { label: "Ownerless annual renewals", finding: "Annual charges for compliance, telehealth, training, payment terminals, reporting dashboards, and workspace tools renew without a named owner checking seat count, tier, due date, payment account, or last confirmed still-needed status.", action: "Assign renewal owner" },
         ]}
         boundaries={[
-          "Analyse supplier, invoice, card, and accounting exports only; do not access patient records, clinical documents, or Medicare claiming data.",
-          "Keep Medicare, pathology, eRx, and patient communication continuity out of any automated cut decision.",
-          "Use current doctor, nurse, allied-health, contractor, and admin headcount to right-size paid seats.",
-          "Create a renewal-owner map for PMS-adjacent tools before annual charges land.",
+          "Analyse supplier, invoice, card, bank, and accounting exports only; do not access patient records, clinical documents, appointment notes, Medicare claiming data, or PMS logins.",
+          "Keep Medicare, pathology, eRx, patient messaging continuity, and clinical-system operations out of any automated cut decision.",
+          "Use current doctor, nurse, allied-health, contractor, and admin headcount to right-size paid seats and unused AI licences.",
+          "Create a renewal-owner map with due date, payment account, billing contact, last confirmed still-needed note, and the exact action for every PMS-adjacent tool.",
         ]}
-        location="medical_practice_20260610"
+        location="medical_practice_20260701"
       />
 
       {/* Recurring bills register */}
