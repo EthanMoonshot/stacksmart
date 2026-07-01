@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedRefreshSection from "@/components/landing/OwnerLedRefreshSection";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -21,7 +22,7 @@ const jsonLd = {
       "@id": absoluteUrl("/marketing-agency-software-stack-audit"),
       url: absoluteUrl("/marketing-agency-software-stack-audit"),
       name: "Marketing Agency Software Stack Audit | StackSmart",
-      dateModified: "2026-06-11",
+      dateModified: "2026-07-02",
       description:
         "Owner-led marketing, creative, and web agencies accumulate SEO tools, AI subscriptions, design platforms, social scheduling apps, and reporting tools with significant overlap. A software audit finds what to cut, consolidate, and renegotiate.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -930,6 +931,8 @@ export default function MarketingAgencySoftwareStackAuditPage() {
           </div>
         </div>
       </section>
+
+      <OwnerLedRefreshSection type="marketingAgency" />
 
       <SeoClusterLinks
         eyebrow="Related audit resources"

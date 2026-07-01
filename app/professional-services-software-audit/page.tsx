@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedRefreshSection from "@/components/landing/OwnerLedRefreshSection";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,7 +24,7 @@ const jsonLd = {
       name: "Professional Services Software Audit | StackSmart",
       description:
         "Audit your professional services firm's software subscriptions for duplicate tools, unused seats, and subscriptions that accumulated across project work and team growth.",
-      dateModified: "2026-06-09",
+      dateModified: "2026-07-02",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -509,6 +510,8 @@ export default function ProfessionalServicesSoftwareAuditPage() {
           </div>
         </div>
       </section>
+
+      <OwnerLedRefreshSection type="professionalServices" />
 
       <SeoClusterLinks
         eyebrow="Related audit resources"

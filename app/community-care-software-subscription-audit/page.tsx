@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedRefreshSection from "@/components/landing/OwnerLedRefreshSection";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,7 +24,7 @@ const jsonLd = {
       name: "Community Care Software Subscription Audit | StackSmart",
       description:
         "A practical software subscription audit for owner-led community care, home care, support coordination, and smaller care providers that need to find unused seats, duplicate tools, add-ons, and ownerless renewals.",
-      dateModified: "2026-06-13",
+      dateModified: "2026-07-02",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -350,6 +351,8 @@ export default function CommunityCareSoftwareSubscriptionAuditPage() {
           />
         </div>
       </section>
+
+      <OwnerLedRefreshSection type="communityCare" />
 
       <SeoClusterLinks
         title="Related StackSmart audit pages"

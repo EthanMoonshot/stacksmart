@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Bookkeeping Firm Software Stack Audit | StackSmart",
       description:
         "Bookkeeping firms using Xero, QBO, or MYOB ecosystems accumulate receipt capture, payroll, proposal, workflow, e-sign, AI transcription, connector fees, and client portal add-ons with significant overlap.",
-      dateModified: "2026-06-26",
+      dateModified: "2026-07-02",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
