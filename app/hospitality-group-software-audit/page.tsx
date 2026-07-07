@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import SeoDailyRefresh20260708 from "@/components/landing/SeoDailyRefresh20260708";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,7 +24,7 @@ const jsonLd = {
       name: "Hospitality Group Software Audit | StackSmart",
       description:
         "Small hospitality groups and multi-site venues carry POS, bookings, rostering, payroll, delivery, loyalty, accounting, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
-      dateModified: "2026-06-13",
+      dateModified: "2026-07-08",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -532,6 +533,8 @@ export default function HospitalityGroupSoftwareAuditPage() {
       </section>
 
       {/* Lead capture */}
+      <SeoDailyRefresh20260708 type="hospitality" />
+
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture

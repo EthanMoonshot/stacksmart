@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import SeoDailyRefresh20260708 from "@/components/landing/SeoDailyRefresh20260708";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -21,7 +22,7 @@ const jsonLd = {
       "@id": absoluteUrl("/consulting-firm-software-stack-audit"),
       url: absoluteUrl("/consulting-firm-software-stack-audit"),
       name: "Consulting Firm Software Stack Audit | StackSmart",
-      dateModified: "2026-06-14",
+      dateModified: "2026-07-08",
       description:
         "Audit your consulting firm's software subscriptions for duplicate project management, CRM, proposals, time tracking, research and AI tools, reporting dashboards, and document tools.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -452,6 +453,8 @@ export default function ConsultingFirmSoftwareStackAuditPage() {
       </section>
 
       {/* Lead capture */}
+      <SeoDailyRefresh20260708 type="consulting" />
+
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture

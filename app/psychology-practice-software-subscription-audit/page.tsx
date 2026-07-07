@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import SeoDailyRefresh20260708 from "@/components/landing/SeoDailyRefresh20260708";
 import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
@@ -24,7 +25,7 @@ const jsonLd = {
       name: "Psychology Practice Software Subscription Audit | StackSmart",
       description:
         "Audit software subscriptions for psychology and counselling practices — booking, telehealth, reminders, billing, payroll, and marketing tools without accessing clinical records.",
-      dateModified: "2026-06-19",
+      dateModified: "2026-07-08",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -551,6 +552,8 @@ export default function PsychologyPracticeSoftwareSubscriptionAuditPage() {
       />
 
       {/* Lead capture */}
+      <SeoDailyRefresh20260708 type="psychology" />
+
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture

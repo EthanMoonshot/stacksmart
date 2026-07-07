@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import SeoDailyRefresh20260708 from "@/components/landing/SeoDailyRefresh20260708";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -21,7 +22,7 @@ const jsonLd = {
       "@id": absoluteUrl("/allied-health-software-subscription-audit"),
       url: absoluteUrl("/allied-health-software-subscription-audit"),
       name: "Allied Health Software Subscription Audit | StackSmart",
-      dateModified: "2026-06-12",
+      dateModified: "2026-07-08",
       description:
         "Audit software subscriptions for physiotherapy, podiatry, psychology, occupational therapy, and multi-disciplinary allied health practices — booking, billing, telehealth, AI scribe, and admin tools.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -683,6 +684,8 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       </section>
 
       {/* Lead capture */}
+      <SeoDailyRefresh20260708 type="alliedHealth" />
+
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture

@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import SeoDailyRefresh20260708 from "@/components/landing/SeoDailyRefresh20260708";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,7 +24,7 @@ const jsonLd = {
       name: "Clinic Software Subscription Audit | StackSmart",
       description:
         "Review and cut wasted software spend at your clinic or allied health practice — admin, booking, billing, and marketing subscriptions.",
-      dateModified: "2026-06-08",
+      dateModified: "2026-07-08",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -543,6 +544,8 @@ export default function ClinicSoftwareSubscriptionAuditPage() {
       </section>
 
       {/* Lead capture */}
+      <SeoDailyRefresh20260708 type="clinic" />
+
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture
