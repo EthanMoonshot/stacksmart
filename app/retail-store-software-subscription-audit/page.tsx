@@ -440,7 +440,7 @@ export default function RetailStoreSoftwareSubscriptionAuditPage() {
       {/* Lead capture */}
 
       {/* 2026-07-09 retail operator refresh */}
-      <section className="border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
+      <section className="scroll-mt-24 border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-07-09 refresh · retail and small ecommerce</p>

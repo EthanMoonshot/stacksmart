@@ -514,7 +514,7 @@ export default function FitnessStudioSoftwareSubscriptionAuditPage() {
       {/* Lead capture */}
 
       {/* 2026-07-09 fitness studio operator refresh */}
-      <section className="border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
+      <section className="scroll-mt-24 border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
