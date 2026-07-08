@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Fitness Studio Software Subscription Audit | StackSmart",
       description:
         "Fitness and wellness studios carry booking, member management, payments, marketing, payroll, access control, accounting, and class tools. A software audit finds what to cut, consolidate, and renegotiate.",
-      dateModified: "2026-06-27",
+      dateModified: "2026-07-09",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -512,6 +512,36 @@ export default function FitnessStudioSoftwareSubscriptionAuditPage() {
       </section>
 
       {/* Lead capture */}
+
+      {/* 2026-07-09 fitness studio operator refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-07-09 refresh · fitness and wellness</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Clean up the subscriptions around your gym-management system</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Fitness studios and wellness groups often keep adding point tools around the core member platform: booking, waiver, SMS, email, access control, payment add-ons, class packs, review tools, payroll, casual instructor scheduling, and AI/content apps. StackSmart reviews billing exports, card statements, direct debits, app invoices, and accounting data without touching member health information, attendance notes, or profile records. The audit gives the owner a plain action list for what to keep, cancel, downgrade, consolidate, renegotiate, or assign to a renewal owner.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3 text-sm">
+                <TrackLink href="/small-business-software-audit" event="homepage_cta_clicked" props={{ from: "fitness_2026_07_09", to: "small_business_audit" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Small business audit</TrackLink>
+                <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "fitness_2026_07_09", to: "subscription_checklist" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Audit checklist</TrackLink>
+                <TrackLink href="/demo" event="homepage_cta_clicked" props={{ from: "fitness_2026_07_09", to: "demo" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Sample report</TrackLink>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">Likely findings in a 5-50 staff studio</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">Trial campaign tools:</span> review, SMS, social, challenge, or booking add-ons installed for a launch and left billing.</li>
+                <li><span className="font-semibold text-white">Seat and instructor drift:</span> admin, coach, and casual-instructor accounts that stayed active after roster changes.</li>
+                <li><span className="font-semibold text-white">Payment and access add-ons:</span> duplicated billing, door-access, waiver, and class-pack tools that overlap with the core platform.</li>
+                <li><span className="font-semibold text-white">Renewal control:</span> a named owner and 90-day lane so software decisions stop living in shared inboxes or old manager cards.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture

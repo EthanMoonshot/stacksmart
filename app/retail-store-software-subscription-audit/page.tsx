@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Retail Store Software Subscription Audit | StackSmart",
       description:
         "Audit your retail store software subscriptions for duplicate tools, unused seats, and subscriptions that accumulated across sites and seasons.",
-      dateModified: "2026-06-27",
+      dateModified: "2026-07-09",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -438,6 +438,30 @@ export default function RetailStoreSoftwareSubscriptionAuditPage() {
       </section>
 
       {/* Lead capture */}
+
+      {/* 2026-07-09 retail operator refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-07-09 refresh · retail and small ecommerce</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">Map POS, payment, inventory, loyalty, and app charges before adding another retail system</h2>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              Retail software waste shows up as quiet monthly leakage: payment-processing add-ons, POS modules, Shopify apps, inventory connectors, review tools, loyalty campaigns, SMS/email tiers, seasonal rostering seats, duplicate vendor bills, and campaign apps that were cancelled operationally but still charge a card. StackSmart can start from business-card statements, accounting exports, Shopify/app invoices, POS bills, direct debits, and site-level receipts without needing customer profiles, order history, or payment data. The result is a practical store/channel action list: keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="rounded-xl border border-dark-700 bg-dark-800/60 p-4"><h3 className="text-sm font-semibold text-white">Card-statement audit</h3><p className="mt-2 text-sm leading-6 text-dark-300">Catch still-paying-for-it software, old trials, and vendor bills that no longer appear in the ops workflow.</p></div>
+              <div className="rounded-xl border border-dark-700 bg-dark-800/60 p-4"><h3 className="text-sm font-semibold text-white">Store/channel map</h3><p className="mt-2 text-sm leading-6 text-dark-300">Mark which site, ecommerce channel, or manager owns each POS, inventory, loyalty, and marketing subscription.</p></div>
+              <div className="rounded-xl border border-dark-700 bg-dark-800/60 p-4"><h3 className="text-sm font-semibold text-white">Renewal owner lane</h3><p className="mt-2 text-sm leading-6 text-dark-300">Assign someone to cancel, downgrade, consolidate, or call for renewal discounts before peak-season costs lock in.</p></div>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3 text-sm">
+              <TrackLink href="/shopify-app-stack-audit" event="homepage_cta_clicked" props={{ from: "retail_2026_07_09", to: "shopify_app_stack" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Shopify app audit</TrackLink>
+              <TrackLink href="/ecommerce-software-subscription-audit" event="homepage_cta_clicked" props={{ from: "retail_2026_07_09", to: "ecommerce_audit" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Ecommerce audit</TrackLink>
+              <TrackLink href="/pricing" event="homepage_cta_clicked" props={{ from: "retail_2026_07_09", to: "pricing" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">View pricing</TrackLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture

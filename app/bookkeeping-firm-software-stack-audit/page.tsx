@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Bookkeeping Firm Software Stack Audit | StackSmart",
       description:
         "Bookkeeping firms using Xero, QBO, or MYOB ecosystems accumulate receipt capture, payroll, proposal, workflow, e-sign, AI transcription, connector fees, and client portal add-ons with significant overlap.",
-      dateModified: "2026-07-02",
+      dateModified: "2026-07-09",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -850,6 +850,36 @@ export default function BookkeepingFirmSoftwareStackAuditPage() {
 
       {/* Lead capture */}
       <OwnerLedRefreshSection type="bookkeeping" />
+
+
+      {/* 2026-07-09 bookkeeping operator refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-07-09 refresh · bookkeeping firms</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Separate the firm’s paid stack from client work before the next QBO or Xero renewal</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The current buyer pain is not only “which accounting app should we use?” It is “which add-ons are we still paying for, who owns them, and which are practice costs versus client-pass-through costs?” StackSmart reviews firm billing exports, card statements, app invoices, partner-tool receipts, and recurring expense categories to identify duplicate receipt-capture tools, old workflow trials, unused AI seats, shared-login risk, connector fees, and cancelled-but-still-charged vendors. It does not need client ledger access or sensitive client files.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3 text-sm">
+                <TrackLink href="/xero-app-stack-audit" event="homepage_cta_clicked" props={{ from: "bookkeeping_2026_07_09", to: "xero_app_stack" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Xero app audit</TrackLink>
+                <TrackLink href="/accounting-firm-software-stack-audit" event="homepage_cta_clicked" props={{ from: "bookkeeping_2026_07_09", to: "accounting_firm" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Accounting firm audit</TrackLink>
+                <TrackLink href="/demo" event="homepage_cta_clicked" props={{ from: "bookkeeping_2026_07_09", to: "demo" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Sample report</TrackLink>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">What the audit answers</h3>
+              <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">1.</span> Which QuickBooks, Xero, receipt, payroll, workflow, reporting, and AI tools are firm-owned versus client-owned?</li>
+                <li><span className="font-semibold text-white">2.</span> Which recurring bills are duplicated across cards, owner accounts, partner portals, and old shared logins?</li>
+                <li><span className="font-semibold text-white">3.</span> Which seats, connectors, and app tiers can be downgraded before the next renewal or price increase?</li>
+                <li><span className="font-semibold text-white">4.</span> Who owns each renewal so the firm does not go line-by-line from scratch every quarter?</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

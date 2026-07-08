@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Childcare Software Subscription Audit | StackSmart",
       description:
         "Childcare and early learning centres carry enrolment, rostering, payroll, parent comms, compliance, CCS billing, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
-      dateModified: "2026-07-02",
+      dateModified: "2026-07-09",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -543,6 +543,30 @@ export default function ChildcareSoftwareSubscriptionAuditPage() {
       </section>
 
       {/* Lead capture */}
+
+      {/* 2026-07-09 childcare operator refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-07-09 refresh · childcare and education</p>
+            <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">Audit centre-level subscriptions before buying another childcare platform</h2>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              Childcare software waste usually sits around the core platform: parent communication, enrolment and waitlist tools, incident/compliance apps, rostering, payroll, learning journals, SMS packs, forms, payment add-ons, and centre-by-centre trial tools. StackSmart can review billing exports, card statements, accounting exports, app invoices, and direct debits without accessing child, parent, family, incident, or enrolment records. The owner gets a centre-by-centre action list for what to keep, cancel, downgrade, consolidate, renegotiate, or assign to a renewal owner before term or holiday staffing changes reset the cost base again.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="rounded-xl border border-dark-700 bg-dark-800/60 p-4"><h3 className="text-sm font-semibold text-white">Centre duplication</h3><p className="mt-2 text-sm leading-6 text-dark-300">Separate sites paying for different parent-comms, waitlist, forms, or learning apps that now overlap.</p></div>
+              <div className="rounded-xl border border-dark-700 bg-dark-800/60 p-4"><h3 className="text-sm font-semibold text-white">Staffing drift</h3><p className="mt-2 text-sm leading-6 text-dark-300">Rostering, payroll, SMS, and HR tiers still priced for a larger casual or holiday team.</p></div>
+              <div className="rounded-xl border border-dark-700 bg-dark-800/60 p-4"><h3 className="text-sm font-semibold text-white">Ownerless renewals</h3><p className="mt-2 text-sm leading-6 text-dark-300">Trial tools bought for one compliance, enrolment, or marketing push that keep billing after the need has passed.</p></div>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3 text-sm">
+              <TrackLink href="/community-care-software-subscription-audit" event="homepage_cta_clicked" props={{ from: "childcare_2026_07_09", to: "community_care" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Community care audit</TrackLink>
+              <TrackLink href="/small-business-software-inventory" event="homepage_cta_clicked" props={{ from: "childcare_2026_07_09", to: "software_inventory" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Build a software inventory</TrackLink>
+              <TrackLink href="/demo" event="homepage_cta_clicked" props={{ from: "childcare_2026_07_09", to: "demo" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">View sample report</TrackLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture

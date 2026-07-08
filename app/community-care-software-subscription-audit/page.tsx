@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Community Care Software Subscription Audit | StackSmart",
       description:
         "A practical software subscription audit for owner-led community care, home care, support coordination, and smaller care providers that need to find unused seats, duplicate tools, add-ons, and ownerless renewals.",
-      dateModified: "2026-07-02",
+      dateModified: "2026-07-09",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -338,6 +338,36 @@ export default function CommunityCareSoftwareSubscriptionAuditPage() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <TrackLink href="/demo" event="homepage_cta_clicked" props={{ from: "community_care_2026_06_08", target: "demo" }} className="btn-primary text-sm">See sample care-provider report</TrackLink>
             <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "community_care_2026_06_08", target: "checklist" }} className="btn-secondary text-sm">Use the audit checklist</TrackLink>
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026-07-09 community care operator refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-07-09 refresh · community care operators</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Find the paid tools hiding around the care platform</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                A community-care provider does not need an enterprise procurement suite to find waste. Most owner-led teams need a practical billing pass across rostering, care-management, plan-management, payroll, SMS, document-signing, compliance, telehealth, HR, marketing, and accounting subscriptions. StackSmart starts with invoices, card statements, accounting exports, direct debits, and vendor receipts — not participant records or care notes — then turns the list into owner/operator decisions before the next renewal window.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3 text-sm">
+                <TrackLink href="/ndis-provider-software-audit" event="homepage_cta_clicked" props={{ from: "community_care_2026_07_09", to: "ndis_provider_audit" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">NDIS audit</TrackLink>
+                <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "community_care_2026_07_09", to: "subscription_checklist" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Audit checklist</TrackLink>
+                <TrackLink href="/demo" event="homepage_cta_clicked" props={{ from: "community_care_2026_07_09", to: "demo" }} className="rounded-full border border-dark-700 px-4 py-2 text-brand-200 hover:border-brand-400/60">Sample report</TrackLink>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">High-signal checks for a 5-50 staff provider</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">Rostering and payroll:</span> support-worker, coordinator, and admin seats still licensed after roster changes.</li>
+                <li><span className="font-semibold text-white">Care ops add-ons:</span> SMS, forms, signatures, compliance, document storage, and reporting packs no one has re-priced.</li>
+                <li><span className="font-semibold text-white">Ownerless renewals:</span> tools bought for one program, funding change, audit prep, or trial that now renew from an old card.</li>
+                <li><span className="font-semibold text-white">Action output:</span> keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner — without touching participant data.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
