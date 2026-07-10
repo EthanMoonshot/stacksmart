@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Microsoft 365 Licence Audit for Small Business | StackSmart",
       description:
         "Find inactive users, leaver seats, shared mailbox waste, duplicate add-ons, and annual renewal savings in your Microsoft 365 subscription — for owner-led businesses with 5 to 50 staff.",
-      dateModified: "2026-06-30",
+      dateModified: "2026-07-11",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -152,6 +152,42 @@ export default function Microsoft365LicenseAuditPage() {
         </div>
       </section>
 
+
+      {/* 2026-07-11 proof refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-11 owner-led SMB refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">A Microsoft 365 cleanup for owners who do not have procurement maturity</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The highest-yield M365 review for a 5-50 staff business is not an enterprise licence-optimisation project. It is a billing-led pass that asks which users are still current, which add-ons were bought for a temporary need, who owns the renewal, and which charges should be removed before the next invoice.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                StackSmart keeps the first pass outside sensitive admin data: invoices, card statements, reseller bills, and accounting exports are enough to produce a decision list. Admin-centre checks can happen later for removal and reassignment.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+              <h3 className="text-lg font-semibold text-white">What to verify this week</h3>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Unassigned or inactive M365 users still billing",
+                  "Former-staff seats that were disabled but not removed",
+                  "Copilot, Teams Phone, Power BI, Project, or Visio add-ons without active use",
+                  "Shared mailbox candidates paid as full Exchange users",
+                  "Billing contact or renewal owner still tied to a departed admin",
+                  "Every licence marked keep, cancel, downgrade, reassign, or owner-needed",
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl border border-dark-700 bg-dark-950/60 p-4 text-sm leading-6 text-dark-300">{item}</div>
+                ))}
+              </div>
+              <p className="mt-5 text-sm leading-7 text-dark-300">
+                Pair this with the <a href="/google-workspace-license-audit-small-business" className="text-brand-400 hover:text-brand-300 transition-colors">Google Workspace licence audit</a>, <a href="/small-business-software-inventory" className="text-brand-400 hover:text-brand-300 transition-colors">software inventory</a>, and <a href="/business-subscription-tracker-small-business" className="text-brand-400 hover:text-brand-300 transition-colors">subscription tracker</a> if software spend is spread across several billing sources.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Common M365 waste patterns */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

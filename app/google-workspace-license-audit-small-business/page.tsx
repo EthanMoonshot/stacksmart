@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Google Workspace Licence Audit for Small Business | StackSmart",
       description:
         "Find suspended users, departed staff seats, Gemini add-on waste, storage overspend, and annual renewal savings in your Google Workspace subscription — for owner-led businesses with 5 to 50 staff.",
-      dateModified: "2026-06-30",
+      dateModified: "2026-07-11",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -152,6 +152,42 @@ export default function GoogleWorkspaceLicenseAuditPage() {
         </div>
       </section>
 
+
+      {/* 2026-07-11 proof refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-11 owner-led SMB refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Seat cleanup for Google Workspace without turning it into an IT project</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Owner-led teams usually do not need a full SaaS-management rollout to find Workspace waste. They need a practical seat and billing-contact review: suspended users, aliases accidentally paid as users, Gemini seats with no active owner, storage plans that no longer match headcount, and Marketplace apps that stayed after a project ended.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The safe first pass uses invoices, card statements, accounting exports, reseller bills, and marketplace charges. It does not require access to Drive content, employee files, client records, or super-admin workflows before the decision list is created.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+              <h3 className="text-lg font-semibold text-white">What to verify this week</h3>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Suspended accounts still consuming paid seats",
+                  "info@, admin@, or bookings@ addresses that should be aliases or groups",
+                  "Gemini, Voice, Vault, or extra storage without a current owner",
+                  "Marketplace apps and connectors hidden outside the main invoice",
+                  "Billing email and renewal owner tied to a former staff member",
+                  "Each row marked keep, cancel, downgrade, convert, or owner-needed",
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl border border-dark-700 bg-dark-950/60 p-4 text-sm leading-6 text-dark-300">{item}</div>
+                ))}
+              </div>
+              <p className="mt-5 text-sm leading-7 text-dark-300">
+                Compare this with the <a href="/microsoft-365-license-audit-small-business" className="text-brand-400 hover:text-brand-300 transition-colors">Microsoft 365 licence audit</a>, then roll both into a <a href="/small-business-software-inventory" className="text-brand-400 hover:text-brand-300 transition-colors">small business software inventory</a> and <a href="/software-subscription-audit-checklist" className="text-brand-400 hover:text-brand-300 transition-colors">subscription audit checklist</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Common Workspace waste patterns */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

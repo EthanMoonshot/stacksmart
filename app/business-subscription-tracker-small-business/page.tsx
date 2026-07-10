@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Business Subscription Tracker for Small Business | StackSmart",
       description:
         "A practical subscription tracker for owner-led SMBs reviewing recurring software payments, renewal dates, named owners, payment sources, and action decisions.",
-      dateModified: "2026-06-30",
+      dateModified: "2026-07-11",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: { "@type": "Organization", name: "StackSmart", url: absoluteUrl("/") },
     },
@@ -102,7 +102,7 @@ export default function BusinessSubscriptionTrackerSmallBusinessPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Business subscription tracker · 2026-06-30</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Business subscription tracker · 2026-07-11 proof refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Track software subscriptions before they renew again</h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
               A normal expense tracker tells you what was paid. A useful business subscription tracker tells you who owns each recurring software payment, whether it is still needed, when it renews, and what decision should happen next. StackSmart helps owner-led SMBs turn billing exports into a clear subscription tracker for action — not another spreadsheet nobody maintains.
@@ -213,6 +213,38 @@ export default function BusinessSubscriptionTrackerSmallBusinessPage() {
         </div>
       </section>
 
+
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-11 proof refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Track the renewal owner, not just the renewal date</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Recurring software waste is often an ownership problem. The tracker should show who can approve the next charge, who would notice if the tool disappeared, and when someone last confirmed the subscription was still needed.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                This is especially useful for clinics, agencies, bookkeepers, ecommerce stores, community care providers, and professional-services firms where the owner sees the card statement but software decisions are scattered across office managers, practice managers, project leads, and external bookkeepers.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+              <h3 className="text-lg font-semibold text-white">Rows to flag immediately</h3>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {[
+                  "No named renewal owner",
+                  "Last confirmed still-needed is blank or older than 90 days",
+                  "Billing contact is an ex-staff member or generic inbox nobody checks",
+                  "Same vendor appears twice under different cards or invoices",
+                  "Annual plan renews inside 60 days with no notice-window owner",
+                  "Software category already has another active tool doing the same job",
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl border border-dark-700 bg-dark-950/60 p-4 text-sm leading-6 text-dark-300">{item}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <SeoClusterLinks
         eyebrow="Related subscription cleanup pages"
         title="Move from tracking to savings"
