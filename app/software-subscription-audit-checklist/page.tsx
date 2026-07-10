@@ -354,7 +354,7 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
               If you are tracking in a spreadsheet, these six columns cover the full review. One row per subscription. Add a row for every charge you find, even ones you do not recognise yet.
             </p>
             <div className="mt-6 overflow-x-auto">
-              <table className="w-full min-w-[560px] text-sm">
+              <table className="w-full min-w-0 text-xs sm:text-sm">
                 <thead>
                   <tr className="border-b border-dark-700">
                     {["Tool name", "Monthly cost", "Seats paid", "Active users", "Category", "Decision"].map((col) => (
@@ -598,7 +598,7 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
                 For every recurring software charge, record these fields in one place. Missing any one of them is how subscriptions become invisible waste.
               </p>
               <div className="mt-5 overflow-x-auto">
-                <table className="w-full min-w-[480px] text-sm">
+                <table className="w-full min-w-0 text-xs sm:text-sm">
                   <thead>
                     <tr className="border-b border-dark-700">
                       {["Field", "Why it matters"].map((col) => (
