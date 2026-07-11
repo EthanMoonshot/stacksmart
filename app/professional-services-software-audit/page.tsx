@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Professional Services Software Audit | StackSmart",
       description:
         "Audit your professional services firm's software subscriptions for duplicate tools, unused seats, and subscriptions that accumulated across project work and team growth.",
-      dateModified: "2026-07-02",
+      dateModified: "2026-07-12",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -467,6 +467,31 @@ export default function ProfessionalServicesSoftwareAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 owner-led SMB refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/35 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 owner-led SMB refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                For boutique firms where software decisions sit with partners, operators, and project leads
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Professional-services firms accumulate recurring spend through client-specific workspaces, proposal tools, project management seats, CRM add-ons, AI research subscriptions, meeting transcription, e-signing, reporting, and accounting integrations. StackSmart creates one billing-led view so the owner can remove software waste without pausing client delivery.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/80 p-6">
+              <h3 className="text-base font-semibold text-white">Decision-ready output</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
+                <li>• Group every recurring charge by function and client/project relationship.</li>
+                <li>• Flag duplicate PM/CRM/proposal/AI/transcription tools and seats attached to departed contractors.</li>
+                <li>• Produce a keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner queue ranked by annual impact.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

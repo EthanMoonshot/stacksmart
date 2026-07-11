@@ -22,7 +22,7 @@ const jsonLd = {
       "@id": absoluteUrl("/marketing-agency-software-stack-audit"),
       url: absoluteUrl("/marketing-agency-software-stack-audit"),
       name: "Marketing Agency Software Stack Audit | StackSmart",
-      dateModified: "2026-07-02",
+      dateModified: "2026-07-12",
       description:
         "Owner-led marketing, creative, and web agencies accumulate SEO tools, AI subscriptions, design platforms, social scheduling apps, and reporting tools with significant overlap. A software audit finds what to cut, consolidate, and renegotiate.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -888,6 +888,33 @@ export default function MarketingAgencySoftwareStackAuditPage() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <TrackLink href="/demo" event="homepage_cta_clicked" props={{ from: "marketing_agency_2026_06_11", target: "demo" }} className="btn-primary text-sm">See sample agency report</TrackLink>
             <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ from: "marketing_agency_2026_06_11", target: "checklist" }} className="btn-secondary text-sm">Use the audit checklist</TrackLink>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 owner-led SMB refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/35 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 owner-led SMB refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+              A practical audit for agency founders protecting margin, not an enterprise procurement rollout
+            </h2>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              StackSmart is tuned for 5–50 person marketing, creative, and web agencies where the founder, studio owner, ops lead, or bookkeeper owns the software bill. The review works from billing exports and card statements first, then surfaces client-linked orphan tools, converted trials, duplicate individual accounts, AI subscription sprawl, and annual SEO/design/reporting renewals that need a named owner before they renew.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {[
+                ["Client-specific waste", "Tools opened for one campaign or retainer that kept billing after the client offboarded."],
+                ["Margin leakage", "High-CPC SEO, reporting, design, and AI platforms where idle seats quietly reduce project profitability."],
+                ["Action list", "Keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner before the next annual charge."],
+              ].map(([title, body]) => (
+                <div key={title} className="rounded-xl border border-dark-700 bg-dark-950/70 p-4">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-dark-300">{body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

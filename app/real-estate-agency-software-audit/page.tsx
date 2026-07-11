@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Real Estate Agency Software Audit | StackSmart",
       description:
         "Audit your real estate agency software for duplicate CRM licences, unused portal seats, and subscriptions that accumulated across agents and offices.",
-      dateModified: "2026-06-13",
+      dateModified: "2026-07-12",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -446,6 +446,28 @@ export default function RealEstateAgencySoftwareAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 owner-led SMB refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/35 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 owner-led SMB refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                Built for agency principals with scattered subscriptions across portals, agents, and listing workflows
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Small real-estate agencies rarely have a central procurement process. Portal tools, CRM seats, inspection apps, e-signing, social scheduling, listing design, and AI copy tools are bought by different people and paid from different cards. StackSmart starts with those billing records and turns them into one practical renewal and cancellation queue.
+              </p>
+            </div>
+            <div className="space-y-3 text-sm leading-7 text-dark-300">
+              <p><span className="font-semibold text-white">Direct answer:</span> a real-estate agency software audit reviews recurring portal, CRM, marketing, signing, inspection, content, AI, and agent-seat charges so the owner can see which tools to keep, cancel, downgrade, consolidate, renegotiate, or assign to a renewal owner.</p>
+              <p><span className="font-semibold text-white">Privacy boundary:</span> StackSmart only needs billing exports, card statements, and accounting data. It does not need access to client records, property files, vendor logins, or active listings.</p>
+              <p><span className="font-semibold text-white">Proof checks:</span> duplicate Canva/AI/social tools, inactive CRM seats, ownerless portal add-ons, and annual software renewals due in the next 60 days.</p>
+            </div>
           </div>
         </div>
       </section>

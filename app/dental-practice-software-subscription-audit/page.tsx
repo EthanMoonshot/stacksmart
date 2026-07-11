@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Dental Practice Software Subscription Audit | StackSmart",
       description:
         "Audit admin, billing, booking, and marketing software subscriptions at your dental practice. Focus on the business side: booking, reminders, payment plans, reviews, and marketing.",
-      dateModified: "2026-06-09",
+      dateModified: "2026-07-12",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -520,6 +520,33 @@ export default function DentalPracticeSoftwareSubscriptionAuditPage() {
                 <p className="mt-2 text-sm leading-7 text-dark-300">{a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2026 owner-led SMB refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/35 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 owner-led SMB refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+              Dental subscription reviews should be billing-led and patient-record safe
+            </h2>
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
+              StackSmart is designed for owner-led dental practices and clinic groups with admin-heavy recurring tools but no spare procurement team. The audit uses practice card statements, Xero exports, vendor invoices, and recurring billing data to find recall, booking, payment, forms, marketing, imaging-adjacent, AI note/admin, and team-seat waste without touching clinical records or patient data.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {[
+                ["Privacy-safe input", "Billing exports and invoices only — no patient records, treatment plans, or clinical-system access."],
+                ["Clinic-specific findings", "Duplicate recall tools, unused booking add-ons, payment/form subscriptions, and leaver seats."],
+                ["Owner action queue", "Keep, cancel, downgrade, consolidate, renegotiate, or assign a renewal owner before the next practice-software renewal."],
+              ].map(([title, body]) => (
+                <div key={title} className="rounded-xl border border-dark-700 bg-dark-950/70 p-4">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-dark-300">{body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

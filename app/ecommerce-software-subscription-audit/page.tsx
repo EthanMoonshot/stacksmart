@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Ecommerce Software Subscription Audit | StackSmart",
       description:
         "Audit your ecommerce software subscriptions for duplicate apps, unused integrations, and tools that grew with a store that has since scaled back.",
-      dateModified: "2026-06-19",
+      dateModified: "2026-07-12",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -482,6 +482,31 @@ export default function EcommerceSoftwareSubscriptionAuditPage() {
         ]}
         location="ecommerce_audit_20260619"
       />
+
+      {/* 2026 owner-led SMB refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/35 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026 owner-led SMB refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                Built for store owners who find software waste in billing exports, not procurement dashboards
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The fastest ecommerce review starts with Shopify billing, card statements, Xero exports, and app invoices. StackSmart groups recurring charges by function, then highlights the app-marketplace subscriptions, channel connectors, AI content tools, email/SMS platforms, inventory add-ons, and fulfilment tools that no longer match the store's current order volume or team.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/80 p-6">
+              <h3 className="text-base font-semibold text-white">What the owner gets back</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-dark-300">
+                <li>• A consolidated recurring-bills register across Shopify, card, PayPal, accounting, and standalone vendor invoices.</li>
+                <li>• Keep, cancel, downgrade, consolidate, renegotiate, or assign-owner actions for each recurring tool.</li>
+                <li>• Sample findings for duplicate review/loyalty apps, oversized attribution plans, unused AI seats, and annual marketplace renewals before they hit again.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Lead capture */}
       <section className="py-16">
