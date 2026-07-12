@@ -5,6 +5,7 @@ import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
 import SeoDailyRefresh20260708 from "@/components/landing/SeoDailyRefresh20260708";
+import OwnerLedRefreshSection from "@/components/landing/OwnerLedRefreshSection";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -22,7 +23,7 @@ const jsonLd = {
       "@id": absoluteUrl("/allied-health-software-subscription-audit"),
       url: absoluteUrl("/allied-health-software-subscription-audit"),
       name: "Allied Health Software Subscription Audit | StackSmart",
-      dateModified: "2026-07-08",
+      dateModified: "2026-07-13",
       description:
         "Audit software subscriptions for physiotherapy, podiatry, psychology, occupational therapy, and multi-disciplinary allied health practices — booking, billing, telehealth, AI scribe, and admin tools.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -191,18 +192,33 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Allied health software audit</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">
+              Allied health software audit
+            </p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
               Cut the software overlap in your allied health practice
             </h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
-              Physiotherapy, podiatry, psychology, speech pathology, and occupational therapy practices carry more software than most owners track — booking tools, recall platforms, telehealth subscriptions, AI scribe tools, intake forms, payroll add-ons, and marketing subscriptions that accumulate across disciplines and platform migrations. Practitioners who left the roster often keep active seats. Telehealth tiers set during high-demand periods stay inflated. StackSmart gives you a practical software-spend snapshot — not an enterprise procurement platform — so the practice owner or manager can see the full picture and act without touching patient records.
+              Physiotherapy, podiatry, psychology, speech pathology, and
+              occupational therapy practices carry more software than most
+              owners track — booking tools, recall platforms, telehealth
+              subscriptions, AI scribe tools, intake forms, payroll add-ons, and
+              marketing subscriptions that accumulate across disciplines and
+              platform migrations. Practitioners who left the roster often keep
+              active seats. Telehealth tiers set during high-demand periods stay
+              inflated. StackSmart gives you a practical software-spend snapshot
+              — not an enterprise procurement platform — so the practice owner
+              or manager can see the full picture and act without touching
+              patient records.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <TrackLink
                 href="/demo"
                 event="homepage_cta_clicked"
-                props={{ target: "demo", location: "allied_health_audit_primary" }}
+                props={{
+                  target: "demo",
+                  location: "allied_health_audit_primary",
+                }}
                 className="btn-primary text-sm sm:text-base"
               >
                 View sample savings report
@@ -210,7 +226,10 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
               <TrackLink
                 href="/pricing"
                 event="homepage_cta_clicked"
-                props={{ target: "pricing", location: "allied_health_audit_secondary" }}
+                props={{
+                  target: "pricing",
+                  location: "allied_health_audit_secondary",
+                }}
                 className="btn-secondary text-sm sm:text-base"
               >
                 View pricing
@@ -224,12 +243,27 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       <section className="border-b border-dark-800/80 bg-dark-900/40 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Direct answer</p>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">
+              Direct answer
+            </p>
             <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
               How do allied health practices audit their software subscriptions?
             </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              Export billing data from your practice accounting software or business credit card covering the past 6 to 12 months. Group recurring charges by function: practice management, online booking, patient recalls and reminders, telehealth and video consultation, intake forms and patient communication, AI scribe and documentation tools, team communication, accounting and payroll, and reputation or marketing. Flag any category where you carry more than one active tool. Check seat counts against your current practitioner and admin headcount — specifically check AI scribe tools and telehealth platforms for practitioners who are no longer on the roster. Note telehealth subscriptions adopted during high-volume periods that may still be on inflated tiers. Flag annual contracts renewing within 60 days and prepare renegotiation conversations using your current usage data.
+              Export billing data from your practice accounting software or
+              business credit card covering the past 6 to 12 months. Group
+              recurring charges by function: practice management, online
+              booking, patient recalls and reminders, telehealth and video
+              consultation, intake forms and patient communication, AI scribe
+              and documentation tools, team communication, accounting and
+              payroll, and reputation or marketing. Flag any category where you
+              carry more than one active tool. Check seat counts against your
+              current practitioner and admin headcount — specifically check AI
+              scribe tools and telehealth platforms for practitioners who are no
+              longer on the roster. Note telehealth subscriptions adopted during
+              high-volume periods that may still be on inflated tiers. Flag
+              annual contracts renewing within 60 days and prepare renegotiation
+              conversations using your current usage data.
             </p>
           </div>
         </div>
@@ -239,12 +273,25 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-amber-400/20 bg-dark-900/80 p-6 sm:p-8">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">June 2026 demand context</p>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">
+              June 2026 demand context
+            </p>
             <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
-              Allied health owners search for platforms — but the waste sits in the add-on layer around them
+              Allied health owners search for platforms — but the waste sits in
+              the add-on layer around them
             </h2>
             <p className="mt-4 text-sm leading-7 text-dark-300">
-              Live AU keyword data shows 30 monthly searches for allied health software and 40 for practice management software allied health (CPC $12.70, competition 31). Most results serve platform buyers. The frugal clinic owner who already has a PMS needs a different answer: pull the card statement and billing exports, find the duplicate booking widgets, ghost practitioner seats, auto-renewing AI scribe tiers, SMS packs nobody monitors, and payment-terminal add-ons that survived the last roster change. StackSmart turns that billing evidence into a keep, cancel, downgrade, consolidate, renegotiate, and assign-owner action list — no patient records involved.
+              Live AU keyword data shows 30 monthly searches for allied health
+              software and 40 for practice management software allied health
+              (CPC $12.70, competition 31). Most results serve platform buyers.
+              The frugal clinic owner who already has a PMS needs a different
+              answer: pull the card statement and billing exports, find the
+              duplicate booking widgets, ghost practitioner seats, auto-renewing
+              AI scribe tiers, SMS packs nobody monitors, and payment-terminal
+              add-ons that survived the last roster change. StackSmart turns
+              that billing evidence into a keep, cancel, downgrade, consolidate,
+              renegotiate, and assign-owner action list — no patient records
+              involved.
             </p>
           </div>
         </div>
@@ -254,34 +301,65 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-amber-400/20 bg-dark-900/80 p-6 sm:p-8">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">Clinic-owner blind spots</p>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-amber-400">
+              Clinic-owner blind spots
+            </p>
             <h2 className="mt-3 text-xl font-semibold text-white sm:text-2xl">
               The subscription waste that builds up between roster reviews
             </h2>
             <p className="mt-4 text-sm leading-7 text-dark-300">
-              Allied health practice owners are typically managing clinical work alongside the business. Software renewals happen quietly in the background. The four patterns that accumulate most between roster reviews:
+              Allied health practice owners are typically managing clinical work
+              alongside the business. Software renewals happen quietly in the
+              background. The four patterns that accumulate most between roster
+              reviews:
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {[
-                ["Departed practitioner seats", "When a physiotherapist, OT, or psychologist leaves the practice, their seats in the PMS, telehealth platform, AI scribe tool, and booking system are rarely removed on the same day. Each per-seat subscription keeps billing at the old headcount."],
-                ["AI scribe tools at full roster tier", "Heidi Health, Nabla, and similar AI documentation tools are typically purchased at the full practitioner count. After adoption, active use concentrates in two or three clinicians who prefer the workflow. The remaining seats bill monthly without a review trigger."],
-                ["Telehealth platforms from peak demand", "Telehealth subscriptions signed up at 8–10 practitioner tiers in 2020–2022 are still frequently found billing at those tiers with two or three active remote users. Downgrading to a tier that reflects current usage is often the single largest saving in a clinic audit."],
-                ["Forms and intake tools with PMS overlap", "Standalone intake form or patient communication tools running alongside forms included natively in the practice management system. Both collecting the same information from incoming patients, with the standalone tool forgotten rather than cancelled."],
+                [
+                  "Departed practitioner seats",
+                  "When a physiotherapist, OT, or psychologist leaves the practice, their seats in the PMS, telehealth platform, AI scribe tool, and booking system are rarely removed on the same day. Each per-seat subscription keeps billing at the old headcount.",
+                ],
+                [
+                  "AI scribe tools at full roster tier",
+                  "Heidi Health, Nabla, and similar AI documentation tools are typically purchased at the full practitioner count. After adoption, active use concentrates in two or three clinicians who prefer the workflow. The remaining seats bill monthly without a review trigger.",
+                ],
+                [
+                  "Telehealth platforms from peak demand",
+                  "Telehealth subscriptions signed up at 8–10 practitioner tiers in 2020–2022 are still frequently found billing at those tiers with two or three active remote users. Downgrading to a tier that reflects current usage is often the single largest saving in a clinic audit.",
+                ],
+                [
+                  "Forms and intake tools with PMS overlap",
+                  "Standalone intake form or patient communication tools running alongside forms included natively in the practice management system. Both collecting the same information from incoming patients, with the standalone tool forgotten rather than cancelled.",
+                ],
               ].map(([title, detail]) => (
-                <div key={title} className="rounded-xl border border-dark-700 bg-dark-800/60 p-5">
-                  <h3 className="text-sm font-semibold text-amber-300">{title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-dark-300">{detail}</p>
+                <div
+                  key={title}
+                  className="rounded-xl border border-dark-700 bg-dark-800/60 p-5"
+                >
+                  <h3 className="text-sm font-semibold text-amber-300">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">
+                    {detail}
+                  </p>
                 </div>
               ))}
             </div>
             <p className="mt-6 text-sm leading-7 text-dark-300">
-              The owner-use check: after any roster change — a new hire, a departure, a change in hours — spend 15 minutes updating seat counts in your PMS, telehealth, AI scribe, and recall tools. Combined with an annual billing export review, this prevents the majority of recurring waste in allied health practices.
+              The owner-use check: after any roster change — a new hire, a
+              departure, a change in hours — spend 15 minutes updating seat
+              counts in your PMS, telehealth, AI scribe, and recall tools.
+              Combined with an annual billing export review, this prevents the
+              majority of recurring waste in allied health practices.
             </p>
             <div className="mt-6">
               <TrackLink
                 href="/saas-spend-audit-tool"
                 event="homepage_cta_clicked"
-                props={{ target: "audit_tool", location: "allied_health_blind_spots" }}
+                props={{
+                  target: "audit_tool",
+                  location: "allied_health_blind_spots",
+                }}
                 className="btn-secondary text-sm"
               >
                 Run the full billing audit
@@ -294,9 +372,12 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       {/* Why practices accumulate software */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-white">Why allied health practices carry more software than they need</h2>
+          <h2 className="text-2xl font-semibold text-white">
+            Why allied health practices carry more software than they need
+          </h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            Software accumulation in allied health practices follows three distinct patterns. Recognising them makes the audit faster to run.
+            Software accumulation in allied health practices follows three
+            distinct patterns. Recognising them makes the audit faster to run.
           </p>
           <div className="mt-8 grid gap-6 lg:grid-cols-3">
             {[
@@ -313,7 +394,10 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
                 "Switching practice management systems leaves the previous platform active during the transition period. Both billing simultaneously. The old system often keeps charging for months after migration because cancellation was not actioned cleanly.",
               ],
             ].map(([title, copy]) => (
-              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <div
+                key={title}
+                className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6"
+              >
                 <h3 className="text-base font-semibold text-white">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
               </div>
@@ -325,29 +409,80 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       {/* Owner-use and connector-fee review */}
       <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">30-minute owner review</p>
-          <h2 className="mt-2 text-2xl font-semibold text-white">Find the quiet add-ons before they become permanent overhead</h2>
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">
+            30-minute owner review
+          </p>
+          <h2 className="mt-2 text-2xl font-semibold text-white">
+            Find the quiet add-ons before they become permanent overhead
+          </h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-dark-300">
-            The fastest allied-health audit is not a procurement project. It is an owner-use pass across the card statement, practice-management billing, and any marketplace or integration account. For each recurring payment, the practice owner or manager should be able to name the current user, the patient/admin workflow it supports, the renewal date, and whether another active tool already does the same job.
+            The fastest allied-health audit is not a procurement project. It is
+            an owner-use pass across the card statement, practice-management
+            billing, and any marketplace or integration account. For each
+            recurring payment, the practice owner or manager should be able to
+            name the current user, the patient/admin workflow it supports, the
+            renewal date, and whether another active tool already does the same
+            job.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              ["Practice-management add-ons", "Check telehealth, SMS packs, reminder bundles, online forms, intake, payments, and reporting modules. Many clinics keep standalone tools after their core practice-management system adds a native feature."],
-              ["NDIS and admin connectors", "List NDIS claiming, rostering, payroll, reporting, and workflow connectors separately. If a connector syncs two tools that are no longer both active, it is a cut candidate — not just a technical detail."],
-              ["AI note and dashboard overlap", "AI scribe, transcription, dashboard, and summarisation tools are often bought at team tier but used by a small subset of clinicians. Pull active-user data before the renewal rolls over."],
-              ["Reminder and communication duplicates", "SMS reminders, email marketing, patient recall, and online-booking messages can all bill separately. Group them by job so the team can choose one communication path per use case."],
-              ["Card-statement line-by-line pass", "Search for monthly charges under vendor names, app-store billing, Stripe descriptors, and marketplace billing. Small recurring add-ons hide under generic payment descriptors."],
-              ["Which app can we cancel?", "For every flagged duplicate, write the lowest-risk next action: cancel, right-size, consolidate, renegotiate, or leave until after a quieter clinical week."],
+              [
+                "Practice-management add-ons",
+                "Check telehealth, SMS packs, reminder bundles, online forms, intake, payments, and reporting modules. Many clinics keep standalone tools after their core practice-management system adds a native feature.",
+              ],
+              [
+                "NDIS and admin connectors",
+                "List NDIS claiming, rostering, payroll, reporting, and workflow connectors separately. If a connector syncs two tools that are no longer both active, it is a cut candidate — not just a technical detail.",
+              ],
+              [
+                "AI note and dashboard overlap",
+                "AI scribe, transcription, dashboard, and summarisation tools are often bought at team tier but used by a small subset of clinicians. Pull active-user data before the renewal rolls over.",
+              ],
+              [
+                "Reminder and communication duplicates",
+                "SMS reminders, email marketing, patient recall, and online-booking messages can all bill separately. Group them by job so the team can choose one communication path per use case.",
+              ],
+              [
+                "Card-statement line-by-line pass",
+                "Search for monthly charges under vendor names, app-store billing, Stripe descriptors, and marketplace billing. Small recurring add-ons hide under generic payment descriptors.",
+              ],
+              [
+                "Which app can we cancel?",
+                "For every flagged duplicate, write the lowest-risk next action: cancel, right-size, consolidate, renegotiate, or leave until after a quieter clinical week.",
+              ],
             ].map(([title, copy]) => (
-              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <div
+                key={title}
+                className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6"
+              >
                 <h3 className="text-sm font-semibold text-white">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
               </div>
             ))}
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "allied_health_owner_use" }} className="btn-secondary text-sm">Use the audit checklist</TrackLink>
-            <TrackLink href="/ai-subscription-audit" event="homepage_cta_clicked" props={{ target: "ai_audit", location: "allied_health_owner_use" }} className="btn-secondary text-sm">Check AI subscriptions</TrackLink>
+            <TrackLink
+              href="/software-subscription-audit-checklist"
+              event="homepage_cta_clicked"
+              props={{
+                target: "checklist",
+                location: "allied_health_owner_use",
+              }}
+              className="btn-secondary text-sm"
+            >
+              Use the audit checklist
+            </TrackLink>
+            <TrackLink
+              href="/ai-subscription-audit"
+              event="homepage_cta_clicked"
+              props={{
+                target: "ai_audit",
+                location: "allied_health_owner_use",
+              }}
+              className="btn-secondary text-sm"
+            >
+              Check AI subscriptions
+            </TrackLink>
           </div>
         </div>
       </section>
@@ -355,20 +490,30 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       {/* Waste by category */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-white">Allied health software waste by category</h2>
+          <h2 className="text-2xl font-semibold text-white">
+            Allied health software waste by category
+          </h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            These are the subscription categories where allied health practices most commonly find recoverable spend.
+            These are the subscription categories where allied health practices
+            most commonly find recoverable spend.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {wasteCategories.map((item) => (
-              <div key={item.category} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <div
+                key={item.category}
+                className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6"
+              >
                 <div className="flex items-center justify-between gap-3">
-                  <h3 className={`text-sm font-semibold ${item.color}`}>{item.category}</h3>
+                  <h3 className={`text-sm font-semibold ${item.color}`}>
+                    {item.category}
+                  </h3>
                   <span className="flex-shrink-0 rounded-full border border-dark-600 bg-dark-800 px-2.5 py-0.5 text-xs text-dark-300">
                     {item.action}
                   </span>
                 </div>
-                <p className="mt-3 text-sm leading-7 text-dark-300">{item.issue}</p>
+                <p className="mt-3 text-sm leading-7 text-dark-300">
+                  {item.issue}
+                </p>
               </div>
             ))}
           </div>
@@ -378,9 +523,13 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       {/* 30-day audit workflow */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-white">30-day allied health software audit</h2>
+          <h2 className="text-2xl font-semibold text-white">
+            30-day allied health software audit
+          </h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            The practice owner or admin manager can run this review during quieter clinical weeks. No clinical data or patient records involved.
+            The practice owner or admin manager can run this review during
+            quieter clinical weeks. No clinical data or patient records
+            involved.
           </p>
           <div className="mt-8 space-y-6">
             {[
@@ -406,7 +555,9 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
                   {i + 1}
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-white">{title}</h3>
+                  <h3 className="text-base font-semibold text-white">
+                    {title}
+                  </h3>
                   <p className="mt-2 text-sm leading-7 text-dark-300">{copy}</p>
                 </div>
               </div>
@@ -418,9 +569,13 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       {/* Sample findings */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-white">What an allied health software audit typically finds</h2>
+          <h2 className="text-2xl font-semibold text-white">
+            What an allied health software audit typically finds
+          </h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            These are example findings from allied health and multi-disciplinary clinic billing exports. Actual amounts vary by practice size and tool mix.
+            These are example findings from allied health and multi-disciplinary
+            clinic billing exports. Actual amounts vary by practice size and
+            tool mix.
           </p>
           <div className="mt-8 overflow-x-auto">
             <table className="w-full text-left text-sm">
@@ -433,13 +588,41 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
               </thead>
               <tbody className="text-dark-300">
                 {[
-                  ["Dual PMS billing post-migration, old system still active", "Cancel old system", "$1,200 – $4,800/yr"],
-                  ["Third-party booking widget alongside built-in booking", "Consolidate to built-in", "$480 – $2,400/yr"],
-                  ["Telehealth platform at 10-seat tier, 2 active users", "Downgrade or cancel", "$720 – $3,600/yr"],
-                  ["AI scribe tool with 4 departed-practitioner seats still active", "Remove inactive seats", "$960 – $2,880/yr"],
-                  ["SMS recall tool, PMS now includes recalls natively", "Consolidate", "$600 – $2,400/yr"],
-                  ["Intake form tool running alongside PMS forms", "Consolidate to PMS native", "$360 – $1,440/yr"],
-                  ["Annual PMS renewal, no renegotiation conversation", "Renegotiate before renewal", "$600 – $3,600/yr"],
+                  [
+                    "Dual PMS billing post-migration, old system still active",
+                    "Cancel old system",
+                    "$1,200 – $4,800/yr",
+                  ],
+                  [
+                    "Third-party booking widget alongside built-in booking",
+                    "Consolidate to built-in",
+                    "$480 – $2,400/yr",
+                  ],
+                  [
+                    "Telehealth platform at 10-seat tier, 2 active users",
+                    "Downgrade or cancel",
+                    "$720 – $3,600/yr",
+                  ],
+                  [
+                    "AI scribe tool with 4 departed-practitioner seats still active",
+                    "Remove inactive seats",
+                    "$960 – $2,880/yr",
+                  ],
+                  [
+                    "SMS recall tool, PMS now includes recalls natively",
+                    "Consolidate",
+                    "$600 – $2,400/yr",
+                  ],
+                  [
+                    "Intake form tool running alongside PMS forms",
+                    "Consolidate to PMS native",
+                    "$360 – $1,440/yr",
+                  ],
+                  [
+                    "Annual PMS renewal, no renegotiation conversation",
+                    "Renegotiate before renewal",
+                    "$600 – $3,600/yr",
+                  ],
                 ].map(([finding, action, impact]) => (
                   <tr key={finding} className="border-b border-dark-800/60">
                     <td className="py-3 pr-6 text-white">{finding}</td>
@@ -456,26 +639,54 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       {/* What you get */}
       <section className="border-t border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-white">What the audit report gives you</h2>
+          <h2 className="text-2xl font-semibold text-white">
+            What the audit report gives you
+          </h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            StackSmart produces a practical software-spend snapshot for owner-led allied health practices — no clinical data involved. A report the practice owner, manager, or admin can review and act on in a week.
+            StackSmart produces a practical software-spend snapshot for
+            owner-led allied health practices — no clinical data involved. A
+            report the practice owner, manager, or admin can review and act on
+            in a week.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {[
-              ["Categorised spend", "Every recurring admin charge grouped by function — practice management, booking, recalls, telehealth, AI scribe, intake forms, accounting and payroll, and marketing. No manual sorting required."],
-              ["Flagged attention areas", "Departed-practitioner seats, duplicate tool pairs, telehealth tiers above current use, AI tool seat accumulation, and forgotten annual subscriptions — recurring payments where there is no active owner reviewing them."],
-              ["Prioritised action list", "Cancel, consolidate, downgrade, and renegotiate — ranked by annual dollar impact so you know where to start and what to hand to your practice manager or office manager."],
+              [
+                "Categorised spend",
+                "Every recurring admin charge grouped by function — practice management, booking, recalls, telehealth, AI scribe, intake forms, accounting and payroll, and marketing. No manual sorting required.",
+              ],
+              [
+                "Flagged attention areas",
+                "Departed-practitioner seats, duplicate tool pairs, telehealth tiers above current use, AI tool seat accumulation, and forgotten annual subscriptions — recurring payments where there is no active owner reviewing them.",
+              ],
+              [
+                "Prioritised action list",
+                "Cancel, consolidate, downgrade, and renegotiate — ranked by annual dollar impact so you know where to start and what to hand to your practice manager or office manager.",
+              ],
             ].map(([title, copy]) => (
-              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <div
+                key={title}
+                className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6"
+              >
                 <h3 className="text-sm font-semibold text-white">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
               </div>
             ))}
           </div>
           <div className="mt-6 rounded-2xl border border-dark-700 bg-dark-900/50 p-6">
-            <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Who uses and shares this report</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-dark-400">
+              Who uses and shares this report
+            </p>
             <p className="mt-3 text-sm leading-7 text-dark-300">
-              The practice owner or principal typically runs the initial billing review and owns the cancellation, renegotiation, and seat right-sizing decisions — including removing seats for practitioners who have left the roster. The completed savings report is shared with a practice manager or office manager to handle seat removals, vendor conversations, and workflow consolidations. It can be handed to an admin or finance helper as a structured view of recurring payments — a line-by-line spend snapshot before anyone goes through statements manually. The report does not include any clinical records or patient data.
+              The practice owner or principal typically runs the initial billing
+              review and owns the cancellation, renegotiation, and seat
+              right-sizing decisions — including removing seats for
+              practitioners who have left the roster. The completed savings
+              report is shared with a practice manager or office manager to
+              handle seat removals, vendor conversations, and workflow
+              consolidations. It can be handed to an admin or finance helper as
+              a structured view of recurring payments — a line-by-line spend
+              snapshot before anyone goes through statements manually. The
+              report does not include any clinical records or patient data.
             </p>
           </div>
         </div>
@@ -484,31 +695,56 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       {/* Manual vs StackSmart */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-white">Manual audit vs StackSmart for allied health practices</h2>
+          <h2 className="text-2xl font-semibold text-white">
+            Manual audit vs StackSmart for allied health practices
+          </h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-dark-300">
-            Both approaches surface the same waste. StackSmart removes the spreadsheet step so the review actually gets completed.
+            Both approaches surface the same waste. StackSmart removes the
+            spreadsheet step so the review actually gets completed.
           </p>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
-              <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Manual audit</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-dark-400">
+                Manual audit
+              </p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
-                <li>Export from Xero or MYOB and business credit card separately</li>
+                <li>
+                  Export from Xero or MYOB and business credit card separately
+                </li>
                 <li>Manually categorise each line item by admin function</li>
                 <li>Open each platform to check active user and seat counts</li>
-                <li>Cross-reference AI scribe and telehealth seats against current roster</li>
-                <li>Map feature overlap by reviewing each vendor&apos;s current offering</li>
+                <li>
+                  Cross-reference AI scribe and telehealth seats against current
+                  roster
+                </li>
+                <li>
+                  Map feature overlap by reviewing each vendor&apos;s current
+                  offering
+                </li>
                 <li>Build a prioritised action list in a spreadsheet</li>
                 <li>Repeat from scratch at the next review cycle</li>
               </ul>
             </div>
             <div className="rounded-2xl border border-brand-400/30 bg-dark-900/70 p-6">
-              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">StackSmart</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">
+                StackSmart
+              </p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
                 <li>Upload a single billing export (CSV or invoice data)</li>
-                <li>Automatic categorisation across allied health tool categories</li>
-                <li>Flags duplicate booking tools, inflated telehealth tiers, AI seat waste, and idle seats</li>
-                <li>Prioritised keep, cut, consolidate, and renegotiate action list</li>
-                <li>Shareable savings report ready to share with practice manager</li>
+                <li>
+                  Automatic categorisation across allied health tool categories
+                </li>
+                <li>
+                  Flags duplicate booking tools, inflated telehealth tiers, AI
+                  seat waste, and idle seats
+                </li>
+                <li>
+                  Prioritised keep, cut, consolidate, and renegotiate action
+                  list
+                </li>
+                <li>
+                  Shareable savings report ready to share with practice manager
+                </li>
                 <li>Repeatable baseline for the next annual review</li>
               </ul>
             </div>
@@ -519,25 +755,50 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       {/* Fit / Not fit */}
       <section className="border-y border-dark-800/80 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-white">Is StackSmart right for your practice?</h2>
+          <h2 className="text-2xl font-semibold text-white">
+            Is StackSmart right for your practice?
+          </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
-              <p className="text-xs uppercase tracking-[0.18em] text-emerald-400">Good fit</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-emerald-400">
+                Good fit
+              </p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-200">
-                <li>Owner or practice manager of a physiotherapy, podiatry, psychology, OT, speech pathology, or multi-disciplinary allied health clinic</li>
+                <li>
+                  Owner or practice manager of a physiotherapy, podiatry,
+                  psychology, OT, speech pathology, or multi-disciplinary allied
+                  health clinic
+                </li>
                 <li>2 to 30 practitioners and admin staff</li>
-                <li>Multiple software subscriptions across booking, billing, recalls, AI scribe, and marketing</li>
+                <li>
+                  Multiple software subscriptions across booking, billing,
+                  recalls, AI scribe, and marketing
+                </li>
                 <li>No dedicated IT or ops team managing software spend</li>
-                <li>Billing data accessible from Xero, MYOB, or business credit card</li>
+                <li>
+                  Billing data accessible from Xero, MYOB, or business credit
+                  card
+                </li>
               </ul>
             </div>
             <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
-              <p className="text-xs uppercase tracking-[0.18em] text-dark-400">Not the best fit</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-dark-400">
+                Not the best fit
+              </p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-400">
-                <li>Hospital or large health network with central IT managing software procurement</li>
-                <li>Primary goal is a clinical compliance or regulatory audit — StackSmart focuses on admin and billing software only</li>
+                <li>
+                  Hospital or large health network with central IT managing
+                  software procurement
+                </li>
+                <li>
+                  Primary goal is a clinical compliance or regulatory audit —
+                  StackSmart focuses on admin and billing software only
+                </li>
                 <li>Fewer than five active business software subscriptions</li>
-                <li>Requires enterprise identity management or automated provisioning</li>
+                <li>
+                  Requires enterprise identity management or automated
+                  provisioning
+                </li>
               </ul>
             </div>
           </div>
@@ -547,7 +808,9 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       {/* FAQ */}
       <section className="py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-semibold text-white">Frequently asked questions</h2>
+          <h2 className="text-2xl font-semibold text-white">
+            Frequently asked questions
+          </h2>
           <div className="mt-8 space-y-6">
             {[
               [
@@ -588,14 +851,36 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       <section className="border-b border-dark-800/80 bg-dark-950 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6 sm:p-8">
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">Admin software inventory</p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">A clinic owner should be able to name the owner of every admin subscription</h2>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">
+              Admin software inventory
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+              A clinic owner should be able to name the owner of every admin
+              subscription
+            </h2>
             <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
-              Allied health practices often know exactly who owns clinical decisions but not who owns software renewals. Booking widgets, recall tools, SMS reminders, forms platforms, telehealth, AI scribe seats, payroll, accounting, and review tools can all renew without a named decision-maker. StackSmart creates a billing-only software inventory and renewal calendar so the practice manager can review admin spend without touching patient records, clinical notes, or regulated health systems.
+              Allied health practices often know exactly who owns clinical
+              decisions but not who owns software renewals. Booking widgets,
+              recall tools, SMS reminders, forms platforms, telehealth, AI
+              scribe seats, payroll, accounting, and review tools can all renew
+              without a named decision-maker. StackSmart creates a billing-only
+              software inventory and renewal calendar so the practice manager
+              can review admin spend without touching patient records, clinical
+              notes, or regulated health systems.
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {["booking vs PMS features", "telehealth tiers vs active use", "AI scribe seats vs roster", "forms / recall / SMS overlap"].map((item) => (
-                <div key={item} className="rounded-xl border border-dark-700 bg-dark-950/80 p-4 text-sm font-medium text-dark-200">{item}</div>
+              {[
+                "booking vs PMS features",
+                "telehealth tiers vs active use",
+                "AI scribe seats vs roster",
+                "forms / recall / SMS overlap",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-xl border border-dark-700 bg-dark-950/80 p-4 text-sm font-medium text-dark-200"
+                >
+                  {item}
+                </div>
               ))}
             </div>
           </div>
@@ -606,29 +891,55 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       <section className="border-b border-dark-800/80 bg-dark-950 py-12">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-brand-500/25 bg-brand-500/10 p-6">
-            <p className="text-sm font-semibold text-brand-200">What StackSmart looks for in allied health exports</p>
-            <p className="mt-2 text-sm leading-7 text-dark-200">The output groups recurring charges by clinical admin job — practice management, booking, telehealth, reminders, forms, payments, payroll, NDIS/admin, AI notes, reporting, and marketing — then highlights duplicate jobs, idle seats, ownerless renewals, and add-on fees that need a simple cut/consolidate/right-size decision.</p>
+            <p className="text-sm font-semibold text-brand-200">
+              What StackSmart looks for in allied health exports
+            </p>
+            <p className="mt-2 text-sm leading-7 text-dark-200">
+              The output groups recurring charges by clinical admin job —
+              practice management, booking, telehealth, reminders, forms,
+              payments, payroll, NDIS/admin, AI notes, reporting, and marketing
+              — then highlights duplicate jobs, idle seats, ownerless renewals,
+              and add-on fees that need a simple cut/consolidate/right-size
+              decision.
+            </p>
           </div>
         </div>
       </section>
 
-
       {/* 2026-06-12 owner-operator conversion section */}
       <section className="border-y border-dark-800/80 py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Allied health owner/operator · billing-layer audit</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-brand-300">
+            Allied health owner/operator · billing-layer audit
+          </p>
           <div className="mt-4 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
-              <h2 className="text-2xl font-semibold text-white">Hidden admin overhead between roster reviews costs more than most owners expect.</h2>
+              <h2 className="text-2xl font-semibold text-white">
+                Hidden admin overhead between roster reviews costs more than
+                most owners expect.
+              </h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                Allied health practices with 5 to 50 staff carry 10 to 25 recurring admin subscriptions around the core PMS. The waste hides in the quiet charges: shared GPT or Chrome logins across the team that default to paid plans, AI scribe seats at the original adoption headcount, telehealth tiers from peak demand, SMS packs nobody monitors, exercise-library tools superseded by the PMS, and booking widgets that overlap with native online booking.
+                Allied health practices with 5 to 50 staff carry 10 to 25
+                recurring admin subscriptions around the core PMS. The waste
+                hides in the quiet charges: shared GPT or Chrome logins across
+                the team that default to paid plans, AI scribe seats at the
+                original adoption headcount, telehealth tiers from peak demand,
+                SMS packs nobody monitors, exercise-library tools superseded by
+                the PMS, and booking widgets that overlap with native online
+                booking.
               </p>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                StackSmart reviews billing exports and card statements only — not treatment notes, participant records, or clinical files. The practice owner gets a first action list before deciding whether any clinical workflow change is worth discussing with practitioners.
+                StackSmart reviews billing exports and card statements only —
+                not treatment notes, participant records, or clinical files. The
+                practice owner gets a first action list before deciding whether
+                any clinical workflow change is worth discussing with
+                practitioners.
               </p>
             </div>
             <div className="rounded-3xl border border-dark-700 bg-dark-900/70 p-6">
-              <h3 className="text-lg font-semibold text-white">What the card-statement audit checks</h3>
+              <h3 className="text-lg font-semibold text-white">
+                What the card-statement audit checks
+              </h3>
               <div className="mt-5 grid gap-3">
                 {[
                   "PMS add-ons: booking, forms, SMS, telehealth, payments, recalls, reporting modules",
@@ -638,53 +949,131 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
                   "Duplicate exercise-library, reminder, and patient-engagement tools",
                   "Ownerless annual renewals with no named decision-maker before auto-charge",
                 ].map((item) => (
-                  <div key={item} className="rounded-xl border border-dark-700/80 bg-dark-950/60 px-4 py-3 text-sm leading-6 text-dark-300">{item}</div>
+                  <div
+                    key={item}
+                    className="rounded-xl border border-dark-700/80 bg-dark-950/60 px-4 py-3 text-sm leading-6 text-dark-300"
+                  >
+                    {item}
+                  </div>
                 ))}
               </div>
             </div>
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <TrackLink href="/clinic-software-subscription-audit" event="homepage_cta_clicked" props={{ from: "allied_health_refresh_0612", target: "clinic" }} className="btn-secondary text-sm">Clinic software audit</TrackLink>
-            <TrackLink href="/ndis-provider-software-audit" event="homepage_cta_clicked" props={{ from: "allied_health_refresh_0612", target: "ndis_provider" }} className="btn-primary text-sm">NDIS provider audit</TrackLink>
+            <TrackLink
+              href="/clinic-software-subscription-audit"
+              event="homepage_cta_clicked"
+              props={{ from: "allied_health_refresh_0612", target: "clinic" }}
+              className="btn-secondary text-sm"
+            >
+              Clinic software audit
+            </TrackLink>
+            <TrackLink
+              href="/ndis-provider-software-audit"
+              event="homepage_cta_clicked"
+              props={{
+                from: "allied_health_refresh_0612",
+                target: "ndis_provider",
+              }}
+              className="btn-primary text-sm"
+            >
+              NDIS provider audit
+            </TrackLink>
           </div>
         </div>
       </section>
-
 
       {/* 2026-06-12 proof/conversion refresh */}
       <section className="border-t border-dark-800/80 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-06-12 allied-health billing-layer audit</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">Every add-on under the microscope, no patient records touched</h2>
-            <p className="mt-4 text-base leading-7 text-dark-300">DataForSEO shows 30 monthly AU searches for allied health software and 40 for practice management software allied health (competition 31, CPC $12.70). The owner-led question is not choosing a new PMS. It is finding duplicate charges, ghost practitioner seats, AI-tool sprawl from shared GPT or Chrome logins across the team, and ownerless renewals hiding in the card statement around the system you already run.</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">
+              2026-06-12 allied-health billing-layer audit
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white">
+              Every add-on under the microscope, no patient records touched
+            </h2>
+            <p className="mt-4 text-base leading-7 text-dark-300">
+              DataForSEO shows 30 monthly AU searches for allied health software
+              and 40 for practice management software allied health (competition
+              31, CPC $12.70). The owner-led question is not choosing a new PMS.
+              It is finding duplicate charges, ghost practitioner seats, AI-tool
+              sprawl from shared GPT or Chrome logins across the team, and
+              ownerless renewals hiding in the card statement around the system
+              you already run.
+            </p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[
-              ["Billing-only review", "Practice-management add-ons, rostering, booking widgets, reminder/SMS packs, telehealth, payment terminals, intake forms, exercise-library tools, and clinical admin AI subscriptions — all reviewable from card statements and accounting exports without opening a single patient record."],
-              ["Practitioner seat audit", "Compare current roster headcount against seat counts in the PMS, telehealth platform, AI scribe tool, booking system, and recall platform. Contractors, locums, and practitioners who reduced hours often retain full seats that keep billing quietly."],
-              ["AI-tool sprawl check", "Heidi Health, Nabla, Otter.ai, ChatGPT Team, and Claude seats adopted during an AI push often concentrate active use in one or two clinicians. Pull the active-user list before the next renewal and right-size to actual users — not the original adoption headcount."],
-              ["Ownerless renewal calendar", "Every admin subscription needs a named renewal owner before auto-renewal. Card-statement charges with no accountable person are the highest-risk category — the renegotiation window closes silently and the practice pays another full year."],
+              [
+                "Billing-only review",
+                "Practice-management add-ons, rostering, booking widgets, reminder/SMS packs, telehealth, payment terminals, intake forms, exercise-library tools, and clinical admin AI subscriptions — all reviewable from card statements and accounting exports without opening a single patient record.",
+              ],
+              [
+                "Practitioner seat audit",
+                "Compare current roster headcount against seat counts in the PMS, telehealth platform, AI scribe tool, booking system, and recall platform. Contractors, locums, and practitioners who reduced hours often retain full seats that keep billing quietly.",
+              ],
+              [
+                "AI-tool sprawl check",
+                "Heidi Health, Nabla, Otter.ai, ChatGPT Team, and Claude seats adopted during an AI push often concentrate active use in one or two clinicians. Pull the active-user list before the next renewal and right-size to actual users — not the original adoption headcount.",
+              ],
+              [
+                "Ownerless renewal calendar",
+                "Every admin subscription needs a named renewal owner before auto-renewal. Card-statement charges with no accountable person are the highest-risk category — the renegotiation window closes silently and the practice pays another full year.",
+              ],
             ].map(([title, copy]) => (
-              <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5">
-                <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">{title}</h3>
+              <div
+                key={title}
+                className="rounded-2xl border border-dark-700 bg-dark-900/70 p-5"
+              >
+                <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">
+                  {title}
+                </h3>
                 <p className="mt-3 text-sm leading-7 text-dark-300">{copy}</p>
               </div>
             ))}
           </div>
           <div className="mt-8 rounded-3xl border border-brand-500/30 bg-brand-500/10 p-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">Action outputs for a 5-50 staff practice</p>
-            <p className="mt-3 text-sm leading-7 text-dark-200">Keep, cancel, downgrade, consolidate, renegotiate, and assign-owner decisions for every admin subscription — ranked by annual dollar impact and grouped by PMS add-ons, booking, recalls/SMS, telehealth, AI scribe, forms, payments, payroll, and marketing. A practical cut list the practice manager can work through this month, not an enterprise audit report.</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-200">
+              Action outputs for a 5-50 staff practice
+            </p>
+            <p className="mt-3 text-sm leading-7 text-dark-200">
+              Keep, cancel, downgrade, consolidate, renegotiate, and
+              assign-owner decisions for every admin subscription — ranked by
+              annual dollar impact and grouped by PMS add-ons, booking,
+              recalls/SMS, telehealth, AI scribe, forms, payments, payroll, and
+              marketing. A practical cut list the practice manager can work
+              through this month, not an enterprise audit report.
+            </p>
           </div>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <TrackLink href="/demo" event="homepage_cta_clicked" props={{ target: "demo", location: "allied_health_2026_06_12" }} className="btn-primary text-sm">See the sample report</TrackLink>
-            <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "allied_health_2026_06_12" }} className="btn-secondary text-sm">Use the audit checklist</TrackLink>
+            <TrackLink
+              href="/demo"
+              event="homepage_cta_clicked"
+              props={{ target: "demo", location: "allied_health_2026_06_12" }}
+              className="btn-primary text-sm"
+            >
+              See the sample report
+            </TrackLink>
+            <TrackLink
+              href="/software-subscription-audit-checklist"
+              event="homepage_cta_clicked"
+              props={{
+                target: "checklist",
+                location: "allied_health_2026_06_12",
+              }}
+              className="btn-secondary text-sm"
+            >
+              Use the audit checklist
+            </TrackLink>
           </div>
         </div>
       </section>
 
       {/* Lead capture */}
       <SeoDailyRefresh20260708 type="alliedHealth" />
+
+      <OwnerLedRefreshSection type="alliedHealth" />
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -700,9 +1089,13 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
       {/* Bottom CTA */}
       <section className="border-t border-dark-800/80 py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-semibold text-white">Audit the admin stack, not the clinical one</h2>
+          <h2 className="text-3xl font-semibold text-white">
+            Audit the admin stack, not the clinical one
+          </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-dark-300">
-            Open the sample report to see exactly what StackSmart produces from billing data. No clinical records involved — just the business software stack.
+            Open the sample report to see exactly what StackSmart produces from
+            billing data. No clinical records involved — just the business
+            software stack.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <TrackLink
@@ -716,7 +1109,10 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
             <TrackLink
               href="/pricing"
               event="homepage_cta_clicked"
-              props={{ target: "pricing", location: "allied_health_audit_footer" }}
+              props={{
+                target: "pricing",
+                location: "allied_health_audit_footer",
+              }}
               className="btn-secondary text-sm sm:text-base"
             >
               Compare plans
@@ -733,32 +1129,38 @@ export default function AlliedHealthSoftwareSubscriptionAuditPage() {
           {
             href: "/accounting-firm-software-stack-audit",
             title: "Accounting firm software stack audit",
-            description: "Practice management, tax, payroll, document, and e-sign stack audit for small accounting and bookkeeping firms.",
+            description:
+              "Practice management, tax, payroll, document, and e-sign stack audit for small accounting and bookkeeping firms.",
           },
           {
             href: "/bookkeeping-firm-software-stack-audit",
             title: "Bookkeeping firm software stack audit",
-            description: "Add-on sprawl, e-sign and receipt duplication, and tier creep in Xero, QBO, and MYOB ecosystem stacks.",
+            description:
+              "Add-on sprawl, e-sign and receipt duplication, and tier creep in Xero, QBO, and MYOB ecosystem stacks.",
           },
           {
             href: "/marketing-agency-software-stack-audit",
             title: "Marketing agency software stack audit",
-            description: "SEO, social scheduling, design, and reporting stack audit for owner-led marketing and creative agencies.",
+            description:
+              "SEO, social scheduling, design, and reporting stack audit for owner-led marketing and creative agencies.",
           },
           {
             href: "/small-business-software-audit",
             title: "Small business software audit",
-            description: "The owner-led SMB guide to finding and acting on software waste without a dedicated IT or finance team.",
+            description:
+              "The owner-led SMB guide to finding and acting on software waste without a dedicated IT or finance team.",
           },
           {
             href: "/software-subscription-audit-checklist",
             title: "Software subscription audit checklist",
-            description: "A structured checklist for reviewing every subscription category in your practice stack.",
+            description:
+              "A structured checklist for reviewing every subscription category in your practice stack.",
           },
           {
             href: "/saas-spend-audit-tool",
             title: "SaaS spend audit tool",
-            description: "See how StackSmart turns a billing export into categorised findings and clear next actions.",
+            description:
+              "See how StackSmart turns a billing export into categorised findings and clear next actions.",
           },
         ]}
       />
