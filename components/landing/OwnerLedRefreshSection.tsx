@@ -653,7 +653,7 @@ export default function OwnerLedRefreshSection({ type }: { type: RefreshKey }) {
   };
 
   return (
-    <section className="border-y border-white/10 bg-slate-950/70 px-4 py-16 sm:px-8">
+    <section className="overflow-hidden border-y border-white/10 bg-slate-950/70 px-4 py-16 sm:px-8">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
