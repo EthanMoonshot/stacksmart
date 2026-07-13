@@ -20,7 +20,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": absoluteUrl("/ai-subscription-audit"),
       url: absoluteUrl("/ai-subscription-audit"),
-      dateModified: "2026-06-27",
+      dateModified: "2026-07-14",
       name: "AI Subscription Audit | StackSmart",
       description:
         "ChatGPT Teams, Claude Pro, Midjourney, Canva Pro, Notion AI, and meeting transcription tools are a fast-growing waste category in owner-led SMB billing exports. An AI subscription audit finds overlapping tools, idle seats, and full-tier plans with two active users.",
@@ -762,6 +762,38 @@ export default function AiSubscriptionAuditPage() {
           <p className="mt-6 text-sm leading-7 text-dark-300">
             Switching-cost anxiety keeps many subscriptions alive past their usefulness. The audit separates genuine switching cost (data migration, team retraining) from inertia. Most AI tool cancellations have zero switching cost — the team already stopped using it. See the <TrackLink href="/saas-spend-management" event="homepage_cta_clicked" props={{ target: "saas_spend_management", location: "ai_subscription_switching_cost" }} className="text-brand-400 hover:text-brand-300 transition-colors">SaaS spend management guide</TrackLink> for the broader framework, or the <TrackLink href="/saas-cost-optimization-software" event="homepage_cta_clicked" props={{ target: "saas_cost_optimization", location: "ai_subscription_switching_cost" }} className="text-brand-400 hover:text-brand-300 transition-colors">SaaS cost optimization software</TrackLink> page for how StackSmart automates this from billing exports.
           </p>
+        </div>
+      </section>
+
+
+      {/* 2026-07-14 owner-led SMB AI renewal proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-07-14 refresh · owner-led SMB AI spend</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">The expensive AI problem is usually ownership, not experimentation</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                In a 5-50 staff business, AI subscriptions rarely fail because people tried too many tools. They fail because nobody owns the workspace, the renewal email goes to a departed staff member, and the owner only sees the charge after a full-team tier renews. StackSmart treats AI as a billing-export problem first: match ChatGPT, Claude, Copilot, Canva, Notion AI, Perplexity, Fireflies, Otter, and image tools against the current roster, current projects, and a named renewal owner.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The output is deliberately practical for an owner, office manager, practice manager, or accounts-payable admin: which seats to remove, which individual plans to consolidate, which duplicate AI assistant to retire, and which annual renewal needs a decision before the notice period closes.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">AI renewal checks that catch real waste</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">Workspace owner:</span> confirm the billing/admin owner is still employed and renewal emails go to a monitored business inbox.</li>
+                <li><span className="font-semibold text-white">Seat truth:</span> compare paid seats to current staff, contractors, and weekly active users before full-team tiers renew.</li>
+                <li><span className="font-semibold text-white">Overlap map:</span> group general AI, image generation, writing, search, and meeting-note tools so duplicate subscriptions are visible.</li>
+                <li><span className="font-semibold text-white">Action handoff:</span> assign keep, cancel, downgrade, consolidate, or renegotiate actions to the owner, office manager, or accounts payable person who can execute them.</li>
+              </ul>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "ai_subscription_2026_07_14" }} className="btn-primary text-sm">Audit from billing data</TrackLink>
+                <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "ai_subscription_2026_07_14" }} className="btn-secondary text-sm">Use the checklist</TrackLink>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

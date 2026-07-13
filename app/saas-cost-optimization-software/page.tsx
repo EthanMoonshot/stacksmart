@@ -21,7 +21,7 @@ const jsonLd = {
       "@id": absoluteUrl("/saas-cost-optimization-software"),
       url: absoluteUrl("/saas-cost-optimization-software"),
       name: "SaaS Cost Optimization Software for SMBs | StackSmart",
-      dateModified: "2026-06-14",
+      dateModified: "2026-07-14",
       description:
         "SaaS cost optimization for owner-led SMBs. Upload a billing export, get a clear savings report — see what to cut, consolidate, and renegotiate without enterprise pricing or a platform rollout.",
       isPartOf: { "@id": absoluteUrl("/") },
@@ -410,6 +410,42 @@ export default function SaaSCostOptimizationSoftwarePage() {
               </ul>
               <p className="mt-4 text-sm leading-6 text-dark-300">
                 See the <TrackLink href="/ai-subscription-audit" event="homepage_cta_clicked" props={{ target: "ai_audit", location: "cost_optimization_evidence" }} className="text-brand-400 hover:text-brand-300 transition-colors">AI subscription audit</TrackLink> for the AI-specific seat and overlap review, or the <TrackLink href="/software-subscription-audit-checklist" event="homepage_cta_clicked" props={{ target: "checklist", location: "cost_optimization_evidence" }} className="text-brand-400 hover:text-brand-300 transition-colors">subscription audit checklist</TrackLink> for the step-by-step workflow.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026-07-14 owner-led SMB cost-optimization refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-07-14 refresh · cost optimization without enterprise overhead</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">The fastest optimization is finding which bills should not renew</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                SaaS cost optimization sounds like a procurement project, but for owner-led SMBs it is usually simpler: find the recurring charges that nobody owns, the seats that outlived staff and contractors, the duplicate vendor bills, and the renewals that will auto-process because the notice email went to the wrong inbox. StackSmart turns those findings into decisions before money leaves the account again.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The page now leans into the buyer who needs practical help this week — not an enterprise IT platform. A billing export, card statement, and invoice folder are enough to build a ranked optimization list for an owner, office manager, practice manager, bookkeeper, or accounts-payable admin to action.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">Cost-optimization actions StackSmart prioritises</h3>
+              <div className="mt-4 grid gap-3 text-sm leading-6 text-dark-300">
+                {[
+                  "Cancel subscriptions with no current owner, user, or business use",
+                  "Downgrade full-team AI, Microsoft 365, Google Workspace, design, and CRM tiers to real usage",
+                  "Consolidate overlapping project, reporting, receipt-capture, meeting-note, and marketing tools",
+                  "Renegotiate annual contracts before the notice period closes",
+                  "Assign renewal owners and billing inboxes so savings do not disappear next quarter",
+                ].map((item) => (
+                  <div key={item} className="rounded-xl border border-dark-700/80 bg-dark-950/60 px-4 py-3">{item}</div>
+                ))}
+              </div>
+              <p className="mt-5 text-sm leading-7 text-dark-300">
+                For platform-specific cleanup, compare the <TrackLink href="/microsoft-365-license-audit-small-business" event="homepage_cta_clicked" props={{ target: "m365", location: "cost_optimization_2026_07_14" }} className="text-brand-400 hover:text-brand-300 transition-colors">Microsoft 365 licence audit</TrackLink>, <TrackLink href="/google-workspace-license-audit-small-business" event="homepage_cta_clicked" props={{ target: "google", location: "cost_optimization_2026_07_14" }} className="text-brand-400 hover:text-brand-300 transition-colors"> Google Workspace licence audit</TrackLink>, and <TrackLink href="/ai-subscription-audit" event="homepage_cta_clicked" props={{ target: "ai", location: "cost_optimization_2026_07_14" }} className="text-brand-400 hover:text-brand-300 transition-colors"> AI subscription audit</TrackLink>.
               </p>
             </div>
           </div>

@@ -19,7 +19,7 @@ const jsonLd = {
     {
       "@type": "WebPage",
       name: "SaaS Spend Management for SMBs | StackSmart",
-      dateModified: "2026-06-14",
+      dateModified: "2026-07-14",
       description:
         "SaaS spend management for owner-led SMBs: find duplicate tools, unused seats, add-on fees, ownerless renewals, and practical savings actions from billing exports.",
       url: "https://stacksmart.app/saas-spend-management",
@@ -354,6 +354,38 @@ export default function SaaSSpendManagementPage() {
               <p className="mt-2 text-sm leading-7 text-dark-300">
                 Billing exports work best — credit card statements, accounting exports, or invoices. StackSmart analyzes these to build your tool inventory, flag waste, and produce recommendations. No SSO integration or IT involvement required.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026-07-14 owner-led SMB spend-management refresh */}
+      <section className="border-b border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-07-14 refresh · practical SMB workflow</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">For small businesses, spend management is a monthly owner-to-admin handoff</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                A 5-50 staff business does not need enterprise procurement ceremonies to stop software waste. It needs a current list of recurring charges, a renewal calendar, an owner-use check, and a clear person responsible for each action. StackSmart makes that handoff concrete: the owner reviews the decisions; an accounts-payable, office-manager, practice-manager, or bookkeeping contact executes cancellations, downgrades, vendor emails, and renewal-owner updates.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                This is especially useful when software bills are scattered across cards, direct debits, app marketplaces, and invoice PDFs — the exact pattern in clinics, agencies, bookkeeping firms, ecommerce stores, hospitality groups, fitness studios, and professional-services teams.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">The lightweight monthly control loop</h3>
+              <ol className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">1.</span> Export new card, accounting, invoice, and app-marketplace charges.</li>
+                <li><span className="font-semibold text-white">2.</span> Flag new tools, duplicate vendor bills, cancelled-but-still-charged lines, and annual renewals inside notice windows.</li>
+                <li><span className="font-semibold text-white">3.</span> Confirm owner-use: who uses it, how often, what job it does, and whether another tool already covers it.</li>
+                <li><span className="font-semibold text-white">4.</span> Assign the action: keep, cancel, downgrade, consolidate, renegotiate, or assign renewal owner.</li>
+              </ol>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <TrackLink href="/business-subscription-tracker-small-business" event="homepage_cta_clicked" props={{ target: "tracker", location: "spend_management_2026_07_14" }} className="btn-secondary text-sm">Track renewals</TrackLink>
+                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "spend_management_2026_07_14" }} className="btn-primary text-sm">Run an audit</TrackLink>
+              </div>
             </div>
           </div>
         </div>

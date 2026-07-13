@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Xero App Stack Audit | StackSmart",
       description:
         "Audit your Xero app stack for duplicate add-ons, unused seats, surprise annual renewals, and tier creep across payroll, receipt capture, reporting, practice management, and client portal tools.",
-      dateModified: "2026-06-27",
+      dateModified: "2026-07-14",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -635,6 +635,38 @@ export default function XeroAppStackAuditPage() {
             <p className="mt-2 text-sm leading-7 text-dark-200">
               The audit works from the firm&apos;s billing exports, card statements, and marketplace invoices. It does not require Xero ledger access, BAS/tax data, client files, payroll records, or regulated financial records.
             </p>
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026-07-14 owner-led Xero app-stack proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-07-14 refresh · Xero app ownership</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Separate firm-owned app waste from client pass-through costs before renewals hit</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Xero-heavy bookkeeping and accounting firms often know client work in detail but lose sight of their own recurring app stack. Receipt capture, reporting, proposal, e-sign, practice-management, payroll, client-portal, AI, and connector tools get added for one engagement, one staff preference, or one migration, then keep billing after the original owner changes role.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                StackSmart keeps the boundary clean: firm-owned subscriptions are audit targets; client pass-through subscriptions are tagged separately so recoverable client costs do not look like savings. The owner or principal gets a billing-only action list, not access to ledgers, BAS/tax records, payroll details, or client files.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">Xero-stack cleanup questions</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-dark-300">
+                <li><span className="font-semibold text-white">Firm-owned or recovered?</span> Tag every Xero Marketplace and practice app before counting savings.</li>
+                <li><span className="font-semibold text-white">Migration leftover?</span> Find old reporting, payroll, document, or workflow tools left billing after the new platform went live.</li>
+                <li><span className="font-semibold text-white">Who gets the renewal email?</span> Move app notices away from departed staff and personal inboxes into a monitored admin or accounts inbox.</li>
+                <li><span className="font-semibold text-white">Who executes?</span> Assign each keep, cancel, downgrade, consolidate, or renegotiate action to the principal, practice manager, or office manager.</li>
+              </ul>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <TrackLink href="/bookkeeping-firm-software-stack-audit" event="homepage_cta_clicked" props={{ target: "bookkeeping", location: "xero_2026_07_14" }} className="btn-secondary text-sm">Bookkeeping audit</TrackLink>
+                <TrackLink href="/saas-spend-audit-tool" event="homepage_cta_clicked" props={{ target: "audit_tool", location: "xero_2026_07_14" }} className="btn-primary text-sm">Audit from billing data</TrackLink>
+              </div>
+            </div>
           </div>
         </div>
       </section>

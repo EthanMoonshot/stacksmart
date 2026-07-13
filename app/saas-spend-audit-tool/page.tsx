@@ -61,7 +61,7 @@ const jsonLd = {
       description:
         "See how StackSmart turns billing exports into clear cut, consolidate, and renegotiate actions for growing teams.",
       url: absoluteUrl("/saas-spend-audit-tool"),
-      dateModified: "2026-06-27",
+      dateModified: "2026-07-14",
     },
     {
       "@type": "BreadcrumbList",
@@ -650,6 +650,42 @@ export default function SaaSSpendAuditToolPage() {
                 <li><span className="font-semibold text-white">Best proof:</span> seat or admin exports for AI tools, design apps, project management, CRM, booking, and communication platforms — surfaces ghost seats immediately.</li>
                 <li><span className="font-semibold text-white">Keep out of scope:</span> bank logins, clinical/patient records, client files, participant notes, employee performance data, or confidential project content.</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* 2026-07-14 owner-led SMB audit-tool proof refresh */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-07-14 refresh · audit from the evidence you already have</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">A useful SaaS audit starts with billing exports, not procurement software</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Owner-led SMBs usually do not have a clean software inventory, SSO logs, or a procurement workflow. They have card statements, Xero or QuickBooks exports, invoice PDFs, app-store receipts, and a few renewal emails buried in inboxes. StackSmart is built for that reality: upload the billing evidence, identify every recurring software charge, and turn it into a decision list an owner can hand to accounts payable, an office manager, or a bookkeeper.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The 2026-07-14 refresh sharpens the tool around today&apos;s most common buyer language: cancelled-but-still-charged vendors, duplicate bills across two cards, month-to-month subscriptions that quietly became annual renewals, and notice periods closing before anyone reviews usage.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-dark-700 bg-dark-900/70 p-6">
+              <h3 className="text-base font-semibold text-white">What the report makes actionable</h3>
+              <div className="mt-4 grid gap-3 text-sm leading-6 text-dark-300">
+                {[
+                  "A software inventory grouped by category, vendor, payment source, and likely owner",
+                  "Duplicate vendor bills and cancelled-but-still-charged lines for follow-up",
+                  "Renewals with notice periods, buried renewal emails, and no named decision owner",
+                  "Unused seats in Microsoft 365, Google Workspace, AI tools, design tools, CRMs, and booking platforms",
+                  "A clean handoff list: keep, cancel, downgrade, consolidate, renegotiate, or assign renewal owner",
+                ].map((item) => (
+                  <div key={item} className="rounded-xl border border-dark-700/80 bg-dark-950/60 px-4 py-3">{item}</div>
+                ))}
+              </div>
+              <p className="mt-5 text-sm leading-7 text-dark-300">
+                If the first problem is not knowing what is active, start with the <TrackLink href="/small-business-software-inventory" event="homepage_cta_clicked" props={{ target: "inventory", location: "audit_tool_2026_07_14" }} className="text-brand-400 hover:text-brand-300 transition-colors">software inventory guide</TrackLink>. If renewals are the urgent risk, compare the <TrackLink href="/business-subscription-tracker-small-business" event="homepage_cta_clicked" props={{ target: "tracker", location: "audit_tool_2026_07_14" }} className="text-brand-400 hover:text-brand-300 transition-colors">business subscription tracker</TrackLink>.
+              </p>
             </div>
           </div>
         </div>
