@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Small Business Software Inventory | StackSmart",
       description:
         "A practical owner-led SMB software inventory workflow for finding recurring software waste, duplicate tools, unused seats, ownerless renewals, and billing-source gaps.",
-      dateModified: "2026-07-11",
+      dateModified: "2026-07-16",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: { "@type": "Organization", name: "StackSmart", url: absoluteUrl("/") },
     },
@@ -82,6 +82,7 @@ const inventoryRows = [
   ["Named owner", "One person must be able to say why the tool exists and who would notice if it disappeared. No owner means it is a review candidate."],
   ["Renewal date", "Annual renewals and quiet monthly charges need a date before they can be managed. Missing renewal date means the tool has renewal risk."],
   ["Action decision", "Keep, cancel, downgrade, consolidate, renegotiate, or assign an owner. Inventory is only useful when it creates action."],
+  ["Last confirmed still-needed", "Record the date someone current confirmed the tool is still needed. Blank or stale dates are review candidates for office managers and bookkeepers."],
 ];
 
 const wasteSignals = [
@@ -90,6 +91,7 @@ const wasteSignals = [
   ["Marketplace blind spots", "Xero, QBO, MYOB, Shopify, Google Workspace, and Microsoft 365 add-ons that do not show up clearly in a simple card scan."],
   ["Personal-card drift", "Founder or manager cards still paying for tools that became operational software after the original trial."],
   ["Ownerless renewals", "Annual contracts renewing in the next 30 to 90 days without a named internal reviewer."],
+  ["Month-end surprises", "Recurring software lines the bookkeeper or owner only notices during close — especially duplicate vendor bills and cancelled-but-still-charged subscriptions."],
   ["AI and automation spread", "ChatGPT, transcription, automation, and content tools adopted quickly but rarely checked for active use."],
 ];
 
@@ -102,7 +104,7 @@ export default function SmallBusinessSoftwareInventoryPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Small business software inventory · 2026-07-11 proof refresh</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Small business software inventory · 2026-07-16 proof refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Build a software inventory that actually finds waste</h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
               Software inventory management sounds like an IT project. For an owner-led SMB, it should start with a simpler question: what are we paying for, who owns it, when does it renew, and what should we do next? StackSmart turns billing exports into a practical software inventory for businesses with 5 to 50 staff — without enterprise procurement overhead.
@@ -224,13 +226,13 @@ export default function SmallBusinessSoftwareInventoryPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-11 proof refresh</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-16 proof refresh</p>
               <h2 className="mt-3 text-2xl font-semibold text-white">Add the fields that expose forgotten software, not just known software</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
                 A useful inventory for a 5-50 staff business should catch the charges nobody remembers: duplicate vendor bills, cancelled-but-still-charged tools, Google or Microsoft add-ons owned by a departed admin, and small AI or workflow subscriptions sitting on a manager card.
               </p>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                The 2026 refresh keeps the inventory decision-grade by adding billing contact, last confirmed still-needed, payment account, renewal owner, and evidence source. Those fields make it clear which rows are safe to keep and which need cancel, downgrade, consolidate, renegotiate, or owner assignment.
+                The 2026-07-16 refresh keeps the inventory decision-grade by adding billing contact, last confirmed still-needed, payment account, renewal owner, missed-renewal notice source, and evidence source. Those fields make it clear which rows are safe to keep and which need cancel, downgrade, consolidate, renegotiate, or owner assignment.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">

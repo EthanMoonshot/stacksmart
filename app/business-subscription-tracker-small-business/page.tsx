@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Business Subscription Tracker for Small Business | StackSmart",
       description:
         "A practical subscription tracker for owner-led SMBs reviewing recurring software payments, renewal dates, named owners, payment sources, and action decisions.",
-      dateModified: "2026-07-11",
+      dateModified: "2026-07-16",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: { "@type": "Organization", name: "StackSmart", url: absoluteUrl("/") },
     },
@@ -81,7 +81,8 @@ const trackerFields = [
   ["Named owner", "Every subscription needs a person who can explain current use. If nobody can, the tool is a cancellation or review candidate."],
   ["Last confirmed still-needed", "A simple date prevents old assumptions from carrying tools for another year."],
   ["Decision", "Keep, cancel, downgrade, consolidate, renegotiate, assign owner, or investigate billing source."],
-  ["Evidence", "Usage export, active user count, billing history, invoice, or team confirmation — enough to act without a long meeting."],
+  ["Evidence", "Usage export, active user count, billing history, invoice, renewal email, marketplace charge, or team confirmation — enough to act without a long meeting."],
+  ["Notice source", "Where renewal or failed-payment notices go: owner inbox, office manager, bookkeeper, ex-staff email, generic inbox, or vendor portal."],
 ];
 
 const commonFindings = [
@@ -91,6 +92,7 @@ const commonFindings = [
   ["Former-staff seats", "Departed staff, contractors, or seasonal workers remain active on per-seat platforms."],
   ["Marketplace add-ons", "App ecosystem charges hide inside Shopify, Xero, QBO, MYOB, Microsoft, or Google billing rather than the main card export."],
   ["No current owner", "The charge might be legitimate, but nobody owns renewal timing, seat count, or downgrade decisions."],
+  ["Cancelled-but-still-charged", "A vendor account was cancelled, migrated, or replaced, but card or invoice charges kept appearing during month-end close."],
 ];
 
 export default function BusinessSubscriptionTrackerSmallBusinessPage() {
@@ -102,7 +104,7 @@ export default function BusinessSubscriptionTrackerSmallBusinessPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Business subscription tracker · 2026-07-11 proof refresh</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Business subscription tracker · 2026-07-16 proof refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Track software subscriptions before they renew again</h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
               A normal expense tracker tells you what was paid. A useful business subscription tracker tells you who owns each recurring software payment, whether it is still needed, when it renews, and what decision should happen next. StackSmart helps owner-led SMBs turn billing exports into a clear subscription tracker for action — not another spreadsheet nobody maintains.
@@ -218,7 +220,7 @@ export default function BusinessSubscriptionTrackerSmallBusinessPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-11 proof refresh</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-16 proof refresh</p>
               <h2 className="mt-3 text-2xl font-semibold text-white">Track the renewal owner, not just the renewal date</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
                 Recurring software waste is often an ownership problem. The tracker should show who can approve the next charge, who would notice if the tool disappeared, and when someone last confirmed the subscription was still needed.

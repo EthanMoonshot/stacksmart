@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Shopify App Stack Audit | StackSmart",
       description:
         "Audit your Shopify app stack for duplicate and unused apps across reviews, loyalty, email and SMS, upsell, returns, shipping, inventory, analytics, and helpdesk.",
-      dateModified: "2026-07-01",
+      dateModified: "2026-07-16",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -181,7 +181,7 @@ export default function ShopifyAppStackAuditPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Shopify app stack audit · 2026-06-26 refresh</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Shopify app stack audit · 2026-07-16 ecommerce proof refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
               Find the app overlap charging your Shopify store
             </h1>
@@ -560,7 +560,7 @@ export default function ShopifyAppStackAuditPage() {
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-300">2026-06-26 app subscription refresh</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-300">2026-07-16 Shopify app subscription refresh</p>
             <h2 className="mt-3 text-2xl font-semibold text-white">Shopify app subscriptions need a billing export, not just an installed-app list</h2>
             <p className="mt-4 text-sm leading-7 text-dark-300">
               Today&apos;s DataForSEO AU check still shows strong ecommerce intent: “Shopify apps” at 1,600 monthly searches and “Shopify app subscription” at 210 searches with $24.11 CPC. For an owner-led Shopify store, that intent should translate into a practical app-billing audit: Shopify app charges, external SaaS paid by card, email and SMS platforms, analytics tools, support software, inventory apps, shipping apps, review and loyalty products, and annual app renewals.
@@ -599,6 +599,38 @@ export default function ShopifyAppStackAuditPage() {
             body="Email yourself the sample report to review the output format before uploading your store billing data. No Shopify login or store data required."
             successMessage="Sample report sent. Open it now or return from your inbox when ready."
           />
+        </div>
+      </section>
+
+
+
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-16 ecommerce operator refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Audit Shopify app bills across Shopify and the rest of the business</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The app-store bill is only part of the picture. Owner-led ecommerce teams also carry email, SMS, inventory, support, analytics, returns, subscriptions, AI content, accounting, and fulfilment tools billed outside Shopify on cards, invoices, or founder accounts. StackSmart combines those sources before deciding what to keep or cut.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The best first pass is practical: export Shopify billing, card statements, invoice folders, and any app marketplace charges; mark campaign-only apps, peak-season tiers, duplicate vendor bills, cancelled-but-still-charged tools, and renewal notices sent to old staff or generic inboxes.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                ["Peak-tier hangover", "Apps upgraded for Black Friday, a launch, or a promotion stay on the high tier after order volume returns to normal."],
+                ["Campaign-only apps", "Quiz, landing page, AI content, upsell, review, or subscription apps installed for one initiative keep billing after the project ends."],
+                ["Marketplace blind spots", "Shopify billing, external SaaS cards, inventory/POS invoices, and ad/analytics tools need to be reviewed together."],
+                ["Owner handoff", "Each app needs a current owner, next renewal date, billing source, and decision: keep, cancel, downgrade, consolidate, renegotiate, or assign owner."],
+              ].map(([title, copy]) => (
+                <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/80 p-5">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{copy}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

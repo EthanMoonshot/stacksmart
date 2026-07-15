@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Small Business Software Audit | StackSmart",
       description:
         "Run a software audit for your small business without a finance team or IT department. StackSmart turns billing exports into a clear savings report.",
-      dateModified: "2026-06-20",
+      dateModified: "2026-07-16",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -925,10 +925,42 @@ export default function SmallBusinessSoftwareAuditPage() {
         </div>
       </section>
 
-      {/* 2026-06-20 owner-led SMB subscription bloat + M365/GWS routing */}
+
+
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-06-20 subscription bloat refresh</p>
+          <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-16 direct-answer refresh</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">What StackSmart checks in an owner-led SMB software audit</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                StackSmart is built for business owners, operators, office managers, bookkeepers, and admin leads who can see the software bills but do not have a mature procurement process. The audit starts with billing exports, card statements, invoice folders, app-marketplace charges, and renewal emails — then turns messy recurring payments into a ranked action list.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                The review does not require bank login access or sensitive customer records. It looks for duplicate vendor bills, cancelled-but-still-charged tools, former-staff licences, AI seats or credits nobody owns, month-end software charges that surprise the bookkeeper, and missed renewal notices buried in old inboxes.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                ["Billing sources", "Card exports, Xero or QuickBooks exports, invoice folders, Microsoft and Google billing, Shopify/Xero app marketplaces, and renewal-email trails."],
+                ["Admin handoff", "A simple owner, office-manager, AP, or bookkeeper handoff showing who owns each charge and which rows need a decision."],
+                ["Waste flags", "Duplicate tools, duplicate vendor bills, cancelled-but-still-charged subscriptions, former-staff seats, annual renewals, and AI tool sprawl."],
+                ["Decision output", "Keep, cancel, downgrade, consolidate, renegotiate, assign owner, or investigate before the next renewal window closes."],
+              ].map(([title, copy]) => (
+                <div key={title} className="rounded-2xl border border-dark-700 bg-dark-900/80 p-5">
+                  <h3 className="text-sm font-semibold text-white">{title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-dark-300">{copy}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026-07-16 owner-led SMB subscription bloat + M365/GWS routing */}
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-brand-300">2026-07-16 owner-led SMB software-spend refresh</p>
           <h2 className="mt-3 text-2xl font-semibold text-white">The subscription bloat pattern in owner-led businesses</h2>
           <p className="mt-4 max-w-3xl text-sm leading-7 text-dark-300">
             Owner-led SMBs with 5 to 50 staff and no dedicated procurement or IT function share a consistent pattern: 12 to 18 active software subscriptions, $1,800 to $2,400 per month in recurring charges, duplicate services running in parallel across departments, forgotten signups from past projects that quietly converted to paid, and an estimated 30 to 40 percent in recoverable spend once the full picture is visible. The surprise is never one large charge. It is the accumulation of small charges that were never reviewed together.

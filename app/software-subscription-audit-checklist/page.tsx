@@ -73,7 +73,7 @@ const jsonLd = {
       description:
         "A practical checklist for reviewing recurring software spend — find overlaps, right-size seats, and decide what to cut, consolidate, or renegotiate.",
       url: "https://stacksmart.app/software-subscription-audit-checklist",
-      dateModified: "2026-07-11",
+      dateModified: "2026-07-16",
     },
     {
       "@type": "BreadcrumbList",
@@ -192,7 +192,7 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Audit checklist · 2026-07-11 owner-led SMB proof refresh</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Audit checklist · 2026-07-16 owner-led SMB proof refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Software subscription audit checklist</h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
               Use this before you scroll line by line through the credit card statement. A structured checklist for owner-led businesses with 5 to 50 staff — covering everything from gathering billing data and building an overlap map to identifying duplicate accounts, flagging converted trials, assigning ownerless renewals, and making a clear decision on every subscription.
@@ -266,12 +266,45 @@ export default function SoftwareSubscriptionAuditChecklistPage() {
       </section>
 
 
-      {/* 2026-07-11 proof refresh */}
+
+
+      <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-16 checklist update</p>
+              <h2 className="mt-3 text-2xl font-semibold text-white">Add the admin reality most checklists skip</h2>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                In a 5-50 staff business, the software audit rarely belongs to one clean owner. The business owner sees the card statement, the bookkeeper sees month-end expense lines, the office manager receives some renewal notices, and team leads know which tools people actually use. A useful checklist has to collect those fragments without becoming a procurement project.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-dark-300">
+                Use the checklist to create one handoff file: every recurring charge, the billing source, the person who can approve a change, the last confirmed still-needed date, the next renewal window, and the action. That is what turns a review into savings.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-brand-400/20 bg-dark-900/80 p-6 sm:p-8">
+              <h3 className="text-lg font-semibold text-white">Extra rows to add before you start</h3>
+              <div className="mt-5 grid gap-3">
+                {[
+                  "Billing email or renewal-notice inbox",
+                  "Payment account: card, invoice, marketplace, Microsoft, Google, Shopify, Xero, QBO, MYOB, or personal card",
+                  "Owner/operator, office manager, bookkeeper, AP, practice manager, or project lead responsible for the decision",
+                  "Former-staff, contractor, shared-login, or shared-Chrome-profile risk",
+                  "Month-end surprise, duplicate vendor bill, or cancelled-but-still-charged flag",
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl border border-dark-700 bg-dark-950/60 p-4 text-sm leading-6 text-dark-300">{item}</div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026-07-16 proof refresh */}
       <section className="border-y border-dark-800/80 bg-dark-900/30 py-14 sm:py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-11 proof refresh</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-16 proof refresh</p>
               <h2 className="mt-3 text-2xl font-semibold text-white">The fastest audit pass starts with billing truth, then adds ownership truth</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
                 For an owner-led SMB, the checklist should not begin with a company-wide survey. Start with what actually billed: card statements, accounting exports, invoices, app marketplaces, Microsoft 365, Google Workspace, Shopify, Xero, QBO, and MYOB. Then add the missing ownership fields that turn a list into action.
