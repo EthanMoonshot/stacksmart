@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedRefreshSection from "@/components/landing/OwnerLedRefreshSection";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,7 +24,7 @@ const jsonLd = {
       name: "Jira Cost for Small Teams | StackSmart",
       description:
         "A practical Jira cost review for small teams comparing pricing, inactive seats, project-management overlap, and consolidation decisions.",
-      dateModified: "2026-06-30",
+      dateModified: "2026-07-17",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: { "@type": "Organization", name: "StackSmart", url: absoluteUrl("/") },
     },
@@ -198,6 +199,8 @@ export default function JiraCostSmallTeamPage() {
           </div>
         </div>
       </section>
+
+      <OwnerLedRefreshSection type="jira" />
 
       <SeoClusterLinks
         eyebrow="Related cost pages"

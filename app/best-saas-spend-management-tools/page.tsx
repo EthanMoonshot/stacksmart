@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedRefreshSection from "@/components/landing/OwnerLedRefreshSection";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,6 +24,7 @@ const jsonLd = {
       name: "Best SaaS Spend Management Tools for SMBs | StackSmart",
       description:
         "Compare the best SaaS spend management tools for SMBs — StackSmart, enterprise platforms, spreadsheets, and accounting-only reviews.",
+      dateModified: "2026-07-17",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -427,6 +429,8 @@ export default function BestSaaSSpendManagementToolsPage() {
           </div>
         </div>
       </section>
+
+      <OwnerLedRefreshSection type="spendManagementTools" />
 
       {/* Lead capture */}
       <section className="py-16">

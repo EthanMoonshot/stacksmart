@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedRefreshSection from "@/components/landing/OwnerLedRefreshSection";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,7 +24,7 @@ const jsonLd = {
       name: "Google Workspace Licence Audit for Small Business | StackSmart",
       description:
         "Find suspended users, departed staff seats, Gemini add-on waste, storage overspend, and annual renewal savings in your Google Workspace subscription — for owner-led businesses with 5 to 50 staff.",
-      dateModified: "2026-07-11",
+      dateModified: "2026-07-17",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -540,6 +541,8 @@ export default function GoogleWorkspaceLicenseAuditPage() {
           </div>
         </div>
       </section>
+
+      <OwnerLedRefreshSection type="googleWorkspace" />
 
       {/* Lead capture */}
       <section className="py-16">

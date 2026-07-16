@@ -401,6 +401,167 @@ const refreshes = {
       ["Audit checklist", "/software-subscription-audit-checklist"],
     ],
   },
+
+  m365: {
+    eyebrow: "2026-07-17 owner-led Microsoft 365 refresh",
+    title: "Audit Microsoft 365 like an owner, not an enterprise IT team",
+    answer:
+      "A Microsoft 365 licence audit for a 5-50 person SMB starts with billing exports, card statements, renewal emails, and a current staff list. StackSmart helps the owner or admin lead spot former-staff seats, over-tiered users, Copilot or Teams add-ons nobody uses, paid accounts that could be shared mailboxes, storage surprises, and ownerless renewals before the next invoice lands.",
+    proof: [
+      "Use billing and seat lists first; leave security, identity, and device-management work to the Microsoft admin or MSP.",
+      "Tag every paid user as active staff, contractor, former staff, mailbox-only, or unclear before changing anything.",
+      "Return an action for each line: keep, cancel, downgrade, consolidate, renegotiate, assign renewal owner, or verify with IT.",
+    ],
+    checklist: [
+      "Export Microsoft 365 billing and card charges",
+      "Compare paid users with current staff and contractors",
+      "Flag add-ons, AI seats, storage, and Teams Phone lines",
+      "Assign action, confidence, payment account, and renewal owner",
+    ],
+    faq: [
+      [
+        "What is the fastest Microsoft 365 audit for a small business?",
+        "Start with the invoice, card statement, and current staff list. Find former staff, mailbox-only users, over-tiered licences, idle Copilot or Teams add-ons, and renewal dates before touching admin settings.",
+      ],
+      [
+        "Is StackSmart a Microsoft 365 admin or security tool?",
+        "No. StackSmart is a billing-led audit. It identifies likely savings and ownership gaps, then the owner, admin, MSP, or Microsoft administrator can make the actual licence and access changes.",
+      ],
+    ],
+    links: [
+      ["Google Workspace audit", "/google-workspace-license-audit-small-business"],
+      ["Small business software inventory", "/small-business-software-inventory"],
+      ["SaaS spend audit tool", "/saas-spend-audit-tool"],
+    ],
+  },
+  googleWorkspace: {
+    eyebrow: "2026-07-17 owner-led Google Workspace refresh",
+    title: "Find Workspace waste before upgrading plans or adding another app",
+    answer:
+      "A Google Workspace licence audit for owner-led SMBs reviews billing, paid users, suspended users, aliases, storage, Gemini/add-ons, Marketplace apps, shared drives, and external-collaborator patterns from the billing layer first. StackSmart is useful when the owner or ops/admin lead needs a practical action list, not a full Google administration project.",
+    proof: [
+      "Separate paid users, aliases, groups, suspended accounts, and former staff before making changes.",
+      "Review Gemini, storage, Voice, Meet, and Marketplace add-ons beside the rest of the software stack.",
+      "Use billing evidence and owner notes only; no email, Drive files, customer records, or sensitive content is required.",
+    ],
+    checklist: [
+      "Export Workspace invoices and recurring card charges",
+      "List paid users, suspended users, aliases, groups, and add-ons",
+      "Compare current staff, contractors, and shared-mailbox needs",
+      "Assign keep, cancel, downgrade, consolidate, verify, or renewal-owner actions",
+    ],
+    faq: [
+      [
+        "How should a small business audit Google Workspace costs?",
+        "Start with invoices, card statements, and a current staff list. Check paid seats against active users, suspended accounts, aliases, Gemini or storage add-ons, Marketplace apps, and annual renewal dates.",
+      ],
+      [
+        "Does StackSmart need access to Gmail or Drive content?",
+        "No. The first pass is billing-led. StackSmart does not need email content, Drive files, client documents, or customer records to identify likely licence and add-on waste.",
+      ],
+    ],
+    links: [
+      ["Microsoft 365 audit", "/microsoft-365-license-audit-small-business"],
+      ["Business subscription tracker", "/business-subscription-tracker-small-business"],
+      ["Software subscription checklist", "/software-subscription-audit-checklist"],
+    ],
+  },
+  jira: {
+    eyebrow: "2026-07-17 owner-led Jira cost refresh",
+    title: "Treat Jira cost as a project-tool overlap audit",
+    answer:
+      "For a small agency, consultancy, ecommerce team, or admin-heavy SMB, Jira cost is rarely just a Jira question. StackSmart reviews Jira billing, inactive users, contractors, project-only seats, Marketplace apps, duplicated boards in Asana/ClickUp/Notion/Trello, and renewal ownership so the owner gets a keep, cancel, downgrade, consolidate, or verify-with-admin action list.",
+    proof: [
+      "Do not inspect issues, tickets, client project content, or developer workflow data for the first pass.",
+      "Identify former staff, contractors, client-project guests, annual tier jumps, and marketplace add-ons before renewal.",
+      "Compare adjacent project tools so Jira is kept when it is the system of record and cut only when it is residue.",
+    ],
+    checklist: [
+      "Export Jira/Atlassian billing and marketplace add-ons",
+      "Compare paid users with current staff, contractors, and active projects",
+      "List adjacent PM tools and duplicated project workflows",
+      "Return keep, cancel, downgrade, consolidate, renegotiate, or renewal-owner actions",
+    ],
+    faq: [
+      [
+        "How can a small team reduce Jira cost safely?",
+        "Review billing, paid users, inactive or former staff, project-only seats, marketplace apps, and duplicated project tools before removing access. Then assign each line a keep, cancel, downgrade, consolidate, or verify action.",
+      ],
+      [
+        "Is StackSmart Jira admin consulting?",
+        "No. StackSmart does not redesign Jira workflows. It is a billing-led software audit that finds likely cost waste and project-tool overlap for the owner or admin lead to review.",
+      ],
+    ],
+    links: [
+      ["Small business software inventory", "/small-business-software-inventory"],
+      ["Business subscription tracker", "/business-subscription-tracker-small-business"],
+      ["SaaS cost optimisation", "/saas-cost-optimization-software"],
+    ],
+  },
+  reduceSaasSpend: {
+    eyebrow: "2026-07-17 owner-led SaaS spend reduction refresh",
+    title: "Reduce SaaS spend without buying enterprise procurement software first",
+    answer:
+      "The fastest SaaS-spend reduction path for a 5-50 person SMB is a billing-export audit: card statements, accounting exports, invoices, app-store bills, licence lists, and renewal emails. StackSmart turns that evidence into a practical owner-ready queue of keep, cancel, downgrade, consolidate, renegotiate, assign-owner, and verify actions.",
+    proof: [
+      "Start with recoverable waste: former staff seats, duplicate tools, converted trials, AI seats, marketplace add-ons, and ownerless renewals.",
+      "Prioritise high-confidence savings and renewal windows before low-confidence app-count cleanup.",
+      "Keep sensitive operational data out of scope; billing and ownership evidence is enough for the first pass.",
+    ],
+    checklist: [
+      "Export card, bank, Xero/MYOB/QBO, and invoice recurring software charges",
+      "Group tools by job: admin, finance, sales, care, clinic, agency, ecommerce, venue, or project delivery",
+      "Add owner, payment account, renewal date, evidence source, and confidence level",
+      "Produce keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner actions",
+    ],
+    faq: [
+      [
+        "What is the first step to reduce SaaS spend in a small business?",
+        "Export recurring software charges from card, bank, accounting software, and app marketplaces, then tag each charge by owner, job, renewal date, evidence source, and likely action.",
+      ],
+      [
+        "Do small businesses need a full SaaS management platform to cut spend?",
+        "Usually not at first. Owner-led SMBs often get faster value from a focused billing audit before they consider enterprise procurement, approval, or employee-monitoring systems.",
+      ],
+    ],
+    links: [
+      ["SaaS spend audit tool", "/saas-spend-audit-tool"],
+      ["Software audit checklist", "/software-subscription-audit-checklist"],
+      ["Small business software audit", "/small-business-software-audit"],
+    ],
+  },
+  spendManagementTools: {
+    eyebrow: "2026-07-17 SMB SaaS tools comparison refresh",
+    title: "Choose a SaaS spend tool by maturity, not by enterprise feature lists",
+    answer:
+      "The best SaaS spend management tool for an owner-led SMB is often not the biggest procurement platform. If the business has 5-50 staff, scattered card charges, no renewal owner, and low ops maturity, start with a StackSmart-style audit. Move to a platform when approvals, cards, contracts, vendor negotiation, SSO, and procurement workflow are already mature enough to maintain it.",
+    proof: [
+      "Compare tools by the job: fast waste finding, recurring tracker, card control, procurement workflow, licence administration, or vendor negotiation.",
+      "SMB owners need visible decisions and evidence before they need another process platform to administer.",
+      "The output should show action, owner, evidence source, confidence, renewal date, payment account, and expected next step.",
+    ],
+    checklist: [
+      "List your current maturity: no tracker, spreadsheet, card control, admin console, or procurement process",
+      "Decide whether you need an audit report, ongoing tracker, spend card, approval workflow, or enterprise SAM platform",
+      "Check whether finance/admin has time to maintain another system",
+      "Start with the lightest workflow that creates owner-visible savings decisions",
+    ],
+    faq: [
+      [
+        "What SaaS spend tool should a small business use first?",
+        "If the business has no reliable inventory or renewal owner, start with a billing-led audit or tracker. A full spend-management platform makes more sense after approvals, ownership, and finance operations are mature enough to maintain it.",
+      ],
+      [
+        "How is StackSmart different from procurement platforms?",
+        "StackSmart is report-first and owner-led. It focuses on finding waste from billing exports and turning it into practical actions rather than replacing cards, procurement approval workflows, or enterprise vendor management systems.",
+      ],
+    ],
+    links: [
+      ["SaaS cost optimisation software", "/saas-cost-optimization-software"],
+      ["SaaS spend management", "/saas-spend-management"],
+      ["SaaS spend audit tool", "/saas-spend-audit-tool"],
+    ],
+  },
 } as const;
 
 type RefreshKey = keyof typeof refreshes;
@@ -637,6 +798,108 @@ const dailyProductionNotes: Partial<
     notFor:
       "Not for customer records, order history, or store admin access. StackSmart can start from Shopify billing exports, invoices, and card statements.",
   },
+
+  m365: {
+    demand:
+      "Keyword intelligence keeps Microsoft 365 admin centre demand high (4,400 AU monthly searches / CPC 15.98), and owner-led SMBs often carry former-staff seats, Copilot/add-on drift, Teams Phone lines, storage surprises, and mailbox-vs-paid-user confusion without formal IT procurement.",
+    ownerFit:
+      "Best fit: a 5-50 staff clinic, agency, accounting/bookkeeping firm, consultancy, hospitality group, property office, ecommerce retailer, or care provider where the owner/admin/MSP handoff leaves licence decisions ownerless.",
+    exportList: [
+      "Microsoft 365 billing export, invoice, card charge, and renewal email",
+      "Current staff, contractor, former-staff, shared mailbox, and admin-owner list",
+      "Copilot, Teams Phone, storage, security, and other add-on lines",
+      "Payment account, renewal date, evidence source, confidence level, and owner notes",
+    ],
+    actionList: [
+      "Flag former-staff and contractor seats for verification",
+      "Separate aliases/shared mailboxes from paid-user needs",
+      "Right-size over-tiered users and idle Copilot or add-on licences",
+      "Assign keep, cancel, downgrade, consolidate, renegotiate, renewal-owner, or verify-with-IT actions",
+    ],
+    notFor:
+      "Not for Microsoft security administration, identity redesign, device management, or mailbox-content review. StackSmart stays at the billing and ownership layer.",
+  },
+  googleWorkspace: {
+    demand:
+      "Keyword intelligence keeps Google Workspace admin demand high (1,600 AU monthly searches), while the updated ICP points to owners and ops/admin leads who need to find suspended users, Gemini/storage add-ons, aliases, Marketplace apps, and renewal-owner gaps before plan changes.",
+    ownerFit:
+      "Best fit: a 5-50 staff agency, ecommerce store, consultancy, clinic, childcare operator, property office, fitness studio, or retail team using Workspace but lacking a single subscription owner.",
+    exportList: [
+      "Google Workspace invoice, card charge, and renewal email",
+      "Paid-user, suspended-user, alias/group, contractor, and former-staff list",
+      "Gemini, Voice, storage, Meet, Marketplace, and shared-drive billing lines",
+      "Payment account, renewal date, evidence source, confidence level, and admin-owner notes",
+    ],
+    actionList: [
+      "Flag suspended and former-staff paid users",
+      "Separate aliases/groups from paid-user seats",
+      "Right-size storage, Gemini, Voice, and Marketplace add-ons",
+      "Assign keep, cancel, downgrade, consolidate, renegotiate, renewal-owner, or verify-with-admin actions",
+    ],
+    notFor:
+      "Not for reading Gmail, Drive files, customer records, or security settings. StackSmart can complete the first pass from billing exports and ownership notes only.",
+  },
+  jira: {
+    demand:
+      "Keyword intelligence keeps Jira cost/pricing demand commercially useful (880 AU monthly searches). The SMB opportunity is not Jira administration; it is project-tool overlap, inactive users, contractors, marketplace apps, and project-only seats that became permanent overhead.",
+    ownerFit:
+      "Best fit: a 5-50 staff web/creative agency, boutique consultancy, ecommerce/operator team, property-services office, software-enabled SMB, or internal ops team where Jira coexists with Asana, ClickUp, Notion, Trello, Linear, or client portals.",
+    exportList: [
+      "Atlassian/Jira billing export, invoice, and renewal terms",
+      "Paid-user, former-staff, contractor, project-guest, and admin-owner list",
+      "Marketplace app, automation, storage, and premium-tier lines",
+      "Adjacent project-tool invoices plus payment account and confidence notes",
+    ],
+    actionList: [
+      "Flag former-staff, contractor, and project-only seats",
+      "Compare Jira against duplicated PM boards and client portals",
+      "Review marketplace apps and tier jumps before renewal",
+      "Assign keep, cancel, downgrade, consolidate, renegotiate, renewal-owner, or verify-with-admin actions",
+    ],
+    notFor:
+      "Not for Jira workflow redesign, ticket-content analysis, developer performance review, or client project inspection. The audit is billing-led.",
+  },
+  reduceSaasSpend: {
+    demand:
+      "Flat commercial KPIs and degraded live measurement make conversion-ready bottom-funnel refreshes more valuable than thin new pages. This page now focuses on practical SaaS spend reduction for owner-led SMBs with scattered recurring software bills and no procurement cadence.",
+    ownerFit:
+      "Best fit: a 5-50 staff owner-led business in clinics/allied health, NDIS/community care, childcare, agencies, accounting/bookkeeping, consultancies, hospitality groups, fitness/wellness, property, ecommerce, or retail with software charges across cards, bank feeds, app marketplaces, and admin inboxes.",
+    exportList: [
+      "Card, bank, Xero/MYOB/QBO, app-store, and invoice exports",
+      "Current user/owner notes for major tools and recent leavers",
+      "Renewal emails, notice periods, annual/prepaid contracts, and payment accounts",
+      "Evidence source, confidence level, and last-confirmed-still-needed notes",
+    ],
+    actionList: [
+      "Find duplicate, ownerless, former-staff, converted-trial, and still-paying-for-it charges",
+      "Prioritise recoverable spend, renewal windows, and high-confidence cuts",
+      "Create keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner actions",
+      "Identify which tools need admin/MSP/vendor verification before change",
+    ],
+    notFor:
+      "Not for employee monitoring, enterprise procurement rollout, or sensitive operational-data access. The first savings pass is billing-export only.",
+  },
+  spendManagementTools: {
+    demand:
+      "SaaS spend management and cost-optimisation terms stay commercially relevant, but StackSmart's ICP is now clearer: owner-led SMBs should compare tools by maturity and actionability, not enterprise procurement feature depth.",
+    ownerFit:
+      "Best fit: a 5-50 staff business that needs an owner-visible software waste report before deciding whether to adopt a tracker, spend card, procurement workflow, licence-admin platform, or vendor-negotiation service.",
+    exportList: [
+      "Current software inventory maturity: none, spreadsheet, accounting category, card tool, admin console, or platform",
+      "Card/accounting exports and app-marketplace invoices to prove the baseline",
+      "Finance/admin capacity to maintain a new tool after the first audit",
+      "Required output fields: action, owner, evidence, confidence, renewal date, and payment account",
+    ],
+    actionList: [
+      "Choose audit-first when waste visibility is the immediate gap",
+      "Choose tracker/card/procurement platforms only when the team can maintain the workflow",
+      "Separate SMB subscription cleanup from enterprise SAM/procurement requirements",
+      "Use StackSmart as the quick proof layer before committing to heavier software",
+    ],
+    notFor:
+      "Not for replacing mature procurement, SSO, card, contract, or enterprise SAM systems. It helps owners decide whether they need those systems yet.",
+  },
+
 };
 
 export default function OwnerLedRefreshSection({ type }: { type: RefreshKey }) {
@@ -688,7 +951,7 @@ export default function OwnerLedRefreshSection({ type }: { type: RefreshKey }) {
           {dailyNote ? (
             <div className="mt-6 rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.06] p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200">
-                2026-07-13 owner-led SMB refresh
+                2026 owner-led SMB refresh
               </p>
               <p className="mt-3 text-sm leading-7 text-slate-200">
                 {dailyNote.demand}

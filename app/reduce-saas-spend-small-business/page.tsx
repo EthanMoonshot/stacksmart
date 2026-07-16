@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import TrackLink from "@/components/analytics/TrackLink";
 import InlineLeadCapture from "@/components/leadgen/InlineLeadCapture";
 import SeoClusterLinks from "@/components/landing/SeoClusterLinks";
+import OwnerLedRefreshSection from "@/components/landing/OwnerLedRefreshSection";
 import OwnerLedProofRefresh from "@/components/landing/OwnerLedProofRefresh";
 import { buildMetadata, absoluteUrl } from "@/lib/site";
 
@@ -24,7 +25,7 @@ const jsonLd = {
       name: "How to Reduce SaaS Spend for Small Business | StackSmart",
       description:
         "A practical guide to reducing SaaS spend for small business teams — find duplicate subscriptions, flag renewal risks, and act on the highest-leverage savings from billing data.",
-      dateModified: "2026-06-13",
+      dateModified: "2026-07-17",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -369,6 +370,8 @@ export default function ReduceSaaSSpendSmallBusinessPage() {
         ]}
         location="reduce_saas_spend_20260605"
       />
+
+      <OwnerLedRefreshSection type="reduceSaasSpend" />
 
       {/* Lead Capture + Final CTA */}
       <section className="py-16">
