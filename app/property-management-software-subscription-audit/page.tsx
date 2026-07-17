@@ -49,7 +49,7 @@ const jsonLd = {
       url: absoluteUrl("/property-management-software-subscription-audit"),
       name: "Property management software subscription audit | StackSmart",
       description: "Audit software subscriptions for property management and strata offices. Find hidden costs in platform add-ons, app marketplace installs, paid connectors, ownerless renewals, and duplicate inspection, maintenance, e-signature, CRM, and admin tools — from billing exports only.",
-      dateModified: "2026-07-01",
+      dateModified: "2026-07-18",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -469,6 +469,36 @@ export default function PropertyManagementSoftwareSubscriptionAuditPage() {
       </section>
 
       <OwnerLedRefreshSection type="property" />
+
+
+      <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-300">2026-07-18 property-management proof refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Audit the subscription layer before you consider a platform migration</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              Property and strata offices often blame the core system when the real waste is around it: inspection apps, maintenance portals, SMS packs, e-signature, CRM seats, owner/tenant comms, reporting modules, paid connectors, AI/admin add-ons, and annual renewals that no one owns. StackSmart reconciles the billing layer from cards, invoices, accounting exports, marketplace charges, and renewal emails — without tenant, owner, lease, trust-account, or portfolio records.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["Cheaper first step", "Find add-on waste and duplicate tools before committing to a disruptive property-management platform replacement."],
+              ["Portfolio-size check", "Compare modules, SMS packs, users, and connectors with current property count, office locations, and active property managers."],
+              ["Migration leftovers", "Surface inspection, maintenance, e-sign, forms, CRM, and reporting subscriptions kept after a system change or trial."],
+              ["Renewal ownership", "Assign a named owner and notice window to every annual charge so auto-renewals do not drift another year."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-3xl border border-dark-800 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/real-estate-agency-software-audit" event="homepage_cta_clicked" props={{ target: "real_estate_audit", location: "property_20260718_refresh" }} className="btn-secondary text-sm">Compare real-estate agency audit</TrackLink>
+            <TrackLink href="/business-subscription-tracker-small-business" event="homepage_cta_clicked" props={{ target: "subscription_tracker", location: "property_20260718_refresh" }} className="btn-secondary text-sm">Track renewal owners</TrackLink>
+          </div>
+        </div>
+      </section>
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

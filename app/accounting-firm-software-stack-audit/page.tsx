@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Accounting Firm Software Stack Audit | StackSmart",
       description:
         "Small accounting and bookkeeping firms carry practice management, tax, payroll, proposal, document, e-sign, CRM, AI assistant, and marketing tools. A software audit finds what to cut, consolidate, and renegotiate.",
-      dateModified: "2026-07-01",
+      dateModified: "2026-07-18",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -777,6 +777,36 @@ export default function AccountingFirmSoftwareStackAuditPage() {
 
       {/* Lead capture */}
       <OwnerLedRefreshSection type="accounting" />
+
+
+      <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-300">2026-07-18 accounting-firm proof refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">A practical stack audit for firms without an ops team</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              For a 5-50 staff accounting or bookkeeping practice, the fastest software-waste check is not an enterprise procurement project. Export the firm card statement, Xero/QBO/MYOB supplier report, practice-management invoices, renewal emails, and app marketplace bills. StackSmart separates firm-owned subscriptions from client-pass-through costs, then highlights duplicate proposal, e-sign, document, reporting, payment, AI, and practice-workflow tools before the next annual renewal rolls over.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["Firm-owned vs client-pass-through", "Tag every charge as firm overhead, client-billed, reimbursed, or unclear so the owner does not cut a tool that belongs to a client engagement."],
+              ["Practice-app leftovers", "Find proposal, e-sign, document, payment, BI, workflow, and Xero/QBO add-ons still billing after a platform change or client-onboarding experiment."],
+              ["Staff and AI seats", "Compare Microsoft 365, Google Workspace, ChatGPT, Copilot, transcription, and workflow seats with the current team, not last year's headcount."],
+              ["Action list the partner can delegate", "Return keep, cancel, downgrade, consolidate, renegotiate, or assign-renewal-owner decisions for the office manager, bookkeeper, or practice manager."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-3xl border border-dark-800 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/xero-app-stack-audit" event="homepage_cta_clicked" props={{ target: "xero_app_audit", location: "accounting_20260718_refresh" }} className="btn-secondary text-sm">Check Xero app waste</TrackLink>
+            <TrackLink href="/bookkeeping-firm-software-stack-audit" event="homepage_cta_clicked" props={{ target: "bookkeeping_audit", location: "accounting_20260718_refresh" }} className="btn-secondary text-sm">Compare bookkeeping firm audit</TrackLink>
+          </div>
+        </div>
+      </section>
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

@@ -23,7 +23,7 @@ const jsonLd = {
       name: "Small Business Software Inventory | StackSmart",
       description:
         "A practical owner-led SMB software inventory workflow for finding recurring software waste, duplicate tools, unused seats, ownerless renewals, and billing-source gaps.",
-      dateModified: "2026-07-16",
+      dateModified: "2026-07-18",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: { "@type": "Organization", name: "StackSmart", url: absoluteUrl("/") },
     },
@@ -104,7 +104,7 @@ export default function SmallBusinessSoftwareInventoryPage() {
       <section className="border-b border-dark-800/80 bg-gradient-to-b from-dark-900 via-dark-950 to-dark-950 pt-28 pb-16 sm:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Small business software inventory · 2026-07-16 proof refresh</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-brand-300">Small business software inventory · 2026-07-18 proof refresh</p>
             <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Build a software inventory that actually finds waste</h1>
             <p className="mt-6 text-lg leading-8 text-dark-300">
               Software inventory management sounds like an IT project. For an owner-led SMB, it should start with a simpler question: what are we paying for, who owns it, when does it renew, and what should we do next? StackSmart turns billing exports into a practical software inventory for businesses with 5 to 50 staff — without enterprise procurement overhead.
@@ -226,13 +226,13 @@ export default function SmallBusinessSoftwareInventoryPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-16 proof refresh</p>
+              <p className="text-xs uppercase tracking-[0.18em] text-brand-300">2026-07-18 proof refresh</p>
               <h2 className="mt-3 text-2xl font-semibold text-white">Add the fields that expose forgotten software, not just known software</h2>
               <p className="mt-4 text-sm leading-7 text-dark-300">
                 A useful inventory for a 5-50 staff business should catch the charges nobody remembers: duplicate vendor bills, cancelled-but-still-charged tools, Google or Microsoft add-ons owned by a departed admin, and small AI or workflow subscriptions sitting on a manager card.
               </p>
               <p className="mt-4 text-sm leading-7 text-dark-300">
-                The 2026-07-16 refresh keeps the inventory decision-grade by adding billing contact, last confirmed still-needed, payment account, renewal owner, missed-renewal notice source, and evidence source. Those fields make it clear which rows are safe to keep and which need cancel, downgrade, consolidate, renegotiate, or owner assignment.
+                The 2026-07-18 refresh keeps the inventory decision-grade by adding billing contact, last confirmed still-needed, payment account, renewal owner, missed-renewal notice source, and evidence source. Those fields make it clear which rows are safe to keep and which need cancel, downgrade, consolidate, renegotiate, or owner assignment.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -251,6 +251,32 @@ export default function SmallBusinessSoftwareInventoryPage() {
           </div>
         </div>
       </section>
+
+      <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-300">2026-07-18 inventory refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">The owner-led SMB inventory only needs evidence you already have</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              A practical software inventory for a 5-50 staff business starts with bills, not an IT rollout. Pull card and bank statements, Xero/QBO/MYOB supplier exports, invoices, Microsoft 365 and Google Workspace admin exports, Shopify/Xero marketplace charges, and renewal emails. Each row should show payment source, billing owner, current user or team, last confirmed still-needed date, renewal date, notice period, and the next action.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["Owner and use", "Record who owns the tool and when someone last confirmed it is still needed — not just the vendor name and cost."],
+              ["Payment account", "Track whether the charge hits a business card, invoice, marketplace, app store, bank debit, or personal card."],
+              ["Renewal owner", "Add renewal date, notice period, billing email, and named owner so annual renewals stop surprising the operator."],
+              ["Decision field", "Every row should end as keep, cancel, downgrade, consolidate, renegotiate, or assign owner."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-3xl border border-dark-800 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <SeoClusterLinks
         eyebrow="Related audit pages"
         title="Turn the inventory into action"

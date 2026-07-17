@@ -24,7 +24,7 @@ const jsonLd = {
       name: "Medical Practice Software Subscription Audit | StackSmart",
       description:
         "GP and specialist clinics carry booking, recalls, telehealth, billing, forms, marketing, payroll, accounting, rostering, and patient comms subscriptions. A software audit finds what to cut, consolidate, and renegotiate — using billing exports only, not patient records.",
-      dateModified: "2026-07-01",
+      dateModified: "2026-07-18",
       isPartOf: { "@id": absoluteUrl("/") },
       publisher: {
         "@type": "Organization",
@@ -558,7 +558,7 @@ export default function MedicalPracticeSoftwareSubscriptionAuditPage() {
       </section>
 
       <OwnerLedProofRefresh
-        eyebrow="2026-07-01 clinic buyer-intent refresh"
+        eyebrow="2026-07-18 clinic buyer-intent refresh"
         title="Medical practice software audit: billing-only proof for 5-50 staff clinics"
         summary="Keyword intelligence keeps practice-management and clinic-software demand commercially relevant, but the owner-led clinic does not need another procurement project first. StackSmart reviews the paid subscription layer around the clinical platform — booking, reminders, SMS packs, forms, telehealth, payments, Medicare/billing connectors, AI scribes, transcription, review tools, reporting dashboards, M365/Google Workspace, and clinician/admin seats — from card statements and accounting exports only. The output is a practical recurring-bills register with keep, cancel, downgrade, consolidate, renegotiate, and renewal-owner decisions."
         proofItems={[
@@ -603,6 +603,36 @@ export default function MedicalPracticeSoftwareSubscriptionAuditPage() {
       </section>
 
       {/* Lead capture */}
+
+      <section className="border-y border-dark-800/80 bg-dark-950/70 py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-brand-300">2026-07-18 clinic billing-only refresh</p>
+            <h2 className="mt-3 text-2xl font-semibold text-white">Billing-only software cleanup for busy practice owners</h2>
+            <p className="mt-4 text-sm leading-7 text-dark-300">
+              StackSmart does not need patient records, clinical notes, bookings, or Medicare/private-health data. For a small GP, specialist, or allied-health clinic, the audit starts with billing exports: card statements, Xero/MYOB supplier spend, invoices, app-store charges, renewal emails, and admin user lists. That is enough to find booking, SMS, forms, telehealth, payments, rostering, training, AI, and former-clinician/admin seats that no longer match the way the practice operates.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["No patient-record access", "Use vendor names, amounts, dates, billing frequency, seats, and renewal terms only — not clinical or patient data."],
+              ["Former staff and providers", "Compare active users in booking, telehealth, forms, SMS, rostering, and practice-management add-ons with current clinicians and admin staff."],
+              ["Overlap around the PMS", "Check whether the core practice system now covers tools still billed separately: recalls, reminders, forms, telehealth, payments, or reports."],
+              ["Practice-manager handoff", "Produce keep, cancel, downgrade, consolidate, renegotiate, and assign-owner actions that a practice manager or bookkeeper can action."],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-3xl border border-dark-800 bg-dark-900/70 p-5">
+                <h3 className="text-sm font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-dark-300">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrackLink href="/clinic-software-subscription-audit" event="homepage_cta_clicked" props={{ target: "clinic_audit", location: "medical_20260718_refresh" }} className="btn-secondary text-sm">Compare clinic subscription audit</TrackLink>
+            <TrackLink href="/allied-health-software-subscription-audit" event="homepage_cta_clicked" props={{ target: "allied_health_audit", location: "medical_20260718_refresh" }} className="btn-secondary text-sm">See allied-health audit</TrackLink>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <InlineLeadCapture
